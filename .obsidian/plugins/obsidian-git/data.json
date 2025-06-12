@@ -20,7 +20,7 @@
   "treeStructure": false,
   "refreshSourceControl": true,
   "basePath": "git_hub",
-  "differentIntervalCommitAndPush": true,
+  "differentIntervalCommitAndPush": false,
   "changedFilesInStatusBar": false,
   "showedMobileNotice": true,
   "refreshSourceControlTimer": 7000,
