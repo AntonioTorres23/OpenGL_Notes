@@ -311,5 +311,7 @@ Refraction is described by [Snell's law](http://en.wikipedia.org/wiki/Snell%27s_
 
 Again, we have a view vector I (grey), a normal vector N (red), and this time a resulting refraction vector R (green). As you can see, the direction of the view vector is slightly bend. This resulting bended vector R is then used to sample from the cubemap. 
 
-Refraction is fairly easy to implement using GLSL's built-in reflect function that expects a normal vector, 
+Refraction is fairly easy to implement using GLSL's built-in reflect function that expects a normal vector, a view direction, and a ratio between both materials' refractive indices. 
+
+The refractive index determines the amount light distorts/bends in a material where each material has its own refract
 
