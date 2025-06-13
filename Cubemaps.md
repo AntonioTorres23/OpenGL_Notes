@@ -256,4 +256,7 @@ Since we already have a skybox setup in our scene, creating reflections isn't to
 `{`
 	`vec3 I = normalize(Position - cameraPos);`
 	`vec3 R = relect(I, normalize(Normal));`
+	`FragColor = vec4(texture(skybox, R).rgb, 1.0);`
 `}`
+
+We first calculate the view/camera direction vector I and use this to calculate the reflect vector R which we then use to sample from the skybox cubemap. Note that we have the fragment's interpolated Normal and Position variable again so we'll need to adjust the vertex shader as well. 

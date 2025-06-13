@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lighting Notes.md",
+                "file": "Cubemaps.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lighting Notes"
+              "title": "Cubemaps"
             }
           }
         ]
@@ -166,11 +166,13 @@
   },
   "active": "53b494f7c6e4a9ec",
   "lastOpenFiles": [
+    "OpenGL Camera Notes.md",
+    "Model Loading OpenGL Notes.md",
+    "Mesh Loading OpenGL Notes.md",
+    "Lighting Notes.md",
     "Cubemaps.md",
     "Pasted image 20250613161313.png",
     "Pasted image 20250613102653.png",
-    "Model Loading OpenGL Notes.md",
-    "Mesh Loading OpenGL Notes.md",
     "wy.md",
     "Face Culling.md",
     "New Text Document.txt",
@@ -178,8 +180,6 @@
     "OpenGL_Notes",
     "GL_NOTES",
     "Blending.md",
-    "OpenGL Camera Notes.md",
-    "Lighting Notes.md",
     "Pasted image 20250611142819.png",
     "Pasted image 20250609112403.png",
     "Framebuffers.md",
