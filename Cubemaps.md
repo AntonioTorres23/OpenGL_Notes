@@ -234,4 +234,9 @@ We now have the entire surrounding environment mapped in a single texture object
 
 Reflection is the property that an object (or part of an object) reflects its surrounding environment e.g. the object's colors are more or less equal to its environment based on the angle of the viewer. A mirror for example is a reflective object: it reflects its surroundings based on the viewer's angle. 
 
-The basics of reflection are not that difficult
+The basics of reflection are not that difficult. The following image shows how we can calculate a reflection vector and use that vector to sample from a cubemap. 
+
+![[Pasted image 20250613161313.png]]
+
+
+We calculate a reflection vector R (green) around the object's normal vector N (red) based on the view direction vector I (grey). We can calculate this reflection vector using GLSL's built-in reflect function. The resulting vector R is then used as a direction vector to index/sample the cubemap, returning a color value of the environment. 
