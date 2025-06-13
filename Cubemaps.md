@@ -279,3 +279,4 @@ We first calculate the view/camera direction vector I and use this to calculate 
 	`gl_Position = projection * view * vec4(Position, 1.0);`
 `}`
 
+We're using normal vectors so we'll want to transform them with a normal matrix again. The `Position` output vector 
