@@ -279,4 +279,20 @@ We first calculate the view/camera direction vector I and use this to calculate 
 	`gl_Position = projection * view * vec4(Position, 1.0);`
 `}`
 
-We're using normal vectors so we'll want to transform them with a normal matrix again. The `Position` output vector 
+We're using normal vectors so we'll want to transform them with a normal matrix again. The `Position` output of the vertex shader is used to calculate the view direction vector in the fragment shader. 
+
+If you are using just a simple cube with raw vertex data and not a model created in another 3D art program, use this [vertex data](https://learnopengl.com/code_viewer.php?code=lighting/basic_lighting_vertex_data) and update the attribute pointers as well within your VBO of the cube. Also make sure to set the `cameraPos` uniform. 
+
+Then we also want to bind the cubemap texture before rendering the container. 
+
+`glBindVertexArray(cubeVAO);`
+`glBindTexture(GL_TEXTURE_CUBE_MAP, skyboxTexture);`
+`glDrawArrays(GL_TRIANGLES, 0, 36);`
+
+Compiling and running your code gives you a container/object that acts like a perfect mirror. The surrounding skybox is perfectly reflected on the container/object.
+
+![[Pasted image 20250613164534.png]]
+
+Full source code can be found [here](https://learnopengl.com/code_viewer_gh.php?code=src/4.advanced_opengl/6.2.cubemaps_environment_mapping/cubemaps_environment_mapping.cpp). 
+
+
