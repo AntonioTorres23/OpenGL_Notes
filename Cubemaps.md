@@ -218,3 +218,5 @@ Perspective division is preformed after the vertex shader has run, dividing the 
 	`vec3 pos = projection * view * vec4(aPos, 1.0);`
 	`gl_Position = pos.xyww;`
 `}`
+
+The resulting normalized device coordinates will then always have a z value equal to 1.0. The maximum depth value. The skybox will as a result only be rendered wherever there are no objects visible (only then it will pass the depth test, everything )
