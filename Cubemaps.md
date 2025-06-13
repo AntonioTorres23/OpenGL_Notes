@@ -334,4 +334,8 @@ We already have the cubemap bound, supplied the vertex data with normals, and se
 	`FragColor = vec4(texture(skybox, R), 1.0);`
 `}`
 
-By changing the refractive indices you can create completely different visual results. Compiling the application and running the results on the container/object 
+By changing the refractive indices you can create completely different visual results. Compiling the application and running the results on the container/object gives you results like this. The results look better on an actual 3D model though. 
+
+![[Pasted image 20250613170545.png]]
+
+You can imagine that with the right combination of lighting, reflection, refraction, and vertex move
