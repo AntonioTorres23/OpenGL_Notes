@@ -346,6 +346,6 @@ Right now we've been using a static combination of images as the skybox, which l
 
 Using framebuffers it is possible to create a texture of the scene for all 6 different angles from the object in question and store those in a cubemap each frame. We can then use this (dynamically generated) cubemap to create reflection and refractive surfaces that include all other objects. This is called dynamic environment mapping, because we dynamically create a cubemap of an object's surroundings and use that as as its environment map. 
 
-While it looks great, it has one enormous disadvant
+While it looks great, it has one enormous disadvantage, we have to render the scene 6 times per object using an environment map, which is an enormous performance penalty on your application. Modern applications try to use the skybox as much as possible where possible pre
 
 
