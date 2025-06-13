@@ -260,3 +260,10 @@ Since we already have a skybox setup in our scene, creating reflections isn't to
 `}`
 
 We first calculate the view/camera direction vector I and use this to calculate the reflect vector R which we then use to sample from the skybox cubemap. Note that we have the fragment's interpolated Normal and Position variable again so we'll need to adjust the vertex shader as well. 
+
+`#version 330 core`
+`layout (location = 0) vec3 aPos;`
+`layout (location = 1) vec3 aNormal;`
+
+`vec3 out Normal;`
+`vec3 out Position`
