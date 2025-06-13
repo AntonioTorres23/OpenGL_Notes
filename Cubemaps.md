@@ -338,4 +338,4 @@ By changing the refractive indices you can create completely different visual re
 
 ![[Pasted image 20250613170545.png]]
 
-You can imagine that with the right combination of lighting, reflection, refraction, and vertex move
+You can imagine that with the right combination of lighting, reflection, refraction, and vertex movement, you can create pretty good water graphics. Do note that for physically accurate results we should refract the light again when it leaves the object; now we simply used signle-sided refraction which 
