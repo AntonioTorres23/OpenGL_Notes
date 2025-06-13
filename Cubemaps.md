@@ -221,4 +221,8 @@ Perspective division is preformed after the vertex shader has run, dividing the 
 
 The resulting normalized device coordinates will then always have a z value equal to 1.0. The maximum depth value. The skybox will as a result only be rendered wherever there are no objects visible (only then it will pass the depth test, everything else is in front of the skybox).
 
-We do have to change the depth function a little by setting it to `GL_LEQUAL` instead of the default `GL_LESS`. The depth buffer will be filled with values of 1.0 for the skybox, so we need to make sure the skybox passes the depth tests with values less than or equal to the depth buffer instead of less than.  
+We do have to change the depth function a little by setting it to `GL_LEQUAL` instead of the default `GL_LESS`. The depth buffer will be filled with values of 1.0 for the skybox, so we need to make sure the skybox passes the depth tests with values less than or equal to the depth buffer instead of less than. 
+
+You can find the more optimized source code with this link [here](https://learnopengl.com/code_viewer_gh.php?code=src/4.advanced_opengl/6.1.cubemaps_skybox/cubemaps_skybox.cpp).
+
+
