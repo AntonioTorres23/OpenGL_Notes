@@ -255,5 +255,5 @@ Since we already have a skybox setup in our scene, creating reflections isn't to
 `void main()`
 `{`
 	`vec3 I = normalize(Position - cameraPos);`
-	`vec3 R = relect(I, normalize(Normal))`
+	`vec3 R = relect(I, normalize(Normal));`
 `}`
