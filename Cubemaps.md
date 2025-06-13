@@ -194,10 +194,15 @@ We can remove the translation section of transformation matrices by taking the u
 
 `glm::mat4 view = glm::mat4(glm::mat3(camera.GetViewMatrix()));`
 
+*theory*: I think that we convert it to a mat3 is because there is a hidden w component which assists in translations. By removing that or setting it to 0 once we convert it back to a mat4 
 This removes any translation, but keeps all rotation transformations so the user can still look around the scene. 
 
 The result is a scene that instantly looks enormous due to our skybox. If you'd fly around the basic container you'd immediately get a sense of scale. which dramatically improves the scene, The result looks something like this.  
 
 ![[Pasted image 20250613102653.png]]
 
-Try experimenting with different skyboxes and see how 
+Try experimenting with different skyboxes and see how they can have an enormous impact on the look and feel of your scene. 
+
+**An Optimization**
+
+Right now we've rendered the skybox first before we rendered all the other objects in the scene
