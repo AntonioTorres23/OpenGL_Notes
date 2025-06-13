@@ -194,7 +194,7 @@ We can remove the translation section of transformation matrices by taking the u
 
 `glm::mat4 view = glm::mat4(glm::mat3(camera.GetViewMatrix()));`
 
-*theory: I think that we convert it to a mat3 (`camera.GetViewMatrix()`) is because there is a hidden w component which assists in translations. By removing that or setting it to 0 once we convert it back to a mat4, it no longer affected by translations. Because we are only grabbing the first 3 of the `camera.GetViewMatrix` * 
+*theory: I think that we convert it to a mat3 (`camera.GetViewMatrix()`) is because there is a hidden w component which assists in translations. By removing that or setting it to 0 once we convert it back to a mat4, it no longer affected by translations. Because we are only grabbing the first 3 of the `camera.GetViewMatrix()` , by default the 4th value in the matrix (I believe) would be zero when converting it back to a mat4.* 
 
 This removes any translation, but keeps all rotation transformations so the user can still look around the scene. 
 
