@@ -219,4 +219,6 @@ Perspective division is preformed after the vertex shader has run, dividing the 
 	`gl_Position = pos.xyww;`
 `}`
 
-The resulting normalized device coordinates will then always have a z value equal to 1.0. The maximum depth value. The skybox will as a result only be rendered wherever there are no objects visible (only then it will pass the depth test, everything )
+The resulting normalized device coordinates will then always have a z value equal to 1.0. The maximum depth value. The skybox will as a result only be rendered wherever there are no objects visible (only then it will pass the depth test, everything else is in front of the skybox).
+
+We do have to change the depth function a little by setting it to `GL_LEQUAL` instead of the default `GL_LESS`.  
