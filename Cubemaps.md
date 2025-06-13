@@ -338,4 +338,8 @@ By changing the refractive indices you can create completely different visual re
 
 ![[Pasted image 20250613170545.png]]
 
-You can imagine that with the right combination of lighting, reflection, refraction, and vertex movement, you can create pretty good water graphics. Do note that for physically accurate results we should refract the light again when it leaves the object; now we simply used signle-sided refraction which 
+You can imagine that with the right combination of lighting, reflection, refraction, and vertex movement, you can create pretty good water graphics. Do note that for physically accurate results we should refract the light again when it leaves the object; now we simply used single-sided refraction which is fine for most purposes. 
+
+**Dynamic Environment Maps**
+
+Right now we've been using a static combination of images as the skybox, which looks great, but it doesn't include the actual 3D scene with possibly moving objects. We didn't really notice this so far, because we only used a sin
