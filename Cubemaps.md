@@ -324,6 +324,13 @@ The refractive index determines the amount light distorts/bends in a material wh
 |Diamond|2.42|
 We use these refractive indices to calculate the ratio between both materials the light passes through. In our case, the light/view ray foes from air to glass (if we assume the object is made of glass) so the ratio becomes 1.00 / 1.52 = 0.658. 
 
-We already have the cubemap bound, supplied the vertex data with normals, and set the camera position as a uniform. The only thing we have to change is the fragment shad
+We already have the cubemap bound, supplied the vertex data with normals, and set the camera position as a uniform. The only thing we have to change is the fragment shader.
+
+`void main()`
+`{`
+	`float ratio = 1.00 / 1.52;`
+	`vec3 I = normalize(Position - cameraPos);`
+	`vec3 R = refract(I, normalize(Normal))`
+`}`
 
 
