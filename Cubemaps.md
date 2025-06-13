@@ -266,4 +266,13 @@ We first calculate the view/camera direction vector I and use this to calculate 
 `layout (location = 1) vec3 aNormal;`
 
 `vec3 out Normal;`
-`vec3 out Position`
+`vec3 out Position;`
+
+`uniform mat4 model;`
+`uniform mat4 view;`
+`uniform mat4 projection;`
+
+`void main()`
+`{`
+	`Normal = mat3(transpose(inverse()))`
+`}`
