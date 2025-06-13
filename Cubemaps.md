@@ -211,3 +211,10 @@ Right now we've rendered the skybox first before we rendered all the other objec
 So to give us a slight performance boost we're going to render the sky box last. This way, the depth buffer is completely filled with all the scene's depth values so we only have to render the skybox's fragments wherever the early depth test passes, greatly reducing the number of fragment shader calls. The problem is that the skybox will most likely render on top of the other objects since it's only a 1x1x1 cube, succeeding most depth tests. Simply rendering it without depth testing is not a solution since the skybox will then still overwrite all the other objects in the scene as it's rendered last. We need to trick the depth buffer into believing that the skybox has the maximum depth value of 1.0 so that it fails the depth test wherever there's a different object in front of it. 
 
 Perspective division is preformed after the vertex shader has run, dividing the `gl_Position`'s `xyz` coordinates by its w component. We know that the z component of the resulting division is equal to that vertex's depth value. Using this information we can set the z component of the output position equal to its w component which will result in a z component that is always equal to 1.0, because when the perspective division is applied its z component translates to w / w = 1.0. 
+
+`void main()`
+`{`
+	`TexCoords = aPos;`
+	`vec3 pos = projection * view * vec4(aPos, 1.0);`
+	`gl_Position = pos.xyww;`
+`}`
