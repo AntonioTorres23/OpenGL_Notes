@@ -239,4 +239,6 @@ The basics of reflection are not that difficult. The following image shows how w
 ![[Pasted image 20250613161313.png]]
 
 
-We calculate a reflection vector R (green) around the object's normal vector N (red) based on the view direction vector I (grey). We can calculate this reflection vector using GLSL's built-in reflect function. The resulting vector R is then used as a direction vector to index/sample the cubemap, returning a color value of the environment. 
+We calculate a reflection vector R (green) around the object's normal vector N (red) based on the view direction vector I (grey). We can calculate this reflection vector using GLSL's built-in reflect function. The resulting vector R is then used as a direction vector to index/sample the cubemap, returning a color value of the environment. The resulting effect is that the object seems to reflect the skybox. 
+
+Since we already have a skybox setup in our scene, creating reflections isn't too difficult. 
