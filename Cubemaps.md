@@ -228,4 +228,4 @@ You can find the more optimized source code with this link [here](https://learno
 
 **Environment Mapping**
 
-We now have the entire surrounding environment mapped in a single texture object and we could use that information for more than just a skybox. Using a cubemap with an environment,
+We now have the entire surrounding environment mapped in a single texture object and we could use that information for more than just a skybox. Using a cubemap with an environment, we could give objects reflective or refractive properties. Techniques that use an environment cubemap like this are called en
