@@ -313,5 +313,15 @@ Again, we have a view vector I (grey), a normal vector N (red), and this time a 
 
 Refraction is fairly easy to implement using GLSL's built-in reflect function that expects a normal vector, a view direction, and a ratio between both materials' refractive indices. 
 
-The refractive index determines the amount light distorts/bends in a material where each material has its own refract
+The refractive index determines the amount light distorts/bends in a material where each material has its own refractive index. A list of the most common refractive indices are given in the following table.
+
+|Material|Refractive index|
+|---|---|
+|Air|1.00|
+|Water|1.33|
+|Ice|1.309|
+|Glass|1.52|
+|Diamond|2.42|
+We use these refractive indices to calculate the ratio between both materials the light passes through. In our case, the light/view ray foes from air to glass (if we assume the object is made of glass) so the 
+
 
