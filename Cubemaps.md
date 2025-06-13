@@ -194,7 +194,8 @@ We can remove the translation section of transformation matrices by taking the u
 
 `glm::mat4 view = glm::mat4(glm::mat3(camera.GetViewMatrix()));`
 
-*theory*: I think that we convert it to a mat3 is because there is a hidden w component which assists in translations. By removing that or setting it to 0 once we convert it back to a mat4 
+*theory: I think that we convert it to a mat3 (`camera.GetViewMatrix()`) is because there is a hidden w component which assists in translations. By removing that or setting it to 0 once we convert it back to a mat4, it no longer affected by translations. Because we are only grabbing the first 3 of the `camera.GetViewMatrix` * 
+
 This removes any translation, but keeps all rotation transformations so the user can still look around the scene. 
 
 The result is a scene that instantly looks enormous due to our skybox. If you'd fly around the basic container you'd immediately get a sense of scale. which dramatically improves the scene, The result looks something like this.  
@@ -207,4 +208,4 @@ Try experimenting with different skyboxes and see how they can have an enormous 
 
 Right now we've rendered the skybox first before we rendered all the other objects in the scene. This works great, but isn't too efficient. If we render the skybox first we're running the fragment shader for each pixel on the screen even though only a small part of the skybox will eventually be visible; fragments that could have easily been discarded using early depth testing saving us valuable bandwidth. 
 
-So to give us a slight performance boost we're going to render the sky box last. This way, the depth buffer is completely filled with all the scene's depth values so we only have to render the skybox's fragments wherever the early depth test passes, 
+So to give us a slight performance boost we're going to render the sky box last. This way, the depth buffer is completely filled with all the scene's depth values so we only have to render the skybox's fragments wherever the early depth test passes, greatly reducing the number of fragment shader calls. The problem is that the skybox will most likely render on top of the other objects since it's only a 1x1x1 cube, succeeding most depth tests. Simply rendering it without depth testing is not a solution since the skybox will then still overwrite all the other objects in the scene as it's rendered last. 
