@@ -344,4 +344,4 @@ You can imagine that with the right combination of lighting, reflection, refract
 
 Right now we've been using a static combination of images as the skybox, which looks great, but it doesn't include the actual 3D scene with possibly moving objects. We didn't really notice this so far, because we only used a single object. If we had a mirror-like objects with multiple surrounding objects, only the skybox would be visible in the mirror as if it was the only object in the scene. 
 
-Using framebuffers it is possible to create a texture of the scene for all 6 different angles from the 
+Using framebuffers it is possible to create a texture of the scene for all 6 different angles from the object in question and store those in a cubemap each frame. We can then use this (dynamically generated) cubemap to create reflection and refractive surfaces that include all other obje
