@@ -197,3 +197,7 @@ We can remove the translation section of transformation matrices by taking the u
 This removes any translation, but keeps all rotation transformations so the user can still look around the scene. 
 
 The result is a scene that instantly looks enormous due to our skybox. If you'd fly around the basic container you'd immediately get a sense of scale. which dramatically improves the scene, The result looks something like this.  
+
+![[Pasted image 20250613102653.png]]
+
+Try experimenting with different skyboxes and see how 
