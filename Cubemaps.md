@@ -295,4 +295,21 @@ Compiling and running your code gives you a container/object that acts like a pe
 
 Full source code can be found [here](https://learnopengl.com/code_viewer_gh.php?code=src/4.advanced_opengl/6.2.cubemaps_environment_mapping/cubemaps_environment_mapping.cpp). 
 
+When reflection is applied to an entire object (like the container), the object looks as if it has a high reflective material like steel or chrome. If we were to load a more interesting object (like the guitar backpack model), we'd get the effect that the object looks to be entirely made out of chrome. 
+
+![[Pasted image 20250613165052.png]]
+
+This looks quite cool, but in reality most models aren't all completely reflective. We could for instance introduce reflection maps that give the models another extra level of detail. Just like diffuse and specular maps, reflection maps are texture images that we can sample to determine the reflectivity of a fragment. Using these reflection maps we can determine which parts of the model show reflection and by what intensity.
+
+**Refraction**
+
+Another form of environment mapping is called refraction and is similar to reflection. Refraction is the change in direction of the light due to the change of the material the light flows through. Refraction is what we commonly see with water-like surfaces where light doesn't enter straight through, but bends a little. It's like looking at your arm when it's halfway in the water. 
+
+Refraction is described by [Snell's law](http://en.wikipedia.org/wiki/Snell%27s_law) that with environment maps looks a bit like this.
+
+![[Pasted image 20250613165619.png]]
+
+Again, we have a view vector I (grey), a normal vector N (red), and this time a resulting refraction vector R (green). As you can see, the direction of the view vector is slightly bend. This resulting bended vector R is then used to sample from the cubemap. 
+
+Refraction is fairly easy to implement using GLSL's built-in reflect function that expects a normal vector, 
 
