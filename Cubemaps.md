@@ -330,7 +330,8 @@ We already have the cubemap bound, supplied the vertex data with normals, and se
 `{`
 	`float ratio = 1.00 / 1.52;`
 	`vec3 I = normalize(Position - cameraPos);`
-	`vec3 R = refract(I, normalize(Normal))`
+	`vec3 R = refract(I, normalize(Normal), ratio);`
+	`FragColor = vec4(texture(skybox, R), 1.0);`
 `}`
 
-
+By changing the refractive indices you can create completely different visual results. Compiling the application and running the results on the container/object 
