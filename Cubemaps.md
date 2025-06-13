@@ -226,3 +226,6 @@ We do have to change the depth function a little by setting it to `GL_LEQUAL` in
 You can find the more optimized source code with this link [here](https://learnopengl.com/code_viewer_gh.php?code=src/4.advanced_opengl/6.1.cubemaps_skybox/cubemaps_skybox.cpp).
 
 
+**Environment Mapping**
+
+We now have the entire surrounding environment mapped in a single texture object and we could use that information for more than just a skybox. Using a cubemap with an environment,
