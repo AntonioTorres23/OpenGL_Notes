@@ -252,3 +252,7 @@ Since we already have a skybox setup in our scene, creating reflections isn't to
 `uniform vec3 cameraPos;`
 `uniform samplerCube skybox;`
 
+`void main()`
+`{`
+	`vec3 I = normalize(Position - cameraPos)`
+`}`
