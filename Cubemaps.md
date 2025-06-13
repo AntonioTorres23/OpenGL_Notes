@@ -205,4 +205,4 @@ Try experimenting with different skyboxes and see how they can have an enormous 
 
 **An Optimization**
 
-Right now we've rendered the skybox first before we rendered all the other objects in the scene
+Right now we've rendered the skybox first before we rendered all the other objects in the scene. This works great, but isn't too efficient. If we render the skybox first we're running the fragment 
