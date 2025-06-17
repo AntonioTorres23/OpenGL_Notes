@@ -92,3 +92,5 @@ Now look at this source code.
 
 
 All we did was change the num variable from 1 to 15 using the object pointer `c`. Now run the code and you should see that the original object `b`'s num variable also changed. As well as look at the addresses after the change. They remain the same as before we changed num's value to 15. So as you can see, `b` and pointer `c` are one in the same. 
+
+So all in all, the `->` (arrow) pointer in C++ is a way for a pointer object to access its members that where created from a class.  
