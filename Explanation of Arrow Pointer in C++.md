@@ -54,6 +54,40 @@ Since that's essentially what a pointer does in concept. It points to whatever o
 
 The primary purpose of pointers can be for many reasons. One being you want to change the original variable/object if you are going through things like functions or other transformations outside of that variable/object's scope. Another big reason is that it typically saves a lot of memory. When you have another variable that is initialized with another variable. For example, `int a = 1;`, `int b;`, `b = a;`, you are copying over all of that information into a new variable and its stored into a new address within memory. This is fine for smaller projects but when you are working on larger applications, this can eat up a lot of memory and slow down the program. So making a pointer in most cases would be a better option. 
 
+Now look at this source code.
 
+`#include <iostream>
+
+
+`class A
+`{
+    `public:
+        `int num = 1;
+`};
+
+
+`int main() {
+    `// Write C++ code here
+    
+    A b;
+    
+    A *c = nullptr;
+    
+    c = &b;
+    std::cout << "Address:" << "\n" << std::endl;
+    std::cout << &b.num << std::endl;
+    std::cout << &c->num << std::endl;
+    std::cout << "Value:" << "\n" << std::endl;
+    std::cout << b.num << std::endl;
+    std::cout << c->num << std::endl;
+    std::cout << "New Value Assigned From Pointer: 15: " << std::endl;
+    c->num = 15;
+    std::cout << b.num << std::endl;
+    std::cout << c->num << std::endl;
+    std::cout << "Address After Pointer Assigned New Value for Num Var: " <<            std::endl;
+    std::cout << &b.num << std::endl;
+    std::cout << &c->num << std::endl;
+    return 0;
+`}
 
 
