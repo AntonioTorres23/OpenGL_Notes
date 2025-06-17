@@ -67,7 +67,7 @@ Now look at this source code.
 
 
 `int main() {
-    `// Write C++ code here
+    `// Write C++ code here`
     
     A b;
     
@@ -91,3 +91,4 @@ Now look at this source code.
 `}
 
 
+All we did was change the num variable from 1 to 15 using the object pointer `c`. Now run the code and you should see that the original object `b`'s num variable also changed. As well as look at the addresses after the c
