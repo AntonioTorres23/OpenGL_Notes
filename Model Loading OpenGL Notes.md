@@ -90,7 +90,7 @@ As you may remember from Assimp's structure, each node contains a set of mesh in
 
 We first check each of the node's mesh indices and retrieve the corresponding mesh by indexing the scene's mMeshes array. The returned mesh is then passed to the processMesh function that returns a Mesh object that we can store in the meshes list/vector.
 
-Once all the meshes have been processed, we iterate through all the node's children and call the same processNode function for each child. One a node no longer has any children, the recursion stops. 
+Once all the meshes have been processed, we iterate through all the node's children and call the same processNode function for each child. Once a node no longer has any children, the recursion stops. 
 
 You may think why not just use a while or for loop to complete this process. We use a recursive function is because the initial idea for using nodes like this is that it defines a parent-child relation between meshes. An example for this would be importing a car object. When you translate a car mesh you want to translate the car and all its children (engine mesh, tires mesh, etc) translate as well. Such a system is easily created using parent-child relations.
 
