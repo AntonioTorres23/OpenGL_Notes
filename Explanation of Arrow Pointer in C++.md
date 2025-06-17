@@ -48,4 +48,5 @@ Then we assign our `c` object to the address of a since objects only point to ad
 
 Then we do some tests by seeing if they match the same address using the `&` character which in C++ is used for showing a variable/object's address. 
 
-Run this part of the code and you should see that the addresses of both the num var will be the same. Because that's what we're doing, we're accessing that num var 
+Run this part of the code and you should see that the addresses of both the num var will be the same. Because that's what we're doing, we're accessing that num var and displaying its addresses in memory. 
+
