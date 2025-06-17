@@ -52,5 +52,5 @@ Run this part of the code and you should see that the addresses of both the num 
 
 Since that's essentially what a pointer does in concept. It points to whatever other matching data type object/variable. Meaning it also takes the address and value of whatever pointer is pointing at. Meaning if the original variable/object's value its pointing at changes, it will also match that. And vice versa, if you change the value within the pointer object/variable, the original variable will change that. They are one in the same and is why pointer's where kind of invented. 
 
-The primary purpose of pointers can be for many reasons. One being you want to change the original variable/object if you are going through things like functions or other things
+The primary purpose of pointers can be for many reasons. One being you want to change the original variable/object if you are going through things like functions or other transformations like addition, subtraction, division, etc. depending on the data type it is.
 
