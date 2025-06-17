@@ -50,5 +50,7 @@ Then we do some tests by seeing if they match the same address using the `&` cha
 
 Run this part of the code and you should see that the addresses of both the num var will be the same. Because that's what we're doing, we're accessing that num var and displaying its addresses in memory. 
 
-Since that's essentially what a pointer does in concept. It points to whatever other matching data type object/variable. Meaning it also takes the address and value of whatever pointer is pointing at. Meaning if the original variable/object's value its pointing at changes, it will also match that. And vice versa, if you change the value within the pointer object/variable, the original variable will change that. They are one in the same
+Since that's essentially what a pointer does in concept. It points to whatever other matching data type object/variable. Meaning it also takes the address and value of whatever pointer is pointing at. Meaning if the original variable/object's value its pointing at changes, it will also match that. And vice versa, if you change the value within the pointer object/variable, the original variable will change that. They are one in the same and is why pointer's where kind of invented. 
+
+The primary purpose of pointers can be for many reasons. One being you want to change the original variable the same and 
 
