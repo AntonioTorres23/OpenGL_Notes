@@ -40,3 +40,4 @@ int main() {
 
 
 
+Pretty simple, we create a struct called hello and assign different variables/data types to it. Then we create a vector that specifically holds that data type called `helvec`.  We just make it empty for now so 
