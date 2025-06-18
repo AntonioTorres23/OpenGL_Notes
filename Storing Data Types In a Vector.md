@@ -104,4 +104,6 @@ In the main function, we create two Test objects called A, and B. We then change
 
 Next we do a bunch of indexing of each object and seeing what values are in each member. Remember we pushed A first so A will be 0 and B will be 1. If you run this you will see the differences in them and how we can access the members within the vector. 
 
-As you can see vectors can store some pretty complex things. Making them su
+As you can see vectors can store some pretty complex things. Making them super versatile. 
+
+How does this apply to OpenGL. Much of our model and mesh header files happen to contain vectors that house structures within a vector, allowing us to 
