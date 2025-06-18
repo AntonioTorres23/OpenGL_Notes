@@ -55,3 +55,51 @@ So as we can see, you can store those structure objects we created previously an
 Now structures are the same as classes in a way, but here is a version of this code with class implementation. 
 
 
+```
+#include <iostream>
+#include <string>
+#include <vector>
+
+class Test
+{
+    public:
+    
+        int integer = 1;
+        std::string greeting = "hello";
+        float flt = 2.5;
+};
+
+std::vector<Test> test_vec 
+{
+    
+};
+
+int main() {
+    // Write C++ code here
+    Test A;
+    Test B;
+    B.integer = 2;
+    B.greeting = "goodbye";
+    B.flt = 3.2;
+    test_vec.push_back(A);
+    test_vec.push_back(B);
+    std::cout << "Size Of Vector: " << test_vec.size() << std::endl;
+    std::cout << "Integer Class Member Stored Within Vector: " << std::endl;
+    std::cout << "Object A: " << test_vec[0].integer << std::endl;
+    std::cout << "Object B: " << test_vec[1].integer << std::endl;
+    std::cout << "String Class Member Stored Within Vector: " << std::endl;
+    std::cout << "Object A: " << test_vec[0].greeting << std::endl;
+    std::cout << "Object B: " << test_vec[1].greeting << std::endl;
+    std::cout << "Float Class Member Stored Within Vector: " << std::endl;
+    std::cout << "Object A: " << test_vec[0].flt << std::endl;
+    std::cout << "Object B: " << test_vec[1].flt << std::endl;
+
+    return 0;
+}
+```
+
+So in this program we create a class called Test. Within test there are members of various datatypes. We create a vector that takes in the type Test called `test_vec` and it is empty upon its initialization. 
+
+In the main function, we create two Test objects called A, and B. We then change the members in B prior to pushing it back as to differentiate between the two when we index them in the vector. Then we use the `push_back` function to put our 2 Test objects in the `test_vec` vector. 
+
+Next we do a bunch of indexing of each object and seeing what values are in each 
