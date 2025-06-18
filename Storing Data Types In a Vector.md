@@ -106,4 +106,5 @@ Next we do a bunch of indexing of each object and seeing what values are in each
 
 As you can see vectors can store some pretty complex things. Making them super versatile. 
 
-How does this apply to OpenGL. Much of our model and mesh header files happen to contain vectors that house structures within a vector, allowing us to store many different items and access them within one place. For example, you may have a Vertex structure that holds things like vertex positions, normals, and texture coordinates. But you have multiple different Vertex structure objects within your header files. You can keep them organized within a Vector with that Vertex structure type and then access them 
+How does this apply to OpenGL. Much of our model and mesh header files happen to contain vectors that house structures within a vector, allowing us to store many different items and access them within one place. For example, you may have a Vertex structure that holds things like vertex positions, normals, and texture coordinates. But you have multiple different Vertex structure objects within your header files. You can keep them organized within a Vector with that Vertex structure type and then access the members of that structure (or the structure itself) from there.
+
