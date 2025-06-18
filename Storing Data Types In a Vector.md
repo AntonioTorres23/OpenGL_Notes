@@ -50,4 +50,8 @@ Next we grab the size of the vector to show 3 of the structures are held within 
 
 Lastly, we use indexing to go to the second object stored in the vector (b) and access the hello variable which contains the string hello and display it to default output using the built-in `cout` function. 
 
-So as we can see, you can store those structure objects we created previously and add them to a vector that is created with that same structure as its type. As well as index it to access a specific one in particular and 
+So as we can see, you can store those structure objects we created previously and add them to a vector that is created with that same structure as its type. As well as index it to access a specific one in particular and retrieve its members. 
+
+Now structures are the same as classes in a way, but here is a version of this code with class implementation. 
+
+
