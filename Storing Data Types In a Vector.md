@@ -102,4 +102,6 @@ So in this program we create a class called Test. Within test there are members 
 
 In the main function, we create two Test objects called A, and B. We then change the members in B prior to pushing it back as to differentiate between the two when we index them in the vector. Then we use the `push_back` function to put our 2 Test objects in the `test_vec` vector. 
 
-Next we do a bunch of indexing of each object and seeing what values are in each member. Remember we pushed A first so A will be 0 and B will be 1. If you run this you will see the differences in them and how we can 
+Next we do a bunch of indexing of each object and seeing what values are in each member. Remember we pushed A first so A will be 0 and B will be 1. If you run this you will see the differences in them and how we can access the members within the vector. 
+
+As you can see vectors can store some pretty complex things. Making them su
