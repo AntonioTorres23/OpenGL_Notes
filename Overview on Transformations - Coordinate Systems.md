@@ -52,4 +52,4 @@ To retrieve the length/magnitude of a vector we use the Pythagoras theorem. A ve
 
 ![[Pasted image 20250623160550.png]]\
 
-So our vector `v = (4,2)` we can create a triangle going down to the x axis to create a triangle. 
+So our vector 
