@@ -41,9 +41,15 @@ Addition of 2 Vectors:
 
 Subtraction of 2 Vectors:
 
+Disregard this graph its weird and will just confuse you more. 
+
+
 ![[Pasted image 20250623160021.png]]
 
 **Length**
 
-To retrieve the length/magnitude of a vector 
+To retrieve the length/magnitude of a vector we use the Pythagoras theorem. A vector forms a triangle when you visualize its individual x and y component as two sides of a triangle. 
 
+![[Pasted image 20250623160550.png]]\
+
+So our vector `v = (4,2)` we can create a triangle going down to the x axis to create a triangle. 
