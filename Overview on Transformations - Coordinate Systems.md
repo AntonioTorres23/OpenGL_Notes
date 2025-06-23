@@ -93,4 +93,8 @@ To calculate the degree between these unit vectors we use the inverse cosine fun
 
 **Cross Product**
 
-The cross product is only defined in 3D space and takes two non-parallel vectors as input and produces a third vector that is orthogonal (vectors are at a right-angle to each other) to both input vectors. If both the input 
+The cross product is only defined in 3D space and takes two non-parallel vectors as input and produces a third vector that is orthogonal (vectors are at a right-angle to each other) to both input vectors. If both the input vectors are orthogonal to each other as well, a cross product would result in 3 orthogonal vectors. The following picture shows what this looks like in 3D space.
+
+![[Pasted image 20250623165806.png]]
+
+Unlike the other operations the cross 
