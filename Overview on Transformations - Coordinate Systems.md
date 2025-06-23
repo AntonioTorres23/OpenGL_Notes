@@ -25,3 +25,7 @@ So vector `v = (1,2,3)`, and we are going to add it by value x. So we are going 
 
 Negating a vector results in a vector in the reversed direction. 
 
+So `-v = -(1,1,2)`
+
+
+
