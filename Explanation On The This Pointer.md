@@ -56,6 +56,6 @@ int main() {
 
 So within this function we have a class called Test. Within Test we have 3 variables called `tyme`, `greeting`, and `flt`.  Then, we have a constructor that requires us to pass 3 arguments in order to create a Test object. Within those arguments we also named them the same as the 3 variables we declared previously. So within this class we have two names that are the same, we have an actual member object variable, and we have a constructor variable. How is the compiler going to know the difference between which one? It can't and it will lead to unusual behavior
 
-If you run this without specifying the this pointer you end up not getting the values that you specified within the constructor. 
+If you run this without specifying the this pointer you end up not getting the values that you specified within the constructor. You just get weird output or even no output at all. 
 
-Check
+Now incorporate the this pointer, within the this pointer, we are specifying that we want the value that is within the constructor argument. 
