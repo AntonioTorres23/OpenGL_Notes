@@ -101,3 +101,4 @@ Unlike the other operations the cross product isn't really intuitive without del
 
 ![[Pasted image 20250623170034.png]]
 
+So I always think of it as you first start with 
