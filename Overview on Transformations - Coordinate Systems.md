@@ -5,3 +5,5 @@ This is just an overview of the LearnOpenGL topics regarding vectors, matrices, 
 
 Vectors are simply directions and nothing more. A vector has a direction and a magnitude (AKA length). You can think of vectors like a point on a map. Vectors have can work with 2 to 4 dimensions. If a vector has 2 dimensions it represents a direction on an (X,Y) plane and if a vector has 3 dimensions (X,Y,Z), it can represent any direction in a 3D world. 
 
+Below there are 3 vectors
+
