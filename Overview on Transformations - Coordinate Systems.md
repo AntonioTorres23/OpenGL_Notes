@@ -41,5 +41,9 @@ Addition of 2 Vectors:
 
 Subtraction of 2 Vectors:
 
+![[Pasted image 20250623160021.png]]
 
+**Length**
+
+To retrieve the length/magnitude of a vector 
 
