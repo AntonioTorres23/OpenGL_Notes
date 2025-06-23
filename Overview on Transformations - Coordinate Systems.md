@@ -85,3 +85,12 @@ v ⋅ k= 1 ⋅ 1⋅ cosθ = cosθ
 
 Now the dot product only defines the angle between both vectors. You may remember that the cosine or cos function becomes 0 when the angle is 90 degrees or 1 when the angle is 0. This allows us to easily test if the two vectors are orthogonal or parallel to each other using the dot product (orthogonal means the vectors are at a right-angle to each other). 
 
+So how do we calculate a dot product? The dot product is a component-wise multiplication where we add the results together. It looks like this with two unit vectors.
+
+`(x=0.6, y=-0.8, z=0) ⋅ (x=0, y = 1. z=0) = (0.6 * 0) + (-0.8 * 1), (0 * 0) = -0.8`
+
+To calculate the degree between these unit vectors we use the inverse cosine function cos−1 and this results in 143.1 degrees. We now effectively calculated the angle between two vectors. The dot product proves very useful for lighting calculations as we learned in one the notes here. 
+
+**Cross Product**
+
+The cross product is only defined in 3D space and takes two non-parallel vectors as input and produces a third 
