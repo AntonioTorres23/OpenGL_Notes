@@ -70,4 +70,13 @@ We call this normalizing a vector. Unit vectors are displayed with a little roof
 
 **Vector-vector Multiplication**
 
-Multiplying two vectors is a bit of a weird case. Normal multiplication isn't really defined on vectors since it has no visual meaning. but we have two specific cases that we could choose from when multiplying: one is the dot product denoted as v ⋅ k
+Multiplying two vectors is a bit of a weird case. Normal multiplication isn't really defined on vectors since it has no visual meaning. but we have two specific cases that we could choose from when multiplying: one is the dot product denoted as v ⋅ k and the other is the cross product denoted as v x k. 
+
+**Dot Product**
+
+The dot product of two vectors is equal to the scalar product of their lengths times the cosine of the angle between them. 
+
+
+v ⋅k =||v||⋅||k||⋅cosθ
+
+Where the angle between them is represented as a theta (θ). Why is this interesting? Well, imagine if v and k are unit vectors then their length would be equal to 1. 
