@@ -21,4 +21,7 @@ A scalar is a single digit. When adding/subtracting/multiplying or dividing a ve
 
 So vector `v = (1,2,3)`, and we are going to add it by value x. So we are going to apply that to all 3 coordinates on a 3D vector (X,Y,Z). `new_v = (1+x,2+x,3+x)`. So you are basically taking whatever value is x and applying it to each point on the vector with whatever arithmetic your are doing. 
 
+**Vector Negation**
+
+Negating a vector results in a vector in the reversed direction. 
 
