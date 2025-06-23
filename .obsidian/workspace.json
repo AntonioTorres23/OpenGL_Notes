@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Overview on Transformations - Coordinate Systems.md",
+                "file": "OpenGL Camera Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Overview on Transformations - Coordinate Systems"
+              "title": "OpenGL Camera Notes"
             }
           }
         ],
@@ -223,26 +223,26 @@
   },
   "active": "c54ffef8c25e3a61",
   "lastOpenFiles": [
+    "Blending.md",
+    "Cubemaps.md",
+    "Explanation of Arrow Pointer in C++.md",
+    "Face Culling.md",
+    "Lighting Notes.md",
+    "Overview on Transformations - Coordinate Systems.md",
     "Pasted image 20250623142902.png",
     "OpenGL Camera Notes.md",
     "Explanation On The This Pointer.md",
-    "Explanation of Arrow Pointer in C++.md",
-    "Blending.md",
-    "Cubemaps.md",
     "Framebuffers.md",
-    "Face Culling.md",
     "Depth Testing.md",
     "VBO, VAO, and VAO.md",
     "Storing Data Types In a Vector.md",
     "Stencil Testing.md",
-    "Overview on Transformations - Coordinate Systems.md",
     "Mesh Loading OpenGL Notes.md",
     "Model Loading OpenGL Notes.md",
     "Pasted image 20250613170545.png",
     "Pasted image 20250613165619.png",
     "Pasted image 20250613165052.png",
     "Pasted image 20250613164534.png",
-    "Lighting Notes.md",
     "Pasted image 20250613161313.png",
     "Pasted image 20250613102653.png",
     "wy.md",
@@ -253,7 +253,6 @@
     "Pasted image 20250611142819.png",
     "Pasted image 20250609112403.png",
     "Pasted image 20250609105823.png",
-    "Pasted image 20250609105749.png",
     "Welcome.md"
   ]
 }

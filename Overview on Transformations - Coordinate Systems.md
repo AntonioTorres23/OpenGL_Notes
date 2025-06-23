@@ -9,4 +9,4 @@ Below there are 3 vectors where each vector is in 2D (X,Y) as arrows on a graph.
 
 ![[Pasted image 20250623142902.png]]
 
-When describing vectors people generally prefer to describe vectors as characters with a line over them. But since I have issues with that using a regular text editor like obsidian I am just going to describe them using a basic character like this for example: v = (X,Y,Z).  
+When describing vectors people generally prefer to describe vectors as characters with a line over them. But since I have issues with that using a regular text editor like obsidian I am just going to describe them using a basic character like this for example: v = (X,Y,Z).  I know this all sounds kind of simple since we've been working ahead of this for a while now with using models and lighting and all that, however, just think of them as a `glm::vec3`  variable in terms of actual application to something like a  
