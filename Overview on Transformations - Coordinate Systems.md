@@ -7,7 +7,7 @@ Vectors are simply directions and nothing more. A vector has a direction and a m
 
 Below there are 3 vectors where each vector is in 2D (X,Y) as arrows on a graph. Because it is more intuitive to display vectors in 2D rather than 3D you can think of the vectors as 3D but with a z coordinate of 0. Since vector represent directions, the origin of the vector does not change its value. In the graph below we can see that the vectors v and w are equal even though their origin is different. 
 
-This graph is kind of confusing since its describing the vectors within as translations in terms of how many it is moving over from its original dot point to move to a new position. Not in regards to its actual position on grid. 
+This graph is kind of confusing since its describing the vectors within as translations in terms of how many it is moving over from its original dot point to move to a new position. Not in regards to its actual position on grid.  So since v's original position on the grid is (0,0) and the vector says (3,2), the point is moved 3 times on the x axis 
 
 ![[Pasted image 20250623142902.png]]
 
