@@ -54,4 +54,4 @@ int main() {
 
 
 
-So within this function we have a class called Test. Within Test we have 3 variables called `tyme`, `greeting`, and `flt`.  Then, we have a constructor that requires us to pass 3 arguments in order to create a Test object. Within those arguments we also named them the same as the 3 variables we declared previously. So within this class we have two 
+So within this function we have a class called Test. Within Test we have 3 variables called `tyme`, `greeting`, and `flt`.  Then, we have a constructor that requires us to pass 3 arguments in order to create a Test object. Within those arguments we also named them the same as the 3 variables we declared previously. So within this class we have two names that are the same, we have an actual member object variable, and we have a constructor variable. 
