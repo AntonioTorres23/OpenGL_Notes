@@ -35,6 +35,11 @@ So basically if you have 2 vectors `v = (x,y,z)` and `x = (x, y, z)`. You just d
 
 Same applies to subtraction but instead of adding you just subtract. 
 
+Addition of 2 Vectors: 
+
+![[Pasted image 20250623155717.png]]
+
+Subtraction of 2 Vectors:
 
 
 
