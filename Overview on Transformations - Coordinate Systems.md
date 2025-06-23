@@ -52,4 +52,10 @@ To retrieve the length/magnitude of a vector we use the Pythagoras theorem. A ve
 
 ![[Pasted image 20250623160550.png]]\
 
-So our vector 
+So the length of the two sides (x and y) are known and we want to know the length of the titled side v, we can calculate it using the Pythagoras Theorem.
+
+||v|| = $\sqrt{x^2 + y^2}$
+
+In this case the length of vector (4,2) equals.
+
+||v|| = $\sqrt{4^2 + 2^2}$ =  $\sqrt{20}$ = 4.47
