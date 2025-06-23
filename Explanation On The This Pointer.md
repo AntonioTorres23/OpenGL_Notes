@@ -6,7 +6,50 @@ The this pointer is a unique pointer that points to a non-static member function
 Take this source code for example.
 
 ```
+#include <iostream>
+#include <string>
+#include <vector>
 
+class Test
+{
+    public:
+        int tyme; 
+        std::string greeting;
+        float flt;
+        Test(int tyme, std::string greeting, float flt)
+        {
+            this->tyme = tyme;
+            this->greeting = greeting;
+            this->flt = flt;
+        };
+        
+        void get_global_var_variables()
+        {
+            std::cout << tyme << std::endl;
+            std::cout << greeting << std::endl;
+            std::cout << flt << std::endl;
+        }
+};
+
+std::vector<Test> test_vector
+{
+    
+};
+
+int main() {
+    // Write C++ code here
+    Test A(1, "hello", 1.5);
+    test_vector.push_back(A);
+    std::cout << test_vector[0].tyme << std::endl;
+    std::cout << test_vector[0].greeting << std::endl;
+    std::cout << test_vector[0].flt << std::endl;
+    std::cout << "Vector Size: " << test_vector.size() << std::endl;
+    std::cout << "Global Variables Current Values: " << std::endl;
+    A.get_global_var_variables();
+    
+    
+    return 0;
+}
 ```
 
 
