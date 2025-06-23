@@ -58,4 +58,4 @@ So within this function we have a class called Test. Within Test we have 3 varia
 
 If you run this without specifying the this pointer you end up not getting the values that you specified within the constructor. You just get weird output or even no output at all. 
 
-Now incorporate the this pointer, within the this pointer, we are specifying that we want the value that is within the constructor argument. 
+Now incorporate the this pointer, within the this pointer, we are specifying that we want the value that is within the constructor argument. Because remember the `->` means we are grabbing the value of a member that is within a pointer object. So within this function we are grabbing the constructor argument via a this pointer and then assigning it to the actual member variable within the object itself. Meaning that whatever value that was specified within the constructor argument is now within the 
