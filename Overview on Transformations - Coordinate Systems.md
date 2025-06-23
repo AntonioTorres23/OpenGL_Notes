@@ -27,5 +27,11 @@ Negating a vector results in a vector in the reversed direction.
 
 So `-v = -(1,1,2)`
 
+**Addition and Subtraction**
+
+Addition of two vectors is defined as a component-wise addition, that is each component of one vector is added to the same component of the other vector. 
+
+So basically if you have 2 vectors `v = (x,y,z)` and `x = (x, y, z)`. You just do 
+
 
 
