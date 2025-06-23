@@ -31,7 +31,7 @@ So `-v = -(1,1,2)`
 
 Addition of two vectors is defined as a component-wise addition, that is each component of one vector is added to the same component of the other vector. 
 
-So basically if you have 2 vectors `v = (x,y,z)` and `x = (x, y, z)`. You just do 
+So basically if you have 2 vectors `v = (x,y,z)` and `x = (x, y, z)`. You just do `(x+x), (y+y), (z+z)` and the sum of those points on that vector 
 
 
 
