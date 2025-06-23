@@ -70,4 +70,4 @@ We call this normalizing a vector. Unit vectors are displayed with a little roof
 
 **Vector-vector Multiplication**
 
-Multiplying two vectors is a bit of a weird case. Normal multiplication isn't really defined on vectors since it has no visual meaning. but we have two specific cases that we could choose from
+Multiplying two vectors is a bit of a weird case. Normal multiplication isn't really defined on vectors since it has no visual meaning. but we have two specific cases that we could choose from when multiplying: one is the dot product denoted as v ⋅ k
