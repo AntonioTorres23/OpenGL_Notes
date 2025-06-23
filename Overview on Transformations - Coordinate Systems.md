@@ -83,4 +83,5 @@ Where the angle between them is represented as a theta (θ). Why is this interes
 
 v ⋅ k= 1 ⋅ 1⋅ cosθ = cosθ
 
-Now the dot product only defines the angle between both vectors. You may remember that the cosine or cos function becomes 0 when the angle is 90 degrees or 1 when the angle is 0. This 
+Now the dot product only defines the angle between both vectors. You may remember that the cosine or cos function becomes 0 when the angle is 90 degrees or 1 when the angle is 0. This allows us to easily test if the two vectors are orthogonal or parallel to each other using the dot product (orthogonal means the vectors are at a right-angle to each other). 
+
