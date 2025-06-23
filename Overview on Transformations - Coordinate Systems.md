@@ -67,3 +67,7 @@ There is another type of vector called a unit vector. A unit vector has one extr
 n = v/||v|| 
 
 We call this normalizing a vector. Unit vectors are displayed with a little roof over their head and are generally easier to work with, especially when we only care about directions (the direction does not change if we change a vector's length). 
+
+**Vector-vector Multiplication**
+
+Multiplying two vectors is a bit of a weird case. Normal multiplication isn't really defined on vectors since it has no visual meaning. but we have two specific cases that we could choose from
