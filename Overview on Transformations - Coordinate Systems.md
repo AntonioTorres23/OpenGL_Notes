@@ -97,4 +97,4 @@ The cross product is only defined in 3D space and takes two non-parallel vectors
 
 ![[Pasted image 20250623165806.png]]
 
-Unlike the other operations the cross 
+Unlike the other operations the cross product isn't really intuitive without delving into linear algebra so it's best to just memorize the formula and you'll be fine. Below you'll see the cross product 
