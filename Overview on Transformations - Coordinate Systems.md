@@ -59,3 +59,7 @@ So the length of the two sides (x and y) are known and we want to know the lengt
 In this case the length of vector (4,2) equals.
 
 ||v|| = $\sqrt{4^2 + 2^2}$ =  $\sqrt{20}$ = 4.47
+
+Which means the length of vector v is equal to 4.47.
+
+There is another type of vector called a unit vector. A unit vector has one extra property and that is that its length is exactly 1. 
