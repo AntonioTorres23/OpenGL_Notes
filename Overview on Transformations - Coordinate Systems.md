@@ -62,4 +62,8 @@ In this case the length of vector (4,2) equals.
 
 Which means the length of vector v is equal to 4.47.
 
-There is another type of vector called a unit vector. A unit vector has one extra property and that is that its length is exactly 1. 
+There is another type of vector called a unit vector. A unit vector has one extra property and that is that its length is exactly 1. We can calculate a unit vector n from any vector by dividing each of the vectors components by its length. 
+
+n = v/||v|| 
+
+We call this normalizing a vector. Unit vectors are displayed with a little roof over their head and are generally easier to work with, especially when we only care about directions (the direction does not change if we change a vector's length). 
