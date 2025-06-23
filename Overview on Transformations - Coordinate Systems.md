@@ -79,4 +79,8 @@ The dot product of two vectors is equal to the scalar product of their lengths t
 
 v ⋅k =||v||⋅||k||⋅cosθ
 
-Where the angle between them is represented as a theta (θ). Why is this interesting? Well, imagine if v and k are unit vectors then their length would be equal to 1. 
+Where the angle between them is represented as a theta (θ). Why is this interesting? Well, imagine if v and k are unit vectors then their length would be equal to 1. This would effectively reduce the formula to.
+
+v ⋅ k= 1 ⋅ 1⋅ cosθ = cosθ
+
+Now the dot product only defines the angle b
