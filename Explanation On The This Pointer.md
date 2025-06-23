@@ -63,3 +63,5 @@ Now incorporate the this pointer, within the this pointer, we are specifying tha
 Now I also stored it within a vector called `test_vector` since a lot of our code within LearnOpenGL has that but within that we can index and grab the member within that specific object. And when we send it to default output, we get the same values that we entered in initially with the constructor. 
 
 I also made a function called `get_actual_values()` which just grabs the actual members of the class and sends them to default output. Run that function and  you get the same exact output as with the ones that where grabbed previously. 
+
+This applies to our LearnOpenGL code since the `model.h` file includes a class called `Model` in which you have actual members defined like the code previously that are the same name as the constructors. So, within the constructor you have to use the this pointer to differentiate between the constructor arguments and the actual members within the class. This is so you can assign the values within the constructor arguments to the actual members within the class.
