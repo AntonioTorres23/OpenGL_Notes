@@ -101,4 +101,4 @@ Unlike the other operations the cross product isn't really intuitive without del
 
 ![[Pasted image 20250623170034.png]]
 
-So I always think of it as you first start with 
+So I always think of it as you first start with the diagonal product on the left hand vector first, then for the next product that you subtract with the first you flip it. So with Ay and Bz the product you would subtract from would be By - Az
