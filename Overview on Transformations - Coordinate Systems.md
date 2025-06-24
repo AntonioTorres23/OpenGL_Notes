@@ -158,7 +158,18 @@ The same rules apply for matrix subtraction.
 
 $$
 \begin{bmatrix}  
-1 & 2 \\  
-3 & 4 \\  
-\end{bmatrix}  
+4 & 2 \\  
+1 & 6 \\  
+\end{bmatrix}
+
+-
+
+\begin{bmatrix}  
+2 & 4 \\  
+0 & 1 \\  
+\end{bmatrix}
+
+=
+
+
 $$
