@@ -205,6 +205,10 @@ $$
 =
 
 \begin{bmatrix}
-
+2 & 4 \\
+6 & 8 \\
 \end{bmatrix}
 $$
+
+
+Now it also makes sense as to why those single numbers are called scalars. A scalar basically scales all the elements of the matrix by its value. In the previous example, all elements were scaled by 
