@@ -21,14 +21,14 @@ Because a cubemap contains 6 textures, one for each face, we have to call `glTex
 
 Since we have 6 faces OpenGL gives us 6 special texture targets for targeting a face of the cubemap.
 
-|Texture target|Orientation|
-|---|---|
-|`GL_TEXTURE_CUBE_MAP_POSITIVE_X`|Right|
-|`GL_TEXTURE_CUBE_MAP_NEGATIVE_X`|Left|
-|`GL_TEXTURE_CUBE_MAP_POSITIVE_Y`|Top|
-|`GL_TEXTURE_CUBE_MAP_NEGATIVE_Y`|Bottom|
-|`GL_TEXTURE_CUBE_MAP_POSITIVE_Z`|Back|
-|`GL_TEXTURE_CUBE_MAP_NEGATIVE_Z`|Front|
+| Texture target                   | Orientation |
+| -------------------------------- | ----------- |
+| `GL_TEXTURE_CUBE_MAP_POSITIVE_X` | Right       |
+| `GL_TEXTURE_CUBE_MAP_NEGATIVE_X` | Left        |
+| `GL_TEXTURE_CUBE_MAP_POSITIVE_Y` | Top         |
+| `GL_TEXTURE_CUBE_MAP_NEGATIVE_Y` | Bottom      |
+| `GL_TEXTURE_CUBE_MAP_POSITIVE_Z` | Back        |
+| `GL_TEXTURE_CUBE_MAP_NEGATIVE_Z` | Front       |
 
 Like many of OpenGL's `enums`, their behind-the-scenes int value is linearly incremented, so if we were to have an array or vector of texture locations we could loop over them by starting with `GL_TEXTURE_CUBE_MAP_POSITVE_X` and incrementing the `enum` by 1 each iteration, effectively looping through all the texture targets.
 
