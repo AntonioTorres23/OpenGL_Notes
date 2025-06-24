@@ -261,4 +261,4 @@ So position (1,1) of the left-hand matrix you would multiply by the position (1,
 
 So we go by first row and first column where we go by first row on the left-hand side matrix and first column on the right-hand side matrix. 
 
-So after your first row is done you 
+So after your first row is done, you use the first row still and then use the second column. So the left-hand matrix will be 
