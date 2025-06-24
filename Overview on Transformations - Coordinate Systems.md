@@ -255,4 +255,4 @@ So here's what I think is going on personally in my own thoughts. On the left ha
 
 ![[Pasted image 20250624155946.png]]
 
-See how our first 
+See how our first row on the left-hand matrix matches with the 1st column on the right hand matrix. As well as the second row of the left-hand matrix matches with the 2nd column right hand side of the 
