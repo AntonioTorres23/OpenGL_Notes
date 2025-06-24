@@ -251,4 +251,4 @@ $$
 \end{bmatrix}
 $$
 
-So here's what I think is going on personally in my own thoughts. On the left hand si
+So here's what I think is going on personally in my own thoughts. On the left hand side you take the row and multiply it with the same element position. So far example the 
