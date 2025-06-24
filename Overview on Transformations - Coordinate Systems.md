@@ -255,7 +255,7 @@ So here's what I think is going on personally in my own thoughts. On the left ha
 
 ![[Pasted image 20250624155946.png]]
 
-See how our 1st row on the left-hand matrix matches with the 1st column on the right hand matrix. As well as the 2nd row of the left-hand matrix matches with the 2nd column right hand matrix. 
+See how our 1st row on the left-hand matrix matches with the 1st column on the right-hand matrix. As well as the 2nd row of the left-hand matrix matches with the 2nd column right-hand matrix. 
 
 So position (1,1) of the left-hand matrix you would multiply by the position (1,1) of the right-hand matrix. But we also add the product of the element within the position of (1,2) on the left-hand matrix and the element within the position (2,1) on the right-hand matrix. This gives us our new value for the position (1,1) when we do matrix multiplication for the left hand matrix and right-hand matrix. Remember the element's position goes by row and then column where row is **i** and column is **j** (i , j). 
 
@@ -265,5 +265,5 @@ After your first row is done, you use the first row still and then use the secon
 
 Now we move onto the 2nd row on the left-hand matrix but the 1st column on the right-hand matrix. So element in position (2,1) on the left-hand matrix will be multiplied with element in position (1,1) in the right-hand matrix. This will be added with the product of the element in the position of (2,2) on the left-hand matrix and the element in the position of (2,1) on the right-hand matrix. This gives us our new value for the element within position (2,1). 
 
-Lastly we are still using the second row on the left-hand matrix but now we are using the 2nd column within our right-hand matrix. So we take the product of the element in position (2,1) within the left-hand matrix and the element in position (1,2) in the right-hand matrix. Then we add this by the product of the element in position (2,2) in the left-hand matrix and the element in position (2,2) within the right-hand matrix. This gives us our final values for the position (2,2) in our new matrix. 
+Lastly we are still using the second row on the left-hand matrix but now we are using the 2nd column within our right-hand matrix. So we take the product of the element in position (2,1) within the left-hand matrix and the element in position (1,2) in the right-hand matrix. Then we add this by the product of the element in position (2,2) in the left-hand matrix and the element in position (2,2) within the right-hand matrix. This gives us our final value for the position (2,2) in our new matrix. 
 
