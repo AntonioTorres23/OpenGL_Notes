@@ -105,4 +105,4 @@ So I always think of it as you first start with the diagonal product on the left
 
 **Matrices**
 
-Now that we've discussed 
+A matrix is a rectangular array of numbers, symbols/or mathematical expressions. Each individual item in a matri
