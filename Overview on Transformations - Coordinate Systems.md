@@ -267,5 +267,5 @@ Now we move onto the 2nd row on the left-hand matrix but the 1st column on the r
 
 Lastly we are still using the second row on the left-hand matrix but now we are using the 2nd column within our right-hand matrix. So we take the product of the element in position (2,1) within the left-hand matrix and the element in position (1,2) in the right-hand matrix. Then we add this by the product of the element in position (2,2) in the left-hand matrix and the element in position (2,2) within the right-hand matrix. This gives us our final value for the position (2,2) in our new matrix. 
 
-Just remember left-hand matrix uses rows and right-hand matrix uses 
+Just remember left-hand matrix uses rows and right-hand matrix uses columns. Rows go left to right and columns go up to down. As well as remember when you are calculating the new matrix element value within a matrix position 
 
