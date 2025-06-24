@@ -251,4 +251,4 @@ $$
 \end{bmatrix}
 $$
 
-So here's what I think is going on personally in my own thoughts. On the left hand side you take the row and multiply it with the same element position. So far example the 1st element of 1. You multiply that with the right hand matrix's 1st position element which is 5. Then we need to add that with the second element in the first row of the left-hand matrix which is 2 and the 
+So here's what I think is going on personally in my own thoughts. On the left hand side you take the row and multiply it with the same element position. So far example the 1st element of 1. You multiply that with the right hand matrix's 1st position element which is 5. Then we add this with another product. This is the 2nd element within the row on the left-hand which is 2 and 
