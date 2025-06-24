@@ -247,6 +247,8 @@ $$
 
 \begin{bmatrix}
 19 & 22 \\
-43 & 
+43 & 50 \\
 \end{bmatrix}
 $$
+
+So here's what I think is going on personally in my own thoughts. On the left hand si
