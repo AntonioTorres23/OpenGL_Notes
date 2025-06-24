@@ -154,4 +154,11 @@ $$
 
 $$
 
-The same rules apply for matrix 
+The same rules apply for matrix subtraction.
+
+$$
+\begin{bmatrix}  
+1 & 2 \\  
+3 & 4 \\  
+\end{bmatrix}  
+$$
