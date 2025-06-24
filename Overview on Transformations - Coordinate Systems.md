@@ -186,4 +186,16 @@ $$
 
 **Matrix-scalar Products**
 
-A matrix-scalar product multiples each element of the matrix by a scalar. The following example illustrates the multiplication., 
+A matrix-scalar product multiples each element of the matrix by a scalar. The following example illustrates the multiplication. 
+
+$$
+
+2
+
+times
+\begin{bmatrix}  
+4 & 2 \\  
+1 & 6 \\  
+\end{bmatrix}
+
+$$
