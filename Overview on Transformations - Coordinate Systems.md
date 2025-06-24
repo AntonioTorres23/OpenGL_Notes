@@ -204,5 +204,7 @@ $$
 
 =
 
+\begin{bmatrix}
 
+\end{bmatrix}
 $$
