@@ -241,11 +241,12 @@ $$
 \begin{bmatrix}  
 1 ⋅ 5 + 2 ⋅ 7 & 1 ⋅ 6 + 2 ⋅ 8 \\  
 3 ⋅ 5 + 4 ⋅ 7 & 3 ⋅ 6 + 4 ⋅ 8 \\  
+\end{bmatrix}
 
 =
 
-
+\begin{bmatrix}
+19 & 22 \\
 
 \end{bmatrix}
-
 $$
