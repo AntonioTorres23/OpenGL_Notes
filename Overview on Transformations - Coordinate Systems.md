@@ -212,3 +212,31 @@ $$
 
 
 Now it also makes sense as to why those single numbers are called scalars. A scalar basically scales all the elements of the matrix by its value. In the previous example, all elements were scaled by an integer of 2. 
+
+**Matrix-matrix Multiplication**
+
+Multiplying matrices is not necessarily complex, but rather difficult to get comfortable with. Matrix multiplication basically means to follow a set of pre-defined rules when multiplying. There are a few restrictions though.
+
+1. You can only multiply two matrices if the number of columns on the left-hand side matrix is equal to the number of rows on the right-hand side matrix. 
+2. Matrix multiplication is not **commutative** which means A ⋅ B ≠ B ⋅ A. 
+
+We will show the matrix multiplication of 2 2x2 matrices. 
+$$
+\begin{bmatrix}  
+1 & 2 \\  
+3 & 4 \\  
+
+
+\end{bmatrix}
+
+⋅
+
+\begin{bmatrix}  
+5 & 6 \\  
+7 & 8 \\  
+\end{bmatrix}
+
+=
+
+
+$$
