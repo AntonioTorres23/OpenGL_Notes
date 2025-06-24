@@ -105,3 +105,4 @@ So I always think of it as you first start with the diagonal product on the left
 
 **Matrices**
 
+Now that we've discussed 
