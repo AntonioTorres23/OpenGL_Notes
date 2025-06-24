@@ -122,4 +122,4 @@ Matrices are basically nothing more than that, just rectangular arrays of mathem
 
 **Addition and Subtraction**
 
-Matrix addition and subtraction between two matrices is done on a per-element basis. So the same general rules apply that we're familiar with for normal numbers, but done on the elements of both matrices with the same index (or position within the matrix). This does mean that addition and subtraction is only defined for matrices of the same dimensions. A 3x2 matrix and a 2x3 (or a 3x3 matrix and a 4x4 matrix) 
+Matrix addition and subtraction between two matrices is done on a per-element basis. So the same general rules apply that we're familiar with for normal numbers, but done on the elements of both matrices with the same index (or position within the matrix). This does mean that addition and subtraction is only defined for matrices of the same dimensions. A 3x2 matrix and a 2x3 (or a 3x3 matrix and a 4x4 matrix). So you can only add and subtract from matrix
