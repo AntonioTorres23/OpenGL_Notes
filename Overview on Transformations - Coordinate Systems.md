@@ -184,3 +184,5 @@ $$
 $$
 
 
+**Matrix-scalar Products**
+
