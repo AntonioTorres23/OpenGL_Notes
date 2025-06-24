@@ -114,4 +114,4 @@ $$
 \end{pmatrix}  
 $$
 
-Matrices are index by 
+Matrices are index by (i, j) where i is the row and j is the column, 
