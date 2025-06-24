@@ -257,4 +257,4 @@ So here's what I think is going on personally in my own thoughts. On the left ha
 
 See how our 1st row on the left-hand matrix matches with the 1st column on the right hand matrix. As well as the 2nd row of the left-hand matrix matches with the 2nd column right hand matrix. 
 
-So position (1,1) of the left-hand matrix you would multiply by the position (1,1) of the right-hand matrix. But we also add the product of the element within the position of (1,2) 
+So position (1,1) of the left-hand matrix you would multiply by the position (1,1) of the right-hand matrix. But we also add the product of the element within the position of (1,2) on the left-hand matrix and 
