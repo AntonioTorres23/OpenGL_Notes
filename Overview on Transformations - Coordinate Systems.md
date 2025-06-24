@@ -108,10 +108,10 @@ So I always think of it as you first start with the diagonal product on the left
 A matrix is a rectangular array of numbers, symbols/or mathematical expressions. Each individual item in a matrix is called an element of the matrix. An example of a 2x3 matrix is shown below. 
 
 $$  
-\begin{pmatrix}  
+\begin{bmatrix}  
 1 & 2 & 3 \\  
 4 & 5 & 6 \\  
-\end{pmatrix}  
+\end{bmatrix}  
 $$
 
 Matrices are index by (i, j) where i is the row and j is the column, 
