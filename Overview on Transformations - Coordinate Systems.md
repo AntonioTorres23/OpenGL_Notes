@@ -116,4 +116,6 @@ $$
 
 Matrices are index by (i, j) where i is the row and j is the column, this is why the above matrix is called a 2x3 matrix (2 rows and 3 columns) (remember columns are vertical and columns are horizontal). These are also called the dimensions of the matrix. 
 
-This is the opposite of what you're used to when indexing 2D graphs as (x, y). To retrieve the value 4 we would index it as (2,1) (second row, first column).
+This is the opposite of what you're used to when indexing 2D graphs as (x, y). To retrieve the value 4 we would index it as (2,1) (second row, first column). 
+
+Matrices are basically nothing more than that, just rectangular arrays
