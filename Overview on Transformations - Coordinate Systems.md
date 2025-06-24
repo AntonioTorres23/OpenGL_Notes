@@ -260,3 +260,5 @@ See how our 1st row on the left-hand matrix matches with the 1st column on the r
 So position (1,1) of the left-hand matrix you would multiply by the position (1,1) of the right-hand matrix. But we also add the product of the element within the position of (1,2) on the left-hand matrix and the element within the position (2,1) on the right-hand matrix.  Remember the element's position goes by row and then column where row is **i** and column is **j** (i , j). 
 
 So we go by first row and first column where we go by first row on the left-hand side matrix and first column on the right-hand side matrix. 
+
+So after your first row is done you 
