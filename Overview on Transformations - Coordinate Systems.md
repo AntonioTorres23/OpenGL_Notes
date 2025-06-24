@@ -255,4 +255,6 @@ So here's what I think is going on personally in my own thoughts. On the left ha
 
 ![[Pasted image 20250624155946.png]]
 
-See how our first row on the left-hand matrix matches with the 1st column on the right hand matrix. As well as the second row of the left-hand matrix matches with the 2nd column right hand side of the 
+See how our 1st row on the left-hand matrix matches with the 1st column on the right hand matrix. As well as the 2nd row of the left-hand matrix matches with the 2nd column right hand matrix. 
+
+So position (1,1) of the left-hand matrix you would multiply 
