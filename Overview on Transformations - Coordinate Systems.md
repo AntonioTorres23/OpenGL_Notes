@@ -247,6 +247,6 @@ $$
 
 \begin{bmatrix}
 19 & 22 \\
-
+43 & 
 \end{bmatrix}
 $$
