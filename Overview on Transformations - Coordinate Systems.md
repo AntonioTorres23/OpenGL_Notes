@@ -251,4 +251,4 @@ $$
 \end{bmatrix}
 $$
 
-So here's what I think is going on personally in my own thoughts. On the left hand side you take the row and multiply it with the same element position. So far example the 1st element of 1. You multiply that with the right hand matrix's 1st position element which is 5. Then we add this with another product. This is the 2nd element within the row on the left-hand which is 2 and the 3rd element in the first column which is 7. So that creates 1 ⋅ 5 + 2 ⋅ 7 = 19. This concept applies t
+So here's what I think is going on personally in my own thoughts. On the left hand side you take the row and multiply it with the same element position. So far example the 1st element of 1. You multiply that with the right hand matrix's 1st position element which is 5. Then we add this with another product. This is the 2nd element within the row on the left-hand which is 2 and the 3rd element in the first column which is 7. So that creates 1 ⋅ 5 + 2 ⋅ 7 = 19. This concept applies to the other elements within the matrices. There is a combination of multiplication 
