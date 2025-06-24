@@ -114,4 +114,4 @@ $$
 \end{bmatrix}  
 $$
 
-Matrices are index by (i, j) where i is the row and j is the column, this is why the above matrix is called a 2x3 matrix (3 columns and 2 rows) (remember columns are vertical and columns are horizontal). 
+Matrices are index by (i, j) where i is the row and j is the column, this is why the above matrix is called a 2x3 matrix (2 rows and 3 columns) (remember columns are vertical and columns are horizontal). These are also called the dimensions of  
