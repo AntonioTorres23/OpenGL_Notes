@@ -191,11 +191,18 @@ A matrix-scalar product multiples each element of the matrix by a scalar. The fo
 $$
 
 2
-
-times
+⋅
 \begin{bmatrix}  
-4 & 2 \\  
-1 & 6 \\  
+1 & 2 \\  
+3 & 4 \\  
 \end{bmatrix}
+=
+\begin{bmatrix}  
+1⋅2 & 2⋅2 \\  
+3⋅2 & 4⋅2 \\  
+\end{bmatrix}
+
+=
+
 
 $$
