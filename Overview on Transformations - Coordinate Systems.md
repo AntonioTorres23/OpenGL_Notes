@@ -171,5 +171,16 @@ $$
 
 =
 
+\begin{bmatrix}  
+4-2 & 2-4 \\  
+1-0 & 6-1 \\  
+\end{bmatrix}
 
+=
+\begin{bmatrix}  
+2 & -2 \\  
+1 & 5 \\  
+\end{bmatrix}
 $$
+
+
