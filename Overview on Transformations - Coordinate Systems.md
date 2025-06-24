@@ -124,4 +124,34 @@ Matrices are basically nothing more than that, just rectangular arrays of mathem
 
 Matrix addition and subtraction between two matrices is done on a per-element basis. So the same general rules apply that we're familiar with for normal numbers, but done on the elements of both matrices with the same index (or position within the matrix). This does mean that addition and subtraction is only defined for matrices of the same dimensions. A 3x2 matrix and a 2x3 (or a 3x3 matrix and a 4x4 matrix). So you can only add and subtract from matrices that have the same numbers of rows and columns. 
 
-For our examples of addition and subtraction lets 
+For our examples of addition and subtraction lets use 2x2 matrices for our example. 
+
+$$  
+\begin{bmatrix}  
+1 & 2 \\  
+3 & 4 \\  
+\end{bmatrix}  
+
++
+
+\begin{bmatrix}  
+5 & 6 \\  
+7 & 8 \\  
+\end{bmatrix}
+
+=
+
+\begin{bmatrix}  
+1+5 & 2+6 \\  
+3+7 & 4+8 \\  
+\end{bmatrix}  
+
+=
+\begin{bmatrix}  
+6 & 8 \\  
+10 & 12 \\  
+\end{bmatrix}
+
+$$
+
+The same rules apply for matrix 
