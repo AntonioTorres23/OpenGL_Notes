@@ -105,4 +105,11 @@ So I always think of it as you first start with the diagonal product on the left
 
 **Matrices**
 
-A matrix is a rectangular array of numbers, symbols/or mathematical expressions. Each individual item in a matri
+A matrix is a rectangular array of numbers, symbols/or mathematical expressions. Each individual item in a matrix is called an element of the matrix. An example of a 2x3 matrix is shown below. 
+
+$$  
+\begin{pmatrix}  
+1 & 2 & 3 \\  
+4 & 5 & 6 \\  
+\end{pmatrix}  
+$$
