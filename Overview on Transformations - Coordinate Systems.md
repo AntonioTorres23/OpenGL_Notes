@@ -105,7 +105,7 @@ So I always think of it as you first start with the diagonal product on the left
 
 **Matrices**
 
-A matrix is a rectangular array of numbers, symbols/or mathematical expressions. Each individual item in a matrix is called an element of the matrix. An example of a 2x3 matrix is shown below. 
+A matrix is a rectangular array of numbers, symbols/or mathematical expressions. Each individual item in a matrix is called an **element** of the matrix. An example of a 2x3 matrix is shown below. 
 
 $$  
 \begin{bmatrix}  
@@ -114,8 +114,12 @@ $$
 \end{bmatrix}  
 $$
 
-Matrices are index by (i, j) where i is the row and j is the column, this is why the above matrix is called a 2x3 matrix (2 rows and 3 columns) (remember columns are vertical and columns are horizontal). These are also called the dimensions of the matrix. 
+Matrices are index by (i, j) where **i** is the **row** and **j** is the **column**, this is why the above matrix is called a 2x3 matrix (2 rows and 3 columns) (remember columns are vertical and columns are horizontal). These are also called the dimensions of the matrix. 
 
 This is the opposite of what you're used to when indexing 2D graphs as (x, y). To retrieve the value 4 we would index it as (2,1) (second row, first column). 
 
-Matrices are basically nothing more than that, just rectangular arrays
+Matrices are basically nothing more than that, just rectangular arrays of mathematical expressions. They do have a very nice set of mathematical properties and just like vectors we can define several operations on matrices, namely addition, subtraction, and multiplication. 
+
+**Addition and Subtraction**
+
+Matrix addition and subtraction between two matrices is done on a per-element basis. So the same general rules apply that we're familiar with for normal numbers, but done on the elements of both matrices 
