@@ -282,4 +282,4 @@ As you can see, matrix multiplication is often confusing and is why its often do
 
 **Matrix-Vector Multiplication**
 
-Up until now we've used vectors quite often. We use them to represent positions, colors, and even texture coordinates. Let's move a bit further down the rabbit hole and tell you that a vector is basically a Nx1 matrix where **N** is the vector's number of components (also known as an **N-dimensional** vector). If you think about it, it makes a lot of sense. Vectors are just like matrices an array of numbers, but with only 1 column. So, how does this new piece of information help us? 
+Up until now we've used vectors quite often. We use them to represent positions, colors, and even texture coordinates. Let's move a bit further down the rabbit hole and tell you that a vector is basically a Nx1 matrix where **N** is the vector's number of components (also known as an **N-dimensional** vector). If you think about it, it makes a lot of sense. Vectors are just like matrices an array of numbers, but with only 1 column. So, how does this new piece of information help us? Well, if we have a `MxN` matrix we can multiply this matrix with our 
