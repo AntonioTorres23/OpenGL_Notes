@@ -271,3 +271,8 @@ Just remember left-hand matrix uses rows and right-hand matrix uses columns. Row
 
 However I overall think its best to calculate in the order from (1,1), (1,2), (2,1), (2,2) to make it less confusing overall. At least for me a lot of the times I was doing it from up and down rather than left to right which made me more confused. 
 
+See how we need to have two matrices that have the same amount of rows and columns. 
+
+
+
+![[Pasted image 20250625100410.png]]
