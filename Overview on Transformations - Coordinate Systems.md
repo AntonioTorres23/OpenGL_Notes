@@ -280,3 +280,6 @@ Here is a more complex matrix multiplication with 2 3x3 matrices.
 
 As you can see, matrix multiplication is often confusing and is why its often done by computer. 
 
+**Matrix-Vector Multiplication**
+
+Up until now we've used vectors quite often. We use them to represent positions, colors, and even texture coordinates
