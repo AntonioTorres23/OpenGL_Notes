@@ -298,4 +298,7 @@ Here is an image example:
 
 ![[Pasted image 20250625134232.png]]
 
-The vector is completely untouched. This becomes obvious from the rules of multiplication: the first result element is each individual element of the first row of the matrix multiplied with each element of the vector. Since each row of the elements 
+The vector is completely untouched. This becomes obvious from the rules of multiplication: the first result element is each individual element of the first row of the matrix multiplied with each element of the vector. Since each row of the elements are 0 except for the first one, we get: 
+$$
+(1) ⋅ 1 + (0) ⋅ 2 + (0) ⋅ 3 + (0) ⋅ 4 = 1
+$$
