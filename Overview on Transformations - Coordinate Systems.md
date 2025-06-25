@@ -284,4 +284,10 @@ As you can see, matrix multiplication is often confusing and is why its often do
 
 Up until now we've used vectors quite often. We use them to represent positions, colors, and even texture coordinates. Let's move a bit further down the rabbit hole and tell you that a vector is basically a Nx1 matrix where **N** is the vector's number of components (also known as an **N-dimensional** vector). If you think about it, it makes a lot of sense. Vectors are just like matrices an array of numbers, but with only 1 column. So, how does this new piece of information help us? Well, if we have a `MxN` matrix we can multiply this matrix with our `Nx1` vector, since the columns of the matrix are equal to the number of rows of the vector, thus matrix multiplication is defined. 
 
-But why do we care if we can multiply matrices with a vector? Well, it just so happens that there are lots of interesting 2D/3D transformations we can place inside a matrix
+But why do we care if we can multiply matrices with a vector? Well, it just so happens that there are lots of interesting 2D/3D transformations we can place inside a matrix, and multiplying that matrix with a vector then transforms that vector. In case you're confused, let's start with a few examples and you'll soon see what we mean. 
+
+**Identity Matrix**
+
+In OpenGL we usually work with 4x4 transformation matrices for several reasons and one of them is that most vectors are of size 4. The most simple transformation matrix we can think of is the identity matrix. The identity matrix is an `NxN` matrix with only 0s except on its diagonal. As you'll see, this transformation matrix leaves a vector completely unharmed. 
+
+My theory on this is that each row represents the 4 points on a vector that being row 1 is x, row 2 is y, row 3 is z, and row 4 is w or your transformation component which is often normalized to the number of 1. It's basically a hidden point on a vector that all of them have and 
