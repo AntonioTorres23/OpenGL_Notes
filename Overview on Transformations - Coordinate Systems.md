@@ -292,3 +292,5 @@ In OpenGL we usually work with 4x4 transformation matrices for several reasons a
 
 My theory on this is that each row represents the 4 points on a vector that being row 1 is x, row 2 is y, row 3 is z, and row 4 is w or your transformation component which is often normalized to the number of 1. It's basically a hidden point on every vector that processes things like scaling or translations.
 
+As well as it goes left to right like what we see within your average vector format so 
+
