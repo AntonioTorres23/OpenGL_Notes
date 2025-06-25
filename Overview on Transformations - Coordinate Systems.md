@@ -278,3 +278,5 @@ Here is a more complex matrix multiplication with 2 3x3 matrices.
 ![[Pasted image 20250625100410.png]]
 
 
+As you can see, matrix multiplication is often confusing and is why its often done by computer. 
+
