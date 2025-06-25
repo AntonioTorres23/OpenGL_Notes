@@ -314,4 +314,4 @@ Let's try scaling the vector v = (3,2). We will scale the vector along the x-axi
 
 ![[Pasted image 20250625165013.png]]
 
-Keep
+Keep in mind that OpenGL usually operates in 3D space so far this 2D case we could set the z-axis scale to 1, leaving it unaffected. The scaling operation we just preformed is a non-uniform scale, because the scaling factor is not the same 
