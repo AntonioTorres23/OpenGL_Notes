@@ -298,4 +298,4 @@ Here is an image example:
 
 ![[Pasted image 20250625134232.png]]
 
-The vector is completely untouched. This becomes obvious from the rules of multiplication: the first result element is each individual element of the first row of the matrix multiplied with each 
+The vector is completely untouched. This becomes obvious from the rules of multiplication: the first result element is each individual element of the first row of the matrix multiplied with each element 
