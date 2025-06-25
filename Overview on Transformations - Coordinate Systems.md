@@ -273,6 +273,8 @@ However I overall think its best to calculate in the order from (1,1), (1,2), (2
 
 See how we need to have two matrices that have the same amount of rows and columns. 
 
-
+Here is a more complex matrix multiplication with 2 3x3 matrices. 
 
 ![[Pasted image 20250625100410.png]]
+
+
