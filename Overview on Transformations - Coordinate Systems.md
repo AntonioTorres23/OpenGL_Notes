@@ -294,6 +294,11 @@ My theory on this is that each row represents the 4 points on a vector that bein
 
 As well as it goes left to right like what we see within your average vector format so row one position (1,1) is x so all other elements within this row are now 0 since we can't have two or more x values within one vector. This repeats on each row reflecting the position of a traditional vector like instead of position (1,1) for x. You do position (2,2) for y, then position (3,3) for z, lastly position (4,4) for w. Like a traditional 4 value vector, (x , y, z, w) you go left to right with each column reflecting the vector value position. 
 
+Here is an image example:
+
+![[Pasted image 20250625134232.png]]
+
+
 
 
 
