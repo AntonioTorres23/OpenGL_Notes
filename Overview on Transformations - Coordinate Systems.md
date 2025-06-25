@@ -304,4 +304,4 @@ $$
 $$
 and the same applies for the other 3 elements of the 4 value vector. 
 
-You may be wondering what the use is of a transformation matrix that does not transform? The identity matrix is usually a starting point for generating 
+You may be wondering what the use is of a transformation matrix that does not transform? The identity matrix is usually a starting point for generating other transformation matrices and if we dig even deeper into linear algebra, a very useful matrix for proving theorems and solving linear equations. 
