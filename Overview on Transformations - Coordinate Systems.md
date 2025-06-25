@@ -282,4 +282,4 @@ As you can see, matrix multiplication is often confusing and is why its often do
 
 **Matrix-Vector Multiplication**
 
-Up until now we've used vectors quite often. We use them to represent positions, colors, and even texture coordinates
+Up until now we've used vectors quite often. We use them to represent positions, colors, and even texture coordinates. Let's move a bit further down the rabbit hole and tell you that a vector is basically a Nx1 matrix where **N** is the vector's number of components (also known as )
