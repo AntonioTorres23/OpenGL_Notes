@@ -314,4 +314,10 @@ Let's try scaling the vector v = (3,2). We will scale the vector along the x-axi
 
 ![[Pasted image 20250625165013.png]]
 
-Keep in mind that OpenGL usually operates in 3D space so far this 2D case we could set the z-axis scale to 1, leaving it unaffected. The scaling operation we just preformed is a non-uniform scale, because the scaling factor is not the same 
+Keep in mind that OpenGL usually operates in 3D space so far this 2D case we could set the z-axis scale to 1, leaving it unaffected. The scaling operation we just preformed is a **non-uniform scale**, because the scaling factor is not the same for each axis. Meaning that you have different scaling values on all the (x, y, z, w) positions. If the scalar would be equal on all axes it would be called a **uniform scale**. Meaning you would gave all the same scaling value applied to the (x, y, z, w) vector positions. 
+
+Let's start building a transformation matrix that does the scaling for us. We saw from the identity matrix that each of the diagonal element were multiplied with the corresponding vector element. What if we were to change the 1s in the identity matrix to 3s? In that case, we would be multiplying each of the vector elements by a value of 3 and thus preforming a uniform scale. If we represent the scaling variables as (S1, S2, S3) we can define a scaling matrix on any vector (x, y, z) as
+
+![[Pasted image 20250625165950.png]]
+
+Note that we keep the 4th scaling value 1. The w component is used for other things such as keeping the magnitude or length of a vector as one. 
