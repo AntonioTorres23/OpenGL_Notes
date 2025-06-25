@@ -310,4 +310,8 @@ You may be wondering what the use is of a transformation matrix that does not tr
 
 When we're scaling a vector we are increasing the length of the arrow by the amount we'd like to scale, keeping its direction the same. Since we're working in either 2 or 3 dimensions we can define scaling by a vector of 2 or 3 scaling variables, each scaling one axis (x, y, or z). 
 
-Let's try scaling the vector v = (3,2). We will scale the vector along the x-axis by 0.5, thus making it twice as narrow; we'll scale the vector by 2 along the y-axis, making it twice as high. Let's see what it looks like if we scale the vector 
+Let's try scaling the vector v = (3,2). We will scale the vector along the x-axis by 0.5, thus making it twice as narrow; we'll scale the vector by 2 along the y-axis, making it twice as high. Let's see what it looks like if we scale the vector by (0.5, 2) as vector s. 
+
+![[Pasted image 20250625165013.png]]
+
+Keep
