@@ -302,3 +302,6 @@ The vector is completely untouched. This becomes obvious from the rules of multi
 $$
 (1) ⋅ 1 + (0) ⋅ 2 + (0) ⋅ 3 + (0) ⋅ 4 = 1
 $$
+and the same applies for the other 3 elements of the 4 value vector. 
+
+You may be wondering what the use is of a transformation matrix that does not transform? The identity matrix is usually a starting point for generating 
