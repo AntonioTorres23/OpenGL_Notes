@@ -269,3 +269,5 @@ Lastly we are still using the second row on the left-hand matrix but now we are 
 
 Just remember left-hand matrix uses rows and right-hand matrix uses columns. Rows go left to right and columns go up to down. As well as remember when you are calculating the new matrix element value within a matrix position like (1,1) for example. You need to take the sum of two products. The first product being the row and the second one being the column. It makes more sense when you look at it visually so don't forget to look at that color-coded example above. 
 
+However I overall think its best to calculate in the order from (1,1), (1,2), (2,1), (2,2) to make it less confusing overall. At least for me a lot of the times I was doing it from up and down rather than left to right which made me more confused. 
+
