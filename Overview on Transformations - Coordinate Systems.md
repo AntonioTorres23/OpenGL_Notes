@@ -288,7 +288,7 @@ But why do we care if we can multiply matrices with a vector? Well, it just so h
 
 **Identity Matrix**
 
-In OpenGL we usually work with 4x4 transformation matrices for several reasons and one of them is that most vectors are of size 4. The most simple transformation matrix we can think of is the identity matrix. The identity matrix is an `NxN` matrix with only 0s except on its diagonal. As you'll see, this transformation matrix leaves a vector completely unharmed. 
+In OpenGL we usually work with 4x4 transformation matrices for several reasons and one of them is that most vectors are of size 4. The most simple transformation matrix we can think of is the **identity matrix**. The identity matrix is an `NxN` matrix with only 0s except on its diagonal. As you'll see, this transformation matrix leaves a vector completely unharmed. 
 
 My theory on this is that each row represents the 4 points on a vector that being row 1 is x, row 2 is y, row 3 is z, and row 4 is w or your transformation component which is often normalized to the number of 1. It's basically a hidden point on every vector that processes things like scaling or translations.
 
