@@ -458,3 +458,15 @@ This is just to get a more in depth understanding of what is going on under the 
 **Rotation**
 
 The last few transformations were relatively easy to understand and visualize in 2D or 3D space, but rotations are a bit more difficult. 
+
+First let's define what a rotation of a vector actually is. A rotation in 2D or 3D is represented with an angle. An angle could be in degrees or radians where a whole circle has 360 degrees or 2 $\pi$ radians. I prefer explaining rotations using degrees as we're generally more accustomed to them. 
+
+Most rotation functions require an angle in radians, but luckily degrees are easily converted into radians. 
+
+angle in degrees = angle in radians * (180 / $\pi$)
+
+angle in radians = angle in degrees * ($\pi$ / 180)
+
+Where $\pi$ equals (rounded) 3.14159265359.
+
+Rotating half a circle rotates us 360/2 = 180 degrees and rotating 1/5th to the right means we rotate 360/5 = 72 degrees to the right 
