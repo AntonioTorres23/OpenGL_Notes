@@ -546,4 +546,14 @@ We first define a 4 value vector called `vec` using `GLM`'s built-in vector clas
 
 The next step is to create a transformation matrix passing our identity matrix to the `glm::translate` function, together with a translation vector (the given matrix is then multiplied with a translation matrix and the resulting matrix is returned). 
 
-Then we multiply our vector by the transformation matrix and output 
+Then we multiply our vector by the transformation matrix and output the result. If we still remember how matrix translation works then the resulting vector should be ((1) + 1, (0) + 1, 0 + 0) which is (2, 1, 0). This snippet of code outputs 210 so the translation did its job. 
+
+Let's do something more interesting and scale and rotate an object. 
+```
+
+glm::mat4 trans = glm::mat4(1.0f);
+trans = glm::rotate(trans, glm::radians(90.0f), glm::vec3(0.0, 0.0, 1.0));
+trans = glm::scale(trans, glm::vec3(0.5, 0.5, 0.5));
+```
+
+First we scale the container by 0.5 on each axis and then rotate the container 90 degrees around the Z-axis. GLM expects its angles in radians so we convert the degrees to radians using the function `glm::radians`
