@@ -487,5 +487,9 @@ Rotation around the Y-axis:
 
 ![[Pasted image 20250626133520.png]]
 
+Rotation around the Z-axis:
 
+![[Pasted image 20250626133723.png]]
+
+Using the rotation matrices we can transform our position vectors around on the three unit axes. To rotate around an arbitrary unit axis e.g.
 
