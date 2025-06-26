@@ -544,4 +544,6 @@ std::cout << vec.x << vec.y << vec.z << std::endl;
 
 We first define a 4 value vector called `vec` using `GLM`'s built-in vector class. Next we define a 4x4 matrix using `GLM`'s `mat4` class and explicitly initialize it to the identity matrix by initializing the matrix's diagonals (the 1st element position (1,1), 2nd element position (2,2), 3rd element position (3,3), and 4th position element (4,4)) to 1.0; if we do not initialize it to the identity matrix by the matrix would be a null matrix (all elements 0) and all subsequent matrix operations would end up as a null matrix as well.  
 
-The next step is to create a transformation matrix passing our identity matrix to the `glm::translate` function, together with a translation vector (the given matrix is then multiplied with a translation matrix and the resulting matrix is returned)
+The next step is to create a transformation matrix passing our identity matrix to the `glm::translate` function, together with a translation vector (the given matrix is then multiplied with a translation matrix and the resulting matrix is returned). 
+
+Then we multiply our vecctor by 
