@@ -431,6 +431,23 @@ $$
 0 \cdot 1 + 0 \cdot 2 + 0 \cdot 3 + 1 \cdot 1 \\
 \end{bmatrix}
 =
+\begin{bmatrix}
+1 + 0 + 0 + 2 \\
+0 + 2 + 0 + 1 \\ 
+0 + 0 + 3 + 3 \\
+0 + 0 + 0 + 1 \\
+\end{bmatrix}
+
+= 
+\begin{pmatrix}
+3 \\
+3 \\ 
+6 \\ 
+1
+\end{pmatrix}
+= 
+
+(3,3,6,1)
 
 $$
 
