@@ -469,4 +469,12 @@ angle in radians = angle in degrees * ($\pi$ / 180)
 
 Where $\pi$ equals (rounded) 3.14159265359.
 
-Rotating half a circle rotates us 360/2 = 180 degrees and rotating 1/5th to the right means we rotate 360/5 = 72 degrees to the right 
+Rotating half a circle rotates us 360/2 = 180 degrees and rotating 1/5th to the right means we rotate 360/5 = 72 degrees to the right. This is demonstrated for a basic 2D vector where v is rotated 72 degrees to the right, or clockwise from k.
+
+![[Pasted image 20250626131737.png]]
+
+Rotations in 3D are specified with an angle and a rotation axis. The angle specified will rotate the object along the rotation axis given. Try to visualize this by spinning your head a certain degrees continually looking down a single rotation axis. When rotating 2D vectors in a 3D world for example. We set the rotation axis to the z axis. 
+
+Using trigonometry it is possible to transform vectors to newly rotated vectors given an angle. This is usually done via a smart combination of the sine and cosine functions (commonly abbreviated to sin and cos). 
+
+A rotation matrix is defined for each 
