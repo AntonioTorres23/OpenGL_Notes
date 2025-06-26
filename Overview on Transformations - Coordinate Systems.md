@@ -361,7 +361,11 @@ Also use this color coded diagram for reference:
 
 This works because all of the translation values are multiplied by the vector's w column and added to the vector's original values (remember the matrix-multiplication rules). This wouldn't have been possible with a 3x3 matrix. 
 
-I think in regards to the matrix multiplication we are multiplying remember we go from left
+I think in regards to the matrix multiplication we are multiplying remember the identity matrix. In which we multiply each row going from 1st element within the matrix and the 1st element within the vector but instead the vector is in a column. So for the x coordinate within the translation it would be: 
+
+$$
+(1) ⋅ x + (0) ⋅ y + (0) ⋅ z + \\
+$$
 
 I knew my hypothesis was right for the sky box when we get the 3x3 matrix of the camera view and put that into a 4x4 because we are eliminating the existing 4th column values with something like 0 which prevents the skybox from moving with the camera view so it always looks far away. 
 
