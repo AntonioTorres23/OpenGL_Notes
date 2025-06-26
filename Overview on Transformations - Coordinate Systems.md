@@ -481,5 +481,9 @@ A rotation matrix is defined for each unit in 3D space where the angle is repres
 
 Rotation around the X-axis:
 
+![[Pasted image 20250626133247.png]]
+
+Rotation around the Y-axis:
+
 
 
