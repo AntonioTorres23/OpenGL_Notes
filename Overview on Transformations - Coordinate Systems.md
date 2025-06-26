@@ -549,6 +549,7 @@ The next step is to create a transformation matrix passing our identity matrix t
 Then we multiply our vector by the transformation matrix and output the result. If we still remember how matrix translation works then the resulting vector should be ((1) + 1, (0) + 1, 0 + 0) which is (2, 1, 0). This snippet of code outputs 210 so the translation did its job. 
 
 Let's do something more interesting and scale and rotate an object. 
+
 ```
 
 glm::mat4 trans = glm::mat4(1.0f);
