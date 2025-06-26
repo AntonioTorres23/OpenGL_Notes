@@ -321,3 +321,6 @@ Let's start building a transformation matrix that does the scaling for us. We sa
 ![[Pasted image 20250625165950.png]]
 
 Note that we keep the 4th scaling value 1. The w component is used for other things such as keeping the magnitude or length of a vector as one. 
+
+**Translation**
+
