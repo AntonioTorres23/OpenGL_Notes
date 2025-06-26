@@ -542,4 +542,4 @@ vec = trans * vec;
 std::cout << vec.x << vec.y << vec.z << std::endl;
 ```
 
-We first define a 4 value vector called `vec` using `GLM`'s built-in vector class. Next we define a 4x4 matrix using `GLM`'s `mat4` class and explicitly initialize it to the identity matrix by initializing the matrix's diagonals (the 1st element position (1,1), 2nd element position (2,2), 3rd element position (3,3), and 4th position element (4,4)) to 1.0; if we do not initialize it to the identity matrix 
+We first define a 4 value vector called `vec` using `GLM`'s built-in vector class. Next we define a 4x4 matrix using `GLM`'s `mat4` class and explicitly initialize it to the identity matrix by initializing the matrix's diagonals (the 1st element position (1,1), 2nd element position (2,2), 3rd element position (3,3), and 4th position element (4,4)) to 1.0; if we do not initialize it to the identity matrix by the matrix would be a null matrix () 
