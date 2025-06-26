@@ -428,6 +428,9 @@ $$
 1 \cdot 1 + 0 \cdot 2 + 0 \cdot 3 + 2 \cdot 1\\
 0 \cdot 1 + 1 \cdot 2 + 0 \cdot 3 + 1 \cdot 1 \\
 0 \cdot 1 + 0 \cdot 2 + 1 \cdot 3 + 3 \cdot 1 \\
+0 \cdot 1 + 0 \cdot 2 + 0 \cdot 3 + 1 \cdot 1 \\
 \end{bmatrix}
+=
+
 $$
 
