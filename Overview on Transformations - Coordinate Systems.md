@@ -361,14 +361,40 @@ Also use this color coded diagram for reference:
 
 This works because all of the translation values are multiplied by the vector's w column and added to the vector's original values (remember the matrix-multiplication rules). This wouldn't have been possible with a 3x3 matrix. 
 
-I think in regards to the matrix multiplication we are multiplying remember the identity matrix. In which we multiply each row going from 1st element within the matrix and the 1st element within the vector but instead the vector is in a column. So for the x coordinate within the translation it would be: 
+I think in regards to the matrix multiplication think of the identity matrix. In which we multiply each row going from 1st element within the matrix and the 1st element within the vector but instead the vector is in a column. So for the x coordinate within the translation it would be: 
 
 $$
-(1) ⋅ x + (0) ⋅ y + (0) ⋅ z + \\
+(1) ⋅ x + (0) ⋅ y + (0) ⋅ z + (Tx) ⋅ 1 = x + 0 + 0 + Tx \\
+$$
+As you can see, 0 times whatever the value of y or z is just 0 so in theory to prevent further confusion you can just leave them out. Which is why the equations above just have `x + Tx` or `y + Ty`, or `z + Tz`
+
+So here is what all those equations would look like for each row of the matrix multiplied with the columns of the vector for the equations/diagrams above.
+
+Translated X Value: 
+$$
+(1) ⋅ x + (0) ⋅ y + (0) ⋅ z + (Tx) ⋅ 1 = x + 0 + 0 + Tx \\
 $$
 
-I knew my hypothesis was right for the sky box when we get the 3x3 matrix of the camera view and put that into a 4x4 because we are eliminating the existing 4th column values with something like 0 which prevents the skybox from moving with the camera view so it always looks far away. 
+Translated Y Value:
+$$
+(0) ⋅ x + (1) ⋅ y + (0) ⋅ z + (Ty) ⋅ 1 = y + 0 + 0 + Ty \\
+$$
+
+Translated Z Value:
+$$
+(0) ⋅ x + (0) ⋅ y + (1) ⋅ z + (Tz) ⋅ 1 = 0 + 0 + z + Tz \\
+$$
+Translated W Value (Doesn't Change):
+$$
+(0) ⋅ x + (0) ⋅ y + (0) ⋅ z + (1) ⋅ 1 = 0 + 0 + 0 + 1 \\
+$$
+
+We use a 4x4 matrix to match the same number of columns as the vector since the rules of matrix multiplication means you need to have 
+
+I knew my hypothesis was right for the sky box when we get the 3x3 matrix of the camera view and put that into a 4x4 because we are eliminating the existing 4th column values with something like 0 which prevents the skybox from moving with the camera view so it always looks far away.
 
 **Homogenous Coordinates**
 
-The w component is also known as a homogenous coordinate. To get the 3D vector from a homogenous vector we divide the x, y, and z coordinate by its w coordinate
+The w component is also known as a homogenous coordinate. To get the 3D vector from a homogenous vector we divide the x, y, and z coordinate by its w coordinate. We usually do not notice this since the w component is 1.0 most of the time. Using homogenous coordinates has several advantages. It allows us to do matrix translations on 3D vectors (without the w component we can't translate vectors). 
+
+Also whenever the homogenous coordinate is equal to 0, the vector is specifically known as a direction vector since a vector with a w coordinate of 0 cannot be translated. 
