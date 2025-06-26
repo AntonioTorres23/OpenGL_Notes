@@ -389,7 +389,7 @@ $$
 (0) ⋅ x + (0) ⋅ y + (0) ⋅ z + (1) ⋅ 1 = 0 + 0 + 0 + 1 \\
 $$
 
-We use a 4x4 matrix to match the same number of columns as the vector since the rules of matrix multiplication means you need to have 
+
 
 I knew my hypothesis was right for the sky box when we get the 3x3 matrix of the camera view and put that into a 4x4 because we are eliminating the existing 4th column values with something like 0 which prevents the skybox from moving with the camera view so it always looks far away.
 
@@ -398,3 +398,36 @@ I knew my hypothesis was right for the sky box when we get the 3x3 matrix of the
 The w component is also known as a homogenous coordinate. To get the 3D vector from a homogenous vector we divide the x, y, and z coordinate by its w coordinate. We usually do not notice this since the w component is 1.0 most of the time. Using homogenous coordinates has several advantages. It allows us to do matrix translations on 3D vectors (without the w component we can't translate vectors). 
 
 Also whenever the homogenous coordinate is equal to 0, the vector is specifically known as a direction vector since a vector with a w coordinate of 0 cannot be translated. 
+
+With a translation matrix we can move objects in any of the 3 axis directions (x, y, z), making it a very useful transformation matrix for our transformation toolkit. 
+
+For additional practice lets do this with some actual values, lets say we have a vector with the coordinates `(1,2,3)` and we want to move the x coordinate by 2, the y coordinate by 1, and the z coordinate by 3. 
+
+Well we would simply add those values as our top 3 4th column elements within the matrix and do some matrix multiplication. Here is the equation down below. 
+
+
+$$
+\begin{bmatrix}
+1 & 0 & 0 & 2 \\
+0 & 1 & 0 & 1 \\
+0 & 0 & 1 & 3 \\
+0 & 0 & 0 & 1 \\
+\end{bmatrix}
+
+\cdot
+
+\begin{pmatrix}
+1 \\
+2 \\
+3 \\
+1
+\end{pmatrix}
+
+= 
+\begin{bmatrix}
+1 \cdot 1 + 0 \cdot 2 + 0 \cdot 3 + 2 \cdot 1\\
+0 \cdot 1 + 1 \cdot 2 + 0 \cdot 3 + 1 \cdot 1 \\
+0 \cdot 1 + 0 \cdot 2 + 
+\end{bmatrix}
+$$
+
