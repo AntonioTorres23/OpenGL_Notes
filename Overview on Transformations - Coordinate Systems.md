@@ -491,5 +491,15 @@ Rotation around the Z-axis:
 
 ![[Pasted image 20250626133723.png]]
 
-Using the rotation matrices we can transform our position vectors around on the three unit axes. To rotate around an arbitrary 3D axis we combine all 3 of them by rotating around the X-axis, then the Y-axis, and then the Z-axis for example. However, this quickly introduces a problem called **Gimbel Lock**. We won't discuss details but a better solution is to rotate around an arbitrary unit axis
+Using the rotation matrices we can transform our position vectors around on the three unit axes. To rotate around an arbitrary 3D axis we combine all 3 of them by rotating around the X-axis, then the Y-axis, and then the Z-axis for example. However, this quickly introduces a problem called **Gimbel Lock**. We won't discuss details but a better solution is to rotate around an arbitrary unit axis e.g. (0.662, 0.2, 0.722) (note that this is a unit vector) right away instead of combining the rotation matrices. Such a verbose matrix exists and is given below with (Rx, Ry, and Rz) as the arbitrary rotation axis.
+
+![[Pasted image 20250626134935.png]]
+
+Keep in mind that even this matrix does not completely prevent gimbal lock although it gets a lot harder. To truly prevent gimbal locks we have to represent rotations using quaternions, that are not only safer, but also more computationally friendly. 
+
+**Combining Matrices**
+
+The true power from using matrices for transformations is that we can combine multiple transformations in a single matrix thanks to matrix-matrix multiplication. Let's see if we can generate a transformation matrix that combines several transformations. Say we have a vector (x, y , z) and we want to scale it by 2 and then translate it by (1, 2, 3). We need a translation and a scaling matrix for our required steps. The resulting transformation matrix would then look like. 
+
+
 
