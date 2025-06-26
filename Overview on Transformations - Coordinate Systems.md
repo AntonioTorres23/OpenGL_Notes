@@ -485,5 +485,7 @@ Rotation around the X-axis:
 
 Rotation around the Y-axis:
 
+![[Pasted image 20250626133520.png]]
+
 
 
