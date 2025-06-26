@@ -532,3 +532,4 @@ Most of GLM's functionality that we need can be found in 3 header files that we'
 #include <glm/gtc/type_ptr.hpp>
 ```
 
+Let's see if we can put our transformation knowledge to good use by translating a vector of (1, 0, 0) by (1, 1, 0) (note that we defi)
