@@ -527,6 +527,8 @@ Copy the root directory of the header files into your includes folder and let's 
 Most of GLM's functionality that we need can be found in 3 header files that we'll include as follows:
 
 ```
-#include <glm/glm>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 ```
 
