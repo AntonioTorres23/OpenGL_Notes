@@ -454,3 +454,7 @@ $$
 So those translations would lead to the position being moved to the vector : (3,3,6) with one being your w coordinate that never changes. 
 
 This is just to get a more in depth understanding of what is going on under the hood of general graphics programming and how these concepts are eventually applied to OpenGL. 
+
+**Rotation**
+
+The last few transformations were relatively easy to understand and visualize in 2D or 3D space, but rotations are a bit more difficult. 
