@@ -532,4 +532,9 @@ Most of GLM's functionality that we need can be found in 3 header files that we'
 #include <glm/gtc/type_ptr.hpp>
 ```
 
-Let's see if we can put our transformation knowledge to good use by translating a vector of (1, 0, 0) by (1, 1, 0) (note that we defi)
+Let's see if we can put our transformation knowledge to good use by translating a vector of (1, 0, 0) by (1, 1, 0) (note that we define it as a `glm::vec4` with its homogeneous coordinate set to 1.0)
+
+```
+glm::vec4 vec(1.0f, 0.0f, 0.0f, 1.0f);
+glm::mat4 trans = glm::mat4(1.0f)
+```
