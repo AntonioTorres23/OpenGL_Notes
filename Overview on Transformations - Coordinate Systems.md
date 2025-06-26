@@ -561,3 +561,37 @@ First we scale the container by 0.5 on each axis and then rotate the container 9
 
 The big question is: how do we get the transformation matrix to the shaders? We shortly mentioned before that GLSL also has a `mat4` type. So we'll adapt the vertex shader to accept a `mat4` uniform variable and multiply the position vector by the matrix uniform.
 
+```
+#version 330 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec2 aTexCoord;
+
+out vec2 TexCoord;
+
+uniform mat4 transform;
+
+void main()
+{
+	gl_Position = transform * vec4(aPos, 1.0f); // This is where we multiply the                                                      transformation matrix by the                                                       actual position vertices that                                                      are where the object is.
+	TexCoord = vec2(aTexCord.x, aTexCoord.y);
+}
+```
+
+
+GLSL also has `mat2` (2x2 Matrices) and `mat3` (3x3 Matrices) types that allow for swizzling-like operations just like vectors. All the aforementioned math operations (like scalar-matrix multiplication, matrix-vector multiplication, and matrix-matrix multiplication) are allowed on matrix types. Wherever special matrix operations are used we'll explain what's happening. 
+
+
+We added the uniform and multiplied the position vector with the transformation matrix before passing it to `gl_Position`. Our container should now be twice as small and rotated 90 degrees (tilted on its left). We still need to pass the transformation matrix to the shader though. 
+
+```
+unsigned int transformLoc = glGetUniformLocation(ourShader.ID, "transform");
+glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+```
+
+We first query the location of the uniform variable and then send the matrix data to the shaders using `glUniform` with `Matrix4fv` as its postfix. The first argument should be familiar which is the uniforms location. The second argument tells OpenGL how many matrices we'd like to send which is 1. The third argument asks us if we want to transpose our matrix, that is to swap the columns and rows. OpenGL developers often use an internal matrix layout called column-major ordering which is the default matrix layout in GLM  so there is no need to transpose matrices; we can keep it at `GL_FALSE`. The last parameter is the actual matrix data, but GLM stores their matrices' data in a way that doesn't always match OpenGL's expectations so first convert the data with GLM's built in function `value_ptr`. 
+
+We created a transformation matrix, declared a uniform in the vertex shader and sent the matrix to the shaders where we transform our vertex coordinates. The result should look something like this.
+
+![[Pasted image 20250626170918.png]]
+
+
