@@ -541,3 +541,5 @@ trans = glm::translate(trans, glm::vec3(1.0f, 1.0f, 1.0f));
 vec = trans * vec;
 std::cout << vec.x << vec.y << vec.z << std::endl;
 ```
+
+We first define a 4 value vector called `vec` using `GLM`'s built-in vector class. Next we define a 4x4 matrix using `GLM`'s `mat4` class and explici
