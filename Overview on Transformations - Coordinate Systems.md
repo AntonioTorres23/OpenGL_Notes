@@ -501,5 +501,6 @@ Keep in mind that even this matrix does not completely prevent gimbal lock altho
 
 The true power from using matrices for transformations is that we can combine multiple transformations in a single matrix thanks to matrix-matrix multiplication. Let's see if we can generate a transformation matrix that combines several transformations. Say we have a vector (x, y , z) and we want to scale it by 2 and then translate it by (1, 2, 3). We need a translation and a scaling matrix for our required steps. The resulting transformation matrix would then look like. 
 
+![[Pasted image 20250626135604.png]]
 
 
