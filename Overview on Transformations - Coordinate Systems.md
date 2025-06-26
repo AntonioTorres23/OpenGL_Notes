@@ -546,4 +546,4 @@ We first define a 4 value vector called `vec` using `GLM`'s built-in vector clas
 
 The next step is to create a transformation matrix passing our identity matrix to the `glm::translate` function, together with a translation vector (the given matrix is then multiplied with a translation matrix and the resulting matrix is returned). 
 
-Then we multiply our vecctor by 
+Then we multiply our vector by the transformation matrix and output 
