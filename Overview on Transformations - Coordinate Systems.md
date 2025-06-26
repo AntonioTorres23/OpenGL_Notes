@@ -324,3 +324,38 @@ Note that we keep the 4th scaling value 1. The w component is used for other thi
 
 **Translation**
 
+**Translation** is the process of adding another vector on top of the original vector to return a new vector with a different position, thus, moving the vector based on a translation vector. We've already discussed vector addition so this shouldn't be new. 
+
+Just like the scaling matrix there are several locations on a 4x4 matrix that we can use to perform certain operations and for translation those are the top-3 values of the 4th column. If we represent the translation vector as (T1, T2, T3) we can define the translation matrix by.
+
+$$
+\begin{bmatrix}
+1 & 0 & 0 & Tx \\
+0 & 1 & 0 & Ty \\
+0 & 0 & 1 & Tz \\ 
+0 & 0 & 0 & 1 \\
+\end{bmatrix}
+
+⋅
+
+\begin{pmatrix}
+x\\
+y\\
+z\\
+1\\ 
+\end{pmatrix}
+
+=
+
+\begin{pmatrix}
+x + Tx \\
+y + Ty \\
+z + Tz \\
+1
+\end{pmatrix}
+$$
+
+Also use this color coded diagram for reference:
+
+![[Pasted image 20250626095811.png]]
+
