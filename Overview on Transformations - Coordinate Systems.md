@@ -477,4 +477,9 @@ Rotations in 3D are specified with an angle and a rotation axis. The angle speci
 
 Using trigonometry it is possible to transform vectors to newly rotated vectors given an angle. This is usually done via a smart combination of the sine and cosine functions (commonly abbreviated to sin and cos). 
 
-A rotation matrix is defined for each 
+A rotation matrix is defined for each unit in 3D space where the angle is represented as the theta symbol $\theta$. 
+
+Rotation around the X-axis:
+
+
+
