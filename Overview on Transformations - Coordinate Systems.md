@@ -504,4 +504,21 @@ The true power from using matrices for transformations is that we can combine mu
 ![[Pasted image 20250626135604.png]]
 
 
-Note that we first do a translation and then a scale transformation when multiplying matrices. Matrix multiplication is not commutative, which means their order is important. When multiplying matrices, the right-most matrix is first multiplied with the vector so you should read the multiplications from right to left. It is advised
+Note that we first do a translation and then a scale transformation when multiplying matrices. Matrix multiplication is not commutative, which means their order is important. When multiplying matrices, the right-most matrix is first multiplied with the vector so you should read the multiplications from right to left. It is advised to first do scaling operations, then rotations and lastly translation when combining matrices otherwise they may (negatively) affect each other. For example, if you would first do a translation and then scale, the translation vector would also scale. 
+
+Running the final transformation matrix on our vector results in the following vector.
+
+![[Pasted image 20250626141745.png]]
+
+Great, the vector is first scaled by two and then translated by (1,2,3). 
+
+**In Practice**
+
+Now that we've explained all the theory behind transformations, its time to see how we can actually use this to our advantage. OpenGL does not have any form of matrix or vector knowledge built in, so we have to define our own mathematics classes and functions. In this book we'd rather abstract from all these tiny mathematical details and simply use a pre-made mathematics libraries.
+
+Luckily, there is an easy-to-use and tailored-for-OpenGL mathematics library called GLM.
+
+**GLM**
+
+GLM stands for OpenGL Mathematics and is a header-only library, which means that we only have to include the proper header files and we're done; no linking and compiling necessary. 
+
