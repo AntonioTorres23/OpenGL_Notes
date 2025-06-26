@@ -520,5 +520,5 @@ Luckily, there is an easy-to-use and tailored-for-OpenGL mathematics library cal
 
 **GLM**
 
-GLM stands for OpenGL Mathematics and is a header-only library, which means that we only have to include the proper header files and we're done; no linking and compiling necessary. 
+GLM stands for OpenGL Mathematics and is a header-only library, which means that we only have to include the proper header files and we're done; no linking and compiling necessary. GLM can be found 
 
