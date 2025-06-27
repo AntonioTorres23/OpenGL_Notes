@@ -34,4 +34,12 @@ We'll discuss each coordinate system in more detail below.
 
 **Local Space**
 
-Local space is the coordinate space that is local to your object i.e. where your object begins in. Imagine that you've created your cube in a modeling software package (like Blender). The origin of your cube is probably at (0, 0, 0) even though your cube may end up at a different location in your final application. Probably all the models you have created all have (0, 0, 0) as their initial position. All the vertices of your model are therefore in local space: they are all local coordinates. 
+Local space is the coordinate space that is local to your object i.e. where your object begins in. Imagine that you've created your cube in a modeling software package (like Blender). The origin of your cube is probably at (0, 0, 0) even though your cube may end up at a different location in your final application. Probably all the models you have created all have (0, 0, 0) as their initial position. All the vertices of your model are therefore in local space: they are all local to your object.
+
+The vertices of the container we've been using were specified as coordinates between -0.5 and 0.5 with 0.0 as its origin. These are local coordinates. 
+
+**World Space**
+
+If we would import all our objects directly in the application they would probably all be somewhere positioned inside each other at the worlds origin (0, 0, 0) which is not what we want. We want to define a position for each object to position them inside a larger world. The coordinates in world space are exactly what they sound like: the coordinates of your object are transformed from local to world space; this is accomplished with the **model** matrix. 
+
+The model matrix is a transformation matrix that translates, scales and/or rotates your object to place it in the world at a location/orientation they belong to. Think of it as transforming a house by scaling it down (it was a bit too large in local space), translating it to a surburbia town and rotating it a bit to the left on the y-axis
