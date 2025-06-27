@@ -62,4 +62,4 @@ Note that if only a part of primitive e.g. a triangle is outside the clipping vo
 
 This "viewing box" a projection matrix creates is called a **frustum** and each coordinate that ends up inside this frustum will end up on the user's screen. The total process to convert coordinates within a specified range to NDC easily mapped to 2D view space coordinates is called **projection** since the projection matrix projects 3D coordinates to the easy to map to 2D normalized device coordinates. 
 
-Once all the vertices are transformed to clip space a final operation called **pers**
+Once all the vertices are transformed to clip space a final operation called **perspective division** is preformed where we divide the x, y, and z components of the position vector by the vector's homogeneous w component. Remember 
