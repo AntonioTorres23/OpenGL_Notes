@@ -34,4 +34,4 @@ We'll discuss each coordinate system in more detail below.
 
 **Local Space**
 
-Local space is the coordinate space that is local to your object i.e. where your object begins in. Imagine that you've created your cube in a modeling software package (like Blender). The origin of your cube is probably at (0, 0, 0) even though your cube may end up at a different location in your final application. Probably all the models you have created all have (0, 0, 0)
+Local space is the coordinate space that is local to your object i.e. where your object begins in. Imagine that you've created your cube in a modeling software package (like Blender). The origin of your cube is probably at (0, 0, 0) even though your cube may end up at a different location in your final application. Probably all the models you have created all have (0, 0, 0) as their initial position. All the vertices of your model are therefore in local space: they are all local coordinates. 
