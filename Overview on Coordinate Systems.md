@@ -52,4 +52,4 @@ The view space is what people usually refer to as the **camera** of OpenGL (it i
 
 **Clip Space**
 
-At the end of each vertex shader run, OpenGL 
+At the end of each vertex shader run, OpenGL expects the coordinates to be within a specific range and any coordinate that falls outside this ranged is clipped 
