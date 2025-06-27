@@ -1,3 +1,3 @@
 
 
-We learned how we can use matrices to our advantage by transforming all vertices with transformation matrices. 
+We learned how we can use matrices to our advantage by transforming all vertices with transformation matrices. OpenGL expects all vertices, that we want to become visible, to be in normalized device coordinates after each vertex shader run. That is, the x, y, and z coordinates of each vertex should be between the values of -1.0 and 1.0; coordinates outside this range will not be visible. What we usually do, is specify the coordinates in a range (or space) we determine ourselves and in the vertex shader transform these coordinates to be **normalized device coordinates (NDC)**. 
