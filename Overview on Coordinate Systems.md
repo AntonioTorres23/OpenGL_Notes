@@ -103,6 +103,10 @@ out
 =
 
 \begin{pmatrix}
-
+x/w\\
+y/w\\
+z/w\\
 \end{pmatrix}
 $$
+
+Each component of the vertex coordinate is divided by its w 
