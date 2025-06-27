@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Overview on.md",
+                "file": "Overview on Coordinate Systems.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Overview on"
+              "title": "Overview on Coordinate Systems"
             }
           }
         ],
@@ -238,7 +238,7 @@
   "active": "ef028ada522861f5",
   "lastOpenFiles": [
     "Overview on Transformations.md",
-    "Overview on.md",
+    "Overview on Coordinate Systems.md",
     "Pasted image 20250626170918.png",
     "Pasted image 20250626141745.png",
     "Pasted image 20250626135604.png",
