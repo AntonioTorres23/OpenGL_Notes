@@ -27,3 +27,5 @@ To transform the coordinates from one space to the next coordinate space we'll u
 3. Next we transform the world coordinates to view-space coordinates in such a way that each coordinate is as seen from the camera or from the camera or viewer's point of view. 
 4. After the coordinates are in view space we we want to project them to clip coordinates. Clip coordinates are processed to the -1.0 and 1.0 range and determine which vertices will end up on the screen. Projection to clip-space coordinates can add perspective if using perspective projection. 
 5. And lastly we transform the clip coordinates in a process we call **viewport transform** that transforms the coordinates from -1.0 and 1.0 to the coordinate range defined by `glViewport`. The resulting coordinates are then sent to the rasterizer to turn them into fragments. 
+
+You probably got a slight idea what each individual space is used for. The reason we're transforming our vertices into all these different spaces is that some operations make more sense or are easier to use 
