@@ -48,4 +48,4 @@ So model matrix takes all your raw vertices of your object and transforms it so 
 
 **View Space**
 
-The view space is what people usually refer to as the **camera** of OpenGL (it is sometimes also known as **camera space** or **eye space**). The view space is the result of transforming your world-space coordinates to coordinates that are in front of the user's view. The view space is thus the space seen from the camera's point of view. This is usually acccomplished with a combination of translations and rotations to translate/rotate the scene so that certain items
+The view space is what people usually refer to as the **camera** of OpenGL (it is sometimes also known as **camera space** or **eye space**). The view space is the result of transforming your world-space coordinates to coordinates that are in front of the user's view. The view space is thus the space seen from the camera's point of view. This is usually accomplished with a combination of translations and rotations to translate/rotate the scene so that certain items are transformed to the front of the camera. 
