@@ -77,3 +77,5 @@ An orthographic projection matrix defines a cube-like frustum box that defines t
 
 ![[Pasted image 20250627155134.png]]
 
+
+The frustum defines the visible coordinates and is specified by a width, a height, a **near**, and a **far** 
