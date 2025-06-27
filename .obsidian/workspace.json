@@ -76,9 +76,23 @@
               "icon": "lucide-file",
               "title": "Overview on Transformations"
             }
+          },
+          {
+            "id": "ef028ada522861f5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Overview on.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Overview on"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -221,8 +235,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c54ffef8c25e3a61",
+  "active": "ef028ada522861f5",
   "lastOpenFiles": [
+    "Overview on Transformations.md",
+    "Overview on.md",
     "Pasted image 20250626170918.png",
     "Pasted image 20250626141745.png",
     "Pasted image 20250626135604.png",
@@ -233,11 +249,9 @@
     "Pasted image 20250626131737.png",
     "Pasted image 20250626095811.png",
     "Pasted image 20250625165950.png",
-    "Pasted image 20250625165013.png",
     "Blending.md",
     "Depth Testing.md",
     "Cubemaps.md",
-    "Overview on Transformations.md",
     "OpenGL Camera Notes.md",
     "Explanation of Arrow Pointer in C++.md",
     "Face Culling.md",
