@@ -16,4 +16,11 @@ You're probably quite confused by now by what a space or coordinate system actua
 
 **The Global Picture**
 
-To transform the coordinates from one space to the next coordinate space we'll use several transformation matrices of which the most important are the **model**, **view**, and **projection** matrix (see why learning this is important). Our vertex coordinates first 
+To transform the coordinates from one space to the next coordinate space we'll use several transformation matrices of which the most important are the **model**, **view**, and **projection** matrix (see why learning this is important). Our vertex coordinates first start in **local space** as **local coordinates** and are then further processed to **world coordinates**, **view coordinates**, **clip coordinates**, and eventually end up as **screen coordinates**. The following image displays the process and shows what each transformation does.
+
+
+![[Pasted image 20250627104040.png]]
+
+
+1. Local coordinates are the coordinates of your object relative to its local origin; they're the coordinates your object begin in. 
+2. 
