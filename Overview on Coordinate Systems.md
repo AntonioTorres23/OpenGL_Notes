@@ -54,4 +54,6 @@ The view space is what people usually refer to as the **camera** of OpenGL (it i
 
 At the end of each vertex shader run, OpenGL expects the coordinates to be within a specific range and any coordinate that falls outside this ranged is clipped. Coordinates that are clipped and discarded, so the remaining coordinates will end up as fragments visible on your screen. This is also where **clip space** gets its name from. 
 
-Because specifying all the visible coordinates to be within -1.0 and 1.0 isn't really intuitive, we specify our own coordinate set to work in and convert 
+Because specifying all the visible coordinates to be within -1.0 and 1.0 isn't really intuitive, we specify our own coordinate set to work in and convert those back to NDC as OpenGL expects them.
+
+To transform vertex coordinates from view to clip space we define a so called **projection matrix** that specifies a range of coordinates e.g. -1000 and 1000 in each dimension. The projection matrix then converts coordinates within this specified range to normalized device coordinates (-1.0, 1.0)
