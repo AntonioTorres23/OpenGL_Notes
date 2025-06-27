@@ -44,4 +44,8 @@ If we would import all our objects directly in the application they would probab
 
 The model matrix is a transformation matrix that translates, scales and/or rotates your object to place it in the world at a location/orientation they belong to. Think of it as transforming a house by scaling it down (it was a bit too large in local space), translating it to a suburbia town and rotating it a bit to the left on the y-axis so it fits neatly with the neighboring houses. You could think of the matrix in the previous chapter to position the container all over the scene as a sort of model matrix as well; we transformed the local coordinates of the container to some different place on the scene/world.
 
-So model matrix takes all your raw vertices of your object and allow you to place it 
+So model matrix takes all your raw vertices of your object and transforms it so that you can do translations, scaling, or rotations in world space. 
+
+**View Space**
+
+The view space is what people usually refer to as the **camera** of OpenGL (it is sometimes also known as **camera space** or **eye space**). The view space is the result of transforming your world-space coordinates to coordinates that are in front of the user's view. 
