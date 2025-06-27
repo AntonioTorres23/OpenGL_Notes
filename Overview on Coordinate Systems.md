@@ -84,4 +84,6 @@ To create an orthographic projection matrix we make use of GLM's built-in functi
 
 `glm::ortho(0.0f, 800.0f, 0.0f, 600.0f, 0.1f, 100.0f);`
 
-The first two parameters specify the left and right coordinate of the frustum and the third and fourth parameter specify the bottom and top part of the frustum. With those 4 points we've defined the size of the near and far plane. 
+The first two parameters specify the left and right coordinate of the frustum and the third and fourth parameter specify the bottom and top part of the frustum. With those 4 points we've defined the size of the near and far plane. This specific projection matrix transforms all coordinates between these x, y, and z range values to normalized device coordinates. 
+
+An orthographic projection matrix directly maps coordinates to the 2D plane that 
