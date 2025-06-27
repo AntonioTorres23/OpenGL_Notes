@@ -60,4 +60,4 @@ To transform vertex coordinates from view to clip space we define a so called **
 
 Note that if only a part of primitive e.g. a triangle is outside the clipping volume OpenGL will reconstruct the triangle as one or more triangles to fit inside the clipping range. 
 
-This viewing box a projection matrix creates 
+This "viewing box" a projection matrix creates is called a **frustum** and each coordinate that ends up inside this frustum will end up on the user's screen. The total process to convert coordinates within a specified range to NDC 
