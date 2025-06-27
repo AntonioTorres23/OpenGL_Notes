@@ -109,4 +109,6 @@ z/w\\
 \end{pmatrix}
 $$
 
-Each component of the vertex coordinate is divided by its w component giving smaller vertex coordinates the further away a vertex is from the viewer. This is another reason why the w component is important, since it helps us with perspective projection. The resulting coordinates are then in normalized device space. If you're interested to figure out how the orthographic and perspective projection matrices are actually calculated use 
+Each component of the vertex coordinate is divided by its w component giving smaller vertex coordinates the further away a vertex is from the viewer. This is another reason why the w component is important, since it helps us with perspective projection. The resulting coordinates are then in normalized device space. If you're interested to figure out how the orthographic and perspective projection matrices are actually calculated use [this excellent article](http://www.songho.ca/opengl/gl_projectionmatrix.html) by Songho.
+
+Remember this is what we do with the skybox where we take the z coordinate and assign it the value of the w coordinate as well so whenever it does perspective division it is always a value of 1. So it will forever be away from us. 
