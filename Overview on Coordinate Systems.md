@@ -22,5 +22,6 @@ To transform the coordinates from one space to the next coordinate space we'll u
 ![[Pasted image 20250627104040.png]]
 
 
-1. Local coordinates are the coordinates of your object relative to its local origin; they're the coordinates your object begin in. 
-2. 
+1. Local coordinates are the coordinates of your object relative to its local origin; they're the coordinates your object begins in. 
+2. The next step is to transform the local coordinates to world-space coordinates which are coordinates in respect of a larger world. These coordinates are relative to some global origin of the world, together with many other objects also placed relative to this word's origin. 
+3. Next we transform the world coordinates to view-space coordinates 
