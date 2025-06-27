@@ -16,4 +16,4 @@ You're probably quite confused by now by what a space or coordinate system actua
 
 **The Global Picture**
 
-To transform the coordinates from one space to the next coordinate space we'll use several transformation matrices of which the most important are the **model**, **view**, and **projection** matrix (see why learning this is important). 
+To transform the coordinates from one space to the next coordinate space we'll use several transformation matrices of which the most important are the **model**, **view**, and **projection** matrix (see why learning this is important). Our vertex coordinates first 
