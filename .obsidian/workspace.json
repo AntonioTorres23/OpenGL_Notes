@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Overview on Transformations - Coordinate Systems.md",
+                "file": "Overview on Transformations.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Overview on Transformations - Coordinate Systems"
+              "title": "Overview on Transformations"
             }
           }
         ],
@@ -237,7 +237,7 @@
     "Blending.md",
     "Depth Testing.md",
     "Cubemaps.md",
-    "Overview on Transformations - Coordinate Systems.md",
+    "Overview on Transformations.md",
     "OpenGL Camera Notes.md",
     "Explanation of Arrow Pointer in C++.md",
     "Face Culling.md",

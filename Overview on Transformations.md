@@ -607,4 +607,4 @@ Keep in mind that in the previous case we could declare the transformation matri
 
 Here we first rotate the container around the origin (0, 0, 0) and once it's rotated, we translate its rotated version to the bottom-right corner of the screen. Remember that the actual transformation order should read in reverse: even though in code we first translate and then later rotate, the actual transformations first apply a rotation and then translation. Understanding all these combinations of transformations and how they apply to objects is difficult to understand. Try and experiment with transformations like these. 
 
-And there you have it. A translated container that is rotated 
+And there you have it. A translated container that is rotated over time, all done by a single transformation matrix. Now you can see why matrices are such a powerful construct in graphics land. We can define an infinite amount of transformations and combine them all in a single matrix that we can re-use as often as we like. Using transformations 
