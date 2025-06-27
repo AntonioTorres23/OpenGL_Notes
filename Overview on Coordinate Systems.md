@@ -78,4 +78,10 @@ An orthographic projection matrix defines a cube-like frustum box that defines t
 ![[Pasted image 20250627155134.png]]
 
 
-The frustum defines the visible coordinates and is specified by a width, a height, a **near**, and a **far** 
+The frustum defines the visible coordinates and is specified by a width, a height, a **near**, and a **far** plane. Any coordinate in front of the near plane is clipped and the same applies to coordinate behind the far plane. The orthographic frustum directly maps all coordinates inside the frustum to normalized device coordinates without any special side effects since it won't touch the w component of the transformed vector; if the w component remains equal to 1.0 perspective division won't change the coordinates.
+
+To create an orthographic projection matrix we make use of GLM's built-in function `glm::ortho`.
+
+`glm::ortho(0.0f, 800.0f, 0.0f, 600.0f, 0.1f, 100.0f);`
+
+The first two parameters specify the left and right coordinate of the frustum and the third and fourth parameter specify the bottom and top part of the frustum. With those 4 points we've defined the size of the near and far planes
