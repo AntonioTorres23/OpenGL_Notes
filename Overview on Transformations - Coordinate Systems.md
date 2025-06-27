@@ -595,4 +595,8 @@ We created a transformation matrix, declared a uniform in the vertex shader and 
 ![[Pasted image 20250626170918.png]]
 
 
-Perfect! Our container is indeed tilted to the left and twice as small so the transformation was successful. Let's get a little more funky and see if we can rotate the container over time, and for fun we'll also reposition the object at the bottom-right side of the window. To rotate the container overtime we have to update transformation matrix in the render loop because it need to update each frame  
+Perfect! Our container is indeed tilted to the left and twice as small so the transformation was successful. Let's get a little more funky and see if we can rotate the container over time, and for fun we'll also reposition the object at the bottom-right side of the window. To rotate the container overtime we have to update transformation matrix in the render loop because it needs to update each frame. We use GLFW's time function to get an angle over time.
+
+```
+
+```
