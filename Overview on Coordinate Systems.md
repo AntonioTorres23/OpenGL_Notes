@@ -62,4 +62,18 @@ Note that if only a part of primitive e.g. a triangle is outside the clipping vo
 
 This "viewing box" a projection matrix creates is called a **frustum** and each coordinate that ends up inside this frustum will end up on the user's screen. The total process to convert coordinates within a specified range to NDC easily mapped to 2D view space coordinates is called **projection** since the projection matrix projects 3D coordinates to the easy to map to 2D normalized device coordinates. 
 
-Once all the vertices are transformed to clip space a final operation called **perspective division** is preformed where we divide the x, y, and z components of the position vector by the vector's homogeneous w component. Remember 
+Once all the vertices are transformed to clip space a final operation called **perspective division** is preformed where we divide the x, y, and z components of the position vector by the vector's homogeneous w component; perspective division is what transforms 4D clip space coordinates to 3D normalized device coordinates. This step is preformed automatically at the end of the vertex shader step.
+
+Remember this is what we do with the skybox where we take the z coordinate and assign it the value of the w coordinate as well so whenever it does perspective division it is always a value of 1. So it will forever be away from us. 
+
+It is after this stage where the resulting coordinates are mapped to screen coordinates (using the setting of `glViewPort`) and turned into fragments. 
+
+The projection matrix to transform view coordinates to clip coordinates usually takes two different forms, where each form defines it's own unique frustum. We can either create an **orthographic** project matrix or a **perspective** projection matrix.
+
+**Orthographic Projection**
+
+An orthographic projection matrix defines a cube-like frustum box that defines the clipping space where each vertex outside this box is clipped. When creating an orthographic projection matrix we specify the width, height, and length of the visible frustum. All the coordinates inside this frustum will end up within the NDC range after transformed by its matrix and thus won't be clipped. The frustum looks a bit like a container. 
+
+
+![[Pasted image 20250627155134.png]]
+
