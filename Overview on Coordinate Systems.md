@@ -86,4 +86,13 @@ To create an orthographic projection matrix we make use of GLM's built-in functi
 
 The first two parameters specify the left and right coordinate of the frustum and the third and fourth parameter specify the bottom and top part of the frustum. With those 4 points we've defined the size of the near and far plane. This specific projection matrix transforms all coordinates between these x, y, and z range values to normalized device coordinates. 
 
-An orthographic projection matrix directly maps coordinates to the 2D plane that 
+An orthographic projection matrix directly maps coordinates to the 2D plane that is your screen, but in reality a direct projection produces unrealistic results since the projection doesn't take **perspective** into account. That is something the **perspective projection** matrix fixes for us. 
+
+**Perspective Projection**
+
+If you ever were to enjoy the graphics the "real life" has to offer you'll notice that objects that are farther away appear much smaller. This weird effect is something we call **perspective**. Perspective is especially noticeable when looking down the end of an infinite motorway or railway as seen in the following image.
+
+
+![[Pasted image 20250627162523.png]]
+
+As you can see, due to perspective the lines seem to coincide at a far enough distance. This is exactly the effect perspective projection tries and it does so using a **perspective projection matrix**. The projection matrix maps a given frustum range to clip space, but also manipulates 
