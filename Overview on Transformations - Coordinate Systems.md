@@ -595,3 +595,4 @@ We created a transformation matrix, declared a uniform in the vertex shader and 
 ![[Pasted image 20250626170918.png]]
 
 
+Perfect! Our container is indeed tilted to the left and twice as small so the transformation was successful. 
