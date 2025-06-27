@@ -117,3 +117,34 @@ A perspective projection matrix can be created in GLM as follows:
 
 `glm::mat4 proj = glm::perspective(glm::radians(45.0f), (float)width/(float)height,  0.1f, 100.0f);`
 
+What `glm::perspective` does is again create a large frustum that defines the visible space, anything outside the frustum will not end up in the clip space volume and will thus become clipped. A perspective frustum can be visualized as a non-uniformly shaped box from where each coordinate inside this box will be mapped to a point in clip space. An image of a perspective frustum is seen below.
+
+![[Pasted image 20250627164700.png]]
+
+Its first parameter defines the **fov** value, that stands for **field of view** and set how large the view space is. For a realistic view it is usually set to 45 degrees, but for more doom-styled results you could set it to a higher value. The second parameter sets the aspect ratio which is calculated by dividing the viewport's width by its height. The third and fourth parameter set the near and far plane of the frustum. We usually set the near distance to 0.1 and the far distance to 100.0. All the vertices between the near and far plane and inside the frustum will be rendered. 
+
+Whenever the near value of your perspective matrix is set too high (like 10.0) OpenGL will clip all coordinates close to the camera (between 0.0 and 10.0), which can give a visual result you maybe have seen in a game before where would could see through objects when moving very close to them. 
+
+When using orthographic projection, each of the vertex coordinates are directly mapped to clip space without any fancy perspective division (it still does perspective division, but the w component is not manipulated (it always stays at 1) and thus has no effect). Because the orthographic projection is mainly used for 2D renderings and for some architectural or engineering applications where we'd rather not have vertices distorted by perspective. Applications like Blender that are used for 3D modeling sometimes use orthographic projection for modeling, because it more accurately depicts each object's dimensions. Below you'll see a comparison of both projection methods in Blender. 
+
+
+![[Pasted image 20250627165613.png]]
+
+You can see that with perspective projection, the vertices farther away appear much smaller, while in orthographic projection each vertex has the same distance as the user. 
+
+**Putting It All Together**
+
+We create a transformation matrix for each of the aforementioned steps: model, view, and projection matrix. A vertex coordinate is then transformed to clip coordinates as follows.
+
+$$
+Vclip = Mprojection \cdot Mview \cdot Mmodel \cdot Vlocal
+$$
+
+Note that the order of matrix multiplication is reversed (remember that we need to read matrix multiplication from right to left). The resulting vertex should then be assigned to `gl_Position` in the vertex shader and OpenGL will automatically preform perspective division and clipping.
+
+The output of the vertex shader requires the coordinates to be in clip-space which is what we just did with the transformation matrices. OpenGL then preforms perspective division on the clip-space coordinates to transform them to normalized device coordinates (NDC). OpenGL then uses the parameters from `glViewPort` to map the normalized device coordinates to screen screen coordinates where each coordinate corresponds to a point on your scree (in our case a 800x600 screen). This process is called viewport transform.
+
+This is a difficult topic to understand so if you're still not exactly sure about what each space is used for you don't have to worry. Below you'll see how we can actually put these coordinate spaces to good use. 
+
+**Going 3D**
+
