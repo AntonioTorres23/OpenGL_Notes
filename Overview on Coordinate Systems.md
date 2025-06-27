@@ -95,4 +95,4 @@ If you ever were to enjoy the graphics the "real life" has to offer you'll notic
 
 ![[Pasted image 20250627162523.png]]
 
-As you can see, due to perspective the lines seem to coincide at a far enough distance. This is exactly the effect perspective projection tries and it does so using a **perspective projection matrix**. The projection matrix maps a given frustum range to clip space, but also manipulates 
+As you can see, due to perspective the lines seem to coincide at a far enough distance. This is exactly the effect perspective projection tries and it does so using a **perspective projection matrix**. The projection matrix maps a given frustum range to clip space, but also manipulates the w value of each vertex coordinate in such a way that the further away a vertex coordinate is from the viewer, the higher the w component becomes. Once the coordinates are transformed to clip space they are in the range 
