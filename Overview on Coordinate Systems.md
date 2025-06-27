@@ -109,4 +109,4 @@ z/w\\
 \end{pmatrix}
 $$
 
-Each component of the vertex coordinate is divided by its w 
+Each component of the vertex coordinate is divided by its w component giving smaller vertex coordinates the further away a vertex is from the viewer. 
