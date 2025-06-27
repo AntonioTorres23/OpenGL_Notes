@@ -598,5 +598,7 @@ We created a transformation matrix, declared a uniform in the vertex shader and 
 Perfect! Our container is indeed tilted to the left and twice as small so the transformation was successful. Let's get a little more funky and see if we can rotate the container over time, and for fun we'll also reposition the object at the bottom-right side of the window. To rotate the container overtime we have to update transformation matrix in the render loop because it needs to update each frame. We use GLFW's time function to get an angle over time.
 
 ```
-
+glm::mat4 trans = glm::mat4(1.0f);
+trans = glm::translate(trans, glm::vec3(0.5f, 0.5f, 0.0f));
+trans = glm::rotate(trans, g)
 ```
