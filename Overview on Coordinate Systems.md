@@ -251,4 +251,6 @@ model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3
 // We are rotating it on the x and y axis.
 
 ```
-And then we'll draw our cube 
+And then we'll draw our cube using `glDrawArrays` (since we didn't specify indices and don't need an EBO). 
+
+`glDrawArrays(GL_TRAINGLES )`
