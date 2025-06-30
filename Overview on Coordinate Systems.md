@@ -243,4 +243,9 @@ Now it looks like its within a 3D space. Here is the [source code](https://learn
 
 So far we've been working with a 2D plane, in a 3D space, so let's take our 2D plane to a 3D cube. To render a cube we need 36 vertices (6 faces * 2 triangles * 3 vertices each). 36 vertices are a lot to sum up so you can retrieve them from [here](https://learnopengl.com/code_viewer.php?code=getting-started/cube_vertices).
 
-For fun.
+For fun, we'll rotate the cube over time.
+
+```
+glm::mat4 model = glm::mat4(1.0f); // initializing our diagonals
+model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm)
+```
