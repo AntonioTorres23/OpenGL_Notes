@@ -267,4 +267,4 @@ Luckily, OpenGL stores all its depth information in a Z-buffer that allows OpenG
 
 OpenGL stores all its depth information in a Z-buffer, also known as a depth buffer. GLFW automatically creates such a buffer for you (just like it has a color-buffer that stores the color of the output image). The depth is stored within each fragment (as the fragment's z value) and whenever the fragment wants to output its color, OpenGL compares its depth values with the Z-buffer. If the current fragment is behind the other fragment it is discarded, otherwise overwritten. This process is called depth testing and is done automatically by OpenGL.
 
-However, if we want to make sure OpenGL actually preforms the depth testing we first need to tell OpenGL 
+However, if we want to make sure OpenGL actually preforms the depth testing we first need to tell OpenGL we want to enable depth testing; it is disabled by default. We can enable depth testing using `glEnable`. The `glEnable` and `glDisable` functions allow us to e
