@@ -271,4 +271,4 @@ However, if we want to make sure OpenGL actually preforms the depth testing we f
 
 `glEnable(GL_DEPTH_TEST);`
 
-Since we're
+Since we're using a depth buffer we also want to clear the depth buffer before each render iteration (otherwise dep)
