@@ -247,5 +247,8 @@ For fun, we'll rotate the cube over time.
 
 ```
 glm::mat4 model = glm::mat4(1.0f); // initializing our diagonals
-model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm)
+model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 0.0f)); 
+// We are rotating it on the x and y axis.
+
 ```
+And then we'll draw our cube 
