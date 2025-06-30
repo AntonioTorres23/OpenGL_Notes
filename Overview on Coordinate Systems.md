@@ -148,4 +148,13 @@ This is a difficult topic to understand so if you're still not exactly sure abou
 
 **Going 3D**
 
-Now that we know how to transform 3D coordinates to 2D coordinates we can start rendering real 3D objects
+Now that we know how to transform 3D coordinates to 2D coordinates we can start rendering real 3D objects. 
+
+To start drawing in 3D we'll first create a model matrix. The model matrix consists of translations, scaling and/or rotations we'd like to transform all object's vertices to the global world space. Let's transform our plane a bit by rotating it on the x-axis so it looks like it's laying on the floor. The model matrix then looks like this
+
+```
+glm::mat4 model = glm::mat4(1.0f);
+model = glm::roatate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+```
+
+By multiplying the vertex coordinates with this model matrix we're transforming 
