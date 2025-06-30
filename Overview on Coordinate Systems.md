@@ -148,3 +148,4 @@ This is a difficult topic to understand so if you're still not exactly sure abou
 
 **Going 3D**
 
+Now that we know how to transform 3D coordinates to 2D coordinates we can start rendering real 3D objects
