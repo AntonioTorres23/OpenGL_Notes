@@ -259,4 +259,12 @@ You should see something like this:
 
 ![[Pasted image 20250630101421.png]]
 
-It does resemble a cube slightly but something's off. Some sides of the cubes are drawn over other sides of the cube. This happens because when OpenGL draws your cube triangle-by-triangle, fragment by fragment, it will overwrite any pixel color that may have already been drawn there before. Since OpenGL gives no guarantee on the order of triangles rendered ()
+It does resemble a cube slightly but something's off. Some sides of the cubes are drawn over other sides of the cube. This happens because when OpenGL draws your cube triangle-by-triangle, fragment by fragment, it will overwrite any pixel color that may have already been drawn there before. Since OpenGL gives no guarantee on the order of triangles rendered (within the same draw call), some triangles are drawn on top of each other even though one should clearly be in front of the other. 
+
+Luckily, OpenGL stores all its depth information in a Z-buffer that allows OpenGL to decide when to draw over a pixel and when not to. Using the Z-buffer, we can configure OpenGL to do depth testing. 
+
+**Z-buffer AKA Depth Buffer**
+
+OpenGL stores all its depth information in a Z-buffer, also known as a depth buffer. GLFW automatically creates such a buffer for you (just like it has a color-buffer that stores the color of the output image). The depth is stored within each fragment (as the fragment's z value) and whenever the fragment wants to output its color, OpenGL compares its depth values with the Z-buffer. If the current fragment is behind the other fragment it is discarded, otherwise overwritten. This process is called depth testing and is done automatically by OpenGL.
+
+However, if we want to make sure OpenGL actually preforms the depth testing we first need to tell OpenGL 
