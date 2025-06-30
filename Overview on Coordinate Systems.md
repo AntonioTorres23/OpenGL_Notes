@@ -275,4 +275,12 @@ Since we're using a depth buffer we also want to clear the depth buffer before e
 
 `glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);`
 
-Let's re-run our 
+Let's re-run our program and see if OpenGL now preforms depth testing.
+
+![[Pasted image 20250630103938.png]]
+
+If you are having trouble the source code can be found [here](https://learnopengl.com/code_viewer_gh.php?code=src/1.getting_started/6.2.coordinate_systems_depth/coordinate_systems_depth.cpp).
+
+**More Cubes!**
+
+Say we wanted to display 10 of our cubes on 
