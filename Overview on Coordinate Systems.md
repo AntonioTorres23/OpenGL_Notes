@@ -157,4 +157,12 @@ glm::mat4 model = glm::mat4(1.0f);
 model = glm::roatate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
 ```
 
-By multiplying the vertex coordinates with this model matrix we're transforming 
+By multiplying the vertex coordinates with this model matrix we're transforming the vertex coordinates to world coordinates. Our plane that is slightly on the floor thus represents the plane in the global world. 
+
+Next we need to create a view matrix. We want to move slightly backwards in the scene so the object becomes visible (when in world space we're located at the origin (0, 0, 0)). To move around the scene, think about the following. 
+
+- To move a camera backwards, is the same thing as moving the entire scene forwards. 
+
+That is exactly what a view matrix does, we move the entire scene around inversed to where we want the camera to move. 
+
+Because we want to move backwards and since OpenGL is a right-handed system we have more in the positive z-axis
