@@ -237,3 +237,8 @@ Now that our vertex coordinates are transformed via the model, view, and project
 ![[Pasted image 20250630100637.png]]
 
 
+Now it looks like its within a 3D space. Here is the [source code](https://learnopengl.com/code_viewer_gh.php?code=src/1.getting_started/6.1.coordinate_systems/coordinate_systems.cpp) if you are stuck.
+
+**More 3D**
+
+So far we've been working with a 2D plane, in a 3D space
