@@ -3,7 +3,7 @@ Camera works in the sense that transforms all the vertex coordinates from the ca
 
 To provide further information we have previously worked with matrices and learned that the view matrix is what provides us with a way to view objects in a 3D space. Remember that the view matrix is different from the projection matrix and the projection matrix deals with clip space rather than only the camera and its position. 
 
-It transfers the world coordinates into a format that the user can view. 
+The view matrix transfers the world coordinates into a format that the user can view within your graphics application.  
 
 First we define a initial camera position by providing a vector in the world space that points to the camera's position. 
 
