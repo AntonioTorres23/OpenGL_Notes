@@ -165,4 +165,6 @@ Next we need to create a view matrix. We want to move slightly backwards in the 
 
 That is exactly what a view matrix does, we move the entire scene around inversed to where we want the camera to move. 
 
-Because we want to move backwards and since OpenGL is a right-handed system we have more in the positive z-axis
+Because we want to move backwards and since OpenGL is a right-handed system we have more in the positive z-axis. We do this by translating the scene towards the negative z-axis. This gives the impression that we are moving backwards. 
+
+**Right-handed **
