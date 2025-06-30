@@ -309,7 +309,35 @@ Now within the render loop we want to call `glDrawArrays` 10 times, but this tim
 for(unsigned int i = 0; i < cubePosition; i++)
 {
 	glm::mat4 model = glm::mat4(1.0f); // initailze our diagonals
-	model = glm::translate(model, cubePosition[i]);
-	float angle = 20.0
+	model = glm::translate(model, cubePosition[i]); // 
+	float angle = 20.0 * i;
+	model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+	ourShader.setMat4("model", model);
+
+	glDrawArrays(GL_TRAINGLES, 0, 36);
 }
 ```
+
+This snippet of code will update the model matrix each time a new cube is drawn and do this 10 times in total. Right now we should be looking into a world with 10 oddly rotated cubes. 
+
+
+
+![[Pasted image 20250630105914.png]]
+
+Perfect. If you're stuck see if you can compare your code with the [source code](https://learnopengl.com/code_viewer_gh.php?code=src/1.getting_started/6.3.coordinate_systems_multiple/coordinate_systems_multiple.cpp).
+
+
+**Overview**
+
+
+We use the matrices within OpenGL to transform our original vertices into coordinates that are easier to use depending on the context. 
+
+Our primary ones that we are focused on are the local coordinates (raw vertices), world coordinates (which is where the model matrix comes in), view coordinates (where the view matrix comes to play), and the clip coordinates (where the projection matrix comes in). 
+
+We take all of these and preform translation on a standard matrix with 1.0f on its diagonals and the add each matrix right to left with the original vertices. 
+
+Remember it goes vertices * model * view * projection in right to left since we always do our translations first, then our view (which is basically where we want our camera placed, lastly our clip space. 
+
+
+
+
