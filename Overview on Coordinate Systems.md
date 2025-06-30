@@ -338,6 +338,6 @@ We take all of these and preform translation on a standard matrix with 1.0f on i
 
 Remember it goes vertices * model * view * projection in right to left since we always do our translations first, then our view (which is basically where we want our camera placed, lastly our clip space. 
 
-
+Keep working on this since it's a relatively important concept which it comes to game development. 
 
 
