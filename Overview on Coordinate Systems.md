@@ -253,4 +253,10 @@ model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3
 ```
 And then we'll draw our cube using `glDrawArrays` (since we didn't specify indices and don't need an EBO). 
 
-`glDrawArrays(GL_TRAINGLES )`
+`glDrawArrays(GL_TRAINGLES, 0, 36);`
+
+You should see something like this: 
+
+![[Pasted image 20250630101421.png]]
+
+It does resemble a cube slightly but something's off. Some sides of the cubes are drawn over other sides of the cube. This happens becuase when 
