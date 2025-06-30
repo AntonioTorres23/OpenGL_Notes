@@ -224,5 +224,16 @@ We should also send the matrices to the shader (this is usually done each frame 
 
 ```
 int modelLoc = glGetUniformLocation(ourShader.ID, "model")
-glUniformMatrix4fv(modelLoc, 1)
+glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+... // same for View matrix and Projection matrix
 ```
+
+Now that our vertex coordinates are transformed via the model, view, and projection matrix the final object should be:
+
+- Tilted backwards to the floor. 
+- A bit farther away from us. 
+- Be displayed with perspective (it should get smaller, the further its vertices are).
+
+![[Pasted image 20250630100637.png]]
+
+
