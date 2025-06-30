@@ -202,4 +202,27 @@ Now that we created the transformation matrices we should pass them to your shad
 ```
 #version 330 core
 layout (location = 0) in vec3 aPos;
+
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+
+void main()
+{
+	// note that we read the multiplication from right to left
+	gl_Position = projection * view * model * vec4(aPos, 1.0);
+	/*
+		remember we use gl_Position for automatic projection division 
+		and clipping.
+
+		Also notice how we create a vec4 with aPos as our first 3 positional               coordinates and 1.0 our w homogenous coordinate.
+	*/
+}
+```
+
+We should also send the matrices to the shader (this is usually done each frame since transformation matrices tend to change a lot).
+
+```
+int modelLoc = glGetUniformLocation(ourShader.ID, "model")
+glUniformMatrix4fv(modelLoc, 1)
 ```
