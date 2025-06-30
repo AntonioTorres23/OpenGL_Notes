@@ -169,4 +169,5 @@ Because we want to move backwards and since OpenGL is a right-handed system we h
 
 **Right-handed System**
 
-By convention, OpenGL is a right-handed system. What this basically says is that the positive x-axis
+By convention, OpenGL is a right-handed system. What this basically says is that the positive x-axis is your right, the positive y-axis is your up, and the positive z-axis is backwards. Think of your screen being the center of the 3 axes and the positive z-axis going through your screen towards you. The axes are drawn as follows.
+
