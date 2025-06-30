@@ -302,3 +302,5 @@ glm::vec3 cubePositions[] =
 	glm::vec3(-1.3f, 1.0f, -1.5f)	
 };
 ```
+
+Now within the render loop we want to call `glDrawArrays` 10 times, but this time send a different model matrix to the vertex shader each time before we send out the draw call. We will create a sa
