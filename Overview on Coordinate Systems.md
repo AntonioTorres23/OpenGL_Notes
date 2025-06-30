@@ -308,6 +308,8 @@ Now within the render loop we want to call `glDrawArrays` 10 times, but this tim
 ```
 for(unsigned int i = 0; i < cubePosition; i++)
 {
-
+	glm::mat4 model = glm::mat4(1.0f); // initailze our diagonals
+	model = glm::translate(model, cubePosition[i]);
+	float angle = 20.0
 }
 ```
