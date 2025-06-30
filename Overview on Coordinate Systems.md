@@ -283,4 +283,4 @@ If you are having trouble the source code can be found [here](https://learnopeng
 
 **More Cubes!**
 
-Say we wanted to display 10 of our cubes on 
+Say we wanted to display 10 of our cubes on screen. Each cube will look the same but will only 
