@@ -5,6 +5,8 @@ To provide further information we have previously worked with matrices and learn
 
 The view matrix transfers the world coordinates into a format that the user can view within your graphics application.  
 
+When we're talking abou
+
 First we define a initial camera position by providing a vector in the world space that points to the camera's position. 
 
 `glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f); // This is the inital position of the camera in the world space. `
