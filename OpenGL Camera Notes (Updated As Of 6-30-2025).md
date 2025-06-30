@@ -5,7 +5,7 @@ To provide further information we have previously worked with matrices and learn
 
 The view matrix transfers the world coordinates into a format that the user can view within your graphics application.  
 
-When we're talking abou
+When we're talking about camera/view space we're talking about all the vertex coordinates as seen from the camera's perspective as the origin of the scene:
 
 First we define a initial camera position by providing a vector in the world space that points to the camera's position. 
 
