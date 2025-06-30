@@ -259,4 +259,4 @@ You should see something like this:
 
 ![[Pasted image 20250630101421.png]]
 
-It does resemble a cube slightly but something's off. Some sides of the cubes are drawn over other sides of the cube. This happens because when OpenGL draws your cube triangle-by triangle 
+It does resemble a cube slightly but something's off. Some sides of the cubes are drawn over other sides of the cube. This happens because when OpenGL draws your cube triangle-by-triangle, fragment by fragment, it will overwrite any pixel color that may have already been drawn there before. Since OpenGL gives no guarantee on the order of triangles rendered ()
