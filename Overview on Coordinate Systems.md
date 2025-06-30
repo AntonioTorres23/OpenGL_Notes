@@ -283,4 +283,4 @@ If you are having trouble the source code can be found [here](https://learnopeng
 
 **More Cubes!**
 
-Say we wanted to display 10 of our cubes on screen. Each cube will look the same but will only 
+Say we wanted to display 10 of our cubes on screen. Each cube will look the same but will only differ in where it's located in the world with each a different rotation. The graphical layout of the cube is already defined so we don't have to change our buffers or 
