@@ -189,4 +189,17 @@ glm::mat4 view = glm::mat4(1.0f) //initializing our diagonals with 1.0.
 view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f)) // moving cam back
 ```
 
-The last thing we need is to define the projection matrix. We want to use perspective projection for our scene scene so we'll declare the projection
+The last thing we need is to define the projection matrix. We want to use perspective projection for our scene scene so we'll declare the projection like this.
+
+```
+glm::mat4 projection; //see how there is no value initalization with our proj mat
+projection = glm::perspective(glm::radians(45.0f), 800.0f, / 600.0f, 0.1f, 100.0f);
+```
+
+Now that we created the transformation matrices we should pass them to your shaders. First let's declare the transformation matrices as uniforms in the vertex shader and multiply them with the raw vertex coordinates. 
+
+
+```
+#version 330 core
+layout (location = 0) in vec3 aPos;
+```
