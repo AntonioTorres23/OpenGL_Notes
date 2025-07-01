@@ -24,7 +24,7 @@ Don't forget that the positive z-axis is going through your screen towards you s
 
 **NO USER CONTROL CAMERA DIRECTION**
 
-The next vector required is the camera's direction e.g. at what direction it is pointing at. For now we let the camera point to the origin of our scene: (0, 0, 0). 
+The next vector required is the camera's direction e.g. at what direction it is pointing at. For now we let the camera point to the origin of our scene: (0, 0, 0). Remember that if we subtract two vectors from each other 
 
 Next we have a camera front position which is where the camera is pointing. 
 
