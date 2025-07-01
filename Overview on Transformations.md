@@ -103,7 +103,7 @@ Unlike the other operations the cross product isn't really intuitive without del
 
 So I always think of it as you first start with the diagonal product on the left hand vector first, then for the next product that you subtract with the first you flip it. So with Ay and Bz the product you would subtract from would be Ay * Bz. You just flip the axis. Which would be Az * By. 
 
-As well as remember that whatever coordinate isn't involved is going to be the coordinate of the new vector. 
+As well as remember that whatever coordinate isn't involved is going to be the coordinate of the new vector. So for example to find x we would do Ay * Bz - Az * By. See how there are no x coordinates involved. Also remember we want to do our A coordinates always in front when multiplying the two vectors together.
 
 **Matrices**
 
