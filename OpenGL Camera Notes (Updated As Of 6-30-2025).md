@@ -24,7 +24,12 @@ Don't forget that the positive z-axis is going through your screen towards you s
 
 **NO USER CONTROL CAMERA DIRECTION**
 
-The next vector required is the camera's direction e.g. at what direction it is pointing at. For now we let the camera point to the origin of our scene: (0, 0, 0). Remember that if we subtract two vectors from each other we get a vector that's the difference of these two vectors? Subtracting the camera position from the scene's origin vector thus results in the direction vector we want. For the view matrix's coordinate system we want it's z-axis to be positive because by convention (OpenGL) the camera points towards the negative z-axis we want to negate the direction vector. If we switch the subtraction order around we now get a vector point towards the camera's positiv
+The next vector required is the camera's direction e.g. at what direction it is pointing at. For now we let the camera point to the origin of our scene: (0, 0, 0). Remember that if we subtract two vectors from each other we get a vector that's the difference of these two vectors? Subtracting the camera position from the scene's origin vector thus results in the direction vector we want. For the view matrix's coordinate system we want it's z-axis to be positive because by convention (OpenGL) the camera points towards the negative z-axis we want to negate the direction vector. If we switch the subtraction order around we now get a vector point towards the camera's positive z-axis:
+
+```
+glm::vec3 carmeraTarget = glm::vec3(0.0f, 0.0f, 0.0f); // where we want our cam to                                                           point at
+glm::vec3 carmeraDirection = glm::normalize(c)
+```
 
 Next we have a camera front position which is where the camera is pointing. 
 
