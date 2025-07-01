@@ -20,7 +20,7 @@ Don't forget that the positive z-axis is going through your screen towards you s
 
 **2. Camera Direction**
 
-Next we have a camera front position which is where the camera is pointing. For now we let the camera point 
+Next we have a camera front position which is where the camera is pointing. 
 
 `glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);`
 
