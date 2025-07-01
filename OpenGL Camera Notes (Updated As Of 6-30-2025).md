@@ -31,11 +31,19 @@ glm::vec3 carmeraTarget = glm::vec3(0.0f, 0.0f, 0.0f); // where we want our cam 
 glm::vec3 carmeraDirection = glm::normalize(cameraPos - cameraTarget); 
 ```
 
-Keep note that the z axis is pointing toward the camera. If we have `cameraTarget - cameraPos` so (0,0,0) - (0,0,3), it would result in the direction vector (0,0,-3) which would be facing negatively on the z-axis. 
+Keep note that the z axis is pointing toward the camera. If we have `cameraTarget - cameraPos` so (0,0,0) - (0,0,3), it would result in the direction vector (0,0,-3) which would be facing negatively on the z-axis. So by swapping that order we get `cameraPos - cameraTarget` or, (0,0,3) - (0,0,0) which results in the direction vector (0,0,3) which is facing positively on the z-axis. 
+
+*THE NAME DIRECTION VECTOR IS NOT THE BEST CHOSEN NAME, SINCE IT IS ACTUALLY POINTING IN THE REVERSE OF WHAT IT IS TARGETING. SO ITS REALLY POINTING FROM THE CAMERA TARGET FROM THE CAMERA POSITION*
 
 Next we have a camera front position which is where the camera is pointing. 
 
 `glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);`
+
+**3. Right Axis**
+
+**NO USER CONTROL RIGHT AXIS**
+
+The next vector that we need is a right vector that represents the positive x-axis of the camera space. To get the right vector we use a little trick by first specifying an up vector that points upwards (in world space). Then we do a cross product on the up vector and the direction from step 2. Since the result of a cross product is a vector perpendicular () to both vectors
 
 Lastly, we have a camera up position for the y axis to set vertical height on the camera. 
 
