@@ -31,6 +31,8 @@ glm::vec3 carmeraTarget = glm::vec3(0.0f, 0.0f, 0.0f); // where we want our cam 
 glm::vec3 carmeraDirection = glm::normalize(cameraPos - cameraTarget); 
 ```
 
+Keep that the z axis is pointing toward the camera position, 
+
 Next we have a camera front position which is where the camera is pointing. 
 
 `glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);`
