@@ -28,7 +28,7 @@ The next vector required is the camera's direction e.g. at what direction it is 
 
 ```
 glm::vec3 carmeraTarget = glm::vec3(0.0f, 0.0f, 0.0f); // where we want our cam to                                                           point at
-glm::vec3 carmeraDirection = glm::normalize(c)
+glm::vec3 carmeraDirection = glm::normalize(cameraPos - cameraTarget);
 ```
 
 Next we have a camera front position which is where the camera is pointing. 
