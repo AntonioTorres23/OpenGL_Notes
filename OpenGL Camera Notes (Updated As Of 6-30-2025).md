@@ -20,6 +20,12 @@ Don't forget that the positive z-axis is going through your screen towards you s
 
 **2. Camera Direction**
 
+**CAUTION**: I AM GOING TO SPLIT THIS SECTION UP INTO SOME PARTS BECAUSE THERE IS A PORTION OF THIS REGARDING A STATIC CAMERA IN WHICH IT'S NOT CONTROLLED BY THE USER AND ONE SECTION THAT INVOVLES IMPLEMENTING A "FLY STYLE" CAMERA. 
+
+**NO USER CONTROL CAMERA DIRECTION**
+
+The next vector required is the camera's direction e.g. at what direction it is pointing at. For now we let the camera point to the origin of our scene: (0, 0, 0). 
+
 Next we have a camera front position which is where the camera is pointing. 
 
 `glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);`
