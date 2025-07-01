@@ -10,10 +10,15 @@ When we're talking about camera/view space we're talking about all the vertex co
 So its like we're creating our own x, y, and z axes just for our camera I believe. 
 
 ![[Pasted image 20250701142315.png]]
+**1. Camera Position**
 
-First we define a initial camera position by providing a vector in the world space that points to the camera's position. 
+First we define a initial camera position by providing a vector in the world space. This is where the camera is at within the scene. Think of it as where your player or user would be if they where walking around. 
 
 `glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f); // This is the inital position of the camera in the world space. `
+
+Don't forget that the positive z-axis is going through your screen towards you so if we want to move the camera backwards, we move along the positive z axis.
+
+**2. Camera Direction**
 
 Next we have a camera front position which is where the camera is pointing. 
 
