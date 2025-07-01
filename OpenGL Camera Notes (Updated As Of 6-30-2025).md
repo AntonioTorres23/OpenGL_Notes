@@ -5,7 +5,11 @@ To provide further information we have previously worked with matrices and learn
 
 The view matrix transfers the world coordinates into a format that the user can view within your graphics application.  
 
-When we're talking about camera/view space we're talking about all the vertex coordinates as seen from the camera's perspective as the origin of the scene:
+When we're talking about camera/view space we're talking about all the vertex coordinates as seen from the camera's perspective as the origin of the scene: the view matrix transforms all the world coordinates into view coordinates that are relative to the camera's position and direction. To define a camera we need its position in world space, the direction it's looking at, a vector pointing to the right and a vector pointing upwards from the camera. A careful reader may notice we're actually going to create a coordinate system with 3 perpendicular unit axes with the camera's position as its origin. 
+
+So its like we're creating our own x, y, and z axes just for our camera I believe. 
+
+![[Pasted image 20250701142315.png]]
 
 First we define a initial camera position by providing a vector in the world space that points to the camera's position. 
 
