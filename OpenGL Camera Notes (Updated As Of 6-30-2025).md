@@ -47,14 +47,18 @@ The next vector that we need is a right vector that represents the positive x-ax
 ```
 glm::vec3 up = glm::vec3 (0.0f,1.0f,0.0f); // vec3 that points up in world space
                                               no realtion to camera
-glm::vec3 right = glm::normalize(glm::cross(up, cameraDirection)); // x-axis of                                                                          camera
+glm::vec3 cameraRight = glm::normalize(glm::cross(up, cameraDirection)); // x-axis                                                                             of                                                                                 camera
 ```
 
 **4. Up Axis**
 
 **NO USER CONTROL UP AXIS**
 
-Now that we have both the x-axis vector (right-axis) of the camera, and the z-axis of the camera (`cameraDirection` `vec3`). 
+Now that we have both the x-axis vector (right-axis) of the camera, and the z-axis of the camera (`cameraDirection` `vec3`). Retrieving the vector that points to the camera's y-axis is relatively easy: we take the cross product of the right and direction vector.
+
+```
+glm::vec3 cameraUp = glm::cross(cameraDirection, right); // cams up 
+```
 
 Lastly, we have a camera up position for the y axis to set vertical height on the camera. 
 
