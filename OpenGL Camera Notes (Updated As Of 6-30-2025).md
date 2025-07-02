@@ -63,6 +63,10 @@ glm::vec3 cameraUp = glm::cross(cameraDirection, cameraRight); // cam's up (y-ax
 
 With the help of the cross-product and a few tricks we were able to create all the vectors that form the view/camera space. For the more mathematically inclined readers, the process in known as the [Gram-Schmidt](http://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process) process in linear algebra. Using these camera vectors we now create a `LookAt` matrix that proves very useful for creating a camera. 
 
+**Look At**
+
+A great thing about matrices is that if you define a coordinate space using 3 perpendicular (or non-linear) axes you can create a matrix with those 3 axes
+
 Lastly, we have a camera up position for the y axis to set vertical height on the camera. 
 
 `glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);`
