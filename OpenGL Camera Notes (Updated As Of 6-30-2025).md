@@ -43,7 +43,7 @@ Next we have a camera front position which is where the camera is pointing.
 
 **NO USER CONTROL RIGHT AXIS**
 
-The next vector that we need is a right vector that represents the positive x-axis of the camera space. To get the right vector we use a little trick by first specifying an up vector that points upwards (in world space). Then we do a cross product on the up vector and the direction from step 2. Since the result of a cross product is a vector perpendicular () to both vectors
+The next vector that we need is a right vector that represents the positive x-axis of the camera space. To get the right vector we use a little trick by first specifying an up vector that points upwards (in world space). Then we do a cross product on the up vector and the direction from step 2. Since the result of a cross product is a vector perpendicular to both vectors, 
 
 Lastly, we have a camera up position for the y axis to set vertical height on the camera. 
 
