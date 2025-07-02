@@ -54,7 +54,7 @@ glm::vec3 right = glm::normalize(glm::cross(up, cameraDirection)); // x-axis of 
 
 **NO USER CONTROL UP AXIS**
 
-Now that we have both the x-axis vector (right-axis) of the camera, 
+Now that we have both the x-axis vector (right-axis) of the camera, and the z-axis of the camera (`cameraDirection` `vec3`)
 
 Lastly, we have a camera up position for the y axis to set vertical height on the camera. 
 
