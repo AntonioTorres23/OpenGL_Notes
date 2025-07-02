@@ -61,6 +61,8 @@ Now that we have both the x-axis vector (right-axis) of the camera, and the z-ax
 glm::vec3 cameraUp = glm::cross(cameraDirection, cameraRight); // cam's up (y-axis)
 ```
 
+With the help of the cross-product and a few tricks we were able to create all the vectors that form the view/camera space. For the more mathematically inclined readers, the process 
+
 Lastly, we have a camera up position for the y axis to set vertical height on the camera. 
 
 `glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);`
