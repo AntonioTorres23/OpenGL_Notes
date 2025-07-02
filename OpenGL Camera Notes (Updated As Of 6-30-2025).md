@@ -57,7 +57,7 @@ glm::vec3 cameraRight = glm::normalize(glm::cross(up, cameraDirection)); // x-ax
 Now that we have both the x-axis vector (right-axis) of the camera, and the z-axis of the camera (`cameraDirection` `vec3`). Retrieving the vector that points to the camera's y-axis is relatively easy: we take the cross product of the right and direction vector.
 
 ```
-glm::vec3 cameraUp = glm::cross(cameraDirection, right); // cams up 
+glm::vec3 cameraUp = glm::cross(cameraDirection, cameraRight); // cams up position                                                                   vector
 ```
 
 Lastly, we have a camera up position for the y axis to set vertical height on the camera. 
