@@ -65,7 +65,11 @@ With the help of the cross-product and a few tricks we were able to create all t
 
 **Look At**
 
-A great thing about matrices is that if you define a coordinate space using 3 perpendicular (or non-linear) axes you can create a matrix with those 3 axes
+A great thing about matrices is that if you define a coordinate space using 3 perpendicular (or non-linear) axes you can create a matrix with those 3 axes plus a translation vector and you can transform any vector to that coordinate space by multiplying it with this matrix. This is exactly what the `LookAt` matrix does and now that we have 3 perpendicular axes and a position vector to define the camera space we can create our own `LookAt` matrix.
+
+![[Pasted image 20250702110003.png]]
+
+Where R is the right vector (cam's positive x-axis), U is the up vector (cam's positive y-axis), D is the Direction vector (cam's positive z-axis), and 
 
 Lastly, we have a camera up position for the y axis to set vertical height on the camera. 
 
