@@ -150,7 +150,7 @@ So I think of it like this, you have your `cameraPos` vector and whenever in the
 
 This also applies when pressing the s key but in reverse, we do our multiplication with the `cameraSpeed` scalar (0.05) and `cameraFront` (0, 0, -1) to get the vector (0, 0, -0.05). However, we now subtract our new vector with the `cameraPos` vector which starts at a default of (0, 0, 3). So if our camera was at the default vector and we wanted to do subtraction, the equation would be (0, 0, 3) - (0, 0, -0.5) = (0, 0, 3.05). Remember that when we subtract a negative value with a negative value we get a positive value. Also note that since the z-axis points towards the camera, the camera position is actually moving backwards in world space. 
 
-The d key is a bit different, when it is pressed we do a cross product of our 
+The d key is a bit different, when it is pressed we do a cross product of `cameraFront `
 
 
 
