@@ -69,7 +69,7 @@ A great thing about matrices is that if you define a coordinate space using 3 pe
 
 ![[Pasted image 20250702110003.png]]
 
-Where R is the right vector (cam's positive x-axis), U is the up vector (cam's positive y-axis), D is the Direction vector (cam's positive z-axis), and 
+Where R is the right vector (cam's positive x-axis), U is the up vector (cam's positive y-axis), D is the Direction vector (cam's positive z-axis), and translation (right matrix) parts are inverted (transposed and negated respectively) since we want to rotate and translate the world in the opposite direction of where we 
 
 Lastly, we have a camera up position for the y axis to set vertical height on the camera. 
 
