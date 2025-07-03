@@ -144,7 +144,9 @@ void processInput(GLFWwindow *window) // takes in GLFW windows pointer variable
 }
 ```
 
-Whenever we press one of the WASD keys, the camera's position is updated accordingly, If we want to move forwards or backwards we add or subtract the direction from the position vector scaled by some speed value. If we want to move sideways, we do a cross product to create a right vector and we move along the right vector accordingly. This creates 
+Whenever we press one of the WASD keys, the camera's position is updated accordingly, If we want to move forwards or backwards we add or subtract the direction from the position vector scaled by some speed value. If we want to move sideways, we do a cross product to create a right vector and we move along the right vector accordingly. This creates the familiar strafe effect when using the camera.
+
+So I think of it like this, you have your `cameraPos` vector and whenever in the while loop a w key is pressed that is going forward so it will take the scalar of the camera (in this case 0.5) and  
 
 When the camera object is created, it has predefined values that are used for the lookat function. This is stored within a function called GetViewMatrix within the camera header file. 
 
