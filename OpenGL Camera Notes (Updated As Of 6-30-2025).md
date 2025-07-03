@@ -101,10 +101,12 @@ Your code when ran with this as your view matrix should be spinning around the s
 Swinging the camera around a scene is fun, but it's more fun to do all the movement ourselves. First we need to set up a camera system, so it is useful to define some camera variables at the top of our program. 
 
 ```
-glm::vec3 cameraPos = glm::vec3()
+glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f); // cameras world position
+glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f); // camera view direction
+glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f); // vec3 pointing up in world                                                          space
 ```
 
-To get a look at function we use these three vectors and add them within GLFW's look at function:
+The `LookAt` function now becomes:
 
 `view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);`
 
