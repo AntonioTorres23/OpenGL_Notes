@@ -122,7 +122,7 @@ Here is the definition that are for the `lookAt` function parameters that LearnO
 
 This is all preformed within the camera header file. 
 
-First we set the camera position to the previously defined `cameraPos`. The direction is the current position or (target/view) is the current position + the direction vector (`cameraFront` which is our )
+First we set the camera position to the previously defined `cameraPos`. The direction (target/view we want the camera to face) is the current position of the camera + the direction vector (`cameraFront` which is where our camera is facing)  
 
 
 When the camera object is created, it has predefined values that are used for the lookat function. This is stored within a function called GetViewMatrix within the camera header file. 
