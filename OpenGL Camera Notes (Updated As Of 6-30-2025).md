@@ -88,13 +88,13 @@ Before delivering into user input, let's get a little funky first by rotating th
 ```
 const float radius = 10.0f;
 float camX = sin(glfwGetTime()) * radius;
-float camZ = cos((glfwGetTime)) * radius;
+float camZ = cos(glfwGetTime()) * radius;
 glm::mat4 view;
 view = glm::lookAt(glm::vec3(camX, 0.0, camZ), // camera position vec3 
 	   glm::vec3(0.0, 0.0, 0.0),               // camera target vec3                      glm::vec3(0.0, 1.0, 0.0));              // vec3 pointing up in world space
 ```
 
-The `glm::lookat `
+
 
 Lastly, we have a camera up position for the y axis to set vertical height on the camera. 
 
