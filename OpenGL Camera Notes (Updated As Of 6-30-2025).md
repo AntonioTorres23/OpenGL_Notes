@@ -132,7 +132,10 @@ void processInput(GLFWwindow *window) // takes in GLFW windows pointer variable
 	...
 	const float cameraSpeed = 0.05f // adjust accordingly
 	if (glfwGetKey(window, GLFW_KEY_W) == GFLW_PRESS)
-		cameraPos += cameraSpeed 
+		cameraPos += cameraSpeed * cameraFront;
+	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+		cameraPos -= cameraSpeed * cameraFront
+	if (glfwGetK)
 
 }
 ```
