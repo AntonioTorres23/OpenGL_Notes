@@ -148,7 +148,7 @@ Whenever we press one of the WASD keys, the camera's position is updated accordi
 
 So I think of it like this, you have your `cameraPos` vector and whenever in the while loop a w key is pressed that is going forward so it will take the scalar of `cameraSpeed` (in this case 0.05) and  multiply it by the `cameraFront` vector (the global vector being (0, 0, -1)). This gives us the vector (0,0,-0.05). Then we add this with the camera's current position vector, (which starts at (0, 0, 3)), so the equation would be (0, 0, 3) + (0, 0, -0.05) = (0, 0, 2.95). Remember that since the positive z-axis is pointing towards the camera, the smaller the z coordinate for the camera's position gets, the more we move up in world space. 
 
-This also applies when pressing the s key but in reverse, we do our multiplication with the `cameraSpeed` scalar (0.05) and `cameraFront` (0, 0, -1) to get the vector (0, 0, -0.05). However, we now subtract our new vector with the `cameraPos` vector which starts at a default of 
+This also applies when pressing the s key but in reverse, we do our multiplication with the `cameraSpeed` scalar (0.05) and `cameraFront` (0, 0, -1) to get the vector (0, 0, -0.05). However, we now subtract our new vector with the `cameraPos` vector which starts at a default of (0, 0, 3). So if our camera was at the default vector and we wanted to do subtraction, 
 
 When the camera object is created, it has predefined values that are used for the lookat function. This is stored within a function called GetViewMatrix within the camera header file. 
 
