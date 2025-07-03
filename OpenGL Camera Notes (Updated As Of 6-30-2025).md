@@ -36,9 +36,6 @@ Keep note that the z axis is pointing toward the camera. If we have `cameraTarge
 
 *THE NAME DIRECTION VECTOR IS NOT THE BEST CHOSEN NAME, SINCE IT IS ACTUALLY POINTING IN THE REVERSE OF WHAT IT IS TARGETING. SO ITS REALLY POINTING FROM THE CAMERA TARGET FROM THE CAMERA POSITION*
 
-Next we have a camera front position which is where the camera is pointing. 
-
-`glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);`
 
 **3. Right Axis**
 
@@ -94,6 +91,12 @@ view = glm::lookAt(glm::vec3(camX, 0.0, camZ), // camera position vec3
 	   glm::vec3(0.0, 0.0, 0.0),               // camera target vec3                      glm::vec3(0.0, 1.0, 0.0));              // vec3 pointing up in world space
 ```
 
+Your code when ran with this as your view matrix should be spinning around the scene in circles over time.
+
+![[Pasted image 20250703125456.png]]
+
+
+**Walk Around**
 
 
 Lastly, we have a camera up position for the y axis to set vertical height on the camera. 
