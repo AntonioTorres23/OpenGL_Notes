@@ -83,7 +83,7 @@ view = glm::lookAt(glm::vec3(0.0f, 0.0f, 0.3f), // camera position vec3
 
 The `glm::LookAt` function requires a position, target, and up vector respectively.
 
-Before delivering into user input, let's get a little funky first by rotating the camera around our scene. We keep the target of the scene at (0, 0, 0). We use a little bit of trigonometry to create an and z coordinate each frame using GLFW's
+Before delivering into user input, let's get a little funky first by rotating the camera around our scene. We keep the target of the scene at (0, 0, 0). We use a little bit of trigonometry to create an x and z coordinate each frame that represents a point on a circle and we'll use these for our camera position. 
 
 Lastly, we have a camera up position for the y axis to set vertical height on the camera. 
 
