@@ -135,7 +135,8 @@ void processInput(GLFWwindow *window) // takes in GLFW windows pointer variable
 		cameraPos += cameraSpeed * cameraFront;
 	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
 		cameraPos -= cameraSpeed * cameraFront
-	if (glfwGetK)
+	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+		cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp))
 
 }
 ```
