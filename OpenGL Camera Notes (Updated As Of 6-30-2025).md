@@ -71,7 +71,15 @@ A great thing about matrices is that if you define a coordinate space using 3 pe
 
 Where R is the right vector (cam's positive x-axis), U is the up vector (cam's positive y-axis), D is the Direction vector (cam's positive z-axis), and P is the camera's position vector. Note that rotation (left matrix) and translation (right matrix) parts are inverted (transposed and negated respectively) since we want to rotate and translate the world in the opposite direction of where we want the camera to move. Using this `LookAt` matrix as our view matrix effectively transforms all world coordinates to the view space we just defined. The `LookAt` matrix then does exactly what it says: it creates a view matrix that looks at a given target. 
 
-Luckily for us, GLM already does all this work for us
+Luckily for us, GLM already does all this work for us. We only have to specify a camera position, a target position and a vector that represents the up vector in world space (the up vector we used for calculating the right vector). GLM then creates the `LookAt` matrix that we can use as our view matrix.
+
+```
+glm::mat4 view;
+
+view = glm::lookAt(glm::vec3(0.0f, 0.0f, 0.3f), // camera position vec3
+				   glm::vec3(0.0f, 0.0f, 0.0f), // camera target vec3
+				   glm::vec3(0.0f, 1.0f, 0.0f)); // camera's positive up (y) axis
+```
 
 Lastly, we have a camera up position for the y axis to set vertical height on the camera. 
 
