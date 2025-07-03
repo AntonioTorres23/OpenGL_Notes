@@ -122,7 +122,19 @@ Here is the definition that are for the `lookAt` function parameters that LearnO
 
 This is all preformed within the camera header file. 
 
-First we set the camera position to the previously defined `cameraPos`. The direction (target/view we want the camera to face) is the current position of the camera + the direction vector (`cameraFront` which is where our camera is facing) we just defined. This ensures that however we move, the camera keeps looking 
+First we set the camera position to the previously defined `cameraPos`. The direction (target/view we want the camera to face) is the current position of the camera + the direction vector (`cameraFront` which is where our camera is facing) we just defined. This ensures that however we move, the camera keeps looking at the target direction. Let's play a bit with these variables by updating the `cameraPos` vector when we press some keys.
+
+We already defined a `processInput` function to manage GLFW's keyboard input so let's add a few extra key ccommands.
+
+```
+void processInput(GLFWwindow *window) // takes in GLFW windows pointer variable
+{
+	...
+	const float cameraSpeed = 0.05f // adjust accordingly
+	if (glfw)
+
+}
+```
 
 
 When the camera object is created, it has predefined values that are used for the lookat function. This is stored within a function called GetViewMatrix within the camera header file. 
