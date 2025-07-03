@@ -81,6 +81,9 @@ view = glm::lookAt(glm::vec3(0.0f, 0.0f, 0.3f), // camera position vec3
 				   glm::vec3(0.0f, 1.0f, 0.0f)); // camera's positive up (y) axis
 ```
 
+The `glm::LookAt` function requires a position, target, and up vector respectively.
+Before delivering
+
 Lastly, we have a camera up position for the y axis to set vertical height on the camera. 
 
 `glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);`
