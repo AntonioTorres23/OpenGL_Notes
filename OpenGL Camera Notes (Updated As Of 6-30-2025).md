@@ -98,6 +98,7 @@ Your code when ran with this as your view matrix should be spinning around the s
 
 **Walk Around**
 
+Swinging the camera around a scene is fun, but it's more fun to do all the movement ourselves. First we need to set up a camera system 
 
 Lastly, we have a camera up position for the y axis to set vertical height on the camera. 
 
