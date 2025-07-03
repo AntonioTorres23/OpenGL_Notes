@@ -110,9 +110,9 @@ The `LookAt` function now becomes:
 
 `view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);`
 
-The view variable holds the look at function which takes 3 parameters, the position of the camera, the target at which the camera wants to point at. As well as a vector that creates the right vector
+The view matrix variable holds the look at function which takes 3 parameters, the position of the camera, the target at which the camera wants to point at. As well as a vector that creates the right vector
 
-Here is the definition that are for the lookat function parameters that LearnOpenGl provides. 
+Here is the definition that are for the `lookAt` function parameters that LearnOpenGL provides. 
 
 1st position: Specifies the position of the camera in word coordinates.
 
