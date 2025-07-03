@@ -98,11 +98,11 @@ Your code when ran with this as your view matrix should be spinning around the s
 
 **Walk Around**
 
-Swinging the camera around a scene is fun, but it's more fun to do all the movement ourselves. First we need to set up a camera system 
+Swinging the camera around a scene is fun, but it's more fun to do all the movement ourselves. First we need to set up a camera system, so it is useful to define some camera variables at the top of our program. 
 
-Lastly, we have a camera up position for the y axis to set vertical height on the camera. 
-
-`glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);`
+```
+glm::vec3 cameraPos = glm::vec3()
+```
 
 To get a look at function we use these three vectors and add them within GLFW's look at function:
 
