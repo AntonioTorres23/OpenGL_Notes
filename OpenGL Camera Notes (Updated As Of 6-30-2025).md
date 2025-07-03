@@ -69,7 +69,7 @@ A great thing about matrices is that if you define a coordinate space using 3 pe
 
 ![[Pasted image 20250702110003.png]]
 
-Where R is the right vector (cam's positive x-axis), U is the up vector (cam's positive y-axis), D is the Direction vector (cam's positive z-axis), and translation (right matrix) parts are inverted (transposed and negated respectively) since we want to rotate and translate the world in the opposite direction of where we want the camera to move. Using this `LookAt` matrix as our view matrix effectively transforms all world coordinates to the view space we just defined. The `LookAt` matrix then does exactly what it says: it creates a view matrix that looks at a given target. 
+Where R is the right vector (cam's positive x-axis), U is the up vector (cam's positive y-axis), D is the Direction vector (cam's positive z-axis), and P is the camera's position vector. Note that rotation (left matrix) and translation (right matrix) parts are inverted (transposed and negated respectively) since we want to rotate and translate the world in the opposite direction of where we want the camera to move. Using this `LookAt` matrix as our view matrix effectively transforms all world coordinates to the view space we just defined. The `LookAt` matrix then does exactly what it says: it creates a view matrix that looks at a given target. 
 
 Luckily for us, GLM already does all this work for us
 
