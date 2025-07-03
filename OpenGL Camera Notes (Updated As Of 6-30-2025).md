@@ -78,14 +78,23 @@ glm::mat4 view;
 
 view = glm::lookAt(glm::vec3(0.0f, 0.0f, 0.3f), // camera position vec3
 				   glm::vec3(0.0f, 0.0f, 0.0f), // camera target vec3
-				   glm::vec3(0.0f, 1.0f, 0.0f)); // camera's positive up (y) axis
+				   glm::vec3(0.0f, 1.0f, 0.0f)); // vec3 pointing up in world space
 ```
 
 The `glm::LookAt` function requires a position, target, and up vector respectively.
 
 Before delivering into user input, let's get a little funky first by rotating the camera around our scene. We keep the target of the scene at (0, 0, 0). We use a little bit of trigonometry to create an x and z coordinate each frame that represents a point on a circle and we'll use these for our camera position. By re-calculating the x and y coordinate over time we're traversing all the points in a circle and thus the camera rotates around the scene. We enlarge this circle by a pre-defined radius and create a new view matrix each frame using GLFW's `glfwGetTime` function. 
 
-``
+```
+const float radius = 10.0f;
+float camX = sin(glfwGetTime()) * radius;
+float camZ = cos((glfwGetTime)) * radius;
+glm::mat4 view;
+view = glm::lookAt(glm::vec3(camX, 0.0, camZ), // camera position vec3 
+	   glm::vec3(0.0, 0.0, 0.0),               // camera target vec3                      glm::vec3(0.0, 1.0, 0.0));              // vec3 pointing up in world space
+```
+
+The `glm::lookat `
 
 Lastly, we have a camera up position for the y axis to set vertical height on the camera. 
 
