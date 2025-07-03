@@ -110,7 +110,7 @@ The `LookAt` function now becomes:
 
 `view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);`
 
-The view matrix variable holds the look at function which takes 3 parameters, the position of the camera, the target at which the camera wants to point at. As well as a vector that to the positive up axis (y-axis) in world space. 
+The view matrix variable holds the look at function which takes 3 parameters, the position of the camera, the target at which the camera wants to point at. As well as a vector that to the positive up axis (y-axis) in world space.
 
 Here is the definition that are for the `lookAt` function parameters that LearnOpenGL provides. 
 
@@ -118,11 +118,11 @@ Here is the definition that are for the `lookAt` function parameters that LearnO
 
 2nd target: Specifies the target direction/position the camera should look at. 
 
-3rd up: specifies a vector pointing in the positive y direction used to create the right vector. This is usually set at (0.0, 1.0, 0.0).
+3rd up: specifies a vector pointing in the positive y direction in world space used to create the right vector. This is usually set at (0.0, 1.0, 0.0).
 
 This is all preformed within the camera header file. 
 
-Why we add the position and front values for the y coordinate so however we move, the camera keeps looking at the target direction. 
+First we set the camera position to the previously defined `cameraPos`. The direction is the current position or (target/view) is the current position + the direction vector (`cameraFront` which is our )
 
 
 When the camera object is created, it has predefined values that are used for the lookat function. This is stored within a function called GetViewMatrix within the camera header file. 
