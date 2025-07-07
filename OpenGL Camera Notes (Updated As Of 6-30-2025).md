@@ -263,7 +263,7 @@ direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
 
 So think of this like this, we have 3 axes we work on right x, y, and z. We are creating a triangle within where x and z are orthogonal as well as when x/z are orthogonal to y. We first apply our sin and cos to the yaw because we want to do our left and right translations first. However, since this is a 3D space, x and z are also influenced by the pitch due to them being orthogonal to y. So we also need to apply their cos and sin that relates to pitch to their respective coordinates. Since y only reflects how up and down (pitch) we are in a 3D space we only need to get the sin of pitch. 
 
-This gives us a formula to convert yaw and pitch values to a 3-dimensional
+This gives us a formula to convert yaw and pitch values to a 3-dimensional directional 
 
 
 To make sure the camera points towards the negative z-axis by default, we can give the yaw a default value of a 90 degree clockwise rotation. Positive degrees rotate counter-clockwise so we set the default yaw value to:
