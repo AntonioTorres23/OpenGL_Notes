@@ -167,9 +167,9 @@ When the camera object is created with the header file, the predefined vector va
 
 Currently we used a constant value for movement speed when walking around. In theory this seems fine, but in practice people's machines have different processing powers and the result of that is that some people are able to render much more frames than others each second. Whenever a user renders more frames than another user he also calls `processInput` more often. The result is that some people move really fast and some really slow depending on their setup. When shipping your application you want to make sure it runs the same on all kinds of hardware. 
 
-Graphics applications and games usually keep track of a `deltatime` variable that stores the time it took to render the last frame. We then multiply all velocities with this `deltaTime` variable
+Graphics applications and games usually keep track of a `deltatime` variable that stores the time it took to render the last frame. We then multiply all velocities with this `deltaTime` value. The result is that when we have a large `deltaTime` in a frame, meaning that the last frame took longer than average, the velocity for that frame will also be a bit higher to balance it out. When using this approach it does not matter if you have a very fast or slow PC, the velocity of the camera will be balanced out accordingly so each user will have the same experience. 
 
-Delta time is a variable that stores the time it took to render the last frame. To get that you subtract the current frame from the last frame. 
+To calculate the `deltaTime` value we keep track of 2 global variables and within each frame we then calculate the new `deltaTime` value for later use.
 
 ```
 float deltaTime = 0.0f; // Time between current frame and last frame float lastFrame = 0.0f; // Time of last frame
