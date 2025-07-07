@@ -210,7 +210,7 @@ Euler angles are 3 values that can represent any rotation in 3D, defined by Leon
 
 ![[Pasted image 20250707113930.png]]
 
-
+The **pitch** is the angle that depicts how much we're looking up or down as seen in the first image. The second image shows the **yaw** value which represents the magnitude we're looking to the left or to the right. 
 
 **Pitch** is how up or down we are looking at an object in 3d and is controlled by the y coordinate. 
 
