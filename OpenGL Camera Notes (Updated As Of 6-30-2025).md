@@ -202,7 +202,15 @@ If you are stuck check the [source code](https://learnopengl.com/code_viewer_gh.
 
 Only using the keyboard keys to move around isn't that interesting. Especially since we can't turn around making the movement rather restricted. That's where the mouse comes in.
 
-To look around the scene we have to change the `cameraFront` (where the camera is pointing) vector base
+To look around the scene we have to change the `cameraFront` (where the camera is pointing at) vector based on the input of the mouse. However, changing the direction vector based on mouse rotations is a little complicated and requires some trigonometry.
+
+**Euler Angles**
+
+Euler angles are 3 values that can represent any rotation in 3D, defined by Leonhard Euler somewhere in the 1700s. There are 3 Euler angles: **pitch**, **yaw**, and **roll**. The following image gives them more meaning. 
+
+![[Pasted image 20250707113930.png]]
+
+
 
 **Pitch** is how up or down we are looking at an object in 3d and is controlled by the y coordinate. 
 
