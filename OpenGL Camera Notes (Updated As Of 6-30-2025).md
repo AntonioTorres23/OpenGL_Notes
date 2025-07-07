@@ -323,14 +323,14 @@ yoffset *= sensitivity;
 
 Note that we multiply the offset values by a **sensitivity** value. If we omit this multiplication the mouse movement would be way too strong; fiddle around with the sensitivity value to your liking. 
 
-Next, we add the offset values to the globally 
+Next, we add the offset values to the globally declared **pitch** and **yaw** values.
 
 ```
 yaw += xoffset; 
 pitch += yoffset;
 ```
 
-add constraints to the camera so users won't be able to make weird camera movements. The pitch needs to be constrained in such a way that users won't be able to look higher than 89 degrees (at 90 degrees we get the LookAt flip). and also not below -89 degrees. This ensures the user will be able to look up to the sky or below to his feet but not further. The constraints work by replacing the Euler value with its constraint value whenever it breaches the constraint. 
+In the third s
 
 ```
 if(pitch > 89.0f) 
