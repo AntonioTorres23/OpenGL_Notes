@@ -154,7 +154,7 @@ The d key is a bit different, when it is pressed we do a cross product of `camer
 
 The same thing applies to the a key is similar but instead of adding to `cameraPos` we will be subtracting. we do a cross product of our `cameraFront` (0, 0, -1) and  `cameraUp` vectors (0,1,0) which generate the camera positive x (also known as right) axis (1, 0, 0). We then multiply this by our `cameraSpeed` scalar (0.05) which gives us the vector (0.05, 0, 0). Finally, we subtract this vector by the `cameraPos` vector which by default is set at (0,0,3). This gives us the result: (0,0,3) - (0.05, 0, 0) = (-0.05, 0, 3). This moves the camera position to the left on the x-axis within world space. 
 
-Remember that the every time we do this the vector `cameraPos` updates and stores these values. This is why I specify that the default value for it is (0, 0, 3). Depending on how many times you do this or how far back, forth, left, or right you go, those values will always be different. Think of it as a default space that the camera will spawn in at when the app is first ran.  
+Remember that the every time we do this the vector `cameraPos` updates and stores these values. This is why I specify that the default value for it is (0, 0, 3). Depending on how many times you do this or how far back, forth, left, or right you go, those values will always be different. Think of the position (0, 0, 3) as a default space that the camera will spawn in at when the app is first ran.  
 
 
 
