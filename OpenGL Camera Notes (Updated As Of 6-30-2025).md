@@ -165,7 +165,7 @@ When the camera object is created with the header file, the predefined vector va
 
 **Movement Speed**
 
-Currently we used a constant value for movement speed when walking around. In theory this seems fine, but in practice people's machines have different processing powers and the result of that is that some people are able to render much more frames
+Currently we used a constant value for movement speed when walking around. In theory this seems fine, but in practice people's machines have different processing powers and the result of that is that some people are able to render much more frames than others each second. Whenever a user renders more frames than another user he also calls `processInput` more often. The result is that 
 
 Delta time is a variable that stores the time it took to render the last frame. To get that you subtract the current frame from the last frame.
 
