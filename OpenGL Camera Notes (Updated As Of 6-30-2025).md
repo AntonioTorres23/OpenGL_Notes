@@ -185,10 +185,16 @@ Now that we have a `deltaTime` we can take it into account when calculating the 
 
 ```
   
-void processInput(GLFWwindow *window) { float cameraSpeed = 2.5f * deltaTime; [...] }
+void processInput(GLFWwindow *window) 
+{ 
+	float cameraSpeed = 2.5f * deltaTime; 
+	[...] 
+}
 ```
 
+Since we're using `deltaTime` the camera will now move at a constant speed of 2.5 units per second. 
 
+Together with the previous section we should now have a 
 This covers the part of controlling the camera to move in 3d but the other half after this sentence is how to look around in a 3d environment using an input such as mouse. 
 
 **Pitch** is how up or down we are looking at an object in 3d and is controlled by the y coordinate. 
