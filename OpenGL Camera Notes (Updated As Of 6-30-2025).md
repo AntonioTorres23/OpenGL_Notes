@@ -219,7 +219,7 @@ The **pitch** is the angle that depicts how much we're looking up or down as see
 So using trigonometry, you can use the cos and sin to get the position of x and y. 
 
 
-*"Let's start with a bit of a refresher and check the general right triangle case (with one side at a 90 degree angle):*"
+Let's start with a bit of a refresher and check the general right triangle case
 
 
 
