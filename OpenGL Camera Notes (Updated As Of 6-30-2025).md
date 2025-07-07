@@ -226,7 +226,7 @@ Let's start with a bit of a refresher and check the general right triangle case 
  ![[Pasted image 20250304162505.png]]
 `
 
-If we define the hypotenuse to be a length of 1, we know from trigonometry (`soh`, `cah` `toa`) that the adjacent side's length is $\cos x/h = cos = x/1 = \cos x$ and that the opposing side's length is $\sin y/h = \sin y/1 = $  
+If we define the hypotenuse to be a length of 1, we know from trigonometry (`soh`, `cah` `toa`) that the adjacent side's length is $\cos x/h = cos = x/1 = \cos x$ and that the opposing side's length is $\sin y/h = \sin = y/1 = \sin y$. This gives us general formula  
 
 *Let's imagine this same triangle, but now looking at it from a top perspective with the adjacent and opposite sides being parallel to the scene's x and z axis (as if looking down the y-axis)."*
 
