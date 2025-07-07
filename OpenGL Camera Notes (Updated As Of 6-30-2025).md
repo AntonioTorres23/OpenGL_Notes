@@ -269,10 +269,7 @@ Also remember that yaw and pitch are represented as theta ($\theta$) of the righ
 
 This gives us a formula to convert yaw and pitch values to a 3-dimensional directional vector that we can use for looking around. 
 
-We've set up the scene world so everything's positioned in the direction of the negative z-axis. However, if we look at the x and z triangle we see that the $\theta$ of 0 results in the camera's direction vector to point towards the positive x-axis. To make sure the camera points towards the negative z-axis by default we can give the yaw a default value of a 90 degree **clockwise** rotation. Positive degrees rotate **counter-clockwise** so we set the default yaw value to
-
-
-To make sure the camera points towards the negative z-axis by default, we can give the yaw a default value of a 90 degree clockwise rotation. Positive degrees rotate counter-clockwise so we set the default yaw value to:
+We've set up the scene world so everything's positioned in the direction of the negative z-axis. However, if we look at the x and z triangle we see that the $\theta$ of 0 results in the camera's direction vector to point towards the positive x-axis. To make sure the camera points towards the negative z-axis by default we can give the yaw a default value of a 90 degree **clockwise** rotation. Positive degrees rotate **counter-clockwise** so we set the default yaw value to.
 
 `yaw = -90.0f;`
 
@@ -281,6 +278,8 @@ To make sure the camera points towards the negative z-axis by default, we can gi
 ![[Pasted image 20250305112857.png]]
 
 **DO NOT WORRY ABOUT THIS IMAGE THIS IS LEFT OVER FROM MY PREVIOUS EDITION OF THESE NOTES**
+
+**Mouse Input**
 
 To use these values in a game design sense, we are going to capture input from the mouse's movement. Where horizontal movement affects the yaw and vertical movement affects the pitch. The idea is to store the last frame's mouse positions and calculate in the current frame how much the mouse values has changed. The higher the horizontal or vertical difference, the more we update the pitch or yaw value and thus the more the camera should move. 
 
