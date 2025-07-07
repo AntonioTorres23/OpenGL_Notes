@@ -330,7 +330,7 @@ yaw += xoffset;
 pitch += yoffset;
 ```
 
-In the third step, we'd like to add some constraints to the camera so users won't be able to make weird camera movements (also causes a `LookAt` matrix flip once direction (where camera is facing) vector is parallel to the world up (y-axis) direction). The pitch needs to be constrained in such a way that users won't be able to look higher than 89 degrees (at 90 degrees we get the `lookAt` matrix flip) and also not below -89 degrees. This ensures the user will be able to look up to the sky or below to his feet but not further. The con
+In the third step, we'd like to add some constraints to the camera so users won't be able to make weird camera movements (also causes a `LookAt` matrix flip once direction (where camera is facing) vector is parallel to the world up (y-axis) direction). The pitch needs to be constrained in such a way that users won't be able to look higher than 89 degrees (at 90 degrees we get the `lookAt` matrix flip) and also not below -89 degrees. This ensures the user will be able to look up to the sky or below to his feet but not further. The constraints work by replacing the Euler value with its constraint value whenever it reaches the constraint. 
 
 ```
 if(pitch > 89.0f) 
@@ -338,6 +338,8 @@ pitch = 89.0f;
 if(pitch < -89.0f) 
 pitch = -89.0f;
 ```
+
+Note that we set no constraint on the yaw since we don't want to constrain the 
 
 Lastly, we need to calculate the actual direction vector using the formula from the previous section.
 
