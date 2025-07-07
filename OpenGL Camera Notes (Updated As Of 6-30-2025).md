@@ -167,7 +167,7 @@ When the camera object is created with the header file, the predefined vector va
 
 Currently we used a constant value for movement speed when walking around. In theory this seems fine, but in practice people's machines have different processing powers and the result of that is that some people are able to render much more frames than others each second. Whenever a user renders more frames than another user he also calls `processInput` more often. The result is that some people move really fast and some really slow depending on their setup. When shipping your application you want to make sure it runs the same on all kinds of hardware. 
 
-Graphics applications and games usually keep track of a `deltatime` 
+Graphics applications and games usually keep track of a `deltatime` variable that stores the time it took to render the last frame. We then multiply all velocities with this `deltaTime` variable
 
 Delta time is a variable that stores the time it took to render the last frame. To get that you subtract the current frame from the last frame. 
 
