@@ -228,30 +228,30 @@ Let's start with a bit of a refresher and check the general right triangle case 
 
 If we define the hypotenuse to be a length of 1, we know from trigonometry (`soh`, `cah` `toa`) that the adjacent side's length is $\cos x/h = cos = x/1 = \cos x$ and that the opposing side's length is $\sin y/h = \sin = y/1 = \sin y$. This gives us general formulas for retrieving the length in both the x and y on right triangles, depending on the given angle. Let's use this to calculate components of the direction vector (front vector I think).
 
-Let's imagine this same triangle, but now looking at it from a top perspective with the adjacent and opposite sides being parallel to the scene's x and z axis 
+Let's imagine this same triangle, but now looking at it from a top perspective with the adjacent and opposite sides being parallel to the scene's x and z axis (as if looking down from the y-axis).
 
 ![[Pasted image 20250304162642.png]]
 
 
-*"If we visualize the yaw angle to be the counter-clockwise angle starting from the `x` side we can see that the length of the `x` side relates to `cos(yaw)`. And similarly how the length of the `z` side relates to `sin(yaw)`."*
-
-"*If we take this knowledge and a given `yaw` value we can use it to create a camera direction vector:*"
+If we visualize the yaw angle to be the counter-clockwise angle starting from the x side we can see that the length of the x side relates to $\cos(yaw)$. And similarly how the length of the z side relates $\sin(yaw)$.  
+ 
+If we take this knowledge and a given yaw value we can use it to create a camera direction vector.
 
 ```
-
 glm::vec3 direction;
-direction.x = cos(glm::radians(yaw)); // Note that we convert the angle to radians first
+direction.x = cos(glm::radians(yaw)); // Note that we convert the angle to radians                                                                            first
 direction.z = sin(glm::radians(yaw));
 ```
 
-This is how to get the Yaw of an object in 3d but we need to get the Pitch as well. 
+This solves how we can get a 3D direction vector from a yaw value, but pitch needs to be included as well. Let's now look at the y axis as if we're sitting on the `x/z` plane.  
 
 This is accomplished similarly to Yaw where x and z are meeting with y to get an angle. 
 
-
 ![[Pasted image 20250305111404.png]]
 
-As before we use sin to get the pitch of y. 
+Similarly, from this triangle we can see that the direction's y component equals $\sin(pitch)$ so let's fill that in
+
+`direction.y = sin(glm::radians(pitch));`
 
 However from the pitch triangle we can also see the xz sides are influenced by cos so we need to make sure this is also part of the direction vector. 
 
