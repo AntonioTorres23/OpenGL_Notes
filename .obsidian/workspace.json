@@ -235,14 +235,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ef028ada522861f5",
+  "active": "811b39e840a47e3f",
   "lastOpenFiles": [
+    "Overview on Coordinate Systems.md",
+    "OpenGL Camera Notes (Updated As Of 6-30-2025).md",
+    "Overview on Transformations.md",
     "Pasted image 20250707144828.png",
     "Pasted image 20250707113930.png",
     "Pasted image 20250703125456.png",
-    "Overview on Transformations.md",
-    "Overview on Coordinate Systems.md",
-    "OpenGL Camera Notes (Updated As Of 6-30-2025).md",
     "Pasted image 20250702110003.png",
     "Pasted image 20250701142315.png",
     "Mesh Loading OpenGL Notes.md",
@@ -252,7 +252,6 @@
     "Pasted image 20250630101421.png",
     "Pasted image 20250630100637.png",
     "Pasted image 20250630094139.png",
-    "Pasted image 20250627165613.png",
     "Storing Data Types In a Vector.md",
     "Stencil Testing.md",
     "Untitled.md",

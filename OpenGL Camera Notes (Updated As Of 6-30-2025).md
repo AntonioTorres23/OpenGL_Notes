@@ -403,10 +403,9 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 ```
 
 
-Lastly we can create a zoom function and bind it to the scroll wheel. 
+**Zoom**
 
-First we create a callback function called void scroll call back. This is what it looks like:
-
+As a little extra to the camera system we'll also implement a zooming interface. The Field of View or FOV largely defines how much we can see of the scene. When the field of view becomes smaller, the scene's projected space gets smaller. This smaller space is projected over the same Normalized Device Coordinates (coordinates in range of -1.0 to 1.0) giving the illusion of zooming in. To zoom in, we're going to use the mouse's scroll wheel. Similar to mouse movement and keyboard input, we have a callback function for mouse scrolling. 
 
 ```
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
@@ -419,8 +418,8 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
 }
 ```
 
-When scrolling, the yoffset value tells us the amount we scrolled vertically. When the scroll_callback function is called we change the content of the globally declared fov variable. Since 45.0 is the default fov value we want to constrain the zoom level between 1.0 and 45.0.
-
+When scrolling, the `yoffset` value tells us the amount we scrolled vertically. When the `scroll_callback` function is called we change the content of the globally declared `fov` variable. Since 45.0 is the default value we want to constrain the zoom level between 1.0 and 45.0. 
+ 
 We now have to upload the perspective with the global fov variable as the field of view.
 
 `projection = glm::perspective(glm::radians(fov), 800.0f / 600.0f, 0.1f, 100.0f);`
@@ -428,3 +427,6 @@ We now have to upload the perspective with the global fov variable as the field 
 Lastly, make sure you pre define the function above with its parameters and use the glfw callback function to activate it. 
 
 `glfwSetScrollCallback(window, scroll_callback);`
+
+
+Remember that when doing the keyboard inputs, we are changing the position of the camera in world space. This is in relation to the `cameraPos` vector within the `lookAt` matrix. When doing the mouse call back, we are changing the orientation that the camera is facing (where it's looking at). This is done in degrees with yaw and pitch and represents the `cameraDir` of the `lookAt` matrix. They are two completely different things but work together to get you a fly style camera within OpenGL.
