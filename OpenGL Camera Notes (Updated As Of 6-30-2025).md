@@ -321,9 +321,9 @@ xoffset *= sensitivity;
 yoffset *= sensitivity;
 ```
 
-Note we multiply the offset values by the sensitivity value. If we omit this multiplication the mouse movement would be too strong. 
+Note that we multiply the offset values by a **sensitivity** value. If we omit this multiplication the mouse movement would be way too strong; fiddle around with the sensitivity value to your liking. 
 
-Next we add the offset values to the to the globally declared pitch and yaw values. 
+Next, we add the offset values to the globally 
 
 ```
 yaw += xoffset; 
