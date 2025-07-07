@@ -198,7 +198,11 @@ Together with the previous section we should now have a much smoother and more c
 
 If you are stuck check the [source code](https://learnopengl.com/code_viewer_gh.php?code=src/1.getting_started/7.2.camera_keyboard_dt/camera_keyboard_dt.cpp) from the LearnOpenGL website. 
 
-This covers the part of controlling the camera to move in 3d but the other half after this sentence is how to look around in a 3d environment using an input such as mouse. 
+**Look Around**
+
+Only using the keyboard keys to move around isn't that interesting. Especially since we can't turn around making the movement rather restricted. That's where the mouse comes in.
+
+To look around the scene we have to change the `cameraFront` (where the camera is pointing) vector base
 
 **Pitch** is how up or down we are looking at an object in 3d and is controlled by the y coordinate. 
 
