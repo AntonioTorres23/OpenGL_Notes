@@ -269,7 +269,7 @@ Also remember that yaw and pitch are represented as theta ($\theta$) of the righ
 
 This gives us a formula to convert yaw and pitch values to a 3-dimensional directional vector that we can use for looking around. 
 
-We've set up the scene world so everything's positioned in the direction of the negative z-axis. However, if we look at the x and z triangle we see that the $\theta$ of 0 results in the camera's direction vector to point towards the positive x-axis. To make sure the camera points towards the negative z-axis by default we can give the yaw a default value 
+We've set up the scene world so everything's positioned in the direction of the negative z-axis. However, if we look at the x and z triangle we see that the $\theta$ of 0 results in the camera's direction vector to point towards the positive x-axis. To make sure the camera points towards the negative z-axis by default we can give the yaw a default value of a 90 degree **clockwise** rotation. Positive degrees rotate **counter-clockwise** so we set the default yaw value to
 
 
 To make sure the camera points towards the negative z-axis by default, we can give the yaw a default value of a 90 degree clockwise rotation. Positive degrees rotate counter-clockwise so we set the default yaw value to:
