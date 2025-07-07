@@ -219,14 +219,14 @@ The **pitch** is the angle that depicts how much we're looking up or down as see
 So using trigonometry, you can use the cos and sin to get the position of x and y. 
 
 
-Let's start with a bit of a refresher and check the general right triangle case
+Let's start with a bit of a refresher and check the general right triangle case (with one side at a 90 degree angle). 
 
 
 
  ![[Pasted image 20250304162505.png]]
 `
 
-*"If we define the hypotenuse to be of length `1` we know from trigonometry (soh cah toa) that the adjacant side's length is cos x/h=cos x/1=cos xcos⁡ x/h=cos⁡ x/1=cos⁡ x and that the opposing side's length is sin y/h=sin y/1=sin ysin⁡ y/h=sin⁡ y/1=sin⁡ y. This gives us some general formulas for retrieving the length in both the `x` and `y` sides on right triangles, depending on the given angle. Let's use this to calculate the components of the direction vector.*
+If we define the hypotenuse to be a length of 1, we know from trigonometry (`soh`, `cah` `toa`) that the adjacent side's length is $\cos x/h = cos$, $x/1 = \cos x$ and that the opposing side's length is $\sin y/h = \sin y/1$  
 
 *Let's imagine this same triangle, but now looking at it from a top perspective with the adjacent and opposite sides being parallel to the scene's x and z axis (as if looking down the y-axis)."*
 
