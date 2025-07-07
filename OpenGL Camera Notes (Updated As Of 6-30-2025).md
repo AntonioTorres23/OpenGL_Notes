@@ -181,7 +181,7 @@ lastFrame = currentFrame;
 
 ```
 
-Now that we have 
+Now that we have a `deltaTime` we can take it into account when calculating the velocities.
 
 ```
   
