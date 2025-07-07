@@ -194,7 +194,10 @@ void processInput(GLFWwindow *window)
 
 Since we're using `deltaTime` the camera will now move at a constant speed of 2.5 units per second. 
 
-Together with the previous section we should now have a 
+Together with the previous section we should now have a much smoother and more consistent camera system for moving around the scene. 
+
+If you are stuck check the [source code](https://learnopengl.com/code_viewer_gh.php?code=src/1.getting_started/7.2.camera_keyboard_dt/camera_keyboard_dt.cpp) from the LearnOpenGL 
+
 This covers the part of controlling the camera to move in 3d but the other half after this sentence is how to look around in a 3d environment using an input such as mouse. 
 
 **Pitch** is how up or down we are looking at an object in 3d and is controlled by the y coordinate. 
