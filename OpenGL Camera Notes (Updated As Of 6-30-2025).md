@@ -353,9 +353,9 @@ cameraFront = glm::normalize(direction);
 
 The computed direction vector then contains all the rotations calculated from the mouse's movement. Since the `cameraFront` vector is already included in GLM's `lookAt` function we're set to go. 
 
-If you'd run the code now you'll notice the camera makes a large sudden jump whenever the window first
+If you'd run the code now you'll notice the camera makes a large sudden jump whenever the window first receives focus of your mouse cursor. The cause for this sudden jump is that as soon as your cursor enters the window the mouse callback function is called with an `xpos` AND `YP`
 
-We also set a first mouse variable so that we stop getting that snapping movement whenever the window first receives focus of your mouse cursor. We solve this by declaring a global bool variable and then if it was the first time the mouse was on the scree
+
 ```
 if (firstMouse) // initially set to true
 {
