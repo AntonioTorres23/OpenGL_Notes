@@ -281,7 +281,7 @@ We've set up the scene world so everything's positioned in the direction of the 
 
 **Mouse Input**
 
-The yaw and pitch values are obtained from the mouse (or controller/joystick) where horizontal mouse-movement affects yaw and vertical mouse-movement affects pitch. Where hori The idea is to store the last frame's mouse positions and calculate in the current frame how much the mouse values has changed. The higher the horizontal or vertical difference, the more we update the pitch or yaw value and thus the more the camera should move. 
+The yaw and pitch values are obtained from the mouse (or controller/joystick) where horizontal mouse-movement affects yaw and vertical mouse-movement affects pitch. 
 
 
 First tell GLFW that it should hide the cursor and capture it. Capturing a cursor means that once the application has focus, the mouse cursor stays within the center of the window (unless the application losses focus or quits)
