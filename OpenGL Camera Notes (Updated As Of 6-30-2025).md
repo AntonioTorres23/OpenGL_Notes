@@ -287,32 +287,32 @@ First we will tell GLFW that it should hide the cursor and **capture** it. Captu
 
 `glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);`
 
-After this, to calculate the pitch and yaw values we need to tell GLFW to listen to mouse-movement events. We do this by creating a callback function with the following prototype:
+After this call, wherever we move the mouse it won't be visible and should not leave the window. This is perfect for an FPS camera system. 
+
+To calculate the pitch and yaw values we need to tell GLFW to listen to mouse-movement events. We do this by creating a callback function with the following prototype.
 
 `void mouse_callback(GLFWwindow* window, double xpos, double ypos);`
 
-Here xpos and ypos represent the current mouse positions. As soon as we register the callback function with GLFW each time the mouse moves the mouse callback function is called. 
+Here `xpos` and `ypos` represent the current mouse positions. As soon as we register the callback function with GLFW each time the mouse moves, the `mouse_callback` function is called. 
 
-`glfwSetCursorPosCallback(window, mouse_callback);`
+`glfwSetCursorPosCallBack(window, mouse_callback);`
 
-
-To handle mouse input for a fly style cam, we need to do several steps before we can fully calculate the camera's direction vector. 
+When handling mouse input for a fly style camera there are several steps we have to take before we're able to fully calculate the camera's direction vector.
 
 1. Calculate the mouse's offset since the last frame.
-2. Add some offset values to the camera's yaw and pitch values.
+2. Add the offset values to the camera's yaw and pitch values.
 3. Add some constraints to the minimum/maximum pitch values.
 4. Calculate the direction vector.
 
-The first step is to calculate the offset of the mouse since the last frame. We first have to store the last mouse positions in the application, which we initialize to be in the center of the screen (screen is 800x600). 
+The first step is to calculate the offset of the mouse since last frame. We first have to store the last mouse positions in the application, which we initialize to be in the center of the screen (screen size is  800 by 600)
 
 `float lastX = 400, lastY = 300;`
 
 Then in the mouse's callback function we calculate the offset movement between the last and current frame:
 
 ```
-
 float xoffset = xpos - lastX;
-float yoffset = lastY - ypos; // reversed since y-coordinates range from bottom to top
+float yoffset = lastY - ypos; // reversed since y-coordinates range from bottom to                                                                                 top
 lastX = xpos;
 lastY = ypos;
 
