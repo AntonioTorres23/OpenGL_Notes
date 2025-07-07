@@ -339,7 +339,7 @@ if(pitch < -89.0f)
 pitch = -89.0f;
 ```
 
-Note that we set no constraint on the yaw since we don't want to constrain the 
+Note that we set no constraint on the yaw since we don't want to constrain the user in horizontal rotation. However,
 
 Lastly, we need to calculate the actual direction vector using the formula from the previous section.
 
