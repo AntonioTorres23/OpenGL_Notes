@@ -172,7 +172,8 @@ Graphics applications and games usually keep track of a `deltatime` variable tha
 To calculate the `deltaTime` value we keep track of 2 global variables and within each frame we then calculate the new `deltaTime` value for later use.
 
 ```
-float deltaTime = 0.0f; // Time between current frame and last frame float lastFrame = 0.0f; // Time of last frame
+float deltaTime = 0.0f; // Time between current frame and last frame float 
+float lastFrame = 0.0f; // Time of last frame
 
 float currentFrame = glfwGetTime(); 
 deltaTime = currentFrame - lastFrame; 
@@ -180,7 +181,7 @@ lastFrame = currentFrame;
 
 ```
 
-Then you multiply this in a variable by the speed you want your camera at to create a buffer if a frame took longer than average which will slow the camera down.
+Now that we have 
 
 ```
   
