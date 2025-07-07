@@ -157,16 +157,15 @@ The same thing applies to the a key is similar but instead of adding to `cameraP
 Remember that the every time we do this the vector `cameraPos` updates and stores these values. This is why I specify that the default value for it is (0, 0, 3). Depending on how many times you do this or how far back, forth, left, or right you go, those values will always be different. Think of the position (0, 0, 3) as a default space that the camera will spawn in at when the app is first ran.  
 
 
-
 When the camera object is created, it has predefined values that are used for the lookat function. This is stored within a function called GetViewMatrix within the camera header file. 
 
 Within the main file, this is stored within the view variable and called via the camera object that was created earlier in the function. 
 
 When the camera object is created with the header file, the predefined vector variables get data entered into them. 
 
-Then to bind them to a key we us the pre-defined open GL variables and put them into the process input function. Then if we move up or back, we subtract or add the position front vector to the camera position. If we move from side to side, we subtract or add the normalized cross product of camera front and camera up to the position camera.  
+**Movement Speed**
 
-You need to multiply the Front camera by the Front and Up vectors to get the Right vector which allows you to move along the x coordinate path. 
+Currently we used a constant value for movement speed when walking around. In theory this seems fine, but in practice people's machines have different processing powers and the result of that is that some people are able to render much more frames
 
 Delta time is a variable that stores the time it took to render the last frame. To get that you subtract the current frame from the last frame.
 
