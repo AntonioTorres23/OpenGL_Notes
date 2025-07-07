@@ -249,11 +249,11 @@ This is accomplished similarly to Yaw where x and z are meeting with y to get an
 
 ![[Pasted image 20250305111404.png]]
 
-Similarly, from this triangle we can see that the direction's y component equals $\sin(pitch)$ so let's fill that in
+Similarly, from this triangle we can see that the direction's y component equals $\sin(pitch)$ so let's fill that in.
 
 `direction.y = sin(glm::radians(pitch));`
 
-However from the pitch triangle we can also see the xz sides are influenced by cos so we need to make sure this is also part of the direction vector. 
+However, from the pitch triangle we can also see the `xz` sides are influenced by $\cos(pitch)$
 
 With this included, we get the final direction vector as translated from yaw and pitch euler angles. 
 
