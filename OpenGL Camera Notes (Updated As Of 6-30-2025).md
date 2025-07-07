@@ -263,7 +263,9 @@ direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
 
 So think of this like this, we have 3 axes we work on right x, y, and z. We are creating a triangle within where x and z are orthogonal as well as when x/z are orthogonal to y. We first apply our sin and cos to the yaw because we want to do our left and right translations first. However, since this is a 3D space, x and z are also influenced by the pitch due to them being orthogonal to y. So we also need to apply their cos and sin that relates to pitch to their respective coordinates. Since y only reflects how up and down (pitch) we are in a 3D space we only need to get the sin of pitch. 
 
-Also remember that yaw and pitch are represented as theta ($\theta$) of the right triangles that are created when the axes are orthogonal to each other. They are represented with degrees. So think of it as we are getting where the coordinate of our 
+Also remember that yaw and pitch are represented as theta ($\theta$) of the right triangles that are created when the axes are orthogonal to each other. They are represented with degrees. So think of it as we are getting where the coordinate of our camera direction (x, y, or z) and 
+
+![[Pasted image 20250707144828.png]]
 
 This gives us a formula to convert yaw and pitch values to a 3-dimensional directional vector that we can use for looking around. 
 
