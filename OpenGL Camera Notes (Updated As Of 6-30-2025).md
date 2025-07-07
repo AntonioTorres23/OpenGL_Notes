@@ -270,10 +270,11 @@ To make sure the camera points towards the negative z-axis by default, we can gi
 
 `yaw = -90.0f;`
 
-**DO NOT WORRY ABOUT THIS IMAGE THIS IS LEFT OVER FROM MY PREVIOUS EDITION OF THESE NOTES **
+**DO NOT WORRY ABOUT THIS IMAGE THIS IS LEFT OVER FROM MY PREVIOUS EDITION OF THESE NOTES**
 
 ![[Pasted image 20250305112857.png]]
 
+**DO NOT WORRY ABOUT THIS IMAGE THIS IS LEFT OVER FROM MY PREVIOUS EDITION OF THESE NOTES**
 
 To use these values in a game design sense, we are going to capture input from the mouse's movement. Where horizontal movement affects the yaw and vertical movement affects the pitch. The idea is to store the last frame's mouse positions and calculate in the current frame how much the mouse values has changed. The higher the horizontal or vertical difference, the more we update the pitch or yaw value and thus the more the camera should move. 
 
