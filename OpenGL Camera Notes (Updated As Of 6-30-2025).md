@@ -256,7 +256,9 @@ Similarly, from this triangle we can see that the direction's y component equals
 However, from the pitch triangle we can also see the `xz` sides are influenced by $\cos(pitch)$ so we need to make sure this is also part of the direction vector. With this included we get the final direction vector as translated from yaw and pitch Euler angles.
 
 ```
-direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch)); direction.y = sin(glm::radians(pitch)); direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch)); 
+direction.y = sin(glm::radians(pitch)); 
+direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
 ```
 
 We've set up the scene world so everything is positioned in the direction of the negative z axis. However, if we look at the x and z yaw triangle we see that a 0 of 0 results in the camera's direction vector to point towards the positive x-axis. 
