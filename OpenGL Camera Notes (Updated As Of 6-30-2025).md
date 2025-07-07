@@ -330,7 +330,7 @@ yaw += xoffset;
 pitch += yoffset;
 ```
 
-In the third s
+In the third step, we'd like to add some constraints to the camera so users won't be able to make weird camera movements (also causes a `LookAt` matrix flip once direction (where camera is facing) vector )
 
 ```
 if(pitch > 89.0f) 
