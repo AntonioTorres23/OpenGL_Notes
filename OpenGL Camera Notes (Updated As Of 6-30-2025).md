@@ -424,7 +424,7 @@ We now have to upload the perspective with the global fov variable as the field 
 
 `projection = glm::perspective(glm::radians(fov), 800.0f / 600.0f, 0.1f, 100.0f);`
 
-Lastly, make sure you pre define the function above with its parameters and use the glfw callback function to activate it. 
+Lastly, make sure you pre define the function above with its parameters and use the GLFW callback function to activate it. 
 
 `glfwSetScrollCallback(window, scroll_callback);`
 
