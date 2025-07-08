@@ -431,4 +431,4 @@ Lastly, make sure you pre define the function above with its parameters and use 
 
 Remember that when doing the keyboard inputs, we are changing the position of the camera in world space. This is in relation to the `cameraPos` vector within the `lookAt` matrix. When doing the mouse call back, we are changing the orientation that the camera is facing (where it's looking at). This is done in degrees with yaw and pitch and represents the `cameraDir` of the `lookAt` matrix. They are two completely different things but work together to get you a fly style camera within OpenGL.
 
-Remember that the `xpos` and `ypos` are the horizontal mouse-movements (yaw) and the vertical mouse-movements  (`pitch`) whenever the mouse is moved. So when we bound our `mouse_callback` function to `glfwSetPosCursorCallback`, whenever the mouse 
+Remember that the `xpos` and `ypos` are the horizontal mouse-movements (yaw) and the vertical mouse-movements  (`pitch`) whenever the mouse is moved. So when we bound our `mouse_callback` function to `glfwSetPosCursorCallback`, whenever the mouse makes a movement it calls the `mouse_callback`. Within the `mouse_callback` function p
