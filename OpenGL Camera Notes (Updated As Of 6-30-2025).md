@@ -435,4 +435,6 @@ Remember that the `xpos` and `ypos` are the horizontal mouse-movements (yaw) and
 
 We subtract our `xpos` and `ypos` from their related `lastx` and `lasty` that where stored in a global variable within main.cpp. These two subtraction calculate how much the mouse has moved since the last time and are stored in a the new variables `xoffset` and `yoffset`. 
 
-After this, we set our `xpos` yaw angle as `lastx` and our `ypos` pitch angle as `lasty`. Since 
+After this, we set our `xpos` yaw angle as `lastx` and our `ypos` pitch angle as `lasty`. Since that was the last time we have moved the mouse until we move it again. 
+
+The `xoffset` and 
