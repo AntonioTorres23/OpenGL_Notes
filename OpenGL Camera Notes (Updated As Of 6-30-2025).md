@@ -437,4 +437,4 @@ We subtract our `xpos` and `ypos` from their related `lastx` and `lasty` that wh
 
 After this, we set our `xpos` yaw angle as `lastx` and our `ypos` pitch angle as `lasty`. Since that was the last time we have moved the mouse until we move it again. 
 
-The `xoffset` and 
+The `xoffset` and the `yoffset` are then multiplied by a sensitivity float number to allow for 
