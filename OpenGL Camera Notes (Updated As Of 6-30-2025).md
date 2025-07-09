@@ -433,4 +433,4 @@ Remember that when doing the keyboard inputs, we are changing the position of th
 
 Remember that the `xpos` and `ypos` are the horizontal mouse-movements (yaw) and the vertical mouse-movements  (`pitch`) whenever the mouse is moved. So when we bound our `mouse_callback` function to `glfwSetPosCursorCallback`, whenever the mouse makes a movement it calls the `mouse_callback`. Within the `mouse_callback` function parameter/arguments, we take in a pointer of our GLFW window we created previously in the main file as well as `xpos` and `ypos` which are the yaw and pitch $\theta$ (theta) angles captured from the mouse that we use to calculate the rotation and direction (`cameraFront`) the camera is facing.  
 
-We subtract our `xpos` and `ypos` from their related `lastx` and `lasty` that where stored in a global variable within main.cpp. These two subtraction calculate how much the mouse has move
+We subtract our `xpos` and `ypos` from their related `lastx` and `lasty` that where stored in a global variable within main.cpp. These two subtraction calculate how much the mouse has moved since the last time and are stored in a new variable  
