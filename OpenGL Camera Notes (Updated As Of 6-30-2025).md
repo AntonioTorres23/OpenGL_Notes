@@ -443,7 +443,7 @@ Those new yaw and pitch values are then used for a new 3 coordinate vector to ca
 
 Now when applied in the future LearnOpenGL lessons they switch over to a class for the camera object that cleans up the main file. This is all done in the header file where we create a class titled `Camera`. Within this class there are members stored within there that store things like the `YAW`, `PITCH`,  `MovementSpeed`, `MouseSensitivity`, `Position`, `WorldUp`, `Right`, `Up`, `Front`, and `Position`. Within this there is also a constructor with arguments that either take default values as defined globally above in the header or can be entered with your own values when you create a class object within main.
 
-Along with this, an `updateCameraVectors` function is called that provides the trigonometry to find the new x, y, and z values for the front vector using yaw and pitch angles that we learned about earlier. 
+Along with this, an `updateCameraVectors` function is called that provides the trigonometry to find the new x, y, and z values for the front vector using yaw and pitch angles that we learned about earlier. As well as calculating the new cross product from 
 
 There are two of these one with vectors and another with scalar values. 
 
