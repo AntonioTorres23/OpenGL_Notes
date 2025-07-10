@@ -443,7 +443,7 @@ Those new yaw and pitch values are then used for a new 3 coordinate vector to ca
 
 **Explaining the Changes with the Camera Header File**
 
-So LearnOpenGL at the end of the camera tutorial changes up the way your source code is structured. The first biggest thing is that there is a new header file titled `camera.h` where all the functions and 
+So LearnOpenGL at the end of the camera tutorial changes up the way your source code is structured. The first biggest thing is that there is a new header file titled `camera.h` where all the functions we previously defined are located. Such as the 
 
 
 
