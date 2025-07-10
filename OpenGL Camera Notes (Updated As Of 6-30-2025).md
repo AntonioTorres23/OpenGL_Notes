@@ -445,9 +445,7 @@ Now when applied in the future LearnOpenGL lessons they switch over to a class f
 
 Along with this, an `updateCameraVectors` function is called that provides the trigonometry to find the new x, y, and z values for the front vector using yaw and pitch angles that we learned about earlier. As well as calculating the new cross products of the `Right` and `Up` vectors of the camera. Notice how this is a private function and can only be accessed by `Camera` objects. 
 
-Whenever 
-
-Within the 
+A function titled `ProcessMouseMovement` is a function stored within this class that also stores/calls the `updateCameraVectors` function. This function multiples the `MouseSensitivy` to the `xoffset` and `yoffset` which is then added to the existing Yaw and Pitch members within the Camera class. Then the `updateCameraVectors` is called which takes the new 
 
 Your `GetViewMatrix` function is where the `lookAt` matrix is stored and is what you will use when creating your view matrix within the main file.
 
