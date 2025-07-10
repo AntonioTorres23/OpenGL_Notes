@@ -441,7 +441,7 @@ The `xoffset` and the `yoffset` are then multiplied by a sensitivity float numbe
 
 Those new yaw and pitch values are then used for a new 3 coordinate vector to calculate the new position that the front vector is facing. You accomplish this using trigonometry where you use your yaw and pitch to get the length (positional coordinate) of the right triangles sin or cos that are created with the 3 axes (x, y, and z).  This vector is then normalized and then sent to the front vector. That front vector is then updated in the `lookAt` matrix which recalculates where the camera is pointing at. This will be your new view matrix when it is applied within the vertex shader. 
 
-Now when applied in the future LearnOpenGL lessons they switch over to a class for the camera object that cleans up the main file. This is all done in the header file where we create a class titled `Camera`. Within this class there are members stored within there that store things like the `YAW`, `PITCH`,  `MovementSpeed`, `MouseSensitivity`, `Position`, `WorldUp`, `Right`, `Up`, `Front`, and `Position`. Within this 
+Now when applied in the future LearnOpenGL lessons they switch over to a class for the camera object that cleans up the main file. This is all done in the header file where we create a class titled `Camera`. Within this class there are members stored within there that store things like the `YAW`, `PITCH`,  `MovementSpeed`, `MouseSensitivity`, `Position`, `WorldUp`, `Right`, `Up`, `Front`, and `Position`. Within this there also a constructor class, 
 
 
 
