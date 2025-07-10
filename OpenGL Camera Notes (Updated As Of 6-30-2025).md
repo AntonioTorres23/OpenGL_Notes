@@ -445,9 +445,9 @@ Now when applied in the future LearnOpenGL lessons they switch over to a class f
 
 Along with this, an `updateCameraVectors` function is called that provides the trigonometry to find the new x, y, and z values for the front vector using yaw and pitch angles that we learned about earlier. As well as calculating the new cross products of the `Right` and `Up` vectors of the camera. Notice how this is a private function and can only be accessed by `Camera` objects. 
 
-Your `GetViewMatrix` is where the `lookAt` matrix is stored and is how the cmera
+Your `GetViewMatrix` is where the `lookAt` matrix is stored and is what you will use when creating your view matrix within the main file. 
 
-There are two of these one with vectors and another with scalar values. 
+There are two constructors based on what types of data you enter. One of these is with vectors and another with scalar values. 
 
 
 
