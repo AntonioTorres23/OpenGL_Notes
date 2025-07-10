@@ -439,4 +439,4 @@ After this, we set our `xpos` yaw angle as `lastx` and our `ypos` pitch angle as
 
 The `xoffset` and the `yoffset` are then multiplied by a sensitivity float number to slow down the movement. After this they are added to global yaw and pitch values which by default are -90 for yaw and 0 for pitch. -90 puts the camera pointing toward the negative z-axis (which is facing the front of the average OpenGL scene since the z-axis is always pointing towards the camera object). 
 
-Those values are then 
+Those new yaw and pitch values are then used for a new 3 coordinate vector to preform trigonometry as show previously to 
