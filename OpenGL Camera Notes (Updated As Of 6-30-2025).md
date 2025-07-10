@@ -437,4 +437,6 @@ We subtract our `xpos` and `ypos` from their related `lastx` and `lasty` that wh
 
 After this, we set our `xpos` yaw angle as `lastx` and our `ypos` pitch angle as `lasty`. Since that was the last time we have moved the mouse until we move it again. 
 
-The `xoffset` and the `yoffset` are then multiplied by a sensitivity float number to slow down the movement. After this they are added to global yaw and pitch values which by default are -90 for yaw and 0 for pitch. -90 puts the camera pointing toward the negative z-axis (which is facing the front of the average OpenGL application since the z-axis is always pointing towards the camera object). 
+The `xoffset` and the `yoffset` are then multiplied by a sensitivity float number to slow down the movement. After this they are added to global yaw and pitch values which by default are -90 for yaw and 0 for pitch. -90 puts the camera pointing toward the negative z-axis (which is facing the front of the average OpenGL scene since the z-axis is always pointing towards the camera object). 
+
+Those values are then 
