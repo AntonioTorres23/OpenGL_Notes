@@ -51,4 +51,6 @@ A vector in GLSL is a 2, 3, or 4 component container for any of the basic types 
 
 Most of the time we will be using the basic `vecn` since floats are sufficient for most of our purposes. 
 
-Components of a vector can be accessed via `vec.x` where x is the first component of the vector. You can use `.x`, `.y`, `.z`, and `.w` to access their first, second, third and fourth component respectively. GLSL al
+Components of a vector can be accessed via `vec.x` where x is the first component of the vector. You can use `.x`, `.y`, `.z`, and `.w` to access their first, second, third and fourth component respectively. GLSL also allows you to use `rgba` for colors or `stpq` for texture coordinates, accessing the same components. 
+
+The vector datatype allows for some interesting and flexible component selection called **swizzling**. Swizz
