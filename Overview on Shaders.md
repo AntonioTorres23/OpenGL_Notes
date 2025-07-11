@@ -37,4 +37,8 @@ This often returns the minimum of 16 which should be more than enough for most p
 
 **Types**
 
-GLSL has, like any other programming language, data types for specifying what kind of variable we want to work with. GLSL has most of the default basic types we know from languages like C: `int`, `float`, `double`, `uint`, and `bool`. GLSL also features two container types that we'l
+GLSL has, like any other programming language, data types for specifying what kind of variable we want to work with. GLSL has most of the default basic types we know from languages like C: `int`, `float`, `double`, `uint`, and `bool`. GLSL also features two container types that we'll be using a lot, namely **vectors** and **matrices**. 
+
+**Vectors**
+
+A vector in GLSL is a 2, 3, or 4 component container for any of the basic types just mentioned. 
