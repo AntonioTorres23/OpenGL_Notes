@@ -80,4 +80,4 @@ The vertex shader **should** receive some form of input otherwise it would be pr
 
 It is also possible to omit the layout `(location = 0)` specifier and query for the attribute location in your OpenGL code via `glGetAttribLocation`, but I'd prefer to set them in the vertex shader. It is easier to understand and saves you (and OpenGL) some work. 
 
-The other e
+The other exception is that the fragment requires a vec4 color output variable, since the fragment shaders need to generate a final output color. If you fail to specify an output color in your fragment shader, the color buffer output for those fragments will be undefined (which )
