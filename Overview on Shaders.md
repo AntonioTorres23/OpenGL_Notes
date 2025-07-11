@@ -82,4 +82,8 @@ It is also possible to omit the layout `(location = 0)` specifier and query for 
 
 The other exception is that the fragment requires a vec4 color output variable, since the fragment shaders need to generate a final output color. If you fail to specify an output color in your fragment shader, the color buffer output for those fragments will be undefined (which usually means OpenGL will render them either black or white). 
 
-So if we want to send data from one shader to the other we'd have to declare an output in the sending shader and a similar input in the receiving shader. When the types and names are equal on both sides OpenGL will link those variables together and then it is possible to send data between shaders (this is done when linking a pr)
+So if we want to send data from one shader to the other we'd have to declare an output in the sending shader and a similar input in the receiving shader. When the types and names are equal on both sides OpenGL will link those variables together and then it is possible to send data between shaders (this is done when linking a program object). Here is an example of sending and receiving data within GLSL shaders.
+
+```
+#version 330 core
+```
