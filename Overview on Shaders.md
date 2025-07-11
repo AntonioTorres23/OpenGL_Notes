@@ -115,4 +115,4 @@ void main()
 }
 ```
 
-You can see we declared a `vertexColor` variable as a `vec4` output that we set in the vertex shader and we declare a siliar 
+You can see we declared a `vertexColor` variable as a `vec4` output that we set in the vertex shader and we declare a similar `vetexColor` input in the fragment shader. Since they both have the same type and name, the `vertexColor` in the fragment shader is linked to the `vertexColor` in the vertex shader. 
