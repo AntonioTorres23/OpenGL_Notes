@@ -108,4 +108,11 @@ void main()
 out vec4 FragColor;
 
 in vec4 vertexColor; // the input variable from the vertex shader (same name and                        // type)
+
+void main()
+{
+	FragColor = vertexColor;
+}
 ```
+
+You can see we declared a `vertexColor` variable as a `vec4` output that we set in the vertex shader and we declare a siliar 
