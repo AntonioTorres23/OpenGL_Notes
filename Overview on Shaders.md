@@ -57,6 +57,23 @@ The vector datatype allows for some interesting and flexible component selection
 
 ```
 vec2 someVec;
+vec4 differentVec = someVec.xyxx;
+vec3 anotherVec = differentVec.zyw;
+vec4 otherVec = someVec.xxxx + anotherVec.yxzy;
+```
 
+You can use any combination of up to 4 letters to create a new vector (of the same type) as long as the original vector has those components; it is not allowed to access the `.z` component of a `vec2` for example. We can also pass vectors as arguments to different vector constructor calls, reducing the number of arguments required.
 
 ```
+vec2 vect = vec2(0.5, 0.7);
+vec4 result = vec4(vect, 0.0, 0.0);
+vec4 otherResult = vec4(result.xyz, 1.0);
+```
+
+Vectors are thus a flexible datatype that we can use for all kinds of input and output. You will see plenty of examples when learning OpenGL on how we can creatively manage vectors. 
+
+**Ins and Outs**
+
+Shaders are nice little programs on their own, but they are part of a whole and for that reason we want to have inputs and outputs on the individual shaders so that we can move stuff around. GLSL defined the `in` and `out` keywords specifically for that purpose. Each shader can specify inputs and outputs using those keywords and wherever an output variable matches with an input variable of the next shader stage they're passed along. The vertex and fragment shader differ a bit though. 
+
+The vertex shader **should** receive some form of input otherwise it would be pretty ineffective. The vertex shader differs in input, in that it receives its input straight from the vertex data. To define how the 
