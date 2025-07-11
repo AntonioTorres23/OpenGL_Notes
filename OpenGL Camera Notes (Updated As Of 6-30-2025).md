@@ -449,7 +449,7 @@ A function titled `ProcessMouseMovement` is a function stored within this class 
 
 Your `GetViewMatrix` function is where the `lookAt` matrix is stored and is what you will use when creating your view matrix within the main file.
 
-There are two constructors based on what types of data you enter. One of these is with vectors and another with scalar values. 
+There are two constructors based on what types of data you enter. One of these is with vectors and another with scalar values. The arguments also ccontain
 
 
 
