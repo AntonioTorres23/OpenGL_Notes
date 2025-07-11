@@ -84,6 +84,8 @@ The other exception is that the fragment requires a vec4 color output variable, 
 
 So if we want to send data from one shader to the other we'd have to declare an output in the sending shader and a similar input in the receiving shader. When the types and names are equal on both sides OpenGL will link those variables together and then it is possible to send data between shaders (this is done when linking a program object). Here is an example of sending and receiving data within GLSL shaders.
 
+**Vertex Shader**
+
 ```
 #version 330 core
 layout (location = 0) in vec3 aPos; // the position variable has attribute position
@@ -94,6 +96,12 @@ void main()
 {
 	gl_Position = vec4(aPos, 1.0); // see how we directly give a vec3 to vec4's
 								   // constructor
-	vertex
+	vertexColor = vec4(0.5, 0.0, 0.0, 1.0); // set the output variable to dark red
+											// color
 }
+```
+
+**Fragment Shader**
+
+```
 ```
