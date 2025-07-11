@@ -76,4 +76,4 @@ Vectors are thus a flexible datatype that we can use for all kinds of input and 
 
 Shaders are nice little programs on their own, but they are part of a whole and for that reason we want to have inputs and outputs on the individual shaders so that we can move stuff around. GLSL defined the `in` and `out` keywords specifically for that purpose. Each shader can specify inputs and outputs using those keywords and wherever an output variable matches with an input variable of the next shader stage they're passed along. The vertex and fragment shader differ a bit though. 
 
-The vertex shader **should** receive some form of input otherwise it would be pretty ineffective. The vertex shader differs in input, in that it receives its input straight from the vertex data. To define how the 
+The vertex shader **should** receive some form of input otherwise it would be pretty ineffective. The vertex shader differs in input, in that it receives its input straight from the vertex data. To define how the vertex data is organized we spec
