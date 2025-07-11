@@ -41,4 +41,14 @@ GLSL has, like any other programming language, data types for specifying what ki
 
 **Vectors**
 
-A vector in GLSL is a 2, 3, or 4 component container for any of the basic types just mentioned. 
+A vector in GLSL is a 2, 3, or 4 component container for any of the basic types just mentioned. They can take the following form (n represents the number of components).
+
+- `vecn`: the default vector of n floats.
+- `bvecn`: a vector of n booleans. 
+- `ivecn`: a vector of n integers.
+- `uvecn`: a vector of n unsigned integers.
+- `dvecn`: a vector of n double components.
+
+Most of the time we will be using the basic `vecn` since floats are sufficient for most of our purposes. 
+
+Components of a vector can be accessed via `vec.x` where x is the first component of the vector. You can use `.x`, `.y`, `.z`, and `.w` to access their first, second, third and fourth component respectively. GLSL al
