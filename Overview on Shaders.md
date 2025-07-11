@@ -117,3 +117,8 @@ void main()
 
 You can see we declared a `vertexColor` variable as a `vec4` output that we set in the vertex shader and we declare a similar `vetexColor` input in the fragment shader. Since they both have the same type and name, the `vertexColor` in the fragment shader is linked to the `vertexColor` in the vertex shader. Because we set the color to a dark-red color in the vertex, the resulting fragments should be dark-red as well. The following image shows the output.
 
+![[Pasted image 20250711164940.png]]
+
+We just managed to send a value from the vertex shader to the fragment shader. Let's spice it up a bit and see if we can send a color from our application to the fragment shader. 
+
+**Uniform**
