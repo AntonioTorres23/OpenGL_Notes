@@ -86,4 +86,7 @@ So if we want to send data from one shader to the other we'd have to declare an 
 
 ```
 #version 330 core
+layout (location = 0) in vec3 aPos; // the position variable has attribute position
+                                    // 0
+out vec4 vertexColor; // specify a color output to 
 ```
