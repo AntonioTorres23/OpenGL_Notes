@@ -192,5 +192,11 @@ while(!glfwWindowShouldClose(window))
 	// now render the triangle
 	glBindVertexArray(VAO);
 	glDrawArrays(GL_TRAINGLES, 0, 3);
+
+	// swap buffers and poll IO events
+	glfwSwapBuffers(window);
+	glfwPollEvents();
 }
 ```
+
+The code is a relatively straight forward 
