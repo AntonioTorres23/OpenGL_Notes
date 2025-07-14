@@ -219,4 +219,19 @@ float vertices[] =
 };
 ```
 
-Since we now have more data to send to the vertex shader, 
+Since we now have more data to send to the vertex shader, it is necessary to adjust the vertex shader to also receive our color value as a vertex attribute input. Note that we set the location of the `aColor` attribute to 1 with the layout specifier. 
+
+```
+#version 330 core
+layout (location = 0) in vec3 aPos; // the position variable has attrib position 0
+layout (location = 1) in vec3 aColor; // the color variable has attrib position 1
+
+out vec3 ourColor; // outputs a color to fragment shader
+
+void main()
+{
+	gl_Position = vec4(aPos, 1.0);
+	ourColor = aColor; // set ourColor to the input color we got from vertex data
+}
+``` 
+
