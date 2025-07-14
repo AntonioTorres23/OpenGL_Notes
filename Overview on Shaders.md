@@ -143,4 +143,4 @@ We declared a uniform `vec4` `ourColor` in the fragment shader and set the fragm
 
 If you declare a uniform that isn't used anywhere in your GLSL code the compiler will silently remove the variable from the compiled version which in the cause for several errors. 
 
-The uniform 
+The uniform is currently empty; we haven't added any data to the uniform yet so let's try that. We first need to find the index/location of the uniform attribute in our shader. Once we have the index/location of the uniform, we can update its values. Instead of 
