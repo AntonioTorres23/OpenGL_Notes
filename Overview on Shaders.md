@@ -199,4 +199,24 @@ while(!glfwWindowShouldClose(window))
 }
 ```
 
-The code is a relatively straight forward 
+The code is a relatively straightforward adaption of the previous code. This time, we update a uniform value each frame before drawing the triangle. If you update the uniform correctly you should see the color of your triangle gradually change from green to black and back to green. 
+
+Check the source code [here](https://learnopengl.com/code_viewer_gh.php?code=src/1.getting_started/3.1.shaders_uniform/shaders_uniform.cpp) if you are stuck. 
+
+As you can see, uniforms are a useful tool for setting attributes that may change every frame, or for interchanging data between your application and your shaders, but what if we want to set a color for each vertex? In that case we'd have to declare as many uniforms as we have vertices. A better solution would be to include more data in the vertex attributes is what which is what we're going to do now. 
+
+**More attributes**
+
+We can fill a VBO, configure vertex attribute pointers and store it all in a VAO. This time, we also want to add color data to the vertex data. We're going to add color data as 3 floats to the vertices array. We assign a red, green, and blue color to each of the corners of our triangle respectively. 
+
+```
+float vertices[] =
+{
+	// positions        // colors
+	0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f, // bottom right
+   -0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f, // bottom left
+    0.0f, 0.5f, 0.0f,   0.0f, 0.0f, 1.0f // top 
+};
+```
+
+Since we now have more data to send to the vertex shader, 
