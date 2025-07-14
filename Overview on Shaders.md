@@ -157,4 +157,14 @@ First, we retrieve the running time in seconds via `glfwGetTime()`. Then, we var
 
 Then we query for the location of `ourColor` uniform by using `glGetUniformLocation`. We supply the shader program and the name of the uniform (that we want to retrieve the location from) to the query function. If `glGetUniformLocation` returns -1, it could not find the location. Lastly we can set the uniform value using the `glUnifrom4f` function. Note that finding the uniform does not require you to use the shader program first, but updating a uniform does require you to use the program (by calling `glUseProgram`), because it sets the uniform on the currently active shader program. 
 
-Because OpenGL is in its core a C library it does not have native support for function overloading, so wherever a function can be called with different types OpenGL defines new functions for each type required; 
+Because OpenGL is in its core a C library it does not have native support for function overloading, so wherever a function can be called with different types OpenGL defines new functions for each type required; The function requires a specific postfix for the type of the uniform you want set. A few of the possible postfixes are.
+
+- `f`: the function expects a float as its value.
+- `i`: the function expects an integer as its value. 
+- `ui`: the function expects an unsigned integer as its value. 
+- `3f`: the function expects 3 floats as its value. 
+- `fv`: the function expects a float vector/array as its value. 
+
+Whenever you want to configure an option of OpenGL simply pick the overloaded function that corresponds with your type. In our case we want to set 4 floats of the uniform individually so we pass our data via `glUniform4f` (note that we also could've used the `fv` version). 
+
+Now that we know how to set the values of uniform values, we can use them for rendering. If we want the color to gradually change, we want to update this uniform every frame, otherwise the triangle would maintain a single solid color if we only set it once. So we calculate the `greenValue` and update the uniform each render iteration. To simplify that statement we do all of this within the while while loop of our application. 
