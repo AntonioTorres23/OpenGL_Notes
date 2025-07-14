@@ -235,3 +235,20 @@ void main()
 }
 ``` 
 
+Since we no longer use a uniform for the fragment's color, but now use the `ourColor` output variable we'll have to change the fragment shader as well.
+
+```
+#version 330 core
+out vec4 FragColor;
+in vec3 ourColor; 
+
+void main()
+{
+	FragColor = (ourColor, 1.0);
+}
+```
+
+Because we added another vertex attribute and updated the VBO's memory we have to re-configure the vertex attribute pointers. The updated data in the VBO's memory now looks a bit like this. 
+
+![Interleaved data of position and color within VBO to be configured wtih <function id='30'>glVertexAttribPointer</function>](https://learnopengl.com/img/getting-started/vertex_attribute_pointer_interleaved.png)
+
