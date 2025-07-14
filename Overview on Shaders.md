@@ -140,3 +140,7 @@ void main()
 ```
 
 We declared a uniform `vec4` `ourColor` in the fragment shader and set the fragment's output color to the content of this uniform value. Since uniforms are global values, we can define them in any shader stage we'd like so no need to go through the vertex shader again to get something to the fragment shader. We're not using this uniform in the vertex shader so there's no need to define it here. 
+
+If you declare a uniform that isn't used anywhere in your GLSL code the compiler will silently remove the variable from the compiled version which in the cause for several errors. 
+
+The uniform 
