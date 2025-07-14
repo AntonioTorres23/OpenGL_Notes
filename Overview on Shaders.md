@@ -168,3 +168,19 @@ Because OpenGL is in its core a C library it does not have native support for fu
 Whenever you want to configure an option of OpenGL simply pick the overloaded function that corresponds with your type. In our case we want to set 4 floats of the uniform individually so we pass our data via `glUniform4f` (note that we also could've used the `fv` version). 
 
 Now that we know how to set the values of uniform values, we can use them for rendering. If we want the color to gradually change, we want to update this uniform every frame, otherwise the triangle would maintain a single solid color if we only set it once. So we calculate the `greenValue` and update the uniform each render iteration. To simplify that statement we do all of this within the while while loop of our application. 
+
+```
+while(!glfwWindowShouldClose(window))
+{
+	// input
+	processInput(window);
+
+	// render
+	// clear the colorbuffer
+	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT);
+
+	// Be sure to activate the shader
+	glUseProgram
+}
+```
