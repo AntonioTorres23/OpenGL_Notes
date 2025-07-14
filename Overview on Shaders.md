@@ -181,6 +181,16 @@ while(!glfwWindowShouldClose(window))
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	// Be sure to activate the shader
-	glUseProgram
+	glUseProgram(shaderProgram);
+
+	// update the uniform color
+	float timeValue = glfwGetTime();
+	float greenValue = sin(timeValue) / 2.0f + 0.5f;
+	int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
+	glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
+
+	// now render the triangle
+	glBindVertexArray(VAO);
+	glDrawArrays(GL_TRAINGLES, 0, 3);
 }
 ```
