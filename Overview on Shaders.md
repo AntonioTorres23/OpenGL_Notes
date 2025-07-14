@@ -153,4 +153,8 @@ glUseProgram(shaderProgram);
 glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
 ```
 
-First, we retrieve the running time in seconds via `glfwGetTime()`. Then, we vary the color in the range of 0.0-1.0 using the sin function and store
+First, we retrieve the running time in seconds via `glfwGetTime()`. Then, we vary the color in the range of 0.0-1.0 using the sin function and store the result in `greenValue`.
+
+Then we query for the location of `ourColor` uniform by using `glGetUniformLocation`. We supply the shader program and the name of the uniform (that we want to retrieve the location from) to the query function. If `glGetUniformLocation` returns -1, it could not find the location. Lastly we can set the uniform value using the `glUnifrom4f` function. Note that finding the uniform does not require you to use the shader program first, but updating a uniform does require you to use the program (by calling `glUseProgram`), because it sets the uniform on the currently active shader program. 
+
+Because OpenGL is in its core a C library it does not have native support for function overloading, so wherever a function can be called with different types OpenGL defines new functions for each type required; 
