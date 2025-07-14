@@ -153,4 +153,4 @@ glUseProgram(shaderProgram);
 glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
 ```
 
-First
+First, we retrieve the running time in seconds via `glfwGetTime()`. Then, we vary the color in the range of 0.0-1.0 using the sin function and store
