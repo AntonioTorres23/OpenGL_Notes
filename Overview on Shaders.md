@@ -138,3 +138,5 @@ void main()
 	FragColor = ourColor;
 }
 ```
+
+We declared a uniform `vec4` `ourColor` in the fragment shader and set the fragment's output color to the content of this uniform value. Since uniforms are global values
