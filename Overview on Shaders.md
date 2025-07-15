@@ -280,4 +280,8 @@ The image may not be exactly what you would expect, since we only supplied 3 col
 
 Based on these positions, it **interpolates** all the fragment shader's input variables. Say for example we have a line where the upper point has a green color and the lower point a blue color. If the fragment shader is run at a fragment that resides around a position at 70% of the line, its resulting color input attribute would then be a linear combination of green and blue; to be precise: 30% blue and 70% green. 
 
-This is exactly what happened at the triangle. We have 3 vertices and 3 colors, and judging from the triangle's pixels it probably contains around 50,000 fragments, where the fragment shader interpolated the colors among those pixels. If you take a good look at the colors you'll see it all makes sense:
+This is exactly what happened at the triangle. We have 3 vertices and 3 colors, and judging from the triangle's pixels it probably contains around 50,000 fragments, where the fragment shader interpolated the colors among those pixels. If you take a good look at the colors you'll see it all makes sense: red to blue first gets to purple and then to blue. Fragment interpolation is applied to all fragment shader's input attributes. 
+
+**Our Own Shader Class**
+
+Writing, compiling and managing shaders can be quite cumbersome. As a final touch on the shader subject w
