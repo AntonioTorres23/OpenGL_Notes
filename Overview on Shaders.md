@@ -278,4 +278,6 @@ If stuck check out the LearnOpenGL source code [here](https://learnopengl.com/co
 
 The image may not be exactly what you would expect, since we only supplied 3 colors, not the huge color palette we're seeing now. This is all the result of something called **fragment interpolation** in the fragment shader. When rendering a triangle the rasterization stage usually results in a lot more fragments than vertices originally specified. The rasterizer then determines the positions of each of those fragments based on where they reside on the triangle shape. 
 
-Based on these positions, it **interpolates** all the fragment shader's input variables. Say for example we have a line where the upper point has a green color and the lower point a blue color. If the fragment shader is run at a fragment that resides around a position at 70% of the line, its resulting ccolor input attribute would then be a linear combination of green and blue; to be precise: 30%  
+Based on these positions, it **interpolates** all the fragment shader's input variables. Say for example we have a line where the upper point has a green color and the lower point a blue color. If the fragment shader is run at a fragment that resides around a position at 70% of the line, its resulting color input attribute would then be a linear combination of green and blue; to be precise: 30% blue and 70% green. 
+
+This is exactly what happened at the triangle. We have 3 vertices and 3 colors, and judging from the triangle's pixels it probably contains around 50,000 fragments, where 
