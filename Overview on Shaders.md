@@ -264,3 +264,18 @@ glEnableVertexAtrribArray(1);
 ```
 
 The first few arguments of `glVertexAttribPointer` are relatively straightforward. This time we are configuring the vertex attribute on attribute location 1. The color values have a size of 3 floats and we do not normalize the values. 
+
+Since we now have two vertex attributes we have to re-calculate the stride value. To get the next attribute value (e.g. the next x component of the position vector) in the data array we have to move 6 floats to the right, three for the position and three for the color values. This gives us a stride value of 6 times the size of a float in bytes (= 24 bytes). 
+
+Also, this time we have to specify an offset. For each vertex, the position vertex attribute is first so we declare an offset of 0. The color attribute starts after the position data so the offset is `3 * sizeof(float)` in bytes (= 12 bytes).
+
+Running the application gives us the following image. 
+
+![[Pasted image 20250715164732.png]]
+
+
+If stuck check out the LearnOpenGL source code [here](https://learnopengl.com/code_viewer_gh.php?code=src/1.getting_started/3.2.shaders_interpolation/shaders_interpolation.cpp). 
+
+The image may not be exactly what you would expect, since we only supplied 3 colors, not the huge color palette we're seeing now. This is all the result of something called **fragment interpolation** in the fragment shader. When rendering a triangle the rasterization stage usually results in a lot more fragments than vertices originally specified. The rasterizer then determines the positions of each of those fragments based on where they reside on the triangle shape. 
+
+Based on these positions, it **interpolates** all the fragment shader's input variables. Say for example we have a line where the upper point has a green color and the lower point a blue color. If the fragment shader is run at a fragment that resides around a position at 70% of the line, its resulting ccolor input attribute would then be a linear combination of green and blue; to be precise: 30%  
