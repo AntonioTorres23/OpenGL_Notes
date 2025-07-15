@@ -259,4 +259,8 @@ Knowing the current layout we can update the vertex format with `glVertexAttribP
 glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
 glEnableVertexAttribArray(0);
 // color attribute 
+glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 *                                                                        sizeof(float)));
+glEnableVertexAtrribArray(1);
 ```
+
+The first few arguments of `glVertexAttribPointer` are relatively straightforward. This time we are configuring the vertex attribute on attribute location 1. The color values have a size of 3 floats and we do not normalize the values. 
