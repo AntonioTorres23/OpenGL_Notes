@@ -252,3 +252,11 @@ Because we added another vertex attribute and updated the VBO's memory we have t
 
 ![Interleaved data of position and color within VBO to be configured wtih <function id='30'>glVertexAttribPointer</function>](https://learnopengl.com/img/getting-started/vertex_attribute_pointer_interleaved.png)
 
+Knowing the current layout we can update the vertex format with `glVertexAttribPointer`. 
+
+```
+// position attribute
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+glEnableVertexAttribArray(0);
+// color attribute 
+```
