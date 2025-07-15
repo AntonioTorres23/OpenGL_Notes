@@ -286,4 +286,4 @@ This is exactly what happened at the triangle. We have 3 vertices and 3 colors, 
 
 Writing, compiling and managing shaders can be quite cumbersome. As a final touch on the shader subject we're going to make life easier by building a shader class that reads shaders from disk, compiles and links them, checks for errors and is easy to use. This also gives you a bit of an idea how we can encapsulate some of the knowledge we learned so far into useful abstract objects.
 
-We will create 
+We will create the shader class entirely in a header file, mainly for learning purposes and portability. Let's start by adding the required includes and by defining the class structure. 
