@@ -364,4 +364,9 @@ Shader(const char* vertexPath, const char* fragmentPath)
 }
 ```
 
-Next we need to compile and link the shaders
+Next we need to compile and link the shaders. Note that we're also reviewing if compilation/linking failed and if so, print the compile-time errors. This is extremely useful when debugging (you are going to need those error logs eventually).
+
+```
+// 2. compile shaders
+unsigned int vertex, 
+```
