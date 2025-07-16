@@ -320,4 +320,48 @@ public:
 
 We used several preprocessor directives at the top of the header file. Using these little lines of code informs you compiler to only include and compile this header file if it hasn't been included yet, even if multiple files include the shader header. This prevents linking conflicts. 
 
-The shader class holds the ID of the shader program. Its constructor requires the file paths of the source code of the vertex and fragment shader respectively that we can store on disk as simple text files. To add a little extra 
+The shader class holds the ID of the shader program. Its constructor requires the file paths of the source code of the vertex and fragment shader respectively that we can store on disk as simple text files. To add a little extra we also add several utility functions to ease our lives a little: `use` activities the shader program, and all `set` functions query a uniform location and set its value. 
+
+**Reading from File**
+
+We're using C++ `filestreams` to read the content from the file into several string objects.
+
+```
+// Shader Contructor with Body of Code that Grabs Info From Shader Files
+Shader(const char* vertexPath, const char* fragmentPath)
+{
+	// 1. retrieve the vertex/fragment source code from filePath
+	std::string vertexCode;
+	std::string fragmentCode;
+	std::ifstream vShaderFile;
+	std::ifstream fShaderFile;
+	// ensure ifstream objects can through exceptions
+	vShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
+	fShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
+	try
+	{
+		// open files
+		vShaderFile.open(vertexPath);
+		fShaderFile.open(fragmentPath);
+		std::stringstream vShaderStream, fShaderStream;
+		// read file's buffer contents into streams
+		vShaderStream << vShaderFile.rdbuf();
+		fShaderStream << fShaderFile.rdbuf();
+		// close file handlers
+		vShaderFile.close();
+		fShaderFile.close;
+		// convert stream into string
+		vertexCode = vShaderStream.str();
+		fragmentCode = fShaderStream.str();
+	}
+	catch(std::ifstream::faliure e)
+	{
+		std::cout << "ERROR::SHADER::FILE_NOTE_SUCCESFULY_READ" << std::endl;
+	}
+	const char* vShaderCode = vertexCode.c_str();
+	const char* fShaderCode = fragmentCode.c_str();
+	[...]
+}
+```
+
+Next we need to compile and link the shaders
