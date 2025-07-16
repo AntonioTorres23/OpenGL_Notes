@@ -320,4 +320,4 @@ public:
 
 We used several preprocessor directives at the top of the header file. Using these little lines of code informs you compiler to only include and compile this header file if it hasn't been included yet, even if multiple files include the shader header. This prevents linking conflicts. 
 
-The shader class holds the ID of the shader program. Its constructor requires the file paths of the source code of the vertex and fragment 
+The shader class holds the ID of the shader program. Its constructor requires the file paths of the source code of the vertex and fragment shader respectively that we can store on disk as simple text files. To add a little extra 
