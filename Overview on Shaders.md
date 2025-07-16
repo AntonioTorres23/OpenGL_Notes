@@ -298,4 +298,13 @@ We will create the shader class entirely in a header file, mainly for learning p
 #include <fstream>
 #include <sstream>
 #include <iostream>
+
+class Shader
+{
+public:
+	// the program ID
+	unsigned int ID;
+
+
+}
 ```
