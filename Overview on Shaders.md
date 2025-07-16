@@ -368,5 +368,91 @@ Next we need to compile and link the shaders. Note that we're also reviewing if 
 
 ```
 // 2. compile shaders
-unsigned int vertex, 
+unsigned int vertex, fragment;
+int success;
+char infolog[512];
+
+// vertex Shader
+vertex = glCreateShader(GL_VERTEX_SHADER);
+glShaderSource(vertex, 1, &vShaderCode, NULL);
+glCompileShader(vertex);
+// print compile errors if any
+glGetShaderiv(vertex, GL_COMPILE_STATUS, &success);
+if(!success)
+{
+	glGetProgramInfoLog(ID, 512, NULL, infoLog);
+	std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog <<                                                                          std::endl;
+};
+
+// similar for Fragment Shader
+fragment = glCreateShader(GL_FRAGMENT_SHADER);
+glShaderSource(fragment, 1, &fShaderCode, NULL);
+glCompileShader;
+glGetShaderiv(fragment, GL_COMPILE_STATUS, &success);
+if(!success)
+{
+	glGetProgramInfoLog(ID, 512, NULL, infoLog);
+	std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog <<                                                                          std::endl;
+};
+
+// shader Program
+ID = glCreateShaderProgram();
+glAttachShader(ID, vertex);
+glAttachShader(ID, fragment);
+glLinkProgram(ID);
+// print linking errors if any
+glGetProgramiv(ID, GL_LINK_STATUS_SUCCESS, &success)
+if(!success)
+{
+	glGetProgramInfoLog(ID, 512, NULL, infoLog);
+	std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog <<                                                                          std::endl;
+}
+
+// delete the shaders as they're linked into our program now and no longer 
+//                                                                  necessary
+glDeleteShader(vertex);
+glDeleteShader(fragment);
 ```
+
+The use function is straightforward.
+
+```
+void use()
+{
+	glUseProgram(ID);
+}
+```
+
+Similarly for any of the uniform setter functions.
+
+```
+void setBool(const std::string &name, bool value) const
+{
+	glUniform1i(glGetUniformLocation(ID, name.cstr()), (int)value);
+}
+void setInt(const std::string &name, int value) const
+{
+	glUniform1i(glGetUniformLocation(ID, name.cstr()), value);
+}
+void setFloat(const std::string &name float value) const
+{
+	glUniform1f(glGetUniformLocation(ID, name.cstr()), value);
+}
+```
+
+And there we have it, a completed [shader class](https://learnopengl.com/code_viewer_gh.php?code=includes/learnopengl/shader_s.h). Using the shader class is fairly easy; we create a shader object once and from that point on simply start using it.
+
+```
+Shader ourShader("path/to/shaders/shader.vs, "path/to/shaders/shader.fs");
+[...]
+while(...)
+{
+	ourShader.use();
+	ourShader.setFloat("someUniform", 1.0f);
+	DrawStuff();
+}
+```
+
+Here we stored the vertex and fragment shader source code in two files called `shader.vs` and `shader.fs`. You're free to name your shader file however you like; I personally find the extensions `.vs` and `.fs` quite intuitive.
+
+You can find the source code [here](https://learnopengl.com/code_viewer_gh.php?code=src/1.getting_started/3.3.shaders_class/shaders_class.cpp) using our newly created  [shader class](https://learnopengl.com/code_viewer_gh.php?code=includes/learnopengl/shader_s.h). Note that you can click the shader file paths to find the shaders' source code within the LearnOpenGL website.
