@@ -396,6 +396,7 @@ if(!success)
 };
 
 // shader Program
+// ID is the ID of the shader Program Itself
 ID = glCreateShaderProgram();
 glAttachShader(ID, vertex);
 glAttachShader(ID, fragment);
