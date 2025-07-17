@@ -381,7 +381,7 @@ glGetShaderiv(vertex, GL_COMPILE_STATUS, &success);
 if(!success)
 {
 	glGetShaderInfoLog(vertex, 512, NULL, infoLog);
-	std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog <<                                                                          std::endl;
+	std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog <<                                                                          std::endl;
 };
 
 // similar for Fragment Shader
@@ -392,7 +392,7 @@ glGetShaderiv(fragment, GL_COMPILE_STATUS, &success);
 if(!success)
 {
 	glGetShaderInfoLog(fragment, 512, NULL, infoLog);
-	std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog <<                                                                          std::endl;
+	std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog <<                                                                          std::endl;
 };
 
 // shader Program
@@ -401,7 +401,7 @@ glAttachShader(ID, vertex);
 glAttachShader(ID, fragment);
 glLinkProgram(ID);
 // print linking errors if any
-glGetProgramiv(ID, GL_LINK_STATUS_SUCCESS, &success)
+glGetProgramiv(ID, GL_LINK_STATUS, &success)
 if(!success)
 {
 	glGetProgramInfoLog(ID, 512, NULL, infoLog);
