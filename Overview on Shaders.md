@@ -387,7 +387,7 @@ if(!success)
 // similar for Fragment Shader
 fragment = glCreateShader(GL_FRAGMENT_SHADER);
 glShaderSource(fragment, 1, &fShaderCode, NULL);
-glCompileShader;
+glCompileShader(fragment);
 glGetShaderiv(fragment, GL_COMPILE_STATUS, &success);
 if(!success)
 {
@@ -455,4 +455,4 @@ while(...)
 
 Here we stored the vertex and fragment shader source code in two files called `shader.vs` and `shader.fs`. You're free to name your shader file however you like; I personally find the extensions `.vs` and `.fs` quite intuitive.
 
-You can find the source code [here](https://learnopengl.com/code_viewer_gh.php?code=src/1.getting_started/3.3.shaders_class/shaders_class.cpp) using our newly created  [shader class](https://learnopengl.com/code_viewer_gh.php?code=includes/learnopengl/shader_s.h). Note that you can click the shader file paths to find the shaders' source code within the LearnOpenGL website.
+You can find the source code [here](https://learnopengl.com/code_viewer_gh.php?code=src/1.getting_started/3.3.shaders_class/shaders_class.cpp) using our newly created [shader class](https://learnopengl.com/code_viewer_gh.php?code=includes/learnopengl/shader_s.h). Note that you can click the shader file paths to find the shaders' source code within the LearnOpenGL website.
