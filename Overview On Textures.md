@@ -7,4 +7,7 @@ What artists and programmers generally prefer is to use a **texture**. A texture
 
 Next to images, textures can also be used to store a large collection of arbitrary data to send to the shaders, but we'll leave that for a different topic. 
 
-Below you'll see a textured image of a [brick wall](https://learnopengl.com/img/textures/wall.jpg) mapped to the triagn
+Below you'll see a textured image of a [brick wall](https://learnopengl.com/img/textures/wall.jpg) mapped to a triangle. 
+
+![[Pasted image 20250718161227.png]]
+
