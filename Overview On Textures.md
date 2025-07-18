@@ -11,3 +11,4 @@ Below you'll see a textured image of a [brick wall](https://learnopengl.com/img/
 
 ![[Pasted image 20250718161227.png]]
 
+In order to map a texture to the triangle we need to tell each vertex of the triangle which part of the texture it corresponds to. Each vertex should thus have a **texture coordinate** associated with them that specifies 
