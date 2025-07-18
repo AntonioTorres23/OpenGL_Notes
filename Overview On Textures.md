@@ -58,4 +58,6 @@ If we chose the `GL_CLAMP_TO_BORDER` option we should also specify a border colo
 
 ```
 float borderColor[] = { 1.0f, 1.0f, 0.0, 1.0f};
+glTexParameteriv(GL_TEXTURE_2D, GL_CLAMP_TO_BORDER_COLOR, borderColor);
 ```
+
