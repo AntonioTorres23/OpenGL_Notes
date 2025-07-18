@@ -27,11 +27,29 @@ float texCoords[] =
 	0.0f, 0.0f, // lower-left corner
 	1.0f, 0.0f, // lower-right corner
 	0.5f, 1.0f  // top-center corner
-}
+};
 ```
 
 Texture sampling has a loose interpretation and can be done in many ways. It is thus our job to tell OpenGL how it should *sample* its textures. 
 
 **Texture Wrapping**
 
-Texture coordinates usually range from (0,0) to (1,1)
+Texture coordinates usually range from (0,0) to (1,1) but what happens if we specify coordinates outside of this range? The default behavior of OpenGL is to repeat the textured images (we basically ignore the integer part of the floating point texture coordinate), but there are more options OpenGL offers.
+
+- `GL_REPEAT`: The default behaviors for textures. Repeats the textured image. 
+- `GL_MIRRORED_REPEAT`: Same as `GL_REPEAT` but mirrors the image with each repeat.
+- `GL_CLAMP_TO_EDGE`: Clamps the coordinates between 0 and 1. The result is that higher coordinates become clamped to the edge, resulting in a stretched edge pattern. 
+- `GL_CLAMP_TO_BORDER`: Coordinates outside the range are now given a user-specified border color. 
+
+Each of the options have a different visual output when using texture coordinates outside the default range. Let's see what these look like on a sampled texture image. 
+
+![[Pasted image 20250718164610.png]]
+
+Each of the aforementioned options can be set per coordinate axis (s, t (and r if you're using 3D textures) equivalent to x, y, z) with the `glTexParameter*` function.
+
+```
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT); //x texCoord
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT); //y texCoord
+```
+
+The first argument specifies the texture target; we're working with 2D textures so the texture target is `GL_TEXTURE_2D`
