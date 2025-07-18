@@ -61,3 +61,5 @@ float borderColor[] = { 1.0f, 1.0f, 0.0, 1.0f};
 glTexParameteriv(GL_TEXTURE_2D, GL_CLAMP_TO_BORDER_COLOR, borderColor);
 ```
 
+**Texture Filtering**
+
