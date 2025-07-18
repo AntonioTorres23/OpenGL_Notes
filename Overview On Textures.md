@@ -11,4 +11,10 @@ Below you'll see a textured image of a [brick wall](https://learnopengl.com/img/
 
 ![[Pasted image 20250718161227.png]]
 
-In order to map a texture to the triangle we need to tell each vertex of the triangle which part of the texture it corresponds to. Each vertex should thus have a **texture coordinate** associated with them that specifies 
+In order to map a texture to the triangle we need to tell each vertex of the triangle which part of the texture it corresponds to. Each vertex should thus have a **texture coordinate** associated with them that specifies what part of the textured image to sample from. Fragment interpolation then does the rest for the other fragments. 
+
+Texture coordinates range from 0 to 1 in the x and y axis (remember that we use 2D texture images). Retrieving the texture color using texture coordinates is called **sampling**. Texture coordinates start at (0,0) for the lower left corner of a texture image to (1,1) for the upper right corner of a texture image. The following image shows how we map texture coordinates to the triangle. 
+
+![[Pasted image 20250718161904.png]]
+
+We specify 3 texture coordinate points for the triangle. We want the bottom-left 
