@@ -17,4 +17,21 @@ Texture coordinates range from 0 to 1 in the x and y axis (remember that we use 
 
 ![[Pasted image 20250718161904.png]]
 
-We specify 3 texture coordinate points for the triangle. We want the bottom-left 
+We specify 3 texture coordinate points for the triangle. We want the bottom-left side of the triangle correspond with the bottom-left side of the triangle texture so we use the (0,0) texture coordinate for the triangle's bottom-left vertex. The same applies to the bottom right side with a (1,0) texture coordinate. The top of the triangle should correspond with the top-center of the texture image so we take (0.5,1.0) as its texture coordinate. We only have to pass 3 texture coordinates to the vertex shader, which then passes those to the fragment shader that neatly interpolates all the texture coordinates for each fragment. 
+
+The resulting texture coordinates would look like this:
+
+```
+float texCoords[] =
+{
+	0.0f, 0.0f, // lower-left corner
+	1.0f, 0.0f, // lower-right corner
+	0.5f, 1.0f  // top-center corner
+}
+```
+
+Texture sampling has a loose interpretation and can be done in many ways. It is thus our job to tell OpenGL how it should *sample* its textures. 
+
+**Texture Wrapping**
+
+Texture coordinates usually range from (0,0) to (1,1)
