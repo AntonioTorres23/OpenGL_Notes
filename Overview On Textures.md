@@ -63,4 +63,6 @@ glTexParameteriv(GL_TEXTURE_2D, GL_CLAMP_TO_BORDER_COLOR, borderColor);
 
 **Texture Filtering**
 
-Texture 
+Texture coordinates do not depend on resolution but can be any floating point value, thus OpenGL has to figure out which texture pixel (also known as a **texel**) to map the texture coordinate to. This becomes especially important if you have a very large object and a low resolution texture. You probably guessed by now that OpenGL has options for this **texture filtering** as well. There are several options available but now we'll discuss the most important options: `GL_NEAREST` and `GL_LINEAR`. 
+
+`GL_NEAREST` (also known as **nearest neighbor** or **point** filtering) is the default texture filtering method of OpenGL. When set to `GL_NEAREST`, OpenGL selects the texel that center is closest to the texture coordinate. Below you can see 4 pixels where the cross represents the exact texture coordinate. The upper-left texel has its center closest to the texture coordinate and is therefore chosen as the sampled color. 
