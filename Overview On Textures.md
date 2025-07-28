@@ -101,4 +101,9 @@ When switching between mipmaps levels during rendering OpenGL may show some arti
 - `GL_NEAREST_MIPMAP_LINEAR`: linearly interpolates between the two mipmaps that most closely match the size of a pixel and samples the interpolated level via nearest neighbor interpolation.
 - `GL_LINEAR_MIPMAP_LINEAR`: linearly interpolates between the two closest mipmaps and samples the interpolated level via linear interpolation. 
 
-Just like 
+Just like texture filtering we can set the filtering method to one of the 4 aforementioned methods using `glTexParameteri`.
+
+`glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);`
+`glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);`
+
+A common mistake is to set one of the 
