@@ -69,4 +69,8 @@ Texture coordinates do not depend on resolution but can be any floating point va
 
 ![[Pasted image 20250725165801.png]]
 
-`GL_LINEAR` (also known as (bi)linear filtering) takes an interpolated value from the texture coordinate's 
+`GL_LINEAR` (also known as (bi)linear filtering) takes an interpolated value from the texture coordinate's neighboring texels, approximating a color between the texels. The smaller the distance from the texture coordinate to a texel's center, the more that texel's color contributes to the sampled color. Below we can see that a mixed color of the neighboring pixels is returned.
+
+![[Pasted image 20250728120106.png]]
+
+But what is the visual effect of such a texture filtering method? Let's see how these methods work when using a texture with a low resolution on a large object (texture is therefore scaled upwards and individual texels are noticeable). 
