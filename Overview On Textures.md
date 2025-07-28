@@ -97,4 +97,4 @@ Creating a collection of mipmapped textures for each texture image is cumbersome
 When switching between mipmaps levels during rendering OpenGL may show some artifacts like sharp edges visible between the two mipmap layers. Just like normal texture filtering, it is also possible to filter between mipmap levels using `NEAREST` and `LINEAR` filtering for switching between mipmap levels. To specify the filtering method between mipmap levels we can replace the original filtering methods with one of the four following options. 
 
 - `GL_NEAREST_MIPMAP_NEAREST`: takes the nearest mipmap to match the pixel size and uses nearest neighbor interpolation for texture sampling.
-- `GL_LINEAR_MIPMAP_NEAREST`: takes the nearest mipmap level and samples that using linear interpolation=
+- `GL_LINEAR_MIPMAP_NEAREST`: takes the nearest mipmap level and samples that using linear interpolation.
