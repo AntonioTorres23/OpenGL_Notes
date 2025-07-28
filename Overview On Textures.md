@@ -98,3 +98,4 @@ When switching between mipmaps levels during rendering OpenGL may show some arti
 
 - `GL_NEAREST_MIPMAP_NEAREST`: takes the nearest mipmap to match the pixel size and uses nearest neighbor interpolation for texture sampling.
 - `GL_LINEAR_MIPMAP_NEAREST`: takes the nearest mipmap level and samples that using linear interpolation.
+- `GL_NEAREST_MIPMAP_LINEAR`: linearly interpolates between the two mipmaps that most closely match the size of a pixel and samples the interpolated 
