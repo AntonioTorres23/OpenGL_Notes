@@ -74,3 +74,7 @@ Texture coordinates do not depend on resolution but can be any floating point va
 ![[Pasted image 20250728120106.png]]
 
 But what is the visual effect of such a texture filtering method? Let's see how these methods work when using a texture with a low resolution on a large object (texture is therefore scaled upwards and individual texels are noticeable). 
+
+![[Pasted image 20250728120520.png]]
+
+`GL_NEAREST` results in blocked patterns where we can clearly see the pixels that form the texture while `GL_LINEAR` produces a smoother pattern where the individual pixels are less visible. `GL_LINEAR` produces a more realistic
