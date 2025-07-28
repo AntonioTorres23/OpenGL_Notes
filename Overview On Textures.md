@@ -94,4 +94,4 @@ To solve this issue OpenGL uses a concept called **mipmaps** that is basically a
 
 Creating a collection of mipmapped textures for each texture image is cumbersome to do manually, but luckily OpenGL is able to do all that work for us with a single call to `glGenerateMipmap` after we've created a texture. 
 
-When switching between mipmaps levels during rendering OpenGL may show some artifacts like sharp edges visible between the two mipmap layers. Just like normal texture filtering, it is also possible to filter between mipmap levels using `NEAREST` and `LINEAR` filtering for switching between mipmap levels. To specify the filtering 
+When switching between mipmaps levels during rendering OpenGL may show some artifacts like sharp edges visible between the two mipmap layers. Just like normal texture filtering, it is also possible to filter between mipmap levels using `NEAREST` and `LINEAR` filtering for switching between mipmap levels. To specify the filtering method between mipmap levels we can replace the original filtering methods with one of the four following options. 
