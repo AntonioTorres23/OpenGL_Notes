@@ -69,3 +69,4 @@ Texture coordinates do not depend on resolution but can be any floating point va
 
 ![[Pasted image 20250725165801.png]]
 
+`GL_LINEAR` (also known as (bi)linear filtering) takes an interpolated value from the texture coordinate's 
