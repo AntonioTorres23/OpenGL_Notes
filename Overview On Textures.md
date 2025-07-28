@@ -92,4 +92,6 @@ To solve this issue OpenGL uses a concept called **mipmaps** that is basically a
 
 ![[Pasted image 20250728152210.png]]
 
-Creating a collection of mipmapped textures for each texture image is cumbersome to do manually, but luckily OpenGL is able to do all that work for us with a single call to `glGenerateMipmap`
+Creating a collection of mipmapped textures for each texture image is cumbersome to do manually, but luckily OpenGL is able to do all that work for us with a single call to `glGenerateMipmap` after we've created a texture. 
+
+When switching between mipmaps levels during rendering OpenGL may show some artifacts like sharp edges visible between the two mipmap layers
