@@ -90,3 +90,6 @@ Imagine we had a large room with thousands of objects, each with an attached tex
 
 To solve this issue OpenGL uses a concept called **mipmaps** that is basically a collection of texture images where each subsequent texture is twice as small compared to the previous one. The idea behind mipmaps should be easy to understand: after a certain distance threshold from the viewer, OpenGL will use a different mipmap texture that best suits the distance to the object. Because the object is far away, the smaller resolution will not be noticeable to the user. OpenGL is then able to sample correct texels, and there's less cache memory involved involved when sampling that part of the mipmaps. Let's take a closer look at what a mipmapped texture looks like. 
 
+![[Pasted image 20250728152210.png]]
+
+Creating a collection of mipmapped textures for each texture image is cumbersome to do manually, but luckily OpenGL is able to do all that work for us with a single call to `glGenerateMipmap`
