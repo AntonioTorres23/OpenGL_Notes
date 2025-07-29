@@ -132,4 +132,5 @@ int width, height, nrChannels;
 unsigned char *data = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
 ```
 
-The function first takes as input the location of an image file. It then expects you to give three `ints` as its second, third, and fourth argument that `stb_image.h`
+The function first takes as input the location of an image file. It then expects you to give three `ints` as its second, third, and fourth argument that `stb_image.h` will fill with the resulting image's width, height, and number of color channels. We need the image's width and height for generating textures later on. 
+
