@@ -143,5 +143,9 @@ unsigned int texture;
 glGenTexture(1, &texture);
 ```
 
-The `glGenTextures` function first takes as input how many textures we want to generate and stores them in a unsigned int array given as its second argument (in our case just a single unsigned integer). Just like other objects we need to bind it so any subsequent
+The `glGenTextures` function first takes as input how many textures we want to generate and stores them in a unsigned int array given as its second argument (in our case just a single unsigned integer). Just like other objects we need to bind it so any subsequent texture commands will configure the currently bound texture. 
+
+`glBindTexture(GL_TEXTURE_2D, texture);`
+
+Now that the texture is bound 
 
