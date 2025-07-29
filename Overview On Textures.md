@@ -161,5 +161,8 @@ This is a large function with quite a few parameters so we'll walk through them 
 - The third argument tells OpenGL in what kind of format we want to store the texture. Our image has only RGB values so we'll store the texture with RGB values as well. 
 - The fourth and fifth argument sets the width and height of the resulting texture. We stored those earlier when loading the image so we'll use the corresponding variables. 
 - The next argument should always be 0 (some legacy stuff).
-- The seventh and eighth argument specify 
+- The seventh and eighth argument specify the format and datatype of the source image. We loaded the image with RGB values and stored them as chars (bytes) so we'll pass in the corresponding values. 
+- The last argument is the actual image data. 
+
+Once `glTexImage2D `
 
