@@ -109,3 +109,5 @@ Just like texture filtering we can set the filtering method to one of the 4 afor
 A common mistake is to set one of the mipmap filtering options as the magnification filter. This doesn't have any effect since mipmaps are primarily used for when textures get downscaled: texture magnification doesn't use mipmaps and giving it a mipmap filtering option will generate an OpenGL `GL_INVALID_ENUM` error code. 
 
 **Loading and Creating Textures**
+
+The first thing we need to do to actually use textures is to load them into our application. Texture images can be stored in dozens of file formats
