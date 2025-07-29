@@ -164,5 +164,20 @@ This is a large function with quite a few parameters so we'll walk through them 
 - The seventh and eighth argument specify the format and datatype of the source image. We loaded the image with RGB values and stored them as chars (bytes) so we'll pass in the corresponding values. 
 - The last argument is the actual image data. 
 
-Once `glTexImage2D` is called, the currently bound texture object now has the texture image attached to it. However, currently it only has the base-level of the texture image loaded and if we want to use mipmaps 
+Once `glTexImage2D` is called, the currently bound texture object now has the texture image attached to it. However, currently it only has the base-level of the texture image loaded and if we want to use mipmaps we have to specify all the different images manually (by continually incrementing the second argument) or, we could call `glGenerateMipmap` after generating the texture. This will automatically generate all the required mipmaps for the currently bound texture. 
+
+After we're done generating the texture and its corresponding mipmaps, it is good practice to free the image memory.
+
+`stbi_image_free(data);`
+
+The whole process of generating a texture thus looks something like this.
+
+```
+unsigned int texture;
+glGenTextures(1, &texture);
+// set the texture wrapping/filtering options (on the currently bound object)
+glTexParametersi(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT); // X tex coordinates
+glTexParametersi(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT); // Y tex coordiates
+
+```
 
