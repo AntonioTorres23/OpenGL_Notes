@@ -164,5 +164,5 @@ This is a large function with quite a few parameters so we'll walk through them 
 - The seventh and eighth argument specify the format and datatype of the source image. We loaded the image with RGB values and stored them as chars (bytes) so we'll pass in the corresponding values. 
 - The last argument is the actual image data. 
 
-Once `glTexImage2D `
+Once `glTexImage2D` is called, the currently bound texture object now has the texture image attached to it. However, currently it only has the base-level of the texture image loaded and if we want to use mipmaps 
 
