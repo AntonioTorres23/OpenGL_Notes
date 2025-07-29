@@ -123,4 +123,13 @@ Another solution, and probably a good one, is to use an image-loading library th
 #include "stb_image.h"
 ```
 
-By defining `STB_IMAGE_IMPLEMENTATION` the preprocessor modifies the header file such that it only contains the relevant definition source code, effectively turning the header file into a `.cpp` file
+By defining `STB_IMAGE_IMPLEMENTATION` the preprocessor modifies the header file such that it only contains the relevant definition source code, effectively turning the header file into a `.cpp` file, and that's about it. Now simply include `stb_image.h` somewhere in your program and compile. 
+
+For the following texture sections we're going to use an image of a [wooden container](https://learnopengl.com/img/textures/container.jpg). To load an image using `stb_image.h` we use its `stbi_load` function:
+
+```
+int width, height, nrChannels; 
+unsigned char *data = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
+```
+
+The function first takes as 
