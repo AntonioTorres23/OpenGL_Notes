@@ -156,5 +156,10 @@ glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYT
 
 This is a large function with quite a few parameters so we'll walk through them step-by-step.
 
-- The first argument specifies the texture target; setting this to `GL_TEXTURE_2D` means this operation will generate a texture on the currently bound texture object at the same target (so any textures bound to targets `GL_TEXTURE_1D` or `GL_TEXTURE_3D` )
+- The first argument specifies the texture target; setting this to `GL_TEXTURE_2D` means this operation will generate a texture on the currently bound texture object at the same target (so any textures bound to targets `GL_TEXTURE_1D` or `GL_TEXTURE_3D` will not be affected). 
+- The second argument specifies the mipmap level for which we want to create a texture for if you want to set each mipmap level manually, but we'll leave it at the base level which is 0.
+- The third argument tells OpenGL in what kind of format we want to store the texture. Our image has only RGB values so we'll store the texture with RGB values as well. 
+- The fourth and fifth argument sets the width and height of the resulting texture. We stored those earlier when loading the image so we'll use the corresponding variables. 
+- The next argument should always be 0 (some legacy stuff).
+- The seventh and eighth argument specify 
 
