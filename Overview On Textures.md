@@ -116,3 +116,4 @@ Another solution, and probably a good one, is to use an image-loading library th
 
 **stb_image.h**
 
+`stb_image.h` is a very popular single header image loading library by Sean Barrett that is able to load most popular file formats and is easy to integrate into your project(s).
