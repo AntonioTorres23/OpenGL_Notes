@@ -134,3 +134,14 @@ unsigned char *data = stbi_load("container.jpg", &width, &height, &nrChannels, 0
 
 The function first takes as input the location of an image file. It then expects you to give three `ints` as its second, third, and fourth argument that `stb_image.h` will fill with the resulting image's width, height, and number of color channels. We need the image's width and height for generating textures later on. 
 
+**Generating a texture**
+
+Like any of the previous objects in OpenGL, textures are referenced with an ID; let's create one. 
+
+```
+unsigned int texture;
+glGenTexture(1, &texture);
+```
+
+The `glGenTextures` function first takes as input how many textures we want to generate and stores them in a unsigned int array given as its second argument (in our case just a single unsigned integer). Just like other objects we need to bind it so any subsequent
+
