@@ -147,5 +147,14 @@ The `glGenTextures` function first takes as input how many textures we want to g
 
 `glBindTexture(GL_TEXTURE_2D, texture);`
 
-Now that the texture is bound 
+Now that the texture is bound, we can start generating a texture using the previously loaded image data. Textures are generated with `glTexImage2D`.
+
+```
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data); 
+`glGenerateMipmap(GL_TEXTURE_2D);`
+```
+
+This is a large function with quite a few parameters so we'll walk through them step-by-step.
+
+- The first argument specifies the texture target; setting this to `GL_TEXTURE_2D` means this operation will generate a texture on the currently bound texture object at the same target (so any textures bound to targets `GL_TEXTURE_1D` or `GL_TEXTURE_3D` )
 
