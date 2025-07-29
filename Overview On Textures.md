@@ -110,4 +110,4 @@ A common mistake is to set one of the mipmap filtering options as the magnificat
 
 **Loading and Creating Textures**
 
-The first thing we need to do to actually use textures is to load them into our application. Texture images can be stored in dozens of file formats
+The first thing we need to do to actually use textures is to load them into our application. Texture images can be stored in dozens of file formats, each with their own structure and ordering of data, so how do we get those
