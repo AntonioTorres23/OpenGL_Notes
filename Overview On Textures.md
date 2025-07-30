@@ -216,3 +216,11 @@ Since we've added an extra vertex attribute we again have to notify OpenGL of th
 
 ![[Pasted image 20250730110933.png]]
 
+```
+glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+glEnableVertexAtrribArray(2);
+```
+
+Note that we have to adjust the stride parameter of the previous two vertex attributes to `8 * sizeof(float)` as well. 
+
+Next we need to alter the vertex shader 
