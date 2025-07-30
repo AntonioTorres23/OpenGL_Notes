@@ -204,9 +204,11 @@ For the upcoming sections we will use the rectangle shape drawn with `glDrawElem
 float vertices[] = {
 	// positions          // colors            // texture coords
 	0.5f, 0.5f, 0.0f,     1.0f, 0.0f, 0.0f,    1.0f, 1.0f, // top right
-	0.5f, -0.5f, 0.0f,    0.0f, 1.0f, 0.0f,    1.0f, 0.0f
-   -0.5f, -0.5f, 0.0f,    0.0f, 0.0f, 1.0f,
-   -0.5f, 0.5f, 0.0f,     1.0f, 1.0f, 0.0f, 
+	0.5f, -0.5f, 0.0f,    0.0f, 1.0f, 0.0f,    1.0f, 0.0f, // bottom right
+   -0.5f, -0.5f, 0.0f,    0.0f, 0.0f, 1.0f,    0.0f, 0.0f, // bottom left
+   -0.5f, 0.5f, 0.0f,     1.0f, 1.0f, 0.0f,    0.0f, 1.0f  // top left
 };
 
 ```
+
+Since we've added an extra vertex attribute we again have to notify OpenGL of the new vertex format 
