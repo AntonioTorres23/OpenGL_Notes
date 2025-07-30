@@ -198,4 +198,15 @@ stbi_image_free(data);
 
 **Applying Textures**
 
-For the upcoming sections we will use the rectangle shape drawn with `glDrawElements`. We need to inform OpenGL 
+For the upcoming sections we will use the rectangle shape drawn with `glDrawElements`. We need to inform OpenGL how to sample the texture so we'll have to update the vertex data with the texture coordinates.
+
+```
+float vertices[] = {
+	// positions          // colors            // texture coordinates
+	0.5f, 0.5f, 0.0f,     1.0f, 0.0f, 0.0f,    
+	0.5f, -0.5f, 0.0f,    0.0f, 1.0f, 0.0f,
+   -0.5f, -0.5f, 0.0f,    0.0f, 0.0f, 1.0f,
+   -0.5f, 0.5f, 0.0f,     1.0f, 1.0f, 0.0f, 
+};
+
+```
