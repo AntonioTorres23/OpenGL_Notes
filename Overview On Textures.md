@@ -197,3 +197,5 @@ stbi_image_free(data);
 ```
 
 **Applying Textures**
+
+For the upcoming sections we will use the rectangle shape drawn with `glDrawElements`. We need to inform OpenGL 
