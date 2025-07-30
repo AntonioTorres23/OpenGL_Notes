@@ -211,4 +211,8 @@ float vertices[] = {
 
 ```
 
-Since we've added an extra vertex attribute we again have to notify OpenGL of the new vertex format 
+Since we've added an extra vertex attribute we again have to notify OpenGL of the new vertex format.
+
+
+![[Pasted image 20250730110933.png]]
+
