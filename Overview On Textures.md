@@ -223,4 +223,8 @@ glEnableVertexAtrribArray(2);
 
 Note that we have to adjust the stride parameter of the previous two vertex attributes to `8 * sizeof(float)` as well. 
 
-Next we need to alter the vertex shader 
+Next we need to alter the vertex shader to accept the texture coordinates as a vertex attribute and then forward the coordinates to the fragment shader.
+
+```
+#version 330 core 
+```
