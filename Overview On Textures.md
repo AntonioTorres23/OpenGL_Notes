@@ -288,4 +288,38 @@ The result should be a mixture of the vertex's color and the texture's color.
 
 **Texture Units**
 
-You probably wondered why the `sampler2D` variable is a uniform if we didn't even assign it some value with `glUniform`. Using `glUniform1i`, we can actually assign a location value to the texture sampler so we can set multiple textures at once in the fragment shader 
+You probably wondered why the `sampler2D` variable is a uniform if we didn't even assign it some value with `glUniform`. Using `glUniform1i`, we can actually assign a location value to the texture sampler so we can set multiple textures at once in the fragment shader. This location of a texture is more commonly known as a **texture unit**. The default texture unit for a texture is 0 which is the default active texture unit so we didn't need to assign a location in the previous section; note that not all graphics drivers assign a default texture unit so the previous section may not have rendered for you. 
+
+The main purpose of texture units is to allow us to use more than 1 texture in our shaders. By assigning texture units to the samplers, we can bind to multiple textures at once as long as we activate the corresponding texture unit first. Just like `glBindTexture` we can activate texture units using `glActivateTexture` passing in the texture units we'd like to use. 
+
+```
+glActivateTexture(GL_TEXTURE0); // activate the texture unit first before binding
+glBindTexture(GL_TEXTURE_2D, texture);
+```
+
+After activating a texture unit, a subsequent `glBindTexture` call will bind that texture to the currently active texture unit. Texture unit `GL_TEXTURE0` is always by default activated, so we didn't have to activate any texture units in the previous example when using `glBindTexture`.
+
+OpenGL should have a at least a minimum of 16 texture units for you to use which you can activate using `GL_TEXTURE0` to `GL_TEXTURE15`. They are defined in order so we could also get `GL_TEXTURE8` via `GL_TEXTURE0 + 8` for example, which is useful when we'd have to loop over several texture units. 
+
+We still however need to edit the fragment shader to accept another sampler. This should be relatively straightforward now. 
+
+```
+#version 330 core
+
+...
+
+uniform sampler2D texture1;
+uniform sampler2D texture2;
+
+void main()
+{
+	FragColor = mix(texture(texture1, TexCoord), texture(texture2, TexCoord), 0.2);
+}
+```
+
+The final output is now a combination of two texture lookups. GLSL's built-in `mix` function takes two values as input and linearly interpolates between them based on the third argument. If the third value is 0.0 it returns the first input; If it's 1.0 it returns the second input value. A value of 0.2 will return 80% of the first input color and 20% of the second input color, resulting in a mixture of both our textures. 
+
+We now want to load and create another texture; you should be familiar with the steps now. Make sure to create another texture object, load the image and generate the final texture using `glTexImage2D`. For the second texture we'll use an image of your [facial expression while learning OpenGL](https://learnopengl.com/img/textures/awesomeface.png). 
+
+```
+```
