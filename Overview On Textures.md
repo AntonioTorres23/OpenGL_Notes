@@ -226,5 +226,11 @@ Note that we have to adjust the stride parameter of the previous two vertex attr
 Next we need to alter the vertex shader to accept the texture coordinates as a vertex attribute and then forward the coordinates to the fragment shader.
 
 ```
-#version 330 core 
+#version 330 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec3 aColor;
+layout (location = 2) in vec2 aTexCoord;
+
+out vec3 aColor;
+out vec3 aTexCoord; 
 ```
