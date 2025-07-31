@@ -278,4 +278,6 @@ If your rectangle is completely white or black you probably made an error along 
 
 If your texture code doesn't work or shows up as completely black, continue reading and work your way to the last example that **should** work. On some drivers it is required to assign a texture unit to each sampler uniform, which is something we'll discuss further on. 
 
-To get a little funky we can also mix the resulting texture color with th
+To get a little funky we can also mix the resulting texture color with the vertex color. We simply multiply the resulting texture color with the vertex color in the fragment shader to mix both colors.
+
+`FragColor = texture(ourTexture, TexCoord) * vec4()`
