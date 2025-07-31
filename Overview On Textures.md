@@ -288,4 +288,4 @@ The result should be a mixture of the vertex's color and the texture's color.
 
 **Texture Units**
 
-You probably wondered why the `sampler2D`
+You probably wondered why the `sampler2D` variable is a uniform if we didn't even assign it some value with `glUniform`. Using `glUniform1i`, we can actually assign a location value to the texture sampler so we can set multiple textures at once in the fragment shader 
