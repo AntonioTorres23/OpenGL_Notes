@@ -280,4 +280,12 @@ If your texture code doesn't work or shows up as completely black, continue read
 
 To get a little funky we can also mix the resulting texture color with the vertex color. We simply multiply the resulting texture color with the vertex color in the fragment shader to mix both colors.
 
-`FragColor = texture(ourTexture, TexCoord) * vec4()`
+`FragColor = texture(ourTexture, TexCoord) * vec4(ourColor, 1.0);`
+
+The result should be a mixture of the vertex's color and the texture's color.
+
+![[Pasted image 20250731170418.png]]
+
+**Texture Units**
+
+You probably wondered why the `sampler2D`
