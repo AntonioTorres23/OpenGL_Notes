@@ -237,6 +237,43 @@ out vec3 TexCoord;
 void main()
 {
 	gl_Position = vec4(aPos, 1.0);
-	ourColor = aColor
+	ourColor = aColor;
+	TexCoord = aTexCoord;
+}
+``` 
+
+The fragment shader should then accept the `TexCoord` output variable as an input variable. 
+
+The fragment shader should also have access to the texture object, but how do we pass the texture object to the fragment shader? GLSL has a built-in data-type for texture objects called a `sampler` that takes as a postfix the texture type we want e.g. `sampler1D`, `sampler3D`, or in our case `sampler2D`. We can then add a texture to the fragment shader by simply declaring a `uniform sampler2D` that we later assign our texture to. 
+
+```
+#version 330 core
+out vec4 FragColor;
+in vec3 ourColor;
+in vec2 TexCoord; 
+
+uniform sampler2D ourTexture;
+
+void main()
+{
+	FragColor = texture(ourTexture, TexCoord);
 }
 ```
+
+To sample the color of a texture we use GLSL's built-in `texture` function that takes as its first argument a texture sampler and as its second argument the corresponding texture coordinates.  The `texture` function then samples the corresponding color value using the texture parameters we set earlier. The output of this fragment shader is then the (filtered) color of the texture at the (interpolated) texture coordinate. 
+
+All that's left to do now is to bind the texture before calling `glDrawElements` and it will then automatically assign the texture to the fragment shader's sampler. 
+
+```
+glBindTexture(GL_TEXTURE_2D, texture);
+glBindVertexArray(VAO);
+glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+```
+
+If you did everything right you should see the following image. 
+
+![[Pasted image 20250731165905.png]]
+
+If your rectangle is completely white or black you probably made an error along the way. Check your shader logs and try to compare your code with the application's [source code](https://learnopengl.com/code_viewer_gh.php?code=src/1.getting_started/4.1.textures/textures.cpp).
+
+
