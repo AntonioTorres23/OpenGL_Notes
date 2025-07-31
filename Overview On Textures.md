@@ -276,4 +276,6 @@ If you did everything right you should see the following image.
 
 If your rectangle is completely white or black you probably made an error along the way. Check your shader logs and try to compare your code with the application's [source code](https://learnopengl.com/code_viewer_gh.php?code=src/1.getting_started/4.1.textures/textures.cpp).
 
+If your texture code doesn't work or shows up as completely black, continue reading and work your way to the last example that **should** work. On some drivers it is required to assign a texture unit to each sampler uniform, which is something we'll discuss further on. 
 
+To get a little funky we can also mix the resulting texture color with th
