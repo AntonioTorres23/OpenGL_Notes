@@ -363,4 +363,12 @@ By setting the samplers via `glUniform1i` we make sure each uniform sampler corr
 ![[Pasted image 20250801104856.png]]
 
 
-You probably noticed that the texture is flipped upside down. This happens because OpenGL expects the 0.0 coordinate on the y axis to be on the bottom side of the image, but images usually have 0.0 at the top of the y-axis. Luckily for us, `stb_image.h` can flop the y-axis during image loading by adding the following 
+You probably noticed that the texture is flipped upside down. This happens because OpenGL expects the 0.0 coordinate on the y axis to be on the bottom side of the image, but images usually have 0.0 at the top of the y-axis. Luckily for us, `stb_image.h` can flip the y-axis during image loading by adding the following statement before loading any image.
+
+`stbi_set_flip_vertically_on_load(true);`
+
+After telling `stb_image.h` to flip the y-axis when loading images you should get the following result.
+
+![[Pasted image 20250801110413.png]]
+
+If you see one happy container, you did things right. You can compare it with the [source code](https://learnopengl.com/code_viewer_gh.php?code=src/1.getting_started/4.2.textures_combined/textures_combined.cpp).
