@@ -330,4 +330,6 @@ if(data)
 }
 ```
 
-Note that we now load a `.png` image that includes an alpha (opacity) channel. This means we now need to specify that the image data contains an alpha channel 
+Note that we now load a `.png` image that includes an alpha (opacity) channel. This means we now need to specify that the image data contains an alpha channel as well by using `GL_RGBA`; otherwise OpenGL will incorrectly interpret the image data. 
+
+To use the second texture 
