@@ -332,4 +332,10 @@ if(data)
 
 Note that we now load a `.png` image that includes an alpha (opacity) channel. This means we now need to specify that the image data contains an alpha channel as well by using `GL_RGBA`; otherwise OpenGL will incorrectly interpret the image data. 
 
-To use the second texture 
+To use the second texture texture (and the first texture) we'd have to change the rendering procedure a bit by binding both textures to the corresponding texture unit. 
+
+```
+glActivateTexture(GL_TEXTURE0);
+glBindTexture(GL_TEXTURE_2D, texture1);
+glActivateTexture(GL)
+```
