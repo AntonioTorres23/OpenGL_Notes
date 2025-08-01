@@ -337,5 +337,8 @@ To use the second texture texture (and the first texture) we'd have to change th
 ```
 glActivateTexture(GL_TEXTURE0);
 glBindTexture(GL_TEXTURE_2D, texture1);
-glActivateTexture(GL)
+glActivateTexture(GL_TEXTURE1);
+glBindTexture(GL_TEXTURE_2D, texture2);
+
+glBindVertexArray(VAO);
 ```
