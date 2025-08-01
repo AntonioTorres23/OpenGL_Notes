@@ -344,4 +344,4 @@ glBindVertexArray(VAO);
 glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 ```
 
-We a
+We also have to tell OpenGL to which texture unit each shader sampler belongs to by setting 
