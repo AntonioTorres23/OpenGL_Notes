@@ -322,4 +322,10 @@ The final output is now a combination of two texture lookups. GLSL's built-in `m
 We now want to load and create another texture; you should be familiar with the steps now. Make sure to create another texture object, load the image and generate the final texture using `glTexImage2D`. For the second texture we'll use an image of your [facial expression while learning OpenGL](https://learnopengl.com/img/textures/awesomeface.png). 
 
 ```
+unsigned char *data stbi_load("awsomeface.png", &width, &height, &nrChannels, 0);
+if(data)
+{
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, GL_RGBA,                     GL_UNSIGNED_BYTE, data);
+	glGenerateMip
+}
 ```
