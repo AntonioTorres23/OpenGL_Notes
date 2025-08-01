@@ -325,7 +325,7 @@ We now want to load and create another texture; you should be familiar with the 
 unsigned char *data stbi_load("awsomeface.png", &width, &height, &nrChannels, 0);
 if(data)
 {
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, GL_RGBA,                     GL_UNSIGNED_BYTE, data);
-	glGenerateMip
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA,                     GL_UNSIGNED_BYTE, data);
+	glGenerateMipmap(GL_TEXTURE_2D);
 }
 ```
