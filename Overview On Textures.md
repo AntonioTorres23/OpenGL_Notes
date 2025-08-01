@@ -347,6 +347,20 @@ glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 We also have to tell OpenGL to which texture unit each shader sampler belongs to by setting each sampler using `glUniform1i`. We only have to set this once, so we can do this before we enter the render loop.
 
 ```
-outShader.use();
-glUniform1i(glGetUniformLocation(ourShader))
+outShader.use(); // don't forget to activate the shader before setting uniforms
+glUniform1i(glGetUniformLocation(ourShader.ID, "texture1"), 0); // set it manually
+ourShader.setInt("texture2", 1); // or with shader class
+
+// render loop
+while(...)
+{
+	[...]
+}
 ```
+
+By setting the samplers via `glUniform1i` we make sure each uniform sampler corresponds to the proper texture unit. You should get the following result. 
+
+![[Pasted image 20250801104856.png]]
+
+
+You probably noticed that the texture is flipped upside down. This happens because OpenGL expects the 0.0 coordinate on the y axis to be on the bottom side of the image, but images usually have 0.0 at the top of the y-axis. Luckily for us, `stb_image.h` can flop the y-axis during image loading by adding the following 
