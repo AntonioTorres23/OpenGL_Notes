@@ -111,16 +111,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "OpenGL Camera Notes (Updated As Of 6-30-2025).md",
+                "file": "Overview on Transformations.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "OpenGL Camera Notes (Updated As Of 6-30-2025)"
+              "title": "Overview on Transformations"
+            }
+          },
+          {
+            "id": "1d54f4b49dd4cf79",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.10"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.10"
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -254,6 +266,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -263,14 +276,20 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e3cd9e03898d3d43",
+  "active": "1d54f4b49dd4cf79",
   "lastOpenFiles": [
     "Overview on Coordinate Systems.md",
+    "OpenGL Camera Notes (Updated As Of 6-30-2025).md",
+    "Model Loading OpenGL Notes.md",
+    "Mesh Loading OpenGL Notes.md",
+    "Blending.md",
+    "Cubemaps.md",
+    "Depth Testing.md",
+    "Explanation of Arrow Pointer in C++.md",
+    "Explanation On The This Pointer.md",
     "Overview on Transformations.md",
     "Overview On Textures.md",
     "Overview on Shaders.md",
-    "OpenGL Camera Notes (Updated As Of 6-30-2025).md",
-    "Explanation On The This Pointer.md",
     "Framebuffers.md",
     "Face Culling.md",
     "Pasted image 20250801110413.png",
@@ -283,17 +302,11 @@
     "Pasted image 20250728120106.png",
     "Pasted image 20250725165801.png",
     "Pasted image 20250718164610.png",
-    "Mesh Loading OpenGL Notes.md",
-    "Model Loading OpenGL Notes.md",
     "Storing Data Types In a Vector.md",
     "Stencil Testing.md",
     "Untitled.md",
     "VBO, VAO, and VAO.md",
     "wy.md",
-    "Blending.md",
-    "Depth Testing.md",
-    "Cubemaps.md",
-    "Explanation of Arrow Pointer in C++.md",
     "Lighting Notes.md",
     "New Text Document.txt",
     "git_hub",
