@@ -77,4 +77,8 @@ The `readtarget` and `writetarget` parameters expect to give the buffer targets 
 
 But what if we wanted to read and write data into two different buffers that are both vertex array buffers? We can't bind two buffers at the same time to the same buffer target. For this reason, and this reason alone, OpenGL gives us two more buffer targets called `GL_COPY_READ_BUFER` and `GL_COPY_WRITE_BUFFER`. We then bind the buffers of our choice to these new buffer targets and set those targets as the `readtarget` and `writetarget` argument. We then bind the buffers of our choice to these new buffer targets and set those targets as the `readtarget` and `writetarget` argument. 
 
-`glCopyBufferSubData` then reads data of a given size from a given `readoffset` and writes into the `writtarget` buffer at `writeoffset`. An example of copying the content 
+`glCopyBufferSubData` then reads data of a given size from a given `readoffset` and writes into the `writtarget` buffer at `writeoffset`. An example of copying the content of two vertex array buffers is shown below.
+
+```
+glBindBuffer(GL_COPY_READ_BUFFER, vbo1)
+```
