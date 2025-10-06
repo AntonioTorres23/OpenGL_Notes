@@ -31,4 +31,4 @@ memcpy(ptr, data, sizeof(data));
 glUnmapBuffer(GL_ARRAY_BUFER);
 ```
 
-By telling OpenGLK 
+By telling OpenGL we're finished with the pointer operations via `glUnmapBuffer`, OpenGL knows you're done. By un-mapping, the pointer 
