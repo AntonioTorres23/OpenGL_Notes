@@ -26,5 +26,9 @@ glBindBuffer(GL_ARRAY_BUFFER, buffer);
 // generates a void pointer to the memory content within the binded buffer 
 void *ptr = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
 // built-in C++ function that copies memory address of a variable
-memcpy(ptr, data, )
+memcpy(ptr, data, sizeof(data));
+// make sure to tell OpenGL we're done with the pointer
+glUnmapBuffer(GL_ARRAY_BUFER);
 ```
+
+By telling OpenGLK 
