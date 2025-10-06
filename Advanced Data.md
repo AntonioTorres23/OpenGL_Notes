@@ -41,5 +41,16 @@ Using `glVertexAttribPointer` we were able to specify the attribute layout of th
 
 What we could do is batch all the vector data into large chunks per attribute type instead of interleaving them. Instead of an interleaved layout i.e. `123123123123`, we take a batched approach i.e. `111122223333`. 
 
-When loading vertex data from file you generally retrieve an array of positions, an array of normals, or an array of texture coordinates. It may cost some effort 
- 
+When loading vertex data from file you generally retrieve an array of positions, an array of normals, or an array of texture coordinates. It may cost some effort to combine these arrays into one large array of interleaved data. Taking the batching approach is then an easier solution that we can easily implement using `glBufferSubData`.
+
+```
+float positions[] = {...};
+float normals[] = {...};
+float tex[] = {...};
+// fill buffer
+glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(positions), &positions);
+glBufferSubData(GL_ARRAY_BUFFER, sizeof(positions), sizeof(normals), &normals);
+glBufferSubData(GL_ARRAY_BUFFER, sizeof(positions) + sizeof(normals), sizeof(tex), &tex);
+```
+
+This way we can directly transfer the attribute arrays as a whole into the buffer without first having to process them. We could have also combined them in one large array and fill the buffer right away using `glBufferData`, but using `glBufferSubData`
