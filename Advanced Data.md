@@ -13,3 +13,18 @@ glBufferSubData(GL_ARRAY_BUFFER, 24, sizeof(data), &data);
 ```
 
 Yet another method for getting data into a buffer is to ask for a pointer to the buffer's memory and directly copy the data in memory yourself. By calling `glMapBuffer` OpenGL returns a pointer to the currently bound buffer's memory for us to operate on. 
+
+```
+float data[] = 
+{
+0.5, 1.0f, -0.35f
+};
+
+glBindBuffer(GL_ARRAY_BUFFER, buffer);
+// get pointer
+// 2nd argument can be GL_WRITE_ONLY, GL_READ_ONLY, or GL_READ_WRITE
+// generates a void pointer to the memory content within the binded buffer 
+void *ptr = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+// built-in C++ function that copies memory address of a variable
+memcpy(ptr, data, )
+```
