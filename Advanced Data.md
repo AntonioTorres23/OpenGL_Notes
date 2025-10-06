@@ -69,4 +69,10 @@ This gives us yet another approach of setting and specifying vertex attributes. 
 
 **Copying Buffers**
 
-Once your buffers are filled with data you may want to share that data with other buffers or perhaps copy the buffer's content into another buffer. The function `glCopyBufferSubData` allows us to 
+Once your buffers are filled with data you may want to share that data with other buffers or perhaps copy the buffer's content into another buffer. The function `glCopyBufferSubData` allows us to copy the data from one buffer with relative ease. The function's prototype is as follows. 
+
+`void glCopyBufferSubData(GLenum readtarget, Glenum writetarget, GLintptr readoffset, GLintptr writeoffset, GLsizeiptr size);`
+
+The `readtarget` and `writetarget` parameters expect to give the buffer targets that we want to copy from and to. We could for example copy from a `VERTEX_ARRAY_BUFFER` buffer to a `VERTEX_ELEMENT_ARRAY_BUFFER` buffer by specifying those buffer targets as the read and write targets respectively. The buffers currently bound to those buffer targets will then be affected. 
+
+But what if we wanted to read and write data into two different buffers that are both vertex array buffers? We can't bind two buffers at the same time 
