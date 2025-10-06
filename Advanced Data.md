@@ -1,0 +1,8 @@
+
+Throughout most chapters we've been extensively using buffers in OpenGL to store data on the GPU. We'll briefly discuss a few alternative approaches to managing buffers. 
+
+A buffer in OpenGL, at its core, an object that manages a certain piece of GPU memory and nothing more. We give meaning to a buffer when binding it to a specific buffer target. A buffer is only a vertex buffer when we bind it to `GL_ARRAY_BUFFER`, but we could easily bind it to `GL_ELEMENT_ARRAY_BUFFER`. OpenGL internally stores a reference to the buffer per target and, based on the target, processes the buffer differently. 
+
+So far we've been filling the buffer's memory by calling `glBufferData`, which allocates a piece of GPU memory and adds data into this memory. If we were to pass null as its data argument, the function would only allocate memory and not fill it. This is useful if we first want to *reserve* a specific amount of memory and later come back to this buffer. 
+
+Instead of fil
