@@ -37,5 +37,9 @@ Using `glMapBuffer` is useful for directly mapping data to a buffer, without fir
 
 **Batching Vertex Attributes**
 
-Using `glVertexAttribPointer` we were able to specify the attribute layout of the vertex array buffer's content. 
+Using `glVertexAttribPointer` we were able to specify the attribute layout of the vertex array buffer's content. Within the vertex array buffer we **interleaved** the attributes; that is, we placed the position, normal/or textures coordinates next to each other in memory for each vertex. Now that we know a bit more about buffers we can take a different approach. 
+
+What we could do is batch all the vector data into large chunks per attribute type instead of interleaving them. Instead of an interleaved layout i.e. `123123123123`, we take a batched approach i.e. `111122223333`. 
+
+When loading vertex data from file you generally retrieve an array of positions, an array of normals, or an array of texture coordinates. It may cost some effort 
  
