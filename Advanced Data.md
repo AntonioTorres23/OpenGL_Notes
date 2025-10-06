@@ -31,4 +31,7 @@ memcpy(ptr, data, sizeof(data));
 glUnmapBuffer(GL_ARRAY_BUFER);
 ```
 
-By telling OpenGL we're finished with the pointer operations via `glUnmapBuffer`, OpenGL knows you're done. By un-mapping, the pointer 
+By telling OpenGL we're finished with the pointer operations via `glUnmapBuffer`, OpenGL knows you're done. By un-mapping, the pointer becomes invalid and the function returns `GL_TRUE` if OpenGL was able to map your data successfully to the buffer. 
+
+Using `glMapBuffer` is useful for directly mapping data to
+ 
