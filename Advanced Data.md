@@ -5,4 +5,4 @@ A buffer in OpenGL, at its core, an object that manages a certain piece of GPU m
 
 So far we've been filling the buffer's memory by calling `glBufferData`, which allocates a piece of GPU memory and adds data into this memory. If we were to pass null as its data argument, the function would only allocate memory and not fill it. This is useful if we first want to *reserve* a specific amount of memory and later come back to this buffer. 
 
-Instead of fil
+Instead of filling the entire buffer with one function call we can also fill specific regions of the buffer by calling `glBufferSubData`. This function
