@@ -53,4 +53,20 @@ glBufferSubData(GL_ARRAY_BUFFER, sizeof(positions), sizeof(normals), &normals);
 glBufferSubData(GL_ARRAY_BUFFER, sizeof(positions) + sizeof(normals), sizeof(tex), &tex);
 ```
 
-This way we can directly transfer the attribute arrays as a whole into the buffer without first having to process them. We could have also combined them in one large array and fill the buffer right away using `glBufferData`, but using `glBufferSubData`
+This way we can directly transfer the attribute arrays as a whole into the buffer without first having to process them. We could have also combined them in one large array and fill the buffer right away using `glBufferData`, but using `glBufferSubData` lends itself perfectly useful for tasks like these. 
+
+We'll also have to update the attribute pointers to reflect these changes.
+
+```
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), 0);
+glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)(sizeof(positions)));
+glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)(sizeof(positions) + sizeof(normals))); 
+```
+
+Note that the **stride** parameter is equal to the size of the vertex attribute, since the next vertex attribute vector can be found directly after its 3 (or 2) components. 
+
+This gives us yet another approach of setting and specifying vertex attributes. However, the interleaved approach is still the recommended approach as the vertex attributes for each vertex shader run are then closely aligned in memory. 
+
+**Copying Buffers**
+
+Once your buffers are filled with data you may want to share that data with other buffers or perhaps copy the buffer's content into another buffer. The function `glCopyBufferSubData` allows us to 
