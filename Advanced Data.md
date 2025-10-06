@@ -80,5 +80,9 @@ But what if we wanted to read and write data into two different buffers that are
 `glCopyBufferSubData` then reads data of a given size from a given `readoffset` and writes into the `writtarget` buffer at `writeoffset`. An example of copying the content of two vertex array buffers is shown below.
 
 ```
-glBindBuffer(GL_COPY_READ_BUFFER, vbo1)
+glBindBuffer(GL_COPY_READ_BUFFER, vbo1); 
+glBindBuffer(GL_COPY_WRITE_BUFFER, vbo2);
+glCopyBufferSubData(GL_COPY_READ_BUFFER, GL_COPY_WRITE_BUFFER, 0, 0, 8 * sizeof(float));
 ```
+
+With some extra knowledge about 
