@@ -12,4 +12,4 @@ Instead of filling the entire buffer with one function call we can also fill spe
 glBufferSubData(GL_ARRAY_BUFFER, 24, sizeof(data), &data);
 ```
 
-Yet another method for getting data into a buffer is to ask for a pointer to the buffer's memory and directly copy the data in memory yourself. By calling `glMapBuffer` OpenGL returns a pointer 
+Yet another method for getting data into a buffer is to ask for a pointer to the buffer's memory and directly copy the data in memory yourself. By calling `glMapBuffer` OpenGL returns a pointer to the currently bound buffer's memory for us to operate on. 
