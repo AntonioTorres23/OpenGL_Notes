@@ -33,5 +33,9 @@ glUnmapBuffer(GL_ARRAY_BUFER);
 
 By telling OpenGL we're finished with the pointer operations via `glUnmapBuffer`, OpenGL knows you're done. By un-mapping, the pointer becomes invalid and the function returns `GL_TRUE` if OpenGL was able to map your data successfully to the buffer. 
 
-Using `glMapBuffer` is useful for directly mapping data to a buffer 
+Using `glMapBuffer` is useful for directly mapping data to a buffer, without first storing it in temporary memory. Think of directly reading data from file and copying it into the buffer's memory
+
+**Batching Vertex Attributes**
+
+Using `glVertexAttribPointer` we were able to specify the attribute layout of the vertex array buffer's content. 
  
