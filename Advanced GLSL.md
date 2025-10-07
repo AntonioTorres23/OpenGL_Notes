@@ -41,4 +41,6 @@ You can imagine that varying the point size per vertex is interesting for techni
 
 **`gl_VertexID`**
 
-the `gl_Position` and `gl_PointSize` are output variables 
+The `gl_Position` and `gl_PointSize` are output variables since their value is read as output from the vertex shader; we can influence the result by writing to them. The vertex shader also gives us an interesting *input variable*, that we can only read from, called `gl_VertexID`. 
+
+The integer variable `gl_VertexID` holds the current ID of the vertex 
