@@ -17,4 +17,28 @@ We've already seen `gl_Position` which is the clip-space output position vector 
 
 One of the render primitives we're able to choose from is `GL_POINTS` in which case each single vertex is a primitive and rendered as a point. It is possible to set the size of the points being rendered via OpenGL's `glPointSize` function, but we can also influence this value in the vertex shader. 
 
-One output variable defined by GLSL is called `gl_PointSize` that is a float variable 
+One output variable defined by GLSL is called `gl_PointSize` that is a float variable where you can set the point's width and height by pixels. By setting the point's size in the vertex shader we get per-vertex control over this point's dimensions. 
+
+Influencing the point sizes in the vertex shader is disabled by default, but if you want to enable this you'll have to enable OpenGL's `GL_PROGRAM_POINT_SIZE`. 
+
+`glEnable(GL_PROGRAM_POINT_SIZE);`
+
+A simple example of influencing point size is by setting the point size equal to the clip-space position's z value which is equal to the vertex's distance to the viewer. The point size should then increase the further we are from the vertices as the viewer. 
+
+```
+void main()
+{
+	gl_Position = projection * view * model * vec4(aPos, 1.0);
+	gl_PointSize = gl_Position.z;
+}
+```
+
+The result is that the point's we've drawn are rendered larger the more we move away from them. 
+
+![[Pasted image 20251007161928.png]]
+
+You can imagine that varying the point size per vertex is interesting for techniques like particle generation. 
+
+**`gl_VertexID`**
+
+the `gl_Position` and `gl_PointSize` are output variables 
