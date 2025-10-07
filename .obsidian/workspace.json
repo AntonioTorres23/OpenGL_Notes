@@ -146,9 +146,21 @@
               "icon": "lucide-file",
               "title": "Advanced Data"
             }
+          },
+          {
+            "id": "b37a547d21e4fb8e",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.14"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.14"
+            }
           }
         ],
-        "currentTab": 9
+        "currentTab": 10
       }
     ],
     "direction": "vertical"
@@ -292,7 +304,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "de1febf67c80a912",
+  "active": "b37a547d21e4fb8e",
   "lastOpenFiles": [
     "Mesh Loading OpenGL Notes.md",
     "Advanced Data.md",
