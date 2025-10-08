@@ -395,9 +395,12 @@ glBindBuffer(GL_UNIFORM_BUFFER, uboMatrices);
 
 glBufferData(GL_UNIFORM_BUFFER, 2 * sizeof(glm::mat4), NULL, GL_STATIC_DRAW);
 
-gl
+glBindBuffer(GL_UNIFORM_BUFFER, 0);
 
+glBindBufferRange(GL_UNIFORM_BUFFER, 0, uboMatrices, 0, 2 * sizeof(glm::mat4));
 ```
+
+First we allocate enough memory of our buffer which is 
 
 
 
