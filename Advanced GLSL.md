@@ -405,7 +405,9 @@ First we allocate enough memory of our buffer which is equal to 2 times the size
 Now all that's left to do is fill the buffer. If we keep the *field of view* value constant of the projection matrix (so no more camera zoom) we only have to update it one in our application - this means we only have to insert this into the buffer only once as well. Because we already allocated enough memory in the buffer object we can use `glBufferSubData` to store the projection matrix before we enter the render loop. 
 
 ```
-glm::mat4 projection = glm::perspective(glm::radians(45.0f), float(width)/(float)height, gl;
+glm::mat4 projection = glm::perspective(glm::radians(45.0f), 0.1f, 100.0f);
+glBindBuffer(GL_UNIFORM_BUFFER, uboMatrices);
+glBuffer
 ```
 
 
