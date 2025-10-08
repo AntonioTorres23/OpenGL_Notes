@@ -154,5 +154,22 @@ To help us organize these variables, GLSL offers us something called **Interface
 ```
 #version 330 core
 layout (location = 0) in vec3 aPos; 
-layout 
+layout (location = 1) in vec2 aTexCoords;
+
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+
+out VS_OUT
+{
+	vec2 TexCoords;
+} vs_out;
+
+void main()
+{
+	gl_Position = projection * view * model * vec4(aPos, 1.0);
+	vs_out.TexCoords = aTexCoords;
+}
 ```
+
+This time we declared an interface block called `vs_out` that groups together all the output variables we want to send to the next shader. This is a kind of trivial example, but you can imagine that this helps us organize your shaders' inputs/outputs. It is also useful when we want to group shader input/output 
