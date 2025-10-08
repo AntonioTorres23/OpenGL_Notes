@@ -75,4 +75,27 @@ We can now calculate two completely different fragment shader results and displa
 
 **`gl_FrontFacing`**
 
-Another interesting input variable in the fragment shader is the ``
+Another interesting input variable in the fragment shader is the `gl_FrontFacing` variable. In the Face Culling section we mentioned that OpenGL is able to figure out if a face is a front or back face due to the winding order of the vertices. The `gl_FrontFacing` variable tells us if the current fragment is part of a front-facing or back-facing face. We could, for example, decide to output different colors for all back faces. 
+
+The `gl_FrontFacing` variable is a bool that is true if the fragment is part of a front face and false otherwise. We could create this cube this way with a different texture on the inside than on the outside. 
+
+```
+#version 330 core
+out vec4 FragColor; 
+
+in vec2 TexCoords;
+
+uniform sampler2D frontTexture;
+uniform sampler2D backTexture;
+
+void main()
+{
+	if(gl_FrontFacing)
+		FragColor = texture(frontTexture, TexCoords);
+	else
+		FragColor = texture(backTexture, TexCoords);
+}
+```
+
+If we take a peek inside the container we can now see a 
+
