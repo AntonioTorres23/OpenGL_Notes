@@ -256,6 +256,8 @@ Each variable has a **base alignment** equal to the space a variable takes (incl
 This exact layout rules can be found at OpenGL's uniform buffer specification [here](http://www.opengl.org/registry/specs/ARB/uniform_buffer_object.txt), but we'll list the most common rules below. Each variable type in GLSL such as `int`, `float`, and `bool` are defined to be four-byte quantities with each entity of 4 bytes represented as **N**. 
 
 
-| **Type**                    | **Layout Rule**                           |
-| --------------------------- | ----------------------------------------- |
-| Scalar e.g. `int` or `bool` | Each scalar has a base alignment of **N** |
+| **Type**                    | **Layout Rule**                                                    |
+| --------------------------- | ------------------------------------------------------------------ |
+| Scalar e.g. `int` or `bool` | Each scalar has a base alignment of **N**                          |
+| Vector                      | Either 2N or 4N. This means that a vec3 has a base alignment of 4N |
+| Array of scalars or vectors | Each element has a base alignm                                     |
