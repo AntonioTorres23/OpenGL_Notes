@@ -414,7 +414,10 @@ glBindBuffer(GL_UNIFORM_BUFFER, 0);
 Here we store the first half of the uniform buffer with the projection matrix. Then before we render the objects each frame we update the second half of the buffer with the view matrix.
 
 ```
-glm::mat4 view = camaera.
+glm::mat4 view = camaera.GetViewMatrix();
+glBindBuffer(GL_UNIFORM_BUFFER, uboMatrices);
+glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::mat4), sizeof(glm::mat4), )
+
 ```
 
 
