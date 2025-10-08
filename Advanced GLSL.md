@@ -71,3 +71,8 @@ Because the width of the window is equal to 1200, whenever a pixel's x-coordinat
 
 ![[Pasted image 20251008115533.png]]
 
+We can now calculate two completely different fragment shader results and display each of them on a different side of the window. This is great for testing out different lighting techniques for example. 
+
+**`gl_FrontFacing`**
+
+Another interesting input variable in the fragment shader is the ``
