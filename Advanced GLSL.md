@@ -249,4 +249,4 @@ What we want to know is the size (in bytes) and the offset (from the start of th
 
 By default, GLSL uses a uniform memory layout called a **shared** layout - shared because once the offsets are defined by the hardware, they are consistently *shared* between multiple programs. With a shared layout GLSL is allowed to reposition the uniform variables for optimization as long as the variables' order remains intact. Because we don't know at what offset each uniform variable will be we don't know how to precisely fill our uniform buffer. We can query this information with functions like `glGetUniformIndices`, but that's not the approach we're going to take in this section. 
 
-While a shared layou
+While a shared layout gives us some space-saving optimizations, we'd need to query the offset for each variable which translates to a lot of work. The general practice however, is to not use the shared layout, but to use the `std140` layout 
