@@ -283,4 +283,6 @@ layout (std140) uniform ExampleBlock
  };    
 ```
 
-As an exercise, try to calculate it yourself and compare them with the table. With these calculated offset values, based on the `std140` layout, we can fill the buffer at the appropriate offsets using functions like `glBufferSubData`. While not efficient, the std140 layout does guarantee us that the memory layout remains the same over each program that d
+As an exercise, try to calculate it yourself and compare them with the table. With these calculated offset values, based on the `std140` layout, we can fill the buffer at the appropriate offsets using functions like `glBufferSubData`. While not efficient, the std140 layout does guarantee us that the memory layout remains the same over each program that declared this uniform block. 
+
+By adding the statement layout (`std140`) in the definition of the uniform block we tell OpenGL that this uniform block uses the `std140` layout. There are two other layouts to choose from that require us to query each offset 
