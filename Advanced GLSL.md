@@ -197,4 +197,52 @@ As long as both interface block names are equal, their corresponding input and o
 
 **Uniform Buffer Objects**
 
-We've 
+We've been using OpenGL for quite a while now and learned some pretty cool tricks, but also a few annoyances. For example, when using more than one shader we continuously have to set uniform variables where most of them are exactly the same for each shader. 
+
+OpenGL gives us a tool called **uniform buffer objects** that allow us to declare a set of *global* uniform variables that remain the same over any number of shader programs. When using uniform buffer objects we set the relevant uniforms only one in fixed GPU memory. We do still have to manually set the uniforms that are unique per shader. Creating and configuring a uniform buffer object requires a bit of work though. 
+
+Because a uniform buffer object is a buffer like any other buffer we can create one via `glGenBuffers`, bind it to the `GL_UNIFROM_BUFFER` buffer target and store all the relevant uniform data into the buffer. There are certain rules as to how the data for uniform buffer objects should be stored and we'll get to that later. First, we'll take a simple vertex shader and store our projection and view matrix in a so called **uniform block**. 
+
+```
+#version 330 core
+layout (location = 0) in vec3 aPos;
+
+layout (std140) uniform Matrices
+{
+	mat4 projection;
+	mat4 view; 
+};
+
+uniform mat4 model;
+
+void main()
+{
+	gl_Position = projection * view * model * vec4(aPos, 1.0);
+}
+```
+
+In most of our samples we set a projection and view uniform every frame for each shader we're using. This is a perfect example of where uniform buffer objects become useful since now we only have to store these matrices once. 
+
+Here we declared a uniform block called Matrices that store two 4x4 matrices. Variables in a uniform block can be directly accessed without the block name prefix. Then we store these matrix values in a buffer somewhere in the OpenGL code and each shader that declares this uniform bock has access to the matrices. 
+
+You're probably wondering right now what the layout (`std140`) statement means. What this says is that the currently defined uniform block uses a specific memory layout for its content; this statement sets the **uniform block layout** 
+
+**Uniform Block Layout**
+
+The content of a uniform block is stored in a buffer object, which is effectively nothing more than a reserved piece of global memory. Because this piece of memory holds no information on what kind of data it holds, we need to tell OpenGL what parts of the memory correspond to which uniform variables in the the shader. 
+
+Imagine the following uniform block in a shader. 
+
+```
+layout (std140) uniform ExampleBlock;
+{
+	float value;
+	vec3 vector; 
+	mat4 matrix;
+	float values[3];
+	bool boolean;
+	int integer;
+};
+```
+
+What we want to know is the size (in bytes) and the offset (from the start of the block) of each of these variables so we can place them in the buffer in their respective order. The size of each of the elements is clearly stated in OpenGL and directly corresponds to C++ data types; vectors and matrices being (large) arrays of floats. What OpenGL doesn't clearly state is the **spacing** between the variables. This allows the hardware to position or pad variables as it sees fit. The hardware is able to place a `vec3` adjacent to a `float` for example. Not all hardware can handle this and pads the `vec3` 
