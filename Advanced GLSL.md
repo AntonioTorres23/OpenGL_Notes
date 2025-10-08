@@ -289,3 +289,22 @@ By adding the statement layout (`std140`) in the definition of the uniform block
 
 **Using Uniform Buffers**
 
+We've defined uniform blocks and specified their memory layout, but we haven't discussed how to actually use them yet. 
+
+First, we need to create a uniform buffer object which is done with the familiar `glGenBuffers`. Once we have a buffer object we bind it to the `GL_UNIFORM_BUFFER` target and allocate enough memory by calling `glBufferData`
+
+```
+unsigned int uboExampleBlock;
+glGenBuffers(1, &uboExampleBlock);
+glBindBuffer(GL_UNIFORM_BUFFER, uboExampleBlock);
+glBufferData(GL_UNIFORM_BUFFER, 152, NULL, GL_STATIC_DRAW); // allocate 152 bytes
+glBindBuffer(GL_UNIFORM_BUFFER, 0);
+```
+
+Now whenever we want to update or insert data into the buffer, we bind to `uboExampleBlock` and use `glBufferSubData` to update its memory. We only have to update this uniform once, and all shaders that use this buffer now use its updated data. But, how does OpenGL know what uniform buffers correspond to which uniform blocks?
+
+In the OpenGL context there is a number of **binding points** where we can link a uniform buffer to. Once we created a uniform buffer we link it to one of those binding points and we also link the uniform block in the shader to the same binding point, effectively linking them together. This following diagram illustrates this.
+
+![[Pasted image 20251008150715.png]]
+
+As you can see, 
