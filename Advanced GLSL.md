@@ -307,4 +307,13 @@ In the OpenGL context there is a number of **binding points** where we can link 
 
 ![[Pasted image 20251008150715.png]]
 
-As you can see, 
+As you can see we can bind multiple uniform buffers to different binding points. Because shader A and shader B both have a uniform block linked to the same binding point 0, their uniform blocks share the same uniform data found in `uboMatrices`;  a requirement being that both shaders defined the same `Matrices` uniform block.
+
+To set a uniform block to a specific binding point we call `glUniformBlockBinding` that takes a program object, a uniform block index, and the binding point to link to. The uniform block index is a location index of the defined uniform block in the shader. This can be retrieved via a call to `glGetUniformBlockIndex` that accepts a program object and the name of the uniform block. We can set the `Lights` uniform block from the diagram to binding point 2 as follows. 
+
+```
+unsigned int lights_index = glGetUniformBlockIndex(shaderA.ID, "Lights");
+glUniformBlockBinding(shaderA.ID, lights_index, 2);
+```
+
+Note that we have to repeat this process for each shader. 
