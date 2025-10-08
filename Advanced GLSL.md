@@ -146,3 +146,13 @@ void main()
 Do note that this feature is only available from OpenGL version 4.2 or higher. 
 
 **Interface Blocks**
+
+So far, every time we sent data from the vertex to the fragment shader we declared several matching input/output variables. Declaring these one at a time is the easiest way to send data from one shader to another, but as applications become larger you probably want to send more than a few variables over. 
+
+To help us organize these variables, GLSL offers us something called **Interface Blocks** that allows us to group variables together. The declaration of such an interface block looks a lot like a struct declaration, except that it is now declared using an in or out keyword based on the block being an input or an output block. 
+
+```
+#version 330 core
+layout (location = 0) in vec3 aPos; 
+layout 
+```
