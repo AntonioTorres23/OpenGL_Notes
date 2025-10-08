@@ -443,3 +443,5 @@ Each of the cubes is moved to one side of the window by translating the model ma
 
 You can find the full source code of the uniform example application [here](https://learnopengl.com/code_viewer_gh.php?code=src/4.advanced_opengl/8.advanced_glsl_ubo/advanced_glsl_ubo.cpp).
 
+Uniform buffer objects have several several advantages over single uniforms. First, setting a lot of uniforms at once is faster than setting multiple uniforms one at a time. Second, 
+
