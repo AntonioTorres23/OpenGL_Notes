@@ -271,6 +271,6 @@ layout (std140) uniform ExampleBlock
 {                    // base alignment // aligned offset
 	float value;     4                 0
 	vec3 vector;     16                16 (offset must be multiple of 16 so 4->16)
-	
+	mat4 matrix;     
 };
 ```
