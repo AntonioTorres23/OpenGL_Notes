@@ -439,3 +439,5 @@ The only uniform we still need to set is the model uniform. Using uniform buffer
 
 ![[Pasted image 20251008164339.png]]
 
+Each of the cubes is moved to one side of the window by translating the model matrix and, thanks to the different fragment shaders, their colors differ per object. This is a relatively simple scenario 
+
