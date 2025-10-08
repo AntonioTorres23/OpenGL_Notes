@@ -279,5 +279,8 @@ layout (std140) uniform ExampleBlock
 				     // 16               112 (value[1])
 				     // 16               128 (value[2])
 	bool boolean;    // 4                144
+	int integer;     // 4                148
  };    
 ```
+
+As an exercise, try to calculate it yourself and compare them with the 
