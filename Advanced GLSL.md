@@ -46,3 +46,9 @@ The `gl_Position` and `gl_PointSize` are output variables since their value is r
 The integer variable `gl_VertexID` holds the current ID of the vertex we're drawing. When doing *indexed rendering* (with `glDrawElements`) this variable holds the current index of the vertex we're drawing. When drawing without indices (`glDrawArrays`) this variable holds the number of the currently processed vertex since the start of the start of the render call.
 
 **Fragment Shader Variables**
+
+Within the fragment shader we also have access to some interesting variables. GLSL gives us two interesting input variables called `gl_FragCoord` and `gl_FrontFacing`. 
+
+**`gl_FragCoord`**
+
+We've seen the `gl_FragCoord` a couple of times before and during the discussion of depth testing, because then z component of the `gl_FragCoord` vector is equal to the depth value of that particular fragment. However, we can also use the x and y ccomp
