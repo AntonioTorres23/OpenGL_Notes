@@ -97,5 +97,20 @@ void main()
 }
 ```
 
-If we take a peek inside the container we can now see a 
+If we take a peek inside the container we can now see a different texture being used.
 
+![[Pasted image 20251008120838.png]]
+
+Note that if you enabled face culling you won't be able to see any faces inside the container and using `gl_FrontFacing` would be pointless. 
+
+**`gl_FragDepth`**
+
+The input variable `gl_FragCoord` is an input variable that allows us to read screen-space coordinates and get the depth value of the current fragment, but it is a read-only variable. We can't influence the screen-space coordinates of the fragments, but it is possible to set the depth-value of the fragment within the shader. 
+
+To set the depth value in the shader we write any value between 0.0 and 1.0 to the output variable. 
+
+`gl_FragDepth = 0.0; // this fragment now has a depth value of 0.0`
+
+If the shader does not write anything to `gl_FragDepth`, the variable will automatically takes its value from `gl_FragCoord.z`. 
+
+Setting the depth value manually has a major disadvantage however. That is because OpenGL disables early depth testing as soon as we write to the ``
