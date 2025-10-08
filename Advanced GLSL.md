@@ -408,9 +408,14 @@ Now all that's left to do is fill the buffer. If we keep the *field of view* val
 glm::mat4 projection = glm::perspective(glm::radians(45.0f), 0.1f, 100.0f);
 glBindBuffer(GL_UNIFORM_BUFFER, uboMatrices);
 glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4), glm::value_pointer(projection));
-glBindBuffer()
+glBindBuffer(GL_UNIFORM_BUFFER, 0);
 ```
 
+Here we store the first half of the uniform buffer with the projection matrix. Then before we render the objects each frame we update the second half of the buffer with the view matrix.
+
+```
+glm::mat4 view = camaera.
+```
 
 
 
