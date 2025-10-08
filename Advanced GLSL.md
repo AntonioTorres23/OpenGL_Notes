@@ -277,6 +277,7 @@ layout (std140) uniform ExampleBlock
 	               //  16                80 (column 4)
 	float values[3]; // 16               96 (value[0])
 				     // 16               112 (value[1])
-				     // 16                
+				     // 16               128 (value[2])
+	bool boolean;    // 4                144
  };    
 ```
