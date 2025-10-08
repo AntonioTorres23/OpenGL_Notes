@@ -269,6 +269,8 @@ Like most of OpenGL's specifications it's easier to understand with an example. 
 ```
 layout (std140) uniform ExampleBlock
 {                    // base alignment // aligned offset
-	float value;     
+	float value;     4                 0
+	vec3 vector;     16                16 (offset must be multiple of 16 so 4->16)
+	
 };
 ```
