@@ -53,4 +53,4 @@ Within the fragment shader we also have access to some interesting variables. GL
 
 We've seen the `gl_FragCoord` a couple of times before and during the discussion of depth testing, because then z component of the `gl_FragCoord` vector is equal to the depth value of that particular fragment. However, we can also use the x and y component of that vector for some interesting effects. 
 
-The `gl_FraggCCoor`
+The `gl_FragCoord`'s x and y component are the window- 
