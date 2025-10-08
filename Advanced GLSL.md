@@ -113,4 +113,14 @@ To set the depth value in the shader we write any value between 0.0 and 1.0 to t
 
 If the shader does not write anything to `gl_FragDepth`, the variable will automatically takes its value from `gl_FragCoord.z`. 
 
-Setting the depth value manually has a major disadvantage however. That is because OpenGL disables early depth testing as soon as we write to the ``
+Setting the depth value manually has a major disadvantage however. That is because OpenGL disables early depth testing as soon as we write to the `gl_FragDepth` in the fragment shader. It is disabled, because OpenGL cannot know what depth value the fragment will have before we run the fragment shader, since the fragment shader may change this value. 
+
+By writing to `gl_FragDepth` you should take this performance penalty into consideration. From OpenGL 4.2 however, we can still sort of mediate between both sides by redeclaring `gl_FragDepth` variable at the top of the fragment shader with a depth condition.
+
+`layout (layout (depth_<condition>) out float gl_FragDepth);`
+
+This condition can take the following values:
+
+- any: The default value. Early depth testing is disabled.
+- greater: You can only make the depth value larger compared to `gl_FragCoord.z`
+- less: You can only make the depth value smaller compared to 
