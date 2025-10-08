@@ -389,7 +389,13 @@ Next, we create the actual uniform buffer object and bind that buffer to binding
 
 ```
 unsigned int uboMatrices;
-glGenBuffers(1, &)
+glGenBuffers(1, &uboMatrices);
+
+glBindBuffer(GL_UNIFORM_BUFFER, uboMatrices);
+
+glBufferData(GL_UNIFORM_BUFFER, 2 * sizeof(glm::mat4), NULL, GL_STATIC_DRAW);
+
+gl
 
 ```
 
