@@ -423,7 +423,11 @@ glBindBuffer(GL_UNIFORM_BUFFER, 0);
 And that's it for uniform buffer objects. Each vertex shader that contains a `Matrices` uniform block will now contain the data stored in `uboMatrices`. So if we now were to draw 4 cubes using 4 different shaders, their projection and view matrix should be the same. 
 
 ```
-glBindVertexArray
+glBindVertexArray(cubeVAO);
+shaderRed.use();
+glm::mat4 model = glm::mat4(1.0f);
+model = glm::translate(model, glm::vec3(-0.75f))
+
 ```
 
 
