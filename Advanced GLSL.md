@@ -264,4 +264,11 @@ This exact layout rules can be found at OpenGL's uniform buffer specification [h
 | Matrices                    | Stored as a large array of column vectors, where each of those vectors has a base alignment of vec4                          |
 | Struct                      | Equal to the computed size of its elements according to the previous rules, but padded to a multiple of the size of a vec4.  |
 
-Like most of OpenGL's specifications it's easier to understand with an example. We're taking the uniform block called `ExampleBlock` we introduced earlier and calculate the aligned offset for each of its members  
+Like most of OpenGL's specifications it's easier to understand with an example. We're taking the uniform block called `ExampleBlock` we introduced earlier and calculate the aligned offset for each of its members using the `std140` layout. 
+
+```
+layout (std140) uniform ExampleBlock
+{                    // base alignment // aligned offset
+	float value;     
+};
+```
