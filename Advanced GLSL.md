@@ -317,3 +317,5 @@ glUniformBlockBinding(shaderA.ID, lights_index, 2);
 ```
 
 Note that we have to repeat this process for each shader. 
+
+From OpenGL version 4.2 and onwards it is also possible to store the binding point of a uniform block explicitly 
