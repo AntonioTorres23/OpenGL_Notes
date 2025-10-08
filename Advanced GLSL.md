@@ -53,4 +53,18 @@ Within the fragment shader we also have access to some interesting variables. GL
 
 We've seen the `gl_FragCoord` a couple of times before and during the discussion of depth testing, because then z component of the `gl_FragCoord` vector is equal to the depth value of that particular fragment. However, we can also use the x and y component of that vector for some interesting effects. 
 
-The `gl_FragCoord`'s x and y component are the window- or screen-space coordinates of the fragment, originating from the bottom-left of the window. We specified a render window of 1200x1000 with `glViewport` so the screen-space coordinates 
+The `gl_FragCoord`'s x and y component are the window- or screen-space coordinates of the fragment, originating from the bottom-left of the window. We specified a render window of 1200x1000 with `glViewport` so the screen-space coordinates of the fragment will have x values between 0-1200, and y values between 0-1000. 
+
+Using the fragment shader we could calculate a different color based on the screen coordinate of the fragment. A common usage for the `gl_FragCoord` variable is for comparing visual output of different fragment calculations, as usually seen in tech demos. We could for example split the screen in two by rendering one output to the left side of the window and another output on the right side of the window. An example fragment shader that outputs a different color based on the fragment's screen coordinates is given below. 
+
+```
+void main()
+{
+	if(gl_FragCoord.x < 400)
+		FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+	else
+		FragColor = vec4(0.0, 1.0, 0.0, 1.0);
+}
+```
+
+Because the width of the 
