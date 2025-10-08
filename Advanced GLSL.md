@@ -172,4 +172,29 @@ void main()
 }
 ```
 
-This time we declared an interface block called `vs_out` that groups together all the output variables we want to send to the next shader. This is a kind of trivial example, but you can imagine that this helps us organize your shaders' inputs/outputs. It is also useful when we want to group shader input/output 
+This time we declared an interface block called `vs_out` that groups together all the output variables we want to send to the next shader. This is a kind of trivial example, but you can imagine that this helps us organize your shaders' inputs/outputs. It is also useful when we want to group shader input/output into arrays as we'll see in the section titled *Geometry Shaders*. 
+
+Then we also need to declare an input interface block in the next shader which is the fragment shader. The block name (`VS_OUT`) should be the same in the fragment shader, but the instance name (`vs_out` as used in the vertex shader) can be anything we like - avoid confusing names like `vs_out` for a fragment struct containing input values. 
+
+```
+#version 330 core
+out vec4 FragColor;
+
+in VS_OUT // BLOCK NAME MUST MATCH THE ONE THAT WAS DECLARED IN VERTEX SHADER
+{
+	vec2 TexCoords;
+} fs_in; // CAN BE WHATEVER VARIABLE NAME YOU LIKE
+
+uniform sampler2D texture;
+
+void main()
+{
+	FragColor = texture(texture, fs_in.TexCoords);
+}
+```
+
+As long as both interface block names are equal, their corresponding input and output is matched together. This is another useful feature that helps organize your code and proves useful when crossing between certain shader stages like the geometry shader. 
+
+**Uniform Buffer Objects**
+
+We've 
