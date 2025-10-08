@@ -370,3 +370,29 @@ void main()
 Not much going on here, except that we now use a uniform block with a `std140` layout. What we're going to do in our sample application is display 4 cubes where each cube is displayed with a different shader program. Each of the 4 shader programs uses the same vertex shader, but has a unique fragment shader that only outputs a single color that differs per shader. 
 
 First, we set the uniform block of the shaders equal to the binding point of 0. Note that we have to do this for each shader. 
+
+```
+unsigned int uniformBlockIndexRed = glGetUniformBlockIndex(shaderRed.ID,                                                                        "Matrices");
+unsigned int uniformBlockIndexGreen = glGetUniformBlockIndex(shaderGreen.ID,                                                                        "Matrices");
+unsigned int uniformBlockIndexBlue = glGetUniformBlockIndex(shaderBlue.ID,                                                                        "Matrices");
+unsigned int uniformBlockIndexYellow = glGetUniformBlockIndex(shaderYellow.ID,                                                                        "Matrices");
+glUniformBlockBinding(shaderRed.ID, uniformBlockIndexRed, 0);
+
+glUniformBlockBinding(shaderGreen.ID, uniformBlockIndexGreen, 0);
+
+glUniformBlockBinding(shaderBlue.ID, uniformBlockIndexBlue, 0);
+
+glUniformBlockBinding(shaderYellow.ID, uniformBlockIndexYellow, 0);
+```
+
+Next, we create the actual uniform buffer object and bind that buffer to binding point 0. 
+
+```
+unsigned int uboMatrices;
+glGenBuffers(1, &)
+
+```
+
+
+
+
