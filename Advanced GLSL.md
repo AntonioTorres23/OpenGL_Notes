@@ -431,9 +431,11 @@ shaderRed.setMat4("model", model);
 glDrawArrays(GL_TRIANGLES, 0, 36);
 // ... draw Green Cube
 // ... draw Blue Cube
-// .. draw Yellow Cube
+// ... draw Yellow Cube
 ```
 
 
+The only uniform we still need to set is the model uniform. Using uniform buffer objects in a scenario like this saves us from quite a few uniform calls per shader. The result looks something like this. 
 
+![[Pasted image 20251008164339.png]]
 
