@@ -343,4 +343,30 @@ glBindBuffer(GL_UNIFORM_BUFFER, 0);
 
 And the same procedure applies for all the other uniform variables inside the uniform block, but with different range arguments. 
 
-****
+**A Simple Example**
+
+So let's demonstrate a real example of uniform buffer objects. If we look back at all the previous code samples we've continually been using 3 matrices: the projection, view, and model matrix. Of all those matrices, only the model matrix changes frequently. If we have multiple shaders that use the same set of matrices, we'd probably be better off using uniform buffer objects. 
+
+We're going to store the projection and view matrix in a uniform block called `Matrices`. We're not going to store the model matrix in there since the model matrix tends to change frequently between shaders, so we wouldn't really benefit from uniform buffer objects. 
+
+```
+#version 330 core
+layout (location = 0) in vec3 aPos;
+
+layout (std140) uniform Matrices
+{
+	mat4 projection;
+	mat4 view;
+};
+
+uniform mat4 model;
+
+void main()
+{
+	gl_Position = projection * view * model * vec4(aPos, 1.0);
+}
+```
+
+Not much going on here, except that we now use a uniform block with a `std140` layout. What we're going to do in our sample application is display 4 cubes where each cube is displayed with a different shader program. Each of the 4 shader programs uses the same vertex shader, but has a unique fragment shader that only outputs a single color that differs per shader. 
+
+First, we set the uniform block of the shaders equal to the binding point of 0. Note that we have to do this for each shader. 
