@@ -407,7 +407,8 @@ Now all that's left to do is fill the buffer. If we keep the *field of view* val
 ```
 glm::mat4 projection = glm::perspective(glm::radians(45.0f), 0.1f, 100.0f);
 glBindBuffer(GL_UNIFORM_BUFFER, uboMatrices);
-glBuffer
+glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4), glm::value_pointer(projection));
+glBindBuffer()
 ```
 
 
