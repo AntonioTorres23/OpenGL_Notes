@@ -318,4 +318,12 @@ glUniformBlockBinding(shaderA.ID, lights_index, 2);
 
 Note that we have to repeat this process for each shader. 
 
-From OpenGL version 4.2 and onwards it is also possible to store the binding point of a uniform block explicitly 
+From OpenGL version 4.2 and onwards it is also possible to store the binding point of a uniform block explicitly in the shader by adding another layout specifier, saving us the calls to `glGetUniformBlockIndex` and `glUniformBlockBinding`. The following code sets the binding point of the `Lights` uniform block explicitly.
+
+`layout(std140, binding = 2) uniform Lights {...};`
+
+Then we also need to bind the uniform buffer object to the same binding point and this can be accomplished with either `glBindBufferBase` or `glBindBufferRange`. 
+
+```
+glBindBufferBase
+```
