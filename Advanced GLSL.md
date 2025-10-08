@@ -60,11 +60,14 @@ Using the fragment shader we could calculate a different color based on the scre
 ```
 void main()
 {
-	if(gl_FragCoord.x < 400)
+	if(gl_FragCoord.x < 600)
 		FragColor = vec4(1.0, 0.0, 0.0, 1.0);
 	else
 		FragColor = vec4(0.0, 1.0, 0.0, 1.0);
 }
 ```
 
-Because the width of the 
+Because the width of the window is equal to 1200, whenever a pixel's x-coordinate is less than 800 it must be at the left side of the window and we'll give that fragment a different color. 
+
+![[Pasted image 20251008115533.png]]
+
