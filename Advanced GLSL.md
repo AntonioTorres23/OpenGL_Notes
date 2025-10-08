@@ -429,7 +429,11 @@ glm::mat4 model = glm::mat4(1.0f);
 model = glm::translate(model, glm::vec3(-0.75f, 0.75f, 0.0f)); // move top-left
 shaderRed.setMat4("model", model);
 glDrawArrays(GL_TRIANGLES, 0, 36);
-// ... draw Green 
+// ... draw Green Cube
+// ... draw Blue Cube
+// .. draw Yellow Cube
 ```
+
+
 
 
