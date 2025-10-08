@@ -123,4 +123,24 @@ This condition can take the following values:
 
 - any: The default value. Early depth testing is disabled.
 - greater: You can only make the depth value larger compared to `gl_FragCoord.z`
-- less: You can only make the depth value smaller compared to 
+- less: You can only make the depth value smaller compared to `gl_FragCoord.z`
+- unchanged: If you write to `gl_FragDepth`, you write exactly `gl_FragCoord.z`
+
+By specifying greater or less as the depth condition, OpenGL can make the assumption that you'll only write depth values larger or smaller than the fragment's depth value. This way OpenGL is still able to do early depth testing when the depth buffer value is part of the other direction of `gl_FragCoord.z`. 
+
+An example of where we increase the depth value in the fragment shader, but still want to preserve some of the early depth testing is shown in the fragment shader below.
+
+```
+#version 420 core // note the GLSL version
+out vec4 FragColor;
+layout (depth_greater) out float gl_FragDepth;
+
+void main()
+{
+	FragColor = vec4(1.0);
+	gl_FragDepth = gl_FragCoord.z + 0.1;
+}
+
+```
+
+Do note that this feature is only available from OpenGL version 4.2 or higher. 
