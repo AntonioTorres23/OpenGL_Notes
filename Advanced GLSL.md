@@ -325,5 +325,22 @@ From OpenGL version 4.2 and onwards it is also possible to store the binding poi
 Then we also need to bind the uniform buffer object to the same binding point and this can be accomplished with either `glBindBufferBase` or `glBindBufferRange`. 
 
 ```
-glBindBufferBase
+glBindBufferBase(GL_UNIFORM_BUFFER, 2, uboExampleBlock);
+// or
+glBindBufferRange(GL_UNIFORM_BUFFER, 2, uboExampleBlock, 0, 152);
 ```
+
+The function `glBindBufferBase` expects a target, a binding point index and a uniform buffer object. This function links `uboExampleBlock` to binding point 2; from this point on, both side of the binding point are linked. You can also use `glBindBufferRange` that expects and extra offset and size parameter - this way you can bind only a specific range of the uniform buffer to a binding point. Using `glBindBufferRange` you could have multiple different uniform blocks linked to a single uniform buffer object. 
+
+Now that everything is set up, we can start adding data to the uniform buffer. We could add all the data as a single byte array, or update parts of the buffer whenever we feel like it using `glBufferSubData`. To update the uniform variable `boolean` we could update the uniform buffer object as follows. 
+
+```
+glBindBuffer(GL_UNIFORM_BUFFER, uboExampleBlock);
+int b = true; // bools in GLSL are represented as 4 bytes, so we store it in an                  //                                                          integer
+glBufferSubData(GL_UNIFORM_BUFFER, 144, 4, &b);
+glBindBuffer(GL_UNIFORM_BUFFER, 0);
+```
+
+And the same procedure applies for all the other uniform variables inside the uniform block, but with different range arguments. 
+
+****
