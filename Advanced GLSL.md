@@ -249,4 +249,13 @@ What we want to know is the size (in bytes) and the offset (from the start of th
 
 By default, GLSL uses a uniform memory layout called a **shared** layout - shared because once the offsets are defined by the hardware, they are consistently *shared* between multiple programs. With a shared layout GLSL is allowed to reposition the uniform variables for optimization as long as the variables' order remains intact. Because we don't know at what offset each uniform variable will be we don't know how to precisely fill our uniform buffer. We can query this information with functions like `glGetUniformIndices`, but that's not the approach we're going to take in this section. 
 
-While a shared layout gives us some space-saving optimizations, we'd need to query the offset for each variable which translates to a lot of work. The general practice however, is to not use the shared layout, but to use the `std140` layout
+While a shared layout gives us some space-saving optimizations, we'd need to query the offset for each variable which translates to a lot of work. The general practice however, is to not use the shared layout, but to use the `std140` layout. the `std140` layout **explicitly** states the memory layout for each variable by standardizing their respective offsets governed by a set of rules. Since this is standardized we can manually figure out the offsets for each variable. 
+
+Each variable has a **base alignment** equal to the space a variable takes (including padding) within a uniform block using the `std140` layout rules. The assigned byte offset of a variable **must** be equal to a multiple of its base alignment. This is a bit of a mouthful, but we'll get to see some examples soon enough to clear things up. 
+
+This exact layout rules can be found at OpenGL's uniform buffer specification [here](http://www.opengl.org/registry/specs/ARB/uniform_buffer_object.txt), but we'll list the most common rules below. Each variable type in GLSL such as `int`, `float`, and `bool` are defined to be four-byte quantities with each entity of 4 bytes represented as **N**. 
+
+
+| **Type**                    | **Layout Rule**                           |
+| --------------------------- | ----------------------------------------- |
+| Scalar e.g. `int` or `bool` | Each scalar has a base alignment of **N** |
