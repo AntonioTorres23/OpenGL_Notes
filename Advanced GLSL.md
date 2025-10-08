@@ -407,7 +407,7 @@ Now all that's left to do is fill the buffer. If we keep the *field of view* val
 ```
 glm::mat4 projection = glm::perspective(glm::radians(45.0f), 0.1f, 100.0f);
 glBindBuffer(GL_UNIFORM_BUFFER, uboMatrices);
-glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4), glm::value_pointer(projection));
+glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4), glm::value_ptr(projection));
 glBindBuffer(GL_UNIFORM_BUFFER, 0);
 ```
 
@@ -416,9 +416,10 @@ Here we store the first half of the uniform buffer with the projection matrix. T
 ```
 glm::mat4 view = camaera.GetViewMatrix();
 glBindBuffer(GL_UNIFORM_BUFFER, uboMatrices);
-glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::mat4), sizeof(glm::mat4), )
-
+glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::mat4), sizeof(glm::mat4), glm::value_ptr(view));
+glBindBuffer(GL_UNIFORM_BUFFER, 0);
 ```
 
+And that's i
 
 
