@@ -439,5 +439,7 @@ The only uniform we still need to set is the model uniform. Using uniform buffer
 
 ![[Pasted image 20251008164339.png]]
 
-Each of the cubes is moved to one side of the window by translating the model matrix and, thanks to the different fragment shaders, their colors differ per object. This is a relatively simple scenario 
+Each of the cubes is moved to one side of the window by translating the model matrix and, thanks to the different fragment shaders, their colors differ per object. This is a relatively simple scenario of where we could use uniform buffer objects, but any large rendering application can have hundreds of shader programs active which is where uniform buffer objects really start to shine. 
+
+You can find the full source code of the uniform example application [here](https://learnopengl.com/code_viewer_gh.php?code=src/4.advanced_opengl/8.advanced_glsl_ubo/advanced_glsl_ubo.cpp).
 
