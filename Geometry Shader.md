@@ -82,4 +82,4 @@ void main()
 }
 ```
 
-Each time we call `EmitVertex`, the vector currently set to `gl_Position` is added to the output primitive. Whenever ``
+Each time we call `EmitVertex`, the vector currently set to `gl_Position` is added to the output primitive. Whenever `EndPrimitive` is called, all emitted vertices for this primitive are combined into the specified output render primitive. By repeatedly calling `EndPrimitive`
