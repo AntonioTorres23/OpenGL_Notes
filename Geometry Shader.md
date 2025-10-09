@@ -88,3 +88,4 @@ Now that you (sort of) know how geometry shaders work you can probably guess wha
 
 ![[Pasted image 20251009161548.png]]
 
+Not very impressive yet, 
