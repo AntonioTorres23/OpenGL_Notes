@@ -82,4 +82,4 @@ void main()
 }
 ```
 
-Each time we call `EmitVertex`, the vector currently set to `gl_Position` is added to the output primitive. Whenever `EndPrimitive` is called, all emitted vertices for this primitive are combined into the specified output render primitive. By repeatedly calling `EndPrimitive`, after one or more `EndPrimitive` calls, multiple primitives can be generated. This particular case emits two vertices that where translated by a small offset from the original vertex position and them calls `EndPrimitive`
+Each time we call `EmitVertex`, the vector currently set to `gl_Position` is added to the output primitive. Whenever `EndPrimitive` is called, all emitted vertices for this primitive are combined into the specified output render primitive. By repeatedly calling `EndPrimitive`, after one or more `EndPrimitive` calls, multiple primitives can be generated. This particular case emits two vertices that where translated by a small offset from the original vertex position and then calls `EndPrimitive`, combining the two vertices into a single 
