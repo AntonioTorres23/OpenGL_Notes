@@ -62,4 +62,8 @@ Here it is declared as an **interface block** as discussed from the Advance GLSL
 
 Note that it is declared as an array, because most render primitives contain more than 1 vertex. The geometry shader receives **all** vertices of a primitive as its input. 
 
-Using the vertex data from the vertex shader stage, we can generate new data with 2 geometry shader functions called **`EmitVertex`** and `EndPrimitive`. 
+Using the vertex data from the vertex shader stage, we can generate new data with 2 geometry shader functions called **`EmitVertex`** and `EndPrimitive`. The geometry shader expects you to generate/output at lease one of the primitives you specified as output. In our case we want to at least generate on line strip primitive. 
+
+```
+
+```
