@@ -65,5 +65,16 @@ Note that it is declared as an array, because most render primitives contain mor
 Using the vertex data from the vertex shader stage, we can generate new data with 2 geometry shader functions called **`EmitVertex`** and `EndPrimitive`. The geometry shader expects you to generate/output at lease one of the primitives you specified as output. In our case we want to at least generate on line strip primitive. 
 
 ```
+#version 330 core
+layout (points) in;
 
+layout (line_strip, max_points = 2) out; 
+
+void main()
+{
+	gl_Position = gl_in[0].gl_Position + vec4(-0.1, 0.0, 0.0, 0.0);
+	EmitVertex(); 
+	
+	gl_Position = gl_in[0].gl_Position + vec4(1.0, 0.0, 0.0, 0.0);
+}
 ```
