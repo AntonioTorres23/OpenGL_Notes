@@ -88,4 +88,11 @@ Now that you (sort of) know how geometry shaders work you can probably guess wha
 
 ![[Pasted image 20251009161548.png]]
 
-Not very impressive yet, 
+Not very impressive yet, but it's interesting to consider that this output was generated using just the following render call.
+
+`glDrawArrays(GL_POINTS, 0, 4);`
+
+While this is a relatively simple example, it does show you how we use geometry shaders to (dynamically) generate new shapes on the fly. Later in these notes we'll discuss a few interesting effects that we can create using geometry shaders, but for now we're going to start with a simple example. 
+
+**Using Geometry Shaders**
+
