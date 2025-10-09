@@ -82,4 +82,4 @@ void main()
 }
 ```
 
-Each time we call `EmitVertex`
+Each time we call `EmitVertex`, the vector currently set to `gl_Position` is added to the output primitive. Whenever ``
