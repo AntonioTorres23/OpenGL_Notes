@@ -10,5 +10,19 @@ layout (line_strip, max_vertices = 2) out;
 void main()
 {
 	gl_Position = gl_in[0].gl_Position + vec4(-0.1, 0.0, 0.0, 0.0);
+	EmmitVertex();
+	
+	gl_Position = gl_in[0].gl_Position + vec4(0.1, 0.0, 0.0, 0.0);
+	EmmitVertex();
+	
+	EndPrimitive;
 }
 ```
+
+Note that the Geometry Shader is a separate shader file that is provided into your shader program. 
+
+This requires additional code in your shader class to process, link, and compile the geometry shader. 
+
+At the start of a geometry shader we need to declare the type of primitive input we're receiving from the vertex shader. We do this by declaring a layout specifier in front of the in keyword. This input layout qualifier can take any of the following point values.
+
+- points: when drawing `GL_POINTS` primitives (1).
