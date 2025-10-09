@@ -60,4 +60,6 @@ in gl_Vertex
 
 Here it is declared as an **interface block** as discussed from the Advance GLSL notes that contains a few interesting variables of which the most interesting one is `gl_Position` that contains the vector we set as the vertex shader's output. 
 
-Note that it is declared as an array, because most render primitives contain more than 1 vertex. The geometry shader recieves 
+Note that it is declared as an array, because most render primitives contain more than 1 vertex. The geometry shader receives **all** vertices of a primitive as its input. 
+
+Using the 
