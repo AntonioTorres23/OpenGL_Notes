@@ -47,3 +47,17 @@ In case you're wondering what a line strip is: a line strip binds together a set
 
 ![[Pasted image 20251009121813.png]]
 
+To generate meaningful results we need some way to retrieve the output from the previous shader stage. GLSL gives us a **built-in** variable called `gl_in` that internally (probably) looks something like this.
+
+```
+in gl_Vertex
+{
+	vec3 gl_Position;
+	float gl_PointSize;
+	float gl_ClipDistance[];
+} gl_in[];
+```
+
+Here it is declared as an **interface block** as discussed from the Advance GLSL notes that contains a few interesting variables of which the most interesting one is `gl_Position` that contains the vector we set as the vertex shader's output. 
+
+Note that it is declared as an array, because most render primitives contain more than 1 vertex. The geometry shader recieves 
