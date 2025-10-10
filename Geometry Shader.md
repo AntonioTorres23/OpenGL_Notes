@@ -120,3 +120,15 @@ void main()
 }
 ```
 
+And we'll output the color green for all points which we code directly in the fragment shader.
+
+```
+#version 330 core
+out vec4 FragColor;
+
+void main()
+{
+	FragColor = vec4(0.0, 1.0, 0.0, 1.0);
+}
+
+```
