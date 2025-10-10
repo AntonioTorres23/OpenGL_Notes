@@ -200,7 +200,7 @@ This translates to the following geometry shader.
 ```
 #version 330 core
 layout (points) in;
-layout (points, max_vertices = 5) out;
+layout (triangle_strip, max_vertices = 5) out;
 
 void build_house(vec4 position)
 {
@@ -221,4 +221,22 @@ void main()
 {
 	build_house(gl_in[0].gl_Position);
 }
+```
+
+This geometry shader generates 5 vertices, with each vertex being being the point's position plus an offset to form one large triangle strip. The resulting primitive is then rasterized and the fragment shader runs the entire triangle strip, resulting in a green house for each point we've rendered. 
+
+![[Pasted image 20251010163338.png]]
+
+You can see that each house indeed consists of 3 triangles - all drawn using a single point in space. The green houses do look a bit boring though, so let's liven it up a bit by giving each house a unique color. To do this we're going to add an extra vertex attribute in the vertex shader with color information per vertex and direct it to the geometry shader that further forwards it to the fragment shader.
+
+The updated vertex data is given below. 
+
+```
+float points[] =
+{
+	-0.5f, 0.5f, 1.0f, 0.0, 0.0, // top-left
+	0.5f, 0.5f, 0.0f, 1.0f, 0.0, // top-right
+	0.5f, -0.5f, 0.0f, 0.0f, 1.0f, // bottom-right
+	-0.5f, -0.5f, 1.0f, 1.0f, 0.0f // bottom-left
+};
 ```
