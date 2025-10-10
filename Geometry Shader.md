@@ -282,4 +282,8 @@ We should also declare an output color vector for the next fragment shader stage
 
 `out vec3 fColor;`
 
-Because the fragment shader expects only a single (interpolated) color it doesn't make sense to forward multiple colors. The `fColor` vector is thus not an array, but a single vector. When emitting a vertex, that vertex will store the last stored value in `fColor` as that vertex's output value. For the houses, 
+Because the fragment shader expects only a single (interpolated) color it doesn't make sense to forward multiple colors. The `fColor` vector is thus not an array, but a single vector. When emitting a vertex, that vertex will store the last stored value in `fColor` as that vertex's output value. For the houses, we can fill `fColor` once with the color from the vertex shader before the first vertex is emitted to color the entire house. 
+
+```
+fColor = gl_in[0].color; // gs_in[0] since there's only one input vertex
+```
