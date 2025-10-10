@@ -303,3 +303,4 @@ All the emitted vertices will have the last stored value in `fColor` embedded in
 
 ![[Pasted image 20251010170413.png]]
 
+Just for fun, we could also pretend it's winter and give the roofs a little snow by giving the last vertex a 
