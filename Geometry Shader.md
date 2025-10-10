@@ -290,5 +290,7 @@ gl_Position = position + vec4(-0.2, -0.2, 0.0, 0.0); // bottom-left
 
 gl_Positon = position + vec4(0.2, -0.2, 0.0, 0.0);   // bottom-right
 
-gl_
+gl_Position = position + vec4(-0.2, 0.2, 0.0, 0.0);  // top-left
+
+gl_Position = position + vec4(0.2, 0.2, 0.0, 0.0);   // top  
 ```
