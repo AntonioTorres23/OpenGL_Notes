@@ -143,3 +143,6 @@ glDrawArrays(GL_POINTS, 0, 4);
 
 The result is a dark scene with 4 (difficult to see) green points. 
 
+![[Pasted image 20251010154948.png]]
+
+But didn't we already learn to do all this? Yes, and now we're going to spice this little scene up by adding geometry shader magic to this scene. 
