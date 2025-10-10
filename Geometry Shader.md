@@ -191,4 +191,34 @@ A triangle strip in OpenGL is a more efficient way to draw triangles with fewer 
 
 ![[Pasted image 20251010161643.png]]
 
-Using a triangle strip as the output of the geometry shader we can easily create the house shape we're after by generating 3 adjacent triangles in the correct order
+Using a triangle strip as the output of the geometry shader we can easily create the house shape we're after by generating 3 adjacent triangles in the correct order. The following image shows in what order we need to draw what vertices to get the triangles we need with the blue dot being the input point. 
+
+![[Pasted image 20251010162020.png]]
+
+This translates to the following geometry shader. 
+
+```
+#version 330 core
+layout (points) in;
+layout (points, max_vertices = 5) out;
+
+void build_house(vec4 position)
+{
+	gl_Position = position + vec4(-0.2, -0.2, 0.0, 0.0); // 1: bottom-left
+	EmitVertex();
+	gl_Position = position + vec4(0.2, -0.2, 0.0, 0.0);  // 2: bottom-right
+	EmmitVertex();
+	gl_Position = position + vec4(-0.2, 0.2, 0.0, 0.0);  // 3: top-left
+	EmmitVertex();
+	gl_Position = position + vec4(0.2, 0.2, 0.0, 0.0);   // 4: top-right
+	EmmitVertex();
+	gl_Position = position + vec4(0.0, 0.4, 0.0, 0.0);   // 5: top
+	EmmitVertex();
+	EndPrimitive();
+}
+
+void main()
+{
+	build_house(gl_in[0].gl_Position);
+}
+```
