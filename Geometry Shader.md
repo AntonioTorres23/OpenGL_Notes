@@ -296,6 +296,6 @@ gl_Position = position + vec4(0.2, 0.2, 0.0, 0.0);   // top-right
 EmitVertex();
 gl_Position = position + vec4(0.0, 0.4, 0.0, 0.0);   //  top
 EmitVertex();
-EndPrimitive()
+EndPrimitive();
   
 ```
