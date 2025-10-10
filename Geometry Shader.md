@@ -111,5 +111,12 @@ float points[] =
 The vertex shader needs to draw the points on the z-plane so we'll create a basic vertex shader.
 
 ```
-#
+#version 330 core
+layout (location = 0) vec2 aPos;
+
+void main()
+{
+	gl_Position = vec4(aPos.x, aPos.y, 0.0, 1.0);
+}
 ```
+
