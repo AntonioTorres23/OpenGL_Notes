@@ -303,4 +303,31 @@ All the emitted vertices will have the last stored value in `fColor` embedded in
 
 ![[Pasted image 20251010170413.png]]
 
-Just for fun, we could also pretend it's winter and give the roofs a little snow by giving the last vertex a 
+Just for fun, we could also pretend it's winter and give the roofs a little snow by giving the last vertex a color of its own. 
+
+```
+fColor = gs_in[0].color;
+gl_Position = position + vec4(-0.2, -0.2, 0.0, 0.0); // bottom-left
+EmitVertex();
+gl_Position = position + vec4(0.2, -0.2, 0.0, 0.0); // bottom-right
+EmitVertex();
+gl_Position = position + vec4(-0.2, 0.2, 0.0, 0.0); // top-left
+EmitVertex();
+gl_Position = position + vec4(0.2, 0.2, 0.0, 0.0); // top-right
+EmitVertex();
+gl_Position = position + vec4(0.0, 0.4, 0.0, 0.0); // top
+fColor = vec3(1.0, 1.0, 1.0); // the color white
+EmitVertex();
+EndPrimitive();
+```
+
+The result now looks something like this. 
+
+![[Pasted image 20251010171714.png]]
+
+You can compare your source code with the OpenGL code [here](https://learnopengl.com/code_viewer_gh.php?code=src/4.advanced_opengl/9.1.geometry_shader_houses/geometry_shader_houses.cpp).
+
+You can see that with geometry shaders you can get pretty creative, even with the simplest primitives. Because the shapes are generated dynamically on the ultra-face hardware of your GPU this can be a lot more powerful than defining these shapes yourself within vertex buffers. Geometry shaders are a great tool for simple (often-repeating) shapes, like cubes in a voxel world or grass leaves on a large outdoor field. 
+
+**Exploding Objects**
+
