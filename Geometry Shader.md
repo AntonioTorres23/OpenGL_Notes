@@ -156,6 +156,10 @@ layout (points, max_vertices = 2) out;
 
 void main()
 {
-	
+	gl_Position = gl_in[0].gl_Position;
+	EmmitVertex();
+	EndPrimitive();
 }
 ```
+
+By now this geometry shader should be fairly easy to understand. It simply emits the unmodified vertex position 
