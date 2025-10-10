@@ -164,4 +164,10 @@ void main()
 
 By now this geometry shader should be fairly easy to understand. It simply emits the unmodified vertex position it received as input and generates a point primitive. 
 
-A geometry shader needs to be compiled and linked to a shader program just like the vertex and fragment shader. 
+A geometry shader needs to be compiled and linked to a shader program just like the vertex and fragment shader, but this time we'll create the shader using `GL_GEOMETRY_SHADER` as the shader type. 
+
+```
+geometryShader = glCreateShader(GL_GEOMETRY_SHADER);
+glShaderSource(geometryShader, 1, &gShaderCode, NULL);
+glCompileShader(geometryShader)
+```
