@@ -240,3 +240,34 @@ float points[] =
 	-0.5f, -0.5f, 1.0f, 1.0f, 0.0f // bottom-left
 };
 ```
+
+Then we update the vertex shader to forward the color attribute to the geometry shader using an interface block.
+
+```
+#version 330 core
+layout (location = 0) in vec2 aPos;
+layout (loccation = 1) in vec3 aColor;
+
+out VS_OUT
+{
+	vec3 color;
+} vs_out;
+
+void main()
+{
+	gl_Position = vec4 (aPos.x, aPos.y, 0.0, 1.0);
+	vs_out.coclor = aColor;
+}
+
+```
+
+Then we also need to declare the same interface block (with a different interface name) in the geometry shader
+
+```
+in VS_OUT
+{
+	vec3 color
+} gs_in[];
+```
+
+Because the geometry shader acts on a set of vertices as its input, its input data from the vertex shader is always represented as arrays of vertex data even though we only have a single vertex right now. 
