@@ -132,3 +132,12 @@ void main()
 }
 
 ```
+
+Generate a VAO and a VBO for the points' vertex data and then draw them via `glDrawArrays`
+
+```
+shader.use();
+glBindVertexArray(VAO);
+glDrawArrays(GL_POINTS, 0, 4);
+
+```
