@@ -96,4 +96,20 @@ While this is a relatively simple example, it does show you how we use geometry 
 
 **Using Geometry Shaders**
 
-To demonstrate the use of a geometry shader, we're going to render a really simple scene where we draw 4 points on the z-plane in normalized device coordinates
+To demonstrate the use of a geometry shader, we're going to render a really simple scene where we draw 4 points on the z-plane in normalized device coordinates. The coordinates of the points are. 
+
+```
+float points[] =
+{
+	-0.5, 0.5, // top-left
+	 0.5, 0.5, // top-right
+	 0.5, -0.5, // bottom-right
+	-0.5, -0.5 // bottom-left 
+};
+```
+
+The vertex shader needs to draw the points on the z-plane so we'll create a basic vertex shader.
+
+```
+#
+```
