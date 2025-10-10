@@ -189,3 +189,6 @@ Drawing points and lines isn't that interesting so we're going to get a little c
 
 A triangle strip in OpenGL is a more efficient way to draw triangles with fewer vertices. After the first triangle is drawn, each subsequent vertex generates another triangle next to the first triangle: each 3 adjacent vertices will form a triangle. If we have a total of 6 vertices that form a triangle strip we'd get the following triangles. (1,2,3), (2,3,4), (3,4,5), (4,5,6); forming a total of 4 triangles. A triangle strip needs at least 3 vertices and will generate N-2 triangles; with 6 vertices we created 6-2=4 triangles. The following image illustrate this. 
 
+![[Pasted image 20251010161643.png]]
+
+Using a triangle strip as the output of the geometry shader we can easily create the house shape we're after by generating 3 adjacent triangles in the correct order
