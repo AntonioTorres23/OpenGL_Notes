@@ -297,5 +297,9 @@ EmitVertex();
 gl_Position = position + vec4(0.0, 0.4, 0.0, 0.0);   //  top
 EmitVertex();
 EndPrimitive();
-  
 ```
+
+All the emitted vertices will have the last stored value in `fColor` embedded into their data, which is equal to the input vertex's color as we defined in its attributes. All the houses will now have a color of their own. 
+
+![[Pasted image 20251010170413.png]]
+
