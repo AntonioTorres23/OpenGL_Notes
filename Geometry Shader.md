@@ -96,3 +96,4 @@ While this is a relatively simple example, it does show you how we use geometry 
 
 **Using Geometry Shaders**
 
+To demonstrate the use of a geometry shader, we're going to render a really simple scene where we draw 4 points on the z-plane in normalized device coordinates
