@@ -286,4 +286,9 @@ Because the fragment shader expects only a single (interpolated) color it doesn'
 
 ```
 fColor = gl_in[0].color; // gs_in[0] since there's only one input vertex
+gl_Position = position + vec4(-0.2, -0.2, 0.0, 0.0); // bottom-left
+
+gl_Positon = position + vec4(0.2, -0.2, 0.0, 0.0);   // bottom-right
+
+gl_
 ```
