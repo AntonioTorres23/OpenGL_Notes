@@ -271,3 +271,15 @@ in VS_OUT
 ```
 
 Because the geometry shader acts on a set of vertices as its input, its input data from the vertex shader is always represented as arrays of vertex data even though we only have a single vertex right now. 
+
+We don't necessarily have to use interface blocks to transfer data to the geometry shader. We could have also written it as.
+
+`in vec3 outColor[];`
+
+This works if the vertex shader forwarded the color vector as `out vec3 outColor;`. However, interface blocks are easier to work with in shaders like the geometry shader. In practice, geometry shader inputs can get quite large and grouping them in one large interface block array makes a lot more sense. 
+
+We should also declare an output color vector for the next fragment shader stage. 
+
+`out vec3 fColor;`
+
+Because the fragment shader expects only a single (interpolated) color it doesn't make sense to forward multiple colors. The `fColor` vector is thus not an array, but a single vector. When emitting a vertex, that vertex will store the last stored value in `fColor` as that vertex's output value. For the houses, 
