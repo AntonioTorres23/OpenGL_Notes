@@ -147,4 +147,15 @@ The result is a dark scene with 4 (difficult to see) green points.
 
 But didn't we already learn to do all this? Yes, and now we're going to spice this little scene up by adding geometry shader magic to this scene. 
 
-For learning purposes we're first going to create what is called a **pass-through** geometry shader that takes a point primitive as its input and passes 
+For learning purposes we're first going to create what is called a **pass-through** geometry shader that takes a point primitive as its input and passes it to the next shader unmodified. 
+
+```
+#version 330 core
+layout (points) in;
+layout (points, max_vertices = 2) out;
+
+void main()
+{
+	
+}
+```
