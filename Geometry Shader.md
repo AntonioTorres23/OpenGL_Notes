@@ -187,4 +187,4 @@ It's exactly the same without the geometry shader. It's a bit dull, I'll admit t
 
 Drawing points and lines isn't that interesting so we're going to get a little creative by using the geometry shader to draw a house for us at the location of each point. We can accomplish this by setting the output of the geometry shader to `triangle_strip` and draw a total of three triangles. Two for the square house and one for the roof. 
 
-A triangle strip in OpenGL is a more efficient way to draw triangles with fewer vertices. After the first triangle is drawn, each subsequent vertex generates another triangle next to the first triangle: each 3 adjacent 
+A triangle strip in OpenGL is a more efficient way to draw triangles with fewer vertices. After the first triangle is drawn, each subsequent vertex generates another triangle next to the first triangle: each 3 adjacent vertices will form a triangle. If we have a total of 6 vertices that form a triangle strip we'd get the following triangles. (1,2,3), (2,3,4), (3,4,5)
