@@ -335,3 +335,6 @@ While drawing houses is fun and all, it's not something we're going to use that 
 
 When we say *exploding* an object we're not actually going to blow up our precious bundled sets of vertices, but we're going to move each triangle along the direction of their normal vector over a small period of time. The effect is that the entire object's triangles seem to explode. The effect of exploding triangles on the backpack model looks a bit like this.
 
+![[Pasted image 20251013134120.png]]
+
+The ggreat thing 
