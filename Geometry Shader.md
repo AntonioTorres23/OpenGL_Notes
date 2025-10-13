@@ -337,4 +337,6 @@ When we say *exploding* an object we're not actually going to blow up our precio
 
 ![[Pasted image 20251013134120.png]]
 
-The great thing about such a geometry shader effect is that it works on all objects, regardless of their complexity
+The great thing about such a geometry shader effect is that it works on all objects, regardless of their complexity.
+
+Because we're going to translate each vertex into the direction of the triangle's 
