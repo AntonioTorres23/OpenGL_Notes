@@ -339,4 +339,4 @@ When we say *exploding* an object we're not actually going to blow up our precio
 
 The great thing about such a geometry shader effect is that it works on all objects, regardless of their complexity.
 
-Because we're going to translate each vertex into the direction of the triangle's 
+Because we're going to translate each vertex into the direction of the triangle's normal vector we first need to calculate this normal vector. 
