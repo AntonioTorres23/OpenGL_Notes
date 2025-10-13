@@ -333,4 +333,5 @@ You can see that with geometry shaders you can get pretty creative, even with th
 
 While drawing houses is fun and all, it's not something we're going to use that much. That's why we're now going to take it up one notch and explode object. That is something we're also probably not going to use that much either, but it's definitely fun to do. 
 
-When we say *exploding* an object we're not actually going to blow up our precious bundled sets of vertices, but we're going to move each triangle along the direction of their normal vector over a small period of time. The 
+When we say *exploding* an object we're not actually going to blow up our precious bundled sets of vertices, but we're going to move each triangle along the direction of their normal vector over a small period of time. The effect is that the entire object's triangles seem to explode. The effect of exploding triangles on the backpack model looks a bit like this.
+
