@@ -120,4 +120,4 @@ for(unsigned int i = 0; i < 100; i++)
 }
 ```
 
-Within this snippet of code we transform 
+Within this snippet of code we transform the for-loop counter **i** to a string 
