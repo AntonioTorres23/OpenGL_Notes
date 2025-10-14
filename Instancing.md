@@ -103,9 +103,11 @@ for(int y = -10; y < 10; y +=2)
 		// for-loop argument divided by 10 plus an offset of 0.1
 		// for example: -10 / 10 + 0.1 = -0.0
 		translation.y = float(y) / 10.0f + offset;
+		// for example: translation vec2 = (-0.9, -0.9) 
 		// increment index by 1
 		translations[index++] = translation;
 	}
 }
 ```
 
+Here we create a set of 100 translation vectors that contains an offset vector for all positions 
