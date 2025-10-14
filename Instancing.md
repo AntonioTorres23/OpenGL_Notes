@@ -31,9 +31,33 @@ Each quad consists of 2 triangles with a total of 6 vertices. Each vertex contai
 float quadVertices[] = 
 {
 	// positions   // colors 
-	// bottom-left
+	// 1st triangle
+	// top left
 	-0.05f, 0.05f, 1.0f, 0.0f, 0.0f, // red
 	// bottom right
 	0.05f, -0.05f, 0.0f, 1.0f, 0.0f, // green
+	// bottom left   
+	-0.05f, -0.05f, 0.0f, 0.0f, 1.0f, // blue
+	// 2nd triangle
+	// top left
+	-0.05f, 0.05f,  1.0f, 0.0f, 0.0f, // red
+	// bottom right
+	0.05f, -0.05f,  0.0f, 1.0f, 0.0f, // green
+	// top right
+	0.05f, 0.05f,   0.0f, 0.0f, 1.0f  // purple
+}
+```
+
+The quads are colored in the fragment shader that receives a color vector from the vertex shader and sets it as its output. 
+
+```
+#version 330 core
+out vec4 FragColor; 
+
+in vec3 aColor;
+
+void main()
+{
+
 }
 ```
