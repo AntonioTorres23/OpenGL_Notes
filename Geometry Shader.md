@@ -349,3 +349,5 @@ vec3 GetNormal()
 	return normalize(cross(a, b));
 }
 ```
+
+Here we retrieve two vectors, **a** and **b**, that are parallel to the surface of the triangle using vector subtraction. 
