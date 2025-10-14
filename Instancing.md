@@ -25,4 +25,15 @@ To get a feel for instanced drawing we're going to demonstrate a simple example 
 
 ![[Pasted image 20251014152904.png]]
 
-This is exactly the same as the previous example, but now with instanced arrays, which allows us to pass a lot more data ()
+Each quad consists of 2 triangles with a total of 6 vertices. Each vertex contains a 2D Normalized Device Coordinate (NDC) position vector and a color vector. Below is the vertex data used for this example - the triangles are small enough to properly fit the screen when there's 100 of them. 
+
+```
+float quadVertices[] = 
+{
+	// positions   // colors 
+	// bottom-left
+	-0.05f, 0.05f, 1.0f, 0.0f, 0.0f, // red
+	// bottom right
+	0.05f, -0.05f, 0.0f, 1.0f, 0.0f, // green
+}
+```
