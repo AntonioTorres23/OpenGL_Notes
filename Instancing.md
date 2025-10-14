@@ -116,6 +116,8 @@ Here we create a set of 100 translation vectors that contains an offset vector f
 shader.use();
 for(unsigned int i = 0; i < 100; i++)
 {
-	shader.setVec2(("offsets[" + std::to_string(i) + "]")), translations[i]
+	shader.setVec2(("offsets[" + std::to_string(i) + "]")), translations[i]);
 }
 ```
+
+Within this snippet of code we transform 
