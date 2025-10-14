@@ -120,4 +120,6 @@ for(unsigned int i = 0; i < 100; i++)
 }
 ```
 
-Within this snippet of code we transform the for-loop counter **i** to a string 
+Within this snippet of code we transform the for-loop counter **i** to a string to dynamically create a location string for querying the uniform location. For each item in the **offsets** uniform array we then set the corresponding translation vector. 
+
+Now that all the preparations are we finished
