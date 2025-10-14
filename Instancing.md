@@ -21,4 +21,8 @@ By itself this function is a bit useless. Rendering the same object a thousand t
 
 When drawing with one of the instanced rendering calls, `gl_InstancedID` is incremented for each instance being rendered starting from 0. If we were to render the 43th instance for example, `gl_InstanceID` would have the value 42 in the vertex shader. Having a unique value per instance means we could now for example, index into a large array of position values to position each instance at a different location in the world. 
 
-To get a feel for instanced drawing we're going to demonstrate a simple example that renders a hundred 2D quads in normalized device coordinates with just one render call. We accomplish this by uniquely positioning each instanced quad by indexing 
+To get a feel for instanced drawing we're going to demonstrate a simple example that renders a hundred 2D quads in normalized device coordinates with just one render call. We accomplish this by uniquely positioning each instanced quad by indexing a uniform array of 100 offset vectors. The result is a neatly organized grid of quads that fill the entire window. 
+
+![[Pasted image 20251014152904.png]]
+
+This is exactly the same as the previous example, but now with instanced arrays, which allows us to pass a lot more data ()
