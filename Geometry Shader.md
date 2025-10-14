@@ -352,4 +352,14 @@ vec3 GetNormal()
 
 Here we retrieve two vectors, **a** and **b**, that are parallel to the surface of the triangle using vector subtraction. Subtracting two vectors from each other results in a vector that is the difference of the two vectors. Since all 3 points lie on the triangle plane, subtracting any of its vectors from each other results in a vector parallel to the plane. Do note that if we switched **a** and **b** in the cross function we'd get a normal vector that points in the opposite direction - order is important here. 
 
-Now that we know how to calculate a normal vector we can create an **explode** function that takes this normal vector along with a vertex position vector. The function returns a new vector 
+Now that we know how to calculate a normal vector we can create an **explode** function that takes this normal vector along with a vertex position vector. The function returns a new vector that translates the position vector along the direction of the normal vector. 
+
+```
+vec4 explode(vec4 position, vec4 normal)
+{
+	float magnitude = 2.0;
+	
+	vec3 direction = normal * ((sin(time) + 1.0) / 2.0);
+	
+}
+```
