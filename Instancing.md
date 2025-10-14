@@ -131,3 +131,4 @@ glBindVertexArray(quadVAO);
 glDrawArraysInstanced(GL_TRIANGLES, 0, 6, 100)
 ```
 
+The parameters of `glDrawArraysInstanced` are exactly the same as `glDrawArrays` except the last 
