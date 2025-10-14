@@ -131,4 +131,5 @@ glBindVertexArray(quadVAO);
 glDrawArraysInstanced(GL_TRIANGLES, 0, 6, 100)
 ```
 
-The parameters of `glDrawArraysInstanced` are exactly the same as `glDrawArrays` except the last 
+The parameters of `glDrawArraysInstanced` are exactly the same as `glDrawArrays` except the last parameter that sets the number of instances we want to draw. Since we want to display 100 quads in a 10x10 grid we set it equal to 100. Running the code should now give you the familiar image of 100 colorful quads. 
+
