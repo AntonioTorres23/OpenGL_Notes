@@ -54,10 +54,57 @@ The quads are colored in the fragment shader that receives a color vector from t
 #version 330 core
 out vec4 FragColor; 
 
-in vec3 aColor;
+in vec3 fColor;
 
 void main()
 {
-
+	FragColor = vec4(fColor, 1.0f);
 }
 ```
+
+Nothing new so far, but at the vertex shader it's starting to get interesting. 
+
+```
+#version 330 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec3 aColor;
+
+out vec3 fColor;
+
+uniform vec2 offsets[100];
+
+void main()
+{
+	vec2 offset = offsets[gl_InstanceID];
+	// set z coordinate to 0 because we are working in 2D 
+	gl_Position = vec4(aPos + offset, 0.0, 1.0); 
+	fColor = aColor;
+}
+```
+
+Here we defined a uniform array called **offsets** that contain a total of 100 offset vectors. Within the vertex shader we retrieve an offset vector for each instance by indexing the **offsets** array using `gl_InstanceID`. If we now were to draw 100 quads with instanced drawing we'd get 100 quads location at different positions. 
+
+We do need to actually set the offset positions that we calculate in a nested for-loop before we enter the render loop. 
+
+```
+glm::vec2 translations[100];
+int index = 0;
+float offset = 0.1f;
+// increment for-loop argument (y) by 2
+for(int y = -10; y < 10; y +=2)
+{
+	// increment for-loop argument (x) by 2
+	for(int x = -10; x < 10; x += 2)
+	{
+		glm::vec2 translation;
+		// for-loop argument divided by 10 plus an offset of 0.1
+		// for example -10 / 10 + 0.1 = -0
+		translation.x = float(x) / 10.0f + offset;
+		// for-loop argument divided by 10 plus an offset of 0.1
+		translation.y = float(y) / 10.0f + offset;
+		// increment index by 1
+		translations[index++] = translation;
+	}
+}
+```
+
