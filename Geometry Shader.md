@@ -350,4 +350,4 @@ vec3 GetNormal()
 }
 ```
 
-Here we retrieve two vectors, **a** and **b**, that are parallel to the surface of the triangle using vector subtraction. 
+Here we retrieve two vectors, **a** and **b**, that are parallel to the surface of the triangle using vector subtraction. Subtracting two vectors from each other results in a vector that is the difference of the two vectors. Since all 3 points lie on the triangle plane, subtracting any of its vectors from each other results in a vector 
