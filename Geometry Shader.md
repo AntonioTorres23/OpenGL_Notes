@@ -439,3 +439,4 @@ normalDisplayShader.use();
 DrawScene();
 ```
 
+This time we're creating a geometry shader that uses the vertex normals supplied by the model instead of generating it ourself. To accommodate for scaling and rotations 
