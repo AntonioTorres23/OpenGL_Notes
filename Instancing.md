@@ -11,4 +11,4 @@ for (unsigned int i = 0; i < amount_of_models_to_draw; i++)
 }
 ```
 
-When drawing many instances of your model like this you'll quickly reach a performance bottle neck
+When drawing many **instances** of your model like this you'll quickly reach a performance bottle neck because of the many draw calls. Compared to rendering the actual vertices, telling the GPU to render 
