@@ -110,4 +110,9 @@ for(int y = -10; y < 10; y +=2)
 }
 ```
 
-Here we create a set of 100 translation vectors that contains an offset vector for all positions 
+Here we create a set of 100 translation vectors that contains an offset vector for all positions in a 10x10 grid. In addition to generating the translation array, we'd also need to transfer the data to the vertex shader's uniform array.
+
+```
+shader.use();
+for(unsigned int )
+```
