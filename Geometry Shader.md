@@ -359,7 +359,27 @@ vec4 explode(vec4 position, vec4 normal)
 {
 	float magnitude = 2.0;
 	
-	vec3 direction = normal * ((sin(time) + 1.0) / 2.0);
+	vec3 direction = normal * ((sin(time) + 1.0) / 2.0) * magnitude;
 	
+	return position + vec4(direction, 0.0);
 }
+```
+
+The function itself shouldn't be too complicated. The **sin** function receives a **time** uniform variable as its argument that, based on the time, returns a value between -1.0 and 1.0. Because we don't want to *implode* the object we transform the sin value to the (0, 1) range. The resulting value is then used to scale the normal vector and the resulting direction vector is added to the position vector. 
+
+The complete geometry shader for the explode effect, while drawing a model loaded using our model loader, looks a bit like this. 
+
+```
+#version 330 core
+layout (traingles) in;
+layout (triangle_strip, max_vertices = 3) out;
+
+in VS_OUT
+{
+	vec2 texCoords;
+} gs_in[];
+
+out vec2 TexCoords;
+
+
 ```
