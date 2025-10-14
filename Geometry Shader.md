@@ -496,3 +496,23 @@ void main()
 ```
 
 The contents of geometry shaders like these should be self-explanatory by now. Note that we're multiplying the normal vector by a `MAGNITUDE` vector to restrain the size of the displayed normal vectors (otherwise they'd be a bit too large). 
+
+Since visualizing normals are mostly used for debugging purposes we can just display them as mono-colored lines (or super-fancy lines if you feel like it) with the help of the fragment shader. 
+
+```
+#version 330 core
+out vec4 FragColor;
+
+void main()
+{
+	FragColor = vec4(1.0, 1.0, 0.0, 1.0); // color yellow
+}
+```
+
+Now rendering your model with normal shaders first and then with the special normal-visualizing shader you'll see something like this.
+
+![[Pasted image 20251014124029.png]]
+
+Apart from the fact that our backpack now looks a bit hairy, it gives us a really useful method for determining if the normal vectors of a model are indeed correct. You can imagine that geometry shaders like this could also be used for adding **fur** to objects. 
+
+You can find the OpenGL's source code [here](https://learnopengl.com/code_viewer_gh.php?code=src/4.advanced_opengl/9.3.geometry_shader_normals/normal_visualization.cpp).
