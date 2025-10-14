@@ -408,6 +408,24 @@ void main()
 	gl_Position = explode(gl_in[0].gl_Position, normal);
 	TexCoords = gs_in[0].texCoords;
 	EmitVertex();
+	gl_Position = explode(gl_in[1].gl_Position, normal);
+	TexCoords = gs_in[1].texCoords;
+	EmitVertex();
+	gl_Position = explode(gs_in[2].gl_Position, normal);
+	TexCoords = gs_in[2].texCoords;
+	EmitVertex();
+	EndPrimitive();
 }
 ```
 
+Note that we're also outputting the appropriate texture coordinates before emitting a vertex. 
+
+Also don't forget to actually set the time uniform in your OpenGL code. 
+
+`shader.setFloat("time", glfwGetTime());`
+
+The result is a 3D model that seems to continually explode its vertices over time after which it returns to normal again. Although not exactly super useful, it does show you a more advanced use of the geometry shader. You can compare your source code with the complete source code [here](https://learnopengl.com/code_viewer_gh.php?code=src/4.advanced_opengl/9.2.geometry_shader_exploding/geometry_shader_exploding.cpp).
+
+**Visualizing Normal Vectors**
+
+To shake things up we're going to now discuss an example of using the geometry shader that is actually useful: visualizing the normal vectors of any object. When programming lighting shaders you will eventually run into weird visual outputs of which the cause is hard to determine. 
