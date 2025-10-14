@@ -495,4 +495,4 @@ void main()
 }
 ```
 
-The contents of geometry shaders like these should be self-explanatory by now. Note that we're multiplying  
+The contents of geometry shaders like these should be self-explanatory by now. Note that we're multiplying the normal vector by a `MAGNITUDE` vector to restrain the size of the displayed normal vectors (otherwise they'd be a bit too large). 
