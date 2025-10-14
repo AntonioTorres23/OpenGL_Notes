@@ -124,4 +124,10 @@ Within this snippet of code we transform the for-loop counter **i** to a string 
 
 Now that all the preparations are finished we can start rendering the quads. To draw via instanced rendering we call `glDrawArraysInstanced` or `glDrawElementsInstanced`. Since we're not using an element index buffer we're going to call the `glDrawArrays` version. 
 
-Now that all the preparations are finished we can start rendering quads. To draw via instanced rendering
+Now that all the preparations are finished we can start rendering quads. To draw via instanced rendering we're going to call the `glDrawArrays` version. 
+
+```
+glBindVertexArray(quadVAO);
+glDrawArraysInstanced(GL_TRIANGLES, 0, 6, 100)
+```
+
