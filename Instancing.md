@@ -98,9 +98,10 @@ for(int y = -10; y < 10; y +=2)
 	{
 		glm::vec2 translation;
 		// for-loop argument divided by 10 plus an offset of 0.1
-		// for example -10 / 10 + 0.1 = -0
+		// for example: -10 / 10 + 0.1 = -0.9
 		translation.x = float(x) / 10.0f + offset;
 		// for-loop argument divided by 10 plus an offset of 0.1
+		// for example: -10 / 10 + 0.1 = -0.0
 		translation.y = float(y) / 10.0f + offset;
 		// increment index by 1
 		translations[index++] = translation;
