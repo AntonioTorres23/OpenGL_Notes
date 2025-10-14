@@ -19,4 +19,4 @@ Instancing is a technique where we draw many (equal mesh data) objects at once w
 
 By itself this function is a bit useless. Rendering the same object a thousand times is of no use to use since each of the rendered objects is rendered exactly the same and thus also at the same location; we would only see one object! For this reason GLSL added another built-in variable in the vertex shader called `gl_InstanceID`. 
 
-When drawing with one of the instanced rendering calls, `gl_InstancedID` is incremented for each instance
+When drawing with one of the instanced rendering calls, `gl_InstancedID` is incremented for each instance being rendered starting from 0. If we were to render the 43th instance for example, `gl_InstanceID` would have the value 42 in the vertex shader. Having a unique value per instance means 
