@@ -250,7 +250,8 @@ for(unsigned int i = 0; i < amount; i++)
 	model = glm::scale(model, glm::vec3(scale));
 	
 	// 3. rotation: add random rotation around a slightly random picked
-	// rotation axis vector
-	
+	//                                             rotation axis vector
+	float rotAngle = (rand() % 360);
+	model = glm::rotate(model, rotAngle, glm::vec3(0.4f, ))
 }
 ```
