@@ -213,3 +213,5 @@ While fun and all, these examples aren't really good examples of instancing. Yes
 
 Imagine a scene where we have one large planet that's at the center of a large asteroid ring. Such an asteroid ring could contain tens of thousands of rock formations and quickly becomes un-renderable on any decent graphics card. This scenario proves itself particularly useful for instanced rendering, since all the asteroids can be represented with a single model. Each single asteroid then gets its variation from a transformation matrix unique to each asteroid. 
 
+To demonstrate the impact of instanced rendering we're first going to render a scene of asteroids hovering around a planet *without* instanced rendering
+
