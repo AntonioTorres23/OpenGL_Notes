@@ -252,6 +252,11 @@ for(unsigned int i = 0; i < amount; i++)
 	// 3. rotation: add random rotation around a slightly random picked
 	//                                             rotation axis vector
 	float rotAngle = (rand() % 360);
-	model = glm::rotate(model, rotAngle, glm::vec3(0.4f, ))
+	model = glm::rotate(model, rotAngle, glm::vec3(0.4f, 0.6f, 0.8f));
+	
+	// 4. now add to list of matrices
+	modelMatrices[i] = model;
 }
 ```
+
+This piece of code may look a little daunting, but we basically transform the x and z position of the aste
