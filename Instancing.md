@@ -360,4 +360,8 @@ Here we draw the same amount of asteroids as the previous example, but this time
 
 ![[Pasted image 20251015170825.png]]
 
-The image was rendered with 100000 asteroids with a radius of 150.0f and an offset equal to 25.0f. You can find
+The image was rendered with 100000 asteroids with a radius of 150.0f and an offset equal to 25.0f. You can find the source code of the instanced rendering demo [here](https://learnopengl.com/code_viewer_gh.php?code=src/4.advanced_opengl/10.3.asteroids_instanced/asteroids_instanced.cpp).
+
+On different machines an asteroid count of 100000 may be a bit too high, so try tweaking the values till you reach an acceptable framerate. 
+
+As you can see, with the right type of environments, instanced re
