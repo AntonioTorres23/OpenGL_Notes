@@ -242,7 +242,10 @@ for(unsigned int i = 0; i < amount; i++)
 	// keep height of field smaller compared to width of x and z
 	float y = displacement * 0.4f; 
 	displacement = (rand() % (int)(2 * offset * 100)) / 100.0f - offset; 
-	float z = cos(angle) * radius + displ
+	float z = cos(angle) * radius + displacement;
+	model = glm::translate(model, glm::vec3(x,y,z));
+	
+	// 2. scale: scale between 0.05 and 0.25
 	
 }
 ```
