@@ -135,4 +135,4 @@ The parameters of `glDrawArraysInstanced` are exactly the same as `glDrawArrays`
 
 **Instanced Arrays**
 
-While the previous implementation works fine for this specific case, whenever we are rendering a lot more than 100 instances (which is quite common) we will eventually hit a [limit](https://www.khronos.org/opengl/wiki/GLSL_Uniform#Implementation_limits) on the amount of 
+While the previous implementation works fine for this specific case, whenever we are rendering a lot more than 100 instances (which is quite common) we will eventually hit a [limit](https://www.khronos.org/opengl/wiki/GLSL_Uniform#Implementation_limits) on the amount of uniform data we can send to the shaders. One alternative option is known as **instanced arrays**. Instanced arrays 
