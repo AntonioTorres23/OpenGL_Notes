@@ -171,5 +171,8 @@ glBindBuffer(GL_ARRAY_BUFFER, 0);
 Then we also need to set its vertex attribute pointer and enable the vertex attribute. 
 
 ```
-glEnableVertexAtrribArray(2)
+glEnableVertexAtrribArray(2);
+glBindBuffer(GL_ARRAY_BUFFER, instanceVBO);
+glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
+glBindBuffer(GL_ARRAY_BUFFER, 0)
 ```
