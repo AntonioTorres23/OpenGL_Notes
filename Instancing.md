@@ -280,4 +280,4 @@ for(unsigned int i = 0; i < amount; i++)
 }
 ```
 
-First we draw the planet model, that we translate and scale a bit to accommodate the scene, and then we draw a number of rock models 
+First we draw the planet model, that we translate and scale a bit to accommodate the scene, and then we draw a number of rock models equal to the **amount** of transformations we generated previously. Before we draw each rock however, we first set the corresponding model transformation matrix within the shader 
