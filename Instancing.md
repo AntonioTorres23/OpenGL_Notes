@@ -195,6 +195,6 @@ For fun we could slowly downscale each quad from top-right to bottom-left using 
 void main()
 {
 	vec2 pos = aPos * (gl_InstanceID / 100.0);
-	gl_Position = vec4(pos + aOffset )
+	gl_Position = vec4(pos + aOffset, 0.0, 1.0);
 }
 ```
