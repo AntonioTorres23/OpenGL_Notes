@@ -187,4 +187,6 @@ If we now were to render the quads with `glDrawArraysInstanced` we'd get the fol
 
 ![[Pasted image 20251015125717.png]]
 
-This is exactly 
+This is exactly the same as the previous example, but now with instanced arrays, which allows us to pass a lot of more data (as much as memory allows us) to the vertex shader for instanced drawing. 
+
+For fun we could slowly downscale each quad from top-right to bottom-left using gl
