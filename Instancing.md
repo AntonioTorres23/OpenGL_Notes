@@ -213,5 +213,11 @@ While fun and all, these examples aren't really good examples of instancing. Yes
 
 Imagine a scene where we have one large planet that's at the center of a large asteroid ring. Such an asteroid ring could contain tens of thousands of rock formations and quickly becomes un-renderable on any decent graphics card. This scenario proves itself particularly useful for instanced rendering, since all the asteroids can be represented with a single model. Each single asteroid then gets its variation from a transformation matrix unique to each asteroid. 
 
-To demonstrate the impact of instanced rendering we're first going to render a scene of asteroids hovering around a planet *without* instanced rendering
+To demonstrate the impact of instanced rendering we're first going to render a scene of asteroids hovering around a planet *without* instanced rendering. The scene will contain a large planet model that can be downloaded from [here](https://learnopengl.com/data/models/planet.zip) and a large set of asteroid rocks that we properly position around the planet. The asteroid rock model can be downloaded [here](https://learnopengl.com/data/models/rock.zip).
+
+Within the code samples we load the model loader we've previously defined in the model loading notes and GitHub profile. 
+
+To achieve the effect we're looking for we'll be generating a model transformation matrix for each asteroid. Kind of similar to how we're drawing multiple objects up until this lesson. The transformation matrix first translates the rock somewhere in the asteroid ring - then we'll add a small random displacement value to the offset to make the ring look more natural. From there we also apply a random scale and a random rotation. The result is a transformation matrix that translates each android somewhere around the planet while also giving it a more natural and unique look compared to the other asteroids. 
+
+
 
