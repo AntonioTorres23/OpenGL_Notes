@@ -259,4 +259,4 @@ for(unsigned int i = 0; i < amount; i++)
 }
 ```
 
-This piece of code may look a little daunting, but we basically transform the x and z position of the asteroid along a circle with a radius defined by the variable radius and randomly displace each asteroid a little around the circle by 
+This piece of code may look a little daunting, but we basically transform the x and z position of the asteroid along a circle with a radius defined by the variable radius and randomly displace each asteroid a little around the circle by -offset and offset. We give the y displacement less of an impact to create a more flat asteroid ring. 
