@@ -328,6 +328,7 @@ for(unsigned int i = 0; i < rock.meshes.size(); i++)
 	// size of objects in bytes. 
 	std::size_t vec4size = sizeof(glm::vec4);
 	glEnableVertexAttribArray(3);
-	glVertexAttribPointer(3, 4, GL_FLOAT, )
+	glVertexAttribPointer(3, 4, GL_FLOAT, GL_FALSE, 4 * vec4size, (void*)0);
+	glVertexAttribPointer(3, 4, GL_FLOAT, GL_FALSE, 4 * vec4size, (void*)(1 ))
 }
 ```
