@@ -168,4 +168,8 @@ glBufferData(GL_ARRAY_BUFFER, sizeof(glm::vec2) * 100, &translations[0],        
 glBindBuffer(GL_ARRAY_BUFFER, 0);
 ```
 
-Then we also need to set its vertex attribute pointer and enable the vertex attribute
+Then we also need to set its vertex attribute pointer and enable the vertex attribute. 
+
+```
+glEnableVertexAtrribArray(2)
+```
