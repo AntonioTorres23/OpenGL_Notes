@@ -224,7 +224,24 @@ unsigned int amount = 1000;
 glm::mat4 *modelMatrices;
 */
 new operator is used for dynamic memory allocation to reserve a block of
-memory
-/* 
+memory that is provided by the variable/data specified. 
+*/
 modelMatrices = new glm::mat4[amount];
+srand(glfwGetTime()); // initalize random seed
+float radius = 50.0;
+float offset = 2.5f;
+for(unsigned int i = 0; i < amount; i++)
+{
+	glm::mat4 model = glm::mat4(1.0f);
+	// 1. translation: displace along circle with 'radius' in range 
+	// [-offset, offset]
+	float angle = (float)i / (float)amount * 360.0f;
+	float displacement = (rand() % (int)(2 * offset * 100)) / 100.0f - offset;
+	float x = sin(angle) * radius + displacment;
+	displacement = (rand() % (int)(2 * offset * 100)) / 100.0f - offset;
+	// keep height of field smaller compared to width of x and z
+	float y = displacement * 0.4f; 
+	displacement = (rand() )
+	
+}
 ```
