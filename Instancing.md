@@ -350,4 +350,8 @@ Next we take the VAO of the mesh(es) again and this time draw using `glDrawEleme
 // draw meteorites
 instanceShader.use();
 for(unsigned int i = 0; i < rock.meshes.size(); i++)
+{
+	glBindVertexArray(rock.meshes[i].VAO);
+	glDrawElementsInstanced(GL_TRIANGLES, rock.meshes[i].indices.size(), )
+}
 ```
