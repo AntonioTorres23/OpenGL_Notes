@@ -206,3 +206,4 @@ The result is that the first instances of the quads are drawn extremely small an
 
 If you're still a bit unsure about how instanced rendering works or want to see how everything fits together you can find the full source code of the application [here](https://learnopengl.com/code_viewer_gh.php?code=src/4.advanced_opengl/10.1.instancing_quads/instancing_quads.cpp).
 
+While fun and all, these examples aren't really good examples 
