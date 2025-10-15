@@ -206,4 +206,10 @@ The result is that the first instances of the quads are drawn extremely small an
 
 If you're still a bit unsure about how instanced rendering works or want to see how everything fits together you can find the full source code of the application [here](https://learnopengl.com/code_viewer_gh.php?code=src/4.advanced_opengl/10.1.instancing_quads/instancing_quads.cpp).
 
-While fun and all, these examples aren't really good examples 
+While fun and all, these examples aren't really good examples of instancing. Yes, they do give you an easy overview of how instancing works, but instancing gets most of its power when drawing an enormous amount of similar objects. For that reason we're going to venture into space. 
+
+
+**An Asteroid Field**
+
+Imagine a scene where we have one large planet that's at the center of a large asteroid ring. Such an asteroid ring could contain tens of thousands of rock formations and quickly becomes un-renderable on any decent graphics card. This scenario proves itself particularly useful for instanced rendering, since all the asteroids can be represented with a single model. Each single asteroid then gets its variation from a transformation matrix unique to each asteroid. 
+
