@@ -245,7 +245,9 @@ for(unsigned int i = 0; i < amount; i++)
 	float z = cos(angle) * radius + displacement;
 	model = glm::translate(model, glm::vec3(x,y,z));
 	
-	// 2. scale: scale between 0.05 and 0.25
+	// 2. scale: scale between 0.05 and 0.25f
+	float scale = (rand() % 20) / 100.0f + 0.0f;
+	model = glm::scale(model, glm::vec3(scale));
 	
 }
 ```
