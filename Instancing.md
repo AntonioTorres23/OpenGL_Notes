@@ -285,3 +285,5 @@ First we draw the planet model, that we translate and scale a bit to accommodate
 The result is then a space-like scene where we can see a natural-looking asteroid ring around a planet.
 
 ![[Pasted image 20251015162823.png]]
+
+This scene contains a total of 1001 rendering calls per frame of which 1000 are of the rock model. You can find the source code for this scene [here](https://learnopengl.com/code_viewer_gh.php?code=src/4.advanced_opengl/10.2.asteroids/asteroids.cpp).
