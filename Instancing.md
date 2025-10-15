@@ -287,3 +287,47 @@ The result is then a space-like scene where we can see a natural-looking asteroi
 ![[Pasted image 20251015162823.png]]
 
 This scene contains a total of 1001 rendering calls per frame of which 1000 are of the rock model. You can find the source code for this scene [here](https://learnopengl.com/code_viewer_gh.php?code=src/4.advanced_opengl/10.2.asteroids/asteroids.cpp).
+
+As soon as we start to increase this number we will quickly notice that the scene stops running smoothly and the number of frames we're able to render per second reduces drastically. As soon as we set the amount to something close to 2000 the scene already becomes so slow on our GPU that it becomes difficult to move around. 
+
+Let's now try to render the same scene, but this time with instanced rendering. We first need to adjust the vertex shader a little.
+```
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec2 aTexCoords;
+layout (location = 2) in mat4 instanceMatrix;
+
+out vec2 TexCoords; 
+
+uniform mat4 projection;
+uniform mat4 view;
+
+void main()
+{
+	gl_Position = projection * view * instanceMatrix * vec4(aPos, 1.0);
+	TexCoords = aTexCoords;
+}
+```
+
+We're no longer using a model uniform variable, but instead declare a `mat4` as a vertex attribute so we can store an instanced array of transformation matrices. However, when we declare a datatype as a vertex attribute that is greater than a `vec4` things work a bit differently. The maximum amount of data allowed for a vertex attribute is equal to a `vec4`. Because a `mat4` is basically 4 `vec4`s, we have to reserve 4 vertex attributes for this specific matrix. Because we assigned it to a location of 3, the columns of the matrix will have vertex attribute locations of 3, 4, 5, and 6.
+
+We then have to set each of the attribute pointers of those 4 vertex attributes and configured them as instanced arrays. 
+
+```
+// vertex buffer object
+unsigned int buffer;
+glGenBuffers(1, &buffer);
+glBindBuffer(GL_ARRAY_BUFFER, buffer);
+glBufferData(GL_ARRAY_BUFFER, amount * sizeof(glm::mat4), &modelMatrices[0], GL_STATIC_DRAW);
+
+for(unsigned int i = 0; i < rock.meshes.size(); i++)
+{
+	unsigned int VAO = rock.meshes[i].VAO;
+	glBindVertexArray(VAO);
+	// vertex attributes
+	// size_t is an unsigned integer data type that is used to represent the
+	// size of objects in bytes. 
+	std::size_t vec4size = sizeof(glm::vec4);
+	glEnableVertexAttribArray(3);
+	glVertexAttribPointer(3, 4, GL_FLOAT, )
+}
+```
