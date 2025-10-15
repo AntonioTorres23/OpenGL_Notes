@@ -344,4 +344,10 @@ for(unsigned int i = 0; i < rock.meshes.size(); i++)
 
 Note that we cheated a little by declaring the VAO variable of the **Mesh** as a public variable instead of a private variable so we could access its vertex array object. This is not the cleanest solution, but just a simple modification to suit this example. Aside from the little hack, this code should be clear. We're basically declaring how OpenGL should interpret the buffer for each of the matrix's vertex attributes and that each of those vertex attributes is an instanced array. 
 
-Next we take the VAO of the mesh
+Next we take the VAO of the mesh(es) again and this time draw using `glDrawElementsInstanced`.
+
+```
+// draw meteorites
+instanceShader.use();
+for(unsigned int i = 0; i < rock.meshes.size(); i++)
+```
