@@ -138,3 +138,14 @@ The parameters of `glDrawArraysInstanced` are exactly the same as `glDrawArrays`
 While the previous implementation works fine for this specific case, whenever we are rendering a lot more than 100 instances (which is quite common) we will eventually hit a [limit](https://www.khronos.org/opengl/wiki/GLSL_Uniform#Implementation_limits) on the amount of uniform data we can send to the shaders. One alternative option is known as **instanced arrays**. Instanced arrays are defined as a vertex attribute (allowing us to store much more data) that are updated per instance instead of per vertex. 
 
 With vertex attributes, at the start of each run of the vertex shader, the GPU will retrieve the next set of vertex attributes that belong to the current vertex. When defining a vertex attribute as an instanced array however, the vertex shader only updates the content of the vertex attribute per instance. This allows us to use the standard vertex attributes for data per vertex and use the instanced array for storing data that is unique per instance. 
+
+To give you an example of an instanced array we're going to take the previous example and convert the offset uniform array to an instanced array. We'll have to update the vertex shader by adding another vertex attribute. 
+
+```
+#version 330 core
+layout (location = 0) in vec2 aPos;
+layout (location = 1) in vec3 aColor;
+layout (location = 2) in vec2 aOffset;
+
+
+```
