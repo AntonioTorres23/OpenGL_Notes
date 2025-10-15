@@ -163,5 +163,6 @@ Because an instanced array is a vertex attribute, just like the position and col
 ```
 unsigned int instanceVBO;
 glGenBuffers(1, &instanceVBO);
-glBindBuffer(GL_ARRAY_BUFFER, )
+glBindBuffer(GL_ARRAY_BUFFER, instanceVBO);
+glBufferData()
 ```
