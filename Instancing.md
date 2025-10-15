@@ -181,7 +181,7 @@ glVertexAttribDivisor(2,1);
 
 What makes this code interesting is the last line where we call `glVertexAttribDivisor`. This function tells OpenGL **when** to update the content of a vertex attribute to the next element. Its first parameter is the vertex attribute in question and the second parameter the **attribute divisor**. By default, the attribute divisor is 0 which tells OpenGL to update the content of the vertex attribute each iteration of the vertex shader. By setting this attribute to 1 we're telling OpenGL that we want to update the content every 2 instances and so on. By setting the attribute divisor to 1 we're effectively telling OpenGL that the vertex attribute at attribute location 2 is an instanced array. 
 
-I'm going to break this down into my own words since this concept is kind of confusing. By default the attribute divisor is 0 and will update per vertex. For example, if we have a lot of vertex positional data it will go through each 3 coordinate vertices sequentially until all of those are done once its drawn by `glDrawArrays` or `glDrawElements`. On the other hand by setting the `glVertexAttribDivisor`
+I'm going to break this down into my own words since this concept is kind of confusing. By default the attribute divisor is 0 and will update per vertex. For example, if we have a lot of vertex positional data it will go through each 3 coordinate vertices sequentially until all of those are done once its drawn by `glDrawArrays` or `glDrawElements`. On the other hand by setting the attribute divisor to 1, this  
 
 If we now were to render the quads with `glDrawArraysInstanced` we'd get the following output. 
 
