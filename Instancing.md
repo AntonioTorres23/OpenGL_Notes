@@ -267,5 +267,6 @@ After loading the planet and rock models and compiling a set of shaders, the ren
 // draw planet
 shader.use();
 glm::mat4 model = glm::mat4(1.0f);
-model = glm::translate(model, glm)
+model = glm::translate(model, glm::vec3(0.0f, -3.0f, 0.0f));
+model = glm::scale(model, glm::vec3())
 ```
