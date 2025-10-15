@@ -352,6 +352,8 @@ instanceShader.use();
 for(unsigned int i = 0; i < rock.meshes.size(); i++)
 {
 	glBindVertexArray(rock.meshes[i].VAO);
-	glDrawElementsInstanced(GL_TRIANGLES, rock.meshes[i].indices.size(), )
+	glDrawElementsInstanced(GL_TRIANGLES, rock.meshes[i].indices.size(),               GL_UNSIGNED_INT, 0, amount);
 }
 ```
+
+Here we draw the same amount of asteroids as the previous example, but this time with instanced rendering. The results should be exactly the same, but once we increate
