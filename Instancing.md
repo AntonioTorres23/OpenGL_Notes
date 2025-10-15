@@ -165,5 +165,7 @@ unsigned int instanceVBO;
 glGenBuffers(1, &instanceVBO);
 glBindBuffer(GL_ARRAY_BUFFER, instanceVBO);
 glBufferData(GL_ARRAY_BUFFER, sizeof(glm::vec2) * 100, &translations[0],                                                                   GL_STATIC_DRAW);
-glA
+glBindBuffer(GL_ARRAY_BUFFER, 0);
 ```
+
+Then we also need to set its vertex attribute pointer and enable the vertex attribute
