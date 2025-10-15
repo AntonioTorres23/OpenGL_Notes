@@ -342,4 +342,4 @@ for(unsigned int i = 0; i < rock.meshes.size(); i++)
 }
 ```
 
-Note that we cheated a little by declaring the VAO variable of the **Mesh** as a public variable instead of a private variable so we could access its vertex array object. This is note the cleanest solution, but just a simple modification to suit this example. 
+Note that we cheated a little by declaring the VAO variable of the **Mesh** as a public variable instead of a private variable so we could access its vertex array object. This is not the cleanest solution, but just a simple modification to suit this example. Aside from the little hack, this code should be clear. We're basically declaring how OpenGL should interpret the buffer 
