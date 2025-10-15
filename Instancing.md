@@ -274,5 +274,10 @@ planet.Draw(shader);
 
 // draw meteorites
 for(unsigned int i = 0; i < amount; i++)
-
+{
+	shader.setMat4("model", modelMatrices[i]);
+	rock.Draw(shader);
+}
 ```
+
+First we draw the planet model, that we translate and scale a bit to accommodate the scene, and then we draw a number of rock models 
