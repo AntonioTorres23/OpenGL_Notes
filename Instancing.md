@@ -179,4 +179,4 @@ glVertexAttribDivisor(2,1);
 ```
 
 
-What makes this code interesting is the last line where we call `glVertexAttribDivisor`. This function tells OpenGL **when** to update the content of a vertex attribute to the next element. Its first parameter is the vertex attribute in question and the second parameter the **attribute divisor**. By default, the attribute divisor is 0 whicch tells OpenGL
+What makes this code interesting is the last line where we call `glVertexAttribDivisor`. This function tells OpenGL **when** to update the content of a vertex attribute to the next element. Its first parameter is the vertex attribute in question and the second parameter the **attribute divisor**. By default, the attribute divisor is 0 which tells OpenGL to update the content of the vertex 
