@@ -356,4 +356,4 @@ for(unsigned int i = 0; i < rock.meshes.size(); i++)
 }
 ```
 
-Here we draw the same amount of asteroids as the previous example, but this time with instanced rendering. The results should be exactly the same, but once we increate
+Here we draw the same amount of asteroids as the previous example, but this time with instanced rendering. The results should be exactly the same, but once we increase the amount you'll really start to see the power of instanced rendering. Without instanced rendering we were able to smoothly render around 1000 to 1500 asteroids. With instanced draw
