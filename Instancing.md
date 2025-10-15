@@ -200,4 +200,7 @@ void main()
 }
 ```
 
-The result is that the first instances of the quads are drawn extremely small and the further we're in the process of drawing the instances, the closer `gl_InstanceID` gets to 100 and thus the more the quads regain their original size. It's perfectly legal to use instanced arrays together with 
+The result is that the first instances of the quads are drawn extremely small and the further we're in the process of drawing the instances, the closer `gl_InstanceID` gets to 100 and thus the more the quads regain their original size. It's perfectly legal to use instanced arrays together with `gl_InstancedID` like this. 
+
+![[Pasted image 20251015152313.png]]
+
