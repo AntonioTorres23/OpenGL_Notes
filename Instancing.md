@@ -249,5 +249,8 @@ for(unsigned int i = 0; i < amount; i++)
 	float scale = (rand() % 20) / 100.0f + 0.0f;
 	model = glm::scale(model, glm::vec3(scale));
 	
+	// 3. rotation: add random rotation around a slightly random picked
+	// rotation axis vector
+	
 }
 ```
