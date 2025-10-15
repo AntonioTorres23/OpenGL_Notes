@@ -158,4 +158,4 @@ void main()
 
 We no longer use `gl_InstanceID` and can directly use the `offset` attribute without first indexing into a large uniform array. 
 
-Because an instanced array is a vertex attribute, just like the position and color variables, we need to store its content in a vertex buffer o
+Because an instanced array is a vertex attribute, just like the position and color variables, we need to store its content in a vertex buffer object (VBO) and configure its attribute pointer. We're first going to store the `translations` array (from the previous section) in a new bu
