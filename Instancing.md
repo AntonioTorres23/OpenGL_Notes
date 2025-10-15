@@ -196,5 +196,8 @@ void main()
 {
 	vec2 pos = aPos * (gl_InstanceID / 100.0);
 	gl_Position = vec4(pos + aOffset, 0.0, 1.0);
+	fColor = aColor;
 }
 ```
+
+The result is that the first instances of the quads are drawn extremely small and the further we're in the process of drawing the instances, 
