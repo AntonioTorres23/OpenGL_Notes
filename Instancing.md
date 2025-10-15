@@ -189,4 +189,12 @@ If we now were to render the quads with `glDrawArraysInstanced` we'd get the fol
 
 This is exactly the same as the previous example, but now with instanced arrays, which allows us to pass a lot of more data (as much as memory allows us) to the vertex shader for instanced drawing. 
 
-For fun we could slowly downscale each quad from top-right to bottom-left using gl
+For fun we could slowly downscale each quad from top-right to bottom-left using `gl_InstanceID` again, because why not?
+
+```
+void main()
+{
+	vec2 pos = aPos * (gl_InstanceID / 100.0);
+	gl_Position = vec4(pos + aOffset )
+}
+```
