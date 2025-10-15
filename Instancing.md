@@ -219,5 +219,12 @@ Within the code samples we load the model loader we've previously defined in the
 
 To achieve the effect we're looking for we'll be generating a model transformation matrix for each asteroid. Kind of similar to how we're drawing multiple objects up until this lesson. The transformation matrix first translates the rock somewhere in the asteroid ring - then we'll add a small random displacement value to the offset to make the ring look more natural. From there we also apply a random scale and a random rotation. The result is a transformation matrix that translates each android somewhere around the planet while also giving it a more natural and unique look compared to the other asteroids. 
 
-
-
+```
+unsigned int amount = 1000;
+glm::mat4 *modelMatrices;
+*/
+new operator is used for dynamic memory allocation to reserve a block of
+memory
+/* 
+modelMatrices = new glm::mat4[amount];
+```
