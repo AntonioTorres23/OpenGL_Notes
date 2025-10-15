@@ -338,6 +338,8 @@ for(unsigned int i = 0; i < rock.meshes.size(); i++)
 	glVertexAttribDivisor(5, 1);
 	glVertexAttribDivisor(6, 1);
 	
-	gl
+	glBindVertexArray(0);
 }
 ```
+
+Note that we cheated a little by declaring the VAO variable of the **Mesh** as a public variable instead of a private variable so we could access its vertex array object. 
