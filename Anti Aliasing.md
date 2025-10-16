@@ -45,4 +45,4 @@ The result is a higher resolution buffer (with higher resolution depth/stencil) 
 
 ![[Pasted image 20251016153523.png]]
 
-Here each pixel contains 4 subsamples (the irrelevant samples were hidden) where the blue subsamples are covered by the triangle 
+Here each pixel contains 4 subsamples (the irrelevant samples were hidden) where the blue subsamples are covered by the triangle and the gray sample points aren't. Within the inner region of the triangle all pixels will run the fragment shader once where its color output is stored directly in the framebuffer (assuming no blending). At the inner edges of the triangle however not all subsamples will be covered so the result of the fragment shader won't fully contribute to the framebuffer. Based on the number of covered samples, more or less of the triangle fragment's color ends up at that pixel. 
