@@ -33,4 +33,8 @@ What multisampling does, is not use a single sampling point for determining cove
 
 ![[Pasted image 20251016151220.png]]
 
-The left side of the image shows how we would normally determine the coverage of a triangle. This specific pixel won't run a fragment shader (and thus remains blank) since its sample point wasn't covered by the triangle. The right side of the image sh
+The left side of the image shows how we would normally determine the coverage of a triangle. This specific pixel won't run a fragment shader (and thus remains blank) since its sample point wasn't covered by the triangle. The right side of the image shows a multisampled version where each pixel contains 4 sample points. Here we can see that only 2 of the sample points cover the triangle. 
+
+The amount of sample points can be any number we'd like with more samples giving us better coverage precision. 
+
+This is where multisampling becomes interesting. We determined that 2 subsamples were covered by the triangle so the next step is to dt
