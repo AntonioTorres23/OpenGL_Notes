@@ -41,4 +41,8 @@ This is where multisampling becomes interesting. We determined that 2 subsamples
 
 How MSAA really works is that the fragment shader is only run **once** per pixel (for each primitive) regardless of how many subsamples the triangles covers; the fragment shader runs with the vertex data interpolated to the **center** of the pixel. MSAA then uses a large depth/stencil buffer to determine subsample coverage. The number of subsamples covered determines how much the pixel color contributes to the framebuffer. Because only 2 of the 4 samples were covered in the previous image, half of the triangle's color is mixed with the framebuffer color (in this case the clear color) resulting in a light blue color. 
 
-The result is a higher resolution buffer (with higher resolution depth/stencil) where all the primitive edges now produce a smoother pattern
+The result is a higher resolution buffer (with higher resolution depth/stencil) where all the primitive edges now produce a smoother pattern. Let's see what multisampling looks like when we determine the coverage of the earlier triangle. 
+
+![[Pasted image 20251016153523.png]]
+
+Here each pixel contains 4 subsamples (the irrelevant samples were hidden) where the blue subsamples are covered by the triangle 
