@@ -21,4 +21,16 @@ The rasterizer is the combination of all algorithms and processes that sit betwe
 
 ![[Pasted image 20251016122745.png]]
 
-Here we see a grid of screen pixels where the center of each pixel contains a **sample point** that is used to determine if a pixel is covered by the triangle. The red sample points are covered by the triangle and a fragment will be generated for that covered pixel. 
+Here we see a grid of screen pixels where the center of each pixel contains a **sample point** that is used to determine if a pixel is covered by the triangle. The red sample points are covered by the triangle and a fragment will be generated for that covered pixel. Even though some parts of the triangle edges still enter certain screen pixels, the pixel's sample point is not covered by the inside of the triangle so this pixel won't be influenced by any fragment shader. 
+
+You can probably already figure out the origin of aliasing now. The complete rendered version of the triangle would look like this on your screen. 
+
+![[Pasted image 20251016150834.png]]
+
+Due to the limited amount of screen pixels, some pixels will be rendered along an edge and some won't. The result is that we're rendering primitives with non-smooth edges giving rise to the jagged edges we've seen before. 
+
+What multisampling does, is not use a single sampling point for determining coverage of the triangle, but multiple sample points (guess where it got its name from). Instead of a single sample point at the center of each pixel we're going to place 4 **subsamples** in a general pattern and use those to determine pixel coverage. 
+
+![[Pasted image 20251016151220.png]]
+
+The left side of the 
