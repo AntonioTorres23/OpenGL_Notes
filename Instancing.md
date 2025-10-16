@@ -364,4 +364,4 @@ The image was rendered with 100000 asteroids with a radius of 150.0f and an offs
 
 On different machines an asteroid count of 100000 may be a bit too high, so try tweaking the values till you reach an acceptable framerate. 
 
-As you can see, with the right type of environments, instanced rendering can make an enormous difference to the rendering capabilities of your application. For this reason, instanced rendering is commonly used for grass, flora, 
+As you can see, with the right type of environments, instanced rendering can make an enormous difference to the rendering capabilities of your application. For this reason, instanced rendering is commonly used for grass, flora, particles, and scenes like this - basically any scene with many repeating shapes can benefit from instanced rendering.  
