@@ -67,4 +67,8 @@ Most windowing systems are able to provide use a multisample buffer instead of a
 
 When we now call `glfwCreateWindow` we create a rendering window, but this time with a buffer containing 4 subsamples per screen coordinate. This does mean that the size of the buffer is increased by 4. 
 
-Now that we asked GLFW for multisampled buffers we need to enable multisampling by calling `glEnable` with `GL_MULTISAMPLE`. On most OpenGL drivers, multisampling is enabled by default so this call is then a bit redundant, but it's usually a good idea to enable it 
+Now that we asked GLFW for multisampled buffers we need to enable multisampling by calling `glEnable` with `GL_MULTISAMPLE`. On most OpenGL drivers, multisampling is enabled by default so this call is then a bit redundant, but it's usually a good idea to enable it anyways. This way all OpenGL implementations have multisampling enabled. 
+
+`glEnable(GL_MULTISAMPLING);`
+
+Because the actual multisampling 
