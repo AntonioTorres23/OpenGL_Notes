@@ -3,4 +3,4 @@ Somewhere in your adventurous rendering journey you probably came across some ja
 
 ![[Pasted image 20251016104626.png]]
 
-While not immediately visible, if you take a closer look at  
+While not immediately visible, if you take a closer look at the edges of the cube you'll see a jagged pattern.  
