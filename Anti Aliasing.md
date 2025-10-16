@@ -37,4 +37,6 @@ The left side of the image shows how we would normally determine the coverage of
 
 The amount of sample points can be any number we'd like with more samples giving us better coverage precision. 
 
-This is where multisampling becomes interesting. We determined that 2 subsamples were covered by the triangle so the next step is to determine a color for this specific pixel. Our initial guess would be that we run the fragment shader for each covered subsample and later average the colors of each subsample per pixel. In this case we'd run the fragment shader twice on the interpolated vertex data at each subsample and store the resulting color in those sample points. This is (fortunately)
+This is where multisampling becomes interesting. We determined that 2 subsamples were covered by the triangle so the next step is to determine a color for this specific pixel. Our initial guess would be that we run the fragment shader for each covered subsample and later average the colors of each subsample per pixel. In this case we'd run the fragment shader twice on the interpolated vertex data at each subsample and store the resulting color in those sample points. This is (fortunately) **not** how it works, because this would mean we need to run a lot more fragment shaders than without multisampling, drastically reducing performance. 
+
+How MSAA really works is that the fragment shader is only 
