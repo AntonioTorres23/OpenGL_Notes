@@ -21,3 +21,4 @@ The rasterizer is the combination of all algorithms and processes that sit betwe
 
 ![[Pasted image 20251016122745.png]]
 
+Here we see a grid of screen pixels where the center of each pixel contains a **sample point** that is used to determine if a pixel is covered by the triangle. The red sample points are covered by the triangle and a fragment will be generated for that covered pixel. 
