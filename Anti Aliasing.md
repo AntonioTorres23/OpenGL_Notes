@@ -33,4 +33,4 @@ What multisampling does, is not use a single sampling point for determining cove
 
 ![[Pasted image 20251016151220.png]]
 
-The left side of the 
+The left side of the image shows how we would normally determine the coverage of a triangle. This specific pixel won't run a fragment shader (and thus remains blank) since its sample point wasn't covered by the triangle. The right side of the image sh
