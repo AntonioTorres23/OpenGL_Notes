@@ -207,12 +207,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Anti-Aliasing.md",
+                "file": "Anti Aliasing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Anti-Aliasing"
+              "title": "Anti Aliasing"
             }
           }
         ],
@@ -363,7 +363,7 @@
   "active": "e0c3ed97052cd6d4",
   "lastOpenFiles": [
     "Instancing.md",
-    "Anti-Aliasing.md",
+    "Anti Aliasing.md",
     "Pasted image 20251015170825.png",
     "Pasted image 20251015162823.png",
     "Pasted image 20251015152313.png",
