@@ -79,4 +79,38 @@ The cube does indeed look a lot smoother and the same will apply for any other o
 
 **Off-screen MSAA**
 
-Because GLFW takes care of creating the multisampled 
+Because GLFW takes care of creating the multisampled buffers, enabling MSAA is quite easy. If we want to use our own framebuffers however, we have to generate the multisampled buffers ourselves; now we **do** need to take care of creating multisampled buffers. 
+
+There are two ways we can create multisampled buffers to act as attachments for framebuffers: texture attachments and renderbuffer attachments. Quite similar to normal attachments like we've discussed in the framebuffers notes. 
+
+**Multisampled Texture Attachments**
+
+To create a texture that supports storage of multiple sample points we use `glTexImage2DMutlisample` instead of `glTexImage2D` that accepts `GL_TEXTURE_2D_MULTISAMPLE` as its texture target.
+
+```
+glBindTexture(GL_TEXTURE_2D_MULTISAMPLE, tex);
+glTexImage2DMultiSample(GL_TEXTURE_2D_MULTISAMPLE, samples, GL_RGB, width, height, GL_TRUE);
+glBindTexture(GL_TEXTURE_2D_MULTISAMPLE, 0);
+```
+
+The second argument sets the number of samples we'd like the textures to have. If the last argument is set to `GL_TRUE`, the image will use identical sample locations and the same number of subsamples for each texel. 
+
+To attach a multisampled texture to a framebuffer we use `glFrameBufferTexture2D`, but this time with `GL_TEXTURE_2D_MULTISAMPLE` as the texture type. 
+
+`glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D_MULTISAMPLE, tex, 0);`
+
+The currently bound framebuffer now has a multisampled color buffer in the form of a texture image. 
+
+**Multisampled Renderbuffer Objects**
+
+Like textures, creating a multisampled renderbuffer object isn't difficult. It is even quite easy since all we need to change is `glRenderbufferStorage` to `glRenderbufferStorageMultisample` when we configure the (currently bound) renderbuffer's memory storage. 
+
+`glRenderbufferStorageMultisample(GL_RENDERBUFFER, 4, GL_DEPTH24_STENCIL_8, width, height);`
+
+The one thing that changed here is the extra second parameter where we set the amount of samples we'd like to use; 4 in this particular case. 
+
+**Render to Multisampled Framebuffer**
+
+Rendering to a multisampled framebuffer is straightforward. Whenever we draw anything while the framebuffer object is bound, the rasterizer will take care of all the multisample operations. However, because a multisampled buffer is a bit special, we can't directly use the buffer for other operations like sampling it in a shader. 
+
+A multisampled image contains much more information than a normal image so what we need to do is downscale or **resolve** the image. Resolving a multisampled framebuffer is generally done through `glBlitFramebuffer` that copies a region from one framebuffer to the other while also resolvb
