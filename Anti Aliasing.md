@@ -11,4 +11,4 @@ This is clearly not something we want in a final version of an application. This
 
 At first we had a technique called **super sample anti-aliasing** (SSAA) that temporarily uses a much higher resolution render buffer to render the scene in (super sampling). Then when the full scene is rendered, the resolution is downsampled back to the normal resolution. This *extra* resolution was used to prevent these jagged edges. While it did provide us with a solution to the aliasing problem, it came with a major performance drawback since we have to draw **a lot** more fragments than usual. This technique therefore only had a short glory moment. 
 
-This technique did give birht 
+This technique did give birth to a more modern technique called **multisample anti-aliasing**
