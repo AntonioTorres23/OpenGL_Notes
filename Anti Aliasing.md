@@ -53,4 +53,14 @@ For each pixel, the less subsamples are part of the triangle, the less it takes 
 
 The hard edges of the triangle are now surrounded by colors lightly lighter than the actual edge color, which causes the edge to appear smoother when viewed from a distance. 
 
-Depth and stencil values are stored per subsample and, even though we only run the fragment shader once, color values are stored per subsample as well for the case of multiple triangles overlapping a single pixel. For depth testing the vertex's depth value is interpolated to each subsample before running the depth test, and for stencil testing we store the stencil values per subsample. This does mean that the size of the buffers are now increased by the amount of subsamples per pixel
+Depth and stencil values are stored per subsample and, even though we only run the fragment shader once, color values are stored per subsample as well for the case of multiple triangles overlapping a single pixel. For depth testing the vertex's depth value is interpolated to each subsample before running the depth test, and for stencil testing we store the stencil values per subsample. This does mean that the size of the buffers are now increased by the amount of subsamples per pixel. 
+
+What we've discussed so far is a basic overview of how multisampled anti-aliasing works behind the scenes. The actual logic behind the rasterizer is a bit more complicated, but this brief description should be enough to understand the concept and logic behind multisampled anti-aliasing; enough to delve into the practical aspects.
+
+**MSAA in OpenGL**
+
+If we want to use MSAA in OpenGL we need to use a buffer that is able to store more than one sample value per pixel. We need a new type of buffer that can store a given amount of multisamples and this is called a **multisample buffer**. 
+
+Most windowing systems are able to provide use a multisample buffer instead of a default buffer. GLFW also gives us this functionality and all we need to do is *hint* GLFW that we'd like to use a multisample buffer with N samples instead of a normal buffer by calling `glfwWindowHint` before creating the window. 
+
+`glfwWindowHint(GLFW_SAMPLES, 4);`
