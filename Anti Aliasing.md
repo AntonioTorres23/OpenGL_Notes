@@ -51,4 +51,6 @@ For each pixel, the less subsamples are part of the triangle, the less it takes 
 
 ![[Pasted image 20251016154924.png]]
 
-The hard edges of the triangle are now surrounded by colors lightly lighter than the a
+The hard edges of the triangle are now surrounded by colors lightly lighter than the actual edge color, which causes the edge to appear smoother when viewed from a distance. 
+
+Depth and stencil values are stored per subsample and, 
