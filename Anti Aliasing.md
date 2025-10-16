@@ -64,3 +64,7 @@ If we want to use MSAA in OpenGL we need to use a buffer that is able to store m
 Most windowing systems are able to provide use a multisample buffer instead of a default buffer. GLFW also gives us this functionality and all we need to do is *hint* GLFW that we'd like to use a multisample buffer with N samples instead of a normal buffer by calling `glfwWindowHint` before creating the window. 
 
 `glfwWindowHint(GLFW_SAMPLES, 4);`
+
+When we now call `glfwCreateWindow` we create a rendering window, but this time with a buffer containing 4 subsamples per screen coordinate. This does mean that the size of the buffer is increased by 4. 
+
+Now that we asked GLFW for multisampled 
