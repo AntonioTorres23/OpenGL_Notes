@@ -76,3 +76,7 @@ Because the actual multisampling algorithms are implemented in the rasterizer in
 ![[Pasted image 20251016161220.png]]
 
 The cube does indeed look a lot smoother and the same will apply for any other object you're drawing in your scene. You can find the source code for this simple example [here](https://learnopengl.com/code_viewer_gh.php?code=src/4.advanced_opengl/11.1.anti_aliasing_msaa/anti_aliasing_msaa.cpp).
+
+**Off-screen MSAA**
+
+Because GLFW takes care of creating the multisampled 
