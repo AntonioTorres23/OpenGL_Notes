@@ -11,4 +11,11 @@ This is clearly not something we want in a final version of an application. This
 
 At first we had a technique called **super sample anti-aliasing** (SSAA) that temporarily uses a much higher resolution render buffer to render the scene in (super sampling). Then when the full scene is rendered, the resolution is downsampled back to the normal resolution. This *extra* resolution was used to prevent these jagged edges. While it did provide us with a solution to the aliasing problem, it came with a major performance drawback since we have to draw **a lot** more fragments than usual. This technique therefore only had a short glory moment. 
 
-This technique did give birth to a more modern technique called **multisample anti-aliasing**
+This technique did give birth to a more modern technique called **multisample anti-aliasing** or MSAA that borrows from the concepts behind SSAA while implementing a much more efficient approach. In this section of notes we'll be extensively discussing this MSAA technique that is built-in OpenGL. 
+
+**Multisampling**
+
+To understand what multisampling is and how it works into solving the aliasing problem we first need to delve a bit further into the inner workings of OpenGL's rasterizer. 
+
+The rasterizer is the combination of all algorithms and processes that sit between your final processed vertices and the fragment shader. The rasterizer takes all vertices belonging to a single primitive and transforms this to a set of fragments. 
+
