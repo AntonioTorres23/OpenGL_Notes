@@ -71,4 +71,4 @@ Now that we asked GLFW for multisampled buffers we need to enable multisampling 
 
 `glEnable(GL_MULTISAMPLING);`
 
-Because the actual multisampling 
+Because the actual multisampling algorithms are implemented in the rasterizer in your OpenGL driver's there's not much else we need to do. If we now were to render the green cube from the start of this chapter we should see smoother edges
