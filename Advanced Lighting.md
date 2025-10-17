@@ -63,6 +63,6 @@ With the introduction of the halfway vector we should no longer have the specula
 ![[Pasted image 20251017142829.png]]
 
 
-
+Another subtle difference between Phong and Blinn-Phong shading is that the angle between the halfway vector is and the surfaces normal is often shorter than the angle between the view and reflection vector. 
 
 
