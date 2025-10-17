@@ -56,7 +56,9 @@ float spec = pow(max(dot(normal, halfwayDir), 0.0), shininess);
 vec3 specular = lightColor * spec;
 ```
 
-And there is nothing more to Blinn-Phong than what we just described. The only difference between Blinn-Phong and Phong specular refection is that we now me
+And there is nothing more to Blinn-Phong than what we just described. The only difference between Blinn-Phong and Phong specular refection is that we now measure the angle between the normal and halfway vector instead of the angle between the view and reflection vector. 
+
+With th
 
 
 
