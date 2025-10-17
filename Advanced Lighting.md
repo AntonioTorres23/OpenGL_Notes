@@ -41,3 +41,5 @@ vec3 viewDir = normalize(viewPos - FragPos);
 vec3 halfwayDir = normalize(lightDir + viewDir);
 ```
 
+Then the actual calculation of the specular term becomes a clamped dot product between the surface normal and the halfway vector 
+
