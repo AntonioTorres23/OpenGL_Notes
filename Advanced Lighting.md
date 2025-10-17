@@ -44,7 +44,10 @@ vec3 halfwayDir = normalize(lightDir + viewDir);
 Then the actual calculation of the specular term becomes a clamped dot product between the surface normal and the halfway vector to the the cosine angle between them that we again raise to a specular shininess exponent. 
 
 ```
-
+/* 
+	take the dot product between normal, and halfway dir similar to 
+	
+*/
 float spec = pow(max(dot(normal, halfwayDir), 0.0), shininess);
 vec3 specular = lightColor * spec;
 ```
