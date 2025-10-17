@@ -67,6 +67,29 @@ Another subtle difference between Phong and Blinn-Phong shading is that the angl
 
 Below is a comparison between both specular reflection models with the Phong exponent set to 8.0 and the Blinn-Phong component set to 32.0.
 
+![[Pasted image 20251017145036.png]]
 
+You can see that the Blinn-Phong specular exponent is a bit sharper compared to Phong. It usually requires a bit of tweaking to get similar results as what you previously had with Pong shading. It's worth it though as Blinn-Phong shading is generally more realistic compared to default Phong shading. 
 
+Here we used a simple fragment shader that switches between regular Phong reflections and Blinn-Phong reflections. 
+
+```
+void main()
+{
+	[...]
+	float spec = 0.0;
+	if(blinn)
+	{
+		vec3 halfwayDir = normalie(lightDir + viewDir);
+		float spec = pow(max(dot(normal, halfwayDir), 0.0), 16.0);
+	}
+	else
+	{
+		vec3 reflectDir = reflect(-lightDir, normal);
+		float spec = pow(max(dot(normal, reflectDir), 0.0), 8.0);
+	}
+}
+```
+
+You can find the source code for the simple demo [here](https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/1.advanced_lighting/advanced_lighting.cpp). By pressing the b key, the demo switches from Phong to Blinn-Phong and vice versa. 
 
