@@ -45,7 +45,11 @@ Then the actual calculation of the specular term becomes a clamped dot product b
 
 ```
 /* 
-	take the dot product between normal, and halfway dir similar to 
+	Take the dot product between normal, and halfway direction similar to Phong
+	lighting in which we took a dot product between the view and reflect direction.
+	
+	
+	 
 	
 */
 float spec = pow(max(dot(normal, halfwayDir), 0.0), shininess);
