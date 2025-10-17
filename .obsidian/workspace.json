@@ -221,12 +221,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Advanced Lighting.md",
+                "file": "Lighting Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Advanced Lighting"
+              "title": "Lighting Notes"
             }
           }
         ],
@@ -376,10 +376,10 @@
   },
   "active": "40ad92fd57ceea64",
   "lastOpenFiles": [
+    "Advanced Lighting.md",
     "Pasted image 20251017134951.png",
     "Pasted image 20251017134948.png",
     "Lighting Notes.md",
-    "Advanced Lighting.md",
     "Pasted image 20251017132222.png",
     "Pasted image 20251017102402.png",
     "Untitled 1.md",
@@ -391,7 +391,6 @@
     "Pasted image 20251016154924.png",
     "Pasted image 20251016153523.png",
     "Pasted image 20251016151220.png",
-    "Pasted image 20251016150834.png",
     "Instancing.md",
     "Geometry Shader.md",
     "Overview on Transformations.md",
