@@ -63,6 +63,10 @@ With the introduction of the halfway vector we should no longer have the specula
 ![[Pasted image 20251017142829.png]]
 
 
-Another subtle difference between Phong and Blinn-Phong shading is that the angle between the halfway vector is and the surfaces normal is often shorter than the angle between the view and reflection vector. 
+Another subtle difference between Phong and Blinn-Phong shading is that the angle between the halfway vector is and the surfaces normal is often shorter than the angle between the view and reflection vector. As a result, to get visuals similar to Phong shading the specular shininess exponent has to be set a bit higher. A general rule of thumb is to set it between 2 and 4 times the Phong shininess exponent. 
+
+Below is a comparison between both specular reflection models with the Phong exponent set to 8.0 and the Blinn-Phong component set to 32.0.
+
+
 
 
