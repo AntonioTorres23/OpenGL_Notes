@@ -18,3 +18,15 @@ Here the issue should become apparent. The left image shows Phong reflections as
 
 In 1977, the **Blinn-Phong** shading model was introduced by James F. Blinn as an extension to the Phong shading we've used so far. The Blinn-Phong model is largely similar, but approaches the specular model slightly different which as a result overcomes our problem. Instead of relying on a reflection vector we're using a so called **halfway vector** that is a unit vector exactly halfway between the view direction and the light direction. The closer this halfway vector aligns with the surface's normal vector, the higher the specular contribution. 
 
+![[Pasted image 20251017134951.png]]
+
+When the view direction is perfectly aligned with the (now imaginary) reflection vector, the halfway vector aligns perfectly with the normal vector. The closer the view direction is to the original reflection direction, the stronger the specular highlight. 
+
+Here you can see that whatever direction the viewer looks from, the angle between the halfway vector and the surface vector never exceeds 90 degrees (unless the light is far below the surface of course). The result are slightly different from Phong reflections, but generally more visually plausible, especially with low specular exponents. The Blinn-Phong shading model is also the exact shading model used in the earlier fixed function pipeline of OpenGL. 
+
+Getting the halfway vector is easy, we add the light's direction vector and view vector together and normalize the result. 
+
+$$
+\bar{H} 
+$$
+
