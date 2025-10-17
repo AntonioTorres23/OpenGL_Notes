@@ -14,4 +14,4 @@ Wrong, this only applies to the diffuse component where an angle higher than 90 
 
 ![[Pasted image 20251017132222.png]]
 
-Here the issue should become apparent. The left image shows Phong reflections as familiar. With the theta ($\theta$) (scalar number/angle) being less than 90 degrees. In the right image we can see that the angle 
+Here the issue should become apparent. The left image shows Phong reflections as familiar. With the theta ($\theta$) (scalar number/angle) being less than 90 degrees. In the right image we can see that the angle $\theta$ between the view and reflection vector is larger than 90 degrees which as a result nullifies the specular contribution. This generally isn't a problem since the view direction is far from the reflection direction, but if we use a low specular exponent the specular radius is large enough to have a contribution under these conditions. Since we're nullifying this contribution at angles larger than 90 degrees we get the artifact as seen in the first image. 
