@@ -10,4 +10,7 @@ The image below shows what happens when we use a specular shininess exponent of 
 
 You can see at the edges that the specular area is immediately cut off. The reason this happens is because the angle between the view and reflection vector doesn't go over 90 degrees. If the angle is larger than 90 degrees, the resulting dot product becomes negative and this results in a specular exponent of 0.0. You're probably thinking this won't be a problem since we shouldn't get any light with angles higher than 90 degrees anyways, right?
 
-Wrong, this only applies to the diffuse component where an angle higher than 90 degrees between the normal and light source means the light source is below the lighted surface and thus the light's diffuse contribution should equal 0.0. However, with specular lighting we're not measuring the angle between light source and the normal, but between the view 
+Wrong, this only applies to the diffuse component where an angle higher than 90 degrees between the normal and light source means the light source is below the lighted surface and thus the light's diffuse contribution should equal 0.0. However, with specular lighting we're not measuring the angle between light source and the normal, but between the view and refection vector. Take a look at the following two images. 
+
+![[Pasted image 20251017132222.png]]
+
