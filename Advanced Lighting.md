@@ -31,5 +31,7 @@ $$
 $$
 
 
-So this formula basically means we add the lights di
+So this formula basically means we take the sum of the light's direction vector and view vector, then normalize it all within the same variable. 
+
+This translates to GLSL 
 
