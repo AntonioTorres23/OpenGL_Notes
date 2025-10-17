@@ -221,12 +221,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lighting Notes.md",
+                "file": "Advanced Lighting.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lighting Notes"
+              "title": "Advanced Lighting"
             }
           }
         ],
@@ -376,10 +376,10 @@
   },
   "active": "40ad92fd57ceea64",
   "lastOpenFiles": [
+    "Lighting Notes.md",
     "Advanced Lighting.md",
     "Pasted image 20251017134951.png",
     "Pasted image 20251017134948.png",
-    "Lighting Notes.md",
     "Pasted image 20251017132222.png",
     "Pasted image 20251017102402.png",
     "Untitled 1.md",

@@ -48,15 +48,15 @@ Then the actual calculation of the specular term becomes a clamped dot product b
 	Take the dot product between normal, and halfway direction similar to Phong
 	lighting in which we took a dot product between the view and reflect direction.
 	
-	
-	 
-	
+	Then we make sure the specular angle never goes beyond the value 0.0. After
+	this, we take this angle and multiply it by itself to the power of the             shininess value.
 */
 float spec = pow(max(dot(normal, halfwayDir), 0.0), shininess);
+// multiply the specular scalar value by the desired light color value.
 vec3 specular = lightColor * spec;
 ```
 
-And there is nothing more to 
+And there is nothing more to Blinn-Phong than what we just described. The only difference between Blinn-Phong and Phong specular refection is that we now me
 
 
 
