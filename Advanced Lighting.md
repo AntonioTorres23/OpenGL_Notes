@@ -14,4 +14,4 @@ Wrong, this only applies to the diffuse component where an angle higher than 90 
 
 ![[Pasted image 20251017132222.png]]
 
-Here the issue should become apparent. The left image shows Phong reflections as familiar. With the theta 
+Here the issue should become apparent. The left image shows Phong reflections as familiar. With the theta ($\theta$) (scalar number/angle) being less than 90 degrees. In the right image we can see that the angle 
