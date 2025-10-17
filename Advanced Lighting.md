@@ -33,5 +33,11 @@ $$
 
 So this formula basically means we take the sum of the light's direction vector and view vector, then normalize it all within the same variable. 
 
-This translates to GLSL 
+This translates to GLSL code as follows.
+
+```
+vec3 lightDir = normalize(lightPos - FragPos);
+vec3 viewDir = normalize(viewPos - FragPos);
+vec3 halfwayDir = normalize(lightDir + viewDir);
+```
 
