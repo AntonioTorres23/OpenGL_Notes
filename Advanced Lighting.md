@@ -60,6 +60,8 @@ And there is nothing more to Blinn-Phong than what we just described. The only d
 
 With the introduction of the halfway vector we should no longer have the specular cutoff issue of Phong shading. The image below shows the specular area of both methods with a specular exponent of 0.5, 
 
+![[Pasted image 20251017142829.png]]
+
 
 
 
