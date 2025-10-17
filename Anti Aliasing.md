@@ -113,4 +113,70 @@ The one thing that changed here is the extra second parameter where we set the a
 
 Rendering to a multisampled framebuffer is straightforward. Whenever we draw anything while the framebuffer object is bound, the rasterizer will take care of all the multisample operations. However, because a multisampled buffer is a bit special, we can't directly use the buffer for other operations like sampling it in a shader. 
 
-A multisampled image contains much more information than a normal image so what we need to do is downscale or **resolve** the image. Resolving a multisampled framebuffer is generally done through `glBlitFramebuffer` that copies a region from one framebuffer to the other while also resolvb
+A multisampled image contains much more information than a normal image so what we need to do is downscale or **resolve** the image. Resolving a multisampled framebuffer is generally done through `glBlitFramebuffer` that copies a region from one framebuffer to the other while also resolving any multisampled buffers. 
+
+`glBlitFramebuffer` transfers a given **source** region defined by 4 screen-space coordinates to a given **target** also defined by 4 screen-space coordinates. You may remember the framebuffers notes that if we bind to `GL_FRAMEBUFFER` we're binding to both read and draw framebuffer targets. We could also bind to those targets individually by binding framebuffers to `GL_READ_FRAMEBUFFER` and `GL_DRAW_FRAMEBUFFER` respectively. The `glBlitFramebuffer` function reads from those two targets to determine which is the source and which is the target framebuffer. We could then transfer the multisampled framebuffer output to the actual screen by **blitting** the image to the default framebuffer like so. 
+
+```
+glBindFrameBuffer(GL_READ_FRAMEBUFFER, multisampledFBO);
+glBindFrameBuffer(GL_DRAW_FRAMEBUFFER, 0);
+glBlitFramebuffer(0, 0, width, height, 0, 0, width, height, GL_COLOR_BUFFER_BIT, GL_NEAREST);
+```
+
+If we then were to render the same application we should get the same output: a lime-green cube displayed with MSAA and again showing significantly less jagged edges. 
+
+![[Pasted image 20251016164848.png]]
+
+You can find the source code [here](https://learnopengl.com/code_viewer_gh.php?code=src/4.advanced_opengl/11.2.anti_aliasing_offscreen/anti_aliasing_offscreen.cpp).
+
+But what if we wanted to use the texture result of a multisampled framebuffer to do stuff like post-processing? We can't directly use the multisampled texture(s) in the fragment shader. What we can do however is blit  the multisampled buffer(s) to a different FBO with a non-multisampled texture attachment. We then use this ordinary color attachment texture for post-processing , effectively post-processing an image rendered via multisampling. This does mean we have to generate a new FBO that acts solely as an intermediate framebuffer object to resolve the multisampled buffer into; a normal 2D texture we can use in the fragment shader. This process looks a bit like this in pseudocode.
+
+```
+unsigned int msFBO = CreateFBOWithMultiSampledAttachments();
+// then create another FBO with a normal texture color attachment
+[...]
+glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, screenTexture, 0);
+[...]
+while(!glfwWindowShouldClose(window))
+{
+	[...]
+	
+	glBindFramebuffer(msFBO);
+	ClearFrameBuffer();
+	DrawScene();
+	// now resolve multisampled buffer(s) into intermediate FBO
+	glBindFramebuffer(GL_READ_FRAMEBUFFER, msFBO);
+	glBindFramebuffer(GL_WRITE_FRAMEBUFFER, intermediateFBO);
+	glBlitFramebuffer(0, 0, width, height, 0, 0, width, height,                        GL_COLOR_BUFFER_BIT, GL_NEAREST);
+	// now scene is stored as 2D image, so use that image for post-processing
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	ClearFramebuffer();
+	glBindTexture(GL_TEXTURE_2D, screenTexture);
+	DrawPostProcessingQuad();
+	
+	[...]
+}
+```
+
+If we then implement this into the post-processing code of the framebuffers notes we're able to create all kinds of cool post-processing effects on a texture of a scene with (almost) no jagged edges. With a grayscale postprocessing filter applied it'll look something like this. 
+
+![[Pasted image 20251016170240.png]]
+
+Because the screen is a normal (non-multisampled) texture again, some post-processing filters like edge-detection will introduce jagged edges again. To accommodate for this you could blur the texture afterwards or create your own anti-aliasing algorithm. 
+
+You can see that when we want to combine multisampling with off-screen rendering we need to take care of some extra steps.  The steps are worth the extra effort though since multisampling significantly boosts the visual quality of your scene. Do note that enabling multisampling can noticeably reduce performance the more samples you use. 
+
+**Custom Anti-Aliasing Algorithm**
+
+It is possible to directly pass a multisampled texture image to a fragment shader instead of first resolving it. GLSL gives us the option to sample the texture image per subsample so we can create our own custom anti-aliasing algorithms. 
+
+To get a texture value per subsample you'd have to define the texture uniform sampler as a `sampler2DMS` instead of the usual `sampler2D`. 
+
+`uniform sampler2DMS screenTextureMS;`
+
+Using the `texelFetch` function it is then possible to retrieve the color value per sample. 
+
+`vec4 colorSample = texelFetch(screenTextureMS, TexCoords, 3); // 4th subsample`
+
+We won't go into the details of creating custom anti-aliasing techniques here, but this may be enough to get started on building one yourself. 
+
