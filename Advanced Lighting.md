@@ -27,6 +27,6 @@ Here you can see that whatever direction the viewer looks from, the angle betwee
 Getting the halfway vector is easy, we add the light's direction vector and view vector together and normalize the result. 
 
 $$
-\bar{H} 
+		\bar{H} = 
 $$
 
