@@ -118,3 +118,9 @@ You can find the source code of this simple demo scene [here](https://learnopeng
 
 To summarize, gamma correction allows us to do all our shading/linear calculations in linear space. Because linear space makes sense in the physical world, most physical equations now actually give good results (like real light attenuation). The more advanced your lighting becomes, the easier it is to get good looking (and realistic) results with gamma correction. That is also why it's advised to only really tweak you lighting parameters as soon as you have gamma correction in place. 
 
+## Additional resources
+
+- [What every coder should know about gamma](http://blog.johnnovak.net/2016/09/21/what-every-coder-should-know-about-gamma/): a well written in-depth article by John Novak about gamma correction.
+- [www.cambridgeincolour.com](http://www.cambridgeincolour.com/tutorials/gamma-correction.htm): more about gamma and gamma correction.
+- [blog.wolfire.com](http://blog.wolfire.com/2010/02/Gamma-correct-lighting): blog post by David Rosen about the benefit of gamma correction in graphics rendering.
+- [renderwonk.com](http://renderwonk.com/blog/index.php/archive/adventures-with-gamma-correct-rendering/): some extra practical considerations.
