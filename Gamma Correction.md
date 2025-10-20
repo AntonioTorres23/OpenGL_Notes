@@ -73,4 +73,23 @@ As a result, when texture artists create art by eye, all the textures' values ar
 
 ![[Pasted image 20251020155148.png]]
 
-The texture image is way too bright and happens because it is actually gamma corrected twice! Think about it, when we create an image based on what we see on the monitor, we effectively gamma correct the color values of an image so that it looks right on the monitor. Because we then again gamma correct
+The texture image is way too bright and happens because it is actually gamma corrected twice! Think about it, when we create an image based on what we see on the monitor, we effectively gamma correct the color values of an image so that it looks right on the monitor. Because we then again gamma correct in the renderer, the image ends up way too bright. 
+
+To fix this issue we have to make sure texture artists work in linear space. However, since it's easier to work in `sRGB` space and most tools don't even properly support linear texturing, this is probably not the preferred solution. 
+
+The other solution is to re-correct or transform these sRGB textures to linear space before doing any calculations on their color values. We can do this as follows. 
+
+```
+float gamma = 2.2;
+vec3 diffuseColor = pow(texture(diffuse, texCoords).rgb, vec3(gamma));
+```
+
+To do this for each texture in sRGB space is quite troublesome though. Luckily OpenGL gives us yet another solution to our problems by giving us the `GL_SRGB` and `GL_SRGB_ALPHA` internal texture formats. 
+
+If we create a texture in OpenGL with any of these two sRGB texture formats, OpenGL automatically correct the colors to linear-space as soon as we use them, allowing us to properly work in linear space. We can specify a texture as an sRGB texture as follows. 
+
+`glTexImage2D(GL_TEXTURE_2D, 0, GL_SRGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);`
+
+If you want to include alpha components in your texture you'll have to specify the texture's internal format as `GL_SRGB_ALPHA`. 
+
+You should be careful when specifying your textures 
