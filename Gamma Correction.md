@@ -30,3 +30,4 @@ The idea of gamma correction is to apply the inverse of the monitor's gamma to t
 Let's give another example. Say we again have the dark-red color (0.5, 0.0, 0.0). Before displaying this color to the monitor we first apply the gamma correction curve to the color value. Linear colors displayed by a monitor are roughly scaled to a power of 2.2 so the inverse requires scaling colors by a power of $1/2.2$. 
 The gamma-corrected dark-red color thus becomes $(0.5, 0.0, 0.0)^{1/2.2} = (0.5, 0.0, 0.0)^{0.45} = (0.73, 0.0, 0.0)$. The corrected colors are then fed to the monitor and as a result the color is displayed as $(0.73)$
 
+
