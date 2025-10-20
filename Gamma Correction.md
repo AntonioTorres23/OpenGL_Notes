@@ -15,4 +15,4 @@ The dotted line represents color/light values in linear space and the solid line
 
 Up until this section of notes we have assumed we are working in linear space, but we've actually been working in the monitors output space so all colors and lighting variables we configured weren't physically correct, but merely looked (sort of) right on our monitor. For this reason, we (and artists) generally set lighting values way brighter than they would be (since the monitor darkens them) which as a result makes most linear-space calculations incorrect. Note that the monitor (CRT) and linear graph both start and end at the same position; it is the intermediate values that are darkened by the display. 
 
-Because colors are are configgured 
+Because colors are are configured based on the display's output, all inter
