@@ -92,4 +92,19 @@ If we create a texture in OpenGL with any of these two sRGB texture formats, Ope
 
 If you want to include alpha components in your texture you'll have to specify the texture's internal format as `GL_SRGB_ALPHA`. 
 
-You should be careful when specifying your textures 
+You should be careful when specifying your textures in sRGB space as not all textures will actually be in sRGB space. Textures used for coloring objects (like diffuse textures) are almost always in sRGB space. Textures used for retrieving lighting parameters (like specular maps or normal maps) are almost always in linear space, so if you were to configure these as sRGB textures the lighting will look odd. Be careful in which textures you specify as sRGB. 
+
+With our diffuse textures specified as sRGB textures you get the visual output you'd expect again, but this time everything is gamma corrected only once. 
+
+**Attenuation**
+
+Something else that's different with gamma correction is lighting attenuation. In the physical world, lighting attenuates closely inversely proportional to the squared distance from a light source. In normal English it simply means the light strength is reduced over the distance to the light source squared, like below. 
+
+`float attenuation = 1.0 / (distance * distance);`
+
+However, when using this equation the attenuation effect is usually way too strong, giving lights a small radius that doesn't look physically right. For that reason other attenuation functions were used (like we discussed in the lighting notes) that give much more control, or the linear equivalent is used.
+
+`float attenuation = 1.0 / distance;`
+
+The linear equivalent gives more plausible results compared to its quadratic variant without gamma correction, but when we enable gamma correction the linear attenuation looks too weak and the physically correct attenuation suddenly gives better results. The image shows the differences. 
+
