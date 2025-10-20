@@ -114,4 +114,6 @@ The cause of this difference is that light attenuation functions change brightne
 
 The more advanced attenuation function we discussed in the lighting notes still has its pace in gamma corrected scenes as it gives more control over the exact attenuation (but of course requires different parameters in a gamma corrected scene). 
 
-You can find the source code of this simple demo scene [here](https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/2.gamma_correction/gamma_correction.cpp). By pressing spacebar we switch between a gamma corrected and un-corrected scene with both scenes using their texture and attenuation equivalents. It's not the most impressive demo, but it does  
+You can find the source code of this simple demo scene [here](https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/2.gamma_correction/gamma_correction.cpp). By pressing spacebar we switch between a gamma corrected and un-corrected scene with both scenes using their texture and attenuation equivalents. It's not the most impressive demo, but it does show how to apply all techniques. 
+
+To summarize, gamma correction allows us to do all our shading/linear calculations in linear space. Because linear space makes sense in the physical world, most physical equations now actually give good results (like real light attenuation)
