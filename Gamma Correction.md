@@ -37,6 +37,6 @@ There are two ways to apply gamma correction to your scene:
 - By using OpenGL's built-in sRGB frame support. 
 - By doing the gamma correction ourselves in the fragment shader(s).
 
-The first option is probably the easiest 
+The first option is probably the easiest, but also gives you less control. By enabling `GL_FRAMEBUFFER_SRGB` you tell OpenGL that each subsequent drawing command should first gamma correct colors (from the sRGB color space) before storing them in color buffer(s). The sRGB is a color space that roughly corresponds to a gamma of 2.2 and a standard for most devices. After enabling `GL_FRAMEBUFFER_SRGB`, OpenGL automatically performs gamma correction after each fragment shader run to all subsequent framebuffers. 
 
 
