@@ -249,12 +249,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Shadow Mappin.md",
+                "file": "Shadow Mapping.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Shadow Mappin"
+              "title": "Shadow Mapping"
             }
           }
         ],
@@ -405,7 +405,7 @@
   "active": "6cd89ab09e1f33fe",
   "lastOpenFiles": [
     "Gamma Correction.md",
-    "Shadow Mappin.md",
+    "Shadow Mapping.md",
     "Untitled",
     "Pasted image 20251020161730.png",
     "Pasted image 20251020155148.png",
