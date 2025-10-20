@@ -108,3 +108,10 @@ However, when using this equation the attenuation effect is usually way too stro
 
 The linear equivalent gives more plausible results compared to its quadratic variant without gamma correction, but when we enable gamma correction the linear attenuation looks too weak and the physically correct attenuation suddenly gives better results. The image shows the differences. 
 
+![[Pasted image 20251020161730.png]]
+
+The cause of this difference is that light attenuation functions change brightness, and as we weren't visualizing our scene in linear space we chose the attenuation functions that looked best on our monitor, but weren't physically correct. Think of the squared attenuation function: if we were to use this function without gamma correction, the attenuation function effectively becomes $(1.0/distance^{2})^{2.2}$ when displayed on a monitor. This creates a much larger attenuation from what we originally anticipated. This also explains why the linear equivalent makes much more sense without gamma correction as this effectively becomes $(1.0/distance)^{2.2} = 1.0/distance^{2.2}$ which resembles its physical equivalent a lot more. 
+
+The more advanced attenuation function we discussed in the lighting notes still has its pace in gamma corrected scenes as it gives more control over the exact attenuation (but of course requires different parameters in a gamma corrected scene). 
+
+You can find the source code of this simple demo scene [here](https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/2.gamma_correction/gamma_correction.cpp). By pressing spacebar we switch between a gamma corrected and un-corrected 
