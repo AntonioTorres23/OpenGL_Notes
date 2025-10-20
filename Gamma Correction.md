@@ -13,4 +13,4 @@ This non-linear mapping of monitors does output more pleasing brightness results
 
 The dotted line represents color/light values in linear space and the solid line represents the color space that monitors display. If we double a color in linear space, its result is indeed double the value. For instance, take a light's color vector (0.5, 0.0, 0.0) which represents a slightly dark red light. If we would double this light in linear space it would become (1.0, 0.0, 0.0) as you can see in the graph. However, the original color gets displayed on the monitor as (0.218, 0.0, 0.0) as you can see from the graph. Here's where the issues start to rise: once we double the dark-red light in linear space, it actually becomes more than 4.5 times as bright on the monitor!
 
-Up until this secon
+Up until this section of notes we have assumed we are working in linear space, but we've actually been working in the monitors output space so all colors and lighting variables 
