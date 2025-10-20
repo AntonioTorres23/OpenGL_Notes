@@ -45,6 +45,25 @@ Enabling `GL_FRAMEBUFFER_SRGB` is as simple as calling `glEnable`.
 
 From now on your rendered images will be gamma corrected and as this is done by the hardware it is completely free. Something you should keep in mind with this approach (and the other approach) is that gamma correction (also) transforms the colors from linear space to non-linear space so it is very important you only do gamma correction at the last and final step. If you gamma-correct your colors before the final output, all subsequent operations on those colors will operate on incorrect values. For instance, if you use multiple framebuffers you probably want intermediate results passed in between framebuffers to remain in linear-space and only have the last framebuffer apply gamma correction before being sent to the monitor. 
 
-The second approach requires a bit more work, but it also gives us complete control over the gamma operations. We apply gamma correction 
+The second approach requires a bit more work, but it also gives us complete control over the gamma operations. We apply gamma correction at the end of each relevant fragment shader run so the final colors end up gamma corrected before being sent out to the monitor. 
+
+```
+void main()
+{
+	// do super fancy lighting in linear space
+	[...]
+	// apply gamma cccorrection
+	float gamma = 2.2;
+	FragColor.rgb = pow(fragColor.rgb, vec3(1.0/gamma));
+}
+```
+
+The last line of code effectively raises each individual color component of `fragColor` to $1.0/gamma$, correcting the output color of this fragment shader run. 
+
+An issue with this approach is that in order to be consistent you have to apply gamma correction to each fragment shader that contributes to the final output. If you have a dozen fragment shaders for multiple objects, you have to add the gamma correction code to each of these shaders. An easier solution would be to introduce a post-processing stage in your render loop and apply gamma correction on the post-processed quad as a final step which you only have to do once. 
+
+That one line represents the technical implementation of gamma correction. Not all too impressive, but there are a few extra things you have to consider when doing gamma correction. 
+
+****
 
 
