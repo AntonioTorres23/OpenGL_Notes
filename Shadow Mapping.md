@@ -71,4 +71,10 @@ glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
 We only need the depth information when rendering the scene from the light's perspective so there is no need for a color buffer. A framebuffer object however is not complete without a color buffer so we need to explicitly tell OpenGL that we're not going to render any color data. We do this by setting both the read and draw buffer to `GL_NONE` with `glDrawBuffer` and `glReadBuffer`.
 
-With a properly configured framebuffer that renders depth values to a texture we can start the first pass: generate the depth map. 
+With a properly configured framebuffer that renders depth values to a texture we can start the first pass: generate the depth map. When combined with the second pass, the complete rendering stage will look a bit like this. 
+
+```
+// 1. first render the depth map
+glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);
+glBindFramebuffer
+```
