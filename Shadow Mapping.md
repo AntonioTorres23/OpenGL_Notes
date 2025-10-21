@@ -101,4 +101,6 @@ float near_plane = 1.0f, far_plane = 7.5f;
 glm::mat4 lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
 ```
 
-Here is an example orthographic projection matrix as used in this note's demo scene. Because a projection matrix indirectly determines the range of what is visible (e.g. what is not clipped) you want to make sure the size of the projection 
+Here is an example orthographic projection matrix as used in this note's demo scene. Because a projection matrix indirectly determines the range of what is visible (e.g. what is not clipped) you want to make sure the size of the projection frustum correctly contains the objects you want to be in the depth map. When objects or fragments are not in the depth map they will not produce shadows. 
+
+To create a view matrix 
