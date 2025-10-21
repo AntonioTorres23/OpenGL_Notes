@@ -103,4 +103,8 @@ glm::mat4 lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane,
 
 Here is an example orthographic projection matrix as used in this note's demo scene. Because a projection matrix indirectly determines the range of what is visible (e.g. what is not clipped) you want to make sure the size of the projection frustum correctly contains the objects you want to be in the depth map. When objects or fragments are not in the depth map they will not produce shadows. 
 
-To create a view matrix to transform each object so they're visible from the light's point of view, we're going to use the infamous `glm::LookAt` 
+To create a view matrix to transform each object so they're visible from the light's point of view, we're going to use the infamous `glm::lookAt` function; this time with the light source's position looking at the scene's center. 
+
+```
+gg
+```
