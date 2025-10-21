@@ -189,7 +189,11 @@ void main()
 
 Note that there are some subtle changes when displaying depth using a perspective projection matrix instead of an orthographic projection matrix as depth is non-linear when using perspective projection. At the end of these notes we'll discuss some of these subtle differences. 
 
-You can find the source code for rendering a scene to a depth 
+You can find the source code for rendering a scene to a depth map [here](https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/3.1.1.shadow_mapping_depth/shadow_mapping_depth.cpp).
+
+**Rendering Shadows**
+
+With a properly generated depth map we can st
 
 
 
