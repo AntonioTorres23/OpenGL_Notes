@@ -329,7 +329,9 @@ float ShadowCalculation(vec4 fragPosLightSpace)
 }
 ```
 
-Activating this shader, binding the proper textures, and activating 
+Activating this shader, binding the proper textures, and activating the default projection and view matrices in the second render pass should give you a result similar to the image below. 
+
+
 
 
 
