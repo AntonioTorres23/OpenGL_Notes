@@ -157,6 +157,6 @@ Rendering the depth/shadow map now effectively.
 
 ```
 simpleDepthShader.use();
-glUni
+glUniformMatrix4fv()
 
 ```
