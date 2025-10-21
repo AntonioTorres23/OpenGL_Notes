@@ -122,4 +122,17 @@ This `lightSpaceMatrix` is the transformation matrix that we earlier denoted as 
 
 **Render to Depth Map**
 
-When we render the scene from the light's perspective we'd much rather use a simple shader that only transforms the vertices to light space and not much more. For such a simple shader called `simpleDepthShader` we'll 
+When we render the scene from the light's perspective we'd much rather use a simple shader that only transforms the vertices to light space and not much more. For such a simple shader called `simpleDepthShader` we'll use the following vertex shader.
+
+```
+#version 330 core
+layout (location = 0) in vec3 aPos;
+
+uniform mat4 lightSpaceMatrix;
+uniform mat4 model; 
+
+void main()
+{
+	gl_Position
+}
+```
