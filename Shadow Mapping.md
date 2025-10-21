@@ -281,8 +281,17 @@ The fragment shader is largely a copy from what we use in the advanced lighting 
 The first thing to do to check whether a fragment is in shadow, is transform the light-space fragment position in clip-space to normalized device coordinates. When we output a clip-space vertex position to `gl_Position` in the vertex shader, OpenGL automatically does a perspective divide e.g. transform clip-space coordinates in the range $[-w, w]$ to $[-1, 1]$ by dividing the x, y, and z component by the vectors $w$ component. As the clip-space `FragPosLightSpace` is not passed to the fragment shader through `gl_Position`, we have to do this divide ourselves. 
 
 ```
-float ShadowCalcuation(vec34)
+float ShadowCalcuation(vec4 fragPosLightSpace)
+{
+	// perform perspective division
+	vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w;
+	[...]
+}
 ```
+
+This returns the fragment's light-space position in the range $[-1, 1]$. 
+
+When using orthographic projection matrix the w component of a vertex remains untouched so this step is actually quite meaningless. However, it is necessary when using perspective projection so keeping this line 
 
 
 
