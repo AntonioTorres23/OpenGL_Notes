@@ -276,7 +276,7 @@ void main()
 }
 ```
 
-The fragment shader is largely a copy from what we use in the advanced lighting section, but with an added shadow calculation. We declared a function `ShadowCalculation` that does most of the shadow work. At the end of the fragment shader, we multiply the diffuse and specular contributions by the inverse of the **shadow** component e.gg. how much the fragment is *not* in shadow. This fragment shader takes as extra input the light-space fragment position and the depth map generated from the first render pass. 
+The fragment shader is largely a copy from what we use in the advanced lighting section, but with an added shadow calculation. We declared a function `ShadowCalculation` that does most of the shadow work. At the end of the fragment shader, we multiply the diffuse and specular contributions by the inverse of the **shadow** component e.g. how much the fragment is *not* in shadow. This fragment shader takes as extra input the light-space fragment position and the depth map generated from the first render pass. 
 
 The first thing to do to check whether a fragment is in shadow, is transform the light-space fragment position in clip-space to normalized device coordinates. When we output a clip-space vertex position to `gl_Position` in the vertex shader, OpenGL automatically does a perspective divide e.g. transform clip-space coordinates in the range $[-w, w]$ to $[-1, 1]$ by dividing the x, y, and z component by the vectors $w$ component. As the clip-space `FragPosLightSpace` is not passed to the fragment shader through `gl_Position`, we have to do this divide ourselves. 
 
@@ -301,8 +301,35 @@ With these projected coordinates we can sample the depth map as the resulting $[
 `// r just means red in terms of RGB which in this case is just no color at all`
 `float closestDepth = texture(shadowMap, projCoords.xy).r`
 
-To get the current depth at this fragment we simply retrieve the projected vector's z 
+To get the current depth at this fragment we simply retrieve the projected vector's z coordinate which equals the depth of this fragment from the light's perspective. 
 
+`float currentDepth = projCoords.z;`
+
+The actual comparison is then simply a check whether `currentDepth` is higher than `closestDepth` and if so, the fragment is in shadow. 
+
+`float shadow = currentDepth > closestDepth ? 1.0 : 0.0;`
+
+The complete `ShadowCalculation` function then becomes.
+
+```
+float ShadowCalculation(vec4 fragPosLightSpace)
+{
+	// perform perspective division
+	vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w
+	// transform projCoords to [0,1] range
+	projCoords = projCoords * 0.5 + 0.5;
+	// get closest depth value from light's perspective (using [0,1] range             // fragPosLight as coords)
+	float closestDepth = texture(shadowMap, projCoords.xy).r
+	// get depth of current fragment from light's perspective
+	float currentDepth = projCoords.z;
+	// check whether current frag pos is in shadow
+	float shadow = currentDepth > closestDepth ? 1.0 : 0.0;
+	
+	return shadow;
+}
+```
+
+Activating this shader, binding the proper textures, and activating 
 
 
 
