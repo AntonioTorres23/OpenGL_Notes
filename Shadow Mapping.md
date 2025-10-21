@@ -276,7 +276,7 @@ void main()
 }
 ```
 
-The fragment shader is largely a copy from what we use in the advanced lighting section, but with an added shadow calculation. We declared a function `ShadowCalculation` that does 
+The fragment shader is largely a copy from what we use in the advanced lighting section, but with an added shadow calculation. We declared a function `ShadowCalculation` that does most of the shadow work. At the end of the fragment shader, we multiply the diffuse and specular contributions by the inverse of the ****
 
 
 
