@@ -157,6 +157,12 @@ Rendering the depth/shadow map now effectively.
 
 ```
 simpleDepthShader.use();
-glUniformMatrix4fv()
-
+glUniformMatrix4fv(lightSpaceMatrixLocation, 1, GL_FALSE, glm::value_ptr(lightSpaceMatrix));
+glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);
+glClear(GL_DEPTH_BUFFER_BIT);
+RenderScene(simpleDepthShader);
+glBindFrameBuffer(GL_FRAMEBUFFER, 0);
 ```
+
+Here the `RenderScene` function takes a shader program, calls all relevant drawing functions and sets the corresponding model matrices where necessary. 
+
