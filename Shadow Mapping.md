@@ -291,7 +291,13 @@ float ShadowCalcuation(vec4 fragPosLightSpace)
 
 This returns the fragment's light-space position in the range $[-1, 1]$. 
 
-When using orthographic projection matrix the w component of a vertex remains untouched so this step is actually quite meaningless. However, it is necessary when using perspective projection so keeping this line 
+When using orthographic projection matrix the w component of a vertex remains untouched so this step is actually quite meaningless. However, it is necessary when using perspective projection so keeping this line ensures it works with both projection matrices. 
+
+Because the depth from the depth map is in the range of $[0,1]$ and we also want to use `projCoords` to sample from the depth map, we transform the Normalized Device Coordinates (NDC) to the range $[0,1]$. 
+
+`projCoords = projCoords * 0.5 + 0.5;`
+
+With these projected coordinates we can sample the depth map as the resulting $[0,1]$ coordinates 
 
 
 
