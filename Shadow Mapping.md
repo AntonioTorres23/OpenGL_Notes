@@ -137,4 +137,6 @@ void main()
 }
 ```
 
-This vertex shader takes a per-object model, a vertex, and transforms all vertices to light space using `lightSpaceM`
+This vertex shader takes a per-object model, a vertex, and transforms all vertices to light space using `lightSpaceMatrix`.
+
+Since we have no color buffer 
