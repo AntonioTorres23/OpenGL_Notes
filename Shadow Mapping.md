@@ -118,4 +118,4 @@ Combining these two gives us a light space transformation matrix that transforms
 
 `glm::mat4 lightSpaceMatrix = lightProjection * lightView;`
 
-This `lightSpaceMatrix` is the transformation matrix that we earlier denoted as $T$. With this `lightSpaceMatrix`, we can render the scene as usual as long as we give each shader the light-space equivelent 
+This `lightSpaceMatrix` is the transformation matrix that we earlier denoted as $T$. With this `lightSpaceMatrix`, we can render the scene as usual as long as we give each shader the light-space equivalents of the projection and view matri
