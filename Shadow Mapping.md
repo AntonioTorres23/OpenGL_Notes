@@ -118,4 +118,8 @@ Combining these two gives us a light space transformation matrix that transforms
 
 `glm::mat4 lightSpaceMatrix = lightProjection * lightView;`
 
-This `lightSpaceMatrix` is the transformation matrix that we earlier denoted as $T$. With this `lightSpaceMatrix`, we can render the scene as usual as long as we give each shader the light-space equivalents of the projection and view matrices. However, we only care about the depth values and not all the expensive fragment (lighting) calculations. To save 
+This `lightSpaceMatrix` is the transformation matrix that we earlier denoted as $T$. With this `lightSpaceMatrix`, we can render the scene as usual as long as we give each shader the light-space equivalents of the projection and view matrices. However, we only care about the depth values and not all the expensive fragment (lighting) calculations. To save performance we're going to use a different, but much simpler shader for rendering the depth map. 
+
+**Render to Depth Map**
+
+When we render the scene from the light's perspective we'd much rather use a simple 
