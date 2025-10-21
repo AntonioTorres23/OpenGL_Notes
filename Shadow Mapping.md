@@ -173,7 +173,21 @@ The result is a nicely filled depth buffer holding the closest depth of each vis
 For rendering the depth map onto a quad we use the following fragment shader.
 
 ```
+#version 330 core
+out vec4 FragColor;
+
+in vec2 TexCoords;
+
+uniform sampler2D depthMap;
+
+void main()
+{
+	float depth
+}
+
 ```
+
+
 
 
 
