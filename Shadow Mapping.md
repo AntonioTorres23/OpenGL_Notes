@@ -27,4 +27,4 @@ The left image shows a directional light source (all light rays are parallel) ca
 
 A directional light doesn't have a position as it's modelled to be infinitely far away. However, for the sake of shadow mapping we need to render the scene from the light's perspective and thus render the scene from a position somewhere along the lines of the light direction. 
 
-In the right image we see the same directional light and the viewer. We render a fragment at point $\bar{\color{red}{P}}$  for which we have to determine whether it is in shadow. To do this, we first transform point $\bar{\color{red}{P}}$ to the light's coordinate space using $T$. Since point 
+In the right image we see the same directional light and the viewer. We render a fragment at point $\bar{\color{red}{P}}$  for which we have to determine whether it is in shadow. To do this, we first transform point $\bar{\color{red}{P}}$ to the light's coordinate space using $T$. Since point $\bar{\color{red}{P}}$ is now seen from the light perspective, its z coordinate co
