@@ -224,6 +224,10 @@ void main()
 }
 ```
 
+What is new here is the extra output vector `FragPosLightSpace`. We take the same `lightSpaceMatrix` (used to transform vertices to light space in the depth map stage) and transform the world space-vertex position to light space for use in the fragment shader. 
+
+The main fragment shader we'll use to render the scene uses the Blinn-Phong lighting model. Within the fragment shader we then calculate a **shadow** value that is either 1.0 when the fragment 
+
 
 
 
