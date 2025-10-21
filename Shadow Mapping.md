@@ -92,3 +92,4 @@ RenderScene();
 This code left out some details, but it'll give you the general idea of shadow mapping. What is important to note here are the calls to `glViewport`. Because shadow maps often have a different resolution compared to what we originally render the scene in (usually the window resolution), we need to change the viewport parameters, the resulting depth map will be either incomplete or too small. 
 
 **Light Space Transform**
+An unknown in the previous snippet of code is the `ConfigureShaderAndMatrices` function. In the second pass that is business as usual: make sure proper projection and view matrices are set, and set the relevant model matrices per object. However, in the first pass we need to use a different pro
