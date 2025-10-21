@@ -272,15 +272,11 @@ void main()
 	float shadow = ShadowCalculation(fs_in.FragPosLightSpace);
 	vec3 lighting = (ambient + (1.0 - shadow) * (diffuse + specular)) * color;
 	
-	F
-	
-	
-	
+	FragColor = vec4(lighting, 1.0);
 }
-
-
 ```
 
+The fragment shader is largely a copy from what we use in the advanced lighting section, but with an added shadow calculation. We declared a function `ShadowCalculation` that does 
 
 
 
