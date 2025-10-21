@@ -23,4 +23,4 @@ You may remember from the depth testing notes that a value in the depth buffer c
 
 ![[Pasted image 20251021101852.png]]
 
-The left image shows a directional light source (all light rays are parallel) casting a shadow on the surface below the cube 
+The left image shows a directional light source (all light rays are parallel) casting a shadow on the surface below the cube. Using the depth values stored in the depth map we find the closest point 
