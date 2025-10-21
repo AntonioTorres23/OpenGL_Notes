@@ -193,7 +193,7 @@ You can find the source code for rendering a scene to a depth map [here](https:/
 
 **Rendering Shadows**
 
-With a properly generated depth map we can st
+With a properly generated depth map we can start rendering the actual shadows. The code to check if a fragment is in shadow is (quite obviously) executed in the fragment shader. 
 
 
 
