@@ -187,7 +187,9 @@ void main()
 }
 ```
 
-Note that there are some subtle changes when displaying depth using a perspective projection matrix instead 
+Note that there are some subtle changes when displaying depth using a perspective projection matrix instead of an orthographic projection matrix as depth is non-linear when using perspective projection. At the end of these notes we'll discuss some of these subtle differences. 
+
+You can find the source code for rendering a scene to a depth 
 
 
 
