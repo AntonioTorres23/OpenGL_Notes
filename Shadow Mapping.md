@@ -23,4 +23,4 @@ You may remember from the depth testing notes that a value in the depth buffer c
 
 ![[Pasted image 20251021101852.png]]
 
-
+The left image shows a directional light source (all light rays are pa)
