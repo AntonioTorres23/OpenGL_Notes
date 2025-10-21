@@ -229,7 +229,20 @@ What is new here is the extra output vector `FragPosLightSpace`. We take the sam
 The main fragment shader we'll use to render the scene uses the Blinn-Phong lighting model. Within the fragment shader we then calculate a **shadow** value that is either 1.0 when the fragment is in shadow or 0.0 when not in shadow. The resulting `diffuse` and `specular` components are then multiplied by this shadow component. Because shadows are rarely completely dark (due to light scattering) we leave the ambient component out of shadow multiplications component out of the shadow multiplications. 
 
 ```
-#version 3
+#version 330 core
+out vec4 FragColor;
+
+in VS_OUT
+{
+	vec3 FragPos;
+	vec3 Normal;
+	vec2 TexCoords;
+	vec3 FragPosLightSpace;
+} fs_in;
+
+uniform sampler2D diffuseTexture;
+uniform sampler2D spe
+
 ```
 
 
