@@ -15,4 +15,4 @@ The idea behind shadow mapping is quite simple: we render the scene from the lig
 
 ![[Pasted image 20251021100349.png]]
 
-Here all the blue lines represent the fragments that the light source can see. The occluded fragments 
+Here all the blue lines represent the fragments that the light source can see. The occluded fragments are shown as black lines: these are rendered as being shadowed. If we were to draw a line or **ray** from the light source to a fragment on the right-most box we can see the ray first hits the floating container before hitting the right-mo
