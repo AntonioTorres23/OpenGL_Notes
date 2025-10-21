@@ -64,9 +64,11 @@ With the generated depth texture we can attach it as the framebuffer's depth buf
 ```
 glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
 glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, depthMap, 0);
-glDrawbuffer(GL_NONE);
-glReadBuffer(GL_NONE);
+glDrawbuffer(GL_NONE); // Telling OpenGL to not render any color data
+glReadBuffer(GL_NONE); // Telling OpenGL to not render any color data
 glBindFramebuffer(GL_FRAMEBUFFER, 0);
 ```
 
-We only need the depth information when rendering the scene from the light's perspective so there is no need for a color buffer. A framebuffer object however is not complete without a color buffer so we need to 
+We only need the depth information when rendering the scene from the light's perspective so there is no need for a color buffer. A framebuffer object however is not complete without a color buffer so we need to explicitly tell OpenGL that we're not going to render any color data. We do this by setting both the read and draw buffer to `GL_NONE` with `glDrawBuffer` and `glReadBuffer`.
+
+With a properly configured framebuffer that renders depth values to a texture we can start the first pass: generate the depth map. 
