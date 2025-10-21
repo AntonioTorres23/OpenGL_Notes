@@ -133,6 +133,8 @@ uniform mat4 model;
 
 void main()
 {
-	gl_Position
+	gl_Position = lightSpaceMatrix * model * vec4(aPos, 1.0);
 }
 ```
+
+This vertex shader takes a per-object model, a vertex, and transforms all vertices to light space using `lightSpaceM`
