@@ -139,4 +139,24 @@ void main()
 
 This vertex shader takes a per-object model, a vertex, and transforms all vertices to light space using `lightSpaceMatrix`.
 
-Since we have no color buffer 
+Since we have no color buffer and disabled the draw and read buffers, the resulting fragments do not require any processing so we can simply use an empty fragment shader.
+
+```
+#version 330 core
+
+void main()
+{
+	// Empty main function
+	// gl_FragDepth = gl_FragCoord.z;
+}
+```
+
+This empty fragment shader does no processing whatsoever, and at the end of its run the depth buffer is updated. We could explicitly set the depth by uncommenting its one line, but this is effectively what happens behind the scene anyways. 
+
+Rendering the depth/shadow map now effectively. 
+
+```
+simpleDepthShader.use();
+glUni
+
+```
