@@ -27,4 +27,18 @@ The left image shows a directional light source (all light rays are parallel) ca
 
 A directional light doesn't have a position as it's modelled to be infinitely far away. However, for the sake of shadow mapping we need to render the scene from the light's perspective and thus render the scene from a position somewhere along the lines of the light direction. 
 
-In the right image we see the same directional light and the viewer. We render a fragment at point $\bar{\color{red}{P}}$  for which we have to determine whether it is in shadow. To do this, we first transform point $\bar{\color{red}{P}}$ to the light's coordinate space using $T$. Since point $\bar{\color{red}{P}}$ is now seen from the light perspective, its z coordinate co
+In the right image we see the same directional light and the viewer. We render a fragment at point $\bar{\color{red}{P}}$  for which we have to determine whether it is in shadow. To do this, we first transform point $\bar{\color{red}{P}}$ to the light's coordinate space using $T$. Since point $\bar{\color{red}{P}}$ is now seen from the light perspective, its z coordinate corresponds to its depth which in this example is 0.9. Using point $\bar{\color{red}{P}}$ we can also index the depth/shadow map to obtain the closest visible depth from the light's perspective, which is at point $\bar{\color{green}{C}}$ with a sampled depth of 0.4. Since indexing the depth map returns a depth smaller than the depth at point $\bar{\color{red}{P}}$ we can conclude point $\bar{\color{red}{P}}$ is occluded and thus in shadow. 
+
+Shadow mapping therefore consists of two passes: first we render the depth map, and in the second pass we render the scene as normal and use the generated depth map to calculate whether fragments are in shadow. It may sound a bit complicated, but as soon as we walk though this technique step-by-step it'll likely start to make sense. 
+
+**The Depth Map**
+
+The first pass requires us to generate a depth map. The depth map is the depth texture as rendered from the light's perspective that we'll be using for testing shadows. Because we need to store the rendered result of a scene into a texture we're going to need framebuffers again.
+
+First we'll create a framebuffer object for rendering the depth map. 
+
+```
+unsigned int depthMapFBO;
+glGenFramebuffers(1, &depthMapFBO);
+```
+
