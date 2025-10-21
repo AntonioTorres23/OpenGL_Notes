@@ -106,5 +106,5 @@ Here is an example orthographic projection matrix as used in this note's demo sc
 To create a view matrix to transform each object so they're visible from the light's point of view, we're going to use the infamous `glm::lookAt` function; this time with the light source's position looking at the scene's center. 
 
 ```
-gg
+glm::mat4 lightView = glm::lookAt(glm::vec3(-2.0f, 4.0f, -1.0f), glm::vec3(0.0, 0.0, 0.0,), glm::vec3(0.0, 1.0, 0.0))
 ```
