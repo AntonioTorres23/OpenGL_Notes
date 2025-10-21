@@ -98,5 +98,7 @@ Because we're modelling a directional light source, all its light rays are paral
 
 ```
 float near_plane = 1.0f, far_plane = 7.5f;
-glm::mat4 lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f)
+glm::mat4 lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
 ```
+
+Here is an example orthographic projection matrix as used in this note's demo scene
