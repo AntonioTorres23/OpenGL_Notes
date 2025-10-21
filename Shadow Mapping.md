@@ -69,4 +69,4 @@ glReadBuffer(GL_NONE);
 glBindFramebuffer(GL_FRAMEBUFFER, 0);
 ```
 
-We only need the depth information when rendering the scene from the light's perspective so there is no need for a color buffer. A framebuffer object however is not complete without a color buffer 
+We only need the depth information when rendering the scene from the light's perspective so there is no need for a color buffer. A framebuffer object however is not complete without a color buffer so we need to 
