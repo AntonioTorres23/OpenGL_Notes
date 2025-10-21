@@ -76,5 +76,19 @@ With a properly configured framebuffer that renders depth values to a texture we
 ```
 // 1. first render the depth map
 glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);
-glBindFramebuffer
+glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
+glClear(GL_DEPTH_BUFFER_BIT);
+ConfigureShaderAndMatrices();
+RenderScene();
+glBindFramebuffer(GL_FRAMEBUFFER, 0);
+// 2. then render scene as normal with shadow mapping (using depth map)
+glViewport(0, 0, SCR_WIDTH, SCR_HEIGHT);
+glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+ConfigureShaderAndMatrices();
+glBindTexture(GL_TEXTURE_2D, depthMap);
+RenderScene();
 ```
+
+This code left out some details, but it'll give you the general idea of shadow mapping. What is important to note here are the calls to `glViewport`. Because shadow maps often have a different resolution compared to what we originally render the scene in (usually the window resolution), we need to change the viewport parameters, the resulting depth map will be either incomplete or too small. 
+
+**Light Space Transform**
