@@ -11,4 +11,8 @@ One technique used by most videogames that gives decent results and is relativel
 
 **Shadow Mapping**
 
-The idea behind shadow mapping is quite simple: we render the scene from the light's point of view and everything we see from the light's perspective is lit and everything we can't see must be in shadow. Imagine a floor section with a large box between itself 
+The idea behind shadow mapping is quite simple: we render the scene from the light's point of view and everything we see from the light's perspective is lit and everything we can't see must be in shadow. Imagine a floor section with a large box between itself and a light source. Since the light source will see this box and not the floor section when looking in its direction that specific floor section would be in shadow.
+
+![[Pasted image 20251021100349.png]]
+
+Here all the blue lines represent the fragments that the light source can see. The occluded fragments 
