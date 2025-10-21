@@ -331,7 +331,9 @@ float ShadowCalculation(vec4 fragPosLightSpace)
 
 Activating this shader, binding the proper textures, and activating the default projection and view matrices in the second render pass should give you a result similar to the image below. 
 
+![[Pasted image 20251021144127.png]]
 
+If you did things right you should indeed see (albeit with quite a few artifacts) shadows on the floor and the cubes. You can find the source code of the demo application [here](https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/3.1.2.shadow_mapping_base/shadow_mapping_base.cpp).
 
 
 
