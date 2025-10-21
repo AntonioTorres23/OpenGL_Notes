@@ -241,7 +241,21 @@ in VS_OUT
 } fs_in;
 
 uniform sampler2D diffuseTexture;
-uniform sampler2D spe
+uniform sampler2D shadowMap;
+
+uniform vec3 lightPos;
+uniform vec3 viewPos;
+
+float ShadowCalculations(vec4 fragPosLightSpace)
+{
+	[...]
+}
+
+void main()
+{
+	vec3 ccol
+}
+
 
 ```
 
