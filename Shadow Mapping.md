@@ -15,4 +15,6 @@ The idea behind shadow mapping is quite simple: we render the scene from the lig
 
 ![[Pasted image 20251021100349.png]]
 
-Here all the blue lines represent the fragments that the light source can see. The occluded fragments are shown as black lines: these are rendered as being shadowed. If we were to draw a line or **ray** from the light source to a fragment on the right-most box we can see the ray first hits the floating container before hitting the right-most container. As a result, the f
+Here all the blue lines represent the fragments that the light source can see. The occluded fragments are shown as black lines: these are rendered as being shadowed. If we were to draw a line or **ray** from the light source to a fragment on the right-most box we can see the ray first hits the floating container before hitting the right-most container. As a result, the floating container's fragments is not lit and thus in shadow. 
+
+We want to get the point on the ray where it first hit an object and compare this *closest point* to other points on this ray. We then do a basic test to see if a test point's ray position is further down the ray than the closest point and if so, the test point must be in shadow. 
