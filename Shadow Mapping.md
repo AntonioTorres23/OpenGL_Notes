@@ -297,10 +297,11 @@ Because the depth from the depth map is in the range of $[0,1]$ and we also want
 
 `projCoords = projCoords * 0.5 + 0.5;`
 
-With these projected coordinates we can sample the depth map as the resulting $[0,1]$ coordinates 
+With these projected coordinates we can sample the depth map as the resulting $[0,1]$ coordinates from `projCoords` directly correspond to the transformed NDC coordinates from the first render pass. This gives us the closest depth from the light's point of view. 
 
+`float closestDepth = texture(shadowMap, projCoords.xy).r`
 
-
+To get the current depth at this fragment we simply retrieve the projected 
 
 
 
