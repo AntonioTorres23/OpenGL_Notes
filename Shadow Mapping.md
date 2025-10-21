@@ -96,4 +96,7 @@ An unknown in the previous snippet of code is the `ConfigureShaderAndMatrices` f
 
 Because we're modelling a directional light source, all its light rays are parallel. For this reason, we're going to use an orthographic projection matrix for the light source where there is no perspective deform.
 
-``
+```
+float near_plane = 1.0f, far_plane = 7.5f;
+glm::mat4 lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f)
+```
