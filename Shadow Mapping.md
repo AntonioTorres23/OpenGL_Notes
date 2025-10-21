@@ -19,4 +19,4 @@ Here all the blue lines represent the fragments that the light source can see. T
 
 We want to get the point on the ray where it first hit an object and compare this *closest point* to other points on this ray. We then do a basic test to see if a test point's ray position is further down the ray than the closest point and if so, the test point must be in shadow. Iterating through possibly thousands of light rays from such a light source is an extremely inefficient approach and doesn't lend itself too well for real-time rendering. We can do something similar, but without casting light rays. Instead, we can use something we're quite familiar with: the depth buffer. 
 
-You may remember from the depth testing notes that a value in the depth buffer corresponds to the depth of a fragment clamped to $[0,1]$ from the camera's poit
+You may remember from the depth testing notes that a value in the depth buffer corresponds to the depth of a fragment clamped to $[0,1]$ from the camera's point of view. 
