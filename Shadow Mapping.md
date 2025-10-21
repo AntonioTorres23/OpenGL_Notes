@@ -166,4 +166,4 @@ glBindFrameBuffer(GL_FRAMEBUFFER, 0);
 
 Here the `RenderScene` function takes a shader program, calls all relevant drawing functions and sets the corresponding model matrices where necessary. 
 
-The result is a nicely filled depth buffer holding the closest depth of each visible fragment from the light's 
+The result is a nicely filled depth buffer holding the closest depth of each visible fragment from the light's perspective. By rendering this texture onto a 2D quad that fills the screen (similar to what we did in the post-processing section at the end of the framebuffers notes);
