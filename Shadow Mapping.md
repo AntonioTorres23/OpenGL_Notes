@@ -182,10 +182,12 @@ uniform sampler2D depthMap;
 
 void main()
 {
-	float depth
+	float depthValue = texture(depthMap, TexCoords).r;
+	FragColor = vec4(vec3(depthValue), 1.0);
 }
-
 ```
+
+Note that there are some subtle changes when displaying depth using a perspective projection matrix instead 
 
 
 
