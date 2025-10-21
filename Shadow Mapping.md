@@ -114,4 +114,8 @@ glm::mat4 lightView = glm::lookAt(glm::vec3(-2.0f, 4.0f, -1.0f),
                                   glm::vec3(0.0, 1.0, 0.0));
 ```
 
-Combining these two gives us a light space transformation matrix that transforms each world-space vector into the space as visible from the light source; 
+Combining these two gives us a light space transformation matrix that transforms each world-space vector into the space as visible from the light source; exactly what we need to render the depth map. 
+
+`glm::mat4 lightSpaceMatrix = lightProjection * lightView;`
+
+
