@@ -122,4 +122,4 @@ This `lightSpaceMatrix` is the transformation matrix that we earlier denoted as 
 
 **Render to Depth Map**
 
-When we render the scene from the light's perspective we'd much rather use a simple 
+When we render the scene from the light's perspective we'd much rather use a simple shader that only transforms the vertices to light space and not much more. For such a simple shader called `simpleDepthShader` we'll 
