@@ -412,7 +412,7 @@ Another visual discrepancy which you make like or dislike is that regions outsid
 
 You can see that in the image that there is some sort of imaginary region of light, and a large part outside this area is in shadow; this area represents the size of the depth map projected onto the floor. The reason this happens is that we earlier set the depth map's wrapping options to `GL_REPEAT`. 
 
-What we'd 
+What we'd rather have is that all coordinates 
 
 
 
