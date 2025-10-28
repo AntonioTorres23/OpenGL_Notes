@@ -353,6 +353,17 @@ Because the shadow map is limited by resolution, multiple fragments can sample t
 
 While this is generally okay, it becomes an issue when the light source looks at an angle towards the surface as in that case the depth map is also rendered from an angle. Several fragments then access the same titled depth texel while some are above and some below the floor; we get a shadow discrepancy. Because of this, some fragments are considered to be in shadow and some are not, giving the striped pattern from the image.  
 
+We solve this issue with a small little hack called a **shadow bias** where we simply offset the depth of the surface (or the shadow map) by a small bias amount such that the fragments are not incorrectly considered above the surface. 
+
+![[Pasted image 20251028112259.png]]
+
+With the bias applied, all the samples get a depth smaller than the surface's depth and thus the entire surface is correctly lit without any shadows. We can implement such a bias as follows.
+
+```
+float bias = 0.00f;
+float shadow = currentDepth - bias > closestDepth ? 1.0 : 0.0;
+```
+
 
 
 
