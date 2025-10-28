@@ -360,7 +360,7 @@ We solve this issue with a small little hack called a **shadow bias** where we s
 With the bias applied, all the samples get a depth smaller than the surface's depth and thus the entire surface is correctly lit without any shadows. We can implement such a bias as follows.
 
 ```
-float bias = 0.00f;
+float bias = 0.005;
 
 // if currentDepth - bias is greather than closestDepth, set shadow value to
 // 1.0, else, set shadow value to 0.0. 
@@ -370,7 +370,7 @@ float shadow = currentDepth - bias > closestDepth ? 1.0 : 0.0;
 
 A shadow bias of 0.005 solves the issues of our scene by a large extent, but you can imagine the bias value is highly on the angle between the light source and surface. If the surface would have a steep angle to the light source, the shadows may still display shadow acne. A more solid approach would be to change the amount of bias based on the surface angle towards the light: something we can solve with the dot product.
 
-`float bias = max(0.05 * (1.0 - dot))`
+`float bias = max(0.05 * (1.0 - dot(normal, lightDir)), 0.005);`
 
 
 
