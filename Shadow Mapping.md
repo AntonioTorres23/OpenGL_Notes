@@ -455,7 +455,11 @@ The shadows right now are a nice addition to the scenery, but it's still not exa
 
 ![[Pasted image 20251028144548.png]]
 
-Because the depth map has a fixed resolution, the depth frequently usually spans more than one fragment per texel. As a result, multiple fragments sample the same depth value from the depth map and come to the same shadow 
+Because the depth map has a fixed resolution, the depth frequently usually spans more than one fragment per texel. As a result, multiple fragments sample the same depth value from the depth map and come to the same shadow conclusions, which produces these jagged blocky edges. 
+
+You can reduce these blocky shadows by increasing the depth map resolution, or by trying to fit the light frustum as closely to the scene as possible. 
+
+Another (partial) solution to these jagged edges is called PCF, or **percentage-closer filtering**, which is a term that hosts many different filtering functions that produce *softer* shadows, making them appear less blocky or hard. The idea is to sample more than once from the depth map, each time with slightly different texture coordinates. For each individual sample we check whether it is in shadow or not. All the sub-results are then combined 
 
 
 
