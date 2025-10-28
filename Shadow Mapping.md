@@ -375,7 +375,11 @@ Here we have a maximum bias of 0.05 and a minimum of 0.005 based on the surface'
 
 ![[Pasted image 20251028125558.png]]
 
-Choosing the correct bias value(s) requires some tweaking as this will be different for each scene, but most of the time it's simply a matter of slowly incrementing the bias until all the acne is 
+Choosing the correct bias value(s) requires some tweaking as this will be different for each scene, but most of the time it's simply a matter of slowly incrementing the bias until all the acne is removed. 
+
+**Peter Panning**
+
+A disadvantage of using shadow bias is that you're applying an offset to the actual depth of objects. As a result, the bias may
  
 
 
