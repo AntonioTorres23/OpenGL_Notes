@@ -481,6 +481,40 @@ Here `textureSize` returns a `vec2` of the width and height of the given sampler
 
 By using more samples and/or varying `texelSize` variable you can increase the quality of soft shadows. Below you can see the shadows with simple PCF applied. 
 
+![[Pasted image 20251028152408.png]]
+
+From a distance the shadows look a lot better 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
