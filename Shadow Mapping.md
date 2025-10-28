@@ -475,8 +475,9 @@ for(int x = -1; x <= 1; ++x)
 	}
 }
 shadow /= 9.0;
-
 ```
+
+Here `textureSize` returns a `vec2` of the width and height of the given sampler texture at mipmap level 0. 1 dived over this returns the size of a single texel 
 
 
 
