@@ -361,6 +361,9 @@ With the bias applied, all the samples get a depth smaller than the surface's de
 
 ```
 float bias = 0.00f;
+
+// if currentDepth - bias is greather than closestDepth, set shadow value to
+// 1.0, else, set shadow value to 0.0. 
 float shadow = currentDepth - bias > closestDepth ? 1.0 : 0.0;
 ```
 
