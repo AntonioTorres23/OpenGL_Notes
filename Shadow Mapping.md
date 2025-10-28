@@ -426,7 +426,9 @@ Now whenever we sample outside the depth map's $[0,1]$ coordinate range, the **t
 
 ![[Pasted image 20251028135525.png]]
 
-This seems to still be one part showing a dark region. Those are the coordinates outside the far plane of the light's orthographic frustum. You can see that this dark region always occurs at the far end of the light source's frustum 
+This seems to still be one part showing a dark region. Those are the coordinates outside the far plane of the light's orthographic frustum. You can see that this dark region always occurs at the far end of the light source's frustum by looking at the shadow directions. 
+
+A light-space projected fragment coordinate is further than the light's far plane when its z coordinate is larger than 1.0. 
 
 
 
