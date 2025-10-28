@@ -375,8 +375,8 @@ Here we have a maximum bias of 0.05 and a minimum of 0.005 based on the surface'
 
 ![[Pasted image 20251028125558.png]]
 
-Choosing the correct bias 
-
+Choosing the correct bias value(s) requires some tweaking as this will be different 
+ 
 
 
 
