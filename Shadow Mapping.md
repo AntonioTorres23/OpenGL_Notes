@@ -428,10 +428,34 @@ Now whenever we sample outside the depth map's $[0,1]$ coordinate range, the **t
 
 This seems to still be one part showing a dark region. Those are the coordinates outside the far plane of the light's orthographic frustum. You can see that this dark region always occurs at the far end of the light source's frustum by looking at the shadow directions. 
 
-A light-space projected fragment coordinate is further than the light's far plane when its z coordinate is larger than 1.0. 
+A light-space projected fragment coordinate is further than the light's far plane when its z coordinate is larger than 1.0. In that case the `GL_CLAMP_TO_BORDER` wrapping method doesn't work anymore as we compare the coordinate's z component with the depth map values; this always returns true for z larger than 1.0. 
+
+The fix for this is also relatively easy as we simply force the **shadow** value to 0.0 whenever the projected vector's z coordinate is larger than 1.0.
+
+```
+float ShadowCalculation(vec4 fragPosLightSpace)
+{
+	[...]
+	if(projCoords.z > 1.0)
+		shadow = 0.0;
+	return shadow;
+}
+```
+
+Checking the far plane and clamping the depth map to a manually specified border color solves the over-sampling of the depth map. This finally gives us the result we are looking for. 
 
 
+![[Pasted image 20251028144116.png]]
 
+The result of all this does mean that we only have shadows where the projected fragment coordinates sit inside the depth map range so anything outside the light frustum will have no visible shadows. As games usually make sure this only occurs in the distance it is a much more plausible effect than the obvious black regions we had before. 
+
+**PCF**
+
+The shadows right now are a nice addition to the scenery, but it's still not exactly what we want. If you were to zoom in on the shadows the resolution dependency of shadow mapping quickly becomes apparent. 
+
+![[Pasted image 20251028144548.png]]
+
+Because the depth map has a fie
 
 
 
