@@ -385,7 +385,11 @@ A disadvantage of using shadow bias is that you're applying an offset to the act
 
 This shadow artifact is called **peter panning** since objects seem slightly detached from their shadows. We can use a little trick to solve most of the peter panning issue by using front face culling when rendering the depth map. You may remember from the face culling notes that OpenGL by default culls back-faces. By telling OpenGL that we want to cull front front faces during the shadow map stage we're switching that order around. 
 
-Because we only need depth values for the depth 
+Because we only need depth values for the depth map it shouldn't matter for solid objects whether we take the depth of their front faces or their back faces. Using their back face depths doesn't give wrong results as it doesn't matter if we have shadows inside objects; we can't see there anyways. 
+
+![[Pasted image 20251028131345.png]]
+
+
  
 
 
