@@ -400,7 +400,7 @@ RenderSceneToDepthMap();
 glCullFace(GL_BACK); // don't forget to reset face culling back to default
 ```
 
-This effectively solves the peter panning issues, but only for **solid** objects that actually have an inside without openings. In our scene for example, this works perfectly fine on the cubes. However, on the floor it won't work as well as culling the front face completely removes the floor from the equation. The floor is a single plane and would 
+This effectively solves the peter panning issues, but only for **solid** objects that actually have an inside without openings. In our scene for example, this works perfectly fine on the cubes. However, on the floor it won't work as well as culling the front face completely removes the floor from the equation. The floor is a single plane and would thus be completely culled. If one wants to solve peter panning with this trick, care has to be taken to only cull the front faces of objects where it makes 
 
 
 
