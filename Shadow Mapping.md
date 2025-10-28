@@ -459,7 +459,11 @@ Because the depth map has a fixed resolution, the depth frequently usually spans
 
 You can reduce these blocky shadows by increasing the depth map resolution, or by trying to fit the light frustum as closely to the scene as possible. 
 
-Another (partial) solution to these jagged edges is called PCF, or **percentage-closer filtering**, which is a term that hosts many different filtering functions that produce *softer* shadows, making them appear less blocky or hard. The idea is to sample more than once from the depth map, each time with slightly different texture coordinates. For each individual sample we check whether it is in shadow or not. All the sub-results are then combined 
+Another (partial) solution to these jagged edges is called PCF, or **percentage-closer filtering**, which is a term that hosts many different filtering functions that produce *softer* shadows, making them appear less blocky or hard. The idea is to sample more than once from the depth map, each time with slightly different texture coordinates. For each individual sample we check whether it is in shadow or not. All the sub-results are then combined and averaged and we get a nice soft looking shadow. 
+
+One simple implementation of PCF is to simply sample the surrounding texels of the depth map and average the results.
+
+``
 
 
 
