@@ -379,7 +379,11 @@ Choosing the correct bias value(s) requires some tweaking as this will be differ
 
 **Peter Panning**
 
-A disadvantage of using shadow bias is that you're applying an offset to the actual depth of objects. As a result, the bias may become large enough to see a visible offset of shadows compared to the actual object locations as you can see below (with an ex)
+A disadvantage of using shadow bias is that you're applying an offset to the actual depth of objects. As a result, the bias may become large enough to see a visible offset of shadows compared to the actual object locations as you can see below (with an exaggerated bias value).
+
+![[Pasted image 20251028130228.png]]
+
+This shadow artifact is called **peter panning**
  
 
 
