@@ -463,7 +463,18 @@ Another (partial) solution to these jagged edges is called PCF, or **percentage-
 
 One simple implementation of PCF is to simply sample the surrounding texels of the depth map and average the results.
 
-``
+```
+float shadow = 0.0;
+vec2 texelSize = 1.0 / texturesize(shadowMap, 0);
+for(int x = -1; x <= 1; ++x)
+{
+	for(int y = -1; y <=; ++y)
+	{
+		float pcfDepth = texture(shadowMap, projCoords.xy + vec2(x, y) * )
+	}
+}
+
+```
 
 
 
