@@ -371,11 +371,11 @@ float shadow = currentDepth - bias > closestDepth ? 1.0 : 0.0;
 A shadow bias of 0.005 solves the issues of our scene by a large extent, but you can imagine the bias value is highly on the angle between the light source and surface. If the surface would have a steep angle to the light source, the shadows may still display shadow acne. A more solid approach would be to change the amount of bias based on the surface angle towards the light: something we can solve with the dot product.
 
 `float bias = max(0.05 * (1.0 - dot(normal, lightDir)), 0.005);`
-Here we have a maximum bias of 0.05 and a minimum of 0.005 based on the surface's normal and light direction. This way, surfaces like the floor are almost perpendicular to the light source get a small bias, while surfaces like the cube's side-faces get a much larger bias. The following image shows the same scene but now witt
+Here we have a maximum bias of 0.05 and a minimum of 0.005 based on the surface's normal and light direction. This way, surfaces like the floor are almost perpendicular to the light source get a small bias, while surfaces like the cube's side-faces get a much larger bias. The following image shows the same scene but now with a shadow bias. 
 
+![[Pasted image 20251028125558.png]]
 
-
-
+Choosing the correct bias 
 
 
 
