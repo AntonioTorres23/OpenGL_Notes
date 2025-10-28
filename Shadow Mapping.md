@@ -485,7 +485,9 @@ By using more samples and/or varying `texelSize` variable you can increase the q
 
 From a distance the shadows look a lot better and less hard. If you zoom in you can still see the resolution artifacts of shadow mapping, but in general this gives good results for most applications. 
 
-You can find the complete source code of the example
+You can find the complete source code of the example [here](https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/3.1.3.shadow_mapping/shadow_mapping.cpp).
+
+**Orthographic vs Perspective**
 
 
 
