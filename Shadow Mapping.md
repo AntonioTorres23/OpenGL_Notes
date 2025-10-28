@@ -383,7 +383,7 @@ A disadvantage of using shadow bias is that you're applying an offset to the act
 
 ![[Pasted image 20251028130228.png]]
 
-This shadow artifact is called **peter panning** since objects seem slightly detached from their shadows. We can use a little trick to solve most of the 
+This shadow artifact is called **peter panning** since objects seem slightly detached from their shadows. We can use a little trick to solve most of the peter panning issue by using front face culling when rendering the depth map. You may remember from the 
  
 
 
