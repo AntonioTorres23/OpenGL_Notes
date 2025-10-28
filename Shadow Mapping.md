@@ -335,7 +335,21 @@ Activating this shader, binding the proper textures, and activating the default 
 
 If you did things right you should indeed see (albeit with quite a few artifacts) shadows on the floor and the cubes. You can find the source code of the demo application [here](https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/3.1.2.shadow_mapping_base/shadow_mapping_base.cpp).
 
+**Improving Shadow Maps**
 
+We managed to get the basics of shadow mapping working, but as you can see we're not there yet due to several (clearly visible) artifacts related to shadow mapping we need to fix. We'll focus on fixing these artifacts in the next sections.
+
+**Shadow Acne**
+
+It is obvious something is wrong from the previous image. A closer zoom shows us a very obvious Moiré-like pattern. 
+
+![[Pasted image 20251028110127.png]]
+
+We can see a large part of the floor quad rendered with obvious black lines in an alternating fashion. This shadow mapping artifact is called **shadow acne** and can be explained by the following image. 
+
+![[Pasted image 20251028110305.png]]
+
+Because the shadow map is limited by resolution, multiple fragments can sample the same value from the depth map when they're relatively far away from the light source
 
 
 
