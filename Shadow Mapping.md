@@ -368,7 +368,7 @@ float shadow = currentDepth - bias > closestDepth ? 1.0 : 0.0;
 ```
 
 
-
+A shadow bias of 0.005 solves the issues of our scene by a large extent, but you can imagine the bias value is highly on the angle between the light source and surface. If the surface would have a steep angle to the light source, the shadows may still display shadow acne. A more solid approach would be to change the amount of bias based on the surface angle 
 
 
 
