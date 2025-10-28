@@ -493,7 +493,9 @@ There is a difference between rendering the depth map with an orthographic or a 
 
 ![[Pasted image 20251028162839.png]]
 
+Perspective projections make most sense for light sources that have actual locations, unlike directional lights. 
 
+Another subtle difference with using a perspective  
 
 
 
