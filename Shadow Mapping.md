@@ -390,7 +390,9 @@ Because we only need depth values for the depth map it shouldn't matter for soli
 ![[Pasted image 20251028131345.png]]
 
 
- 
+ *The right picture is without culling and the left picture is with front-face culling*
+
+
 
 
 
