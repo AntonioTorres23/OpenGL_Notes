@@ -455,7 +455,7 @@ The shadows right now are a nice addition to the scenery, but it's still not exa
 
 ![[Pasted image 20251028144548.png]]
 
-Because the depth map has a fie
+Because the depth map has a fixed resolution, the depth frequently spans more than one fragment 
 
 
 
