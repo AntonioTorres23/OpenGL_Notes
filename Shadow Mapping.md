@@ -406,7 +406,7 @@ Another consideration is that objects that are close to the shadow receiver (lik
 
 **Over Sampling**
 
-Another visual discrepancy which you make like or dislike is that regions outside the light's visible frustum are considered to be in shadow while they're (usually) not. This happens because projected coordinates outside the light's frustum are higher 
+Another visual discrepancy which you make like or dislike is that regions outside the light's visible frustum are considered to be in shadow while they're (usually) not. This happens because projected coordinates outside the light's frustum are higher than 1.0 and thus sample the depth texture outside its default range of $[0,1]$. Based on the texture's wrapping method, we will get incorrect depth results not based on the real depth values from 
 
 
 
