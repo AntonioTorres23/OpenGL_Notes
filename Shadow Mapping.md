@@ -412,9 +412,21 @@ Another visual discrepancy which you make like or dislike is that regions outsid
 
 You can see that in the image that there is some sort of imaginary region of light, and a large part outside this area is in shadow; this area represents the size of the depth map projected onto the floor. The reason this happens is that we earlier set the depth map's wrapping options to `GL_REPEAT`. 
 
-What we'd rather have is that all coordinates 
+What we'd rather have is that all coordinates outside the depth map's range have a depth of 1.0 which as a result means these coordinates will never be in shadow (as no object will have a depth larger than 1.0). We can do this by configuring a texture border color and set the depth map's texture wrap option to `GL_CLAMP_TO_BORDER`.
 
+```
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+float borderColor[] = {1.0f, 1.0f, 1.0f, 1.0f}; // array of 5 float values
 
+glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
+```
+
+Now whenever we sample outside the depth map's $[0,1]$ coordinate range, the **texture** function will always return a depth of 1.0, producing a shadow value of 0.0. The result now looks more plausible. 
+
+![[Pasted image 20251028135525.png]]
+
+This seems to still be one part showing a dark region. Those are the coordinates outside the far plane of the light's orthographic frustum. You can see that this dark region 
 
 
 
