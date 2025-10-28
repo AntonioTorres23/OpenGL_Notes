@@ -506,6 +506,12 @@ in vec2 TexCoords;
 uniform sampler2D depthMap; 
 uniform float near_plane;
 uniform float far_plane;
+
+float LinearizeDepth(float depth)
+{
+	float z = depth * 2.0 - 1.0; // back to Normalized Device Coordinates
+	
+}
 ```
 
 
