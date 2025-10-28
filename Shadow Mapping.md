@@ -495,7 +495,7 @@ There is a difference between rendering the depth map with an orthographic or a 
 
 Perspective projections make most sense for light sources that have actual locations, unlike directional lights. 
 
-Another subtle difference with using a perspective 
+Another subtle difference with using a perspective projection matrix is that visualizing the depth buffer will often give an almost completely white result. This happens because with perspective projection the depth is transformed to non-linear depth values with most of its noticeable range close to the near plane. To be able to properly view the depth values as we did with the orthographic projection 
 
 
 
