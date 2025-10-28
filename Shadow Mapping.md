@@ -489,6 +489,12 @@ You can find the complete source code of the example [here](https://learnopengl.
 
 **Orthographic vs Perspective**
 
+There is a difference between rendering the depth map with an orthographic or a perspective projection matrix. An orthographic projection matrix does not deform the scene with perspective so all view/light rays are parallel. This makes it a great projection matrix for directional lights. A perspective projection matrix however does deform all vertices based on perspective which gives different results. The following image shows the different shadow regions of both projection methods. 
+
+![[Pasted image 20251028162839.png]]
+
+
+
 
 
 
