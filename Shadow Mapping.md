@@ -483,7 +483,9 @@ By using more samples and/or varying `texelSize` variable you can increase the q
 
 ![[Pasted image 20251028152408.png]]
 
-From a distance the shadows look a lot better 
+From a distance the shadows look a lot better and less hard. If you zoom in you can still see the resolution artifacts of shadow mapping, but in general this gives good results for most applications. 
+
+You can find the complete source code of the example
 
 
 
