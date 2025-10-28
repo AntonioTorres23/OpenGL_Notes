@@ -402,7 +402,11 @@ glCullFace(GL_BACK); // don't forget to reset face culling back to default
 
 This effectively solves the peter panning issues, but only for **solid** objects that actually have an inside without openings. In our scene for example, this works perfectly fine on the cubes. However, on the floor it won't work as well as culling the front face completely removes the floor from the equation. The floor is a single plane and would thus be completely culled. If one wants to solve peter panning with this trick, care has to be taken to only cull the front faces of objects where it makes sense. 
 
-Another consideration is that objects that are close to the shadow 
+Another consideration is that objects that are close to the shadow receiver (like the distant cube) may still give incorrect results. However, with normal bias values you can generally avoid peter panning. 
+
+**Over Sampling**
+
+Another visual discrepancy which you make like or dislike is that regions outside the light's visible frustum are considered to be in shadow while they're (usually) not. This happens because projected coordinates outside the light's frustum are higher 
 
 
 
