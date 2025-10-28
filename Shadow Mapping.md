@@ -524,8 +524,15 @@ void main()
 }
 ```
 
-This shows 
+This shows depth values similar to what we've seen with orthographic projection. Note that this is only useful for debugging; the depth checks remain the same with orthographic or projection matrices as the relative depths do not change. 
 
+## Additional resources
+
+- [Tutorial 16 : Shadow mapping](http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-16-shadow-mapping/): similar shadow mapping tutorial by opengl-tutorial.org with a few extra notes.
+- [Shadow Mapping - Part 1](http://ogldev.atspace.co.uk/www/tutorial23/tutorial23.html): another shadow mapping tutorial by ogldev.
+- [How Shadow Mapping Works](https://www.youtube.com/watch?v=EsccgeUpdsM): a 3-part YouTube tutorial by TheBennyBox on shadow mapping and its implementation.
+- [Common Techniques to Improve Shadow Depth Maps](https://msdn.microsoft.com/en-us/library/windows/desktop/ee416324%28v=vs.85%29.aspx): a great article by Microsoft listing a large number of techniques to improve the quality of shadow maps.
+- [How I Implemented Shadows in my Game Engine](https://www.youtube.com/watch?v=uueB2kVvbHo): great video by ThinMatrix on his methods of improving shadow maps.
 
 
 
