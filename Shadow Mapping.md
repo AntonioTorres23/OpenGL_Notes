@@ -392,7 +392,15 @@ Because we only need depth values for the depth map it shouldn't matter for soli
 
  *The right picture is without culling and the left picture is with front-face culling*
 
+To fix peter panning we cull all front faces during the shadow map generation. Note that you need to enable `GL_CULL_FACE` first.
 
+```
+glCullFace(GL_FRONT); // enable front-face culling
+RenderSceneToDepthMap();
+glCullFace(GL_BACK); // don't forget to reset face culling back to default
+```
+
+This effectively solves the peter panning issues, but only for **solid** objects that actually have an inside without openings. In our scene for example, this works perfectly fine on the cubes. However, on the floor it won't work as well as culling the front face completely removes the floor from the equation. The floor is a single plane and would 
 
 
 
