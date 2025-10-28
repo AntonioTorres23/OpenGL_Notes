@@ -351,7 +351,7 @@ We can see a large part of the floor quad rendered with obvious black lines in a
 
 Because the shadow map is limited by resolution, multiple fragments can sample the same value from the depth map when they're relatively far away from the light source. The image shows the floor where each yellow titled panel represents a single texel of the depth map. As you can see, several fragments sample the same depth sample. 
 
-While this is generally okay, it becomes an issue when the light source looks at an angle towards the surface as in that case the depth map is also rendered from an angle. Several fragments then access the same titled depth texel while 
+While this is generally okay, it becomes an issue when the light source looks at an angle towards the surface as in that case the depth map is also rendered from an angle. Several fragments then access the same titled depth texel while some are above and some below the floor; we get a shadow discrepancy. Because o t 
 
 
 
