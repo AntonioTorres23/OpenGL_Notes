@@ -479,7 +479,7 @@ shadow /= 9.0;
 
 Here `textureSize` returns a `vec2` of the width and height of the given sampler texture at mipmap level 0. 1 dived over this returns the size of a single texel that we use to offset the texture coordinates, making sure each new sample samples a different depth value. Here we sample 9 values around the projected coordinate's x and y value, test for shadow occlusion, and finally average the results by a total of samples taken. 
 
-
+By using 
 
 
 
