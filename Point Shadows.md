@@ -307,3 +307,19 @@ There are a few subtle differences: the lighting code is the same, but we now ha
 The biggest difference is in the content of the `ShadowCalculation` function that now samples depth values from a cubemap instead of a 2D texture. Let's discuss its content step by step. 
 
 The first thing we have to do is retrieve the depth of the cubemap. You may remember from the cubemap section of these notes that we stored the depth as the linear distance between the fragment and the light position; we're taking a similar approach here. 
+
+```
+float ShadowCalculation(vec3 fragPos)
+{
+	vec3 fragToLight = fragPos - lightPos;
+	float closestDepth = texture(depthMap, fragToLight).r;
+}
+```
+
+Here we take the difference vector between the fragment's position and the light's position and use that vector as a direction vector to sample the cubemap. The direction vector doesn't need to be a unit vector to sample from a cubemap so there's no need to normalize it. The resulting `closestDepth` value is the normalized depth value between the light source and its closest visible fragment. 
+
+The `closestDepth` value is currently in the range $[0,1]$ so we first transform it back to $[0, far plane]$ by multiplying it with the `far_plane`.
+
+`closestDepth *= far_plane;`
+
+Next we retrieve the depth value between the current fragment and the light source, which we can easily obtain by taking 
