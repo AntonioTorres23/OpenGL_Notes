@@ -100,7 +100,9 @@ Each light space transformation matrix contains both a projection and view matri
 float aspect = (flaot)SHADOW_WIDTH/(float)SHADOW_HEIGHT; // gets aspect ratio
 float near = 1.0f; // near-plane of perspective matrix
 float far = 25.0f; // far-plane of perspective matrix
-glm::mat4
-
+// don't forget to set the Field of View to radians
+glm::mat4 shadowProj = glm::perspective(glm::radians(90.0f), aspect, near, far);
 ```
+
+Important to note here is the field of view 
 
