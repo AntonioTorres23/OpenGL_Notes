@@ -17,3 +17,45 @@ The generated depth cubemap is then passed to the lighting fragment shader that 
 
 To create a cubemap of a light's surrounding depth values we have to render the scene 6 times: one for each face. One (quite obvious) way to do this, is render the scene 6 times with 6 different view matrices, each time attaching a different cubemap face to the framebuffer object. This would look something like this. 
 
+```
+for(unsigned int i = 0; i < 6 ; i++)
+{
+	Glenum face = GL_TEXTURE_CUBE_MAP_POSITIVE_X + i;
+	glFramebuffer2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, face, depthCubemap, 0);
+	BindViewMatrix(lightViewMatrices[i]);
+	RenderScene();
+}
+```
+
+
+This can be quite expensive though as a lot of render calls are necessary for this single depth map. In these notes we're going to use an alternative (more organized) approach using a little trick in the geometry shader that allows us to build the depth cubemap with just a single render pass. 
+
+First we'll need to create a cubemap.
+
+```
+unsigned int depthCubemap;
+glGenTextures(1, &depthCubemap);
+```
+
+And assign each of the single cubemap faces a 2D depth-valued texture image.
+
+```
+const unsigned int SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 1024;
+glBindTexture(GL_TEXTURE_CUBE_MAP, depthCubemap);
+for (unsigned int i = 0; i < 6; i++)
+{
+	glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL_DEPTH_COMPONENT,            SHADOW_WIDTH, SHADOW_HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+}
+```
+
+And don't forget to set the texture parameters.
+
+```
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE); 
+```
+
+Normally we'd attach a single face of a cubemap texture to the framebuffer object and render the scene 6 times, each time switching the depth buffer target of the framebuffer to a different cubemap face. Since we're going 
