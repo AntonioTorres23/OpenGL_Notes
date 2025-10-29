@@ -123,3 +123,6 @@ Here we create 6 view matrices and multiply them with the projection matrix to g
 
 These transformation matrices are sent to the shaders that render the depth into the cubemap. 
 
+**Depth Shaders**
+
+To render depth values to a 
