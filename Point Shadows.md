@@ -97,6 +97,10 @@ With the framebuffer and cubemap set, we need some way to transform all the scen
 Each light space transformation matrix contains both a projection and view matrix. For the projection matrix we're going to use a perspective projection matrix (contains fov); the light source represents a point in space so perspective projection makes most sense. Each light space transformation matrix uses the same projection matrix. 
 
 ```
-float aspect = (flaot)SHADOW_WIDTH/(float)SHADOW
+float aspect = (flaot)SHADOW_WIDTH/(float)SHADOW_HEIGHT; // gets aspect ratio
+float near = 1.0f; // near-plane of perspective matrix
+float far = 25.0f; // far-plane of perspective matrix
+glm::mat4
+
 ```
 
