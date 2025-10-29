@@ -94,5 +94,5 @@ The process is exactly the same as with default shadow mapping, although this ti
 
 With the framebuffer and cubemap set, we need some way to transform all the scene's geometry to the relevant light spaces in all 6 directions of the light. Just like the shadow mapping notes we're going to need a light space transformation matrix $T$, but this time one for each face. 
 
-Each light space transf
+Each light space transformation matrix contains both a projection and view matrix. For the projection matrix we're going to use a perspective projection matrix (contains fov); the light source represents a point in space so perspective projection makes most sense. 
 
