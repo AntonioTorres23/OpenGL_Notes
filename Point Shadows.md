@@ -322,4 +322,45 @@ The `closestDepth` value is currently in the range $[0,1]$ so we first transform
 
 `closestDepth *= far_plane;`
 
-Next we retrieve the depth value between the current fragment and the light source, which we can easily obtain by taking 
+Next we retrieve the depth value between the current fragment and the light source, which we can easily obtain by taking the length of `fragToLight` due to how we calculated depth values in the cubemap.
+
+`float currentDepth = length(fragToLight);`
+
+This returns a depth value in the same (or larger) range as `closestDepth`. 
+
+Now we can compare both depth values to see which is closer than the other and determine whether the current fragment is in shadow. We also include a shadow bias so we don't get shadow acne as discussed in the shadow mapping notes. 
+
+`float bias = 0.05;`
+`float shadow = currentDepth - bias > closestDepth ? 1.0 : 0.0;`
+
+The complete `ShadowCalculation` then becomes. 
+
+```
+float ShadowCalculations(vec3 fragPos)
+{
+	// get vector between fragment position and light position
+	vec3 fragToLight = fragPos - lightPos;
+	// use the light to fragment vector to sample from the depth map
+	float closestDepth = texture(depthMap, fragToLight).r; 
+	// it is currently in linear range between [0,1]. Re-transform back to original
+	// value
+	closestDepth *= far_plane;
+	// now get current linear depth as the length between the fragment and light 
+	// position
+	float currentDepth = length(fragToLight);
+	// test for shadows
+	float bias = 0.05;
+	float shadow = currentDepth - bias > closestDepth ? 1.0 : 0.0;
+	
+	return shadow;	
+}
+```
+
+
+With these shaders we already get pretty good shadows and this time in all surrounding directions from a point light. With a point light positioned at the center of a simple scene it'll look a bit like this. 
+
+![[Pasted image 20251029170234.png]]
+
+You can find the source code of this demo [here](https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/3.2.1.point_shadows/point_shadows.cpp).
+
+**Visualizing Cubemap Depth Buffer**
