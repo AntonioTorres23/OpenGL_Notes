@@ -7,4 +7,13 @@ This section of notes builds upon the previous shadow mapping notes, so unless y
 
 This technique is mostly similar to directional shadow mapping: we generate a depth map from the light's perspective(s), sample the depth map based on the current fragment position, and compare each fragment with the stored depth value to see whether it is in shadow. The main difference between directional shadow mapping and omnidirectional shadow mapping is the depth map we use. 
 
-The depth map we need requires a rendering scene from all surrounding directions of a point light and as such a normal 2D depth map will not work; what if we were to use a cubemap instead? Because a cubemap can store full environmental data with only 6 faces, it is possible to 
+The depth map we need requires a rendering scene from all surrounding directions of a point light and as such a normal 2D depth map will not work; what if we were to use a cubemap instead? Because a cubemap can store full environmental data with only 6 faces, it is possible to render the entire scene to each of the faces of a cubemap and sample these as the point light's surrounding depth values. 
+
+![[Pasted image 20251029143137.png]]
+
+The generated depth cubemap is then passed to the lighting fragment shader that samples the cubemap with a direction vector to obtain the closest depth (from the light's perspective) at that fragment. Most of the complicated stuff we've already discussed in the shadow mapping notes. What makes this technique a bit more difficult is the depth cubemap generation. 
+
+**Generating the Depth Cubemap**
+
+To create a cubemap of a light's surrounding depth values we have to render the scene 6 times: one for each face. One (quite obvious) way to do this, is render the scene 6 times with 6 different view matrices, each time attaching a different cubemap face to the framebuffer object. This would look something like this. 
+
