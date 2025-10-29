@@ -304,4 +304,6 @@ void main()
 
 There are a few subtle differences: the lighting code is the same, but we now have a `samplerCube` uniform and the `ShadowCalculation` takes the current fragment's positions as its argument instead of the fragment position in light space. We also include the light's frustum `far_plane` that we'll later need. 
 
-The biggest difference is in the content of the `ShadowCalculation` 
+The biggest difference is in the content of the `ShadowCalculation` function that now samples depth values from a cubemap instead of a 2D texture. Let's discuss its content step by step. 
+
+The first thing we have to do is retrieve the depth of the cubemap. You may remember from the cubemap section of these notes that we stored the depth as the linear distance between the fragment and the light position; we're taking a similar approach here. 
