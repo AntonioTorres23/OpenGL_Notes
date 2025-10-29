@@ -125,4 +125,22 @@ These transformation matrices are sent to the shaders that render the depth into
 
 **Depth Shaders**
 
-To render depth values to a 
+To render depth values to a depth cubemap we're going to need a total of 3 shaders: a vertex, a geometer, and a fragment shader. 
+
+The geometry shader will be the shader responsible for transforming all world-space vertices to the 6 different light spaces. Therefore, the vertex shader simply simply transforms vertices to world-space and directs them to the geometry shader. 
+
+```
+#version 330 core
+layout (location = 0) in vec3 aPos
+
+uniform mat4 model;
+
+void main()
+{
+	gl_Position = model * vec4(aPos, 1.0);
+}
+```
+
+The geometry shader will take as input 3 triangle vertices and a uniform array of light space transformation matrices. The geometry shader is responsible for transforming the vertices to the light spaces; this is also where it gets interesting. 
+
+The geometry shader has a built-in variable called `gl_Layer` that specifies which cubemap face to emit a primitive to 
