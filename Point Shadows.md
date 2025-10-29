@@ -5,4 +5,6 @@ What this section of notes will focus on is the generation of dynamic shadows in
 
 This section of notes builds upon the previous shadow mapping notes, so unless you're familiar with traditional shadow mapping it is advised to read the shadow mapping section first. 
 
-This technique is mostly similar to directional shadow mapping: we generate a depth map from the light's perspective(s), sample the depth map based on the current fragment position, and compare each fragment with the stored depth value to see whether it is in shadow. The main difference between directional shadow mapping and omnidirectional shadow 
+This technique is mostly similar to directional shadow mapping: we generate a depth map from the light's perspective(s), sample the depth map based on the current fragment position, and compare each fragment with the stored depth value to see whether it is in shadow. The main difference between directional shadow mapping and omnidirectional shadow mapping is the depth map we use. 
+
+The depth map we need requires a rendering scene from all surrounding directions of a point light and as such a normal 2D depth map will not work; what if we were to use a cubemap instead? Because a cubemap can store full environmental data with only 6 faces, it is possible to 
