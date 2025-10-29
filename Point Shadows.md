@@ -304,4 +304,4 @@ void main()
 
 There are a few subtle differences: the lighting code is the same, but we now have a `samplerCube` uniform and the `ShadowCalculation` takes the current fragment's positions as its argument instead of the fragment position in light space. We also include the light's frustum `far_plane` that we'll later need. 
 
-The biggest difference is in the content of the `ShadowCalculation`
+The biggest difference is in the content of the `ShadowCalculation` 
