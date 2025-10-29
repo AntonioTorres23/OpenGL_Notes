@@ -104,5 +104,7 @@ float far = 25.0f; // far-plane of perspective matrix
 glm::mat4 shadowProj = glm::perspective(glm::radians(90.0f), aspect, near, far);
 ```
 
-Important to note here is the field of view 
+Important to note here is the field of view parameter of `glm::perspective` that we set to 90 degrees. By setting this to 90 degrees we make sure the viewing field is exactly large enough to fill  a single face of the cubemap such that all faces align correctly to each other at the edges. 
+
+As the projection
 
