@@ -162,8 +162,146 @@ void main()
 		for(int i = 0; i < 3, ++i)
 		{
 			FragPos = gl_in[i].gl_Position;
-			
+			gl_Position = shadowMatrices[face] * FragPos;
+			EmitVertex();
 		}
+		EndPrimitive
 	}
 }
 ```
+
+This geometry shader is relatively straightforward. We take as input a triangle, and output a total of 6 triangles (6 * 3 equals 18 vertices). In the main function we iterate over 6 cubemap faces where we specify each face as the output face by storing the face integer into `gl_Layer`. We then generate the output triangles by transforming each world-space input vertex to the relevant light space by multiplying `FragPos` with the face's light-space transformation matrix. Note that we also send the resulting `FragPos` variable to the fragment shader that we'll need to calculate a depth value. 
+
+In the last notes we use an empty fragment shader and let OpenGL figure out the depth values of the depth map. This time we're going to calculate our own (linear) depth as the linear distance between each closest fragment position and the light source's position. Calculating our own depth values makes the later shadow calculations a bit more intuitive. 
+
+```
+#version 330 core
+in vec4 FragPos;
+
+uniform vec3 lightPos;
+uniform float far_plane;
+
+void main()
+{
+	// get distance between fragment and light source
+	float lightDistance = length(FragPos.xyz - lightPos);
+	
+	// map to [0-1] range by dividing by far-plane
+	lightDistance = lightDistance / far_plane;
+	
+	// write this as modified depth
+	gl_FragDepth = lightDistance;
+}
+```
+
+The fragment shader takes as input the `FragPos` from the geometry shader, the light's position vector, and the frustum's far plane value. Here we take the distance between the fragment and the light source, map it to the $[0,1]$  range and write it as the fragment's depth value. 
+
+Rendering the scene with these shaders and the cubemap-attached framebuffer object active should give you a completely filled depth cubemap for the second pass's shadow calculations.
+
+I believe the fragment shader is only for debugging purposes as to see the actual depth values from the cubemap.
+
+**Omnidirectional Shadow Maps**
+
+With everything set up it is time to render the actual omnidirectional shadows. The procedure is similar to the directional shadow mapping notes, although this time we bind a cubemap texture instead of a 2D texture and also pass the light projection's far plane variable to the shaders. 
+
+```
+glViewPort(0, 0, SCR_WIDTH, SCR_HEIGHT);
+glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+shader.use()
+// ... send uniforms to shader (including light's far_plane value)
+glActivateTexture(GL_TEXTURE0);
+glBindTexture(GL_TEXTURE_CUBE_MAP, depthCubemap);
+// ... bind other textures
+RenderScene();
+```
+
+Here the `renderScene` function renders a few cubes in a large room scatted around a light source at the center of the scene. 
+
+The vertex and fragment shader are mostly similar to the original shadow mapping shaders: the difference being that the fragment shader no longer requires a fragment position in light space as we can now sample the depth values with a direction vector. 
+
+Because of this, the vertex shader doesn't needs to transform its position vectors to light space so we can remove the `FragPosLightSpace` variable. 
+
+```
+#version 330 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec3 aNormal;
+layout (location = 2) in vec2 aTexCoords;
+
+out vec2 TexCoords;
+
+out VS_OUT {
+	vec3 FragPos;
+	vec3 Normal;
+	vec2 TexCoords;
+	
+} vs_out;
+
+uniform mat4 projection;
+uniform mat4 view; 
+uniform mat4 model;
+
+void main()
+{
+	vs_out.FragPos = vec3(model * vec4(aPos, 1.0));
+	vs_out.Normal = transpose(inverse(mat3(model))) * aNormal;
+	vs_out.TexCoords = aTexCoords;
+	
+	gl_Position = projection * view * model * (aPos, 1.0);
+}
+```
+
+The fragment shader's Blinn-Phong lighting code is exactly the same as we had before with a shadow multiplication at the end. 
+
+```
+#version 330 core
+out vec4 FragColor;
+
+in VS_OUT {
+	vec3 FragPos;
+	vec3 Normal;
+	vec2 TexCoords;
+} fs_in
+
+uniform sampler2D diffuseTexture;
+uniform samplerCube depthMap;
+
+uniform vec3 lightPos;
+uniform vec3 viewPos;
+
+uniform float far_plane;
+
+float ShadowCalculations(vec3 fragPos)
+{
+	[...]
+}
+
+void main()
+{
+	vec3 color = texture(diffuseTexture, fs_in.TexCoords);
+	vec3 normal = normalize(fs_in.Normal);
+	vec3 lightColor = vec3(0.3);
+	// ambient
+	vec3 ambient = color * 0.3;
+	// diffuse
+	vec3 lightDir = normalize(lightPos - fs_in.FragPos);
+	float diff = max(dot(lightDir, normal), 0.0);
+	vec3 diffuse = diff * lightColor; 
+	// specular 
+	vec3 viewDir = normalize(viewPos - fs_in.FragPos);
+	float spec = 0.0;
+	vec3 halfwayDir = normalize(lightDir + viewDir);
+	spec = pow(max(dot(normal, halfwayDir), 0.0), 64.0);
+	vec3 specular = spec * lightColor;
+	// calculate shadow
+	float shadow = ShadowCalculations(fs_in.FragPos);	
+
+	vec3 lighting = (ambient + (1.0 - shadow) * (diffuse + specular)) * color;
+	
+	FragColor = vec4(lighting, 1.0);
+}
+
+```
+
+There are a few subtle differences: the lighting code is the same, but we now have a `samplerCube` uniform and the `ShadowCalculation` takes the current fragment's positions as its argument instead of the fragment position in light space. We also include the light's frustum `far_plane` that we'll later need. 
+
+The biggest difference is in the content of the `ShadowCalculation`
