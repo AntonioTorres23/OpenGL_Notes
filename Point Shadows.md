@@ -119,4 +119,7 @@ shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::ve
 shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(0.0, 0.0, -1.0), glm::vec3(0.0, 1.0, 0.0));
 ```
 
-Here we create 6 view matrices and multiply them with the projection matrix to get a total of 6 different light space transformation matrices. The `target` parameter of `glm::lookAt` each looks into the direction of a single 
+Here we create 6 view matrices and multiply them with the projection matrix to get a total of 6 different light space transformation matrices. The `target` parameter of `glm::lookAt` each looks into the direction of a single cubemap face. 
+
+These transformation matrices are sent to the shaders that render the depth into the cubemap. 
+
