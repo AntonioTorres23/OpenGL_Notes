@@ -421,7 +421,9 @@ As most of these samples are redundant in that they sample close to the original
 vec3 sampleOffsetDirections[20] = vec3[]
 {
 	vec3(1, 1, 1), vec3(1, -1, -1), vec3(-1, -1, 1), vec3(-1, 1, 1),
-    vec3(1, 1, -1), vec3(1, -1, -1), vec3(-1, -1, -1)
+    vec3(1, 1, -1), vec3(1, -1, -1), vec3(-1, -1, -1), vec3(-1, 1, -1),
+    vec3(1, 1, 0),  vec3(1, -1, 0),  vec3(-1, -1, 0),  vec3(-1, 1, 0), 
+    vec3(1, 0, 1),  vec3(-1, 0, 1),  vec3(1, 0, -1)
 }
 ```
 
