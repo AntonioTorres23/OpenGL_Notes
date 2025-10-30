@@ -433,9 +433,20 @@ From this we can adapt the PCF algorithm to take a fixed amount of samples from 
 ```
 float shadow = 0.0;
 float bias = 0.5;
-int samples
+int samples = 20;
+float viewDistance = length(viewPos - fragPos);
+float diskRadius = 0.05;
+for (int i = 0; i < samples; i++)
+{
+	float closestDepth = texture(depthMap, fragToLight + sampleOffsetDirections[i]     * diskRadius).r;
+	closestDepth *= far_plane; // undo mapping [0,1]
+	if(currentDepth - bias > closestDepth)
+		shadow += 1.0;
+}
+shadow /= float(samples);
 ```
 
+Here we add multiple offsets, scaled by some
 
 
 
