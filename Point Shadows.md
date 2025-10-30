@@ -364,3 +364,123 @@ With these shaders we already get pretty good shadows and this time in all surro
 You can find the source code of this demo [here](https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/3.2.1.point_shadows/point_shadows.cpp).
 
 **Visualizing Cubemap Depth Buffer**
+
+If you're somewhat like me you probably didn't get this right on the first try so it makes sense to do some debugging, with one of the obvious checks being validating whether the depth map was built correctly. A simple trick to visualize the depth buffer is to take the `closestDepth` variable in the `ShadowCalculation` function and display that variable as. 
+
+```
+FragColor = vec4(vec3(closestDepth / far_plane), 1.0);
+```
+
+The result is a grayed out scene where each color represents the linear depth values of the scene.
+
+![[Pasted image 20251030094755.png]]
+
+
+You can also see the to-be shadowed regions on the outside wall. If it looks somewhat similar, you know the depth cubemap was properly generated. 
+
+**PCF**
+
+Since omnidirectional shadow maps are based on the same principles as traditional shadow mapping it also has the same resolution dependent artifacts. If you zoom in close enough you can again see the jagged edges. **Percentage-closer Filtering** or PCF allows us to smooth out these jagged edges by filtering multiple samples around the fragment position and average the results. 
+
+If we take the same simple PCF filter from the shadow mapping notes and add a third dimension we get. 
+
+```
+float shadow = 0.0;
+float bias = 0.05;
+float samples = 4.0;
+float offset = 0.1;
+
+for(float x = -offset; x < offset; x += offset / (samples * 0.5))
+{
+	for(float y = -offset; y < offset; y += offset / (samples * 0.5))
+	{
+		for(float z = -offset; z < offset; z += offset / (samples * 0.5))
+		{
+			float closestDepth = texture(depthMap, fragToLight + vec3(x, y, z)).r;
+			closestDepth *= far_plane; // undo mapping [0,1]
+			if(currentDepth - bias > closestDepth)
+				s
+		}
+	}
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
