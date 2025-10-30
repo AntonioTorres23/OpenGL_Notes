@@ -430,7 +430,11 @@ vec3 sampleOffsetDirections[20] = vec3[]
 
 From this we can adapt the PCF algorithm to take a fixed amount of samples from `sampleOffsetDirections` and use these to sample the cubemap. The advantage here is that we need a lot less samples to get visually similar results. 
 
-
+```
+float shadow = 0.0;
+float bias = 0.5;
+int samples
+```
 
 
 
