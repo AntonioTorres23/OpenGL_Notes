@@ -399,16 +399,23 @@ for(float x = -offset; x < offset; x += offset / (samples * 0.5))
 			float closestDepth = texture(depthMap, fragToLight + vec3(x, y, z)).r;
 			closestDepth *= far_plane; // undo mapping [0,1]
 			if(currentDepth - bias > closestDepth)
-				s
+				shadow += 1.0;
 		}
 	}
 }
+shadow /= (samples * samples * samples);
 ```
 
 
+The code isn't that different from the traditional shadow mapping code. We calculate and add texture offsets dynamically for each axis based on a fixed number of samples. For each sample we repeat the original shadow process on the off-set sample direction and average the result at the end. 
 
+The shadows now look more soft and smooth and give more plausible results. 
 
+![[Pasted image 20251030095954.png]]
 
+However, with samples set to 4.0 we take a total of 64 samples each fragment which is a lot!
+
+As most of these samples are redundant in that they sample close to the original direction vector it may make more sense to only sample in perpendicular directions of the sample direction vector. However as there is no (easy) way to figure out which sub-directions are redundant this becomes difficult. One trick we can use is to take an array of offset directions that are all roughly separable e.g. each of them points in completely different directions. This will significantly reduce the number of sub-directions that
 
 
 
