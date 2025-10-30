@@ -415,7 +415,14 @@ The shadows now look more soft and smooth and give more plausible results.
 
 However, with samples set to 4.0 we take a total of 64 samples each fragment which is a lot!
 
-As most of these samples are redundant in that they sample close to the original direction vector it may make more sense to only sample in perpendicular directions of the sample direction vector. However as there is no (easy) way to figure out which sub-directions are redundant this becomes difficult. One trick we can use is to take an array of offset directions that are all roughly separable e.g. each of them points in completely different directions. This will significantly reduce the number of sub-directions that
+As most of these samples are redundant in that they sample close to the original direction vector it may make more sense to only sample in perpendicular directions of the sample direction vector. However as there is no (easy) way to figure out which sub-directions are redundant this becomes difficult. One trick we can use is to take an array of offset directions that are all roughly separable e.g. each of them points in completely different directions. This will significantly reduce the number of sub-directions that are close together. Below we have such an array of a maximum of 20 offset directions. 
+
+```
+vec3 sampleOffsetDirections[20] = vec3[]
+{
+	vec3(1, 1, 1), vec3(1, -1, -1), vec3(-1, )
+}
+```
 
 
 
