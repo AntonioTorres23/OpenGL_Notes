@@ -419,14 +419,16 @@ As most of these samples are redundant in that they sample close to the original
 
 ```
 vec3 sampleOffsetDirections[20] = vec3[]
-{
+(
 	vec3(1, 1, 1), vec3(1, -1, -1), vec3(-1, -1, 1), vec3(-1, 1, 1),
     vec3(1, 1, -1), vec3(1, -1, -1), vec3(-1, -1, -1), vec3(-1, 1, -1),
     vec3(1, 1, 0),  vec3(1, -1, 0),  vec3(-1, -1, 0),  vec3(-1, 1, 0), 
     vec3(1, 0, 1),  vec3(-1, 0, 1),  vec3(1, 0, -1),   vec3(-1, 0, -1);
     vec3(0, 1, 1), vec3(0, -1,  1),  vec3(0, -1, -1),  vec3(0, 1, -1)
-}
+);
 ```
+
+From this we can adapt the PCF algorithm to take a fixed amount of samples from `sampleOffsetDirections` and use these to sample the cubemap. The advantage here is that we need a lot less samples to get visually similar results. 
 
 
 
