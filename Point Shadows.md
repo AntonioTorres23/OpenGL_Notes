@@ -446,10 +446,27 @@ for (int i = 0; i < samples; i++)
 shadow /= float(samples);
 ```
 
-Here we add multiple offsets, scaled by some
+Here we add multiple offsets, scaled by some `diskRadius`, around the original `fragToLight` direction vector to sample from the cubemap.
+
+Another interesting trick we can apply here is that we can change `diskRadius` based on the distance of the viewer to the fragment, making the shadows softer when far away and sharper when close by. 
+
+`float diskRadius = (1.0 + (viewDistance / far_plane)) / 25.0;`
+
+The results of the updated PCF algorithm gives just as good, if not better, results of soft shadows.
+
+![[Pasted image 20251030101924.png]]
 
 
+Of course, the bias we add to each sample is highly based on context and will always require tweaking based on the scene you are working with. Play around with all the values and see how they affect the scene. 
 
+You can find the final code here: [here](https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/3.2.2.point_shadows_soft/point_shadows_soft.cpp).
+
+I should mention that using geometry shaders to generate a depth map isn't necessarily faster than rendering the scene 6 times for each face. Using a geometry shader like this has its own performance penalties that may outweigh the performance gain of using one in the first place. This of course depends entirely on the type of environment, the specific video card drivers, and plenty of other factors. So if you really care about pushing the most out of your system, make sure to profile both methods and select the more efficient one for your scene. 
+
+## Additional resources
+
+- [Multipass Shadow Mapping With Point Lights](http://ogldev.atspace.co.uk/www/tutorial43/tutorial43.html): omnidirectional shadow mapping tutorial by ogldev.
+- [Omni-directional Shadows](http://www.cg.tuwien.ac.at/~husky/RTR/OmnidirShadows-whyCaps.pdf): a nice set of slides about omnidirectional shadow mapping by Peter Houska.
 
 
 
