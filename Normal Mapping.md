@@ -14,4 +14,4 @@ By using per-fragment normals we can trick the lighting into believing a surface
 
 ![[Pasted image 20251105164243.png]]
 
-As you can see, 
+As you can see, it gives an enormous boost in detail and for a relatively low cost. Since we only change the normal vectors per fragment there is no need to change the lighting equation. 
