@@ -1,2 +1,2 @@
 
-All of our scenes are filled with meshes, each consisting 
+All of our scenes are filled with meshes, each consisting of hundreds of maybe thousands of triangles. We boosted the realism by wrapping 2D textures on these flat triangles, hiding the fact that the polygons are just tiny flat triangles. Textures help, but when you take a good
