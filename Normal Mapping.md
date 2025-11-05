@@ -11,3 +11,7 @@ If we think about this from a light's perspective: how come the surface is lit a
 
 ![[Pasted image 20251105162447.png]]
 By using per-fragment normals we can trick the lighting into believing a surface consists of tiny little planes (perpendicular to the normal vectors) giving the surface an enormous boost in detail. This technique to use per-fragment normals compared to per-surface normals is called **normal** **mapping** or **bump mapping**. Applied to the brick plane it looks a bit like this.  
+
+![[Pasted image 20251105164243.png]]
+
+As you can see, 
