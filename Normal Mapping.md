@@ -5,4 +5,4 @@ For instance, take a brick surface. A brick surface is quite a rough surface and
 
 ![[Pasted image 20251105142709.png]]
 
-The lighting doesn't take any of the small cracks and holes into account and completely ignores the deep stripes between the bricks; 
+The lighting doesn't take any of the small cracks and holes into account and completely ignores the deep stripes between the bricks; the surface looks perfectly flat. We can partly fix the flat look by using a specular to pretend some surfaces are less lit due to depth or other details 
