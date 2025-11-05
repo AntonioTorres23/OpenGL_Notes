@@ -4,3 +4,5 @@ All of our scenes are filled with meshes, each consisting of hundreds of maybe t
 For instance, take a brick surface. A brick surface is quite a rough surface and obviously not completely flat: it contains sunken cement stripes and a lot of detailed little holes and cracks. If we were to view such a brick surface in a lit scene the immersion gets easily broken. Below we can see a brick texture applied to a flat surface lit by a point light. 
 
 ![[Pasted image 20251105142709.png]]
+
+The lighting doesn't take any of the small cracks and holes into account and completely ignores the deep stripes between the bricks; 
