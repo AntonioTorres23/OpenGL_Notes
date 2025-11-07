@@ -87,4 +87,7 @@ Calculating the tangent and bitangent vectors is not as straightforward as the n
 
 From the image we can see that the texture coordinate differences of an edge $E_2$ of a triangle (denoted as $\Delta U_2$ and $\Delta V_2$) are expressed in the same direction as the tangent vector $T$ and bitangent vector $B$. Because of this we can write both displayed edges $E_1$ and $E_2$ of the triangle as a linear combination of the tangent vector $T$ and the bitangent vector $B$. 
 
-$E_1 = \Delta U_1T + \Delta $ 
+$E_1 = \Delta U_1T + \Delta V_1B$ 
+$E_2 = \Delta U_2T + \Delta V_2B$
+
+Which we can 
