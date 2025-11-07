@@ -65,3 +65,7 @@ The lighting doesn't look right. This happens because the sampled normals of thi
 You can see that all the normals point somewhat in the positive z direction even though they should be pointing towards the positive y direction. One solution to this problem is to define a normal map for each possible direction of the surface; in the case of a cube we would need 6 normal maps. However, with advanced meshes that can have more than hundreds of possible surface directions this becomes an infeasible approach. 
 
 A different solution exists that does all the lighting in a different coordinate space: a coordinate space where the normal map vectors always point towards the positive z direction; all other lighting vectors are then transformed relative to this positive z direction. This way we can always use the same normal map, regardless of orientation. This coordinate space is called **tangent space**. 
+
+**Tangent Space**
+
+Normal vectors in a normal map are expressed in tangent space where normals always  
