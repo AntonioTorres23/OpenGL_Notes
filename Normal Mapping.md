@@ -110,4 +110,4 @@ $\begin{bmatrix} \Delta U_1 & \Delta V_1 \\ \Delta U_2 & \Delta V_2 \end{bmatrix
 
 This allows us to solve for $T$ and $B$ . This does require us to calculate the inverse of the delta texture coordinate matrix. I won't go into mathematical details of calculating a matrix' inverse, but it roughly translates to 1 over the determinant of the matrix, multiplied by its adjugate matrix.
 
-$\begin{bmatrix} T_x & T_y & T_z \\ B_x & B_y & B_z \end{bmatrix} = 1/\Delta U_1\Delta V_2 - \Delta U_2 \Delta V_1$   
+$\begin{bmatrix} T_x & T_y & T_z \\ B_x & B_y & B_z \end{bmatrix} = \frac{1}{\Delta U_1\Delta V_2 - \Delta U_2 \Delta V_1}$   
