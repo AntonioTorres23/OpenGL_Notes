@@ -90,4 +90,6 @@ From the image we can see that the texture coordinate differences of an edge $E_
 $E_1 = \Delta U_1T + \Delta V_1B$ 
 $E_2 = \Delta U_2T + \Delta V_2B$
 
-Which we can 
+Which we can also write as. 
+
+$(E_1x, E_{1y}, E_{1z})$
