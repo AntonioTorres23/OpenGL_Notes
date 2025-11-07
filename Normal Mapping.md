@@ -58,4 +58,10 @@ There is one issue however that greatly limits this use of normal maps. The norm
 
 ![[Pasted image 20251107133244.png]]
 
-The lighting doesn't look right
+The lighting doesn't look right. This happens because the sampled normals of this plane still roughly point in the positive z direction even though they should mostly point in the positive y direction. As a result, the lighting thinks the surface's normals are the same as before when the plane was pointing towards the positive z direction; the lighting is incorrect. The image below shows what the sampled normals approximately look like on the surface. 
+
+![[Pasted image 20251107134219.png]]
+
+You can see that all the normals point somewhat in the positive z direction even though they should be pointing towards the positive y direction. One solution to this problem is to define a normal map for each possible direction of the surface; in the case of a cube we would need 6 normal maps. However, with advanced meshes that can have more than hundreds of possible surface directions this becomes an infeasible approach. 
+
+A different solution exists that does all the lighting in a different coordinate space
