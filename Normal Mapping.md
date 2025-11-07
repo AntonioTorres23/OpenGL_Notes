@@ -20,4 +20,8 @@ As you can see, it gives an enormous boost in detail and for a relatively low co
 
 To get normal mapping to work we're going to need a per-fragment normal. Similar to what we did diffuse and specular maps we can use a 2D texture to store per-fragment normal data. This way we can sample a 2D texture to get a normal vector for that specific fragment. 
 
-While normal vectors are geometric entities and textures are generally only used for color information, storing normal vectors in a texture may not be immediately obvious. If you think about color vectors in a texture they are represented as a 3D vector with an r, g, and b component. We can similarly store a normal vector's x, y, and z component in the respective color component. Normal vectors range between -1 and 1 so they're first mapped to
+While normal vectors are geometric entities and textures are generally only used for color information, storing normal vectors in a texture may not be immediately obvious. If you think about color vectors in a texture they are represented as a 3D vector with an r, g, and b component. We can similarly store a normal vector's x, y, and z component in the respective color component. Normal vectors range between -1 and 1 so they're first mapped to $[0,1]$.
+
+`vec3 rgb_normal = normal * 0.5 + 0.5; // transforms from [-1,1] to [0,1]`
+
+With normal vectors transformed to an RGB color component like this, we can store a per-fragment normal derived from the shape of a surface onto a 2D texture. An example **normal map** 
