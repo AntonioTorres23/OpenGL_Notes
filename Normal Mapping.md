@@ -25,3 +25,8 @@ While normal vectors are geometric entities and textures are generally only used
 `vec3 rgb_normal = normal * 0.5 + 0.5; // transforms from [-1,1] to [0,1]`
 
 With normal vectors transformed to an RGB color component like this, we can store a per-fragment normal derived from the shape of a surface onto a 2D texture. An example **normal map** of the brock surface at the start of this chapter is shown below. 
+
+![[Pasted image 20251107125446.png]]
+
+This (and almost all normal maps you find online) will have a blueish tint. This is because the normals are all closely pointing outwards towards the positive z axis $(0, 0, 1)$: a blueish color. 
+
