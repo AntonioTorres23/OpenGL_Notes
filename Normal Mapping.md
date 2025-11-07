@@ -41,7 +41,17 @@ void main()
 	// obtain normal from normal map in range [0, 1]
 	normal = texture(normalMap, fs_in.TexCoords).rgb;
 	// transform normal vector to range [-1, 1]
-	normal = 
+	normal = normalize(normal * 2.0 - 1.0);
+	
+	[...]
+	// proceed with lighting as normal
 }
 ```
 
+Here we reverse the process of mapping normals to RGB colors by remapping the sampled normal color from $[0,1]$ back to $[-1,1]$ and then use the sampled normal vectors for upcoming lighting calculations. In this case we used a Blinn-Phong shader. 
+
+By slowly moving the light source over time you really get a sense of depth using the normal map. Running this normal mapping example gives the exact results as shown in the beginning of these notes. 
+
+![[Pasted image 20251107132731.png]]
+
+There 
