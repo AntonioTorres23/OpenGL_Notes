@@ -101,4 +101,4 @@ We can calculate $E$ as the difference vector between two triangle positions, an
 
 The last equation allows us to write it in a different from: that of matrix multiplication. 
 
-$\begin{bmatrix} E_{1x} & E_$
+$\begin{bmatrix} E_{1x} & E_{1y} & E_{1z} \\ E_{2x} $
