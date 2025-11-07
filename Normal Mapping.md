@@ -18,4 +18,6 @@ As you can see, it gives an enormous boost in detail and for a relatively low co
 
 **Normal Mapping**
 
-To get normal mapping to work we're going to need a per-fragment normal. Similar to what we did 
+To get normal mapping to work we're going to need a per-fragment normal. Similar to what we did diffuse and specular maps we can use a 2D texture to store per-fragment normal data. This way we can sample a 2D texture to get a normal vector for that specific fragment. 
+
+While normal vectors are geometric entities and textures are generally only used for color information. 
