@@ -115,3 +115,10 @@ $\begin{bmatrix} T_x & T_y & T_z \\ B_x & B_y & B_z \end{bmatrix} = \frac{1}{\De
 This final equation gives us a formula for calculating the tangent vector $T$ and bitangent vector $B$ from a triangle's two edges and its texture coordinates. 
 
 Don't worry if you do not fully understand the mathematics behind this. As long as you understand we can calculate tangents and bitangents from a triangle's vertices and its texture coordinates (since texture coordinates are in the same space as tangent vectors) you're halfway there. 
+
+**Manual calculation of tangents and bitangents**
+
+In the previous demo we had a simple normal mapped plane facing the positive z direction. This time we want to implement normal mapping using tangent space so we can orient this plane however we want and normal mapping would still work. Using the previously discussed mathematics we're going to manually calculate this surface's tangent and bitangent vectors. 
+
+Let's assume the plane is built up from the following vectors (with 1,2,3 and 1,3,4 as its two triangles).
+
