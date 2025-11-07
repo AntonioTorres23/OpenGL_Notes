@@ -28,5 +28,5 @@ With normal vectors transformed to an RGB color component like this, we can stor
 
 ![[Pasted image 20251107125446.png]]
 
-This (and almost all normal maps you find online) will have a blueish tint. This is because the normals are all closely pointing outwards towards the positive z axis $(0, 0, 1)$: a blueish color. 
+This (and almost all normal maps you find online) will have a blueish tint. This is because the normals are all closely pointing outwards towards the positive z axis $(0, 0, 1)$: a blueish color. The deviations in color represent normal vectors that are slightly offset from the general positive z direction
 
