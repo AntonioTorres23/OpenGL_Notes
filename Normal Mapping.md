@@ -54,4 +54,4 @@ By slowly moving the light source over time you really get a sense of depth usin
 
 ![[Pasted image 20251107132731.png]]
 
-There is one issue however that greatly limits this use of normal maps. 
+There is one issue however that greatly limits this use of normal maps. The normal map we used had normal surface vectors that all pointed somewhat in the positive z direction. This worked because the plane's surface normal was also pointing in the positive z direction. However, what would happen if we used the s
