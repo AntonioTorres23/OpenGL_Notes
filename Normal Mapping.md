@@ -31,5 +31,17 @@ With normal vectors transformed to an RGB color component like this, we can stor
 
 This (and almost all normal maps you find online) will have a blueish tint. This is because the normals are all closely pointing outwards towards the positive z axis $(0, 0, 1)$: a blueish color. The deviations in color represent normal vectors that are slightly offset from the general positive z direction, giving a sense of depth to the texture. For example, you can see that at the top of each brick the color tends to be more greenish, which makes sense as the top side of a brick would have normals pointing more in the positive y direction $(0, 1, 0)$ which happens to be the color green.
 
-With a simple plane, looking at the positive z-axis, we can take [this](https://learnopengl.com/img/textures/brickwall.jpg) diffuse texture and [this](https://learnopengl.com/img/textures/brickwall_normal.jpg) normal map to render the image from the previous section. Note that the linked normal map is different from the one shown above. The reason for this is that OpenGL reads texture coordinates with the y (or v) coordinate reversed from how textures are generally created. The linked normal map thus has its y (or green) component inversed 
+With a simple plane, looking at the positive z-axis, we can take [this](https://learnopengl.com/img/textures/brickwall.jpg) diffuse texture and [this](https://learnopengl.com/img/textures/brickwall_normal.jpg) normal map to render the image from the previous section. Note that the linked normal map is different from the one shown above. The reason for this is that OpenGL reads texture coordinates with the y (or v) coordinate reversed from how textures are generally created. The linked normal map thus has its y (or green) component inversed (you can see the green colors are now pointing downwards); if you fail to take this into account, the lighting will be incorrect. Load both textures, bind them to the proper texture units, and render a plane with the following changes in the fragment shader. 
+
+```
+uniform sampler2D normalMap;
+
+void main()
+{
+	// obtain normal from normal map in range [0, 1]
+	normal = texture(normalMap, fs_in.TexCoords).rgb;
+	// transform normal vector to range [-1, 1]
+	normal = 
+}
+```
 
