@@ -108,3 +108,4 @@ Try to visualize the matrix multiplications in your head and confirm that this i
 
 $\begin{bmatrix} \Delta U_1 & \Delta V_1 \\ \Delta U_2 & \Delta V_2 \end{bmatrix}^{-1} \begin{bmatrix} E_{1x} & E_{1y} & E_{1z} \\ E_{2x} & E_{2y} & E{2z} \end{bmatrix} = \begin{bmatrix} T_x & T_y & T_z \\ B_x & B_y & B_z \end{bmatrix}$      
 
+This allows us to solve for $T$ and $B$ . This does require us to calculate the inverse of the delta texture coordinate matrix. I won't go into mathematical details of calculating a matrix' inverse, but it roughly tra
