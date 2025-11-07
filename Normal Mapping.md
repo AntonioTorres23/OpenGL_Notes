@@ -148,4 +148,7 @@ glm::vec2 deltaUV2 = uv3 - uv1;
 
 With the required data for calculating tangents and bitangents we can start following the equation from the previous section. 
 
+```
+float f = 1.0f / ()
+```
 
