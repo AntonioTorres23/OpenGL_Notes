@@ -122,3 +122,9 @@ In the previous demo we had a simple normal mapped plane facing the positive z d
 
 Let's assume the plane is built up from the following vectors (with 1,2,3 and 1,3,4 as its two triangles).
 
+```
+// positions 
+glm::vec3 pos1(-1.0, 1.0, 0.0);
+glm::vec3 pos2(-1.0, -1.0, 0.0);
+
+```
