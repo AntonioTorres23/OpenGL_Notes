@@ -126,5 +126,26 @@ Let's assume the plane is built up from the following vectors (with 1,2,3 and 1,
 // positions 
 glm::vec3 pos1(-1.0, 1.0, 0.0);
 glm::vec3 pos2(-1.0, -1.0, 0.0);
+glm::vec3 pos3( 1.0, -1.0, 0.0);
+glm::vec3 pos4( 1.0, 1.0, 0.0);
+// texture coordinates
+glm::vec2 uv2(0.0, 1.0);
+glm::vec2 uv2(0.0, 0.0);
+glm::vec2 uv3(1.0, 0.0);
+glm::vec2 uv4(1.0, 1.0);
+// normal vector
+glm::vec3 nm(0.0, 0.0, 1.0);
+```
+
+We first calculate the first triangle's edges and delta UV coordinates.
 
 ```
+glm::vec3 edge1 = pos2 - pos1;
+glm::vec3 edge2 = pos3 - pos1;
+glm::vec2 deltaUV1 = uv2 - uv1;
+glm::vec2 deltaUV2 = uv3 - uv1;
+```
+
+With the required data for calculating tangents and bitangents we can start following the equation from the previous section. 
+
+
