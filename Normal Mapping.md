@@ -100,3 +100,5 @@ $(E_{2x}, E_{2y}, E_{2z}) = \Delta U_2(T_x, T_y, T_z) + \Delta V_2(B_x, B_y, B_z
 We can calculate $E$ as the difference vector between two triangle positions, and $\Delta U$ and $\Delta V$ as their texture coordinate differences. We're then left with two unknowns (tangent $T$ and bitangent $B$) and two equations. You may remember from your algebra classes that this allows us to solve for $T$ and $B$. 
 
 The last equation allows us to write it in a different from: that of matrix multiplication. 
+
+$\begin{bmatrix} E_{1x} & E_$
