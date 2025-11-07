@@ -68,4 +68,4 @@ A different solution exists that does all the lighting in a different coordinate
 
 **Tangent Space**
 
-Normal vectors in a normal map are expressed in tangent space where normals always point roughly in the positive z direction. Tangent space is a space that's local to the surface of a triangle: the normals are relative to the local reference frame  
+Normal vectors in a normal map are expressed in tangent space where normals always point roughly in the positive z direction. Tangent space is a space that's local to the surface of a triangle: the normals are relative to the local reference frame of individual triangles. Think of it as the local space of the normal map's vectors; they're all defined pointing in the positive z direction regardless  
