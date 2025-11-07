@@ -21,12 +21,15 @@ As you can see, it gives an enormous boost in detail and for a relatively low co
 To get normal mapping to work we're going to need a per-fragment normal. Similar to what we did diffuse and specular maps we can use a 2D texture to store per-fragment normal data. This way we can sample a 2D texture to get a normal vector for that specific fragment. 
 
 While normal vectors are geometric entities and textures are generally only used for color information, storing normal vectors in a texture may not be immediately obvious. If you think about color vectors in a texture they are represented as a 3D vector with an r, g, and b component. We can similarly store a normal vector's x, y, and z component in the respective color component. Normal vectors range between -1 and 1 so they're first mapped to $[0,1]$.
-
+`// I think we use convert the normal from [-1, 1] to [0, 1] is becuase`
+`// a `
 `vec3 rgb_normal = normal * 0.5 + 0.5; // transforms from [-1,1] to [0,1]`
 
 With normal vectors transformed to an RGB color component like this, we can store a per-fragment normal derived from the shape of a surface onto a 2D texture. An example **normal map** of the brock surface at the start of this chapter is shown below. 
 
 ![[Pasted image 20251107125446.png]]
 
-This (and almost all normal maps you find online) will have a blueish tint. This is because the normals are all closely pointing outwards towards the positive z axis $(0, 0, 1)$: a blueish color. The deviations in color represent normal vectors that are slightly offset from the general positive z direction, giving a sense of depth to the texture. For example, you can see that at the top of each brick the color tends to be more greenish 
+This (and almost all normal maps you find online) will have a blueish tint. This is because the normals are all closely pointing outwards towards the positive z axis $(0, 0, 1)$: a blueish color. The deviations in color represent normal vectors that are slightly offset from the general positive z direction, giving a sense of depth to the texture. For example, you can see that at the top of each brick the color tends to be more greenish, which makes sense as the top side of a brick would have normals pointing more in the positive y direction $(0, 1, 0)$ which happens to be the color green.
+
+With a simple plane, looking at the positive z-axis, we can take [this](https://learnopengl.com/img/textures/brickwall.jpg) diffuse texture and [this](https://learnopengl.com/img/textures/brickwall_normal.jpg) normal map 
 
