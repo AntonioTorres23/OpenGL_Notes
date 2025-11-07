@@ -95,4 +95,6 @@ Which we can also write as.
 $(E_{1x}, E_{1y}, E_{1z}) = \Delta U_1(T_x, T_y, T_z) + \Delta V_1(B_x, B_y, B_z)$ 
 
 
-$(E_{1x}, E_{1y}, E_{1z}) = \Delta U_1(T_x, T_y, T_z) + \Delta V_1(B_x, B_y, B_z)$ 
+$(E_{2x}, E_{2y}, E_{2z}) = \Delta U_2(T_x, T_y, T_z) + \Delta V_2(B_x, B_y, B_z)$ 
+
+We can calculate $E$ as the difference vector between two triangle positions, and $\Delta U$ and $\Delta V$ as their texture 
