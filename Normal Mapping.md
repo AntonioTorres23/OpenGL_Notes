@@ -92,4 +92,4 @@ $E_2 = \Delta U_2T + \Delta V_2B$
 
 Which we can also write as. 
 
-$(E_1x, E_{1y}, E_{1z})$
+$(E_{1x}, E_{1y}, E_{1z}) = \Delta U_1(T_x, T_y, T_z)$
