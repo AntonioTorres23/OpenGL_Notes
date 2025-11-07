@@ -81,4 +81,10 @@ We already know the up vector, which is the surface's normal vector. The right a
 - T represents Tangent.
 - N represents Normal.
 
-Calculating the tangent and bitangent vectors is not as straightforward as the normal vector. We can see from the image 
+Calculating the tangent and bitangent vectors is not as straightforward as the normal vector. We can see from the image that the direction of the normal map's tangent and bitangent vector align with the direction in which we define a surface's texture coordinates. We'll use this fact to calculate tangent and bitangent vectors for each surface. Retrieving them does require a bit of math; take a look at the following image. 
+
+![[Pasted image 20251107151522.png]]
+
+From the image we can see that the texture coordinate differences of an edge $E_2$ of a triangle (denoted as $\Delta U_2$ and $\Delta V_2$) are expressed in the same direction as the tangent vector $T$ and bitangent vector $B$. Because of this we can write both displayed edges $E_1$ and $E_2$ of the triangle as a linear combination of the tangent vector $T$ and the bitangent vector $B$. 
+
+$E_1 = \Delta U_1T + \Delta $ 
