@@ -68,4 +68,17 @@ A different solution exists that does all the lighting in a different coordinate
 
 **Tangent Space**
 
-Normal vectors in a normal map are expressed in tangent space where normals always point roughly in the positive z direction. Tangent space is a space that's local to the surface of a triangle: the normals are relative to the local reference frame of individual triangles. Think of it as the local space of the normal map's vectors; they're all defined pointing in the positive z direction regardless  
+Normal vectors in a normal map are expressed in tangent space where normals always point roughly in the positive z direction. Tangent space is a space that's local to the surface of a triangle: the normals are relative to the local reference frame of individual triangles. Think of it as the local space of the normal map's vectors; they're all defined pointing in the positive z direction regardless of the final transformed direction. Using a specific matrix we can then transform normal vectors from this *local* tangent space to world or view coordinates, orienting them along the final mapped surface's direction. 
+
+Let's say we have the incorrect normal mapped surface from the previous section looking in the positive y direction. The normal map is defined in tangent space, so one way to solve the problem is to calculate a matrix to transform normals from tangent space to a different space such that they're aligned with the surface's normal direction. 
+
+Such a matrix is called a **TBN** matrix where the letters depict a **Tangent**, **Bitangent**, and **Normal** vector. These are the vectors we need to construct this matrix. To construct such a *change-of-basis* matrix, that transforms a tangent-space vector to a different coordinate space, we need three perpendicular vectors that are aligned along the surface of a normal map: an up, right, and forward vector; similar to what we did in the camera notes. 
+
+We already know the up vector, which is the surface's normal vector. The right and forward vector are the tangent and bitangent vector respectively. The following image of a surface shows all three vectors on a surface. 
+
+![[Pasted image 20251107150905.png]]
+- B represents Bitangent.
+- T represents Tangent.
+- N represents Normal.
+
+Calculating the tangent and bitangent vectors is not as straightforward as the normal vector. We can see from the image 
