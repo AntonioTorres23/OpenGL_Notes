@@ -209,4 +209,22 @@ So now that we have a TBN matrix, how are we going to use it? There are two ways
 1. We take the TBN matrix that transforms any vector from tangent to world space, give it to the fragment shader, and transform the sampled normal from tangent space to world space using the TBN matrix; the normal is then in the same space as the other lighting variables. 
 2. We take the inverse of the TBN matrix that transforms any vector from world space to tangent space and use this matrix to transform not the normal, but the other relevant lighting variables to tangent space; the normal is then again in the same space as the other lighting variables. 
 
-Let's review the first case
+Let's review the first case. The normal vector we sample from the normal map is expressed in tangent space whereas the other lighting vectors (light and view direction) are expressed in world space. By passing the TBN matrix to the fragment shader we can multiply the sampled tangent space normal with this TBN matrix to transform the normal vector to the same reference as the other lighting vectors. This way, all the lighting calculations (specifically the dot product) makes sense. 
+
+Sending the TBN matrix to the fragment shader is easy.  
+
+```
+out VS_OUT {
+	vec3 FragPos;
+	vec2 TexCoords;
+	mat3 TBN;
+} vs_out;
+
+void main()
+{
+	[...]
+	vs_out.TBN = mat3(T, B, N);
+}
+```
+
+
