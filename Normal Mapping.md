@@ -200,4 +200,8 @@ void main()
 }
 ```
 
-Here we first transform all the TBN vectors to the coordinate system we'd like to work in, which in this case is world-space as we multiply them with the **model** matrix. Then we create the actual TBN matrix by directly supplying `mat3`'s constructor with the relevant column vectors. Note that if we 
+Here we first transform all the TBN vectors to the coordinate system we'd like to work in, which in this case is world-space as we multiply them with the **model** matrix. Then we create the actual TBN matrix by directly supplying `mat3`'s constructor with the relevant column vectors. Note that if we want to be really precise, we would multiply the TBN vectors with the normal matrix as we only care about the orientation of the vectors.
+
+Technically there is no need for the bitangent variable in the vertex shader. All three TBN vectors are perpendicular to each other so we can calculate the bitangent ourselves in the vertex shader by taking the cross product of the $T$ and $N$ vector: `vec3 B = cross(N, T);`.
+
+
