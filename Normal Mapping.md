@@ -163,5 +163,5 @@ bitangent1.z = f * (-deltaUV2.x * edge1.z - deltaUV1.x * edge2.z);
 
 ```
 
-Here we first pre-calculate the fractional part of the equation as $f$ and then for each vector component we do the corresponding matrix multiplaca
+Here we first pre-calculate the fractional part of the equation as $f$ and then for each vector component we do the corresponding matrix multiplication by $f$. If you compare this code with the final equation you can see it is a direct translation. Because a triangle is always a flat shape, we only need to calculate a single tangent/bitangent pair per triangle as they will be the same for each of the triangles vertices. 
 
