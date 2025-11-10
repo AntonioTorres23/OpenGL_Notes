@@ -155,6 +155,9 @@ tangent1.x = f * (deltaUV2.y * edge1.x - deltaUV1.y * edge2.y);
 tangent1.y = f * (deltaUV2.y * edge1.y - deltaUV1.y * edge2.y);
 tangent1.z = f * (deltaUV2.y * edge1.z - deltaUV1.y * edge2.z);
 
+bitangent1.x = f * (-deltaUV2.x * edge1.x - deltaUV1.x * edge2.y);
+bitangent1.y = f * (-deltaUV2.x * edge1.y - deltaUV1.x * edge2.y);
+bitangent1.z = f * (-deltaUV2.x * edge1.z - deltaUV1.x * edge2.z);
 
 
 ```
