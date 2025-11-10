@@ -204,4 +204,6 @@ Here we first transform all the TBN vectors to the coordinate system we'd like t
 
 Technically there is no need for the bitangent variable in the vertex shader. All three TBN vectors are perpendicular to each other so we can calculate the bitangent ourselves in the vertex shader by taking the cross product of the $T$ and $N$ vector: `vec3 B = cross(N, T);`.
 
+So now that we have a TBN matrix, how are we going to use it? There are two ways we can use a TBN matrix for normal mapping, and we'll demonstrate both of them:
 
+1. We take the 
