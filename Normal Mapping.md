@@ -237,4 +237,12 @@ in VS_OUT {
 } fs_in;
 ```
 
-With this TBN
+With this TBN matrix we can now update the normal mapping code to include the tangent-to-world space transformation. 
+
+```
+normal = texture(normalMap, fs_in.TexCoords).rgb;
+normal = normal * 2.0 - 1.0;
+normal = normalize(fs_in.TBN * normal);
+```
+
+Because the resulting **normal** is now in world space, there is no need to change any 
