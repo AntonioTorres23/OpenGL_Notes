@@ -191,7 +191,11 @@ Then within the vertex shader's main function we create the TBN matrix.
 void main()
 {
 	[...]
-	vec3 T = normalize(vec3(model * vec4(aTangent)));
-	vec3 B = normalize
+	vec3 T = normalize(vec3(model * vec4(aTangent,   0.0)));
+	vec3 B = normalize(vec3(model * vec4(aBitangent, 0.0)));
+	vec3 N = normalize(vec3(model * vec4(aNormal,    0.0)));
+	mat3 TBN = mat3(T, B, N); 
+	
+	
 }
 ```
