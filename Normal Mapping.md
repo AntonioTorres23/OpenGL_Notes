@@ -245,4 +245,6 @@ normal = normal * 2.0 - 1.0;
 normal = normalize(fs_in.TBN * normal);
 ```
 
-Because the resulting **normal** is now in world space, there is no need to change any 
+Because the resulting **normal** is now in world space, there is no need to change any of the other fragment shader code as the lighting code assumes the normal vector to be in world space. 
+
+Let's also review the second case, where we take the inverse of the TBN matrix to transform all relevant world-space vectors to the space the sampled normal 
