@@ -151,6 +151,6 @@ With the required data for calculating tangents and bitangents we can start foll
 ```
 float f = 1.0f / (deltaUV1.x * deltaUV2.y - deltaUV2.x * deltaUV1.y);
 
-tangent1.x = f * 
+tangent1.x = f * (deltaUV2.y * edge1.x - deltaUV)
 ```
 
