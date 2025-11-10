@@ -167,4 +167,6 @@ Here we first pre-calculate the fractional part of the equation as $f$ and then 
 
 The resulting tangent and bitangent vector should have a value of $(1,0,0)$ and $(0,1,0)$ respectively that together with the normal $(0,0,1)$ forms an orthogonal Tangent Bitangent Normal (TBN) matrix. Visualized on the plane, the TBN vectors would look like this. 
 
+![[Pasted image 20251110144324.png]]
 
+With tangent and bitangent vectors defined per vertex we can start implementing *proper* normal mapping. 
