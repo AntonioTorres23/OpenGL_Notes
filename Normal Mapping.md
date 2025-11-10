@@ -227,4 +227,14 @@ void main()
 }
 ```
 
+In the fragment shader we similarly take a `mat3` as an input variable.
 
+```
+in VS_OUT {
+	vec3 FragPos;
+	vec3 TexCoords;
+	mat3 TBN
+} fs_in;
+```
+
+With this TBN
