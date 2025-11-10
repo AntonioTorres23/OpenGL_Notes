@@ -165,4 +165,4 @@ bitangent1.z = f * (-deltaUV2.x * edge1.z - deltaUV1.x * edge2.z);
 
 Here we first pre-calculate the fractional part of the equation as $f$ and then for each vector component we do the corresponding matrix multiplication by $f$. If you compare this code with the final equation you can see it is a direct translation. Because a triangle is always a flat shape, we only need to calculate a single tangent/bitangent pair per triangle as they will be the same for each of the triangles vertices. 
 
-The resulting tangent and bitangent vector should have a value of $(1,0,0)$ and $(0,1,0)$ respectively that together with the normal $(0,0,1)$ forms an orthogonal Tangent Bitangent Normal (TBN) matrix. 
+The resulting tangent and bitangent vector should have a value of $(1,0,0)$ and $(0,1,0)$ respectively that together with the normal $(0,0,1)$ forms an orthogonal Tangent Bitangent Normal (TBN) matrix. Visualized on the plane, the TBN vectors 
