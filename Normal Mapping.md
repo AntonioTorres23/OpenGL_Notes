@@ -185,4 +185,13 @@ layout (location = 4) in vec3 aBitangent;
 
 ```
 
-Then within the 
+Then within the vertex shader's main function we create the TBN matrix. 
+
+```
+void main()
+{
+	[...]
+	vec3 T = normalize(vec3(model * vec4(aTangent)));
+	vec3 B = normalize
+}
+```
