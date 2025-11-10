@@ -170,3 +170,19 @@ The resulting tangent and bitangent vector should have a value of $(1,0,0)$ and 
 ![[Pasted image 20251110144324.png]]
 
 With tangent and bitangent vectors defined per vertex we can start implementing *proper* normal mapping. 
+
+**Tangent space normal mapping**
+
+To get normal mapping working, we first have to create a TBN matrix in the shaders, To do that, we pass the earlier calculated tangent and bitangent vectors to the vertex shader as vertex attributes.
+
+```
+#version 330 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec3 aNormal;
+layout (location = 2) in vec2 aTexCoords;
+layout (location = 3) in vec3 aTangent; 
+layout (location = 4) in vec3 aBitangent;
+
+```
+
+Then within the 
