@@ -199,3 +199,5 @@ void main()
 	
 }
 ```
+
+Here we first transform all the TBN vectors to the coordinate system we'd like to work in, which in this case is world-space as we multiply them with the **model** matrix. Then we create the actual TBN matrix by directly supplying `mat3`'s constructor with the relevant column vectors. Note that if we 
