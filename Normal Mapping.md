@@ -207,4 +207,6 @@ Technically there is no need for the bitangent variable in the vertex shader. Al
 So now that we have a TBN matrix, how are we going to use it? There are two ways we can use a TBN matrix for normal mapping, and we'll demonstrate both of them:
 
 1. We take the TBN matrix that transforms any vector from tangent to world space, give it to the fragment shader, and transform the sampled normal from tangent space to world space using the TBN matrix; the normal is then in the same space as the other lighting variables. 
-2. We take the inverse of the TBN matrix that transforms any vector from world space to tangent space and use this matrix to transform not the normal, but the other relevant lighting variables to tangent space; the normal is then again 
+2. We take the inverse of the TBN matrix that transforms any vector from world space to tangent space and use this matrix to transform not the normal, but the other relevant lighting variables to tangent space; the normal is then again in the same space as the other lighting variables. 
+
+Let's review the first case
