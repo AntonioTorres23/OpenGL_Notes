@@ -339,7 +339,33 @@ Then you'll have to update the model loader to also load normal maps from a text
 
 `vector<Texture> normalMaps = loadMaterialTextures(material, aiTextureType_HEIGHT, "texture_normal");`
 
-Of course, this is different for each type of loaded
+Of course, this is different for each type of loaded model and file format. 
+
+Running the application on a model with specular and normal maps, using an updated model loader, gives the following result. 
+
+![[Pasted image 20251112164916.png]]
+
+As you can see, normal mapping boosts the detail of an object by an incredible amount without too much extra cost. 
+
+Using normal maps is also a great way to boost performance. Before normal mapping, you had to use a large number of vertices to get a high number of detail on a mesh. With normal mapping, we can get the same level of detail on a mesh using a lot less vertices. The image below from Paolo Cignoni shows a nice comparison of both methods. 
+
+![[Pasted image 20251112165158.png]]
+
+The details on both the high-vertex mesh and the low-vertex mesh with normal mapping are almost indistinguishable. So normal mapping doesn't only look nice, it's a great tool to replace high-vertex meshes with low-vertex meshes without losing (too much) detail. 
+
+**One Last Thing**
+
+There is one trick left to discuss that slightly improves quality without too much extra cost. 
+
+When tangent vectors are calculated on larger meshes that share a considerable amount of vertices, the tangent vectors are generally averaged to give nice and smooth results. A problem with this approach is that the three TBN vectors could end up non-perpendicular, which means the resulting TBN matrix would no longer be orthogonal. Normal mapping would only be slightly off with a non-orthogonal TBN matrix, but it's still something we can improve. 
+
+Using a mathematical trick called the **Gram-Schmidt Process**, we can **re-orthogonalize** the TBN vectors such that each vector is again perpendicular to the other vectors. Within the vertex shader we would do it like this. 
+
+```
+vec3 T = normalize(vec3(model * vec4(aTangent, 0.0)));
+
+vec3 N = normalize(vec3())
+```
 
 
 
