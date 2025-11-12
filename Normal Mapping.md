@@ -301,3 +301,8 @@ void main()
 In the fragment shader we then use these new input variables to calculate lighting in tangent space. As the normal vector is already in tangent space, the lighting makes sense.
 
 With normal mapping applied in tangent space, we should get similar results to what we had at the start of this chapter. This time however, we can orient our plane in any way we'd like and the lighting would still be correct. 
+
+```
+glm::mat4 model = glm::mat4(1.0f);
+model = glm::rotate(model, (float)glfwGetTime() * -10.0f, glm::normalize(glm::vec3))
+```
