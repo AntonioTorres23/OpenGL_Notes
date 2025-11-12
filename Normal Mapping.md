@@ -311,3 +311,46 @@ RenderQuad();
 
 Which indeed looks like proper normal mapping. 
 
+![[Pasted image 20251112155142.png]]\
+
+You can find the source code [here](https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/4.normal_mapping/normal_mapping.cpp).
+
+
+**Complex Objects**
+
+We've demonstrated how we can use normal mapping
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
