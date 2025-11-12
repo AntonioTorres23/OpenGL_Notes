@@ -320,7 +320,23 @@ You can find the source code [here](https://learnopengl.com/code_viewer_gh.php?c
 
 We've demonstrated how we can use normal mapping, together with tangent space transformations, by manually calculating the tangent and bitangent vectors. Luckily for us, having to manually calculate tangent and bitangent vectors is not something we do too often. Most of the time you implement it once inn a custom model loader, or in our case use a [model loader](https://learnopengl.com/Model-Loading/Assimp) using Assimp.
 
-Assimp has a very useful configuration bit we can set when loading a model called 
+Assimp has a very useful configuration bit we can set when loading a model called `aiProcess_CalcTangentSpace`. When the `aiProcess_CalcTangentSpace` bit is supplied to Assimp's `ReadFile` function, Assimp calculates smooth tangent and bitangent vectors for each of the loaded vertices, similarly to how we did in these notes. 
+
+```
+const aiScene *scene = importer.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs | aiProcess_CalcTangentSpace);
+```
+
+Within Assimp we can retrieve the calculated tangents via.
+
+```
+vector.x = mesh->mTangents[i].x;
+vector.y = mesh->mTangents[i].y;
+vector.z = mesh->mTangents[i].z;
+vertex.Tangent = vector;
+```
+
+Then you'll have to update the model loader to also load normal maps from a textured model. The wavefront object format (.obj) exports normal maps slightly different from Assimp's conventions as `aiTextureType_NORMAL` doesn't load normal maps, while `aiTextureType_HEIGHT` does. 
+
 
 
 
