@@ -320,7 +320,7 @@ You can find the source code [here](https://learnopengl.com/code_viewer_gh.php?c
 
 We've demonstrated how we can use normal mapping, together with tangent space transformations, by manually calculating the tangent and bitangent vectors. Luckily for us, having to manually calculate tangent and bitangent vectors is not something we do too often. Most of the time you implement it once inn a custom model loader, or in our case use a [model loader](https://learnopengl.com/Model-Loading/Assimp) using Assimp.
 
-
+Assimp has a very useful configuration bit we can set when loading a model called 
 
 
 
