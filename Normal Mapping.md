@@ -249,4 +249,4 @@ Because the resulting **normal** is now in world space, there is no need to chan
 
 Let's also review the second case, where we take the inverse of the TBN matrix to transform all relevant world-space vectors to the space the sampled normal vectors are in: tangent space. The construction of the TBN matrix remains the same, but we first invert the matrix before sending it to the fragment shader. 
 
-`vs_out.TBN = transpose`
+`vs_out.TBN = transpose(mat3(T, B, N));`
