@@ -304,5 +304,10 @@ With normal mapping applied in tangent space, we should get similar results to w
 
 ```
 glm::mat4 model = glm::mat4(1.0f);
-model = glm::rotate(model, (float)glfwGetTime() * -10.0f, glm::normalize(glm::vec3))
+model = glm::rotate(model, (float)glfwGetTime() * -10.0f, glm::normalize(glm::vec3(1.0, 0.0, 0.0)));
+shader.setMat4("model", model);
+RenderQuad();
 ```
+
+Which indeed looks like proper normal mapping. 
+
