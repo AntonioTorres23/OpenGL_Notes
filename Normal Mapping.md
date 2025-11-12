@@ -337,7 +337,7 @@ vertex.Tangent = vector;
 
 Then you'll have to update the model loader to also load normal maps from a textured model. The wavefront object format (.obj) exports normal maps slightly different from Assimp's conventions as `aiTextureType_NORMAL` doesn't load normal maps, while `aiTextureType_HEIGHT` does. 
 
-
+`vector<Texture> normalMaps = loadMaterialTextures(material, aiTextureType_HEIGHT, "texture_normal");`
 
 
 
