@@ -279,8 +279,10 @@ out VS_OUT {
 	vec2 TexCoords;
 	vec3 TangentLightPos;
 	vec3 TangentViewPos;
-	vec3 TangentFragPos
+	vec3 TangentFragPos;
 	
-}
+} vs_out;
+
+uniform
 ```
 
