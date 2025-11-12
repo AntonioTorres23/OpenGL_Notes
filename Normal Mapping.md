@@ -253,4 +253,12 @@ Let's also review the second case, where we take the inverse of the TBN matrix t
 
 Note that we use the **transpose** function instead of the **inverse** function here. A great property of orthogonal matrices (each axis is a perpendicular unit vector) is that the transpose of an orthogonal matrix equals its inverse. This is a great property as **inverse** is expensive and a transpose isn't. 
 
-Within the fragment shader we do not transform the normal vector, but we transform the other relevant vectors to tangent space
+Within the fragment shader we do not transform the normal vector, but we transform the other relevant vectors to tangent space, namely the `lightDir` and `viewDir` vectors. That way, each vector is in the same coordinate space: tangent space. 
+
+```
+void main()
+{
+	vec3 normal = texture(normalMap, fs_in.TexCoords).rgb;
+	normal = normalize(normal * 2.0 - 1.0);
+}
+```
