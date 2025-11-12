@@ -269,5 +269,7 @@ void main()
 
 The second approach looks like more work and also requires matrix multiplication in the fragment shader, so why would we bother with the second approach?
 
-Well, transforming vectors from world to tangent space has an added advantage in that we can transform all the relevant lighting vectors to tangent space in the vertex shader instead of in the fragment shader. This works, because `lightPos` and `viewPos` don't update every fragment run, and for `fs_in.FragPos` we can calculate its tangent-space position in the vertex shader and let fragment interpolation do its work. There is effectively no need to transform a vector to tangent space in the fragment shader, while it is necessary 
+Well, transforming vectors from world to tangent space has an added advantage in that we can transform all the relevant lighting vectors to tangent space in the vertex shader instead of in the fragment shader. This works, because `lightPos` and `viewPos` don't update every fragment run, and for `fs_in.FragPos` we can calculate its tangent-space position in the vertex shader and let fragment interpolation do its work. There is effectively no need to transform a vector to tangent space in the fragment shader, while it is necessary with the first approach as sampled normal vectors are specific to each fragment shader run. 
+
+So instead of sending the inverse of the TBN matrix to the fragment shader, we send a tangent-space light position
 
