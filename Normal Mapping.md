@@ -251,4 +251,6 @@ Let's also review the second case, where we take the inverse of the TBN matrix t
 
 `vs_out.TBN = transpose(mat3(T, B, N));`
 
-Note that we use the **transpose** function instead of the **inverse** function here. A great property of orthogonal matrices (each axis is a perpendicular unit vector) is that the transpose of an orthogonal matrix equals its inverse. Th
+Note that we use the **transpose** function instead of the **inverse** function here. A great property of orthogonal matrices (each axis is a perpendicular unit vector) is that the transpose of an orthogonal matrix equals its inverse. This is a great property as **inverse** is expensive and a transpose isn't. 
+
+Within the fragment shader we do not transform the normal vector, but we transform the other relevant vectors to tangent space
