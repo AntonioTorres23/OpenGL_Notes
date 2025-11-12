@@ -283,6 +283,18 @@ out VS_OUT {
 	
 } vs_out;
 
-uniform
+uniform vec3 lightPos;
+uniform vec3 viewPos;
+
+[...]
+
+void main()
+{
+	[...]
+	mat3 TBN = transpose(mat3(T, B, N));
+	vs_out.TangentLightPos = TBN * lightPos;
+	vs_out.TangentViewPos = TBN * viewPos;
+	vs_out.TangentFragPos = TBN * vec3(model * vec4(aPos, 1.0));
+}
 ```
 
