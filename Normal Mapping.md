@@ -260,5 +260,12 @@ void main()
 {
 	vec3 normal = texture(normalMap, fs_in.TexCoords).rgb;
 	normal = normalize(normal * 2.0 - 1.0);
+	
+	vec3 lightDir = fs_in.TBN * normalize(lightPos - fs_in.FragPos);
+	vec3 viewDir = fs_in.TBN * normalize(viewPos - fs_in.FragPos);
+	[...]
 }
 ```
+
+The second approach looks like more work and also requires matrix multiplication in the fragment shader, so why would we bother with the second approach?
+
