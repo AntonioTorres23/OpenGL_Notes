@@ -298,3 +298,6 @@ void main()
 }
 ```
 
+In the fragment shader we then use these new input variables to calculate lighting in tangent space. As the normal vector is already in tangent space, the lighting makes sense.
+
+With normal mapping 
