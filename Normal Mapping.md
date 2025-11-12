@@ -318,7 +318,7 @@ You can find the source code [here](https://learnopengl.com/code_viewer_gh.php?c
 
 **Complex Objects**
 
-We've demonstrated how we can use normal mapping
+We've demonstrated how we can use normal mapping, together with tangent space transformations, by manually calculating the tangent and bitangent vectors. Luckily for us, having to manually calculate tangent and bitangent vectors is not something we do too often. Most of the time you implement 
 
 
 
