@@ -339,6 +339,7 @@ Then you'll have to update the model loader to also load normal maps from a text
 
 `vector<Texture> normalMaps = loadMaterialTextures(material, aiTextureType_HEIGHT, "texture_normal");`
 
+Of course, this is different for each type of loaded
 
 
 
