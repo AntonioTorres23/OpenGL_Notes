@@ -13,9 +13,11 @@ When spanned over a plane, each vertex is displaced based on the sampled height 
 
 A problem with displacing vertices this way is that a plane needs to contain a huge amount of triangles to get a realistic displacement, otherwise the displacement looks too blocky. As each flat surface may then require over 10000 vertices. What if we could somehow achieve similar realism without the need of extra vertices? In fact, what if I were to tell you that the previously shown displaced surface is actually rendered with only 2 triangles. This brick surface show is rendered with **parallax mapping**, a displacement mapping technique that doesn't require extra vertex data to convey depth, but (similar to normal mapping) uses a clever technique to trick the user. 
 
-The idea behind parallax mapping is to alter the texture coordinates in such a way that it looks like a fragment's surface is higher or lower than it actually is. 
+The idea behind parallax mapping is to alter the texture coordinates in such a way that it looks like a fragment's surface is higher or lower than it actually is, all based on the view direction and a heightmap. To understand how it works, take a look at the following image of our brick surface. 
 
+![[Pasted image 20251113144909.png]]
 
+Here the rough red line represents values in the heightmap as the geometric surface representation of the brick surface and the vector $$
 
 
 
