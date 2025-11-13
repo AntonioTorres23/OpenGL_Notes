@@ -148,7 +148,12 @@ What is interesting to note here is the division of `viewDir.xy` by `viewDir.z`.
 
 Some prefer to leave the division by `viewDir.z` out of the equation as default Parallax Mapping could produce undesirable results at angles; the technique is then called **Parallax Mapping with Offset Limiting**. Choosing which technique to pick is usually a matter of personal preference. 
 
-The resulting texture coordinates are then used to sample other textures (diffuse and n)
+The resulting texture coordinates are then used to sample other textures (diffuse and normals) and this gives a neat displaced effect as you can see below with a `height_scale` of roughly $0.1$;
+
+![[Pasted image 20251113162947.png]]
+
+
+
 
 
 
