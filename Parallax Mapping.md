@@ -120,11 +120,15 @@ void main()
 	vec2 texCoords = ParallaxMapping(fs_in.TexCoords, viewDir);
 	
 	// then sample textures with new texture coords
-	vec3 diffuse = texture(diffuseMap, )
+	vec3 diffuse = texture(diffuseMap, texCoords);
+	vec3 normal = texture(normalMap, texCoords);
+	// proceed with lighting code
+	[...]
 }
 
 ```
 
+We defined a function called `ParallaxMapping` that takes as input the fragment's te
 
 
 
