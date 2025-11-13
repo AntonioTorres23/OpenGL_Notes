@@ -142,7 +142,7 @@ vec2 ParallaxMapping(vec2 texCoords, vec3 viewDir)
 ```
 
 
-This relatively simple function is a direct translation of what we've discussed so far. We take the original texture coordinates `texCoords` and use these to sample the height (or depth) from the `depthMap` at the current fragment $\color{green}{A}$ as $\color{green}{H(A)}$. We then calculate $\color{brown}{\bar{P}}$ as the $x$ and $y$ 
+This relatively simple function is a direct translation of what we've discussed so far. We take the original texture coordinates `texCoords` and use these to sample the height (or depth) from the `depthMap` at the current fragment $\color{green}{A}$ as $\color{green}{H(A)}$. We then calculate $\color{brown}{\bar{P}}$ as the $x$ and $y$ component of the tangent-space `viewDir` vector divided by its $z$ component and scaled by $\color{green}{H(A)}$. We also 
 
 
 
