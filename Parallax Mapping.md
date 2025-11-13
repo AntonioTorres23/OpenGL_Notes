@@ -176,7 +176,17 @@ It looks great and is quite fast as well as we only need a single extra texture 
 
 ![[Pasted image 20251113164104.png]]
 
-The re
+The reason that it doesn't work properly at times is that it's just a crude approximation of displacement mapping. There are some extra tricks however that allows us to get almost perfect results with steep height changes, even when looking at an angle. For instance, what if we instead of one sample take multiple samples to find the closest point to $\color{lightblue}{B}$?
+
+**Steep Parallax Mapping**
+
+Steep Parallax Mapping is an extension on top of Parallax Mapping in that it uses the same principles, but instead of 1 sample it takes multiple samples to better pinpoint vector $\color{brown}{\bar{P}}$ to $\color{lightblue}{B}$. This gives much better results, even with steep height changes, as the accuracy of the technique is improved by the number of samples. 
+
+The general idea of Steep Parallax Mapping is that it divides the total depth range into multiple layers of the same height/depth. For each of these layers we sample the depth map, shifting the texture coordinates along the direction of $\color{brown}{\bar{P}}$, until we find a sampled depth value that is less than the depth value of the current layer. Take a look at the following image. 
+
+![[Pasted image 20251113165105.png]]
+
+
 
 
 
