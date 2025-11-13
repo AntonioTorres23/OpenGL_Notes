@@ -46,5 +46,3 @@ The idea behind parallax mapping is to alter the texture coordinates in such a w
 
 
 
-
-
