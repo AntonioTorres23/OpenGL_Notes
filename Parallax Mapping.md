@@ -17,7 +17,7 @@ The idea behind parallax mapping is to alter the texture coordinates in such a w
 
 ![[Pasted image 20251113144909.png]]
 
-Here the rough red line represents values in the heightmap as the geometric surface representation of the brick surface and the vector $$
+Here the rough red line represents values in the heightmap as the geometric surface representation of the brick surface and the vector $\color{orange}{\bar{V}}$ represents the surface to view direction (`viewDir`). 
 
 
 
