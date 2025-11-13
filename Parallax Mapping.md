@@ -155,11 +155,28 @@ The resulting texture coordinates are then used to sample other textures (diffus
 
 Here you can see the difference between normal mapping and parallax mapping combined with normal mapping. Because parallax mapping tries to simulate depth it is actually possible to have bricks overlap other bricks based on the direction you view them. 
 
-You can still see a few weird border artifacts 
+You can still see a few weird border artifacts at the edge of the parallax mapped plane. This happens because at the edges of the plane the displaced texture coordinates can oversample outside the range $[0,1]$. This gives unrealistic results based on the texture's wrapping mode(s). A cool trick to solve this issue is to discard the fragment whenever it samples outside the default texture coordinate range. 
+
+```
+texCoords = ParallaxMapping(fs_in.TexCoords, viewDir);
+if(texCoords.x > 1.0 || texCoords.y > 1.0 || texCoords.x < 0.0 || texCoords.y < 0.0)
+{
+	discard;
+}	
+```
+
+All fragments with (displaced) texture coordinates outside the default range are discarded and Parallax Mapping then gives proper results around the edges of a surface. Note that this trick doesn't work on all types of surfaces, but when applied to a plane it gives great results. 
+
+![[Pasted image 20251113163838.png]]
 
 
+You can find the source code [here](https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/5.1.parallax_mapping/parallax_mapping.cpp).
 
+It looks great and is quite fast as well as we only need a single extra texture sample for parallax mapping to work. It does come with a few issues though as it sort of breaks down when looking at it from an angle (similar to normal mapping) and gives incorrect results with steep height changes, as you can see below. 
 
+![[Pasted image 20251113164104.png]]
+
+The re
 
 
 
