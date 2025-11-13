@@ -31,7 +31,18 @@ This little trick gives good results most of the time, but it is still a really 
 
 ![[Pasted image 20251113151518.png]]
 
-Another issue with parallax mapping is that it's difficult to figure out which coordinates to retrieve from $\color{brown}{\bar{P}}$ when the surface is arbitrarily rotated in some way. We'd rather do this in a different coordinate space where the $x$ and $y$ component of vector $\color{brown}{\bar{P}}$
+Another issue with parallax mapping is that it's difficult to figure out which coordinates to retrieve from $\color{brown}{\bar{P}}$ when the surface is arbitrarily rotated in some way. We'd rather do this in a different coordinate space where the $x$ and $y$ component of vector $\color{brown}{\bar{P}}$ always align with the texture's surface. If you've followed along in the normal mapping notes you probably guessed how we can accomplish this. And yes, we would like to do parallax mapping in tangent space. 
+
+By transforming the fragment-to-view vector $\color{orange}{\bar{V}}$ to tangent space, the transformed $\color{brown}{\bar{P}}$ vector will have its $x$ and $y$ component aligned to the surface's tangent and bitangent vectors. As the tangent and bitangent vectors are pointing in the same direction as the surface's texture coordinates we can take the $x$ and $y$ components of $\color{brown}{\bar{P}}$ as the texture coordinate offset, regardless of the surface's orientation. 
+
+But enough about the theory, let's get our feet wet and start implementing parallax mapping.
+
+**Parallax Mapping**
+
+For parallax mapping we're going to use a simple 2D plane for which we calculated its tangent and bitangent vectors before sending it to the GPU; similar to what we did in the normal mapping notes. Onto the plane we're going to attach a [diffuse texture](https://learnopengl.com/img/textures/bricks2.jpg), a [normal map](https://learnopengl.com/img/textures/bricks2_normal.jpg), and a [displacement map](https://learnopengl.com/img/textures/bricks2_disp.jpg) that you can download from their URLs. For this example, we're going to use parallax mapping in conjunction with normal mapping. Because parallax mapping gives the illusion of displacing a surface, the illusion breaks when the lighting doesn't match. As normal maps are often generated from heightmaps, using a normal map together with a heightmap makes sure the lighting is in place with the displacement. 
+
+You may have already noted that the displacement map lined above is inverse of the heightmap shown at the start of these notes. With parallax mapping it makes more sense to use the inverse of the heightmap as it's easier to fake depth than height on flat surfaces. This slightly changes how we perceive parallax mapping as show below. 
+
 
 
 
