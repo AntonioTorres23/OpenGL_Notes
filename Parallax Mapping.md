@@ -128,7 +128,16 @@ void main()
 
 ```
 
-We defined a function called `ParallaxMapping` that takes as input the fragment's texture coordinates and the fragment-to-view direction $\color{orange}{\bar{V}}$ in tangent space. The function returns the displaced texture coordinates. We then use these displaced texture coordinates for sampling the diffuse and normal map. As a result, the fragment's diffuse and normal 
+We defined a function called `ParallaxMapping` that takes as input the fragment's texture coordinates and the fragment-to-view direction $\color{orange}{\bar{V}}$ in tangent space. The function returns the displaced texture coordinates. We then use these displaced texture coordinates for sampling the diffuse and normal map. As a result, the fragment's diffuse and normal vector correctly corresponds to the surface's displaced geometry. 
+
+Let's take a look inside the `ParallaxMapping` function. 
+
+```
+vec2 ParallaxMapping(vec2 texCoords, vec3 viewDir)
+{
+	float height = texture(depthMap, texCoords).r;
+}
+```
 
 
 
