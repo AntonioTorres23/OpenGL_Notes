@@ -31,7 +31,7 @@ This little trick gives good results most of the time, but it is still a really 
 
 ![[Pasted image 20251113151518.png]]
 
-Another issue with parallax mapping is that it's difficult to figure out which coordinates 
+Another issue with parallax mapping is that it's difficult to figure out which coordinates to retrieve from $\color{brown}{\bar{P}}$ when the surface is arbitrarily rotated in some way. We'd rather do this in a different coordinate space where the $x$ and $y$ component of vector $\color{brown}{\bar{P}}$
 
 
 
