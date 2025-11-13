@@ -284,9 +284,23 @@
               "icon": "lucide-file",
               "title": "Normal Mapping"
             }
+          },
+          {
+            "id": "483ecffc902c2143",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Parallax Mapping.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Parallax Mapping"
+            }
           }
         ],
-        "currentTab": 19
+        "currentTab": 20
       }
     ],
     "direction": "vertical"
@@ -430,8 +444,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7324cc2ebc9c9012",
+  "active": "483ecffc902c2143",
   "lastOpenFiles": [
+    "Normal Mapping.md",
+    "Parallax Mapping.md",
     "Pasted image 20251112165158.png",
     "Pasted image 20251112164916.png",
     "Pasted image 20251112155142.png",
@@ -442,9 +458,7 @@
     "Pasted image 20251107133244.png",
     "Pasted image 20251107132731.png",
     "Pasted image 20251107125446.png",
-    "Pasted image 20251107125345.png",
     "Shadow Mapping.md",
-    "Normal Mapping.md",
     "Point Shadows.md",
     "Advanced GLSL.md",
     "Untitled 1.base",
