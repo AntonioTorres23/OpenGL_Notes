@@ -107,7 +107,17 @@ in VS_OUT {
 
 uniform sampler2D diffuseMap;
 uniform sampler2D normalMap;
-uniform sampler2D depthMap
+uniform sampler2D depthMap;
+
+uniform float height_scale;
+
+vec2 ParallaxMapping(vec2 texCoords, vec3 viewDir);
+
+void main()
+{
+	// offset texture coordinates with Parallax Mapping
+	vec3 viewDir = normalize(fs_in.TangentViewPos - )
+}
 
 ```
 
