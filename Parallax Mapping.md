@@ -102,7 +102,7 @@ in VS_OUT {
 	vec2 TexCoords;
 	vec3 TangentLightPos;
 	vec3 TangentViewPos;
-	vec3 TangentFragPos'
+	vec3 TangentFragPos;
 } fs_in;
 
 uniform sampler2D diffuseMap;
@@ -116,7 +116,10 @@ vec2 ParallaxMapping(vec2 texCoords, vec3 viewDir);
 void main()
 {
 	// offset texture coordinates with Parallax Mapping
-	vec3 viewDir = normalize(fs_in.TangentViewPos - )
+	vec3 viewDir = normalize(fs_in.TangentViewPos - fs_in.TangentFragPos);
+	vec2 texCoords = ParallaxMapping(fs_in.TexCoords, viewDir);
+	
+	// then sample 
 }
 
 ```
