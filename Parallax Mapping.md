@@ -128,7 +128,7 @@ void main()
 
 ```
 
-We defined a function called `ParallaxMapping` that takes as input the fragment's te
+We defined a function called `ParallaxMapping` that takes as input the fragment's texture coordinates and the fragment-to-view direction $\color{orange}{\bar{V}}$ in tangent space. The function returns the displaced texture coordinates. We then use these displaced texture coordinates for sampling the diffuse and normal map. As a result, the fragment's diffuse and normal 
 
 
 
