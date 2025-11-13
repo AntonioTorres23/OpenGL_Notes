@@ -7,4 +7,4 @@ Parallax mapping is closely related to the family of **displacement mapping** te
 
 ![[Pasted image 20251113121351.png]]
 
-When spanned over a plane, 
+When spanned over a plane, each vertex is displaced based on the sampled height value in the height map, transforming a plane to a rough bumpy surface based on a material's geometric properties
