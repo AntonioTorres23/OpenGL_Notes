@@ -364,9 +364,24 @@ Using a mathematical trick called the **Gram-Schmidt Process**, we can **re-orth
 ```
 vec3 T = normalize(vec3(model * vec4(aTangent, 0.0)));
 
-vec3 N = normalize(vec3())
+vec3 N = normalize(vec3(model * vec4(aNormal, 0.0)));
+
+// re-orthogonalize T with respect to N
+T = normalize(T - dot(T,N) * N);
+// then retrieve perpendicular vector B with the cross product of T and N
+vec3 B = cross(N, T);
+
+mat3 TBN = mat3(T,B,N);
 ```
 
+This albeit by a little, generally improves the normal mapping results with a little extra cost. Take a look at the end of the *Normal Mapping Mathematics* video in the additional resources for a great explanation of how this process actually works. 
+
+## Additional resources
+
+- [Tutorial 26: Normal Mapping](http://ogldev.atspace.co.uk/www/tutorial26/tutorial26.html): normal mapping tutorial by ogldev.
+- [How Normal Mapping Works](https://www.youtube.com/watch?v=LIOPYmknj5Q): a nice video tutorial of how normal mapping works by TheBennyBox.
+- [Normal Mapping Mathematics](https://www.youtube.com/watch?v=4FaWLgsctqY): a similar video by TheBennyBox about the mathematics behind normal mapping.
+- [Tutorial 13: Normal Mapping](http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-13-normal-mapping/): normal mapping tutorial by opengl-tutorial.org.
 
 
 
