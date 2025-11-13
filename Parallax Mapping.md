@@ -142,7 +142,7 @@ vec2 ParallaxMapping(vec2 texCoords, vec3 viewDir)
 ```
 
 
-This relatively simple function is a direct translation of what we've discussed so far
+This relatively simple function is a direct translation of what we've discussed so far. We take the original texture coordinates `texCoords` and use these to sample the height 
 
 
 
