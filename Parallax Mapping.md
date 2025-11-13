@@ -86,10 +86,12 @@ void main()
 	mat3 TBN = transpose(mat3(T,B,N));
 	
 	vs_out.TangentLightPos = TBN * lightPos;
-	vs_out.TangentViewPos = TBN * 
+	vs_out.TangentViewPos = TBN * viewPos;
+	vs_out.TangentFragPos = TBN * vs_out.FragPos;
 }
-
 ```
+
+Within the fragment shader we then implement the parallax mapping logic. 
 
 
 
