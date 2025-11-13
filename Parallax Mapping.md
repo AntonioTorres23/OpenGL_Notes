@@ -6,3 +6,5 @@ While also an illusion, parallax mapping is a lot better in conveying a sense of
 Parallax mapping is closely related to the family of **displacement mapping** techniques that *displace* or *offset* vertices based on geometrical information stored inside a texture. One way to do this, is to take a plane with roughly 1000 vertices and displace each of these vertices based on a value in a texture that tells us the height of the plane at that specific area. Such a texture that contains height values per texels is called a **height map**. An example height map derived from the geometric properties of a simple brick surface looks a bit like this. 
 
 ![[Pasted image 20251113121351.png]]
+
+When spa
