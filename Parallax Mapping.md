@@ -17,9 +17,15 @@ The idea behind parallax mapping is to alter the texture coordinates in such a w
 
 ![[Pasted image 20251113144909.png]]
 
-Here the rough red line represents values in the heightmap as the geometric surface representation of the brick surface and the vector $\color{orange}{\bar{V}}$ represents the surface to view direction (`viewDir`). If the plane would have actual displacement, the viewer would see the surface at point $\color{lightblue}{B}$. However, as our plane has no actual displacement the view direction is calculated from point $\color{green}{A}$ as we'd expect. Parallax mapping aims to offset the texture coordinates at fragment position $\color{green}{A}$ 
+Here the rough red line represents values in the heightmap as the geometric surface representation of the brick surface and the vector $\color{orange}{\bar{V}}$ represents the surface to view direction (`viewDir`). If the plane would have actual displacement, the viewer would see the surface at point $\color{lightblue}{B}$. However, as our plane has no actual displacement the view direction is calculated from point $\color{green}{A}$ as we'd expect. Parallax mapping aims to offset the texture coordinates at fragment position $\color{green}{A}$ in such a way that we get texture coordinates at point $\color{lightblue}{B}$ for all subsequent texture samples, making it look like the viewer is actually looking at point $\color{lightblue}{B}$. We then use the texture coordinates at point $\color{lightblue}{B}$ for all subsequent texture samples, making it look like the viewer is actually looking at point $\color{lightblue}{B}$. 
+
+The trick is to figure out how to get the texture coordinates at point $\color{lightblue}{B}$ from point $\color{green}{A}$. Parallax mapping tries to solve this by scaling the fragment-to-view direction vector $\color{orange}{\bar{V}}$ by the height at fragment $\color{green}{A}$. So we're scaling the length of $\color{orange}{\bar{V}}$ to be equal to a sampled value from the heightmap $\color{green}{H(A)}$ at fragment position $\color{green}{A}$. The image below shows this scaled vector $\color{brown}{\bar{P}}$. 
 
 
+![[Pasted image 20251113150758.png]]
+
+
+We then take this vector $\color{brown}{\bar{P}}$ and take its vector coordinates that align with the plane as the texture coordinate offset. This works because vector $\color{brown}{\bar{P}}$ is calculated using a height value from the heightmap. So the higher a fragment's height, the more it effectively gets displaced. 
 
 
 
