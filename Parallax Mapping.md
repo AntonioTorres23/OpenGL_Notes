@@ -146,7 +146,9 @@ This relatively simple function is a direct translation of what we've discussed 
 
 What is interesting to note here is the division of `viewDir.xy` by `viewDir.z`. As the `viewDir` vector is normalized, `viewDir.z` will be somewhere in the range between $0.0$ and $1.0$. When  `viewDir` is largely parallel to the surface, its z component is close to $0.0$ and the division returns a much larger vector $\color{brown}{\bar{P}}$ compared to when `viewDir` is largely perpendicular to the surface. We're adjusting the size of $\color{brown}{\bar{P}}$ in such a way that if offsets the texture coordinates at a larger scale when looking at a surface from an angle compared to when looking at it from the top; this gives more realistic results at angles. 
 
-Some prefer to leave the division by `viewDir.z` out of the equation as default Parallax Mapping could produce undesirable results at angles; the technique is then called **Parallax Mapping with Offset Limiting**. 
+Some prefer to leave the division by `viewDir.z` out of the equation as default Parallax Mapping could produce undesirable results at angles; the technique is then called **Parallax Mapping with Offset Limiting**. Choosing which technique to pick is usually a matter of personal preference. 
+
+The resulting texture coordinates are then used to sample other textures (diffuse and n)
 
 
 
