@@ -119,7 +119,8 @@ void main()
 	vec3 viewDir = normalize(fs_in.TangentViewPos - fs_in.TangentFragPos);
 	vec2 texCoords = ParallaxMapping(fs_in.TexCoords, viewDir);
 	
-	// then sample 
+	// then sample textures with new texture coords
+	vec3 diffuse = texture(diffuseMap, )
 }
 
 ```
