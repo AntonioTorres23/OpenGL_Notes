@@ -43,9 +43,10 @@ For parallax mapping we're going to use a simple 2D plane for which we calculate
 
 You may have already noted that the displacement map lined above is inverse of the heightmap shown at the start of these notes. With parallax mapping it makes more sense to use the inverse of the heightmap as it's easier to fake depth than height on flat surfaces. This slightly changes how we perceive parallax mapping as show below. 
 
+![[Pasted image 20251113154213.png]]
+We again have points $\color{green}{A}$ and $\color{lightblue}{B}$, but this time we obtain vector $\color{brown}{\bar{P}}$ by **subtracting** vector $\color{orange}{\bar{V}}$ from texture coordinates at point $\color{green}{A}$. We can obtain depth values instead of height values by subtracting the sampled heightmap values from 1.0 in the shaders, or by simply inversing its texture values in image-editing software as we did with the depth map linked above. 
 
-
-
+Parallax mapping is implemented in the fragment shader as the displaced effect is different all over a triangle's surface. In the fragment shader we're then going to need to calculate the fragment-to-view direction vector $\color{orange}{\bar{V}}$ so we need the view position and fragment position in tangent space. In the normal mapping notes we already had a vertex shader that sends these vectors in tangent space so we can take an exact copy of that notes vertex shader. 
 
 
 
