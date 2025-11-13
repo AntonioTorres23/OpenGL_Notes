@@ -27,7 +27,11 @@ The trick is to figure out how to get the texture coordinates at point $\color{l
 
 We then take this vector $\color{brown}{\bar{P}}$ and take its vector coordinates that align with the plane as the texture coordinate offset. This works because vector $\color{brown}{\bar{P}}$ is calculated using a height value from the heightmap. So the higher a fragment's height, the more it effectively gets displaced. 
 
+This little trick gives good results most of the time, but it is still a really crude approximation to get to point $\color{lightblue}{B}$. When heights change rapidly over a surface the results tend to look unrealistic as the vector $\color{brown}{\bar{P}}$ will not end up close to $\color{lightblue}{B}$ as you can see below. 
 
+![[Pasted image 20251113151518.png]]
+
+Another issue with parallax mapping is that it's difficult to figure out which coordinates 
 
 
 
