@@ -91,7 +91,19 @@ void main()
 }
 ```
 
-Within the fragment shader we then implement the parallax mapping logic. 
+Within the fragment shader we then implement the parallax mapping logic. The fragment shader looks a bit like this. 
+
+```
+#version 330 core
+out vec4 FragColor;
+
+in VS_OUT {
+	vec3 FragPos;
+	vec2 TexCoords;
+	vec3 TangentLightPos;
+	vec3 
+}
+```
 
 
 
