@@ -7,4 +7,4 @@ Parallax mapping is closely related to the family of **displacement mapping** te
 
 ![[Pasted image 20251113121351.png]]
 
-When spa
+When spanned over a plane, 
