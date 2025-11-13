@@ -136,9 +136,13 @@ Let's take a look inside the `ParallaxMapping` function.
 vec2 ParallaxMapping(vec2 texCoords, vec3 viewDir)
 {
 	float height = texture(depthMap, texCoords).r;
+	vec2 p = viewDir.xy / viewDir.z * (height * height_scale)
+	return texCoords - p; 
 }
 ```
 
+
+This relatively simple function is a direct translation of what we've discussed so far
 
 
 
