@@ -46,7 +46,50 @@ You may have already noted that the displacement map lined above is inverse of t
 ![[Pasted image 20251113154213.png]]
 We again have points $\color{green}{A}$ and $\color{lightblue}{B}$, but this time we obtain vector $\color{brown}{\bar{P}}$ by **subtracting** vector $\color{orange}{\bar{V}}$ from texture coordinates at point $\color{green}{A}$. We can obtain depth values instead of height values by subtracting the sampled heightmap values from 1.0 in the shaders, or by simply inversing its texture values in image-editing software as we did with the depth map linked above. 
 
-Parallax mapping is implemented in the fragment shader as the displaced effect is different all over a triangle's surface. In the fragment shader we're then going to need to calculate the fragment-to-view direction vector $\color{orange}{\bar{V}}$ so we need the view position and fragment position in tangent space. In the normal mapping notes we already had a vertex shader that sends these vectors in tangent space so we can take an exact copy of that notes vertex shader. 
+Parallax mapping is implemented in the fragment shader as the displaced effect is different all over a triangle's surface. In the fragment shader we're then going to need to calculate the fragment-to-view direction vector $\color{orange}{\bar{V}}$ so we need the view position and fragment position in tangent space. In the normal mapping notes we already had a vertex shader that sends these vectors in tangent space so we can take an exact copy of that note's vertex shader. 
+
+```
+#version 330 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec3 aNormal;
+layout (location = 2) in vec2 aTexCoords;
+layout (location = 3) in vec3 aTangent;
+layout (location = 4) in vec3 aBitangent;
+
+out VS_OUT {
+	vec3 FragPos;
+	vec2 TexCoords;
+	vec3 TangentLightPos;
+	vec3 TangentViewPos;
+	vec3 TangentFragPos;
+	
+} vs_out;
+
+uniform mat4 projection;
+uniform mat4 view;
+uniform mat4 model;
+
+uniform vec3 lightPos;
+uniform vec3 viewPos;
+
+void main()
+{
+	gl_Position = projection * view * model * vec4(aPos, 1.0);
+	
+	vs_out.FragPos = vec3(model * vec4(aPos, 1.0));
+	
+	vs_out.TexCoords = aTexCoords; 
+	
+	vec3 T = normalize(mat3(model) * aTangent);
+	vec3 B = normalize(mat3(model) * aBitangent);
+	vec3 N = normalize(mat3(model) * aNormal);
+	mat3 TBN = transpose(mat3(T,B,N));
+	
+	vs_out.TangentLightPos = TBN * lightPos;
+	vs_out.TangentViewPos = TBN * 
+}
+
+```
 
 
 
