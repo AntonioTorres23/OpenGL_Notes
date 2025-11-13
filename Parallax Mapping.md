@@ -153,7 +153,9 @@ The resulting texture coordinates are then used to sample other textures (diffus
 ![[Pasted image 20251113162947.png]]
 
 
-Here you can see the difference between normal mapping and parallax mapping combined with normal mapping. Because parallax mapping tries to simulate depth it is actually possible to have bricks overlap other bricks based on the direction you view them 
+Here you can see the difference between normal mapping and parallax mapping combined with normal mapping. Because parallax mapping tries to simulate depth it is actually possible to have bricks overlap other bricks based on the direction you view them. 
+
+You can still see a few weird border artifacts 
 
 
 
