@@ -247,7 +247,9 @@ Two of the more popular approaches are called **Relief Parallax Mapping** and **
 
 Parallax Occlusion Mapping is based on the same principles as Steep Parallax Mapping, but instead of taking the texture coordinates of the first depth layer after a collision, we're going to linearly interpolate between the depth layer after and before the collision. We base the weight of the linear interpolation on how far the surface's height is from the depth layer's value of both layers. Take a look at the following picture to get a grasp of how it works. 
 
+![[Pasted image 20251114162340.png]]
 
+As you can see, it's largely similar to Steep Parallax Mapping with as an extra step the linear interpolation between the 
 
 
 
