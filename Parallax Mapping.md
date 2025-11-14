@@ -260,9 +260,17 @@ The code for Parallax Occlusion Mapping is an extension on top of Steep Parallax
 vec2 prevTexCoords = currentTexCoords + deltaTexCoords; 
 
 // get depth after and before collision for linear interpolation
-float afterDepth = currentDepthMapValue 
+float afterDepth = currentDepthMapValue - currentLayerDepth;
+float beforeDepth = texture(depthMap, prevTexCoords).r - currentLayerDepth + layerDepth;
+
+// interpolation of texture coordinates
+float weight = afterDepth / (afterDepth - beforeDepth);
+vec2 finalTexCoords = prevTexCoords * weight + currentTexCoords * (1.0 - weight);
+
+return finalTexCoords;
 ```
 
+After we found the depth layer after intersecting the (displaced) geometry, we also retrieve the texture coordinates of the depth layer before intersection. Then we calculate the distance of the (displaced) geometry's depth from the corresponding 
 
 
 
