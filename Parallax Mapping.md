@@ -187,7 +187,7 @@ The general idea of Steep Parallax Mapping is that it divides the total depth ra
 ![[Pasted image 20251113165105.png]]
 We traverse the depth layers from the top down and for each layer we compare its depth value to the depth value stored in the depth map. If the layer's depth value is less than the depth map's value it means this layer's part of vector $\color{brown}{\bar{P}}$ is not below the surface. We continue this process until the layer's depth is higher than the value stored in the depth map: this point is then below the (displaced) geometric surface. 
 
-In this example we can see the depth map value at the second layer $(D(2) = 0.73)$ is lower than the second layer's is lower than than the second layer's depth value 0.4 so we continue. In the next iteration, the layer's depth value 0.6 is higher than the depth map's sampled depth value $$
+In this example we can see the depth map value at the second layer $(D(2) = 0.73)$ is lower than the second layer's is lower than than the second layer's depth value 0.4 so we continue. In the next iteration, the layer's depth value 0.6 is higher than the depth map's sampled depth value $(D(3)=0.37)$. We can thus assume vector $\color{brown}{\bar{P}}$ at the third layer to be the most viable position of the displaced geometry. We then take the texture coordinates 
 
 
 
