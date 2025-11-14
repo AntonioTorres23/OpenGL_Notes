@@ -249,7 +249,19 @@ Parallax Occlusion Mapping is based on the same principles as Steep Parallax Map
 
 ![[Pasted image 20251114162340.png]]
 
-As you can see, it's largely similar to Steep Parallax Mapping with as an extra step the linear interpolation between the 
+As you can see, it's largely similar to Steep Parallax Mapping with as an extra step the linear interpolation between the two depth layers' texture coordinates surrounding the intersected point. This is again an approximation, but significantly more accurate than Steep Parallax Mapping. 
+
+The code for Parallax Occlusion Mapping is an extension on top of Steep Parallax Mapping and not too difficult. 
+
+```
+[...] // steep parallax mapping code here
+
+// get texture coordinates before collision (reverse operations)
+vec2 prevTexCoords = currentTexCoords + deltaTexCoords; 
+
+// get depth after and before collision for linear interpolation
+float afterDepth = currentDepthMapValue 
+```
 
 
 
