@@ -185,7 +185,9 @@ Steep Parallax Mapping is an extension on top of Parallax Mapping in that it use
 The general idea of Steep Parallax Mapping is that it divides the total depth range into multiple layers of the same height/depth. For each of these layers we sample the depth map, shifting the texture coordinates along the direction of $\color{brown}{\bar{P}}$, until we find a sampled depth value that is less than the depth value of the current layer. Take a look at the following image. 
 
 ![[Pasted image 20251113165105.png]]
-We traverse the depth layers from the top down and for each layer we compare its depth value to the depth value stored in the depth map. If the layer's depth value is less than the depth map's value it means this layer's part of vector $\color{brown}{\bar{P}}$ is not belwo 
+We traverse the depth layers from the top down and for each layer we compare its depth value to the depth value stored in the depth map. If the layer's depth value is less than the depth map's value it means this layer's part of vector $\color{brown}{\bar{P}}$ is not below the surface. We continue this process until the layer's depth is higher than the value stored in the depth map: this point is then below the (displaced) geometric surface. 
+
+In this example we can see the depth map value at the second layer $(D(2) = 0.73)$ is lower than the second layer's 
 
 
 
