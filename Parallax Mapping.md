@@ -223,8 +223,63 @@ while(currentLayerDepth < currentDepthMapValue)
 {
 	// shift texture coordinates along direction of P
 	currentTexCoords -= deltaTexCoords; 
+	// get depthmap value at current texture coordinates
+	currentDepthMapValue = texture(depthMap, currentTexCoords).r; 
+	// get depth of next layer
+	currentLayerDepth += layerDepth;
+	
 }
+
+return currentTexCoords; 
 ```
+
+Here we loop over each depth layer and stop until we find the texture coordinate offset along vector $\color{brown}{\bar{P}}$ that first returns a depth that's below the (displaced) surface. The resulting offset is subtracting from the fragment's texture coordinates to get a final displaced texture coordinate vector, this time with much more accuracy compared to traditional parallax mapping. 
+
+With around $10$ samples the brick surface already looks more viable even when looking at it from an angle, but steep parallax mapping really shines when having a complex surface with steep height changes; like the earlier displayed wooden toy surface. 
+
+![[Pasted image 20251114160956.png]]
+
+We can reduce the issue by taking a large amount of samples, but this quickly becomes too heavy a burden on performance. There are several approaches that aim to fix this issue by not taking the first position that's below the (displayed) surface, but by *interpolating* between the position's two closest depth layers to find a much closer match to $\color{lightblue}{B}$. 
+
+Two of the more popular approaches are called **Relief Parallax Mapping** and **Parallax Occlusion Mapping** of which Relief Parallax Mapping gives the most accurate results, but is also more performance heavy compared to Parallax Occlusion Mapping. Because Parallax Occlusion Mapping gives almost the same results as Relief Parallax Mapping and is also more efficient it is often the preferred approach. 
+
+**Parallax Occlusion Mapping**
+
+Parallax Occlusion Mapping is based on the same principles as Steep Parallax Mapping, but instead of taking the texture coordinates of the first depth layer after a collision, we're going to linearly interpolate between the depth layer after and before the collision. We base the weight of the linear interpolation on how far the surface
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
