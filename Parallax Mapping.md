@@ -194,21 +194,34 @@ To implement this technique we only have to change the `ParallaxMapping` functio
 ```
 vec2 ParallaxMapping(vec2 texCoords, vec3 viewDir)
 {
-
+ // number of depth layers
+ const float numLayers = 10;
+ // calculate the size of each layer
+ float layerDepth = 1.0 / numLayers;
+ // depth of current layer
+ float currentLayerDepth = 0.0;
+ // the amount to shift the texture coordinates per layer (from vector p)
+ vec P = viewDir.xy * height_scale;
+ vec2 deltaTexCoords = P / numLayers;
+ 
+ [...]
+ 
 }
 ```
 
 
+Here we first set things up: we specify the numbers of layers, calculate the depth offset of each layer, and finally calculate the texture coordinate offset that we have to shift along the direction of $\color{brown}{\bar{P}}$ per layer. 
 
+We then iterate though though all the layers, starting from the top, until we find a depth map value less than the layer's depth value. 
 
+```
+// get inital values
+vec2 currentTexCoords = texCoords;
+float currentDepthMapValue = texture(depthMap, currentTexCoords).r;
 
+while (currentLayerDepth < )
 
-
-
-
-
-
-
+```
 
 
 
