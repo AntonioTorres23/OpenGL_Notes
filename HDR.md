@@ -3,7 +3,9 @@ Brightness and color values, by default, are clamped between $0.0$ and $1.0$ whe
 
 ![[Pasted image 20251114164910.png]]
 
-Due to a large number of fragments' color value getting clamped to 1.0, each of the bright fragments have the same 
+Due to a large number of fragments' color value getting clamped to 1.0, each of the bright fragments have the exact same white color value in large regions, losing a significant amount of detail and giving it a fake look. 
+
+A solution to this problem would be to reduce the strength of the light sources and ensure 
 
 
 
