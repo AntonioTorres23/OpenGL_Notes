@@ -3,9 +3,11 @@ Brightness and color values, by default, are clamped between $0.0$ and $1.0$ whe
 
 ![[Pasted image 20251114164910.png]]
 
-Due to a large number of fragments' color value getting clamped to 1.0, each of the bright fragments have the exact same white color value in large regions, losing a significant amount of detail and giving it a fake look. 
+Due to a large number of fragments' color value getting clamped to $1.0$, each of the bright fragments have the exact same white color value in large regions, losing a significant amount of detail and giving it a fake look. 
 
-A solution to this problem would be to reduce the strength of the light sources and ensure 
+A solution to this problem would be to reduce the strength of the light sources and ensure no area of fragments in your scene ends up brighter than ; this is not a good solution as this forces you to use unrealistic lighting parameters. A better approach is to allow color values to temporarily exceed $1.0$ and transform them back to the original range of $0.0$ and $1.0$ as a final step, but without losing detail. 
+
+Monitors (non-HDR) are limited to display colors in the range of
 
 
 
