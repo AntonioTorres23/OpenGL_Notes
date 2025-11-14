@@ -298,9 +298,23 @@
               "icon": "lucide-file",
               "title": "Parallax Mapping"
             }
+          },
+          {
+            "id": "11e9fe34677f98f0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "HDR.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "HDR"
+            }
           }
         ],
-        "currentTab": 20
+        "currentTab": 21
       }
     ],
     "direction": "vertical"
@@ -444,8 +458,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "483ecffc902c2143",
+  "active": "11e9fe34677f98f0",
   "lastOpenFiles": [
+    "Parallax Mapping.md",
+    "HDR.md",
+    "Untitled 1",
+    "Pasted image 20251114163901.png",
+    "Pasted image 20251114163849.png",
     "Pasted image 20251114162340.png",
     "Pasted image 20251114160956.png",
     "Pasted image 20251113165105.png",
@@ -454,11 +473,7 @@
     "Pasted image 20251113162947.png",
     "Pasted image 20251113154213.png",
     "Pasted image 20251113151518.png",
-    "Pasted image 20251113150758.png",
-    "Pasted image 20251113144909.png",
-    "Pasted image 20251113143830.png",
     "Normal Mapping.md",
-    "Parallax Mapping.md",
     "Shadow Mapping.md",
     "Point Shadows.md",
     "Advanced GLSL.md",

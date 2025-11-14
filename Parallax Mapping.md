@@ -270,7 +270,21 @@ vec2 finalTexCoords = prevTexCoords * weight + currentTexCoords * (1.0 - weight)
 return finalTexCoords;
 ```
 
-After we found the depth layer after intersecting the (displaced) geometry, we also retrieve the texture coordinates of the depth layer before intersection. Then we calculate the distance of the (displaced) geometry's depth from the corresponding 
+After we found the depth layer after intersecting the (displaced) geometry, we also retrieve the texture coordinates of the depth layer before intersection. Then we calculate the distance of the (displaced) geometry's depth from the corresponding depth layers and interpolate between these two values. The linear interpolation is a basic interpolation between both layer's texture coordinates. The function then finally returns the final interpolated texture coordinates. 
+
+Parallax Occlusion Mapping gives surprisingly good results and although some slight artifacts and aliasing issues are still visible, it's generally a good trade-off and only really visible when heavily zoomed in or looking at very steep angles. 
+
+![[Pasted image 20251114163849.png]]
+
+You can find the source code [here](https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/5.3.parallax_occlusion_mapping/parallax_occlusion_mapping.cpp).
+
+Parallax Mapping is a great technique to boost the detail of your scene, but does come with a few artifacts you'll have to consider when using it. Most often, parallax mapping is used on floor or wall-like surfaces where it's not as easy to determine the surface's outline and the viewing angle is most often roughly perpendicular to the surface. This way, the artifacts of Parallax Mapping aren't as noticeable and make it an incredibly interesting for boosting your objects' details.
+
+## Additional resources
+
+- [How Parallax Displacement Mapping Works](https://www.youtube.com/watch?v=xvOT62L-fQI): a nice video tutorial of how parallax mapping works by `TheBennyBox`.
+
+
 
 
 
