@@ -219,8 +219,11 @@ We then iterate though though all the layers, starting from the top, until we fi
 vec2 currentTexCoords = texCoords;
 float currentDepthMapValue = texture(depthMap, currentTexCoords).r;
 
-while (currentLayerDepth < )
-
+while(currentLayerDepth < currentDepthMapValue)
+{
+	// shift texture coordinates along direction of P
+	currentTexCoords -= deltaTexCoords; 
+}
 ```
 
 
