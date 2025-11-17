@@ -53,7 +53,12 @@ RenderQuad();
 
 Here a scene's color values are filled into a point color buffer which can contain any arbitrary color value, possibly exceeding $1.0$. For these notes, a simple demo scene was created with a large stretched cube acting as a tunnel with four point lights, one being extremely bright positioned at the tunnel's end. 
 
+```
+std::vector<glm::vec3> lightColors;
+lightColors.push_back(glm::vec3(200.0f, 200.0f, 200.0f));
 
+
+```
  
 
 
