@@ -7,8 +7,7 @@ Due to a large number of fragments' color value getting clamped to $1.0$, each o
 
 A solution to this problem would be to reduce the strength of the light sources and ensure no area of fragments in your scene ends up brighter than ; this is not a good solution as this forces you to use unrealistic lighting parameters. A better approach is to allow color values to temporarily exceed $1.0$ and transform them back to the original range of $0.0$ and $1.0$ as a final step, but without losing detail. 
 
-Monitors (non-HDR) are limited to display colors in the range of
-
+Monitors (non-HDR) are limited to display colors in the range of $0.0$ and $1.0$, but there is no such limitation in lighting equations. By allowing fragment colors to exceed $1.0$ we have a much higher range of color values available to work in known as **High Dynamic Range** (HDR). 
 
 
 
