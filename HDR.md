@@ -19,7 +19,24 @@ High dynamic range rendering works a bit like that. We allow for a much larger r
 
 When it comes to real-time rendering, high dynamic range allows us to not only exceed the LDR range of $[0.0, 1.0]$ and preserve more detail, but it also gives us the ability to specify a light source's intensity by their *real* intensities. For instance, the sun has a much higher intensity than something like a flashlight so why not configure the sun as such (e.g. a diffuse brightness of $100.0$). This allows us to more properly configure a scene's lighting with more realistic lighting parameters, something that wouldn't be possible with LDR rendering as they'd then directly get clamped to $1.0$. 
 
-As (non-HDR) monitors only display colors in the range between $0.0$ and $1.0$ we do need to transform the currently dynamic range of color values back to the monitor's range. Simply re-transforming the colors back with a simple average wouldn't do us much good as brighter areas then become a lot more dominant. What we can do, is use different equations and/or curves 
+As (non-HDR) monitors only display colors in the range between $0.0$ and $1.0$ we do need to transform the currently dynamic range of color values back to the monitor's range. Simply re-transforming the colors back with a simple average wouldn't do us much good as brighter areas then become a lot more dominant. What we can do, is use different equations and/or curves to transform the HDR values back to LDR that give us complete control over the scene's brightness. This is the process earlier denoted as tone mapping and the final step of HDR rendering. 
+
+**Floating Point Framebuffers**
+
+To implement high dynamic range rendering we need some way to prevent color values getting clamped after each fragment shader run. When framebuffers use a normal fixed-point color format (like `GL_RGB`) as their color buffer's internal format, OpenGL automatically clamps the values between $0.0$ and $1.0$ before storing them in the framebuffer. This operation holds for most types of framebuffer formats, except for floating point formats. 
+
+When the internal format of a framebuffer's color buffer is specified as `GL_RGB16F`, `GL_RGBA16F`, `GL_RGB32F`, `GL_RGBA32F` the framebuffer is known as a **floating point framebuffer** that can store floating point values outside default range of $0.0$ and $1.0$. This is perfect for rendering in high dynamic range!
+
+To create a floating point framebuffer the only thing we need to change is its color buffer's internal format parameter.
+
+```
+glBindTexture(GL_TEXTURE_2D, colorBuffer);
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA16F, SCR_WIDTH, SCR_HEIGHT, 0, GL_RGBA, GL_FLOAT, NULL);
+```
+
+The default framebuffer of OpenGL (by default) only takes up 8 bits per color component. With a floating point framebuffer with 32 bits per color components (when USING `GL_RGBA32F` or `GL_RGB32F`) we're using 4 times more memory for storing color values. As 32 bit isn't really necessary (unless you need a high level of precision) using `GL_RGBA16F` will suffice. 
+
+With a floating point color buffer attached to a framebuffer we can now render the scene into this framebuffer knowing color values won't get clamped between $0.0$ and $1.0$. In this note's example demo we first render a lit scene into the floating point framebuffer and then display the framebuffer's color buffer on a screen-filled quad; 
  
 
 
