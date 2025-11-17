@@ -17,7 +17,7 @@ This is also very similar to how the human eye works and the basis of high dynam
 
 High dynamic range rendering works a bit like that. We allow for a much larger range of color values to render to, collection a large range of dark and bright details of a scene, and at the end we transform all HDR values back to **low dynamic range** (LDR) of $[0.0, 1.0]$. This process of converting HRD values to LDR values is called **tone mapping** and a large collection of tone mapping algorithms exist that aim to preserve most HDR details during the conversion process. These tone mapping algorithms often involve an exposure parameter that selectively favors dark or bright regions. 
 
-When it comes to real-time rendering, high dynamic range allows us to not only exceed the LDR range of $[0.0, 1.0]$ 
+When it comes to real-time rendering, high dynamic range allows us to not only exceed the LDR range of $[0.0, 1.0]$ and preserve more detail, but it also gives us the ability to specify a light source's intensity by their *real* intensities. 
  
 
 
