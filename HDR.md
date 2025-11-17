@@ -51,7 +51,9 @@ glBindTexture(GL_TEXTURE_2D, hdrColorBufferTexture);
 RenderQuad();
 ```
 
-Here a scene's color values are filled into a point color buffer which can contain any arbitrary color value, possibly exceeding $1.0$. For these notes, a simple demo scene was created with a large cube acting as a tunnel 
+Here a scene's color values are filled into a point color buffer which can contain any arbitrary color value, possibly exceeding $1.0$. For these notes, a simple demo scene was created with a large stretched cube acting as a tunnel with four point lights, one being extremely bright positioned at the tunnel's end. 
+
+
  
 
 
