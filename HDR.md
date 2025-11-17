@@ -15,6 +15,8 @@ High dynamic range was originally only used for photography where a photographer
 
 This is also very similar to how the human eye works and the basis of high dynamic range rendering. When there is little light, the human eye adapts itself so the darker parts become more visible and similarly for bright areas. It's like the human eye has an automatic exposure slider on the scene's brightness.
 
+High dynamic range rendering works a bit like that. We allow for a much larger range of color values to render to, collection a large range of dark and bright details of a scene, and at the end we transform all HDR values back to **low dynamic range** (LDR) of $[0.0, 1.0]$. This 
+
 
 
 
