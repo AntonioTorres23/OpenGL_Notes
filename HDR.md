@@ -39,8 +39,19 @@ The default framebuffer of OpenGL (by default) only takes up 8 bits per color co
 With a floating point color buffer attached to a framebuffer we can now render the scene into this framebuffer knowing color values won't get clamped between $0.0$ and $1.0$. In this note's example demo we first render a lit scene into the floating point framebuffer and then display the framebuffer's color buffer on a screen-filled quad; it'll look a bit like this.
 
 ```
-glBindFramebuffer
+glBindFramebuffer(GL_FRAMEBUFFER, hdrFBO);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+	// [...] render (lit) scene
+glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+// now render hdr color bufferto 2D screen-filling quad with tone mapping shader
+hdrShader.use();
+glActivateTexture(GL_TEXTURE0);
+glBindTexture(GL_TEXTURE_2D, hdrColorBufferTexture);
+RenderQuad();
 ```
+
+Here a 
  
 
 
