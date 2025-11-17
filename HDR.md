@@ -56,6 +56,7 @@ Here a scene's color values are filled into a point color buffer which can conta
 ```
 std::vector<glm::vec3> lightColors;
 lightColors.push_back(glm::vec3(200.0f, 200.0f, 200.0f));
+lightColors.push_back(glm::vec3)
 
 
 ```
