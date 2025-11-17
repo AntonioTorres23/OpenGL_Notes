@@ -51,7 +51,7 @@ glBindTexture(GL_TEXTURE_2D, hdrColorBufferTexture);
 RenderQuad();
 ```
 
-Here a 
+Here a scene's 
  
 
 
