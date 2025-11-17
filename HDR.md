@@ -9,7 +9,13 @@ A solution to this problem would be to reduce the strength of the light sources 
 
 Monitors (non-HDR) are limited to display colors in the range of $0.0$ and $1.0$, but there is no such limitation in lighting equations. By allowing fragment colors to exceed $1.0$ we have a much higher range of color values available to work in known as **High Dynamic Range** (HDR). With high dynamic range, bright things can be really bright, dark things can be really dark, and details can be seen in both. 
 
-High dynamic range was originally only used for photography where a photographer takes multiple pictures of the same scene with varying exposure levels, capturing a large range of color values. Combining these forms a HDR image where a range of details are visible based on the combined exposure levels, or a specific exposure it is viewed with. For instance, the following image (credits to Colin Smith) shows a lot of detail at brightly lit regions with a low exposure (look at the window), but these details are gone with a high exposure. However, a high exposure now reveals a great amount of detail at darker regions that weren't previously visible 
+High dynamic range was originally only used for photography where a photographer takes multiple pictures of the same scene with varying exposure levels, capturing a large range of color values. Combining these forms a HDR image where a range of details are visible based on the combined exposure levels, or a specific exposure it is viewed with. For instance, the following image (credits to Colin Smith) shows a lot of detail at brightly lit regions with a low exposure (look at the window), but these details are gone with a high exposure. However, a high exposure now reveals a great amount of detail at darker regions that weren't previously visible. 
+
+![[Pasted image 20251117150757.png]]
+
+This is also very similar to how the human eye works and the basis of high dynamic range rendering. When there is little light, the human eye adapts itself so the darker parts become more visible and similarly for bright areas. It's like the human eye has an automatic exposure slider on the scene's brightness.
+
+
 
 
 
