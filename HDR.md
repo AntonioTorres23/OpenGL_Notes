@@ -36,7 +36,11 @@ glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA16F, SCR_WIDTH, SCR_HEIGHT, 0, GL_RGBA, GL
 
 The default framebuffer of OpenGL (by default) only takes up 8 bits per color component. With a floating point framebuffer with 32 bits per color components (when USING `GL_RGBA32F` or `GL_RGB32F`) we're using 4 times more memory for storing color values. As 32 bit isn't really necessary (unless you need a high level of precision) using `GL_RGBA16F` will suffice. 
 
-With a floating point color buffer attached to a framebuffer we can now render the scene into this framebuffer knowing color values won't get clamped between $0.0$ and $1.0$. In this note's example demo we first render a lit scene into the floating point framebuffer and then display the framebuffer's color buffer on a screen-filled quad; 
+With a floating point color buffer attached to a framebuffer we can now render the scene into this framebuffer knowing color values won't get clamped between $0.0$ and $1.0$. In this note's example demo we first render a lit scene into the floating point framebuffer and then display the framebuffer's color buffer on a screen-filled quad; it'll look a bit like this.
+
+```
+glBindFramebuffer
+```
  
 
 
