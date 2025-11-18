@@ -63,6 +63,20 @@ lightColors.push_back(glm::vec3(0.0f, 0.1f, 0.0f));
 
 Rendering to a floating point framebuffer is exactly the same as we would normally render into a framebuffer. What is new is `hdrShader`'s fragment shader that renders the final 2D quad with the floating point color buffer texture attached. Let's first define a simple pass-through fragment shader. 
 
+```
+#version 330 core
+out vec4 FragColor; 
+
+in vec2 TexCoords;
+
+uniform smapler2D hdrBuffer;
+
+void main()
+{
+	vec3 hdrColor = texture(hdrBuffer, TexCoords).rgb;
+	FragColor = vec4(hdrColor, 1.0)
+}
+```
 
 
 
