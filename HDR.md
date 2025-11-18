@@ -78,6 +78,8 @@ void main()
 }
 ```
 
+Here we directly sample the floating point color buffer and use its color value as the fragment shader's output. However, as the 2D quad's output is directly rendered into 
+
 
 
 
