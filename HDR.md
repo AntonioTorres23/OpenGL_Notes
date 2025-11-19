@@ -78,7 +78,11 @@ void main()
 }
 ```
 
-Here we directly sample the floating point color buffer and use its color value as the fragment shader's output. However, as the 2D quad's output is directly rendered into the default framebuffer, all the fragment shader's output values will still end up clamped between $0.0$ and $1.0$ even though we have several values in the floating point 
+Here we directly sample the floating point color buffer and use its color value as the fragment shader's output. However, as the 2D quad's output is directly rendered into the default framebuffer, all the fragment shader's output values will still end up clamped between $0.0$ and $1.0$ even though we have several values in the floating point color texture exceeding $1.0$. 
+
+![[Pasted image 20251118170225.png]]
+
+
 
 
 
