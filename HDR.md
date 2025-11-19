@@ -82,8 +82,7 @@ Here we directly sample the floating point color buffer and use its color value 
 
 ![[Pasted image 20251118170225.png]]
 
-
-
+It becomes clear that the intense light values at the end of the tunnel are clamped to $1.0$ as a large portion of it is completely white, effectively losing all lighting details in the process. 
 
 
 
