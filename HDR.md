@@ -136,10 +136,12 @@ void main()
 }
 ```
 
-Here we defined an `exposure` uniform that defaults to at $1.0$ and allows us to more precisely specify whether we'd like to focus more on dark or bright regions of the HDR color values. 
+Here we defined an `exposure` uniform that defaults to at $1.0$ and allows us to more precisely specify whether we'd like to focus more on dark or bright regions of the HDR color values. For instance, with high exposure values the darker areas of the tunnel show significantly more detail. In contrast, a low exposure largely removes the dark region details, but allows us to see more detail in the bright areas of a scene. Take a look at the image below and see the tunnel at multiple exposure levels. 
 
 
 
+
+![[Pasted image 20251120143840.png]]
 
 
 
