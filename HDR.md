@@ -127,6 +127,7 @@ void main()
 	vec3 hdrColor = texture(hdrBuffer, TexCoords).rgb;
 	
 	// exposure tone mapping
+	// built-in exponential function
 	vec3 mapped = vec3(1.0) - exp(-hdrColor * exposure);
 	// gamma correction
 	mapped = pow(mapped, vec3(1.0/gamma));
@@ -139,11 +140,13 @@ void main()
 Here we defined an `exposure` uniform that defaults to at $1.0$ and allows us to more precisely specify whether we'd like to focus more on dark or bright regions of the HDR color values. For instance, with high exposure values the darker areas of the tunnel show significantly more detail. In contrast, a low exposure largely removes the dark region details, but allows us to see more detail in the bright areas of a scene. Take a look at the image below and see the tunnel at multiple exposure levels. 
 
 
-
-
 ![[Pasted image 20251120143840.png]]
 
+This image clearly shows the benefit of high dynamic range rendering. By changing the exposure level we get to see a lot of details of our scene, that would've been otherwise lost with low dynamic range rendering. Take the end of the tunnel for example, With a normal exposure the wood structure is barely visible, but with a low exposure the detailed wooden patterns are clearly visible. The same holds for the wooden patterns close by that are more visible with a high exposure. 
 
+You can find the source code of the demo [here](https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/6.hdr/hdr.cpp).
+
+**More HDR**
 
 
 
