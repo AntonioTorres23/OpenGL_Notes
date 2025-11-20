@@ -148,7 +148,9 @@ You can find the source code of the demo [here](https://learnopengl.com/code_vie
 
 **More HDR** 
 
-The two tone mapping algorithms shown are only a few of a large collection of (more advanced) tone mapping algorithms of which each has their own strengths and weaknesses. Some tone mapping algorithms favor certain colors/intensities above others and others display both low and high exposure colors at the same time to create more colorful and detailed images. There is also a collection of techniques known
+The two tone mapping algorithms shown are only a few of a large collection of (more advanced) tone mapping algorithms of which each has their own strengths and weaknesses. Some tone mapping algorithms favor certain colors/intensities above others and others display both low and high exposure colors at the same time to create more colorful and detailed images. There is also a collection of techniques known as **automatic exposure adjustment** or **eye adaptation** techniques that determine the brightness of the scene in the previous frame and (slowly) adapt the exposure parameter such that the scene gets brighter in dark areas or darker in bright areas mimicking the human eye. 
+
+The real benefit of HDR rendering really shows itself in large complex scenes with heavy lighting algorithms. As it is difficult to create such a complex demo scene for teaching purposes 
 
 
 
