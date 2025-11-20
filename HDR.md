@@ -114,7 +114,18 @@ Here you can again see the details at the end of the tunnel as the wood texture 
 
 Note that we could also directly tone map at the end of our lighting shader, not needing any floating point number at all! However, as scenes get more complex you'll frequently find the need to store immediate HDR results as floating point buffers so this is a good exercise. 
 
-Another interesting use of tone mapping is to allow the use of an exposure parameter. You probably remember from the introduction that HDR images contain a lot of details visible at different exposure levels. If we have a scene that features a day and night cycle it makes 
+Another interesting use of tone mapping is to allow the use of an exposure parameter. You probably remember from the introduction that HDR images contain a lot of details visible at different exposure levels. If we have a scene that features a day and night cycle it makes sense to use a lower exposure at daylight and a higher exposure at night time, similar to how the human eye adapts. With such an exposure parameter it allows us to configure lighting parameters that work both at day and night under different lighting conditions as we only have to change the exposure parameter. 
+
+A relatively simple exposure tone mapping algorithm looks as follows. 
+
+```
+uniform float exsposure;
+
+void main()
+{
+
+}
+```
 
 
 
