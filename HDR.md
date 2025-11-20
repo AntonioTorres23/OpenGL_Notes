@@ -102,10 +102,14 @@ void main()
 	mapped = pow(mapped, vec3(1.0/ gamma));
 	
 	FragColor = vec4(mapped, 1.0);
-	
-	
 }
 ```
+
+With Reinhard tone mapping applied we no longer lose any detail at the bright areas of our scene. It does tend to slightly favor brighter areas, making darker regions seem less detailed and distinct. 
+
+![[Pasted image 20251120140334.png]]
+
+
 
 
 
