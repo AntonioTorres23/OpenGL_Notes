@@ -84,6 +84,21 @@ Here we directly sample the floating point color buffer and use its color value 
 
 It becomes clear that the intense light values at the end of the tunnel are clamped to $1.0$ as a large portion of it is completely white, effectively losing all lighting details in the process. As we write HDR values to an LDR output buffer it is as if we have no HDR enabled in the first place. What we need to do is transform all the floating point color values into the $0.0-1.0$ range without losing any of its details. We need to apply a process called **tone mapping**. 
 
+**Tone Mapping**
+
+Tone mapping is the process of transforming floating point color value to the expected $[0.0, 1.0]$ range known as low dynamic range without losing too much detail, often accompanied with a specific stylistic color balance. 
+
+One of the more simple tone mapping algorithms is **Reinhard Tone Mapping** that involves dividing the entire HDR color values to LDR color values. The Reinhard tone mapping algorithm evenly balances out all brightness values onto LDR. We include Reinhard tone mapping into the previous fragment shader and also add a **gamma correction** filter for good measure (including the use of sRGB textures). 
+
+```
+void main()
+{
+	const float gamma = 2.2;
+	
+	
+}
+```
+
 
 
 
