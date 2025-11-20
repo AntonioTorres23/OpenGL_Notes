@@ -146,7 +146,9 @@ This image clearly shows the benefit of high dynamic range rendering. By changin
 
 You can find the source code of the demo [here](https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/6.hdr/hdr.cpp).
 
-**More HDR**
+**More HDR** 
+
+The two tone mapping algorithms shown are only a few of a large collection of (more advanced) tone mapping algorithms of which each has their own strengths and weaknesses. Some tone mapping algorithms favor certain colors/intensities above others and others display both low and high exposure colors at the same time to create more colorful and detailed images. There is also a collection of techniques known
 
 
 
