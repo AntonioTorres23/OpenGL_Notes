@@ -110,7 +110,9 @@ With Reinhard tone mapping applied we no longer lose any detail at the bright ar
 ![[Pasted image 20251120140334.png]]
 
 
-Here you can again see the details at the end of the tunnel as the wood texture pattern becomes visible again. With this relatively simple tone mapping algorithm we
+Here you can again see the details at the end of the tunnel as the wood texture pattern becomes visible again. With this relatively simple tone mapping algorithm we can properly see the entire range of HDR values stored in the floating point framebuffer, giving us precise control over the scene's lighting without losing details. 
+
+Note that we could also directly tone map at the end of our lighting shader, not needing any floating point number at all! However, as scenes get more complex you'll frequently find the need to store immediate HDR results as floating point buffers 
 
 
 
