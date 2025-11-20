@@ -123,11 +123,20 @@ uniform float exsposure;
 
 void main()
 {
-
+	const float gamma = 2.2;
+	vec3 hdrColor = texture(hdrBuffer, TexCoords).rgb;
+	
+	// exposure tone mapping
+	vec3 mapped = vec3(1.0) - exp(-hdrColor * exposure);
+	// gamma correction
+	mapped = pow(mapped, vec3(1.0/gamma));
+	
+	FragColor = vec4(mapped, 1.0);
+	
 }
 ```
 
-
+Here we defined an `exposure` uniform that defaults to at $1.0$ and allows us to more precisely specify whether we'd like to focus more on dark or bright regions of the HDR color values. 
 
 
 
