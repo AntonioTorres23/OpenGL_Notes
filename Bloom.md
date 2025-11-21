@@ -68,7 +68,7 @@ for (unsigned int i = 0; i < 2; i++)
 ```
 
 
-
+We do have to explicitly tell OpenGL we're rendering to multiple color buffers via `glDrawBuffers`
 
 
 
