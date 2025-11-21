@@ -28,7 +28,11 @@ The resulting blurred texture is what we use to get the glow or light-bleeding e
 ![[Pasted image 20251120153057.png]]
 
 
-Bloom by it
+Bloom by itself isn't isn't a complicated technique, but difficult to get exactly right. Most of its visual quality is determined by the quality and type of blur filter used for blurring the extracted brightness regions. Simply tweaking the blur filter can drastically change the quality of the Bloom effect. 
+
+Following these steps gives us the Bloom post-processing effect. The next image briefly summarizes the required steps for implementing Bloom. 
+
+
 
 
 
