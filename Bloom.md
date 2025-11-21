@@ -118,7 +118,7 @@ As the Gaussian curve has a larger area close to its center, using its values as
 
 To implement a Gaussian blur filter we'd need a two-dimensional box of weights that we can obtain from a 2 dimensional Gaussian curve equation. The problem with this approach however is that it quickly becomes extremely heavy on performance. Take a blur kernel of 32 by 32 for example, this would require us to sample a texture a total of 1024 times for each fragment ($32 x 32 = 1024$). 
 
-Luckily for us, the Gaussian equation has a very neat property that allows us to separate the two-dimensional 
+Luckily for us, the Gaussian equation has a very neat property that allows us to separate the two-dimensional equation into two smaller one-dimensional equations: one 
  
 
 
