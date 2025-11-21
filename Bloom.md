@@ -100,9 +100,13 @@ void main()
 
 Here we first calculate lighting as normal and pass it to the first fragment shader's output variable `FragColor`. Then we use what is currently stored in `FragColor` to determine if its brightness exceeds a certain threshold. We calculate the brightness of a fragment by properly transforming it to grayscale first (by taking the dot product of both vectors we effectively multiply each individual component of both vectors and add the results together). If the brightness exceeds a certain threshold, we output the color to the second color buffer. We do the same for the light cubes.
 
-This also shows why Bloom works incredibly well with HDR rendering. Because we render in high dynamic range, color values exceed $1.0$ which allows us to 
+This also shows why Bloom works incredibly well with HDR rendering. Because we render in high dynamic range, color values exceed $1.0$ which allows us to specify a brightness threshold outside the default range, giving us much more control over what is considered bright. Without HDR we'd have to set the threshold lower than $1.0$, which is still possible, but regions are much quicker considered bright. This sometimes leads to the glow effect becoming too dominant (think of white glowing snow for example).
 
+With these two color buffers we have an image of the scene as normal, and an image of the extracted bright regions; all generated in a single render pass. 
 
+![[Pasted image 20251121153058.png]]
+
+With an image of the extracted bright regions we now need to blur the image. We can do this with a simple box filter 
 
 
 
