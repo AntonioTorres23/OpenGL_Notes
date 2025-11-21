@@ -45,7 +45,14 @@ layout (location = 0) out vec4 FragColor;
 layout (location = 1) out vec4 BrightColor;
 ```
 
-This only works if we actually have multiple buffers to write to. As a requirement for using multiple fragment shader outputs we need multiple color buffers attached to the currently bound framebuffer object. You may remember from the framebuffer notes that we can specify a color attachment number when linking a texture as a framebuffer's color buffer. Up until now we've always used `GL_COLOR_ATTACHMENT0`, but by also using `GL_COLOR_ATTACHMENT1` 
+This only works if we actually have multiple buffers to write to. As a requirement for using multiple fragment shader outputs we need multiple color buffers attached to the currently bound framebuffer object. You may remember from the framebuffer notes that we can specify a color attachment number when linking a texture as a framebuffer's color buffer. Up until now we've always used `GL_COLOR_ATTACHMENT0`, but by also using `GL_COLOR_ATTACHMENT1` we can have two color buffers attached to a framebuffer object. 
+
+```
+// set up floating point framebuffer to render scene to
+unsigned int hdrFBO;
+glGenFramebuffers(1, &hdrFBO);
+glBindFramebuffer(GL_FRAMBUFFER, hdrFBO)
+```
 
 
 
