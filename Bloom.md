@@ -158,18 +158,19 @@ void main()
 	{
 		for(int i = 1; i < 5; ++i)
 		{
-			// I guess this would be the up direction of the vertical cals?
+			// I guess this would be the up direction of the vertical calcs?
 			result += texture(image, TexCoords + vec2(0.0, tex_offset.y * i)).rgb *
+			weight[i];
+			// I guess this would be the down direction of the vertical calcs?
+			result += texture(image, TexCoords - vec2(0.0, tex_offset.y * i)).rgb *
 			weight[i];
 		}
 	}
-
-	
+	FragColor = vec4(result, 1.0);
 }
-
 ```
 
-
+Here we take a relatively small sample of Gaussian weights that we each use to assign a specific weight to the horizontal or vertical samples around the current fragment. You can see that we split the blur filter into a horizontal and vertical section based on whatever value we set the `horizontal` uniform. We base the offset distance on the exact size of a texel obtained
 
 
 
