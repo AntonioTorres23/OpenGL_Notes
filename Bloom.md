@@ -51,7 +51,9 @@ This only works if we actually have multiple buffers to write to. As a requireme
 // set up floating point framebuffer to render scene to
 unsigned int hdrFBO;
 glGenFramebuffers(1, &hdrFBO);
-glBindFramebuffer(GL_FRAMBUFFER, hdrFBO)
+glBindFramebuffer(GL_FRAMBUFFER, hdrFBO);
+unsigned int colorBuffers[2];
+glGen
 ```
 
 
