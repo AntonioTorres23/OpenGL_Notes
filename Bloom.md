@@ -28,7 +28,7 @@ The resulting blurred texture is what we use to get the glow or light-bleeding e
 ![[Pasted image 20251120153057.png]]
 
 
-
+Bloom by it
 
 
 
