@@ -32,10 +32,13 @@ Bloom by itself isn't isn't a complicated technique, but difficult to get exactl
 
 Following these steps gives us the Bloom post-processing effect. The next image briefly summarizes the required steps for implementing Bloom. 
 
+![[Pasted image 20251121103752.png]]
 
+The first step requires us to extract all the bright colors of a scene based on some threshold. Let's first delve into that.
 
+**Extracting Bright Color**
 
-
+The first step requires us to extract two images from a rend
 
 
 
