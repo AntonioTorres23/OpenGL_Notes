@@ -38,7 +38,14 @@ The first step requires us to extract all the bright colors of a scene based on 
 
 **Extracting Bright Color**
 
-The first step requires us to extract two images from a rendered scene. We could render the scene twice, both rendering to a different framebuffer with different shaders, but we can also use a neat little trick called **Multiple Render Targets (MRT)** that allows us to specify more than one fragment shader output; this gives us the option to extract the first two images in a single render pass. By specifying a layout location specifier before a fragment shader's 
+The first step requires us to extract two images from a rendered scene. We could render the scene twice, both rendering to a different framebuffer with different shaders, but we can also use a neat little trick called **Multiple Render Targets (MRT)** that allows us to specify more than one fragment shader output; this gives us the option to extract the first two images in a single render pass. By specifying a layout location specifier before a fragment shader's output we can control to which color buffer a fragment shader writes to. 
+
+```
+layout (location = 0) out vec4 FragColor;
+layout (location = 1) out vec4 BrightColor;
+```
+
+This only works if we actually have multiple buffers to write
 
 
 
