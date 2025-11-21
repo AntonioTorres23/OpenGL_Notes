@@ -124,7 +124,25 @@ Luckily for us, the Gaussian equation has a very neat property that allows us to
 
 This does mean we need to blur an image at least two times and this works best with the use of framebuffer objects. Specifically for the two-pass Gaussian blur we're going to implement *ping-pong* framebuffers. That is a pair of framebuffer where we render and swap, a given number of times, the other framebuffer's color buffer into the current framebuffer's color buffer with an alternating shader effect. We basically continuously switch the framebuffer to render to and the texture to draw with. This allows us to first blur the scene's texture in the first framebuffer, then blur the first framebuffer's color buffer into the second framebuffer, and then the second framebuffer's color buffer into the first, and so on. 
 
-Before we delve into the framebuffers let's first discuss the Gaussian blur's 
+Before we delve into the framebuffers let's first discuss the Gaussian blur's fragment shader. 
+
+```
+#version vec4 FragColor;
+
+in vec2 TexCoords;
+
+uniform sampler2D image;
+
+uniform bool horizontal;
+unfirom bool weight = float[] (0.227027, 0.1945946, 0.1216216, 0.054054, 0.016216);
+
+void main()
+{
+	vec2 tex_offset = 1.0 / textuerSize(image, 0); // gets size of single texel
+	vec3 result = texture(image, TexCoords)
+}
+
+```
 
 
 
