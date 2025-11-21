@@ -78,11 +78,29 @@ glDrawBuffers(2, attachments);
 When rendering into this framebuffer, whenever a fragment shader uses the layout location specifier, the respective color buffer is used to render the fragment to. This is great as this saves us an extra render pass for extracting bright regions as we can now directly extract them from the to-be-rendered fragment. 
 
 ```
-#
+#version 330 core
+layout (location = 0) vec4 FragColor;
+layout (location = 1) vec4 BrightColor;
+
+[...]
+
+void main()
+{
+	[...] // first do normal lighting calculations and output results
+	FragColor = vec4(lighting, 1.0);
+	// check whether fragment output is higher than threshold, if so output as         // brightness
+	float brightness = dot(FragColor.rgb, vec3(0.2126, 0.7152, 0.0722));
+	if(brightness > 1.0)
+		BrightColor = vec4(FragColor.rgb, 1.0);
+	else
+		BrightColor = vec4(0.0, 0.0, 0.0, 1.0);
+}
 ```
 
 
+Here we first calculate lighting as normal and pass it to the first fragment shader's output variable `FragColor`. Then we use what is currently stored in `FragColor` to determine if its brightness exceeds a certain threshold. We calculate the brightness of a fragment by properly transforming it to grayscale first (by taking the dot product of both vectors we effectively multiply each individual component of both vectors and add the results together). If the brightness exceeds a certain threshold, we output the color to the second color buffer. We do the same for the light cubes.
 
+This also shows why Bloom works incredibly well with HDR rendering. Because we render in high dynamic range, color values exceed $1.0$ which allows us to 
 
 
 
