@@ -146,8 +146,19 @@ void main()
 	{
 		for(int i = 1; i < 5; ++i)
 		{
+			// I guess this would be the right side of the horizontal calcs?
 			result += texture(image, TexCoords + vec2(tex_offset.x * i, 0.0)).rgb *
-			weight[]
+			weight[i];
+			// I guess this would be the left side of the horizontal calcs?
+			result += texture(image, TexCoords - vec2(tex_offset.x * i, 0.0)).rgb *
+			weight[i];
+		}
+	}
+	else
+	{
+		for(int i = 1; i < 5; ++i)
+		{
+		
 		}
 	}
 
