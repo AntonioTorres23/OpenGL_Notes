@@ -114,7 +114,7 @@ In the post-processing note's blur we took the average of all the surrounding pi
 
 ![[Pasted image 20251121154014.png]]
 
-
+As the Gaussian curve has a larger area close to its center, using its values as weights to blur an image give more natural results as samples close by have a higher precedence. If we for instance sample a $32x32$ box 
 
 
 
