@@ -110,7 +110,11 @@ With an image of the extracted bright regions we now need to blur the image. We 
 
 **Gaussian Blur**
 
-In the post-processing note's blur we took the average of all the surrounding pixels of an image. While it does give us an easy blur, it doesn't give the best results. A Gaussian blur is based on the Gaussian curve which is commonly described as a *bell-shaped curve* giving high values close to its center that gradually wear off over distance. 
+In the post-processing note's blur we took the average of all the surrounding pixels of an image. While it does give us an easy blur, it doesn't give the best results. A Gaussian blur is based on the Gaussian curve which is commonly described as a *bell-shaped curve* giving high values close to its center that gradually wear off over distance. The Gaussian curve can be mathematically represented in different forms, but generally has the following shape. 
+
+![[Pasted image 20251121154014.png]]
+
+
 
 
 
