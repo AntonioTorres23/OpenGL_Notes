@@ -192,7 +192,7 @@ for (unsigned int i = 0; i < 2; i++)
 }
 ```
 
-tHEN 
+Then after we've obtained an HDR texture and an extracted brightness texture, we first fill one of the ping-pong framebuffer with the brightness 
 
 
 
