@@ -158,7 +158,9 @@ void main()
 	{
 		for(int i = 1; i < 5; ++i)
 		{
-		
+			// I guess this would be the up direction of the vertical cals?
+			result += texture(image, TexCoords + vec2(0.0, tex_offset.y * i)).rgb *
+			weight[i];
 		}
 	}
 
