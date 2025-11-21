@@ -108,8 +108,9 @@ With these two color buffers we have an image of the scene as normal, and an ima
 
 With an image of the extracted bright regions we now need to blur the image. We can do this with a simple box filter as we've done in the post-processing section of the framebuffers notes, but we'd rather use a more advanced (and better-looking) blur filter called **Gaussian Blur**. 
 
+**Gaussian Blur**
 
-
+In the post-processing note's blur we took the average of all the surrounding pixels of an image. While it does give us an easy blur, it doesn't give the best results. A Gaus
 
 
 
