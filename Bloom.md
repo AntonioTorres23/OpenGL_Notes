@@ -68,7 +68,14 @@ for (unsigned int i = 0; i < 2; i++)
 ```
 
 
-We do have to explicitly tell OpenGL we're rendering to multiple color buffers via `glDrawBuffers`
+We do have to explicitly tell OpenGL we're rendering to multiple color buffers via `glDrawBuffers`. OpenGL, by default, only renders to a framebuffer's first color attachment, ignoring the others. We can do this by passing an array of color attachment `enums`  that we'd like to render to in subsequent operations. 
+
+```
+unsigned int attachments[2] = {GL_COLOR_ATTACHMENT0, GL_COLOR_ATTACHMENT1};
+glDrawBuffers(2, attachments);
+```
+
+When rendering into this framebuffer, whenever a fragment shader uses the layout location specifier, the respective color buffer is used to render the fragment to. 
 
 
 
