@@ -170,7 +170,27 @@ void main()
 }
 ```
 
-Here we take a relatively small sample of Gaussian weights that we each use to assign a specific weight to the horizontal or vertical samples around the current fragment. You can see that we split the blur filter into a horizontal and vertical section based on whatever value we set the `horizontal` uniform. We base the offset distance on the exact size of a texel obtained
+Here we take a relatively small sample of Gaussian weights that we each use to assign a specific weight to the horizontal or vertical samples around the current fragment. You can see that we split the blur filter into a horizontal and vertical section based on whatever value we set the `horizontal` uniform. We base the offset distance on the exact size of a texel obtained by the division of $1.0$ over the size of the texture (a `vec2` from `textureSize`).
+
+For blurring an image we create two basic framebuffers, each with only a color buffer texture. 
+
+```
+unsigned int pingpongFBO[2];
+unsigned int pingpongBuffer[2];
+glGenFrambuffers(2, &pingpongFBO);
+glGenTextures(2, &pingpongBuffer);
+for (unsigned int i = 0; i < 2; i++)
+{
+	glBindFramebuffer(GL_FRAMEBUFFER, pingpongFBO[i]);
+	glBindTexture(GL_TEXTURE_2D, pingpongBuffer[i]);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA16F, SCR_WIDTH, SCR_HEIGHT, 0, GL_RGBA,      GL_FLOAT, NULL);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, pingpongBuffer[i])
+}
+```
 
 
 
