@@ -120,7 +120,9 @@ To implement a Gaussian blur filter we'd need a two-dimensional box of weights t
 
 Luckily for us, the Gaussian equation has a very neat property that allows us to separate the two-dimensional equation into two smaller one-dimensional equations: one that describes the horizontal weights and the other that describes the vertical weights. We'd then first do a horizontal blur with the horizontal weights on the screen texture, and then on the resulting texture do a vertical blur. Due to this property the results are exactly the same, but this time saving us an incredible amount of performance as we'd now only have to do $32 + 32$ ($64$) samples compared to $1024$! This is known as **Two-Pass Gaussian Blur**. 
 
+![[Pasted image 20251121155236.png]]
 
+This does mean we need to blur an image at least two times and this works best with the use of framebuffer objects. Specifically for the two-pass Gaussian blur we're going to implement *ping-pong* framebuffers. That is a pair of framebuffer where we render and swap, a given number of times, the other framebuffer's color buffer into the current framebuffer's color buffer with an alternating shader effect. 
 
 
 
