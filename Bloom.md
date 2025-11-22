@@ -192,7 +192,23 @@ for (unsigned int i = 0; i < 2; i++)
 }
 ```
 
-Then after we've obtained an HDR texture and an extracted brightness texture, we first fill one of the ping-pong framebuffer with the brightness texture and then blur the image 10 times (5 times horizontally and 5 times vertically)
+Then after we've obtained an HDR texture and an extracted brightness texture, we first fill one of the ping-pong framebuffer with the brightness texture and then blur the image 10 times (5 times horizontally and 5 times vertically).
+
+```
+bool horizontal = true; first_iteration = true; 
+shaderBlur.use();
+for (unsigned int i = 0; i < amount; i++)
+{
+	glBindFramebuffer(GL_FRAMEBUFFER, pingpongFBO[horizontal]);
+	shaderBlur.setInt("horizontal", horizontal);
+	glBindTexture(GL_TEXTURE_2D, first_iteration ? colorBuffers[1] :                   pingpongBuffers[!horizontal]);
+	RenderQuad();
+	horizontal = !horizontal;
+	if (first_iteration)
+		first_iteration = false;
+}
+glBindFramebuffer(GL_FRAMEBUFFER, 0);
+```
 
 
 
