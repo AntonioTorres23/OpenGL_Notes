@@ -210,6 +210,8 @@ for (unsigned int i = 0; i < amount; i++)
 glBindFramebuffer(GL_FRAMEBUFFER, 0);
 ```
 
+Each iteration we bind one of the two framebuffers based on whether we want to blur horizontally or vertically and bind the other framebuffer's color buffer as the texture to blur. The first iteration we specifically bind the texture we'd like to blur (`bright)
+
 
 
 
