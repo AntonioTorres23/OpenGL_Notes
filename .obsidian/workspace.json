@@ -326,9 +326,23 @@
               "icon": "lucide-file",
               "title": "Bloom"
             }
+          },
+          {
+            "id": "60d0a463400d7ebe",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Deferred Shading.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Deferred Shading"
+            }
           }
         ],
-        "currentTab": 22
+        "currentTab": 23
       }
     ],
     "direction": "vertical"
@@ -472,8 +486,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "55f27bd483a97bdd",
+  "active": "60d0a463400d7ebe",
   "lastOpenFiles": [
+    "Bloom.md",
+    "Deferred Shading.md",
     "Pasted image 20251124105459.png",
     "Pasted image 20251124104102.png",
     "Pasted image 20251121155236.png",
@@ -484,9 +500,7 @@
     "Pasted image 20251120152900.png",
     "Pasted image 20251120152800.png",
     "Pasted image 20251120152620.png",
-    "Pasted image 20251120151725.png",
     "Advanced GLSL.md",
-    "Bloom.md",
     "HDR.md",
     "Untitled 2",
     "Parallax Mapping.md",

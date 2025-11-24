@@ -253,7 +253,15 @@ With both textures added together, all bright areas of our scene now get a prope
 
 ![[Pasted image 20251124105459.png]]
 
-The colored cubes now appear much more bright and give a better illusion as light emitting objects. This is a relatively simple scene so the Bloom effect isn't too impressive 
+The colored cubes now appear much more bright and give a better illusion as light emitting objects. This is a relatively simple scene so the Bloom effect isn't too impressive here, but in well lit scenes it can make a significant difference when properly configured. You can find the source code of this simple demo [here](https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/7.bloom/bloom.cpp).
+
+For these notes we used a relatively simple Gaussian blur filter where we only take 5 samples in each direction. By taking more samples along a larger radius or repeating the blur filter an extra number of times we can improve the blur effect. As the quality of the blur directly correlates to the quality of the Bloom effect, improving the blur step can make a significant improvement. Some of these improvements combine blur filters with varying sized blur kernels or use multiple Gaussian curves to selectively combine weights. The additional resources from Kalogirou and Epic Games discuss how to significantly improve the Bloom effect by improving the Gaussian blur. 
+
+## Additional resources
+
+- [Efficient Gaussian Blur with linear sampling](http://rastergrid.com/blog/2010/09/efficient-gaussian-blur-with-linear-sampling/): describes the Gaussian blur very well and how to improve its performance using OpenGL's bilinear texture sampling.
+- [Bloom Post Process Effect](https://web.archive.org/web/20190128205221/https://udk-legacy.unrealengine.com/udk/Three/Bloom.html): article from Epic Games about improving the Bloom effect by combining multiple Gaussian curves for its weights.
+- [How to do good Bloom for HDR rendering](http://kalogirou.net/2006/05/20/how-to-do-good-bloom-for-hdr-rendering/): Article from Kalogirou that describes how to improve the Bloom effect using a better Gaussian blur method.
 
 
 
