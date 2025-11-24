@@ -62,4 +62,4 @@ while (...) // render loop
 
 The data we'll need to store of each fragment is a **position** vector, a **normal** vector, a **color** vector, and a **specular intensity** value. In the geometry pass we need to render all objects of the scene and store these data components in the G-buffer. We can again use **multiple render targets** to render to multiple color buffers in a single render pass; this was briefly discussed in the Bloom notes. 
 
-For the geometry pass we'll need to initialize a framebuffer object that we'll call `gBuffer`  that has multiple color buffers attached and a single depth renderbuffer object. For   
+For the geometry pass we'll need to initialize a framebuffer object that we'll call `gBuffer`  that has multiple color buffers attached and a single depth renderbuffer object. For the position and normal texture we'd preferably use a high-precision texture (16 or 32-bit float per component). For the albedo and specular values we'll be fine with default texture precision (8-bit precision per component). Note that we use `GL_RGBA16F` over `GL_RGB16F` as GPU's  
