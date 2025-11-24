@@ -31,4 +31,6 @@ The **G-buffer** is the collective term of all textures used to store lighting-r
 - A **Specular Intensity** float. 
 - All light source position and color vectors. 
 - The player or viewer's position vector. 
-With these (per-fragment) variables at our disposal we are able to calculate the (Blinn)
+With these (per-fragment) variables at our disposal we are able to calculate the (Blinn-)Phong lighting we're accustomed to. The light source positions and colors, and the player's view position, can be configured using the same uniform variables, but the other variables are all fragment specific. If we can somehow pass the exact same data to the final deferred lighting pass we can calculate the same lighting effects, even though we're rendering fragments of a 2D quad.
+
+There is no limit in OpenGL to what we can store in a texture so it makes sense to store all per-fragment data in one or multiple 
