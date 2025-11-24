@@ -101,7 +101,7 @@ unsingned int attachments[3] = {GL_COLOR_ATTACHMENT0, GL_COLOR_ATTACHMENT1, GL_C
 glDrawBuffers(3, attachments);
 
 // then also render buffer object as depth buffer and check for completeness
-
-
-
+[...]
 ```
+
+Since we use multiple render targets, we have to explicitly tell OpenGL which of the color buffers associated 
