@@ -87,8 +87,8 @@ glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 glFramebufferTexture(GL_FRAMEBUFFER, CL_COLOR_ATTACHMENT1, GL_TEXTURE_2D, gNormal, 1);
 
 // - color + specular color buffer
-glGenTextures(1, &gColorSpec);
-glBindTexture(GL_TEXTURE_2D, gColorSpec)
+glGenTextures(1, &gAlbedoSpec);
+glBindTexture(GL_TEXTURE_2D, 0, GL_RGBA,)
 
 
 ```
