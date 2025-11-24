@@ -60,3 +60,4 @@ while (...) // render loop
 }
 ```
 
+The data we'll need to store of each fragment is a **position** vector, a **normal** vector, a **color** vector, and a **specular intensity** value. In the geometry pass we need to render all objects of the scene and store these data components in the G-buffer. 
