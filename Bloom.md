@@ -213,7 +213,9 @@ glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
 Each iteration we bind one of the two framebuffers based on whether we want to blur horizontally or vertically and bind the other framebuffer's color buffer as the texture to blur. The first iteration we specifically bind the texture we'd like to blur (`brightnessTexture`) as both color buffers would else end up empty. By repeating this process 10 times, the brightness image ends up with a complete Gaussian blur that was repeated 5 times. This construct allows us to blur any image as often as we'd like; the more Gaussian blur iterations, the stronger the blur. 
 
-By blurring the extracted brightness texture
+By blurring the extracted brightness texture 5 times, we get a properly blurred image of all bright regions of a scene. 
+
+![[Pasted image 20251124104102.png]]
 
 
 
