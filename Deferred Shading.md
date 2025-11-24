@@ -66,5 +66,6 @@ For the geometry pass we'll need to initialize a framebuffer object that we'll c
 
 ```
 unsigned int gBuffer;
-glGenFramebuffers
+glGenFramebuffers(1, &gBuffer);
+
 ```
