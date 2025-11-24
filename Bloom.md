@@ -247,7 +247,7 @@ void main()
 }
 ```
 
-Interesting to note here is that we add the bloom effect before we apply tone mapping
+Interesting to note here is that we add the bloom effect before we apply tone mapping. 
 
 
 
