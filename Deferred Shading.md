@@ -15,3 +15,4 @@ The image below nicely illustrates the process of deferred shading.
 
 ![[Pasted image 20251124115502.png]]
 
+A major advantage of this approach is that whatever fragment ends up in the G-buffer
