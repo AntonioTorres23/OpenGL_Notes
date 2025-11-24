@@ -251,7 +251,9 @@ Interesting to note here is that we add the bloom effect before we apply tone ma
 
 With both textures added together, all bright areas of our scene now get a proper glow effect. 
 
+![[Pasted image 20251124105459.png]]
 
+The colored cubes now appear much more bright and give 
 
 
 
