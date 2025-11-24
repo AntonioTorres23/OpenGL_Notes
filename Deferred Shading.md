@@ -61,3 +61,5 @@ while (...) // render loop
 ```
 
 The data we'll need to store of each fragment is a **position** vector, a **normal** vector, a **color** vector, and a **specular intensity** value. In the geometry pass we need to render all objects of the scene and store these data components in the G-buffer. We can again use **multiple render targets** to render to multiple color buffers in a single render pass; this was briefly discussed in the Bloom notes. 
+
+For the geometry pass we'll need to initialize a framebuffer object that we'll call `gBuffer`  that has multiple color buffers attached and a single depth renderbuffer 
