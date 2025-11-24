@@ -219,6 +219,10 @@ By blurring the extracted brightness texture 5 times, we get a properly blurred 
 
 The last step to complete the Bloom effect is to combine this blurred brightness texture with the original scene's HDR texture. 
 
+**Blending Both Textures**
+
+With the scene's HDR texture and a blurred brightness texture of the scene we only need to combine the two to achi
+
 
 
 
