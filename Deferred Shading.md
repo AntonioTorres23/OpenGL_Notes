@@ -104,4 +104,4 @@ glDrawBuffers(3, attachments);
 [...]
 ```
 
-Since we use multiple render targets, we have to explicitly tell OpenGL which of the color buffers associated with `GBuffer` we'd like to render with 
+Since we use multiple render targets, we have to explicitly tell OpenGL which of the color buffers associated with `GBuffer` we'd like to render with `glDrawBuffers`. Also interesting to note here is we combine the color and specular intensity data 
