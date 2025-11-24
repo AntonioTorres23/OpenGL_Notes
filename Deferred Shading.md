@@ -107,3 +107,10 @@ glDrawBuffers(3, attachments);
 Since we use multiple render targets, we have to explicitly tell OpenGL which of the color buffers associated with `GBuffer` we'd like to render with `glDrawBuffers`. Also interesting to note here is we combine the color and specular intensity data in a single RGBA texture; this saves us from having to declare an additional color buffer texture. As your deferred shading pipeline gets more complex and needs more data you'll quickly find new ways to combine data in individual textures. 
 
 Next we need to render into the G-buffer. Assuming each object has a diffuse, normal, and specular texture we'd use something like the following fragment shader to render into the G-buffer. 
+
+```
+#version 330 core
+layout (location = 0) vec3 gPosition;
+layout (location = 1) vec3 gNormal;
+layout (location = 2) vec4 gAl
+```
