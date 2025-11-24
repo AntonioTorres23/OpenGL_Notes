@@ -253,7 +253,7 @@ With both textures added together, all bright areas of our scene now get a prope
 
 ![[Pasted image 20251124105459.png]]
 
-The colored cubes now appear much more bright and give 
+The colored cubes now appear much more bright and give a better illusion as light emitting objects. This is a relatively simple scene so the Bloom effect isn't too impressive 
 
 
 
