@@ -67,5 +67,11 @@ For the geometry pass we'll need to initialize a framebuffer object that we'll c
 ```
 unsigned int gBuffer;
 glGenFramebuffers(1, &gBuffer);
+glBindFramebuffer(GL_FRAMEBUFFER, gBuffer);
+unsigned int gPosition, gNormal, gColorSpec;
 
+// - position color buffer
+glGenTextures(1, &gPosition);
+glBindTexture(GL_TEXTURE_2D, gPosition);
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA16F, SCR_WIDTH, SCR_HEIGHT, 0, GL_RGBA, GL_FLOAT, NULL)
 ```
