@@ -42,7 +42,21 @@ while (...) // render loop
 {
 	// 1. geometry pass: render all geometric/color data to g-buiffer
 	glBindFramebuffer(GL_FRAMEBUFFER, gBuffer);
-	glClearColor(0.0, 0.0, 0.0, 1.0); // 
-
+	// keep it black so it doesn't leak into g-buffer
+	glClearColor(0.0, 0.0, 0.0, 1.0);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	gBufferShader.use();
+	for (Object obj : Objects)
+	{
+		ConfigureShaderTransformsAndUniforms();
+		obj.Draw();
+	}
+	// 2. lighting pass: use g-buffer to calculate the scene's lighting
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	lightingPassShader.use();
+	BindAllGBufferTextures();
+	SetLightingUniforms();
+	RenderQuad();
 }
 ```
+
