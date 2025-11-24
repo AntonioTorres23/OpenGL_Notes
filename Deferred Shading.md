@@ -88,7 +88,8 @@ glFramebufferTexture(GL_FRAMEBUFFER, CL_COLOR_ATTACHMENT1, GL_TEXTURE_2D, gNorma
 
 // - color + specular color buffer
 glGenTextures(1, &gAlbedoSpec);
-glBindTexture(GL_TEXTURE_2D, 0, GL_RGBA,)
+glBindTexture(GL_TEXTURE_2D, 0, GL_RGBA, SCR_WIDTH, SCR_HEIGHT, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+
 
 
 ```
