@@ -104,4 +104,4 @@ glDrawBuffers(3, attachments);
 [...]
 ```
 
-Since we use multiple render targets, we have to explicitly tell OpenGL which of the color buffers associated 
+Since we use multiple render targets, we have to explicitly tell OpenGL which of the color buffers associated with `GBuffer` we'd like to render with 
