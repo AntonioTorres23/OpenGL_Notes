@@ -112,5 +112,19 @@ Next we need to render into the G-buffer. Assuming each object has a diffuse, no
 #version 330 core
 layout (location = 0) vec3 gPosition;
 layout (location = 1) vec3 gNormal;
-layout (location = 2) vec4 gAl
+layout (location = 2) vec4 gAlbedoSpec;
+
+in vec2 TexCoords; 
+in vec3 FragPos; 
+in vec3 Normal; 
+
+uniform sampler2D texture_diffuse1;
+uniform sampler2D texture_specular1;
+
+void main()
+{
+	// store the fragment position vector in the first gbuffer texture
+	gPosition = FragPos;
+}
+
 ```
