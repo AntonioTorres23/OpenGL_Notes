@@ -247,7 +247,9 @@ void main()
 }
 ```
 
-Interesting to note here is that we add the bloom effect before we apply tone mapping. 
+Interesting to note here is that we add the bloom effect before we apply tone mapping. This way, the added brightness of bloom is also softly transformed to LDR range with better relative lighting as a result. 
+
+With both textures added together, all bright areas of our scene now get a proper glow effect. 
 
 
 
