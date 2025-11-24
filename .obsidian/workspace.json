@@ -333,12 +333,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Deferred Shading.md",
+                "file": "Bloom.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Deferred Shading"
+              "title": "Bloom"
             }
           }
         ],
@@ -488,11 +488,11 @@
   },
   "active": "60d0a463400d7ebe",
   "lastOpenFiles": [
+    "Deferred Shading.md",
     "Pasted image 20251124115502.png",
     "Pasted image 20251124113627.png",
     "Pasted image 20251124112444.png",
     "Bloom.md",
-    "Deferred Shading.md",
     "Pasted image 20251124105459.png",
     "Pasted image 20251124104102.png",
     "Pasted image 20251121155236.png",
@@ -500,7 +500,6 @@
     "Pasted image 20251121153058.png",
     "Pasted image 20251121103752.png",
     "Pasted image 20251120153057.png",
-    "Pasted image 20251120152900.png",
     "Advanced GLSL.md",
     "HDR.md",
     "Untitled 2",
