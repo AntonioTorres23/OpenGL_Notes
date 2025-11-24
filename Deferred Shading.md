@@ -33,4 +33,16 @@ The **G-buffer** is the collective term of all textures used to store lighting-r
 - The player or viewer's position vector. 
 With these (per-fragment) variables at our disposal we are able to calculate the (Blinn-)Phong lighting we're accustomed to. The light source positions and colors, and the player's view position, can be configured using the same uniform variables, but the other variables are all fragment specific. If we can somehow pass the exact same data to the final deferred lighting pass we can calculate the same lighting effects, even though we're rendering fragments of a 2D quad.
 
-There is no limit in OpenGL to what we can store in a texture so it makes sense to store all per-fragment data in one or multiple screen-filled textures of the G-buffer and use these later in the lighting pass. As the G-buffer textures will have the same size 
+There is no limit in OpenGL to what we can store in a texture so it makes sense to store all per-fragment data in one or multiple screen-filled textures of the G-buffer and use these later in the lighting pass. As the G-buffer textures will have the same size as the lighting pass's 2D quad, we get the exact same fragment data we'd had in a forward rendering setting, but this time in the lighting pass; there is a one on one mapping. 
+
+In pseudocode the entire process will look a bit like this. 
+
+```
+while (...) // render loop
+{
+	// 1. geometry pass: render all geometric/color data to g-buiffer
+	glBindFramebuffer(GL_FRAMEBUFFER, gBuffer);
+	glClearColor(0.0, 0.0, 0.0, 1.0); // 
+
+}
+```
