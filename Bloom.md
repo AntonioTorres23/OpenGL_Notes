@@ -221,7 +221,17 @@ The last step to complete the Bloom effect is to combine this blurred brightness
 
 **Blending Both Textures**
 
-With the scene's HDR texture and a blurred brightness texture of the scene we only need to combine the two to achi
+With the scene's HDR texture and a blurred brightness texture of the scene we only need to combine the two to achieve the infamous Bloom or glow effect. In the final fragment shader (largely similar to the one we used in the HDR notes) we additively blend both textures.
+
+```
+#version 330 core
+out vec4 FragColor;
+
+in vec2 TexCoords; 
+
+uniform sampler2D scene;
+uniform sampler2D 
+```
 
 
 
