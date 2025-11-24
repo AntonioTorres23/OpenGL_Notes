@@ -25,3 +25,10 @@ Filling the G-buffer (in the geometry pass) isn't too expensive as we directly s
 
 The **G-buffer** is the collective term of all textures used to store lighting-relevant data for the final lighting pass. Let's take this moment to briefly review all the data we need to light a fragment with forward rendering. 
 
+- A 3D world-space **position** vector to calculate the (interpolated) fragment position variable used for `lightDir` and `viewDir`
+- An RGB diffuse **color** vector also known as **albedo**.
+- A 3D **normal** vector for determining a surface's slope. 
+- A **Specular Intensity** float. 
+- All light source position and color vectors. 
+- The player or viewer's position vector. 
+With these (per-fragment) variables at our disposal we are able to calculate the (Blinn)
