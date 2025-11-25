@@ -132,7 +132,12 @@ void main()
 	// and the diffuse per-fragment color
 	gAlbedoSpec.rgb = texture(texture_diffuse1, TexCoords).rgb;
 	
-	// store specular intensity in gAlbedoSpec's alpha  
+	// store specular intensity in gAlbedoSpec's alpha component
+	gAlbedoSpec.a = texture(texture_specular1, TexCoords).r; 
 }
-
 ```
+
+As we use multiple render targets, the layout specifier tells OpenGL to which color buffer of the active framebuffer we render to. Note that we do not store the specular intensity into a single color buffer texture as we can store its single float value in the alpha component of one of the other color buffer textures. 
+
+Keep in mind that with lighting calculations it is extremely important to keep all relevant variables in the same coordinate. In this case we store (and calculate) all variables in world-space. 
+
