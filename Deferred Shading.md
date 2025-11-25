@@ -172,3 +172,15 @@ We bind all relevant textures of the G-buffer before rendering and also send the
 
 The fragment shader of the lighting pass is largely similar to the lighting notes shaders we've used so far. What is new is the method in which we obtain the lighting's input variables, which we now directly sample from the G-buffer. 
 
+```
+#version 330 core
+out vec4 FragColor;
+
+in vec2 TexCoords;
+
+uniform Sampler2D gPosition;
+uniform Sampler2D gNormal;
+
+
+```
+
