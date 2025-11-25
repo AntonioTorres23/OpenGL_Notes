@@ -199,6 +199,10 @@ void main()
 	vec3 Normal = texture(gNormal, TexCoords).rgb;
 	vec3 Albedo = texture(gAlbedoSpec, TexCoords).rgb;
 	float specular = texture(gAlbedoSpec, TexCoords).a; // only taking spec values
+	
+	// then calculate lighting as usual
+	vec3 lighting = Albedo * 0.1 // hard-coded ambient component
+	vec3 viewDir = normalize(viewPos - FragPos);
 
 
 ```
