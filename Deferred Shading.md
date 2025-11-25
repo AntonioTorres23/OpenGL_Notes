@@ -143,5 +143,7 @@ Keep in mind that with lighting calculations it is extremely important to keep a
 
 If we'd now were to render a large collection of backpack objects into the `gBuffer` framebuffer and visualize its content by projecting each color buffer one by one onto a screen-filled quad we'd see something like this.
 
+![[Pasted image 20251125111428.png]]
 
+Try to visualize that the world-position and normal vectors are indeed correct. For instance, the normal vectors pointing to the right would be more aligned to a red color, similarly for position vectors that point
 
