@@ -163,5 +163,8 @@ glActivateTexture(GL_TEXTURE2);
 glBindTexture(GL_TEXTURE_2D, gAlbedoSpec); // albedoSpec = diffuse tex + spec light
 // also send light relevant uniforms
 shaderLightingPass.use();
+SendAllLightUniformsToShader(shaderLightingPass);
+shaderLightingPass.setVec3("viewPos", camera.Position);
+RenderQuad();
 ```
 
