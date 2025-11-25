@@ -156,6 +156,9 @@ For the lighting pass we're going to render a 2D screen-filled quad (a bit like 
 ```
 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 glActivateTexture(GL_TEXTURE0);
-glBindTexture(GL_TEXTURE_2D, gPosition)
+glBindTexture(GL_TEXTURE_2D, gPosition);
+glActivateTexture(GL_TEXTURE1);
+glBindTexture(GL_TEXTURE_2D, gNormal);
+glActivateTexture(GL_TEXTURE)
 ```
 
