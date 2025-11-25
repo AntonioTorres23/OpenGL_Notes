@@ -180,7 +180,13 @@ in vec2 TexCoords;
 
 uniform Sampler2D gPosition;
 uniform Sampler2D gNormal;
+uniform Sampler2D gAlbedoSpec;
 
+struct Light
+{
+	vec3 Position;
+	vec3 Color;
+}
 
 ```
 
