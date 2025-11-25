@@ -159,6 +159,8 @@ glActivateTexture(GL_TEXTURE0);
 glBindTexture(GL_TEXTURE_2D, gPosition);
 glActivateTexture(GL_TEXTURE1);
 glBindTexture(GL_TEXTURE_2D, gNormal);
-glActivateTexture(GL_TEXTURE)
+glActivateTexture(GL_TEXTURE2);
+glBindTexture(GL_TEXTURE_2D, gAlbedoSpec); // albedoSpec = diffuse tex + spec light
+
 ```
 
