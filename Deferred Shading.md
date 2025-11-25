@@ -149,5 +149,5 @@ Try to visualize that the world-position and normal vectors are indeed correct. 
 
 **The Deferred Lighting Pass**
 
-
+With a large collection of fragment data in the G-buffer at our disposal we have the option to completely calculate the scene's final lit colors. We do this by iterating over each of the G-Buffer textures pixel by pixel and use their content as input to the lighting algorithms. 
 
