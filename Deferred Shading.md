@@ -141,3 +141,7 @@ As we use multiple render targets, the layout specifier tells OpenGL to which co
 
 Keep in mind that with lighting calculations it is extremely important to keep all relevant variables in the same coordinate. In this case we store (and calculate) all variables in world-space. 
 
+If we'd now were to render a large collection of backpack objects into the `gBuffer` framebuffer and visualize its content by projecting each color buffer one by one onto a screen-filled quad we'd see something like this.
+
+
+
