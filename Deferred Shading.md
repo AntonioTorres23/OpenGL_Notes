@@ -195,7 +195,9 @@ uniform vec3 viewPos;
 void main()
 {
 	// retrieve the data from G-buffer
-	vec3 FragPos = texture(gPosition, TexCoords)
+	vec3 FragPos = texture(gPosition, TexCoords).rgb;
+	vec3 Normal = texture(gNormal, TexCoords).rgb;
+	vec3 Albedo = texture(gNormal, TexCoords)
 }
 
 
