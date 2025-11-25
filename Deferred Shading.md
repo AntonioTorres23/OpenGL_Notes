@@ -145,5 +145,5 @@ If we'd now were to render a large collection of backpack objects into the `gBuf
 
 ![[Pasted image 20251125111428.png]]
 
-Try to visualize that the world-position and normal vectors are indeed correct. For instance, the normal vectors pointing to the right would be more aligned to a red color, similarly for position vectors that point
+Try to visualize that the world-position and normal vectors are indeed correct. For instance, the normal vectors pointing to the right would be more aligned to a red color, similarly for position vectors that point 
 
