@@ -161,6 +161,7 @@ glActivateTexture(GL_TEXTURE1);
 glBindTexture(GL_TEXTURE_2D, gNormal);
 glActivateTexture(GL_TEXTURE2);
 glBindTexture(GL_TEXTURE_2D, gAlbedoSpec); // albedoSpec = diffuse tex + spec light
-
+// also send light relevant uniforms
+shaderLightingPass.use();
 ```
 
