@@ -188,5 +188,15 @@ struct Light
 	vec3 Color;
 }
 
+const int NR_LIGHTS = 32;
+uniform Light lights[NR_LIGHTS];
+uniform vec3 viewPos;
+
+void main()
+{
+	// 
+}
+
+
 ```
 
