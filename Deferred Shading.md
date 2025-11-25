@@ -153,3 +153,8 @@ With a large collection of fragment data in the G-buffer at our disposal we have
 
 For the lighting pass we're going to render a 2D screen-filled quad (a bit like a post-processing effect) and execute an expensive lighting fragment shader on each pixel. 
 
+```
+glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+glActivateTexture()
+```
+
