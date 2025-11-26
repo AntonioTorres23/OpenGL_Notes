@@ -230,3 +230,22 @@ To overcome these disadvantages (especially blending) we often split the render 
 
 Say we want to render each of the light sources as a 3D cube positioned at the light source's position emitting the color of the light. A first idea that comes to mind is to simply forward render all the light sources on top of the deferred lighting quad at the end of the deferred shading pipeline. So basically render the cubes as we'd normally do, but only after we've finished the deferred rendering operations. In code this will look a bit like this. 
 
+```
+// deferred lighting pass
+[...]
+RenderQuad
+
+// now render all light cubes with forward rendering as we'd normally do
+shaderLightBox.use();
+shaderLightBox.setMat4("projection", projection);
+shaderLightBox.setMat4("view", view);
+for (unsigned int i = 0; i < lightPositions.size; i++)
+{
+	model = glm::mat4(1.0);
+	shaderLightBox. 
+}
+
+
+
+```
+
