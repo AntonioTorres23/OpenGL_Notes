@@ -233,7 +233,7 @@ Say we want to render each of the light sources as a 3D cube positioned at the l
 ```
 // deferred lighting pass
 [...]
-RenderQuad
+RenderQuad();
 
 // now render all light cubes with forward rendering as we'd normally do
 shaderLightBox.use();
@@ -242,7 +242,8 @@ shaderLightBox.setMat4("view", view);
 for (unsigned int i = 0; i < lightPositions.size; i++)
 {
 	model = glm::mat4(1.0);
-	shaderLightBox. 
+	model = glm::translate(model, lightPositions[i]);
+	model = glm::scale(model, glm::vec3(0.25));
 }
 
 
