@@ -220,6 +220,8 @@ As we now have the per-fragment (and the relevant uniform variables) necessary t
 
 Running a simple demo with a total of 32 small lights looks a bit like this. 
 
+![[Pasted image 20251126125227.png]]
+
 
 
 
