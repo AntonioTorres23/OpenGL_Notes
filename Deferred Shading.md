@@ -226,5 +226,7 @@ One of the disadvantages of deferred shading is that it is not possible to do bl
 
 To overcome these disadvantages (especially blending) we often split the render into two parts: one deferred rendering part, and the other a forward rendering part specifically meant for blending or special shader effects not suited for a deferred shading pipeline. To illustrate how this works, we'll render the light sources as small cubes using a forward render as the light cubes require a special shader (simply output a single light color). 
 
+**Combining Deferred Rending with Forward Rendering**
 
+Say we want to render each of the light sources as a 3D cube positioned at the light source's position emitting the color of the light. A first idea that comes to mind is to simply forward render all the light sources on top of the deferred lighting quad at the end of the deferred shading pipeline. 
 
