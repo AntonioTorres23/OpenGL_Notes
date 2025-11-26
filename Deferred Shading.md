@@ -250,3 +250,5 @@ for (unsigned int i = 0; i < lightPositions.size; i++)
 RenderCube();
 ```
 
+However, these rendered cubes do not take any 
+

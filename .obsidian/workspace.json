@@ -399,7 +399,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "51dd97ffae4643de",
@@ -486,7 +487,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "811b39e840a47e3f",
+  "active": "60d0a463400d7ebe",
   "lastOpenFiles": [
     "Pasted image 20251126125227.png",
     "Bloom.md",
