@@ -210,7 +210,9 @@ void main()
 		vec3 diffuse = max(dot(Normal, lightDir), 0.0) * Albedo * lights[i].Color;
 		lighting += diffuse;
 	}
-
-
+	
+	FragColor = vec4(lighting, 1.0);
 ```
+
+The lighting pass shader accepts 3 uniform textures that represent the G-buffer and hold all the data we've stored in the geometry pass. 
 
