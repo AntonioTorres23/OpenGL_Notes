@@ -255,4 +255,5 @@ However, these rendered cubes do not take any stored geometry depth of the defer
 
 ![[Pasted image 20251126161814.png]]
 
-What we need to do, is first copy the depth 
+What we need to do, is first copy the depth information stored in the geometry pass into the default framebuffer's depth buffer and only then render the light cubes. This way the light cubes' fragments are only rendered when on top of the previously rendered geometry. 
+
