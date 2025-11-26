@@ -224,5 +224,7 @@ Running a simple demo with a total of 32 small lights looks a bit like this.
 
 One of the disadvantages of deferred shading is that it is not possible to do blending as all values in the G-buffer are single fragments, and blending operates on the combination of multiple fragments. Another disadvantage is that deferred shading forces you to use the same lighting algorithm for most of your scene's lighting; you can somehow alleviate this a bit by including more material-specific data in the G-buffer. 
 
-To overcome these disadvantages (especially blending) we often split the render into two parts: one deferred rendering part, and the other a forward rendering part specifically meant for blending or special shader effects not suited for a deferred shading pipeline. To illustrate how this works, we'll render the light sources as small cubes using a forward render as the light cubes require a special shader () 
+To overcome these disadvantages (especially blending) we often split the render into two parts: one deferred rendering part, and the other a forward rendering part specifically meant for blending or special shader effects not suited for a deferred shading pipeline. To illustrate how this works, we'll render the light sources as small cubes using a forward render as the light cubes require a special shader (simply output a single light color). 
+
+
 
