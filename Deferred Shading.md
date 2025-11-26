@@ -216,4 +216,10 @@ void main()
 
 The lighting pass shader accepts 3 uniform textures that represent the G-buffer and hold all the data we've stored in the geometry pass. If we were to sample these with the current fragment's texture coordinates we'd get the exact same fragment values as if we were rendering the geometry directly. Note that we retrieve both the `Albedo` color and the `Specular` intensity from the single `gAlbedoSpec` texture. 
 
-As we now have the per-fragment (and the relevant uniform variables) necessary to caclulate 
+As we now have the per-fragment (and the relevant uniform variables) necessary to calculate Blinn-Phong lighting, we don't have to make any changes to the lighting code. The only thing we change in deferred shading here is the method of obtaining lighting input variables. 
+
+Running a simple demo with a total of 32 small lights looks a bit like this. 
+
+
+
+
