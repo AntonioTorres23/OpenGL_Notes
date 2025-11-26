@@ -247,8 +247,6 @@ for (unsigned int i = 0; i < lightPositions.size; i++)
 	shaderLightBox.setMat4("model", model);
 	shaderLightBox.setVec3("colorLight", colorLight[i]);
 }
-
-
-
+RenderCube();
 ```
 
