@@ -244,7 +244,8 @@ for (unsigned int i = 0; i < lightPositions.size; i++)
 	model = glm::mat4(1.0);
 	model = glm::translate(model, lightPositions[i]);
 	model = glm::scale(model, glm::vec3(0.25));
-	shaderLightBox.
+	shaderLightBox.setMat4("model", model);
+	shaderLightBox.setVec3("colorLight", colorLight[i]);
 }
 
 
