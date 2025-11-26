@@ -250,5 +250,9 @@ for (unsigned int i = 0; i < lightPositions.size; i++)
 RenderCube();
 ```
 
-However, these rendered cubes do not take any 
+However, these rendered cubes do not take any stored geometry depth of the deferred renderer into account and are, as a result, always rendered on top of the previous rendered objects; this isn't the result we were looking for.
 
+
+![[Pasted image 20251126161814.png]]
+
+What we need to do, is first copy the depth 
