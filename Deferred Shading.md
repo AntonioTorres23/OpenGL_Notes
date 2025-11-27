@@ -257,3 +257,26 @@ However, these rendered cubes do not take any stored geometry depth of the defer
 
 What we need to do, is first copy the depth information stored in the geometry pass into the default framebuffer's depth buffer and only then render the light cubes. This way the light cubes' fragments are only rendered when on top of the previously rendered geometry. 
 
+We can copy the content of a framebuffer to the content of another framebuffer with the help of `glBlitFramebuffer`, a function we also used in the anti-aliasing notes to resolve multisampled framebuffers. The `glBlitFramebuffer` function allows us to copy a user-defined region of a framebuffer to a user-defined region of another framebuffer. 
+
+We stored the depth of all the objects rendered in the deferred geometry pass in the `gBuffer` FBO. If we were to copy the content of its depth buffer to the depth buffer of the default framebuffer, the light cubes would then render as if all of the scene's geometry was rendered with forward rendering. As briefly explained in the anti-aliasing chapter, we have to specify a framebuffer as the read framebuffer and similarly specify a framebuffer as the write framebuffer. 
+
+```
+glBindFramebuffer(GL_READ_FRAMEBUFFER, gBuffer);
+glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0); // write to the default framebuffer
+glBlitFramebuffer(0, 0, SCR_WIDTH, SCR_HEIGHT, 0, 0, SCR_WIDTH, SCR_HEIGHT, GL_DEPTH_BUFFER_BIT, GL_NEAREST);
+glBindFramebuffer(GL_FRAMEBUFFER, 0);
+// now render light cubes as before
+[...]
+```
+
+Here we copy the entire read framebuffer's depth buffer content to the default framebuffer's depth buffer; this can be similarly done for color buffers and stencil buffers. If we then render the light cubes, the cubes indeed render correctly over the scene's geometry. 
+
+![[Pasted image 20251126163654.png]]
+
+You can find the full source code of the demo [here](https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/8.1.deferred_shading/deferred_shading.cpp).
+
+With this approach we can easily combine deferred shading with forward shading. This is great as we can now still apply blending and render objects that require special shader effects, something that isn't possible in a pure deferred rendering context. 
+
+**A Larger Number of Lights**
+
