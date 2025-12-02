@@ -333,6 +333,8 @@ float constant  = 1.0;
 float linear    = 0.7;
 float quadratic = 1.8;
 // we do two seperate std::fmaxf functions to calc the lightMax var below
-float lightMax = std::fmaxf(std::fmaxf(lightColor.r, lightColor.g))
+float lightMax = std::fmaxf(std::fmaxf(lightColor.r, lightColor.g), lightColor.b);
+
+float radius = (-linear + std)
 
 ```
