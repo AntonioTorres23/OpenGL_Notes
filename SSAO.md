@@ -32,5 +32,13 @@ By sampling around this **normal oriented hemisphere** we do not consider the fr
 
 **Sample Buffers**
 
-SSAO requires geometrical info as we need some way to determine the occlusion factor of a fragment. For each fragment, 
+SSAO requires geometrical info as we need some way to determine the occlusion factor of a fragment. For each fragment, we're going to need the following data. 
+
+- A per-fragment **position** vector.
+- A per-fragment **normal** vector.
+- A per-fragment **albedo** color. 
+- A **sample kernel**.
+- A per-fragment **random rotation** vector used to rotate the sample kernel. 
+
+Using a per-fragment view-space position we can orient a sample hemisphere kernel around the fragment's view-space surface normal and use this kernel to sample the position buffer texture at varying offsets.  
 
