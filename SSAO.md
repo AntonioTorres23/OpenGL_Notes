@@ -23,3 +23,10 @@ As you can see, even though we get noticeable banding on the SSAO results due to
 
 The SSAO method developed by Crytek had a certain visual style. Because the sample kernel used was a sphere, it caused flat walls to look gray as half of the kernel samples end up being in the surrounding geometry. Below is an image of Crysis's screen-space ambient occlusion that clearly portrays this gray feel. 
 
+![[Pasted image 20251202160810.png]]
+
+For that reason we won't be using a sphere sample kernel, but rather a hemisphere sample kernel oriented along a surface's normal  vector. 
+
+![[Pasted image 20251202160907.png]]
+By sampling around this **normal oriented hemisphere** we do not consider the fragment's underlying geometry
+
