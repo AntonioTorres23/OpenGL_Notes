@@ -364,4 +364,5 @@ void main()
 
 The results are exactly the same as before, but this time each light only calculates lighting for the light sources in which volume it resides. 
 
-You can find the 
+You can find the final source code of the demo [here](https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/8.2.deferred_shading_volumes/deferred_shading_volumes.cpp).
+
