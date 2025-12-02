@@ -28,5 +28,9 @@ The SSAO method developed by Crytek had a certain visual style. Because the samp
 For that reason we won't be using a sphere sample kernel, but rather a hemisphere sample kernel oriented along a surface's normal  vector. 
 
 ![[Pasted image 20251202160907.png]]
-By sampling around this **normal oriented hemisphere** we do not consider the fragment's underlying geometry
+By sampling around this **normal oriented hemisphere** we do not consider the fragment's underlying geometry to be a contribution to the occlusion factor. This removes the gray-feel of ambient occlusion and generally produces more realistic results. This note's technique is based on this normal-oriented hemisphere method and a slightly modified version of John Chapman's brilliant [SSAO tutorial](http://john-chapman-graphics.blogspot.nl/2013/01/ssao-tutorial.html).
+
+**Sample Buffers**
+
+SSAO requires geometrical info as we need some way to determine the occlusion factor of a fragment. For each fragment, 
 
