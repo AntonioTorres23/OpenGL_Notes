@@ -20,3 +20,6 @@ It is clear the quality and precision of the effect directly relates to the numb
 ![[Pasted image 20251202155548.png]]
 
 As you can see, even though we get noticeable banding on the SSAO results due to the low sample count, by introducing some randomness the banding effects are completely gone. 
+
+The SSAO method developed by Crytek had a certain visual style. Because the sample kernel used was a sphere, it caused flat walls to look gray as half of the kernel samples end up being in the surrounding geometry. Below is an image of Crysis's screen-space ambient occlusion that clearly portrays this gray feel. 
+
