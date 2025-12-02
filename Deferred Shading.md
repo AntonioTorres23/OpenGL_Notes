@@ -382,4 +382,6 @@ There is still an issue with this approach: face culling should be enabled (othe
 
 Rendering light volumes does take its toll on performance, and while it is generally much faster than normal deferred shading for rendering a large number of lights, there's still more we can optimize. Two other popular (and more efficient) extensions on top of deferred shading exist called **deferred shading** and and **tile-based deferred shading**. These are even more efficient at rendering large amounts of light and also allow for relatively efficient MSAA. 
 
-**D**
+**Deferred Rendering vs Forward Rendering**
+
+By itself (without light volumes), deferred shading is a nice optimization as each pixel only runs a single fragment shader, compared to forward rendering where we'd often run the fragment shader multiple times per pixel. 
