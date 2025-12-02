@@ -44,4 +44,4 @@ Using a per-fragment view-space position we can orient a sample hemisphere kerne
 
 ![[Pasted image 20251202163858.png]]
 
-As SSAO is a screen-space technique we can calculate its effect on each fragment on a screen-filled 2D quad. This does mean we have no geometrical information of the scene. What we could do, is render the geometrical per-fragment data into 
+As SSAO is a screen-space technique we can calculate its effect on each fragment on a screen-filled 2D quad. This does mean we have no geometrical information of the scene. What we could do, is render the geometrical per-fragment data into screen space-textures that we then later send to the SSAO shader so we have access to the per-fragment geometrical data
