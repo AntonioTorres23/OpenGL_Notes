@@ -5,4 +5,6 @@ Below is an example image of a scene with and without ambient occlusion. Notice 
 
 ![[Pasted image 20251202143708.png]]
 
-While not an incredibly 
+While not an incredibly obvious effect, the image with ambient occlusion enabled does feel a lot more realistic due to these small occlusion-like details, giving the entire scene a greater feild of depth. 
+
+Ambient 
