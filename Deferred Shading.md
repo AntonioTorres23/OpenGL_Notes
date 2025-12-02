@@ -338,4 +338,4 @@ float lightMax = std::fmaxf(std::fmaxf(lightColor.r, lightColor.g), lightColor.b
 float radius = (-linear + std::sqrtf(linear * linear - 4 * quadratic * (constant - (256.0 / 5.0) * lightMax))) / (2 * quadratic);
 ```
 
-We calculate this radius for each light source of the scene and use it to only calculate lighting 
+We calculate this radius for each light source of the scene and use it to only calculate lighting for that light source if a fragment is inside the light source's volume
