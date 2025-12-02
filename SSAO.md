@@ -15,4 +15,4 @@ The basics behind screen-space ambient occlusion are simple: for each fragment o
 
 Each of the gray depth samples that are inside geometry contribute to the total occlusion factor; the more samples we find inside geometry, the less ambient lighting the fragment should eventually receive. 
 
-It is clear the quality and precision of the effect directly relates to the number of 
+It is clear the quality and precision of the effect directly relates to the number of  samples we take. If the sample count is too low, the precision drastically reduces and we get an artifact called **banding**; if it is too high, we lose performance. 
