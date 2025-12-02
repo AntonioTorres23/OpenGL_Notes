@@ -13,3 +13,6 @@ The basics behind screen-space ambient occlusion are simple: for each fragment o
 
 ![[Pasted image 20251202152255.png]]
 
+Each of the gray depth samples that are inside geometry contribute to the total occlusion factor; the more samples we find inside geometry, the less ambient lighting the fragment should eventually receive. 
+
+It is clear the quality and precision of the effect directly relates to the number of s
