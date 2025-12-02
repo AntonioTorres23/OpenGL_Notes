@@ -338,4 +338,30 @@ float lightMax = std::fmaxf(std::fmaxf(lightColor.r, lightColor.g), lightColor.b
 float radius = (-linear + std::sqrtf(linear * linear - 4 * quadratic * (constant - (256.0 / 5.0) * lightMax))) / (2 * quadratic);
 ```
 
-We calculate this radius for each light source of the scene and use it to only calculate lighting for that light source if a fragment is inside the light source's volume. Below is the updated lighting pass fragment shader that takes the calculated light volumes 
+We calculate this radius for each light source of the scene and use it to only calculate lighting for that light source if a fragment is inside the light source's volume. Below is the updated lighting pass fragment shader that takes the calculated light volumes into account. Note that this approach is merely done for teaching purposes and not visible in a practical setting as we'll soon discuss. 
+
+```
+struct Light {
+	[...]
+	float Radius
+};
+
+void main()
+{
+	[...]
+	for(int i = 0l i < NR_LIGHTS; ++i)
+	{
+		// calculate distance between light source and current fragment
+		float distance = length(lights[i].Position - FragPos);
+		if (distance < lights[i].Radius)
+		{
+			// do expensive lighting 
+			[...]
+		}
+	}
+}
+```
+
+The results are exactly the same as before, but this time each light only calculates lighting for the light sources in which volume it resides. 
+
+You can find the 
