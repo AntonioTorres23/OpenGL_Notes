@@ -42,5 +42,5 @@ SSAO requires geometrical info as we need some way to determine the occlusion fa
 
 Using a per-fragment view-space position we can orient a sample hemisphere kernel around the fragment's view-space surface normal and use this kernel to sample the position buffer texture at varying offsets. For each per-fragment kernel sample we compare its depth with its depth in the position buffer to determine the amount of occlusion. The resulting occlusion factor is then used to limit the final ambient lighting component. By also including a per-fragment rotation vector we can significantly reduce the number of samples we'll need to take as we'll soon see. 
 
-
+![[Pasted image 20251202163858.png]]
 
