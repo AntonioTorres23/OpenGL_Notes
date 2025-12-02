@@ -368,4 +368,5 @@ The results are exactly the same as before, but this time each light only calcul
 
 You can find the final source code of the demo [here](https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/8.2.deferred_shading_volumes/deferred_shading_volumes.cpp).
 
-****
+**How We Really Use Light Volume**
+
