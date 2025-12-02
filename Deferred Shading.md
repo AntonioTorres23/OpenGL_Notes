@@ -280,3 +280,49 @@ With this approach we can easily combine deferred shading with forward shading. 
 
 **A Larger Number of Lights**
 
+What deferred rendering is often praised for, is its ability to render an enormous amount of light sources without a heavy cost on performance. Deferred rendering by itself doesn't allow for a very large amount of light sources as we'd still have to calculate each fragment's lighting component for each of the scene's light sources. What makes a large amount of light sources possible is a very neat optimization we can apply to the deferred rendering pipeline: that of **light volumes**. 
+
+Normally when we render a fragment in a large lit scene we'd calculate the contribution of each light source in a scene, regardless of their distance to the fragment. A large portion of these light sources will never reach the fragment, so why waste all these lighting computations?
+
+The idea behind light volumes is to calculate the radius, or volume, of a light source i.e. the area where its light is able to reach fragments. As most light sources use some form of attenuation, we can use that to calculate the maximum distance or radius their light is able to reach. We then only do the expensive lighting calculations if a fragment is inside one or more of these light volumes. This can save us a considerable amount of computation as we now only calculate lighting where it's necessary. 
+
+The trick to this approach is mostly figuring out the size of radius of the light volume of a light source. 
+
+**Calculating a Light's Volume or Radius**
+
+To obtain a light's volume radius we have to solve the attenuation equation for when its light contribution becomes $0.0$. For the attenuation function we'll use the function introduced in the light casters notes.  
+
+$\LARGE{F_{light} = \frac{I}{K_c + K_l * d + K_q * d^2}}$    
+
+What we want to do is solve this equation for when $\large{F_{light}}$  is $0.0$. However, this equation will never exactly reach the value $0.0$, so there won't be a solution. What we can do however, is not solve the equation for $0.0$, but solve it for a brightness value that is close to $0.0$ but still perceived as dark. The brightness value of $5/256$ would be acceptable for this note's demo scene; divided by $256$ as the default 8-bit framebuffer can only display that many intensities per component. 
+
+The attenuation function used is mostly dark in its visible range. If we were to limit it to an even darker brightness than $5/256$, the light volume would become too large and thus less effective. As long as a user cannot see a sudden cut-off of a light source at its volume borders we'll be fine. Of course this always depends on the type of scene; a higher brightness threshold results in smaller light volumes and thus a better efficiency, but can produce noticeable artifacts where lighting seems to break at a volume's borders. 
+
+The attenuation equation we have to solve becomes. 
+
+$\LARGE{\frac{5}{256} = \frac{I_{max}}{Attenuation}}$ 
+
+Here, $\large{I_{max}}$ is the light source's brightest color component. We use a light source's brightest color component as solving the equation for a light's brightest intensity value best reflects the ideal light volume radius. 
+
+From here on we continue solving the equation. 
+
+1. Move attenuation over to the left by using multiplication to cancel out the right Attenuation variable:
+
+	$\LARGE{\frac{5}{256} * Attenuation = I_{max}}$
+
+2. Move 256 over to the right by using multiplication to cancel out the left side: 
+	$\LARGE{5 * Attenuation = I_{max} * 256}$ 
+
+3. Move 5 over to the right by using division to cancel out left side making it $\Large{\frac{256}{5}}$:
+	$\LARGE{Attenuation = I_{max} * \frac{256}{5}}$
+
+4. Now replace your $Attenuation$ variable with the formula we have used prior for attenuating lights:
+	$\LARGE{K_c + K_l * d + K_q * d^2 = I_{max} * \frac{256}{5}}$ 
+
+5. Move the $\large{I_{max}}$ and $\large{\frac{256}{5}}$ over to the left side, you get the $\large{I_{max}}$ over there by subtracting it by itself to cancel out the right one. However, for the $\large{\frac{256}{5}}$ I'm not sure how it gets over there without multiplying. Maybe because its the entire equation being moved over $\large{(I_{max} * \frac{256}{5})}$ rather than each individual component?  We also rearrange the attenuation formula where it goes quadratic, linear, and then constant.  
+	$\LARGE{K_q * d^2 + K_l * d + K_c - I_{max} * \frac{256}{5} = 0}$ 
+
+The last equation is an equation of the form $ax^2 + bx + c = 0$, which we can solve using the quadratic equation: 
+
+$\LARGE{x = \frac{-K_l + \sqrt{K_l^2 - 4 * K_q * (K_c - I_{max} * \frac{256}{5})}}{2 * K_q}}$ 
+
