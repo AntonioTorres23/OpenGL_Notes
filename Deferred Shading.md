@@ -326,3 +326,13 @@ The last equation is an equation of the form $ax^2 + bx + c = 0$, which we can s
 
 $\LARGE{x = \frac{-K_l + \sqrt{K_l^2 - 4 * K_q * (K_c - I_{max} * \frac{256}{5})}}{2 * K_q}}$ 
 
+This gives us a general equation that allows us to calculate $\Large{x}$ i.e. the light volume's radius for the light source given a constant, linear, and quadratic parameter. 
+
+```
+float constant  = 1.0;
+float linear    = 0.7;
+float quadratic = 1.8;
+// we do two seperate std::fmaxf functions to calc the lightMax var below
+float lightMax = std::fmaxf(std::fmaxf(lightColor.r, lightColor.g))
+
+```
