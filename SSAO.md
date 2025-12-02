@@ -11,4 +11,5 @@ Ambient occlusion techniques are expensive as they have to take surrounding geom
 
 The basics behind screen-space ambient occlusion are simple: for each fragment on a screen-filled quad we calculate an **occlusion factor** based on the fragment's surrounding depth values. The occlusion factor is then used to reduce or nullify the fragment's ambient lighting component. The occlusion factor is obtained by taking multiple depth samples in a sphere sample kernel surrounding the fragment position and compare each of the samples with the current fragment's depth value. The number of samples that have a higher depth value than the fragment's depth represents the occlusion factor. 
 
-The basics behind screen-space ambient occlusion are simple: for each fragment on a scree
+![[Pasted image 20251202152255.png]]
+
