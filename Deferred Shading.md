@@ -334,7 +334,8 @@ float linear    = 0.7;
 float quadratic = 1.8;
 // we do two seperate std::fmaxf functions to calc the lightMax var below
 float lightMax = std::fmaxf(std::fmaxf(lightColor.r, lightColor.g), lightColor.b);
-
-float radius = (-linear + std)
-
+// here we do the quadratic formula that we got prior but in code format
+float radius = (-linear + std::sqrtf(linear * linear - 4 * quadratic * (constant - (256.0 / 5.0) * lightMax))) / (2 * quadratic);
 ```
+
+We calculate this radius for each light source of the scene and use it to only calculate lighting 
