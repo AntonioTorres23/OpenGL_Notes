@@ -40,5 +40,5 @@ SSAO requires geometrical info as we need some way to determine the occlusion fa
 - A **sample kernel**.
 - A per-fragment **random rotation** vector used to rotate the sample kernel. 
 
-Using a per-fragment view-space position we can orient a sample hemisphere kernel around the fragment's view-space surface normal and use this kernel to sample the position buffer texture at varying offsets.  
+Using a per-fragment view-space position we can orient a sample hemisphere kernel around the fragment's view-space surface normal and use this kernel to sample the position buffer texture at varying offsets. For each per-fragment kernel sample we compare its depth with its depth in the position buffer to determine the amount of occlusion. 
 
