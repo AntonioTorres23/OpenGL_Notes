@@ -384,4 +384,8 @@ Rendering light volumes does take its toll on performance, and while it is gener
 
 **Deferred Rendering vs Forward Rendering**
 
-By itself (without light volumes), deferred shading is a nice optimization as each pixel only runs a single fragment shader, compared to forward rendering where we'd often run the fragment shader multiple times per pixel. 
+By itself (without light volumes), deferred shading is a nice optimization as each pixel only runs a single fragment shader, compared to forward rendering where we'd often run the fragment shader multiple times per pixel. Deferred rendering does come with a few disadvantages though: a large memory overhead, no MSAA, and blending still has to be done with forward rendering. 
+
+When you have a small scene and not too many lights, deferred rendering is not necessarily faster and sometimes even slower as the overhead then outweighs the benefits of deferred rendering. In more complex scenes, deferred rendering quickly becomes a significant optimization; especially with more advanced optimization extensions. In addition, some render effects (especially pos-processing effects) becomes cheaper on a deferred rendering pipeline as a lot of scene inputs are already available from the g-buffer. 
+
+As a final note I'd like to mention that basically all effects that can be accomplished with forward rendering can also be implemented in a deferred rendering context. 
