@@ -353,6 +353,8 @@ void main()
 	{
 		// calculate distance between light source and current fragment
 		float distance = length(lights[i].Position - FragPos);
+		// if distance between light pos and frag pos is less than radius,
+		// then do exspensive lighting
 		if (distance < lights[i].Radius)
 		{
 			// do expensive lighting 
@@ -366,3 +368,4 @@ The results are exactly the same as before, but this time each light only calcul
 
 You can find the final source code of the demo [here](https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/8.2.deferred_shading_volumes/deferred_shading_volumes.cpp).
 
+****
