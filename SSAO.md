@@ -52,6 +52,10 @@ As we should have per-fragment position and normal data available from the scene
 
 ```
 #version 330 core 
+layout (location = 0) in vec3 gPosition;
+layout (location = 1) in vec3 gNormal;
+layout (location = 2) in vec4 gAlbedospec;
 ```
 
+in vec2
 
