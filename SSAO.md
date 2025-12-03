@@ -72,4 +72,4 @@ void main()
 }
 ```
 
-Since SSAO is a screen-space
+Since SSAO is a screen-space technique where occlusion is calculated from the visible view, it makes sense to implement the algorithm in view-space. Therefore, `FragPos` and `Normal` as supplied by the geometry stage's vertex shader are transformed to view space (multiplied by the view matrix as well). 
