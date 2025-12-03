@@ -74,4 +74,4 @@ void main()
 
 Since SSAO is a screen-space technique where occlusion is calculated from the visible view, it makes sense to implement the algorithm in view-space. Therefore, `FragPos` and `Normal` as supplied by the geometry stage's vertex shader are transformed to view space (multiplied by the view matrix as well). 
 
-It is possible to reconstruct the position vectors from depth values alone, using some clever tricks as Matt
+It is possible to reconstruct the position vectors from depth values alone, using some clever tricks as Matt Pettineo described in his [blog](https://mynameismjp.wordpress.com/2010/09/05/position-from-depth-3/). This requires a few extra calculations in the shaders, but saves us from having to store position data in the G-buffer (which causes a lot of memory)
