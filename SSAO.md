@@ -48,5 +48,10 @@ As SSAO is a screen-space technique we can calculate its effect on each fragment
 
 In these notes we're going to implement SSAO on top of a slightly simplified version of the deferred renderer from the deferred shading notes. If you're not sure what deferred shading is, be sure to first read up on that.
 
+As we should have per-fragment position and normal data available from the scene objects, the fragment shader of the geometry stage is fairly simple. 
+
+```
+#version 330 core 
+```
 
 
