@@ -66,8 +66,10 @@ void main()
 	gPosition = FragPos; 
 	// also store the per-fragment normals into the gbuffer
 	gNormal = normalize(Normal);
-	// an
+	// and the diffuse per-fragment color, ignore specular
+	gAlbedoSpec.rgb = vec3(0.95);
 	
 }
 ```
 
+Since SSAO is a screen-space
