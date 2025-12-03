@@ -46,3 +46,7 @@ Using a per-fragment view-space position we can orient a sample hemisphere kerne
 
 As SSAO is a screen-space technique we can calculate its effect on each fragment on a screen-filled 2D quad. This does mean we have no geometrical information of the scene. What we could do, is render the geometrical per-fragment data into screen space-textures that we then later send to the SSAO shader so we have access to the per-fragment geometrical data. If you've followed along with the previous notes you'll realize this looks quite like a deferred render's G-buffer setup. For that reason SSAO is perfectly suited in combination with deferred rendering as we already have the position and normal vectors in the G-buffer. 
 
+In these notes we're going to implement SSAO on top of a slightly simplified version of the deferred renderer from the deferred shading notes. If you're not sure what deferred shading is, be sure to first read up on that.
+
+
+
