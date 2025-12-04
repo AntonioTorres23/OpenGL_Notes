@@ -104,4 +104,10 @@ Assuming we have a unit hemisphere, we can obtain a sample kernel with a maximum
 
 // random floats between [0.0, 1.0]
 std::uniform_real_distrubution<float> randomFloats(0.0, 1.0);
+std::default_random_engine generator;
+for (unsigned int i = 0; i < 64; ++i)
+{
+	glm::vec3 sample(
+		randomFloats(generator) * 2.0 - 1.0
+}
 ```
