@@ -110,6 +110,9 @@ for (unsigned int i = 0; i < 64; ++i)
 	glm::vec3 sample(
 		randomFloats(generator) * 2.0 - 1.0 // normal x value between (-1.0, 1.0)
 		randomFloats(generator) * 2.0 - 1.0 // normal y value between (-1.0, 1.0)
-		randomFloats
+		randomFloats(generator)             // normal z value between (0.0, 1.0)
+	);
+	// normalize to ensure vector length (w AKA homogenous value) is 1.0
+	sample = glm::normalize(sample); 
 }
 ```
