@@ -110,5 +110,6 @@ for (unsigned int i = 0; i < 64; ++i)
 	glm::vec3 sample(
 		randomFloats(generator) * 2.0 - 1.0 // normal x value between (-1.0, 1.0)
 		randomFloats(generator) * 2.0 - 1.0 // normal y value between (-1.0, 1.0)
+		randomFloats
 }
 ```
