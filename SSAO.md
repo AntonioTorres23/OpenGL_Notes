@@ -94,4 +94,4 @@ Next, we need the actual hemisphere sample kernel and some method to randomly ro
 
 **Normal-oriented Hemisphere**
 
-We need to generate a number of samples oriented along the normal of a surface. As we briefly discussed at the start of these notes, we want to generate samples that form a hemisphere. As it is difficult nor plausible to generate a sampe
+We need to generate a number of samples oriented along the normal of a surface. As we briefly discussed at the start of these notes, we want to generate samples that form a hemisphere. As it is difficult nor plausible to generate a sample kernel for each surface normal direction, we're going to generate a sample kernel in `tangent space`, with the normal vector pointing in the positive z direction.
