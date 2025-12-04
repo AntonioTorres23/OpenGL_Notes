@@ -88,4 +88,10 @@ glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 ```
 
-This gives us a position texture that we can use to obtain depth values for each of the kernel samples. Note that we store the positions in a floating point data format; this way position values aren't clamped to $[0.0, 1.0]$ 
+This gives us a position texture that we can use to obtain depth values for each of the kernel samples. Note that we store the positions in a floating point data format; this way position values aren't clamped to $[0.0, 1.0]$ and we need the higher precision. Also note the texture wrapping method of `GL_CLAMP_TO_EDGE`. This ensures we don't accidently oversample position/depth values in screen-space outside the texture's default coordinate region. 
+
+Next, we need the actual hemisphere sample kernel and some method to randomly rotate it. 
+
+**Normal-oriented Hemisphere**
+
+
