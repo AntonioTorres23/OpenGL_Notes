@@ -78,3 +78,7 @@ It is possible to reconstruct the position vectors from depth values alone, usin
 
 The `gPosition` color buffer texture is configured as follows. 
 
+```
+glGenTextures(1, &gPosition);
+glBindTexture(GL_TEXTURE_2D, )
+```
