@@ -101,5 +101,7 @@ We need to generate a number of samples oriented along the normal of a surface. 
 Assuming we have a unit hemisphere, we can obtain a sample kernel with a maximum of 64 sample values as follows. 
 
 ```
-std::uniform_real_distru
+
+// random floats between [0.0, 1.0]
+std::uniform_real_distrubution<float> randomFloats(0.0, 1.0);
 ```
