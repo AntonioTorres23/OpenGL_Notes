@@ -141,3 +141,21 @@ float lerp(float a, float b, float f)
 ```
 
 This gives us a kernel distribution that places most samples closer to its origin 
+
+![[Pasted image 20251205104948.png]]
+
+Each of the kernel samples will be used to offset the view-space fragment position to sample surrounding geometry. We do need quite a lot of samples in view-space in order to get realistic, which may be too heavy on performance. However, if we can introduce a somewhat random rotation/noise on a per-fragment basis, we can significantly reduce the number of samples required. 
+
+**Random Kernel Rotations**
+
+By introducing some randomness onto the sample kernels we largely reduce the number of sample necessary to get good results. We could create a random rotation vector for each fragment of a scene, but that quickly eats up memory. It makes more sense to create a small texture of random rotation vectors that we tile over the screen. 
+
+We create a 4x4 array of random rotation vectors oriented around the tangent-space surface normal. 
+
+```
+std::vector<glm::vec3> ssaoNoise;
+for (unsigned int i = 0; i < 16; i++)
+{
+	
+}
+```
