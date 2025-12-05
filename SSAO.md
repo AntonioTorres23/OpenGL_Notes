@@ -126,6 +126,18 @@ Currently, all samples are randomly distributed in the sample kernel, but we'd r
 
 ```
 float scale = (float)i / 64.0;
-scale = lerp(0.1f, 1.0f, scale)
+scale = lerp(0.1f, 1.0f, scale * scale);
+sample *= scale;
+ssaoKernel.pushback(sample);
 ```
 
+Where `lerp` is defined as.
+
+```
+float lerp(float a, float b, float f)
+{
+	return a + f * (b - a);
+}
+```
+
+This gives us a kernel distribution that places most samples closer to its origin 
