@@ -190,7 +190,12 @@ glGenFramebuffers(1, &ssaoFBO);
 glBindFramebufer(GL_FRAMEBUFFER, ssaoFBO);
 
 unsigned int ssaoColorBuffer;
-glGenTextures(1, &)
+glGenTextures(1, &ssaoColorBuffer);
+glBindTextures(GL_TEXTURE_2D, ssaoColorBuffer);
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, SCR_WIDTH, SCR_HEIGHT, GL_RED, GL_FLOAT, NULL);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, ssaoColorBuffer);
 ```
 
 
