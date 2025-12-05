@@ -156,6 +156,14 @@ We create a 4x4 array of random rotation vectors oriented around the tangent-spa
 std::vector<glm::vec3> ssaoNoise;
 for (unsigned int i = 0; i < 16; i++)
 {
-	
+	glm::vec3 noise(
+		randomFloats(generator) * 2.0 - 1.0,
+		ramdomFloats(generator) * 2.0 - 1.0, 
+		0.0f);
+		ssaoNoise.push_back(noise)
 }
 ```
+
+As the sample kernel is oriented along the positive z direction in tangent space, we leave the z component at 0.0 so we rotate round the z-axis. 
+
+We then create a 4x4 texture that holds the random rotation vectors 
