@@ -105,6 +105,7 @@ Assuming we have a unit hemisphere, we can obtain a sample kernel with a maximum
 // random floats between [0.0, 1.0]
 std::uniform_real_distrubution<float> randomFloats(0.0, 1.0);
 std::default_random_engine generator;
+std::vector<glm::vec3> ssaoKernel;
 for (unsigned int i = 0; i < 64; ++i)
 {
 	glm::vec3 sample(
@@ -114,5 +115,9 @@ for (unsigned int i = 0; i < 64; ++i)
 	);
 	// normalize to ensure vector length (w AKA homogenous value) is 1.0
 	sample = glm::normalize(sample); 
+	sample *= randomFloats(generator);
+	ssaoKernel.push_back(sample);
 }
 ```
+
+We vary the x and y direction in tangent space between $-1.0$ and $1.0$ and vary the z direction of the samples between $0.0$ and $1.0$ (if we varied the z direction between $-1.0$ and $1.0$ as well we'd have a sphere sample kernel, rather than a hemisphere/half-sphere) 
