@@ -122,3 +122,10 @@ for (unsigned int i = 0; i < 64; ++i)
 
 We vary the x and y direction in tangent space between $-1.0$ and $1.0$ and vary the z direction of the samples between $0.0$ and $1.0$ (if we varied the z direction between $-1.0$ and $1.0$ as well we'd have a sphere sample kernel, rather than a hemisphere/half-sphere sample kernel). As the sample kernel will be oriented along the surface normal, the resulting sample vectors will all end up in the hemisphere. 
 
+Currently, all samples are randomly distributed in the sample kernel, but we'd rather place a larger weight on occlusions close to the actual fragment. We want to distribute more kernel samples closer to the origin. We can do this with an accelerating interpolation function.
+
+```
+float scale = (float)i / 64.0;
+scale = lerp(0.1f, 1.0f, scale)
+```
+
