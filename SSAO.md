@@ -184,6 +184,14 @@ We now have all the relevant input data we need to implement SSAO.
 **The SSAO Shader**
 
 The SSAO shader runs on a 2D screed filled quad that calculates the occlusion value for each of its fragments. As we need to store the result of the SSAO stage (for use in the final lighting shader), we create yet another framebuffer object. 
+```
+unsigned int ssaoFBO;
+glGenFramebuffers(1, &ssaoFBO);
+glBindFramebufer(GL_FRAMEBUFFER, ssaoFBO);
+
+unsigned int ssaoColorBuffer;
+glGenTextures(1, &)
+```
 
 
 
