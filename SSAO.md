@@ -172,6 +172,8 @@ We then create a 4x4 texture that holds the random rotation vectors; make sure t
 unsigned int noiseTexture;
 glGenTextures(1, &noiseTexture);
 glBindTexture(GL_TEXTURE_2D, noiseTexture);
-glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB16F)
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB16F, 4, 4, 0, GL_RGB, GL_FLOAT, &ssaoNoise[0]);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+
 ```
 
