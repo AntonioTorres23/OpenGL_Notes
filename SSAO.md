@@ -120,4 +120,5 @@ for (unsigned int i = 0; i < 64; ++i)
 }
 ```
 
-We vary the x and y direction in tangent space between $-1.0$ and $1.0$ and vary the z direction of the samples between $0.0$ and $1.0$ (if we varied the z direction between $-1.0$ and $1.0$ as well we'd have a sphere sample kernel, rather than a hemisphere/half-sphere) 
+We vary the x and y direction in tangent space between $-1.0$ and $1.0$ and vary the z direction of the samples between $0.0$ and $1.0$ (if we varied the z direction between $-1.0$ and $1.0$ as well we'd have a sphere sample kernel, rather than a hemisphere/half-sphere sample kernel). As the sample kernel will be oriented along the surface normal, the resulting sample vectors will all end up in the hemisphere. 
+
