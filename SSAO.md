@@ -166,4 +166,12 @@ for (unsigned int i = 0; i < 16; i++)
 
 As the sample kernel is oriented along the positive z direction in tangent space, we leave the z component at 0.0 so we rotate round the z-axis. 
 
-We then create a 4x4 texture that holds the random rotation vectors 
+We then create a 4x4 texture that holds the random rotation vectors; make sure to set its wrapping method to `GL_REPEAT` so it properly tiles over the screen. 
+
+```
+unsigned int noiseTexture;
+glGenTextures(1, &noiseTexture);
+glBindTexture(GL_TEXTURE_2D, noiseTexture);
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB16F)
+```
+
