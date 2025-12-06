@@ -198,7 +198,18 @@ glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, ssaoColorBuffer);
 ```
 
-As the ambient occlusion result is a single grayscale value we'll only need a texture's red component, so we set the color buffer's internal format to `GL_RED`
+As the ambient occlusion result is a single grayscale value we'll only need a texture's red component, so we set the color buffer's internal format to `GL_RED` 
+
+The complete process for rendering SSAO then looks a bit like this. 
+
+```
+// geometry pass: render stuff into G-buffer
+glBindFramebuffer(GL_FRAMEBUFFER, gBuffer);
+	[...]
+glgBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+// use G-buffer to render SSAO texture
+```
 
 
 
