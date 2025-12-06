@@ -209,7 +209,30 @@ glBindFramebuffer(GL_FRAMEBUFFER, gBuffer);
 glgBindFramebuffer(GL_FRAMEBUFFER, 0);
 
 // use G-buffer to render SSAO texture
+glBindFramebuffer(GL_FRAMEBUFFER, ssaoFBO);
+	glClear(GL_COLOR_BUFFER_BIT);
+	glActivateTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, gPosition);
+	glActivateTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, gNormal);
+	glActivateTexture(GL_TEXTURE2);
+	glBindTexture(GL_TEXTURE_2D, noiseTexture);
+	shaderSSAO.use();
+	SendKernelSamplesToShader();
+	shaderSSAO.setMat4("projection", projection);
+	RenderQuad();
+glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+// lighting pass: render scene lighting
+glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+shaderLightingPass.use();
+[...]
+glActivateTexture(GL_TEXTURE3);
+glBindTexture(GL_TEXTURE_2D, ssaoColorBuffer);
+[...]
+RenderQuad();
 ```
+
 
 
 
