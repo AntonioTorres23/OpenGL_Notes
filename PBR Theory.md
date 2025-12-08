@@ -19,4 +19,4 @@ All PBR techniques are based on the theory of microfacets. The theory describes 
 
 ![[Pasted image 20251208163554.png]]
 
-The rougher a surface is, the more chaotically aligned each microfacet will be along the surface. The effect of these tiny-like mirror alignments is, that when specifically talking about specular lighting/reflection, the incoming light rays are more likely to **scatter** 
+The rougher a surface is, the more chaotically aligned each microfacet will be along the surface. The effect of these tiny-like mirror alignments is, that when specifically talking about specular lighting/reflection, the incoming light rays are more likely to **scatter** along completely different directions on reflective surfaces. 
