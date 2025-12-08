@@ -459,8 +459,22 @@ You can find the full source code of the demo scene [here](https://learnopengl.c
 
 Screen-space ambient occlusion is a highly customizable effect that relies heavily on tweaking its parameters based on the type of scene. There is no perfect combination of parameters for every type of scene. Some scenes only work with a small radius, while other scenes require a larger radius and a larger sample count for them to look realistic. The current demo uses 64 samples, which is a bit much; play around with a smaller kernel size and try to get good results. 
 
-Some parameters you can tweak (by using uniforms for example): kernel size, radius, bias, and/or the size of the noise kernel. You can also raise 
+Some parameters you can tweak (by using uniforms for example): kernel size, radius, bias, and/or the size of the noise kernel. You can also raise the final occlusion value to a user-defined power to increase its strength. 
 
+```
+occlusion 1.0 - (occlusion / kernelSize);
+FragColor = pow(occlusion, power);
+```
+
+Play around with different scenes and different parameters to appreciate the customizability of SSAO. 
+
+Even though SSAO is a subtle effect that isn't too clearly noticeable, it adds a great deal of realism to properly lit scenes and is definitely a technique you'd want to have in your toolkit. 
+
+## Additional resources
+
+- [SSAO Tutorial](http://john-chapman-graphics.blogspot.nl/2013/01/ssao-tutorial.html): excellent SSAO tutorial by John Chapman; a large portion of this chapter's code and techniques are based of his article.
+- [Know your SSAO artifacts](https://mtnphil.wordpress.com/2013/06/26/know-your-ssao-artifacts/): great article about improving SSAO specific artifacts.
+- [SSAO With Depth Reconstruction](http://ogldev.atspace.co.uk/www/tutorial46/tutorial46.html): extension tutorial on top of SSAO from OGLDev about reconstructing position vectors from depth alone, saving us from storing the expensive position vectors in the G-buffer.
 
 
 
