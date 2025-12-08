@@ -443,11 +443,15 @@ void main()
 	// attenuation
 	float dist = length(light.Position - FragPos);
 	float attenuation = 1.0 / (1.0 + light.Linear * dist + light.Quadratic * dist      * dist);
+	diffuse  *= attenuation;
+	specular *= attenuation;
+	lighting += diffuse + specular;
 	
-	
+	FragColor = vec4(lighting, 1.0);
 }
 ```
 
+The only thing (aside from the change to view-space) we really changed is the multiplication of the scene's ambient component by `AmbientOcclusion`
 
 
 
