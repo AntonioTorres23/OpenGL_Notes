@@ -265,5 +265,28 @@ vec3 normal     = texture(gNormal, TexCoords).rgb;
 vec3 randomVec  = texture(texNoise, TexCoords * noiseScale).xyz;
 ```
 
+As we set the tiling parameters of `texNoise` to `GL_REPEAT`, the random values will be repeated all over the screen. Together with the `fragPos` and `normal` vector, we then have enough data to create a TBN matrix that transforms any vector from tangent-space to view-space. 
 
+```
+vec3 tangent   =  normalize(randomVec - normal * dot(randomVec, normal));
+vec3 bitangent =  cross(normal, tangent);
+mat3 TBN       =  mat3(tangent, bitangent, normal);
+```
 
+Using a process called the **Gramm-Schmidt Process** we create an orthogonal basis, each time slightly tiled based on the value of `randomVec`. Note that because we use a random vector for constructing the tangent vector, there is no need to have the TBN exactly aligned to the geometry's surface, thus no need for per-vertex (and bitangent) vectors.
+
+Next we iterate over each of the kernel samples, transform the samples from tangent to view-space, add them to the current fragment position, and compare the fragment position's depth with the sample depth stored in the view-space position buffer. Let's discuss this in a step-by-step fashion. 
+
+```
+float occlusion = 0.0;
+for(int i = 0; i < kernelSize; ++i)
+{
+	// get sample position
+	vec3 samplePos = TBN * samples[i]; // from tangent to view-space
+	samplePos = fragPos + samplePos * radius; 
+	
+	[...]
+}
+```
+
+Here `kernelSize` and `radius` are variables that we can use to tweak the effect; in this case a value of $64$ and $0.5$ respectively. For each iteration
