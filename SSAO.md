@@ -291,4 +291,26 @@ for(int i = 0; i < kernelSize; ++i)
 
 Here `kernelSize` and `radius` are variables that we can use to tweak the effect; in this case a value of $64$ and $0.5$ respectively. For each iteration we first transform the respective sample to view-space. We then add the view-space kernel offset sample to the view-space fragment position. Then we multiply the offset sample by `radius` to increase (or decrease) the effective sample radius of SSAO. 
 
-Next we want to transform `sample` to screen-space so we can sample the position/depth value of `sample` as if we were rendering its position directly to the screen. 
+Next we want to transform `sample` to screen-space so we can sample the position/depth value of `sample` as if we were rendering its position directly to the screen. As the vector is currently in view-space, we'll transform it to clip-space first using the `projection` matrix uniform.
+
+```
+vec4 offset    = vec4(samplePos, 1.0);
+offset         = projection * offset;    // from view to clip-space
+offset.xyz    /= offset.w;               // perspective divide
+offset.xyz     = offset.xyz * 0.5 + 0.5; // transform to range 0.0 - 1.0
+```
+
+After the variable is transformed to clip-space, we perform the perspective divide step by dividing its $\large{xyz}$ components with its $w$ component. The resulting normalized device coordinates are then transformed to the $[0.0, 1.0]$ range so we can use them to sample the position texture. 
+
+`float sampleDepth = texture(gPosition, offset.xy).z;`
+
+we use the `offset` vector's $x$ and $y$ component to sample the position texture to retrieve the depth (or z value) of the sample position as seen from the viewer's perspective (the first non-occluded visible fragment).
+
+We then check if the sample's current depth value is larger than the stored depth value and if so, we add to the final contribution factor. 
+
+`occlusion += (sampleDepth >= samplePos.z + bias ? 1.0: 0.0);`
+
+Note that we add a small `bias` here to the original fragment's depth value (set to $0.025$ in this example). A bias isn't always necessary, but it helps visually tweak the SSAO effect and solves acne effects that may occur based on the scene's complexity. 
+
+We're not completely finished yet as there is still a small issue we have to take into account. Whenever a fragment is tested for ambient occlusion that is aligned close to the edge of a surface, it will also consider depth values of surfaces far behind the test surface; these values will (incorrectly) contribute to the occlusion factor. We can solve this by introducing a range check as the following image (courtesy of John Chapman) illustrates. 
+
