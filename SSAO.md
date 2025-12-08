@@ -233,6 +233,37 @@ glBindTexture(GL_TEXTURE_2D, ssaoColorBuffer);
 RenderQuad();
 ```
 
+The `shaderSSAO` shader takes input the relevant G-buffer textures, the noise texture, and the normal-oriented hemisphere kernel samples. 
+
+```
+#version 330 core
+out float FragColor;
+
+in vec2 TexCoords;
+
+uniform sampler2D gPosition;
+uniform sampler2D gNormal; 
+uniform sampler2D texNoise;
+
+uniform vec3 samples[64];
+uniform mat4 projection; 
+
+// tile noise texture over screen, based on screen dimensions divided by noise size
+const vec2 noiseScale = vec2(800.0/4.0, 600.0/4.0); // screen = 800x600
+
+void main()
+{
+	[...]
+}
+```
+
+Interesting to note here is the `noiseScale` variable. We want to tile the noise texture all over the screen, but as the `TexCoords` vary between $0.0$ and $1.0$, the `texNoise` texture won't tile at all. So we'll calculate the required amount to scale `TexCoords` by dividing the screen's dimensions by the noise texture size. 
+
+```
+vec3 fragPos    = texture(gPosition, TexCoords).xyz;
+vec3 normal     = texture(gNormal, TexCoords).rgb;
+vec3 randomVec  = texture(texNoise, TexCoords * noiseScale).xyz;
+```
 
 
 
