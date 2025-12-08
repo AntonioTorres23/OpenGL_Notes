@@ -323,7 +323,7 @@ float rangeCheck = smoothstep(0.0, 1.0, radius / abs(fragPos.z - sampleDepth));
 occlusion       += (sampleDepth >= samplePos.z + bias ? 1.0: 0.0) * rangeCheck;
 ```
 
-Here we used GLSL's `smoothstep` function that smoothly interpolate
+Here we used GLSL's `smoothstep` function that smoothly interpolates its third parameter between the first and second parameter's range, returning $0.0$ if less than or equal 
 
 
 
