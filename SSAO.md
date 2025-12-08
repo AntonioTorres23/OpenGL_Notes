@@ -451,12 +451,15 @@ void main()
 }
 ```
 
-The only thing (aside from the change to view-space) we really changed is the multiplication of the scene's ambient component by `AmbientOcclusion`
+The only thing (aside from the change to view-space) we really changed is the multiplication of the scene's ambient component by `AmbientOcclusion`. With a single blueish point light in the scene we'd get the following result. 
 
+![[Pasted image 20251208160058.png]]
 
+You can find the full source code of the demo scene [here](https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/9.ssao/ssao.cpp).
 
+Screen-space ambient occlusion is a highly customizable effect that relies heavily on tweaking its parameters based on the type of scene. There is no perfect combination of parameters for every type of scene. Some scenes only work with a small radius, while other scenes require a larger radius and a larger sample count for them to look realistic. The current demo uses 64 samples, which is a bit much; play around with a smaller kernel size and try to get good results. 
 
-
+Some parameters you can tweak (by using uniforms for example): kernel size, radius, bias, and/or the size of the noise kernel. You can also raise 
 
 
 
