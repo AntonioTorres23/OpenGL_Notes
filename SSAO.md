@@ -339,7 +339,7 @@ FragColor = occlusion;
 
 If we'd imagine a scene where our favorite backpack model is taking a little nap, the ambient occlusion shader produces the following texture. 
 
-![[Pasted image 20251208131607.png]]
+![[Pasted image 20251208141203.png]]
 
 As we can see, ambient occlusion gives a great sense of depth. With just the ambient occlusion texture we can already clearly see the model is indeed laying on the floor, instead of hovering slightly above it.
 
@@ -387,9 +387,9 @@ void main()
 }
 ```
 
-Here we traverse the surrounding SSAO texels between $-2.0$ and $2.0$, sampling the SSAO texture an amount identical to the noise texture's dimensions. We offset each texture coordinate by the exact size of a single texel using `textureSize` that returns a `vec2` of the given texture's dimensions. We average the obtained results 
+Here we traverse the surrounding SSAO texels between $-2.0$ and $2.0$, sampling the SSAO texture an amount identical to the noise texture's dimensions. We offset each texture coordinate by the exact size of a single texel using `textureSize` that returns a `vec2` of the given texture's dimensions. We average the obtained results to get a simple, but effective blur. 
 
-![[Pasted image 20251208130733.png]]
+![[Pasted image 20251208141212.png]]
 
 And there we go, a texture with per-fragment ambient occlusion data; ready for use in the lighting pass. 
 
@@ -425,7 +425,10 @@ void main()
 	vec3 FragPos = texture(gPosition, TexCoords).rgb;
 	vec3 Normal  = texture(gNormal,   TexCoords).rgb;
 	vec3 Diffuse = texture(gAlbedo,   TexCoords).rgb;
-	float AmbientOcclusion = texture(ssao, TexCoords).rgb;
+	float AmbientOcclusion = texture(ssao, TexCoords).r;
+	
+	// blinn-phong (in view-space)
+	vec3 ambient = vec3(0.3 * Diffuse * AmbientOcclusion)
 	
 	
 }
