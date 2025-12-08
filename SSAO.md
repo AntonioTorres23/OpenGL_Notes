@@ -387,7 +387,7 @@ void main()
 }
 ```
 
-Here we traverse the surrounding SSAO texels between $-2.0$ and $2.0$, sampling the SSAO sampling  
+Here we traverse the surrounding SSAO texels between $-2.0$ and $2.0$, sampling the SSAO texture an amount 
 
 ![[Pasted image 20251208130733.png]]
 
