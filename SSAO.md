@@ -319,7 +319,8 @@ We're not completely finished yet as there is still a small issue we have to tak
 We introduce a range check that makes sure a fragment contributes to the occlusion factor if its depth values is within the sample's radius. We change the last line to.
 
 ```
-float rangeCheck = smoothstep
+float rangeCheck = smoothstep(0.0, 1.0, radius / abs(fragPos.z - sampleDepth));
+occlusion += (sampleDepth >= samplePos.z + bias ? 1.0: 0.0)
 ```
 
 
