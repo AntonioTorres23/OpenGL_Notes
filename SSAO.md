@@ -339,13 +339,71 @@ FragColor = occlusion;
 
 If we'd imagine a scene where our favorite backpack model is taking a little nap, the ambient occlusion shader produces the following texture. 
 
+![[Pasted image 20251208131607.png]]
+
+As we can see, ambient occlusion gives a great sense of depth. With just the ambient occlusion texture we can already clearly see the model is indeed laying on the floor, instead of hovering slightly above it.
+
+It still doesn't look perfect, as the repeating pattern of the noise texture is clearly visible. To create a smooth ambient occlusion result we need to blur the ambient occlusion texture.
+
+**Ambient Occlusion Blur**
+
+Between the SSAO pass and the lighting pass, we first want to blur the SSAO. So let's create yet another framebuffer object for storing the blur result. 
+
+```
+unsigned int ssaoBlurFBO, ssaoColorBufferBlur; 
+glGenFramebuffers(1, &ssaoBlurFBO);
+glBindFramebuffer(GL_FRAMEBUFFER, ssaoBlurFBO);
+glGenTextures(GL_TEXTURE_2D, &ssaoColorBufferBlur);
+glBindTexture(GL_TEXTURE_2D, ssaoColorBufferBlur);
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, SCR_WIDTH, SCR_HEIGHT, 0, GL_RED, GL_FLOAT, NULL);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, ssaoColorBufferBlur, 0); 
+```
+
+Because the tiled random vector gives us a consistant
+
 ![[Pasted image 20251208130733.png]]
 
 And there we go, a texture with per-fragment ambient occlusion data; ready for use in the lighting pass. 
 
 **Applying Ambient Occlusion**
 
-Apply the occlusion factors to the lighting calculations is incredibly easy: all we have to do is multiply the per-fragment ambient occlusion factor to the lighting's ambient component and we're done. If we take the Blinn-Phong deferred lighting shader of the previous chapter and 
+Apply the occlusion factors to the lighting calculations is incredibly easy: all we have to do is multiply the per-fragment ambient occlusion factor to the lighting's ambient component and we're done. If we take the Blinn-Phong deferred lighting shader of the previous notes and adjust it a bit, we get the following fragment shader. 
+
+```
+#version 330 core
+out vec4 FragColor; 
+
+in vec2 TexCoords;
+
+uniform sampler2D gPosition; 
+uniform sampler2D gNormal;
+uniform sampler2D gAlbedo;
+uniform sampler2D ssao;
+
+struct Light {
+	vec3 Position;
+	vec3 Color; 
+	
+	float Linear;
+	float Quadratic;
+	float Radius; 
+};
+
+uniform Light light;
+
+void main()
+{
+	// retrieve data from gbuffer
+	vec3 FragPos = texture(gPosition, TexCoords).rgb;
+	vec3 Normal  = texture(gNormal,   TexCoords).rgb;
+	vec3 Diffuse = texture(gAlbedo,   TexCoords).rgb;
+	float AmbientOcclusion = texture(ssao, TexCoords).rgb;
+	
+	
+}
+```
 
 
 
