@@ -327,7 +327,30 @@ Here we used GLSL's `smoothstep` function that smoothly interpolates its third p
 
 ![[Pasted image 20251208125125.png]]
 
-If we were to use a hard cut-off range check that would abruptly remove occlusion contributions if the depth values are outside the radius
+If we were to use a hard cut-off range check that would abruptly remove occlusion contributions if the depth values are outside the `radius`, we'd see obvious (unattractive) borders at where the range check is applied. 
+
+As a final step we normalize the occlusion contribution by the size of the kernel and output the results. Note that we subtract the occlusion factor from $1.0$ so we can directly use the occlusion to scale the ambient lighting component. 
+
+```
+{
+occlusion = 1.0 - (occlusion / kernelSize);
+FragColor = occlusion;
+```
+
+If we'd imagine a scene where our favorite backpack model is taking a little nap, the ambient occlusion shader produces the following texture. 
+
+![[Pasted image 20251208130733.png]]
+
+And there we go, a texture with per-fragment ambient occlusion data; ready for use in the lighting pass. 
+
+**Applying Ambient Occlusion**
+
+Apply the occlusion factors to the lighting calculations is incredibly easy: all we have to do is multiply the per-fragment ambient occlusion factor to the lighting's ambient component and we're done. If we take the Blinn-Phong deferred lighting shader of the previous chapter and 
+
+
+
+
+
 
 
 
