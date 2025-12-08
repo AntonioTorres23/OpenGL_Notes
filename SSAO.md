@@ -361,7 +361,21 @@ glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, ssaoColorBufferBlur, 0); 
 ```
 
-Because the tiled random vector gives us a consistant
+Because the tiled random vector gives us a consistent randomness, we can use this property to our advantage to create a simple blur shader. 
+
+```
+#version 330 core
+our float FragColor; 
+
+in vec2 TexCoords; 
+
+uniform sampler2D ssaoInput;
+
+void main() 
+{
+	vec2 texelSize = 1.0 /
+}
+```
 
 ![[Pasted image 20251208130733.png]]
 
