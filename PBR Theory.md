@@ -23,4 +23,9 @@ The rougher a surface is, the more chaotically aligned each microfacet will be a
 
 ![[Pasted image 20251208164359.png]]
 
-No surface is completely smooth on a microscopic level, but seeing as these microfacets are small enough that we can't make a distinction between them on a per-pixel basis, we statistically approximate the surface's microfacet roughness given a **roughness** parameter. Based on the roughness of a surface, we can calculate the ratio of microfacets roughly aligned to some vector $h$. This vector $h$ is the **halfway vector** that sits halfway between the light $l$ and view $v$ vector. We've
+No surface is completely smooth on a microscopic level, but seeing as these microfacets are small enough that we can't make a distinction between them on a per-pixel basis, we statistically approximate the surface's microfacet roughness given a **roughness** parameter. Based on the roughness of a surface, we can calculate the ratio of microfacets roughly aligned to some vector $h$. This vector $h$ is the **halfway vector** that sits halfway between the light $l$ and view $v$ vector. We've discussed the halfway vector before in the [advanced lighting](https://learnopengl.com/Advanced-Lighting/Advanced-Lighting) notes which is calculated as the sum of $l$ and $v$ divided by its length (normalized).
+
+$\LARGE{h = \frac{l + v}{\|l + v\|}}$ 
+
+The more the microfacets are aligned to the halfway vector, the sharper and stronger the specular reflection. Together with a roughness parameter that varies between 0 and 1, we can statistically approximate the alignment 
+
