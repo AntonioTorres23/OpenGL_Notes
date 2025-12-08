@@ -442,7 +442,7 @@ void main()
 	
 	// attenuation
 	float dist = length(light.Position - FragPos);
-	float attenuation = 1.0 / 
+	float attenuation = 1.0 / (1.0 + light.Linear * dist + light.Quadratic * dist      * dist);
 	
 	
 }
