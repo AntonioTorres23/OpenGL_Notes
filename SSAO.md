@@ -325,6 +325,10 @@ occlusion       += (sampleDepth >= samplePos.z + bias ? 1.0: 0.0) * rangeCheck;
 
 Here we used GLSL's `smoothstep` function that smoothly interpolates its third parameter between the first and second parameter's range, returning $0.0$ if less than or equal to its first parameter and $1.0$ if equal or higher to its second parameter. If the depth difference ends up between `radius`, its value gets smoothly interpolated between $0.0$ and $1.0$ by the following curve. 
 
+![[Pasted image 20251208125125.png]]
+
+If we were to use a hard cut-off range check that would abruptly remove occlusion contributions if the depth values are outside the radius
+
 
 
 
