@@ -387,7 +387,7 @@ void main()
 }
 ```
 
-Here we traverse the surrounding SSAO texels between $-2.0$ and $2.0$, sampling the SSAO texture an amount identical to the noise 
+Here we traverse the surrounding SSAO texels between $-2.0$ and $2.0$, sampling the SSAO texture an amount identical to the noise texture's dimensions. We offset each texture
 
 ![[Pasted image 20251208130733.png]]
 
