@@ -433,7 +433,7 @@ void main()
 	vec3 lighting = ambient;
 	vec3 viewDir  = normalize(-FragPos); // viewpos is (0.0.0) in view-space
 	// diffuse
-	vec3 lightDir = normalize(light.position - FragPos); 
+	vec3 lightDir = normalize(light.Position - FragPos); 
 	vec3 diffuse = max(dot(Normal, lightDir), 0.0) * Diffuse * light;
 	// specular
 	vec3 halfwayDir = normalize(lightDir + viewDir);
@@ -441,6 +441,8 @@ void main()
 	vec3 specular = light.Color * spec;
 	
 	// attenuation
+	float dist = length(light.Position - FragPos);
+	float attenuation = 1.0 / 
 	
 	
 }
