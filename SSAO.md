@@ -436,7 +436,8 @@ void main()
 	vec3 lightDir = normalize(light.position - FragPos); 
 	vec3 diffuse = max(dot(Normal, lightDir), 0.0) * Diffuse * light;
 	// specular
-	vec3 halfwayDir = normalize()
+	vec3 halfwayDir = normalize(lightDir + viewDir);
+	float spec = 
 	
 	
 }
