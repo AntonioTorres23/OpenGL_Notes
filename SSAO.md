@@ -320,9 +320,10 @@ We introduce a range check that makes sure a fragment contributes to the occlusi
 
 ```
 float rangeCheck = smoothstep(0.0, 1.0, radius / abs(fragPos.z - sampleDepth));
-occlusion += (sampleDepth >= samplePos.z + bias ? 1.0: 0.0)
+occlusion       += (sampleDepth >= samplePos.z + bias ? 1.0: 0.0) * rangeCheck;
 ```
 
+Here we used GLSL's `smoothstep` function that smoothly interpolate
 
 
 
