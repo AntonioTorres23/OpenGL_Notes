@@ -438,6 +438,9 @@ void main()
 	// specular
 	vec3 halfwayDir = normalize(lightDir + viewDir);
 	float spec = pow(max(dot(Normal, halfwayDir), 0.0), 8.0);
+	vec3 specular = light.Color * spec;
+	
+	// attenuation
 	
 	
 }
