@@ -289,4 +289,6 @@ for(int i = 0; i < kernelSize; ++i)
 }
 ```
 
-Here `kernelSize` and `radius` are variables that we can use to tweak the effect; in this case a value of $64$ and $0.5$ respectively. For each iteration
+Here `kernelSize` and `radius` are variables that we can use to tweak the effect; in this case a value of $64$ and $0.5$ respectively. For each iteration we first transform the respective sample to view-space. We then add the view-space kernel offset sample to the view-space fragment position. Then we multiply the offset sample by `radius` to increase (or decrease) the effective sample radius of SSAO. 
+
+Next we want to transform `sample` to screen-space so we can sample the position/depth value of `sample` as if we were rendering its position directly to the screen. 
