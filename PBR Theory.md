@@ -47,7 +47,9 @@ Generally, not all energy is absorbed and the light will continue to **scatter**
 
 An additional subtlety when it comes to reflection and refraction are surfaces that are **metallic**. Metallic surfaces react different to light compared to non-metallic surfaces (also known as dielectrics). Metallic surfaces follow the same principles of reflection and refraction, but **all** refracted light gets directly absorbed without scattering. This means metallic surfaces only leave reflected or specular light; metallic surfaces show no diffuse colors. Because of this apparent distinction between metals and dielectrics, they're both treated differently in the PBR pipeline which we'll delve into further down the notes. 
 
-This distinction between 
+This distinction between reflected and refracted lights brings us to another observation regarding energy preservation: they're **mutually exclusive**. Whatever light energy gets reflected will no longer be absorbed by the material itself. Thus, the energy left to enter the surface as refracted light is directly the resulting energy after we've taken reflection into account. 
+
+We preserve this energy 
 
 
 
