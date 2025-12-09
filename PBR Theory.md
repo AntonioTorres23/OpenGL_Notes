@@ -80,5 +80,14 @@ The radiant flux measures the total area of this function of different wavelengt
 
 Think of being an observer at the center of this unit sphere and looking in the direction of the shape; the size of the silhouette you make out of it is the solid angle. 
 
-**Radiant Intensity**: radiant intensity measures the amount of radiant flux per solid ang
+**Radiant Intensity**: radiant intensity measures the amount of radiant flux per solid angle, or the strength of a light source over a projected area onto the unit sphere. For instance, given an omnidirectional light that radiates equally in all directions, the radiant intensity gives us its energy over a specific area (solid angle). 
 
+![[Pasted image 20251209141952.png]]
+
+The equation to describe the radiant intensity is defined as follows.
+
+$\LARGE{I = \frac{d\Phi}{d\omega}}$
+
+Where $I$ is the radiant flux $\Large{\Phi}$ over the solid angle $\Large{\omega}$.
+
+With knowledge of radiant
