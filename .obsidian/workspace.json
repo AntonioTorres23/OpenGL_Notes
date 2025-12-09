@@ -375,12 +375,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PBR Theory.md",
+                "file": "Lighting Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PBR Theory"
+              "title": "Lighting Notes"
             }
           }
         ],
@@ -530,6 +530,7 @@
   },
   "active": "f0fb2e5d8d1ae08e",
   "lastOpenFiles": [
+    "PBR Theory.md",
     "Pasted image 20251209144456.png",
     "Pasted image 20251209141952.png",
     "Pasted image 20251209135544.png",
@@ -540,9 +541,7 @@
     "Pasted image 20251208170446.png",
     "Pasted image 20251208164359.png",
     "Pasted image 20251208163554.png",
-    "Pasted image 20251208163052.png",
     "Gamma Correction.md",
-    "PBR Theory.md",
     "Geometry Shader.md",
     "Storing Data Types In a Vector.md",
     "Stencil Testing.md",
