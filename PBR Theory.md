@@ -100,5 +100,5 @@ Radiance is a radiometric measure of the amount of light in an area, scaled by t
 
 `float cosTheta = dot(lightDir, N);`
 
-The radiance equation is quite useful as it contains most physical quantities we're interested in. If we consider the solid angle $\Large{\omega}$ and the area $A$ to be infinitely small, we can use radiance to measure the flux of a single ray of light hitting a single point in space.  
+The radiance equation is quite useful as it contains most physical quantities we're interested in. If we consider the solid angle $\Large{\omega}$ and the area $A$ to be infinitely small, we can use radiance to measure the flux of a single ray of light hitting a single point in space.  This relation allow us to calculate the radiance of a single
 
