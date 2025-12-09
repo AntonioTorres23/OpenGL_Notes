@@ -49,7 +49,7 @@ An additional subtlety when it comes to reflection and refraction are surfaces t
 
 This distinction between reflected and refracted lights brings us to another observation regarding energy preservation: they're **mutually exclusive**. Whatever light energy gets reflected will no longer be absorbed by the material itself. Thus, the energy left to enter the surface as refracted light is directly the resulting energy after we've taken reflection into account. 
 
-We preserve this energy 
+We preserve this energy conserving relation by first calculating the specular fraction that amounts the percentage the incoming light's energy is reflected. 
 
 
 
