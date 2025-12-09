@@ -104,4 +104,6 @@ The radiance equation is quite useful as it contains most physical quantities we
 
 In fact, when it comes to radiance we generally care about **all** incoming light onto point $\Large{p}$, which is the sum of all radiance known as **irradiance**. With knowledge of both radiance and irradiance we can get back to the reflectance equation. 
 
+$\LARGE{L_o(p, \omega_o) = \int\limits_{\Omega} f_r(p, \omega_i, \omega_o) L_i(p, \omega_i) n \cdot \omega_i d\omega_i}$
 
+We now know that $L$ in the render equation represents the radiance of some point $\Large{p}$ and some incoming infinitely small solid angle $\Large{\omega_i}$ which can be thought as an incoming direction vector $\Large{\omega_i}$. Remember that $\Large{\cos \theta}$ scales the energy based on the light's incident angle to the surface, which we find in the reflectance equation as $\Large{n \cdot \omega_i}$. 
