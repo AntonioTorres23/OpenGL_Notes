@@ -94,4 +94,4 @@ With knowledge of radiant flux, radiant intensity, and the solid angle, we can f
 
 $\LARGE{L = \frac{d^2 \Phi}{d A d \omega \cos \theta}}$   
 
-Radiance is a radiometric measure of the amount of light 
+Radiance is a radiometric measure of the amount of light in an area, scaled by the **incident** (or incoming) angle $\large{\theta}$ of the light to the surface's normal as $\Large{\cos \theta}$  
