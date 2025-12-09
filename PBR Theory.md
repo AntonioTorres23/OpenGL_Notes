@@ -60,5 +60,5 @@ This way we know both the amount the incoming light reflects and the amount the 
 
 **The Reflectance Equation**
 
-This brings us to something called the [render equation](https://en.wikipedia.org/wiki/Rendering_equation), an elaborate equation some very smart folks out there came up with that is currently the best model we have for simulating 
+This brings us to something called the [render equation](https://en.wikipedia.org/wiki/Rendering_equation), an elaborate equation some very smart folks out there came up with that is currently the best model we have for simulating the visuals of light. Physically based rendering strongly follows a more specialized version of the render equation known as the **reflectance equation**. To properly understand PBR, 
 
