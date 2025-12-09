@@ -375,12 +375,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lighting Notes.md",
+                "file": "PBR Theory.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lighting Notes"
+              "title": "PBR Theory"
             }
           }
         ],
@@ -530,6 +530,11 @@
   },
   "active": "f0fb2e5d8d1ae08e",
   "lastOpenFiles": [
+    "Overview on Transformations.md",
+    "Parallax Mapping.md",
+    "Depth Testing.md",
+    "Explanation On The This Pointer.md",
+    "Lighting Notes.md",
     "PBR Theory.md",
     "Pasted image 20251209144456.png",
     "Pasted image 20251209141952.png",
@@ -548,13 +553,10 @@
     "SSAO.md",
     "Shadow Mapping.md",
     "Point Shadows.md",
-    "Parallax Mapping.md",
-    "Overview on Transformations.md",
     "Untitled 2.base",
     "Untitled.md",
     "Deferred Shading.md",
     "Bloom.md",
-    "Depth Testing.md",
     "Advanced GLSL.md",
     "HDR.md",
     "Untitled 2",
@@ -566,7 +568,6 @@
     "Face Culling.md",
     "Untitled",
     "Advanced Lighting.md",
-    "Lighting Notes.md",
     "Untitled 1.md",
     "VBO, VAO, and VAO.md",
     "Anti Aliasing.md",
