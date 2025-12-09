@@ -35,6 +35,7 @@ We can see that higher roughness values display a much larger specular reflectio
 
 **Energy Conservation**
 
+The microfacet approximation employs a form of **energy conservation**: outgoing light energy should never exceed the incoming light energy 
 
 
 
