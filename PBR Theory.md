@@ -69,3 +69,7 @@ The reflectance equation appears daunting at first, but as we'll dissect it you'
 
 **Radiant Flux**: radiant flux $\Large{\Phi}$ is the transmitted energy of a light source measured in Watts. Light is a collective sum of energy over multiple different wavelengths, each wavelength associated with a particular (visible) color. The emitted energy of a light source can therefore be thought of as a function of all its different wavelengths. Wavelengths between 390nm to 700nm (nanometers) are considered to be part of the visible light spectrum i.e. wavelengths the human eye is able to perceive. Below you'll find an image of the different energies per wavelength of daylight. 
 
+
+![[Pasted image 20251209132934.png]]
+
+The radiant flux measures the total area of this function of different wavelengths. 
