@@ -27,5 +27,7 @@ No surface is completely smooth on a microscopic level, but seeing as these micr
 
 $\LARGE{h = \frac{l + v}{\|l + v\|}}$ 
 
-The more the microfacets are aligned to the halfway vector, the sharper and stronger the specular reflection. Together with a roughness parameter that varies between 0 and 1, we can statistically approximate the alignment 
+The more the microfacets are aligned to the halfway vector, the sharper and stronger the specular reflection. Together with a roughness parameter that varies between 0 and 1, we can statistically approximate the alignment of the microfacets. 
+
+
 
