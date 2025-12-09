@@ -92,4 +92,4 @@ Where $I$ is the radiant flux $\Large{\Phi}$ over the solid angle $\Large{\omega
 
 With knowledge of radiant flux, radiant intensity, and the solid angle, we can finally describe the equation for **radiance**. Radiance is described as the total observed energy in an area $A$ over the solid angle $\Large{\omega}$ of a light of radiant intensity $\Large{\Phi}$. 
 
-$L = \frac{d^2 \Phi}{d A d \omega \cos \theta}$   
+$\LARGE{L = \frac{d^2 \Phi}{d A d \omega \cos \theta}}$   
