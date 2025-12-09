@@ -64,3 +64,5 @@ This brings us to something called the [render equation](https://en.wikipedia.or
 
 
 $\LARGE{L_o(p, \omega_o) = \int\limits_{\Omega} f_r(p, \omega_i, \omega_o) L_i(p, \omega_i) n \cdot \omega_i d\omega_i}$
+
+The reflectance equation appears daunting at first, but as we'll dissect it you'll see it slowly starts to make sense. To understand the equation, we have to delve into a bit of **radiometry**. Radiometry is the measurement of electromagnetic radiation, including visible light. 
