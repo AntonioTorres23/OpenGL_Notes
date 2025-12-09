@@ -29,5 +29,13 @@ $\LARGE{h = \frac{l + v}{\|l + v\|}}$
 
 The more the microfacets are aligned to the halfway vector, the sharper and stronger the specular reflection. Together with a roughness parameter that varies between 0 and 1, we can statistically approximate the alignment of the microfacets. 
 
+![[Pasted image 20251208170446.png]]
+
+We can see that higher roughness values display a much larger specular reflection shape, in contrast with the smaller and sharper reflection shape on smooth surfaces. 
+
+**Energy Conservation**
+
+
+
 
 
