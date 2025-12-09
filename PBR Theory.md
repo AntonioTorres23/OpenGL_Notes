@@ -35,7 +35,9 @@ We can see that higher roughness values display a much larger specular reflectio
 
 **Energy Conservation**
 
-The microfacet approximation employs a form of **energy conservation**: outgoing light energy should never exceed the incoming light energy (excluding emissive surfaces). Looking at the above image we see the specular reflection area increase, but also its brightness decrease at increasing roughness levels.  If the specular intensity were to be the same at each pixel (regardless of size of the specular shape) the rougher surfaces would emit much more 
+The microfacet approximation employs a form of **energy conservation**: outgoing light energy should never exceed the incoming light energy (excluding emissive surfaces). Looking at the above image we see the specular reflection area increase, but also its brightness decrease at increasing roughness levels.  If the specular intensity were to be the same at each pixel (regardless of size of the specular shape) the rougher surfaces would emit much more energy, violating the energy conservation principle. This is why we see specular reflections more intensely on smooth surfaces and more dimly on rough surfaces. 
+
+For energy conservation to hold, we 
 
 
 
