@@ -56,5 +56,5 @@ float kS = calculateSpecularComponent(...); // reflection/specular fraction
 float kD = 1.0 - kS;                        // refraction/diffuse fraction
 ```
 
-
+This way we know both the amount the incoming light reflects and the amount the incoming light refracts, while adhering to the energy conservation principle. Given this approach, it is impossible for both the refracted/diffuse and reflected/specular contribution to exceed $1.0$, thus ensuring the
 
