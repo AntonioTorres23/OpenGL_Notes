@@ -96,4 +96,5 @@ $\LARGE{L = \frac{d^2 \Phi}{d A d \omega \cos \theta}}$
 
 ![[Pasted image 20251209144456.png]]
 
-Radiance is a radiometric measure of the amount of light in an area, scaled by the **incident** (or incoming) angle $\large{\theta}$ of the light to the surface's normal as $\Large{\cos \theta}$: light is weaker the less it directly radiates onto the surface, and strongest when it is directly perpendicular to a surface. This is similar to our perception of diffuse lighting from the [basic lighting](https://learnopengl.com/Lighting/Basic-lighting) notes as 
+Radiance is a radiometric measure of the amount of light in an area, scaled by the **incident** (or incoming) angle $\large{\theta}$ of the light to the surface's normal as $\Large{\cos \theta}$: light is weaker the less it directly radiates onto the surface, and strongest when it is directly perpendicular to a surface. This is similar to our perception of diffuse lighting from the [basic lighting](https://learnopengl.com/Lighting/Basic-lighting) notes as $\Large{\cos \theta}$ directly corresponds to the dot product between the light's direction vector and the surface normal. 
+
