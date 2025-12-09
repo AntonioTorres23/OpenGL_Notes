@@ -94,4 +94,4 @@ With knowledge of radiant flux, radiant intensity, and the solid angle, we can f
 
 $\LARGE{L = \frac{d^2 \Phi}{d A d \omega \cos \theta}}$   
 
-Radiance is 
+Radiance is a radiometric measure of the amount of light 
