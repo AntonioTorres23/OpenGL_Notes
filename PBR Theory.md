@@ -80,5 +80,5 @@ The radiant flux measures the total area of this function of different wavelengt
 
 Think of being an observer at the center of this unit sphere and looking in the direction of the shape; the size of the silhouette you make out of it is the solid angle. 
 
-
+**Radiant Intensity**: radiant intensity measures the amount of radiant flux per solid ang
 
