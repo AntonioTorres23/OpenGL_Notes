@@ -149,4 +149,6 @@ Here $\Large{k_d}$ is the earlier mentioned ratio of incoming light energy that 
 
 $\LARGE{f_{lambert} = \frac{c}{\pi}}$ 
 
-With $c$ being the albedo or surface color (think of the diffuse surface texture). The divide by pi is there to normalize the diffuse light as the earlier denoted integral that contains the BRDF is scaled by $\Large{\pi}$ (we'll get to that in then )
+With $c$ being the albedo or surface color (think of the diffuse surface texture). The divide by pi is there to normalize the diffuse light as the earlier denoted integral that contains the BRDF is scaled by $\Large{\pi}$ (we'll get to that in the [IBL](https://learnopengl.com/PBR/IBL/Diffuse-irradiance) notes). 
+
+You may wonder how this Lambertian diffuse relates to the diffuse lighting we've been using before: the surface color may 
