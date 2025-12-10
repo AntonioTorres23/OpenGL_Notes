@@ -315,4 +315,6 @@ Below you'll see a list of textures you'll frequent find in a PBR pipeline toget
 
 **Metallic**: the metallic map specifies per texel whether a texel is either metallic or isn't. Based on how the PBR engine is set up, artists can author metalness as either grayscale values or as binary black or white. 
 
-**Roughness**: this roughness map specifies how rough a surface is on a per texel basis. The sampled roughness value of the roughness influences the statistical microfacet orientations of the surface. A rougher surface gets wider and blurrier reflections, while a smooth surface gets focused and clear reflections. Some PBR engines expect a **smoothness** map instead of a roughness map which some artists find more intuitive. These values are then translated ($1)
+**Roughness**: this roughness map specifies how rough a surface is on a per texel basis. The sampled roughness value of the roughness influences the statistical microfacet orientations of the surface. A rougher surface gets wider and blurrier reflections, while a smooth surface gets focused and clear reflections. Some PBR engines expect a **smoothness** map instead of a roughness map which some artists find more intuitive. These values are then translated ($1.0$ - `smoothness`) to roughness the moment they're sampled. 
+
+**AO**: the **am**
