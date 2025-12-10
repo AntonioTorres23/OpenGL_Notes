@@ -112,5 +112,5 @@ The reflectance equation is based around irradiance, which is the sum of all inc
 
 ![[Pasted image 20251210100432.png]]
 
-To calculate the total of values inside an area or (in this case a hemisphere) a volume, we use a mathematical construct called an **integral** denoted in the reflectance as $\Large{\int}$ over all incoming directions $\Large{d \omega_i}$, within the hemisphere $\Large{}$
- 
+To calculate the total of values inside an area or (in this case a hemisphere) a volume, we use a mathematical construct called an **integral** denoted in the reflectance as $\Large{\int}$ over all incoming directions $\Large{d \omega_i}$, within the hemisphere $\Large{\Omega}$. An integral measures the area of a function, which can either be calculated analytically or numerically. As there is no analytical solution to both the render and reflectance equation, 
+  
