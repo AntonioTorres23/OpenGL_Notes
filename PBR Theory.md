@@ -149,4 +149,4 @@ Here $\Large{k_d}$ is the earlier mentioned ratio of incoming light energy that 
 
 $\LARGE{f_{lambert} = \frac{c}{\pi}}$ 
 
-With $c$ being the albedo or surface color (think of the diffuse surface texture)
+With $c$ being the albedo or surface color (think of the diffuse surface texture). The divide by pi is there to normalize
