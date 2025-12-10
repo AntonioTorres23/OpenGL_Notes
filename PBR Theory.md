@@ -145,4 +145,8 @@ The Cook-Torrance BRDF contains a diffuse and specular part.
 
 $\LARGE{f_r = k_d f_{lambert} + k_s f_{cook-torrance}}$ 
 
-Here $\Large{k_d}$ is the earlier mentioned ratio of incoming light energy that gets refracted with $\Large{k_s}$ being the ratio that *reflected*. The left side of the BRDF states the diffuse part of the equation denoted here as $\Large{f_{lambert}}$. This is known as **Lambertian diffuse** similar to what we used for diffuse shading, which is a constant factor denoted as
+Here $\Large{k_d}$ is the earlier mentioned ratio of incoming light energy that gets refracted with $\Large{k_s}$ being the ratio that *reflected*. The left side of the BRDF states the diffuse part of the equation denoted here as $\Large{f_{lambert}}$. This is known as **Lambertian diffuse** similar to what we used for diffuse shading, which is a constant factor denoted as. 
+
+$\LARGE{f_{lambert} = \frac{c}{\pi}}$ 
+
+With $c$ being the albedo or surface color (think of the diffuse surface texture)
