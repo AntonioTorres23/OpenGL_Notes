@@ -269,4 +269,7 @@ The surface's response at normal incidence, or the base reflectivity, can be fou
 
 What is interesting to observe here is that for all dielectric surfaces the base reflectivity never gets above 0.17 which is the exception rather than the rule, while for conductors the base reflectivity starts much higher and (mostly) varies between 0.5 and 1.0. Furthermore, for conductors (or metallic surfaces) the base reflectivity is tinted. This is why $\Large{F_0}$ is presented as an RGB triplet (reflectivity at normal incidence can vary per wavelength); this is something we **only** see at metallic surfaces. 
 
-These specific attributes of metallic surfaces compared to dielectric surfaces gave 
+These specific attributes of metallic surfaces compared to dielectric surfaces gave rise to something called the **metallic workflow**. In the metallic workflow we author surface materials with an extra parameter known **metalness** that describes whether a surface is either a metallic or a non-metallic surface. 
+
+
+
