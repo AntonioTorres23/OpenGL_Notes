@@ -271,5 +271,5 @@ What is interesting to observe here is that for all dielectric surfaces the base
 
 These specific attributes of metallic surfaces compared to dielectric surfaces gave rise to something called the **metallic workflow**. In the metallic workflow we author surface materials with an extra parameter known **metalness** that describes whether a surface is either a metallic or a non-metallic surface. 
 
-Theoretically, the metalness of a material is binary: it's either a metal or it isn't; it can't be both. However, most render pipelines allow configuring of metalness of a surface linearly between 0.0 and 1.0. This is mostly because the lack of material texture precision. For instance, a surface hav
+Theoretically, the metalness of a material is binary: it's either a metal or it isn't; it can't be both. However, most render pipelines allow configuring of metalness of a surface linearly between 0.0 and 1.0. This is mostly because the lack of material texture precision. For instance, a surface having small (non-metal) dust/sand-like particles/scratches over a metallic surface is difficult 
 
