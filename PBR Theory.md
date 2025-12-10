@@ -249,4 +249,4 @@ float GeometrySmith(vec3 N, vec3 V, vec3 L, float k)
 
 **Fresnel Equation**
 
-The Fresnel equatio 
+The Fresnel equation (pronounced F)
