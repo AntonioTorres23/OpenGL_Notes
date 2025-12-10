@@ -299,4 +299,4 @@ With every component of the Cook-Torrance BRDF described, we can include the phy
 
 $\LARGE{L_o(p, \omega_o) = \int\limits_{\Omega} (k_d \frac{c}{\pi} + \frac{DFG}{4(\omega_o \cdot n) (\omega_i \cdot n)}) L_i(p, \omega_i)n \cdot \omega_i d \omega_i}$    
 
-This equation now completely describes a physically based render model that is generally recogniz
+This equation now completely describes a physically based render model that is generally recognized as what we commonly understand as physically based rendering, or PBR. Don't worry if you didn't yet completely understand how we'll need to fit all the discussed 
