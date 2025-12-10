@@ -309,4 +309,4 @@ Below you'll see a list of textures you'll frequent find in a PBR pipeline toget
 
 ![[Pasted image 20251210164245.png]]
 
-**Albedo**: the **albedo** texture specifies for each texel the color of the surface, or the base reflectivity 
+**Albedo**: the **albedo** texture specifies for each texel the color of the surface, or the base reflectivity if that texel is metallic. This is largely similar to what we've been using before as a diffuse texture, but all lighting information is extracted from the texture. Diffuse textures often have slight shadows or darkened crevices inside the image 
