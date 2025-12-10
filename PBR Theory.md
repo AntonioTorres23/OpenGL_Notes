@@ -151,4 +151,4 @@ $\LARGE{f_{lambert} = \frac{c}{\pi}}$
 
 With $\Large{c}$ being the albedo or surface color (think of the diffuse surface texture). The divide by pi is there to normalize the diffuse light as the earlier denoted integral that contains the BRDF is scaled by $\Large{\pi}$ (we'll get to that in the [IBL](https://learnopengl.com/PBR/IBL/Diffuse-irradiance) notes). 
 
-You may wonder how this Lambertian diffuse relates to the diffuse lighting we've been using before: the surface color multiplied by the dot product bet
+You may wonder how this Lambertian diffuse relates to the diffuse lighting we've been using before: the surface color multiplied by the dot product between the surface's normal and the light direction. 
