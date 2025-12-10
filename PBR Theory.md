@@ -155,4 +155,10 @@ You may wonder how this Lambertian diffuse relates to the diffuse lighting we've
 
 There exist different equations for the diffuse part of the BRDF which tend to look more realistic, but are also more computationally expensive. As concluded by Epic Games however, the Lambertian diffuse is sufficient enough for most real-time rendering purposes. 
 
-The specular part of the BRDF of the BRDF which tend to look more realistic, but are 
+The specular part of the BRDF is a bit more advanced and described as. 
+
+$\LARGE{f_{CookTorrance} = \frac{DFG}{4(\omega_o \cdot n)(\omega_i \cdot n)}}$
+
+The Cook-Torrance specular BRDF is composed three functions and a normalization factor in the denominator. Each of the D, F, and G symbols represent a type of function that approximates a specific part of the surface's reflective properties. These are defined as the **D**istribution function, the **F**resnel equation, and the **G**eometry function. 
+
+- **Normal Distribution Function**: approximates the amount the surface's microfacets are aligned to the halfway vector, 
