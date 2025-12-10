@@ -313,4 +313,6 @@ Below you'll see a list of textures you'll frequent find in a PBR pipeline toget
 
 **Normal**: the normal map texture is exactly as we've been using before in the [normal mapping](https://learnopengl.com/Advanced-Lighting/Normal-Mapping) notes. The normal map allows us to specify, per-fragment, a unique normal to give the illusion that a surface is **bumpier** than its flat counterpart. 
 
-**Metallic**: the metallic map specifies per texel whe
+**Metallic**: the metallic map specifies per texel whether a texel is either metallic or isn't. Based on how the PBR engine is set up, artists can author metalness as either grayscale values or as binary black or white. 
+
+**Roughness**: this roughness map specifies how rough a surface is on a per texel basis. The sampled roghness
