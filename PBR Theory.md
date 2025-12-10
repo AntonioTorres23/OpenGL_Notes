@@ -319,4 +319,4 @@ Below you'll see a list of textures you'll frequent find in a PBR pipeline toget
 
 **AO**: the **ambient occlusion** or **AO** map specifies an extra shadowing factor of the surface and potentially surrounding geometry. If we have a brick surface for instance, the albedo texture should have no shadowing information inside the brick's crevices. The AO map however does specify these darkened edges as it's more difficult for light to escape. Taking ambient occlusion into account at the end of the lighting stage can significantly boost the visual quality of your scene. The ambient occlusion map of a mesh/surface is either manually generated, or pre-calculated  in 3D modeling programs. 
 
-Artists set and tweak these physically based input values on a per-texel basis and can base their texture values on the physical surface pero
+Artists set and tweak these physically based input values on a per-texel basis and can base their texture values on the physical surface properties of real-world materials. This is one of the biggest PBR render pipeline as these physical properties of a surface remain the same, regardless of 
