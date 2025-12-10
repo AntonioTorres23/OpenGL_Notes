@@ -291,5 +291,9 @@ vec3 fresnelSchlick(float cosTheta, vec3 F0)
 }
 ```
 
-With `cosTheta` being the dot product result between the surface's normal $\Large{n}$ and the halfway $\Large{}$ 
+With `cosTheta` being the dot product result between the surface's normal $\Large{n}$ and the halfway $\Large{h}$ (or view $\Large{v}$) direction. 
+
+**Cook-Torrance Reflectance Equation**
+
+With every component of the Cook-Torran
  
