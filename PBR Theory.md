@@ -273,5 +273,10 @@ These specific attributes of metallic surfaces compared to dielectric surfaces g
 
 Theoretically, the metalness of a material is binary: it's either a metal or it isn't; it can't be both. However, most render pipelines allow configuring of metalness of a surface linearly between 0.0 and 1.0. This is mostly because the lack of material texture precision. For instance, a surface having small (non-metal) dust/sand-like particles/scratches over a metallic surface is difficult to render with binary metalness values. 
 
-By pre-computing $\Large{F_0}$ for both dielectrics and conductors we can use the same Fresnel-Schlick approximation for both types of surfaces,  
+By pre-computing $\Large{F_0}$ for both dielectrics and conductors we can use the same Fresnel-Schlick approximation for both types of surfaces, but we do have to tint the base reflectivity if we have a metallic surface. We generally accomplish this as follows.
+
+```
+vec3 F0 = vec3(0)
+```
+
 
