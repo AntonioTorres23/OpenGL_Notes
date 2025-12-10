@@ -165,4 +165,12 @@ The Cook-Torrance specular BRDF is composed three functions and a normalization 
 - **Geometry Function**: describes the self-shadowing property of the microfacets. When a surface is relatively rough, the surface's microfacets can overshadow other microfacets reducing the light the surface reflects. 
 - **Fresnel Equation**: The Fresnel equation describes the ration of the surface reflection at different surface angels. 
 
-Each of these functions are an approximation of their physical equivalents and you'll find more than one version of each that aims to approximate the underlying physics in different ways; come more realistic, other more efficient. It is perfectly fine to pick whatever approximated version of these  
+Each of these functions are an approximation of their physical equivalents and you'll find more than one version of each that aims to approximate the underlying physics in different ways; come more realistic, other more efficient. It is perfectly fine to pick whatever approximated version of these functions you want to use. Brian Karis from Epic Games did a great deal of research on the multiple types of approximations [here](http://graphicrants.blogspot.nl/2013/08/specular-brdf-reference.html). We're going to pick the same functions used by Epic Game's Unreal Engine 4 which are the Trowbridge-Reitz GGX for D, the Fresnel-Schlick approximation for F, and the Smith's Smith's Schlick-GGX for G. 
+
+**Normal Distribution Function**
+
+The **normal distribution function** $\large{D}$ statistically approximates the relative surface area of microfacets exactly aligned to the (halfway) vector $\large{h}$. There are a multitude of NDFs that statistically approximate the general alignment of the microfacets given some roughness parameter and the one we'll be using is known as the Trowbridge-Reitz GGX. 
+
+$\LARGE{NDF_{GGXTR}(n,h,a) = \frac{a^2}{\pi((n \cdot h)^2(a^2 - 1) + 1)^2}}$ 
+
+Here $\Large{h}$ is the halfway vector to measure against the surface's microfacets, with $\Large{a}$ being a measure of the surface's roughness. If we take $\Large{h}$ as the halfway vector between the surface normal and light direction over varying roughness parameters we get the following 
