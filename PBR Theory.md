@@ -276,7 +276,9 @@ Theoretically, the metalness of a material is binary: it's either a metal or it 
 By pre-computing $\Large{F_0}$ for both dielectrics and conductors we can use the same Fresnel-Schlick approximation for both types of surfaces, but we do have to tint the base reflectivity if we have a metallic surface. We generally accomplish this as follows.
 
 ```
-vec3 F0 = vec3(0)
+vec3 F0 = vec3(0.4);
+F0      = mix(F0, surfaceColor.rgb, metalness);
 ```
 
+We define a base reflectivity that is approximated for most dielectric surfaces. This is yet another approximation 
 
