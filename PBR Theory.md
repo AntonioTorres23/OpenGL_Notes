@@ -311,4 +311,6 @@ Below you'll see a list of textures you'll frequent find in a PBR pipeline toget
 
 **Albedo**: the **albedo** texture specifies for each texel the color of the surface, or the base reflectivity if that texel is metallic. This is largely similar to what we've been using before as a diffuse texture, but all lighting information is extracted from the texture. Diffuse textures often have slight shadows or darkened crevices inside the image which is something you don't want in an albedo texture; it should only contain the color (or refracted absorption coefficients) of the surface. 
 
-**Normal**: the norm
+**Normal**: the normal map texture is exactly as we've been using before in the [normal mapping](https://learnopengl.com/Advanced-Lighting/Normal-Mapping) notes. The normal map allows us to specify, per-fragment, a unique normal to give the illusion that a surface is **bumpier** than its flat counterpart. 
+
+**Metallic**: the metallic map specifies per texel whe
