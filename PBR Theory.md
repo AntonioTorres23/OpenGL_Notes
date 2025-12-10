@@ -112,5 +112,5 @@ The reflectance equation is based around irradiance, which is the sum of all inc
 
 ![[Pasted image 20251210100432.png]]
 
-To calculate the total of values insid
+To calculate the total of values inside an area or (in this case a hemisphere) a volume, 
  
