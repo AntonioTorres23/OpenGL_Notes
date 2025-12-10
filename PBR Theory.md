@@ -141,4 +141,6 @@ The **BRDF**, or **bidirectional reflective distribution function**, is a functi
 
 A BRDF approximates the material's reflective and refractive properties based on the previously discussed microfacet theory. For a BRDF to be physically plausible it has to respect the law of energy conservation i.e. the sum of reflected light should never exceed the amount of incoming light. Technically, Blinn-Phong is considered a BRDF to taking the same $\Large{\omega_i}$ and $\Large{\omega_o}$ as inputs. However, Blinn-Phong is not considered physically based as it doesn't adhere to the energy conservation principle. There are several physically based BRDFs out there to approximate the surface's reaction to light. However, almost all real-time PBR render pipelines use a BRDF known as the **Cook-Torrance BRDF**.  
 
-  The Cook-Torrance BRDF
+The Cook-Torrance BRDF contains a diffuse and specular part.
+
+$\LARGE{f+r = k_d f_{lambert} + k_s f_{cook-torrance}}$ 
