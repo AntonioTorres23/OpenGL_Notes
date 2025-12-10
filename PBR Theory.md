@@ -177,4 +177,24 @@ Here $\Large{h}$ is the halfway vector to measure against the surface's microfac
 
 ![[Pasted image 20251210144423.png]]
 
-When roughness is low (thus the surface is smooth), a highly concentrated number of microfacets are aligned 
+When roughness is low (thus the surface is smooth), a highly concentrated number of microfacets are aligned to halfway vectors over a small radius. Due to this concentrations, the NDF displays a very bright spot. On a rough surface however, where the microfacets are aligned in much more random directions. you'll find a much larger number of halfway vectors $\large{h}$ somewhat aligned to the microfacets (but less concentrated), giving us the more grayish results. 
+
+In GLSL the Trowbridge-Reitz GGX normal distribution function translates to the following code. 
+
+```
+float DistributionGGX(vec3 N, vec3 H, float a)
+{
+	float a2 = a * a;
+	float NdotH = max(dot(N,H), 0.0);
+	float NdotH2 = NdotH * NdotH;
+	
+	float nom = a2; 
+	float denom = (NdotH2 * (a2 - 1.0) + 1.0);
+	denom       = PI * denom * denom;
+	
+	return nom / denom;
+}
+```
+
+**Geometry Function**
+
