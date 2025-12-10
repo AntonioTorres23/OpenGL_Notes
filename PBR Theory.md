@@ -173,4 +173,8 @@ The **normal distribution function** $\large{D}$ statistically approximates the 
 
 $\LARGE{NDF_{GGXTR}(n,h,a) = \frac{a^2}{\pi((n \cdot h)^2(a^2 - 1) + 1)^2}}$ 
 
-Here $\Large{h}$ is the halfway vector to measure against the surface's microfacets, with $\Large{a}$ being a measure of the surface's roughness. If we take $\Large{h}$ as the halfway vector between the surface normal and light direction over varying roughness parameters we get the following 
+Here $\Large{h}$ is the halfway vector to measure against the surface's microfacets, with $\Large{a}$ being a measure of the surface's roughness. If we take $\Large{h}$ as the halfway vector between the surface normal and light direction over varying roughness parameters we get the following visual result. 
+
+![[Pasted image 20251210144423.png]]
+
+When roughness is low (thus the surface is smooth), a highly concentrated number of microfacets are aligned 
