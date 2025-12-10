@@ -321,3 +321,13 @@ Below you'll see a list of textures you'll frequent find in a PBR pipeline toget
 
 Artists set and tweak these physically based input values on a per-texel basis and can base their texture values on the physical surface properties of real-world materials. This is one of the biggest PBR render pipeline as these physical properties of a surface remain the same, regardless of environment or lighting setup, making life easier for artists to get physically plausible results. Surfaces authored in a PBR pipeline can be shared among different PBR render engines, will look correct regardless of the environment they're in, and as a result look much more natural. 
 
+## Further reading
+
+- [Background: Physics and Math of Shading by Naty Hoffmann](http://blog.selfshadow.com/publications/s2013-shading-course/hoffman/s2013_pbs_physics_math_notes.pdf): there is too much theory to fully discuss in a single article so the theory here barely scratches the surface; if you want to know more about the physics of light and how it relates to the theory of PBR **this** is the resource you want to read.
+- [Real shading in Unreal Engine 4](http://blog.selfshadow.com/publications/s2013-shading-course/karis/s2013_pbs_epic_notes_v2.pdf): discusses the PBR model adopted by Epic Games in their 4th Unreal Engine installment. The PBR system we'll focus on in these chapters is based on this model of PBR.
+- [[SH17C] Physically Based Shading, by knarkowicz](https://www.shadertoy.com/view/4sSfzK): great showcase of all individual PBR elements in an interactive ShaderToy demo.
+- [Marmoset: PBR Theory](https://www.marmoset.co/toolbag/learn/pbr-theory): an introduction to PBR mostly meant for artists, but nevertheless a good read.
+- [Coding Labs: Physically based rendering](http://www.codinglabs.net/article_physically_based_rendering.aspx): an introduction to the render equation and how it relates to PBR.
+- [Coding Labs: Physically Based Rendering - Cook–Torrance](http://www.codinglabs.net/article_physically_based_rendering_cook_torrance.aspx): an introduction to the Cook-Torrance BRDF.
+- [Wolfire Games - Physically based rendering](http://blog.wolfire.com/2015/10/Physically-based-rendering): an introduction to PBR by Lukas Orsvärn.
+- [[SH17C] Physically Based Shading](https://www.shadertoy.com/view/4sSfzK): a great interactive shadertoy example (warning: may take a while to load) by Krzysztof Narkowi showcasing light-material interaction in a PBR fashion.
