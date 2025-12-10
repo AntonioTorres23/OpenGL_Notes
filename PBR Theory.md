@@ -112,5 +112,22 @@ The reflectance equation is based around irradiance, which is the sum of all inc
 
 ![[Pasted image 20251210100432.png]]
 
-To calculate the total of values inside an area or (in this case a hemisphere) a volume, we use a mathematical construct called an **integral** denoted in the reflectance as $\Large{\int}$ over all incoming directions $\Large{d \omega_i}$, within the hemisphere $\Large{\Omega}$. An integral measures the area of a function, which can either be calculated analytically or numerically. As there is no analytical solution to both the render and reflectance equation, 
+To calculate the total of values inside an area or (in this case a hemisphere) a volume, we use a mathematical construct called an **integral** denoted in the reflectance as $\Large{\int}$ over all incoming directions $\Large{d \omega_i}$, within the hemisphere $\Large{\Omega}$. An integral measures the area of a function, which can either be calculated analytically or numerically. As there is no analytical solution to both the render and reflectance equation, we'll want to numerically solve the integral discretely. This translates to taking the results of small discrete steps of the reflectance equation over the hemisphere $\Large{\Omega}$ and averaging their results over the step size. This is known as the **Riemann Sum** that we can roughly visualize in code as follows. 
+
+```
+int steps = 100;
+float sum- 0.0f;
+vec3 P  = ...;
+vec3 Wo = ...;
+vec3 N  = ...; 
+float dW = 1.0f / steps; 
+
+for(int i = 0; i < steps; ++i)
+{
+	vec3 Wi = getNextIncomingLightDir(i);
+	sum += Fr(P, Wi, Wo) * L(P, Wi) * dot(N, Wi) * dW;
+}
+```
+
+By scaling the steps by `dW`, the sum will equal the total area or volume of the integral function. The `dW` to scale each discreate step can be though of as $\Large{d\omega_i}$ in the reflectance equation. Mathematically 
   
