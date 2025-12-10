@@ -303,4 +303,4 @@ This equation now completely describes a physically based render model that is g
 
 **Authoring PBR Materials**
 
-
+With knowledge of the underlying mathematical model of PBR we'll finalize the discussion by describing how artists generally author the physical properties of a surface
