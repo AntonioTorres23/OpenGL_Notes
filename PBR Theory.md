@@ -143,4 +143,6 @@ A BRDF approximates the material's reflective and refractive properties based on
 
 The Cook-Torrance BRDF contains a diffuse and specular part.
 
-$\LARGE{f+r = k_d f_{lambert} + k_s f_{cook-torrance}}$ 
+$\LARGE{f_r = k_d f_{lambert} + k_s f_{cook-torrance}}$ 
+
+Here $\Large{k_d}$
