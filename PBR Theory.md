@@ -249,4 +249,4 @@ float GeometrySmith(vec3 N, vec3 V, vec3 L, float k)
 
 **Fresnel Equation**
 
-The Fresnel equation (pronounced F)
+The Fresnel equation (pronounced Freh-nel) describes the ratio of light that gets reflected over the light that gets refracted, which varies over the angle we're looking at a surface. The moment light hits a surface, based on the surface-to-view angle, the Fresnel equation tells us the percentage 
