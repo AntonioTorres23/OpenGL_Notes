@@ -223,3 +223,24 @@ Using Smith's method with Schlick-GGX as $\Large{G_{sub}}$ gives the following v
 
 ![[Pasted image 20251210152242.png]]
 
+The geometry function is a multiplier between $[0.0, 1.0]$ with 1.0 or (white) measuring no microfacet shadowing.
+
+In GLSL the geometry function translates to the following code. 
+
+```
+float GeometrySchlickGGX(float NdotV, float k)
+{
+	float nom = NdotV; 
+	float denom = NdotV * (1.0 - k) + k;
+	
+	return nom / denom;
+}
+
+float GeometrySmith(vec3 N, vec3 V, vec3 L, float k)
+{
+	float NdotV = max(dot(N, V), 0.0);
+	float NdotL = max(dot(N, L), 0.0);
+	float ggx1 = GeometrySchlickGGX(NdotV, k)
+
+}
+```
