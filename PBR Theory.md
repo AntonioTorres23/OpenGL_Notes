@@ -154,3 +154,5 @@ With $\Large{c}$ being the albedo or surface color (think of the diffuse surface
 You may wonder how this Lambertian diffuse relates to the diffuse lighting we've been using before: the surface color multiplied by the dot product between the surface's normal and the light direction. The dot product is still there, but moved out of the BRDF as we find $\Large{n \cdot \omega_i}$ at the end of the $\Large{L_o}$  integral.  
 
 There exist different equations for the diffuse part of the BRDF which tend to look more realistic, but are also more computationally expensive. As concluded by Epic Games however, the Lambertian diffuse is sufficient enough for most real-time rendering purposes. 
+
+The specular part of the BRDF of the BRDF which tend to look more realistic, but are 
