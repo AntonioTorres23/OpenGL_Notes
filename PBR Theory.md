@@ -165,4 +165,4 @@ The Cook-Torrance specular BRDF is composed three functions and a normalization 
 - **Geometry Function**: describes the self-shadowing property of the microfacets. When a surface is relatively rough, the surface's microfacets can overshadow other microfacets reducing the light the surface reflects. 
 - **Fresnel Equation**: The Fresnel equation describes the ration of the surface reflection at different surface angels. 
 
-Each of these functions are an approximation of their physical equivalents and you'll find more than one version of each that aims to approximate the underlying physics  
+Each of these functions are an approximation of their physical equivalents and you'll find more than one version of each that aims to approximate the underlying physics in different ways; come more realistic, other more efficient. It is perfectly fine to pick whatever approximated version of these  
