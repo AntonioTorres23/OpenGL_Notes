@@ -198,3 +198,4 @@ float DistributionGGX(vec3 N, vec3 H, float a)
 
 **Geometry Function**
 
+The geometry function statistically approximates the relative surface area where its micro surface-details overshadow each other, causing light rays to be occluded 
