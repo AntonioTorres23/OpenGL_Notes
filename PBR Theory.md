@@ -251,4 +251,14 @@ float GeometrySmith(vec3 N, vec3 V, vec3 L, float k)
 
 The Fresnel equation (pronounced Freh-nel) describes the ratio of light that gets reflected over the light that gets refracted, which varies over the angle we're looking at a surface. The moment light hits a surface, based on the surface-to-view angle, the Fresnel equation tells us the percentage of light that gets reflected. From this ratio of reflection and the energy conservation principle we can directly obtain the refracted portion of light. 
 
-Every surface or material has a level of **base reflectivity** when looking straight at its surface, but when looking at the surface from an angle 
+Every surface or material has a level of **base reflectivity** when looking straight at its surface, but when looking at the surface from an angle [all](http://filmicworlds.com/blog/everything-has-fresnel/) reflections become more apparent compared to the surface's base reflectivity. You can check this for yourself by looking at your (presumably) wood/metallic desk which has a certain level of base reflectivity from a perpendicular view angle, but looking at your desk from an almost 90 degree angle you'll see the reflections become much more apparent. All surfaces theoretically fully reflect light if seen from perfect 90-degree angles. This phenomenon is known as **Fresnel** and is described by the Fresnel equation. 
+
+The Fresnel equation is a rather complex equation, but luckily the Fresnel equation can be approximated using the **Fresnel-Schlick** approximation. 
+
+$\LARGE{F_{Schlick}(h, v, F_0) = F_0 + (1 - F_0)(1 - (h \cdot v))^5}$
+
+$\Large{F_0}$ represents the base reflectivity of the surface, which we calculate using something called *indices of refraction* or IOR. As you can see on a sphere surface, the more we look towards the surface's grazing angles (with the halfway-view angle reaching 90 degrees), the stronger the Fresnel and thus the reflections. 
+
+![[Pasted image 20251210155102.png]]
+
+There are a few subtleties with the Fresnel equation. One is that the Fresnel-Schlick approximation is only really defined for **dielectric** or non-metal surfaces. For **conductor** surfaces (metals), calculating the base reflectivity with in
