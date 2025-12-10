@@ -137,5 +137,5 @@ Now the only unknown left is the $\Large{f_r}$ symbol known as **BRDF** or **bid
 
 **BRDF**
 
-The **BRDF**, or **bidirectional reflective distribution function**, is a function that takes as input the incoming (light)
+The **BRDF**, or **bidirectional reflective distribution function**, is a function that takes as input the incoming (light) direction $\Large{\omega_i}$, the outing (view) direction $\Large{\omega_o}$, the surface normal $\Large{n}$, and a surface parameter $\Large{a}$ that represents the microsurface's roughness. The BRDF approximates how much each individual light ray $\Large{\omega_i}$ contributes to the final reflected light of an opaque surface given its material properties. For instance, if the surface has a perfectly smooth surface (~like a mirror) the BRDF function would return 0.0 for all incoming light rays $\Large{\omega_i}$ except the one ray that has the same (reflected)   
   
