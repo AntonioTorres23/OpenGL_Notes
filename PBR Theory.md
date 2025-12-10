@@ -202,4 +202,24 @@ The geometry function statistically approximates the relative surface area where
 
 ![[Pasted image 20251210150241.png]]
 
-Similar to NDF, 
+Similar to the NDF, the Geometry function takes a material's roughness parameter as input with rougher surfaces having a higher probability of overshadowing microfacets. The geometry function we will use is a combination of the GGX and Schlick-Beckmann approximation known as Schlick-GGX. 
+
+$\LARGE{G_{SchlickGGX}(n, v, k) = \frac{n \cdot v}{(n \cdot v)(1 - k) + k}}$
+
+Here $\Large{k}$ is a remapping of $\Large{a}$ based on whether we're using the geometry function for direct lighting or IBL lighting. 
+
+
+$\LARGE{k_{direct} = \frac{(a + 1)^2}{8}}$ 
+
+$\LARGE{k_{IBL} = \frac{a^2}{2}}$ 
+
+Note that the value of $\Large{a}$ may differ based on how your engine roughness to $\Large{a}$. In the following notes we'll extensively discuss how and where this remapping becomes relevant. 
+
+To effectively approximate the geometry we need to take account of both the view direction (geometry obstruction) and the light direction vector (geometry shadowing). We take both into account using **Smith's Method**. 
+
+$\LARGE{G(n, v, l, k) = G_{sub}(n, v, k)G_{sub}(n, l, k)}$
+
+Using Smith's method with Schlick-GGX as $\Large{G_{sub}}$ gives the following visual appearance over varying roughness `R`. 
+
+![[Pasted image 20251210152242.png]]
+
