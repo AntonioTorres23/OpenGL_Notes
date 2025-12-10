@@ -131,5 +131,11 @@ for(int i = 0; i < steps; ++i)
 
 By scaling the steps by `dW`, the sum will equal the total area or volume of the integral function. The `dW` to scale each discreate step can be though of as $\Large{d\omega_i}$ in the reflectance equation. Mathematically $\Large{d\omega_i}$ is the continuous symbol over which we calculate the integral, and while it does not directly relate to `dW` in code (as this is a discrete step of the Riemann sum), it helps to think of it this way. Keep in mind that taking discrete steps will always give us an approximation of the total area of the function. A careful reading will notice we can increase the *accuracy* of the Riemann Sum by increasing the number of steps. 
 
-The reflectance equation sums up the radiance of all incoming light directions $\Large{\omega_i}$ over the hemisphere $\Large{\Omega}$ scaled by $\Large{f_r}$ 
+The reflectance equation sums up the radiance of all incoming light directions $\Large{\omega_i}$ over the hemisphere $\Large{\Omega}$ scaled by $\Large{f_r}$ that hit point $\Large{p}$ and returns the sum of reflected light $\Large{L_o}$ in the viewer's direction. The incoming radiance can some from [light sources](https://learnopengl.com/PBR/Lighting) as we're familiar with, or from an environmental map measuring radiance of every incoming direction as we'll discuss in the [IBL](https://learnopengl.com/PBR/IBL/Diffuse-irradiance) notes. 
+
+Now the only unknown left is the $\Large{f_r}$ symbol known as **BRDF** or **bidirectional reflective distribution function** that scales or weights the incoming radiance based on the surface's material properties. 
+
+**BRDF**
+
+The **BRDF**, or **bidirectional reflective distribution function**, is a function that takes as input the incoming (light)
   
