@@ -131,5 +131,5 @@ for(int i = 0; i < steps; ++i)
 
 By scaling the steps by `dW`, the sum will equal the total area or volume of the integral function. The `dW` to scale each discreate step can be though of as $\Large{d\omega_i}$ in the reflectance equation. Mathematically $\Large{d\omega_i}$ is the continuous symbol over which we calculate the integral, and while it does not directly relate to `dW` in code (as this is a discrete step of the Riemann sum), it helps to think of it this way. Keep in mind that taking discrete steps will always give us an approximation of the total area of the function. A careful reading will notice we can increase the *accuracy* of the Riemann Sum by increasing the number of steps. 
 
-The reflectance equation sums up the radiance of all incoming light directions $\Large{\omega_i}$ over the hemisphere $\Large{\Omega}$ scaled by 
+The reflectance equation sums up the radiance of all incoming light directions $\Large{\omega_i}$ over the hemisphere $\Large{\Omega}$ scaled by $\Large{f_r}$ 
   
