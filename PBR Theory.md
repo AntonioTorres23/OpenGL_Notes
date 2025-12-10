@@ -263,4 +263,8 @@ $\Large{F_0}$ represents the base reflectivity of the surface, which we calculat
 
 There are a few subtleties with the Fresnel equation. One is that the Fresnel-Schlick approximation is only really defined for **dielectric** or non-metal surfaces. For **conductor** surfaces (metals), calculating the base reflectivity with indices of refraction doesn't properly hold and we need to use a different Fresnel equation for conductors altogether. As this is inconvenient, we further approximate by pre-computing the surface's response at **normal incidence** ($\Large{F_0}$) at a 0 degree angle as if looking directly onto a surface. We interpolate this value based on the view angle, as per the Fresnel-Schlick approximation, such that we can use the same equation for both metals and non-metals. 
 
-The surface's response at normal incidence, or the base reflectivity, can be found in large databases like [these](http://refractiveindex.info/) with som
+The surface's response at normal incidence, or the base reflectivity, can be found in large databases like [these](http://refractiveindex.info/) with some of the more common values listed below as taken from Naty Hoffman's course notes. 
+
+![[Pasted image 20251210160429.png]]
+
+What is interesting to observe here is that for all dielectric surfaces the base 
