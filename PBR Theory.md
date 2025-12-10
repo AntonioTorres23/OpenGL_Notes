@@ -280,5 +280,5 @@ vec3 F0 = vec3(0.4);
 F0      = mix(F0, surfaceColor.rgb, metalness);
 ```
 
-We define a base reflectivity that is approximated for most dielectric surfaces. This is yet another approximation 
-
+We define a base reflectivity that is approximated for most dielectric surfaces. This is yet another approximation as $\large{F_0}$ is averaged around most common 
+ 
