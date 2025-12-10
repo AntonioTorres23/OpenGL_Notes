@@ -145,4 +145,4 @@ The Cook-Torrance BRDF contains a diffuse and specular part.
 
 $\LARGE{f_r = k_d f_{lambert} + k_s f_{cook-torrance}}$ 
 
-Here $\Large{k_d}$
+Here $\Large{k_d}$ is the earlier mentioned ratio of incoming light energy that gets refracted with $\Large{k_s}$ being the ratio that *reflected*. The left side of the 
