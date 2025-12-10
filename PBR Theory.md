@@ -162,4 +162,7 @@ $\LARGE{f_{CookTorrance} = \frac{DFG}{4(\omega_o \cdot n)(\omega_i \cdot n)}}$
 The Cook-Torrance specular BRDF is composed three functions and a normalization factor in the denominator. Each of the D, F, and G symbols represent a type of function that approximates a specific part of the surface's reflective properties. These are defined as the **D**istribution function, the **F**resnel equation, and the **G**eometry function. 
 
 - **Normal Distribution Function**: approximates the amount the surface's microfacets are aligned to the halfway vector, influenced by the roughness of the surface; this is the primary function approximating the microfacets. 
-- **Geometry Function**: describes the self-shadowing property of the microfacets. When a surface is relatively rough, the surface's microfacets 
+- **Geometry Function**: describes the self-shadowing property of the microfacets. When a surface is relatively rough, the surface's microfacets can overshadow other microfacets reducing the light the surface reflects. 
+- **Fresnel Equation**: The Fresnel equation describes the ration of the surface reflection at different surface angels. 
+
+Each of these functions 
