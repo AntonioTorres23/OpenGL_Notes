@@ -307,3 +307,6 @@ With knowledge of the underlying mathematical model of PBR we'll finalize the di
 
 Below you'll see a list of textures you'll frequent find in a PBR pipeline together with its visual output if supplied to a PBR renderer. 
 
+![[Pasted image 20251210164245.png]]
+
+**Albedo**: the **albedo** texture specifies for each texel the color of the surface, or the base reflectivity 
