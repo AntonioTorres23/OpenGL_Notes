@@ -297,5 +297,5 @@ With `cosTheta` being the dot product result between the surface's normal $\Larg
 
 With every component of the Cook-Torrance BRDF described, we can include the physically based BRDF into the now final reflectance equation. 
 
-$L_o(p, \omega_o) = \int\limits_{\Omega} (k_d \frac{c}{\pi})$  
+$L_o(p, \omega_o) = \int\limits_{\Omega} (k_d \frac{c}{\pi} + \frac{DFG}{4(\omega_o \cdot n)})$   
  
