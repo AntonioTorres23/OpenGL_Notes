@@ -280,5 +280,7 @@ vec3 F0 = vec3(0.04);
 F0      = mix(F0, surfaceColor.rgb, metalness);
 ```
 
-We define a base reflectivity that is approximated for most dielectric surfaces. This is yet another approximation as $\Large{F_0}$ is averaged around most common dielectrics. A base reflectivity of 0.04 holds for most dielectrics and produces physically plausible results without having to author an additional surface parameter. Then, based on how metallic a surface is, we either take the dielectric base reflectivity or take $\Large{F_0}$ authored as the surface color. Because metallic surfaces absorb all 
+We define a base reflectivity that is approximated for most dielectric surfaces. This is yet another approximation as $\Large{F_0}$ is averaged around most common dielectrics. A base reflectivity of 0.04 holds for most dielectrics and produces physically plausible results without having to author an additional surface parameter. Then, based on how metallic a surface is, we either take the dielectric base reflectivity or take $\Large{F_0}$ authored as the surface color. Because metallic surfaces absorb all refracted light they have no diffuse reflections and we can directly use the surface color texture as their base reflectivity. 
+
+
  
