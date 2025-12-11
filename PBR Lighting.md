@@ -5,4 +5,4 @@ Let's start by re-visiting the final reflectance equation from the previous note
 
 $\LARGE{L_o(p, \omega_o) = \int\limits_{\Omega} (k_d \frac{c}{\pi} + \frac{DFG}{4(\omega_o \cdot n)(\omega_i \cdot n)})L_i(p, \omega_i)n \cdot \omega_i d \omega_i}$      
 
-We now know mostly whats
+We now know mostly what's going on, but what still remained a big unknown is how exactly we're going to represent irradiance, the total 
