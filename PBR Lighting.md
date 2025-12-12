@@ -34,4 +34,21 @@ This also brings us back to the integral $\Large{\int}$ over the surface's hemis
 
 **A PBR Surface Model**
 
-Let's start by writing a fragment shader that implements previously described PBR models. First, we need to take the relevant PBR inputs required for shading the surface. 
+Let's start by writing a fragment shader that implements the previously described PBR models. First, we need to take the relevant PBR inputs required for shading the surface. 
+
+```
+#version 330 core
+out vec4 FragColor; 
+in vec2 TexCoords;
+in vec3 WorldPos;
+in vec3 Normal; 
+
+uniform vec3 camPos; 
+
+uniform vec3 albedo; 
+uniform float metallic; 
+uniform float roughness; 
+uniform float ao; 
+```
+
+We take the standard
