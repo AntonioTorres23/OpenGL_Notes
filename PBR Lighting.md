@@ -136,8 +136,9 @@ float GeometrySchlickGGX(float NdotV, float roughness)
 	float k = (r * r) / 8.0;  // direct lighting remapping of roughness for geo
 	
 	float num = NdotV;
-	float denom = NdotV * ()
+	float denom = NdotV * (1.0 - k) + k;
 	
+	return num / denom;
 }
 ```
 
