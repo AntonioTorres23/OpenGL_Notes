@@ -21,7 +21,9 @@ vec3 lightColor = vec3(23.47, 21.31, 20.79);
 vec3 wi         = normalize(lightPos - FragPos);
 float cosTheta  = max(dot(N, Wi), 0.0);
 float attenuation = calculateAttenuation(FragPos, lightPos);
-vec3 radiance   =  
+vec3 radiance   = lightColor * attenuation * cosTheta;  
 ```
+
+Aside from the different terminology, this piece of 
 
 
