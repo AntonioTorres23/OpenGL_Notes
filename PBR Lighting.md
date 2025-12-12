@@ -183,7 +183,9 @@ Now we can finally calculate each light's contribution to the reflectance equati
 vec3 kS = F;
 vec3 kD = vec3(1.0) - kS; 
 
-k
+kD *= 1.0 - metallic;
+
+
 ```
 
 
