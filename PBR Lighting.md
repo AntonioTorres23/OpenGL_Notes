@@ -99,6 +99,12 @@ vec3 fresnelSchlick(flat cosTheta, vec3 F0)
 }
 ```
 
-The Fresnel-Schlick approximation expects a `F0` parameter which is known as the *surface reflection* at zero incidence or how much the surface reflects if looking directly at the surface. The `F0` varies per material and is tinted on metals as we find in large material databases. In the PBR metallic workflow we make the simplifying assumption that most dielectric surfaces look visually correct with a constant `F0` of $0.04$. 
+The Fresnel-Schlick approximation expects a `F0` parameter which is known as the *surface reflection* at zero incidence or how much the surface reflects if looking directly at the surface. The `F0` varies per material and is tinted on metals as we find in large material databases. In the PBR metallic workflow we make the simplifying assumption that most dielectric surfaces look visually correct with a constant `F0` of $0.04$, while we do specify `F0` for metallic surfaces as then given by the albedo value. This translates to code as follows. 
+
+```
+vec3 F0 = vec3(4.0);
+F0      = mix(F0, albedo, metallic);
+vec3 F  = fresnelSchlick(max(dot(H, V), 0.0), F0);
+```
 
 
