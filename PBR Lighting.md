@@ -30,4 +30,4 @@ Note that this assumption holds as point lights are infinitely small and only a 
 
 For other types of light sources originating from a single point we calculate radiance similarly. For instance, a directional light source has a constant $\Large{\omega_i}$ without an attenuation factor. And a spotlight would not have a constant radiant intensity, but one that is scaled by the forward direction vector of the spotlight. 
 
-This also brings us back to the integral $\Large{\int}$ over the surface's hemisphere $\Large{\Omega}$. As we know beforehand the single locations of all contributing light sources while shading a single surface point, it is not required to try and solve the integral. 
+This also brings us back to the integral $\Large{\int}$ over the surface's hemisphere $\Large{\Omega}$. As we know beforehand the single locations of all contributing light sources while shading a single surface point, it is not required to try and solve the integral. We can directly take the (known) number of light sources
