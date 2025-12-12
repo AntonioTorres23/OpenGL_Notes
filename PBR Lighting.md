@@ -143,6 +143,12 @@ float GeometrySchlickGGX(float NdotV, float roughness)
 }
 
 // geometry smith function to take into account view direction and light direction
+float GeometrySmith(vec3 N, vec3 V, vec3 L, float roughtness)
+{
+	float NdotV = max(dot(N, V), 0.0); // dot product of normal by view direction
+	floa
+}
+
 ```
 
 
