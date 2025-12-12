@@ -146,7 +146,9 @@ float GeometrySchlickGGX(float NdotV, float roughness)
 float GeometrySmith(vec3 N, vec3 V, vec3 L, float roughtness)
 {
 	float NdotV = max(dot(N, V), 0.0); // dot product of normal by view direction
-	floa
+	float NdotL = max(dot(N, L), 0.0); // dot product of normal by light direction
+	float ggx2  = GeometrySchlickGGX(NdotV, roughness); 
+	
 }
 
 ```
