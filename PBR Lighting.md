@@ -24,6 +24,6 @@ float attenuation = calculateAttenuation(FragPos, lightPos);
 vec3 radiance   = lightColor * attenuation * cosTheta;  
 ```
 
-Aside from the different terminology, this piece of code should look awfully familiar to you: this is exactly how we've been calculating diffuse lighting so far. When it comes to radiant lighting, radiance is calculated similarly to how we've calculated
+Aside from the different terminology, this piece of code should look awfully familiar to you: this is exactly how we've been doing diffuse lighting so far. When it comes to direct lighting, radiance is calculated similarly to how we've calculated lighting before as only a single light direction vector contributes to the surface's radiance. 
 
 
