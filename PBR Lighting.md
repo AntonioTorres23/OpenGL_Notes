@@ -78,6 +78,10 @@ for(int i = 0; i < 4; ++i)
 	float distance    = length(lightPositions[i] - WorldPos); 
 	float attenuation = 1.0 / (distance * distance);
 	vec3 radiance     = lightColors[i] * attenuation;
+	[...]
 }
 ```
+
+As we calculate lighting in linear space (we'll [gamma correct](https://learnopengl.com/Advanced-Lighting/Gamma-Correction) at the end of the shader) we attenuate the light sources by the more physically correct **inverse-square law**. 
+
 
