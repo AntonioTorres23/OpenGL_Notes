@@ -107,7 +107,7 @@ F0      = mix(F0, albedo, metallic);
 vec3 F  = fresnelSchlick(max(dot(H, V), 0.0), F0); // H = Halfway V = viewPos
 ```
 
-
+As you can see, for non-metallic surfaces `F0` is always $0.04$ 
 
 
 
