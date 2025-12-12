@@ -159,6 +159,19 @@ float GeometrySmith(vec3 N, vec3 V, vec3 L, float roughtness)
 }
 ```
 
-What's important to note here is that in contrast to the [theory](https://learnopengl.com/PBR/Theory) notes, we pass the roughness parameter directly to these functions; this way we can make some term-specific modifications to the original roughness value. Based on observations by Disney and adopted by Epic-Games, the lighting looks more correct squaring the roughness in both the geometry and view 
+What's important to note here is that in contrast to the [theory](https://learnopengl.com/PBR/Theory) notes, we pass the roughness parameter directly to these functions; this way we can make some term-specific modifications to the original roughness value. Based on observations by Disney and adopted by Epic-Games, the lighting looks more correct squaring the roughness in both the geometry and distribution functions. 
+
+With both functions defined, calculating the NDF and GG term in the reflectance loop is straight forward. 
+
+```
+float NDF = DistrubutionGGX(N, H, roughness);
+float G   = GeometrySmith(N, V, L, roughness);
+```
+
+This gives us enough to calculate the Cook-Torrance BRDF. 
+
+```
+vec3 numerator = NDF * G * 
+```
 
 
