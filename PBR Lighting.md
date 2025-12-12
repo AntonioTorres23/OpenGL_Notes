@@ -66,5 +66,5 @@ void main()
 
 **Direct Lighting**
 
-In this note's example demo we have 4 point lights that together represent the scene's irradiance. 
+In this note's example demo we have 4 point lights that together represent the scene's irradiance. To satisfy the reflectance equation we loop over each light source, calculate its individual radiance and sum its contribution scaled by the BRDF and the light's incident angle. We can think of the loop as solving the integral
 
