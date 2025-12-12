@@ -52,3 +52,19 @@ uniform float ao;
 ```
 
 We take the standard inputs as calculated from a generic vertex shader and a set of constant material properties over the surface of the object. 
+
+Then at the start of the fragment shader we do the usual calculations required for any lighting algorithm. 
+
+```
+void main()
+{
+	vec3 N = normalize(Normal);
+	vec3 V = normalize(camPos - WorldPos);
+	[...]
+}
+```
+
+**Direct Lighting**
+
+In this note's example demo we have 4 point lights that together represent the scene's irradiance. 
+
