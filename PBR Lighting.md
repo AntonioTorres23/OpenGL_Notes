@@ -153,12 +153,12 @@ float GeometrySmith(vec3 N, vec3 V, vec3 L, float roughtness)
 	float ggx1  = GeometrySchlickGGX(NdotL, roughness); 
 	
 	// returning a product of ggx1 (N and L dot product Geometry Function) and 
-	// ggx2  
+	// ggx2 (N and V dot product Geometry Function) to combine light and view
 	
+	return ggx1 * ggx2;
 }
-
 ```
 
-
+What's important to note here is that in contrast to the [theory](https://learnopengl.com/PBR/Theory) notes, we pass the roughness parameter directly to these functions; this way we can make some term-specific modifications to the original roughness value. Based on observations by Disney and adopted by Epic-Games, the lighting looks more correct squaring the roughness in both the geometry and view 
 
 
