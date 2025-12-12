@@ -131,7 +131,9 @@ float DistributionGGX(vec3 N, vec3 H, float roughnes)
 
 float GeometrySchlickGGX(float NdotV, float roughness)
 {
-	float r = (roughness + 1.0);
+	float r = (roughness + 1.0); // calculating roughness
+	
+	float k = (r * r) / 8.0;  // direct lighting remapping of roughness for geo
 	
 }
 ```
