@@ -149,7 +149,11 @@ float GeometrySmith(vec3 N, vec3 V, vec3 L, float roughtness)
 	float NdotL = max(dot(N, L), 0.0); // dot product of normal by light direction
 	// Calculating Geometry function with prior defined function with N and V
 	float ggx2  = GeometrySchlickGGX(NdotV, roughness); 
-	// Calculating Geometry function with prior defined function with 
+	// Calculating Geometry function with prior defined function with N and L
+	float ggx1  = GeometrySchlickGGX(NdotL, roughness); 
+	
+	// returning a value of ggx1 (N and L dot product Geometry Function) and 
+	// 
 	
 }
 
