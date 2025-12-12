@@ -28,4 +28,4 @@ Aside from the different terminology, this piece of code should look awfully fam
 
 Note that this assumption holds as point lights are infinitely small and only a single point in space. If we were to model a light that has area or volume, its radiance would be non-zero in more than one incoming light direction. 
 
-For other types of light sources originating from a single point we calcula
+For other types of light sources originating from a single point we calculate radiance similarly. For instance, a directional light source has a constant $\Large(\omega)$
