@@ -84,4 +84,19 @@ for(int i = 0; i < 4; ++i)
 
 As we calculate lighting in linear space (we'll [gamma correct](https://learnopengl.com/Advanced-Lighting/Gamma-Correction) at the end of the shader) we attenuate the light sources by the more physically correct **inverse-square law**. 
 
+While physically correct, you may still want to use the constant-linear-quadratic attenuation equation that (while not physically correct) can offer you significantly more control over the light's energy fall off. 
+
+Then, for each light we want to calculate the full Cook-Torrance specular BRDF term.
+
+$\LARGE{\frac{DFG}{4(\omega_o \cdot n)(\omega_i \cdot n)}}$
+
+The first thing we want to do is calculate the ratio between the specular and diffuse reflection, or how much the surface reflects versus how much it refracts light. We know from the previous notes that the Fresnel equation calculates just that (note the clamp here to prevent black spots). 
+
+```
+vec3 fresnelSchlick(flat cosTheta, vec3 F0)
+{
+	return F0 + 
+}
+```
+
 
