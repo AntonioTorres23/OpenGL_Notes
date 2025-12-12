@@ -152,8 +152,8 @@ float GeometrySmith(vec3 N, vec3 V, vec3 L, float roughtness)
 	// Calculating Geometry function with prior defined function with N and L
 	float ggx1  = GeometrySchlickGGX(NdotL, roughness); 
 	
-	// returning a value of ggx1 (N and L dot product Geometry Function) and 
-	// 
+	// returning a product of ggx1 (N and L dot product Geometry Function) and 
+	// ggx2  
 	
 }
 
