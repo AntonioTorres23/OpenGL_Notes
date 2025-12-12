@@ -14,6 +14,6 @@ If at first, we assume that light attenuation (dimming of light over distance) d
 
 However, radiance also takes a position $\Large{p}$ as input and as any realistic point light source takes light attenuation into account, the radiant intensity of the point light source is scaled by some measure of the distance between point $\Large{p}$ and the light source. Then, as extracted from the original radiance equation, the result is scaled by the dot product between the surface normal $\Large{n}$ and the incoming light direction $\Large{\omega_i}$. 
 
-To put this in more practical terms: in the case of a direct point light 
+To put this in more practical terms: in the case of a direct point light the radiance function $\Large{L}$ measures the light color, attenuated over its distance to $$ 
 
 
