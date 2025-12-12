@@ -129,6 +129,7 @@ float DistributionGGX(vec3 N, vec3 H, float roughnes)
 	return num / denom;
 }
 
+// initial geometry function calculations
 float GeometrySchlickGGX(float NdotV, float roughness)
 {
 	float r = (roughness + 1.0); // calculating roughness
@@ -140,6 +141,8 @@ float GeometrySchlickGGX(float NdotV, float roughness)
 	
 	return num / denom;
 }
+
+// 
 ```
 
 
