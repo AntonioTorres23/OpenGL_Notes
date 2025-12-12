@@ -199,4 +199,8 @@ The resulting `Lo` value, or the outgoing radiance, is effectively the result of
 
 What's left is to add an (improvised) ambient term to the direct lighting result `Lo` and we have the final lit color of the fragment. 
 
-`A`
+```
+vec3 ambient = vec3(0.03) * albedo * ao;
+vec3 color   = ambient + Lo;
+```
+
