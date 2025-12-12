@@ -115,6 +115,15 @@ In a direct PBR lighting shader their code equivalents are.
 
 ```
 float DistributionGGX(vec3 N, vec3 H, float roughnes)
+{
+	float a = rougness * roughness;
+	float a2 = a*a;
+	float NdotH = max(dot(N, H), 0.0);
+	float NdotH2 = NdotH * NdotH; 
+	
+	float num = 
+	
+}
 ```
 
 
