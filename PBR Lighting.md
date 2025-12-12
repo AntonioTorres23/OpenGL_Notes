@@ -142,7 +142,7 @@ float GeometrySchlickGGX(float NdotV, float roughness)
 	return num / denom;
 }
 
-// 
+// geometry smith function to take into account view direction and light direction
 ```
 
 
