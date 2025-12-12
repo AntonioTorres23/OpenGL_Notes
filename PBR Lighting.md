@@ -74,6 +74,10 @@ for(int i = 0; i < 4; ++i)
 {
 	vec3 L = normalize(lightPositions[i] - WorldPos); // WorldPos = FragPos? 
 	vec3 H = normalize(V + L); // H = Halfway Direction; V = ViewPos; L = LightDir
+	
+	float distance    = length(lightPositions[i] - WorldPos); 
+	float attenuation = 1.0 / (distance * distance);
+	vec3 radiance     = lightColors[i] * attenuation;
 }
 ```
 
