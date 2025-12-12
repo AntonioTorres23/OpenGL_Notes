@@ -12,6 +12,6 @@ Given this knowledge, how do we translate this into some of the lighting knowled
 ![[Pasted image 20251211164143.png]]
 If at first, we assume that light attenuation (dimming of light over distance) does not affect the point light source, the radiance of the incoming light ray is the same regardless of where we position the light (excluding scaling radiance by the incident angle $\Large{\cos\theta}$). This, because the point light has the same radiant intensity regardless of the angle we look at, effectively modeling its radiant intensity as its radiant flux: a constant vector $(23.47, 21.31, 20.79)$. In layman's terms (I believe), the radiant intensity (how strong the light is) is the same as it's radiant flux (the color of the light). Meaning there is no drop in color/light quality (I think). 
 
-However, radiance also takes a position $\Large{p}$ as input and as any realistic point light source takes light attenuation into account, the radiant intensity of the point light source is scaled by some measure of the distance between point 
+However, radiance also takes a position $\Large{p}$ as input and as any realistic point light source takes light attenuation into account, the radiant intensity of the point light source is scaled by some measure of the distance between point $\Large{p}$ and the light source. Then, as extracted from the original radiance equation, the result is scaled by the dot product between the surface normal $\Large{n}$ and the incoming light direction $\Large{\omega_i}$ 
 
 
