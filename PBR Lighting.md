@@ -161,7 +161,7 @@ float GeometrySmith(vec3 N, vec3 V, vec3 L, float roughtness)
 
 What's important to note here is that in contrast to the [theory](https://learnopengl.com/PBR/Theory) notes, we pass the roughness parameter directly to these functions; this way we can make some term-specific modifications to the original roughness value. Based on observations by Disney and adopted by Epic-Games, the lighting looks more correct squaring the roughness in both the geometry and distribution functions. 
 
-With both functions defined, calculating the NDF and GG term in the reflectance loop is straight forward. 
+With both functions defined, calculating the NDF and G term in the reflectance loop is straight forward. 
 
 ```
 float NDF = DistrubutionGGX(N, H, roughness);
@@ -171,7 +171,19 @@ float G   = GeometrySmith(N, V, L, roughness);
 This gives us enough to calculate the Cook-Torrance BRDF. 
 
 ```
-vec3 numerator = NDF * G * 
+vec3 numerator    = NDF * G * F;
+float denominator = 4.0 * max(dot(N, V), 0.0) * max(dot(N, L), 0.0) + 0.0001;
+vec3 specular     = numerator / denominator;
+```
+
+ Notes that we add $0.0001$ to the denominator to prevent a divide by zero in case any dot product ends up $0.0$. 
+Now we can finally calculate each light's contribution to the reflectance equation. As the Fresnel value directly corresponds to $\Large{k_S}$ we can use `F` to denote the specular contribution of any light that hits the surface. From $\Large{k_S}$ we can then calculate the ratio of refraction $\Large{k_D}$. 
+
+```
+vec3 kS = F;
+vec3 kD = vec3(1.0) - kS; 
+
+k
 ```
 
 
