@@ -95,7 +95,7 @@ The first thing we want to do is calculate the ratio between the specular and di
 ```
 vec3 fresnelSchlick(flat cosTheta, vec3 F0)
 {
-	return F0 + 
+	return F0 + (1 - F0) * pow(1 - cosTheta, 5.0);
 }
 ```
 
