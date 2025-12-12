@@ -186,5 +186,13 @@ vec3 kD = vec3(1.0) - kS;
 kD *= 1.0 - metallic;
 ```
 
+Seeing as `kS` represents the energy of light that gets reflected, the remaining ratio of light energy is the light that gets refracted which we store in `kD`. Furthermore, because metallic surfaces don't refract light and thus have no diffuse reflections we enforce this property by nullifying `kD` if the surface is metallic. This gives us the final data we need to calculate each light's outgoing reflectance value. 
 
+```
+const float PI = 3.141592655359;
 
+float NdotL = max(dot(N, L), 0.0);
+Lo += (kD * albedo / PI + specular) * radiance * NdotL; 
+``` 
+
+The resulting 
