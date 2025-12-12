@@ -99,6 +99,6 @@ vec3 fresnelSchlick(flat cosTheta, vec3 F0)
 }
 ```
 
-The Fresnel-Schlick approximation expects a `F0` parameter which is known as the *surface reflection* at zero incidence or how much the surface reflects if looking di
+The Fresnel-Schlick approximation expects a `F0` parameter which is known as the *surface reflection* at zero incidence or how much the surface reflects if looking directly at the surface. The 
 
 
