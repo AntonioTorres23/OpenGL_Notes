@@ -51,4 +51,4 @@ uniform float roughness;
 uniform float ao; 
 ```
 
-We take the standard
+We take the standard inputs as calculated from a generic vertex shader and a set of constant material properties over the surface of the object. 
