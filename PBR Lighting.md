@@ -195,4 +195,8 @@ float NdotL = max(dot(N, L), 0.0);
 Lo += (kD * albedo / PI + specular) * radiance * NdotL; 
 ``` 
 
-The resulting `Lo` value, or the outgoing radiance, is effectively the result of the reflectance equation's integral $\Large{\int}$ over $\Large{\Omega}$. We don't really have to try and solve the integral for all possible incoming light direction as we know exactly 4 incoming light directions 
+The resulting `Lo` value, or the outgoing radiance, is effectively the result of the reflectance equation's integral $\Large{\int}$ over $\Large{\Omega}$. We don't really have to try and solve the integral for all possible incoming light direction as we know exactly 4 incoming light directions that can influence the fragment. Because of this, we can directly loop over these incoming light directions e.g. the number of lights in the scene. 
+
+What's left is to add an (improvised) ambient term to the direct lighting result `Lo` and we have the final lit color of the fragment. 
+
+`A`
