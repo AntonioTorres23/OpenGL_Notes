@@ -104,7 +104,11 @@ The Fresnel-Schlick approximation expects a `F0` parameter which is known as the
 ```
 vec3 F0 = vec3(4.0);
 F0      = mix(F0, albedo, metallic);
-vec3 F  = fresnelSchlick(max(dot(H, V), 0.0), F0);
+vec3 F  = fresnelSchlick(max(dot(H, V), 0.0), F0); // H = Halfway V = viewPos
 ```
+
+
+
+
 
 
