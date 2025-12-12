@@ -68,5 +68,12 @@ void main()
 
 In this note's example demo we have 4 point lights that together represent the scene's irradiance. To satisfy the reflectance equation we loop over each light source, calculate its individual radiance and sum its contribution scaled by the BRDF and the light's incident angle. We can think of the loop as solving the integral $\Large{\int}$ over $\Large{\Omega}$ for direct light sources. First, we calculate the relevant per-light variables. 
 
-
+```
+vec3 Lo = vec3(0.0);
+for(int i = 0; i < 4; ++i)
+{
+	vec3 L = normalize(lightPositions[i] - WorldPos); // WorldPos = FragPos? 
+	vec3 H = normalize(V + L); // H = Halfway Direction; V = ViewPos; L = LightDir
+}
+```
 
