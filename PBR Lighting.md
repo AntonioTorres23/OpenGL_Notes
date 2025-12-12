@@ -107,7 +107,15 @@ F0      = mix(F0, albedo, metallic);
 vec3 F  = fresnelSchlick(max(dot(H, V), 0.0), F0); // H = Halfway V = viewPos
 ```
 
-As you can see, for non-metallic surfaces `F0` is always $0.04$ 
+As you can see, for non-metallic surfaces `F0` is always $0.04$. For metallic surfaces, we vary `F0` by linearly interpolating between the original `F0` and the albedo value given the `metallic` property. 
+
+Given $\Large{F}$, the remaining terms to calculate are the **normal distribution function** $\Large{D}$ and the geometry function $\Large{G}$. 
+
+In a direct PBR lighting shader their code equivalents are. 
+
+```
+float DistributionGGX(vec3 N, vec3 H, float roughnes)
+```
 
 
 
