@@ -204,4 +204,4 @@ vec3 ambient = vec3(0.03) * albedo * ao;
 vec3 color   = ambient + Lo;
 ```
 
-**Line**
+**Linear and HDR Rendering**
