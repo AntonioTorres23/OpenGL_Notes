@@ -1,2 +1,4 @@
 
-IBL, or **image based lighting**, is a collection of techniques to light objects, 
+IBL, or **image based lighting**, is a collection of techniques to light objects, not by direct analytical lights as in the [previous](https://learnopengl.com/PBR/Lighting) notes, but by treating the surrounding environment as one big light source. This is generally accomplished by manipulating a cubemap environment map (taken from the real world or generated from a 3D scene) such that we can directly use it in our lighting equations: treating each cubemap texel as a light emitter. This way we can effectively capture an environment's global lighting and general feel, giving objects a better sense of *belonging* in their environment. 
+
+As image based lighting algorithms capture the lighting of some (global) environment, its input is considered a more precise form of ambient lighting, even a crude approximation of global illumination. This makes IBL interesting for PBR as objects look significantly more 
