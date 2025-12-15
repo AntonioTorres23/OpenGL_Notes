@@ -281,8 +281,20 @@ We sample the environment map using its interpolated vertex cube positions that 
 
 Now rendering the sampled environment map over the previously rendered spheres should look something like this. 
 
+![[Pasted image 20251215162242.png]]
+
+Well... it took us quite a bit of setup to get here, but we successfully managed to read an HDR environment map, convert it from its equirectangular mapping to a cubemap, and render the HDR cubemap into the scene as a skybox. Furthermore, we set up a small system to render onto all 6 faces of a cubemap, which we'll need again when **convoluting** the environment map. You can find the source code of the entire conversion process [here](https://learnopengl.com/code_viewer_gh.php?code=src/6.pbr/2.1.1.ibl_irradiance_conversion/ibl_irradiance_conversion.cpp).
+
+**Cubemap Convolution**
+
+As described at the start of the notes, our main goal is to solve the integral for all diffuse indirect lighting given the scene's irradiance in the form of a cubemap environment map. We know that we can get the radiance of the scene $\Large{L(p, \omega_i)}$ in a particular direction by sampling an HDR environment map in direction $\Large{\omega_i}$. To solve the integral, we have to sample the scene's radiance from all possible directions within the hemisphere $\Large{\Omega}$ for each fragment. 
+
+It is however computationally impossible to sample the environment's lighting from every possible direction in $\Large{\Omega}$, the number of possible directions is theoretically infinite. We can however, approximate the number of directions by taking a finite number of directions or samples, spaced uniformly or taken randomly from within the hemisphere, to get fairly accurate approximation of the irradiance; effectively solving the integral $\Large{\int}$ discretely. 
+
+It is however still too expensive to do this for every fragment in real-time 
 
 
+ 
 
 
 
