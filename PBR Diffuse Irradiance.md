@@ -47,3 +47,7 @@ Below is an example of a cubemap environment map and its resulting irradiance ma
 ![[Pasted image 20251215124413.png]]
 
 By storing the convoluted result in each cubemap texel (in the direction of $\Large{\omega_o}$), the irradiance map displays somewhat like an average color or lighting display of the environment. Sampling any direction from this environment map will give us the scene's irradiance in that particular direction. 
+
+**PBR and HDR**
+
+We've briefly touched upon it in the [previous](https://learnopengl.com/PBR/Lighting) notes: taking the high dynamic range of your scene's lighting into account in a PBR pipeline is incredibly important. As PBR 
