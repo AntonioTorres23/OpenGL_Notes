@@ -58,4 +58,6 @@ The environment maps we've been using so far as cubemaps (used as [skyboxes](htt
 
 **The Radiance HDR File Format**
 
-Enter the radiance file format. The radiance file format (with the `.hdr` extension) stores a full cubemap with all 6 faces as floating point data. This allows us to specify color values outside the $0.0$ and $1.0$ range to give lights their correct color intensities. The file format also uses a clever trick to store each floating point value, not as a 32 bit value per channel, but 8 bits per channel using the color's alpha channel as an exponent (this does come with a loss of precision). This works quite well, but requires the parsing program to re-convert
+Enter the radiance file format. The radiance file format (with the `.hdr` extension) stores a full cubemap with all 6 faces as floating point data. This allows us to specify color values outside the $0.0$ and $1.0$ range to give lights their correct color intensities. The file format also uses a clever trick to store each floating point value, not as a 32 bit value per channel, but 8 bits per channel using the color's alpha channel as an exponent (this does come with a loss of precision). This works quite well, but requires the parsing program to re-convert each color to their floating point equivalent.
+
+There are quite a few radiance HDR environment maps freely available form sources like 
