@@ -291,7 +291,9 @@ As described at the start of the notes, our main goal is to solve the integral f
 
 It is however computationally impossible to sample the environment's lighting from every possible direction in $\Large{\Omega}$, the number of possible directions is theoretically infinite. We can however, approximate the number of directions by taking a finite number of directions or samples, spaced uniformly or taken randomly from within the hemisphere, to get fairly accurate approximation of the irradiance; effectively solving the integral $\Large{\int}$ discretely. 
 
-It is however still too expensive to do this for every fragment in real-time as the number of samples needs to be significantly large for decent results, so we want to **pre-compute** this. Since the orientation of the hemisphere decides where we capture the irradiance, we can pre-calculate the irradiance for every possible hemisphere orientation oriented around all outgoing directions 
+It is however still too expensive to do this for every fragment in real-time as the number of samples needs to be significantly large for decent results, so we want to **pre-compute** this. Since the orientation of the hemisphere decides where we capture the irradiance, we can pre-calculate the irradiance for every possible hemisphere orientation oriented around all outgoing directions $\Large{\omega_o}$
+
+
 
  
  
