@@ -102,4 +102,6 @@ else
 
 **From Equirectangular to Cubemap**
 
-It is possible to use the equirectangular map directly for environment lookups, but these operations can be relatively expensive in which case a direct cubemap sample is more performant. Therefore, in these notes we'll first convert the equirectangular image to a cubemap for further processing. 
+It is possible to use the equirectangular map directly for environment lookups, but these operations can be relatively expensive in which case a direct cubemap sample is more performant. Therefore, in these notes we'll first convert the equirectangular image to a cubemap for further processing. Note that in the process we also show how to sample an equirectangular map as if it was a 3D environment map in which case you're free to pick whichever solution you prefer. 
+
+To convert an equirectangular image into a cubemap we need to render a (unit) cube 
