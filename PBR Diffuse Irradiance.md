@@ -50,4 +50,4 @@ By storing the convoluted result in each cubemap texel (in the direction of $\La
 
 **PBR and HDR**
 
-We've briefly touched upon it in the [previous](https://learnopengl.com/PBR/Lighting) notes: taking the high dynamic range of your scene's lighting into account in a PBR pipeline is incredibly important. As PBR bases most of its inputs on real physical properties and measurements it makes sense to closely match the incoming light values to thier physical equivelents. 
+We've briefly touched upon it in the [previous](https://learnopengl.com/PBR/Lighting) notes: taking the high dynamic range of your scene's lighting into account in a PBR pipeline is incredibly important. As PBR bases most of its inputs on real physical properties and measurements it makes sense to closely match the incoming light values to their physical equivalents. Whether we make educated guesses on each light's radiant flux or use their [direct physical equivalent](https://en.wikipedia.org/wiki/Lumen_\(unit\)), the diffe
