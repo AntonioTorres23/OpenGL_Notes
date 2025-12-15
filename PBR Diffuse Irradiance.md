@@ -142,6 +142,6 @@ vec2 SampleSphericalMap(vec3 v)
 
 void main()
 {
-
+	vec2 uv = SampleSphericalMap(normalize(local))
 }
 ```
