@@ -144,6 +144,14 @@ void main()
 {
 	// make sure to normalize localPos; 
 	vec2 uv = SampleSphericalMap(normalize(localPos)); 
-	vec3 color = texture
+	vec3 color = texture(equirectangularMap, uv).rgb;
+	
+	FragColor = vec4(color, 1.0);
 }
 ```
+
+If you render a cube at the center of the scene given an HDR equirectangular map you'll get something that looks like this. 
+
+![[Pasted image 20251215144028.png]]
+
+We sample the environment map using its interpolated vertex cube positions that directly correspond to the correct direction vector sample. 
