@@ -305,4 +305,15 @@ From bottom to top the metallic value ranges from $0.0$ to $1.0$, with roughness
 
 https://oneshader.net/shader/6b8a7c6363
 
-You can find
+You can find the full source code of the demo [here](https://learnopengl.com/code_viewer_gh.php?code=src/6.pbr/1.1.lighting/lighting.cpp). 
+
+**Textured PBR**
+
+Extending the system to now accept its surface parameters as textures instead of uniform values gives us per-fragment control over the surface material properties. 
+
+```
+[...]
+uniform sampler2D albedoMap;
+uniform sampler2D normalMap;
+uniform sampler
+```
