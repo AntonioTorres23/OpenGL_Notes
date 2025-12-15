@@ -293,7 +293,9 @@ It is however computationally impossible to sample the environment's lighting fr
 
 It is however still too expensive to do this for every fragment in real-time as the number of samples needs to be significantly large for decent results, so we want to **pre-compute** this. Since the orientation of the hemisphere decides where we capture the irradiance, we can pre-calculate the irradiance for every possible hemisphere orientation oriented around all outgoing directions $\Large{\omega_o}$
 
+$\LARGE{L_o(p, \omega_o) = k_d \frac{c}{\pi} \int\limits_{\Omega} L_i(p, \omega_i)n \cdot \omega_i d \omega_i}$
 
+Given any direction vector $\Large{\omega_i}$ in the lighting pass, we can then sample the pre-computed irradiance map to retrieve the total diffuse irradiance from direction 
 
  
  
