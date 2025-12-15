@@ -179,6 +179,8 @@ for(int i = 0; i < 6; ++i)
 	// note that we store each face with 16 bit floating point values
 	glTexImage2D(GL_TEXTURE_CUPMAP_POSITIVE_X + i, 0, GL_RGB16F, 512, 512, 0,          GL_RGB, GL_FLOAT, nullptr);
 }
+
+
 ```
 
 
