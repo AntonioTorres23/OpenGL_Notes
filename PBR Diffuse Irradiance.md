@@ -301,7 +301,9 @@ Given any direction vector $\Large{\omega_i}$ in the lighting pass, we can then 
 
 Now, to generate the irradiance map, we need to convolute the environment's lighting as converted to a cubemap. Given that for each fragment the surface's hemisphere is oriented along the normal vector $\Large{N}$, convoluting a cubemap equals the total average radiance of each direction $\Large{\omega_i}$ in the hemisphere $\Large{\Omega}$ oriented along $\Large{N}$. 
 
+![[Pasted image 20251215164303.png]]
 
+Thankfully, all the cumbersome setup of these notes isn't all for nothing as we can now directly take the converted cubemap, convolute it in a fragment shader, and capture its result in a new 
  
  
 
