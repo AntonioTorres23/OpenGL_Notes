@@ -32,3 +32,4 @@ By splitting the integral in two parts we can focus on both the diffuse and spec
 Taking a closer look at the diffuse integral we find that the diffuse lambert term is a constant term (the color **c**, the refraction ratio $\Large{k_d}$, and $\Large{\pi}$ are constant over the integral) and not dependent on any of the integral variables. Given this, we can move the constant term out of the diffuse integral. 
 
 $\LARGE{L_o(p, \omega_o) = k_d \frac{c}{\pi} \int\limits_{\Omega} L_i(p, \omega_i)n \cdot \omega_i d \omega_i}$ 
+This gives us an integral that only depends on $\Large{\omega_i}$  assuming $\Large{p}$ 
