@@ -323,6 +323,10 @@ void main()
 {
 	vec3 albedo = pow(texture(albedoMap, TexCoords).rgb, 2.2);
 	vec3 normal = getNormalFromNormalMap();
-	float metallic 
+	float metallic = texture(metallicMap, TexCoords).r;
+	float roughness = texture(aoMap, TexCoords).r;
+	[...]
 }
 ```
+
+Note that the albedo textures that come from artists are generally authored in sRGB space which is why we first convert them 
