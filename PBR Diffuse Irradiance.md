@@ -207,7 +207,19 @@ glm::mat4 captureViews[] =
 equirectangularToCubemapShader.use();
 equirectangularToCubemapShader.setInt("equirectangularMap", 0);
 equirectangularToCubemapShader.setMat4("projection", captureProjection);
-glActivateTexture
+glActivateTexture(GL_TEXTURE0);
+glBindTexture(GL_TEXTURE_2D, hdrTexture);
+
+// don't forget to configure the viewport to the capture dimensions
+glViewport(0, 0, 512, 512); 
+glBindFramebuffer(GL_FRAMEBUFFER, captureFBO);
+for (unsigned int i = 0; i < 6; ++i)
+{
+	equirectangularToShader.setMat4("view", captureViews[i]);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0,                       GL_COLOR_ATTACHMENT0, GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, envCubemap, 0);
+	
+}
+
 
 ```
 
