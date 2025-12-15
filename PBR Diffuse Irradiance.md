@@ -229,8 +229,29 @@ We take the color attachment of the framebuffer and switch its texture around fo
 
 Let's test the cubemap by writing a very simple skybox shader to display the cubemap around us. 
 
+```
+#version 330 core
+layout(location = 0) in vec3 aPos; 
 
+uniform mat4 projection; 
+uniform mat4 view; 
 
+out vec3 localPos; 
+
+void main()
+{
+	localPos = aPos;
+	
+	mat4 rotView = mat4(mat3(view)); // remove translation from the view matrix
+	mat4 clipPos = projection * rotView * vec4(localPos, 1.0);
+	
+	// perspective division makes the z and w componet equal to 1 since we replace 
+	// w as our z value
+	gl_Position = clipPos.xyww; 
+}
+```
+
+Note the `xyww` trick 
 
 
 
