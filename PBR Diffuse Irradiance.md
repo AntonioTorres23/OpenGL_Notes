@@ -297,7 +297,9 @@ $\LARGE{L_o(p, \omega_o) = k_d \frac{c}{\pi} \int\limits_{\Omega} L_i(p, \omega_
 
 Given any direction vector $\Large{\omega_i}$ in the lighting pass, we can then sample the pre-computed irradiance map to retrieve the total diffuse irradiance from direction $\Large{\omega_i}$. To determine the amount of indirect diffuse (irradiant) light at a fragment surface, we retrieve the total irradiance from the hemisphere oriented around its surface normal. Obtaining the scene's irradiance is then as simple as. 
 
+`vec3 irradiance = texture(irradianceMap, N).rgb;`
 
+Now, to generate the irradiance map, we need to convolute the environment's lighting as converted to a cubemap. Given that for each fragment the surface's hemisphere is oriented along the normal vector $\Large{N}$ 
 
  
  
