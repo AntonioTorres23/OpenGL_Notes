@@ -176,7 +176,8 @@ glBindTexture(GL_TEXTURE_CUBE_MAP, envCubemap);
 
 for(int i = 0; i < 6; ++i)
 {
-	
+	// note that we store each face with 16 bit floating point values
+	glTexImage2D(GL_TEXTURE_CUPMAP_POSITIVE_X + i)
 }
 ```
 
