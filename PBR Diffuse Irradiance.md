@@ -304,6 +304,28 @@ Now, to generate the irradiance map, we need to convolute the environment's ligh
 ![[Pasted image 20251215164303.png]]
 
 Thankfully, all the cumbersome setup of these notes isn't all for nothing as we can now directly take the converted cubemap, convolute it in a fragment shader, and capture its result in a new cubemap using a framebuffer that render to all 6 face directions. As we've already set this up for converting the equirectangular environment map to a cubemap, we can take the exact same approach but use a different fragment shader. 
+
+```
+#version 330 core
+out vec4 FragColor; 
+in vec3 localPos; 
+
+uniform samplerCube environmentMap;
+
+const float PI = 3.14159265359;
+
+void main()
+{
+	// the sample direction equals the hemisphere's orientation
+	vec3 normal = normalize(localPos);
+	
+	vec3 irradiance = vec3(0.0);
+	
+	[...] // convolution code
+	
+	FragColor = vec4(irradiance, 1.0);
+}
+```
  
  
 
