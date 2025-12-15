@@ -12,4 +12,14 @@ As described before, our main goal is to solve the integral of all incoming ligh
 - We need some way to retrieve the scene's radiance given any direction vector $\Large{\omega_i}$. 
 - Solving the integral needs to be fast and real-time
 
-Now, the first requirement is relatively easy. We've already hinted it, but one way of representing an environment or scene's irradiance is in the form of a (processed) environment cubemap. Given such a cubemap, we can visualize every texel of the cubemap as one single emitting light source. By sampling this cubemap with any direction vector $\Large{\omega_i}$ 
+Now, the first requirement is relatively easy. We've already hinted it, but one way of representing an environment or scene's irradiance is in the form of a (processed) environment cubemap. Given such a cubemap, we can visualize every texel of the cubemap as one single emitting light source. By sampling this cubemap with any direction vector $\Large{\omega_i}$, we retrieve the scene's radiance from that direction. 
+
+Getting the scene's radiance given any direction vector $\Large{\omega_i}$ is then as simple as. 
+
+`vec3 radiance = texture(_cubemapEnvironment, w_i).rgb;`
+
+Still, solving the integral requires us to sample the environment map from not just one direction, but all possible directions $\Large{\omega_i}$ over the hemisphere $\Large{\Omega}$ which is far too expensive for each fragment shader invocation. To solve the integral in a more efficient fashion we'll want to *pre-process* or **pre-compute** most of the computations. For this we'll have to delve a bit deeper into the reflectance equation. 
+
+$\LARGE{L_o(p, \omega_o) = \int\limits_{\Omega} (k_d \frac{c}{\pi} + \frac{DFG}{4(\omega_o \cdot n)(\omega_i \cdot n)})L_i(p, \omega_i)n \cdot \omega_i d \omega_i}$ 
+
+Taking a good look at the reflectance equation we find that the diffuse $\Large{k_d}$ and specular $\Large{k_}$
