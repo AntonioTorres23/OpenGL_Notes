@@ -295,7 +295,7 @@ It is however still too expensive to do this for every fragment in real-time as 
 
 $\LARGE{L_o(p, \omega_o) = k_d \frac{c}{\pi} \int\limits_{\Omega} L_i(p, \omega_i)n \cdot \omega_i d \omega_i}$
 
-Given any direction vector $\Large{\omega_i}$ in the lighting pass, we can then sample the pre-computed irradiance map to retrieve the total diffuse irradiance from direction $\Large{\omega_i}$. To determine the amount of indirect diffuse (irradiant) light at a fragment surface, we retrieve the total 
+Given any direction vector $\Large{\omega_i}$ in the lighting pass, we can then sample the pre-computed irradiance map to retrieve the total diffuse irradiance from direction $\Large{\omega_i}$. To determine the amount of indirect diffuse (irradiant) light at a fragment surface, we retrieve the total irradiance from the hemisphere oriented around its surface normal. Obtaining 
 
  
  
