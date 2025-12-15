@@ -403,12 +403,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Untitled 2.md",
+                "file": "PBR Diffuse Irradiance.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled 2"
+              "title": "PBR Diffuse Irradiance"
             }
           }
         ],
@@ -559,7 +559,7 @@
   "active": "bf01e7ccba93cdb8",
   "lastOpenFiles": [
     "PBR Lighting.md",
-    "Untitled 2.md",
+    "PBR Diffuse Irradiance.md",
     "Pasted image 20251215112823.png",
     "Pasted image 20251215102958.png",
     "Pasted image 20251215100233.png",
