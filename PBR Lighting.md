@@ -329,4 +329,4 @@ void main()
 }
 ```
 
-Note that the albedo textures that come from artists are generally authored in sRGB space which is why we first convert them 
+Note that the albedo textures that come from artists are generally authored in sRGB space which is why we first convert them to linear space before using albedo in our lighting calculations. Based on the system artists use to generate ambient occlusion maps you may also have to convert these from sRGB to linear space as well. Metallic and roughness maps are almost always 
