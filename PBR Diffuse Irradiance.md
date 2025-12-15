@@ -122,3 +122,4 @@ void main()
 }
 ```
 
+For the fragment shader, we color each part of the cube as if we neatly folded the equ
