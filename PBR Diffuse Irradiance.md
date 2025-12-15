@@ -205,7 +205,9 @@ glm::mat4 captureViews[] =
 
 // convert HDR equirectangular environment map to cubemap equivalent
 equirectangularToCubemapShader.use();
-equirectangular
+equirectangularToCubemapShader.setInt("equirectangularMap", 0);
+equirectangularToCubemapShader.setMat4("projection", captureProjection);
+glActivateTexture
 
 ```
 
