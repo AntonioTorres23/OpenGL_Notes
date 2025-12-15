@@ -25,4 +25,4 @@ $\LARGE{L_o(p, \omega_o) = \int\limits_{\Omega} (k_d \frac{c}{\pi} + \frac{DFG}{
 Taking a good look at the reflectance equation we find that the diffuse $\Large{k_d}$ and specular $\Large{k_s}$ term of the BRDF are independent from each other and we can split the integral in two. 
 
 
-$\LARGE{L_o(p, \omega_o) = \int\limits_{\Omega} (k_d \frac{c}{\pi} + \frac{DFG}{4(\omega_o \cdot n)(\omega_i \cdot n)})L_i(p, \omega_i)n \cdot \omega_i d \omega_i}$ 
+$\LARGE{L_o(p, \omega_o) = \int\limits_{\Omega} (k_d \frac{c}{\pi} L_i(p, \omega_i)n \cdot \omega_i d \omega_i + \int\limits_{\Omega} \frac{DFG}{4(\omega_o \cdot n)(\omega_i \cdot n)})L_i(p, \omega_i)n \cdot \omega_i d \omega_i}$ 
