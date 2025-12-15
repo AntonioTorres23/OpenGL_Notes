@@ -210,5 +210,7 @@ So far we've assumed all our calculations to be in linear color pace and to acco
 
 ```
 color = color / (color + vec3(1.0));
-color = pow
+color = pow(color, vec3(1.0/2.2));
 ```
+
+Here we tone map the HDR color using the Reinhard operator 
