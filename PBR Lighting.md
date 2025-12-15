@@ -301,3 +301,8 @@ Hopefully, with the [theory](https://learnopengl.com/PBR/Theory) from the previo
 
 ![[Pasted image 20251215102958.png]]
 
+From bottom to top the metallic value ranges from $0.0$ to $1.0$, with roughness increasing left to right from $0.0$ to $1.0$. You can see that by only changing these two simple to understand parameters we can already display a wide array of different materials. 
+
+https://oneshader.net/shader/6b8a7c6363
+
+You can find
