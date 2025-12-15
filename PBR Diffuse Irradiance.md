@@ -169,7 +169,16 @@ glFramebufferRenderBuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, 
 
 Of course, we then also generate the corresponding cubemap textures, pre-allocating memory for each of its 6 faces. 
 
+```
+unsigned int envCubemap;
+glGenTextures(1, &envCubemap);
+glBindTexture(GL_TEXTURE_CUBE_MAP, envCubemap);
 
+for(int i = 0; i < 6; ++i)
+{
+	
+}
+```
 
 
 
