@@ -227,6 +227,8 @@ glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
 We take the color attachment of the framebuffer and switch its texture around for every face of the cubemap, directly rendering the scene into one of the cubemap's faces. Once this routine has finished (which we only do once), the cubemap `envCubemap` should be the cubemapped environment version of our original HDR image. 
 
+Let's test the cubemap by writing a very simple skybox shader to display the cubemap around us. 
+
 
 
 
