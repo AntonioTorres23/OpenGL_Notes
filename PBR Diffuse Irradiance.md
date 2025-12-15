@@ -164,7 +164,7 @@ glGenRenderbuffers(1, &captureRBO);
 glBindFramebuffer(GL_FRAMEBUFFER, captureFBO);
 glBindRenderbuffer(GL_RENDERBUFFER, captureRBO);
 glRenderBufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, 512, 512);
-glFramebufferRenderBuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RE)
+glFramebufferRenderBuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, captureRBO);
 ```
 
 
