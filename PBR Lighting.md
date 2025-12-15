@@ -315,5 +315,14 @@ Extending the system to now accept its surface parameters as textures instead of
 [...]
 uniform sampler2D albedoMap;
 uniform sampler2D normalMap;
-uniform sampler
+uniform sampler2D metallicMap; 
+uniform sampler2D roughnessMap; 
+uniform sampler2D aoMap;
+
+void main()
+{
+	vec3 albedo = pow(texture(albedoMap, TexCoords).rgb, 2.2);
+	vec3 normal = getNormalFromNormalMap();
+	float metallic 
+}
 ```
