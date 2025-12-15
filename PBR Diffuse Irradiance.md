@@ -167,6 +167,10 @@ glRenderBufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, 512, 512);
 glFramebufferRenderBuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, captureRBO);
 ```
 
+Of course, we then also generate the corresponding cubemap textures, pre-allocating memory for each of its 6 faces. 
+
+
+
 
 
 
