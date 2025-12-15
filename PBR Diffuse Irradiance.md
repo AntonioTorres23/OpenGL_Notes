@@ -303,7 +303,7 @@ Now, to generate the irradiance map, we need to convolute the environment's ligh
 
 ![[Pasted image 20251215164303.png]]
 
-Thankfully, all the cumbersome setup of these notes isn't all for nothing as we can now directly take the converted cubemap, convolute it in a fragment shader, and capture its result in a new 
+Thankfully, all the cumbersome setup of these notes isn't all for nothing as we can now directly take the converted cubemap, convolute it in a fragment shader, and capture its result in a new cubemap using a framebuffer that render to all 6 face directions. As we've already set this up for converting the equirectangular environment map to a cubemap, we can take the exact same app
  
  
 
