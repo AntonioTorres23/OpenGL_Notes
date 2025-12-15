@@ -7,4 +7,9 @@ To start introducing IBL into our system let's take a quick look at the reflecta
 
 $\LARGE{L_o(p, \omega_o) = \int\limits_{\Omega} (k_d \frac{c}{\pi} + \frac{DFG}{4(\omega_o \cdot n)(\omega_i \cdot n)})L_i(p, \omega_i)n \cdot \omega_i d \omega_i}$    
 
-As described before, our main goal is to solve the integral of all incoming light directions $\Large{\omega_i}$ over the hemisphere $\Large{\Omega}$. Solving the integral in the previous notes was easy as we knew beforehand the exact few light directions $\Large{\omega_i}$ that contributed to the integral. This time however 
+As described before, our main goal is to solve the integral of all incoming light directions $\Large{\omega_i}$ over the hemisphere $\Large{\Omega}$. Solving the integral in the previous notes was easy as we knew beforehand the exact few light directions $\Large{\omega_i}$ that contributed to the integral. This time however, **every** incoming light direction $\Large{\omega_i}$ from the surrounding environment could potentially have some radiance making it less trivial to solve the integral. This gives us two main requirements for solving the integral. 
+
+- We need some way to retrieve the scene's radiance given any direction vector $\Large{\omega_i}$. 
+- Solving the integral needs to be fast and real-time
+
+Now, the first requirement is relatively easy. We've already hinted it, but one way of representing an environment or scene's irradiance is in the form of a (processed) environment cubemap. Given such a cubemap, we can visualize every texel of the cubemap as one single emitting light source. By sampling this cubemap with any direction vector $\Large{\omega_i}$ 
