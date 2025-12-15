@@ -58,4 +58,4 @@ The environment maps we've been using so far as cubemaps (used as [skyboxes](htt
 
 **The Radiance HDR File Format**
 
-Enter the 
+Enter the radiance file format. The radiance file format (with the `.hdr` extension) stores a full cubemap with all 6 faces as floating point data. This allows us to 
