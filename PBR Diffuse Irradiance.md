@@ -158,7 +158,11 @@ This demonstrates that we effectively mapped an equirectangular image onto a cub
 
 ```
 unsigned int captureFBO, captureRBO;
-gl
+glGenFramebuffers(1, &captureFBO);
+glGenRenderbuffers(1, &captureRBO);
+
+glBindFramebuffer(GL_FRAMEBUFFER, captureFBO);
+glBindRenderbuffer(GL_RENDERBUFFER, cap)
 ```
 
 
