@@ -206,4 +206,4 @@ vec3 color   = ambient + Lo;
 
 **Linear and HDR Rendering**
 
-So far we've assumed all our calculations to be in linear color pace and to account for this we need to [gamma correct](https://learnopengl.com/Advanced-Lighting/Gamma-Correction) at the end of the shader. Calculatingg 
+So far we've assumed all our calculations to be in linear color pace and to account for this we need to [gamma correct](https://learnopengl.com/Advanced-Lighting/Gamma-Correction) at the end of the shader. Calculating lighting in linear space is incredibly important as PBR requires all inputs to be linear. Note taking this into account will result in incorrect lighting. Additionally, we want light inputs to be close to their physical equivalents 
