@@ -213,4 +213,4 @@ color = color / (color + vec3(1.0));
 color = pow(color, vec3(1.0/2.2));
 ```
 
-Here we tone map the HDR color using the Reinhard operator 
+Here we tone map the HDR color using the Reinhard operator, preserving the high dyn
