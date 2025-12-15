@@ -100,3 +100,6 @@ else
 
 `stb_image.h` automatically maps the HDR values to a list of floating point values: 32 bits per channel and 3 channels per color by default. This is all we need to store the equirectangular HDR environment map into a 2D floating point texture. 
 
+**From Equirectangular to Cubemap**
+
+It is possible to use the equirectangular map directly for environment lookups, but these operations can be relatively expensive in which case a direct cubemap sample is more performant. Therefore, in these notes we'll first convert the equirectangular image to a cubemap for further processing. 
