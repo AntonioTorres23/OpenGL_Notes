@@ -63,3 +63,5 @@ Enter the radiance file format. The radiance file format (with the `.hdr` extens
 There are quite a few radiance HDR environment maps freely available form sources like [sIBL archive](http://www.hdrlabs.com/sibl/archive.html) of which you can see an example below. 
 
 ![[Pasted image 20251215130835.png]]
+
+This may not be exactly what you were expecting, as the image appears distorted and doesn't show any of the 6 individual cubemap faces of environment maps we've seen before. 
