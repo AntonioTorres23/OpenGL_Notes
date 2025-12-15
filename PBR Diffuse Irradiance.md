@@ -54,4 +54,8 @@ We've briefly touched upon it in the [previous](https://learnopengl.com/PBR/Ligh
 
 So, PBR and HDR go hand in hand, but how does it relate to image based lighting? We've seen in the previous notes that it's relatively easy to get PBR working in HDR. However, seeing as for image based lighting we base the environment's indirect light intensity on the color values of an environment cubemap we need some way to store the lighting's high dynamic range into an environment map. 
 
-The environment maps we've been using so far as cubemaps (used as [skyboxes](https://learnopengl.com/Advanced-OpenGL/Cubemaps) for instance) are in low dynamic range (LDR). We directly used their color values from the individual face images, ranged between $0.0$ and $1.0$, and processed them as is. T
+The environment maps we've been using so far as cubemaps (used as [skyboxes](https://learnopengl.com/Advanced-OpenGL/Cubemaps) for instance) are in low dynamic range (LDR). We directly used their color values from the individual face images, ranged between $0.0$ and $1.0$, and processed them as is. While this may work fine for visual output, when taking them as physical input parameters it's not going to work. 
+
+**The Radiance HDR File Format**
+
+Enter the 
