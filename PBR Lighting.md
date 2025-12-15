@@ -221,4 +221,10 @@ Taking both linear color space and high dynamic range into account is incredibly
 
 **Full Direct Lighting PBR Shader**
 
-All that's left now is to pass the final tone mapped and gamma corrected color to the fragment shader's output channel and we have ourselves a direct PBR lighting shader. For completeness' sake, the complete `main` function is listed below 
+All that's left now is to pass the final tone mapped and gamma corrected color to the fragment shader's output channel and we have ourselves a direct PBR lighting shader. For completeness' sake, the complete `main` function is listed below. 
+
+```
+#version 330 core
+out vec4 FragColor
+
+```
