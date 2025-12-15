@@ -255,9 +255,31 @@ Note the `xyww` trick here that ensures the depth value of the rendered cube fra
 
 `glDepthFunc(GL_LEQUAL);`
 
+The fragment shader then directly samples the cubemap environment map using the cube's local fragment position. 
+
+```
+#version 330 core
+out vec4 FragColor;
+
+in vec3 localPos; 
+
+uniform samplerCube environmentMap;
+
+void main()
+{
+	vec3 envColor = texture(environmentMap, localPos).rgb;
+	
+	envColor = envColor / (envColor + vec3(1.0));
+	envColor = pow(envColor, vec3(1.0/2.2));
+	
+	FragColor = vec4(envColor, 1.0);
+}
+```
 
 
+We sample the environment map using its interpolated vertex cube positions that directly correspond to the correct direction vector to sample. Seeing as the camera's translation components are ignored, rendering this shader over a cube should give you the environment map as a non-moving background. Also, as we directly output the environment map's HDR values to the default LDR framebuffer, we want to properly tone map the color values. Furthermore, almost all HDR maps are in linear color space by default so we need to apply [gamma correction](https://learnopengl.com/Advanced-Lighting/Gamma-Correction) before writing to the default framebuffer. 
 
+Now rendering the sampled environment map over the previously rendered spheres should look something like this. 
 
 
 
