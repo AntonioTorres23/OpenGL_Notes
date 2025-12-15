@@ -333,4 +333,6 @@ Note that the albedo textures that come from artists are generally authored in s
 
 Replacing the material properties of the previous set of spheres with textures, already shows a major visual improvement over the previous lighting algorithms used. 
 
+![[Pasted image 20251215112823.png]]
 
+You can find the full source code of the textured demo [here](https://learnopengl.com/code_viewer_gh.php?code=src/6.pbr/1.2.lighting_textured/lighting_textured.cpp) and the texture set used [here](http://freepbr.com/materials/rusted-iron-pbr-metal-material-alt/) (with a white `ao` map). Keep in mind that metallic surfaces tend to look too dark in direct lighting environments as they don't 
