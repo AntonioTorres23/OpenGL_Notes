@@ -34,3 +34,4 @@ Taking a closer look at the diffuse integral we find that the diffuse lambert te
 $\LARGE{L_o(p, \omega_o) = k_d \frac{c}{\pi} \int\limits_{\Omega} L_i(p, \omega_i)n \cdot \omega_i d \omega_i}$ 
 This gives us an integral that only depends on $\Large{\omega_i}$ (assuming $\Large{p}$ is at the center of the environment map). With this knowledge, we can calculate or *pre-compute* a new cubemap that stores in each sample direction (or texel) $\Large{\omega_o}$ the diffuse integral's result by **convolution**.
 
+Convolution is apply some computation to each entry in a data set considering all other 
