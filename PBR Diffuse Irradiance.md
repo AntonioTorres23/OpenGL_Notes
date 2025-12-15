@@ -44,3 +44,6 @@ The radiance equation also depends on a position $\Large{p}$, which we've assume
 
 Below is an example of a cubemap environment map and its resulting irradiance map (courtesy of [wave engine](http://www.indiedb.com/features/using-image-based-lighting-ibl)), averaging the scene's radiance for every direction $\Large{\omega_o}$. 
 
+![[Pasted image 20251215124413.png]]
+
+By soring the convoluted result in each cubemap texel (in the direction of $\Large{\omega_o}$), the irradiance map displays somewhat 
