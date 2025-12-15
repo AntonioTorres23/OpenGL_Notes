@@ -38,3 +38,9 @@ Convolution is apply some computation to each entry in a data set considering al
 
 ![[Pasted image 20251215123144.png]]
 
+This pre-computed cubemap, that for each sample direction $\Large{\omega_o}$ stores the integral result, can be though of as the pre-computed sum of all indirect diffuse light of the scene hitting some surface aligned along direction $\Large{\omega_o}$. Such a cubemap is known as an **irradiance map** seeing as the convoluted effectively allows us to directly sample the scene's (pre-computed) irradiance from any direction $\Large{\omega_o}$. 
+
+The radiance equation also depends on a position $\Large{p}$, which we've assumed to be at the center of the irradiance map. This does mean all diffuse indirect light must come from a single environment map which may break the illusion of reality (especially indoors). Render engines solve this by placing **reflection probes** all over the scene where each reflection probes calculates its own irradiance map of its surroundings. This way, the irradiance (and radiance) at position $\Large{p}$ is the interpolated irradiance between its closest reflection probes. For now, we assume we always sample the environment map from its center. 
+
+Below is an example of a cubemap environment map and its resulting irradiance map (courtesy of [wave engine](http://www.indiedb.com/features/using-image-based-lighting-ibl)), averaging the scene's radiance for every direction $\Large{\omega_o}$. 
+
