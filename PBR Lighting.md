@@ -205,3 +205,5 @@ vec3 color   = ambient + Lo;
 ```
 
 **Linear and HDR Rendering**
+
+So far we've assumed all our calculations to be in linear color pace and to account for this we need to [gamma correct](https://learnopengl.com/Advanced-Lighting/Gamma-Correction) at the end of the shader. Calculatingg 
