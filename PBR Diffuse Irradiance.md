@@ -154,4 +154,45 @@ If you render a cube at the center of the scene given an HDR equirectangular map
 
 ![[Pasted image 20251215144028.png]]
 
-We sample the environment map using its interpolated vertex cube positions that directly correspond to the correct direction vector sample. 
+This demonstrates that we effectively mapped an equirectangular image onto a cubic shape, but doesn't yet help us in converting the source HDR image to a cubemap texture. To accomplish this we have to render the same cube 6 times, looking at each individual face of the cube while recording its 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
