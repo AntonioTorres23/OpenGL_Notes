@@ -251,7 +251,11 @@ void main()
 }
 ```
 
-Note the `xyww` trick 
+Note the `xyww` trick here that ensures the depth value of the rendered cube fragments always end up at $1.0$, the maximum depth value, as described in the [cubemap](https://learnopengl.com/Advanced-OpenGL/Cubemaps) notes. Do note that we need to change the depth comparison to `GL_LEQUAL`. 
+
+`glDepthFunc(GL_LEQUAL);`
+
+
 
 
 
