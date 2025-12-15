@@ -221,4 +221,4 @@ Taking both linear color space and high dynamic range into account is incredibly
 
 **Full Direct Lighting PBR Shader**
 
-All that's left now is to pass the final tone mapped and gamma 
+All that's left now is to pass the final tone mapped and gamma corrected color to the fragment shader's output channel 
