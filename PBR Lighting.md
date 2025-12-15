@@ -217,4 +217,4 @@ Here we tone map the HDR color using the Reinhard operator, preserving the high 
 
 ![[Pasted image 20251215100233.png]]
 
-Taking both linear color space and high dynamic range into account is incredibly imporant in a 
+Taking both linear color space and high dynamic range into account is incredibly important in a PBR pipeline. Without these it's impo
