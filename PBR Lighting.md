@@ -225,6 +225,29 @@ All that's left now is to pass the final tone mapped and gamma corrected color t
 
 ```
 #version 330 core
-out vec4 FragColor
+out vec4 FragColor;
+in vec2 TexCoords; 
+in vec3 WorldPos;
+in vec3 Normal;
+
+// material parameters
+uniform vec3 albedo; 
+uniform float metallic;
+uniform float roughness;
+uniform float ao;
+
+// lights
+uniform vec3 lightPositions[4];
+uniform vec3 lightColors[4];
+
+uniform vec3 camPos;
+
+const float PI = 3.141592665259;
+
+float DistrubutionGGX(vec3 N, vec3 H, float roughness);
+float GeometrySchlickGGX(float NdotV, float roughness);
+float GeometrySmith(vec3 N, vec3 V, vec3 L, float roughness);
+vec3 fresnelSchlick()
+
 
 ```
