@@ -70,3 +70,33 @@ This may not be exactly what you were expecting, as the image appears distorted 
 
 Loading radiance HDR images directly requires some knowledge of the [file format](http://radsite.lbl.gov/radiance/refer/Notes/picture_format.html) which isn't too difficult, but cumbersome nonetheless. Lucky for us, the popular one header library [stb_image.h](https://github.com/nothings/stb/blob/master/stb_image.h) supports loading radiance HDR images directly as an array of floating point values which perfectly fits our needs. With `stb_image` added to your project, loading an HDR image is now as simple as follows. 
 
+```
+#include "stb_image.h"
+
+[...]
+
+stbi_set_flip_vertically_on_load(true);
+in width, height, nrComponents; 
+float *data = stbi_loadf("newport_loft.hdr", &width, &height, &nrComponents, 0);
+unigned int hdrTexture;
+if (data)
+{
+	glGenTextures(1, &hdrTexture);
+	glBindTexture(GL_TEXTURE_2D, hdrTexture);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB16F, width, height, 0, GL_RGB, GL_FLOAT,      data);
+	
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	
+	stbi_image_free(data);
+}
+else
+{
+	std::cout << "Failed to load HDR image." << std::endl;
+}
+```
+
+`stb_image.h` automatically maps the HDR values to a list of floating point values: 32 bits per channel and 3 channels per color by default. This is all we need to store the equirectangular HDR environment map into a 2D floating point texture. 
+
