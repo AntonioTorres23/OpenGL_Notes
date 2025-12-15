@@ -217,12 +217,15 @@ for (unsigned int i = 0; i < 6; ++i)
 {
 	equirectangularToShader.setMat4("view", captureViews[i]);
 	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0,                       GL_COLOR_ATTACHMENT0, GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, envCubemap, 0);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	
+	renderCube(); // renders a 1x1 cube
 	
 }
-
-
+glBindFramebuffer(GL_FRAMEBUFFER, 0);
 ```
 
+We take the color attachment
 
 
 
