@@ -29,4 +29,5 @@ $\LARGE{L_o(p, \omega_o) = \int\limits_{\Omega} (k_d \frac{c}{\pi}) L_i(p, \omeg
 
 By splitting the integral in two parts we can focus on both the diffuse and specular term individually; the focus of these notes being on the diffuse integral. 
 
-Taking a closer look at the diffuse integral we find that the diffuse lambert term is a constant term (the color **c**, the refraction ratio $\Large{k_d}$, )
+Taking a closer look at the diffuse integral we find that the diffuse lambert term is a constant term (the color **c**, the refraction ratio $\Large{k_d}$, and $\Large{\pi}$ are constant over the integral) and not dependent on any of the integral variables. Given this, we can move the constant term out of the diffuse integral. 
+
