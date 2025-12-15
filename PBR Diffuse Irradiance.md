@@ -299,7 +299,7 @@ Given any direction vector $\Large{\omega_i}$ in the lighting pass, we can then 
 
 `vec3 irradiance = texture(irradianceMap, N).rgb;`
 
-Now, to generate the irradiance map, we need to convolute the environment's lighting as converted to a cubemap. Given that for each fragment the surface's hemisphere is oriented along the normal vector $\Large{N}$ 
+Now, to generate the irradiance map, we need to convolute the environment's lighting as converted to a cubemap. Given that for each fragment the surface's hemisphere is oriented along the normal vector $\Large{N}$, convoluting a cubemap equals the total average radiance of each direction $\Large{\omega_i}$ in the hemisphere $\Large{\Omega}$
 
  
  
