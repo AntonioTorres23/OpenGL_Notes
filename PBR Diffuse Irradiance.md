@@ -122,4 +122,4 @@ void main()
 }
 ```
 
-For the fragment shader, we color each part of the cube as if we neatly folded the equ
+For the fragment shader, we color each part of the cube as if we neatly folded the equirectangular map onto each side of the cube. To accomplish this, we take the fragment's sample direction as interpolated from the cube's local position and then use this direction vector and some trigonometry magic (spherical to cartesian)
