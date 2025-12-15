@@ -214,3 +214,7 @@ color = pow(color, vec3(1.0/2.2));
 ```
 
 Here we tone map the HDR color using the Reinhard operator, preserving the high dynamic range of a possibly highly varying irradiance, after which we gamma correct the color. We don't have a separate framebuffer or post-processing stage so we can directly apply both the tone mapping and gamma correction step at the end of the forward fragment shader. 
+
+![[Pasted image 20251215100233.png]]
+
+Taking both linear color space and high dynamic range into account is incredibly imporant in a 
