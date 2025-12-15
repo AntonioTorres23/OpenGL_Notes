@@ -189,7 +189,16 @@ glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 Then what's left to do is capture the equirectangular 2D texture onto cubemap faces. 
 
+I won't go over the details as the code details topics previously discussed in the [framebuffer](https://learnopengl.com/Advanced-OpenGL/Framebuffers) and [point shadows](https://learnopengl.com/Advanced-Lighting/Shadows/Point-Shadows) notes, but it effectively boils down to setting up 6 different view matrices (facing each side of the cube), set up a projection matrix with a fov of 90 degrees to capture the entire face, and render a cube 6 times storing the results in a floating point framebuffer .
 
+```
+glm::mat4 captureProjection = glm::perspective(glm::radians(90.0f), 1.0f, 0.1f, 10.0f);
+glm::mat4 captureViews[] = 
+{
+	glm::lookAt(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 0.0f, 0.0f),              glm::vec3(0.0f, -1.0f, 0.0f)),
+	glm::lookAt(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(-1.0f))
+}
+```
 
 
 
