@@ -154,7 +154,12 @@ If you render a cube at the center of the scene given an HDR equirectangular map
 
 ![[Pasted image 20251215144028.png]]
 
-This demonstrates that we effectively mapped an equirectangular image onto a cubic shape, but doesn't yet help us in converting the source HDR image to a cubemap texture. To accomplish this we have to render the same cube 6 times, looking at each individual face of the cube while recording its 
+This demonstrates that we effectively mapped an equirectangular image onto a cubic shape, but doesn't yet help us in converting the source HDR image to a cubemap texture. To accomplish this we have to render the same cube 6 times, looking at each individual face of the cube while recording its visual result with a [framebuffer](https://learnopengl.com/Advanced-OpenGL/Framebuffers) object. 
+
+```
+unsigned int captureFBO, captureRBO;
+gl
+```
 
 
 
