@@ -213,4 +213,4 @@ color = color / (color + vec3(1.0));
 color = pow(color, vec3(1.0/2.2));
 ```
 
-Here we tone map the HDR color using the Reinhard operator, preserving the high dyn
+Here we tone map the HDR color using the Reinhard operator, preserving the high dynamic range of a possibly highly varying irradiance, after which we gamma correct the color. We don't have a seperate framebuffer or post-processing stage so we can directly apply both the tone mapping and gamma correction step at the en
