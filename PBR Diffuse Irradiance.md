@@ -377,7 +377,14 @@ We specify a fixed `sampleDelta` value to traverse the hemisphere; decreasing or
 
 From within both loops, we take both spherical coordinates to convert them to a 3D Cartesian sample vector, convert the sample from tangent to world space oriented around the normal, and use this sample vector to directly sample the HDR environment map. We add each sample result to `irradiance` which at the end we divide by the total number of samples taken, giving us the average sampled irradiance. Note that we scale the sampled color value by `cos(theta)` due to the light being weaker a larger angles and by `sin(theta)` to account for the smaller sample areas in the higher hemisphere areas. 
 
-Now what's left to do is to setup the OpenGL rendering code such that we can convolute the earlier captured `envCubemap`. First we create the irradiance 
+Now what's left to do is to setup the OpenGL rendering code such that we can convolute the earlier captured `envCubemap`. First we create the irradiance cubemap (again, we only have to do this once before the render loop).
+
+```
+unisgned int irradianceMap;
+glGenTextures(1, &irradianceMap);
+glBindTexture(GL_TEXTURE_CUBE_MAP, irradianceMap);
+for (unsigned int i = 0; i < 6; ++i)
+```
 
 
 
