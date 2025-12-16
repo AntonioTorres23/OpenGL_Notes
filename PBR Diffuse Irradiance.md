@@ -458,7 +458,7 @@ vec3 diffuse    = irradiance * albedo;
 vec3 ambient    = (kD * diffuse) * ao; 
 ```
 
-As the ambient light comes from all directions within the hemisphere 
+As the ambient light comes from all directions within the hemisphere oriented around the normal `N`, there's no single halfway vector to determine the Fresnel response. To still simulate Fresnel, we calculate the Fresnel from the angle between the normal and view vector. However, earlier we used the micro-surface halfway vector, influenced 
 
 
 
