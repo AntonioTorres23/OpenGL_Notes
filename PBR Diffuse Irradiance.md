@@ -364,9 +364,10 @@ for(float phi = 0.0; phi < 2.0 * PI; phi += sampleDelta)
 		// spherical to cartesian (in tangen space)
 		vec3 tangentSample = vec3(sin(theta) * cos(phi), sin(theta) * sin(phi),            cos(theta));
 		// tangent space to world
-		vec3 sampleVec = tangentSample.x * right + tangentSample.y * up +                  tangentSample.z * N; // N equals Z axis?
+		vec3 sampleVec = tangentSample.x * right + tangentSample.y * up +                  tangentSample.z * N; // N represents/equals Z axis?
 		
-		irradiance 
+		irradiance += texture(environmentMap, sampleVec).rgb * cos(theta) *                sin(theta);
+		nrSamples 
 	}
 }
 ```
