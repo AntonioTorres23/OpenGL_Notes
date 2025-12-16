@@ -482,7 +482,9 @@ vec3 ambient    = (kD * diffuse) * ao;
 ```
 
  As you can see, the actual image based lighting computation is quite simple and only requires a single cubemap texture lookup; most of the work is in pre-computing or convoluting the irradiance map. 
-If we take the initial scene from the PBR [lighting](https://learnopengl.com/PBR/Lighting) notes, which each sphere has a verti
+If we take the initial scene from the PBR [lighting](https://learnopengl.com/PBR/Lighting) notes, which each sphere has a vertically increasing metallic and a horizontally increasing roughness value, and add the diffuse image based lighting it'll look a bit like this.
+
+
 
 
 
