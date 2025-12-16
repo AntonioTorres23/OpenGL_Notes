@@ -486,7 +486,9 @@ If we take the initial scene from the PBR [lighting](https://learnopengl.com/PBR
 
 ![[Pasted image 20251216164346.png]]
 
-It still looks a bit weird as the more metallic spheres **require** some form of reflection to properly start looking like metallic surfaces (as metallic surfaces don't reflect diffuse light) which at the moment are only (barely) coming from the point light sources. Nevertheless, you can already te
+It still looks a bit weird as the more metallic spheres **require** some form of reflection to properly start looking like metallic surfaces (as metallic surfaces don't reflect diffuse light) which at the moment are only (barely) coming from the point light sources. Nevertheless, you can already tell the spheres do feel more *in place* within the environment (especially if you switch between environment maps) as the surface response reacts accordingly to the environment's ambient lighting. 
+
+You can find the complete source code of the discussed topics [here](https://learnopengl.com/code_viewer_gh.php?code=src/6.pbr/2.1.2.ibl_irradiance/ibl_irradiance.cpp). I
 
 
 
