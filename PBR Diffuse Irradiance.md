@@ -338,7 +338,7 @@ We use the polar azimuth $\Large{\phi}$ angle to sample around the ring of the h
 
 $\LARGE{L_o(p, \phi, \theta_o) = k_d \frac{c}{\pi} \int_{\phi = 0}^{2 \pi} \int_{\theta = 0}^{\frac{1}{2}\pi} L_i(p, \phi_i, \theta_i) \cos(\theta) \sin(\theta) d \phi d \theta}$        
 
-
+Solving the integral 
 
  
 
