@@ -462,7 +462,14 @@ As the ambient light comes from all directions within the hemisphere oriented ar
 
 ![[Pasted image 20251216163517.png]]
 
-We can alleviate the issue by injecting a roughness term in the Fresnel-Schlick equation 
+We can alleviate the issue by injecting a roughness term in the Fresnel-Schlick equation as described by [Sébastien Lagarde](https://seblagarde.wordpress.com/2011/08/17/hello-world/). 
+
+```
+vec3 FresnelSchlickRoughness(float cosTheta, vec3 F0, float roughness)
+{
+	return F0 + max(vec3(1.0 - roughness), )
+}
+```
 
 
 
