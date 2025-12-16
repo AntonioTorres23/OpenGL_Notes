@@ -334,11 +334,13 @@ There are many ways to convolute the environment map, but for these notes we're 
 The integral $\Large{\int}$ of the reflectance equation resolves around the solid angle $\Large{d \omega}$ which is rather difficult to work with. Instead of integrating over the solid angle $\Large{d \omega}$ we'll integrate over its equivalent spherical coordinates $\Large{\theta}$ and $\Large{\phi}$. 
 
 ![[Pasted image 20251216102028.png]]
-We use the polar azimuth $\Large{\phi}$ angle to sample around the ring of the hemisphere between $0$ and $\Large{2 \pi}$, and use the inclination zenith $\Large{\phi}$ 
+We use the polar azimuth $\Large{\phi}$ angle to sample around the ring of the hemisphere between $0$ and $\Large{2 \pi}$, and use the inclination zenith $\Large{\theta}$ angle between $0$ and $\Large{\frac{1}{2} \pi}$ to sample the increasing rings of the hemisphere. This will give us the updated reflectance integral. 
+
+$\LARGE{L_o(p, \phi, \theta_o) = k_d \frac{c}{\pi} \int_{\phi = 0}^{2 \pi} \int_{\theta = 0}^{\frac{1}{2}\pi} L_i(p, \phi_i, \theta_i) \cos(\theta) \sin(\theta) d \phi d \theta}$        
 
 
 
-
+ 
 
 
 
