@@ -342,7 +342,7 @@ So I think the polar azimuth measures around the ring of the hemisphere and the 
 
 Solving the integral requires us to take a fixed number of discrete samples within the hemisphere $\Large{\Omega}$ and averaging their results. This translates the integral to the following discrete version as based on the [Riemann sum](https://en.wikipedia.org/wiki/Riemann_sum) given $\Large{n1}$ and $\Large{n2}$ discrete samples on each spherical coordinate respectively. 
 
-$\LARGE{L_o(p, \phi_o, \theta_o) = k_d \frac{c \pi}{n1 n2} \sum_{\phi = 0}^{n1} \sum_{\theta = 0}^{n2} L_i(p, \phi_i, \theta_i) \cos(0) \sin(\theta) d \phi d \theta}$        
+$\LARGE{L_o(p, \phi_o, \theta_o) = k_d \frac{c \pi}{n1 n2} \sum_{\phi = 0}^{n1} \sum_{\theta = 0}^{n2} L_i(p, \phi_i, \theta_i) \cos(\theta) \sin(\theta) d \phi d \theta}$        
 
 As we sample both spherical values discretely, each sample will approximate or average an area on the hemisphere as the image before shows. Note that (due to the general properties of a spherical shape) the hemisphere's discrete sample area gets smaller the higher the zenith angle $\Large{\theta}$ as the sample regions converge towards the center top. To compensate for the smaller areas, we weigh its contribution by scaling the area by $\Large{\sin \theta}$. 
 
@@ -357,7 +357,14 @@ up         = normalize(cross(normal, right));
 
 float sampleDelta = 0.025;
 float nrSamples = 0.0;
-for(float phi = 0.0; phi < 2.0 * PI; phi 
+for(float phi = 0.0; phi < 2.0 * PI; phi += sampleDelta)
+{
+	for(float theta = 0.0; theta < 0.5 * PI; theta += sampleDelta)
+	{
+		// spherical to cartesian (in tangen space)
+		vec3 tangentSample = vec3(sin(theta))
+	}
+}
 ```
 
 
