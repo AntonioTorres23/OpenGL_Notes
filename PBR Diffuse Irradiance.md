@@ -373,7 +373,7 @@ for(float phi = 0.0; phi < 2.0 * PI; phi += sampleDelta)
 irradiance = PI * irradiance * (1.0 / float(nrSamples));
 ```
 
-We specify a fixed `sample`
+We specify a fixed `sampleDelta` value to traverse the hemisphere; decreasing or increasing the sample delta will increase or decrease the accuracy respectively. 
 
 
 
