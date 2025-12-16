@@ -448,7 +448,11 @@ Given the irradiance map that holds all of the scene's indirect diffuse light, r
 vec3 ambient = texture(irradianceMap, N).rgb;
 ```
 
-However, as the indi
+However, as the indirect lighting contains both a diffuse and specular part (as we've seen from the split version of the reflectance equation) we need to weigh the diffuse part accordingly. Similar to what we did in the previous notes, we use the Fresnel equation to determine the surface's indirect reflectance ratio from which we derive the refractive (or diffuse) ratio. 
+
+```
+vec3 kS = fresnel
+```
 
 
 
