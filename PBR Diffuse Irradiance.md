@@ -458,7 +458,7 @@ vec3 diffuse    = irradiance * albedo;
 vec3 ambient    = (kD * diffuse) * ao; 
 ```
 
-As the ambient light comes from all directions within the hemisphere oriented around the normal `N`, there's no single halfway vector to determine the Fresnel response. To still simulate Fresnel, we calculate the Fresnel from the angle between the normal and view vector. However, earlier we used the micro-surface halfway vector, influenced by the roughness of the surface, as input to the Fresnel equation. As we currently don't take roughness into account, the surface's reflective ratio will always end up relatively high. Indirect light follows the same properties as direct light so we expect rougher 
+As the ambient light comes from all directions within the hemisphere oriented around the normal `N`, there's no single halfway vector to determine the Fresnel response. To still simulate Fresnel, we calculate the Fresnel from the angle between the normal and view vector. However, earlier we used the micro-surface halfway vector, influenced by the roughness of the surface, as input to the Fresnel equation. As we currently don't take roughness into account, the surface's reflective ratio will always end up relatively high. Indirect light follows the same properties as direct light so we expect rougher surfaces to reflect less strongly on the surface edges. Because of this, the indirect Fresnel reflection strength looks off on rough non-metal surfaces (slightly )
 
 
 
