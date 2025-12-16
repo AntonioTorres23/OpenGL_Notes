@@ -437,8 +437,11 @@ If it looks like a heavily blurred version of the environment map you've success
 
 The irradiance map represents the diffuse part of the reflectance integral as accumulated from all surrounding indirect light. Seeing as the light doesn't come from direct light sources, but from the surrounding environment, we treat both the diffuse and specular indirect lighting as the ambient lighting , replacing our previously set constant term. 
 
-First, be sure to add the pre-calculated irradiance mapo
+First, be sure to add the pre-calculated irradiance map as a cube sampler. 
 
+`uniform samplerCube irradianceMap`
+
+Given the irradiance map that holds all of the scene's indirect diffuse light, retrieving the irradiance influencing the fragment is as simple as a singgle texture sample given the 
 
 
 
