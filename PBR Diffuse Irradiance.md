@@ -352,7 +352,8 @@ Discretely sampling the hemisphere given the integral's spherical coordinates tr
 vec3 irradiance = vec3(0.0);
 
 vec3 up    = vec3(0.0, 1.0, 0.0);
-vec3 right = normalize(cross) 
+vec3 right = normalize(cross(up, normal));
+up         = normalize(cross(normal, right)); 
 ```
 
 
