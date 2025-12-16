@@ -424,14 +424,18 @@ for (unsigned in = 0; i < 6; ++i)
 glBindFramebuffer(GL_FRAMEBUFFER, 0);
 ```
 
-Now after this routine we should have a pre-computed irradiance map that we directly use for our diffuse image based lighting. To see if we successfully convoluted the environment map wefor the irradiance map as the skybox's environment sampler. 
+Now after this routine we should have a pre-computed irradiance map that we directly use for our diffuse image based lighting. To see if we successfully convoluted the environment map we'll substitute the irradiance map as the skybox's environment sampler.
+
+
+![[Pasted image 20251216162014.png]]
 
 
 
+If it looks like a heavily blurred version of the environment map you've successfully convoluted the environment map. 
 
+**PBR and Indirect Irradiance Lighting**
 
-
-
+The irradiance map represents the diffuse part of the reflectance integral as accumulated from all surrounding indirect light. 
 
 
 
