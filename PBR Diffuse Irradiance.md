@@ -344,7 +344,7 @@ Solving the integral requires us to take a fixed number of discrete samples with
 
 $\LARGE{L_o(p, \phi_o, \theta_o) = k_d \frac{c \pi}{n1 n2} \sum_{\phi = 0}^{n1} \sum_{\theta = 0}^{n2} L_i(p, \phi_i, \theta_i) \cos(0) \sin(\theta) d \phi d \theta}$        
 
-As we sample both spherical values discretely, each sample will approximate or average an area on the hemisphere as the image before shows. Note that (due to the general properties of a spherical shape)
+As we sample both spherical values discretely, each sample will approximate or average an area on the hemisphere as the image before shows. Note that (due to the general properties of a spherical shape) the hemisphere's discrete sample area gets smaller the higher the zenith angle $\Large{\theta}$ as the sample regions converge towards the center top. 
 
 
 
