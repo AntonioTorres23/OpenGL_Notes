@@ -455,8 +455,10 @@ vec3 kS = fresnelSchlick(max(dot(N, V), 0.0), F0);
 vec3 kD = 1.0 - kS;
 vec3 irradiance = texture(irradianceMap, N).rgb;
 vec3 diffuse    = irradiance * albedo;
-vec3 ambient    = (k )
+vec3 ambient    = (kD * diffuse) * ao; 
 ```
+
+As the ambient light comes from all directions within the hemisphere 
 
 
 
