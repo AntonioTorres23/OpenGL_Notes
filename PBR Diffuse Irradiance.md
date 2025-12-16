@@ -336,15 +336,15 @@ The integral $\Large{\int}$ of the reflectance equation resolves around the soli
 ![[Pasted image 20251216102028.png]]
 We use the polar azimuth $\Large{\phi}$ angle to sample around the ring of the hemisphere between $0$ and $\Large{2 \pi}$, and use the inclination zenith $\Large{\theta}$ angle between $0$ and $\Large{\frac{1}{2} \pi}$ to sample the increasing rings of the hemisphere. This will give us the updated reflectance integral. 
 
-$\LARGE{L_o(p, \phi, \theta_o) = k_d \frac{c}{\pi} \int_{\phi = 0}^{2 \pi} \int_{\theta = 0}^{\frac{1}{2}\pi} L_i(p, \phi_i, \theta_i) \cos(\theta) \sin(\theta) d \phi d \theta}$    
+$\LARGE{L_o(p, \phi_o, \theta_o) = k_d \frac{c}{\pi} \int_{\phi = 0}^{2 \pi} \int_{\theta = 0}^{\frac{1}{2}\pi} L_i(p, \phi_i, \theta_i) \cos(\theta) \sin(\theta) d \phi d \theta}$    
 
 So I think the polar azimuth measures around the ring of the hemisphere and the inclination zenith measures up and down the hemisphere. Essentially creating a ring above or below an already existing one. Just think of polar as polarity and inclination as incline meaning up or down. 
 
 Solving the integral requires us to take a fixed number of discrete samples within the hemisphere $\Large{\Omega}$ and averaging their results. This translates the integral to the following discrete version as based on the [Riemann sum](https://en.wikipedia.org/wiki/Riemann_sum) given $\Large{n1}$ and $\Large{n2}$ discrete samples on each spherical coordinate respectively. 
 
-$\LARGE{L_o(p, \phi, \theta_o) = k_d \frac{c \pi}{n1 n2} \sum_{\phi = 0}^{n1} \sum_{\theta = 0}^{n2} L_i(p, \phi_i, \theta_i) \cos(0) \sin(\theta) d \phi d \theta}$        
+$\LARGE{L_o(p, \phi_o, \theta_o) = k_d \frac{c \pi}{n1 n2} \sum_{\phi = 0}^{n1} \sum_{\theta = 0}^{n2} L_i(p, \phi_i, \theta_i) \cos(0) \sin(\theta) d \phi d \theta}$        
 
- 
+As we sample both spherical values discretely, each sample will approximate or average an area on the hemisphere as the image before shows. Note that (due to the general properties of a spherical shape)
 
 
 
