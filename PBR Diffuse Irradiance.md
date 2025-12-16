@@ -375,7 +375,7 @@ irradiance = PI * irradiance * (1.0 / float(nrSamples));
 
 We specify a fixed `sampleDelta` value to traverse the hemisphere; decreasing or increasing the sample delta will increase or decrease the accuracy respectively. So think of it that we are traversing the phi and theta for-loops by a value of 0.025 every iteration until the Boolean statement is met.  
 
-From within both loops, we take both spherical coordinates to convert them to a 3D Cartesian sample vector, convert the sample from tangent to world space oriented around the normal, and use this sample vector to directly sample the 
+From within both loops, we take both spherical coordinates to convert them to a 3D Cartesian sample vector, convert the sample from tangent to world space oriented around the normal, and use this sample vector to directly sample the HDR environment map. We add each sample result to 
 
 
 
