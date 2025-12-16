@@ -362,7 +362,9 @@ for(float phi = 0.0; phi < 2.0 * PI; phi += sampleDelta)
 	for(float theta = 0.0; theta < 0.5 * PI; theta += sampleDelta)
 	{
 		// spherical to cartesian (in tangen space)
-		vec3 tangentSample = vec3(sin(theta))
+		vec3 tangentSample = vec3(sin(theta) * cos(phi), sin(theta) * sin(phi),            cos(theta));
+		// tangent space to world
+		vec3 sampleVec = tangentSample.x * right + tangentSample.y * up + 
 	}
 }
 ```
