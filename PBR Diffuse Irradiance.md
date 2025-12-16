@@ -488,7 +488,12 @@ If we take the initial scene from the PBR [lighting](https://learnopengl.com/PBR
 
 It still looks a bit weird as the more metallic spheres **require** some form of reflection to properly start looking like metallic surfaces (as metallic surfaces don't reflect diffuse light) which at the moment are only (barely) coming from the point light sources. Nevertheless, you can already tell the spheres do feel more *in place* within the environment (especially if you switch between environment maps) as the surface response reacts accordingly to the environment's ambient lighting. 
 
-You can find the complete source code of the discussed topics [here](https://learnopengl.com/code_viewer_gh.php?code=src/6.pbr/2.1.2.ibl_irradiance/ibl_irradiance.cpp). I
+You can find the complete source code of the discussed topics [here](https://learnopengl.com/code_viewer_gh.php?code=src/6.pbr/2.1.2.ibl_irradiance/ibl_irradiance.cpp). In the next [next](https://learnopengl.com/PBR/IBL/Specular-IBL) notes we'll add the indirect specular part of the reflectance integral at which point we're really going to see the power of PBR. 
+
+## Further reading
+
+- [Coding Labs: Physically based rendering](http://www.codinglabs.net/article_physically_based_rendering.aspx): an introduction to PBR and how and why to generate an irradiance map.
+- [The Mathematics of Shading](http://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/mathematics-of-shading): a brief introduction by ScratchAPixel on several of the mathematics described in this tutorial, specifically on polar coordinates and integrals.
 
 
 
