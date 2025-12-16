@@ -327,7 +327,9 @@ void main()
 }
 ```
  
- 
+ With `environmentMap` being the HDR cubemap as converted from the equirectangular HDR environment map. 
+
+There are many ways to convolute the environment map, but for these notes we're going to generate 
 
 
 
