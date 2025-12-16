@@ -349,7 +349,10 @@ As we sample both spherical values discretely, each sample will approximate or a
 Discretely sampling the hemisphere given the integral's spherical coordinates translates to the following fragment code. 
 
 ```
+vec3 irradiance = vec3(0.0);
 
+vec3 up    = vec3(0.0, 1.0, 0.0);
+vec3 right = normalize(cross) 
 ```
 
 
