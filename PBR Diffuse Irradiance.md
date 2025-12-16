@@ -340,7 +340,7 @@ $\LARGE{L_o(p, \phi, \theta_o) = k_d \frac{c}{\pi} \int_{\phi = 0}^{2 \pi} \int_
 
 So I think the polar azimuth measures around the ring of the hemisphere and the inclination zenith measures up and down the hemisphere. Essentially creating a ring above or below an already existing one. Just think of polar as polarity and inclination as incline meaning up or down. 
 
-Solving the integral requires us to take a fixed number of discrete samples within the hemisphere $\Large{\Omega}$ and averaging their results. This translates the integral to the following discrete version as based on the 
+Solving the integral requires us to take a fixed number of discrete samples within the hemisphere $\Large{\Omega}$ and averaging their results. This translates the integral to the following discrete version as based on the [Riemann sum](https://en.wikipedia.org/wiki/Riemann_sum) given $\Large{n1}$ and $\Large{n2}$ discrete samples  
 
  
 
