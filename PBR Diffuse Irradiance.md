@@ -329,8 +329,10 @@ void main()
  
  With `environmentMap` being the HDR cubemap as converted from the equirectangular HDR environment map. 
 
-There are many ways to convolute the environment map, but for these notes we're going to generate 
+There are many ways to convolute the environment map, but for these notes we're going to generate a fixed amount of sample vectors for each cubemap texel along a hemisphere $\Large{\Omega}$ oriented around the sample direction and average the results. The fixed amount of sample vectors will be uniformly spread inside the hemisphere. Note that an integral is a continuous function and discretely sampling its function given a fixed amount of sample vectors will be an approximation. The more sample vectors we use, the better we approximate the integral. 
 
+The integral $\Large{\int}$ of the reflectance equation resolves around the solid angle $\Large{d \omega}$
+ 
 
 
 
