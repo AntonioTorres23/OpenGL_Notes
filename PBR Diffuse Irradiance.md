@@ -435,7 +435,9 @@ If it looks like a heavily blurred version of the environment map you've success
 
 **PBR and Indirect Irradiance Lighting**
 
-The irradiance map represents the diffuse part of the reflectance integral as accumulated from all surrounding indirect light. 
+The irradiance map represents the diffuse part of the reflectance integral as accumulated from all surrounding indirect light. Seeing as the light doesn't come from direct light sources, but from the surrounding environment, we treat both the diffuse and specular indirect lighting as the ambient lighting , replacing our previously set constant term. 
+
+First, be sure to add the pre-calculated irradiance mapo
 
 
 
