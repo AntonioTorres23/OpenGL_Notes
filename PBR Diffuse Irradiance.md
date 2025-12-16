@@ -441,7 +441,14 @@ First, be sure to add the pre-calculated irradiance map as a cube sampler.
 
 `uniform samplerCube irradianceMap`
 
-Given the irradiance map that holds all of the scene's indirect diffuse light, retrieving the irradiance influencing the fragment is as simple as a singgle texture sample given the 
+Given the irradiance map that holds all of the scene's indirect diffuse light, retrieving the irradiance influencing the fragment is as simple as a single texture sample given the surface normal. 
+
+```
+// vec3 ambient = vec3(0.03);
+vec3 ambient = texture(irradianceMap, N).rgb;
+```
+
+However, as the indi
 
 
 
