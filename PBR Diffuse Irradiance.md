@@ -375,7 +375,9 @@ irradiance = PI * irradiance * (1.0 / float(nrSamples));
 
 We specify a fixed `sampleDelta` value to traverse the hemisphere; decreasing or increasing the sample delta will increase or decrease the accuracy respectively. So think of it that we are traversing the phi and theta for-loops by a value of 0.025 every iteration until the Boolean statement is met.  
 
-From within both loops, we take both spherical coordinates to convert them to a 3D Cartesian sample vector, convert the sample from tangent to world space oriented around the normal, and use this sample vector to directly sample the HDR environment map. We add each sample result to `irradiance` which at the end we divide by the total number of samples taken, 
+From within both loops, we take both spherical coordinates to convert them to a 3D Cartesian sample vector, convert the sample from tangent to world space oriented around the normal, and use this sample vector to directly sample the HDR environment map. We add each sample result to `irradiance` which at the end we divide by the total number of samples taken, giving us the average sampled irradiance. Note that we scale the sampled color value by `cos(theta)` due to the light being weaker a larger angles and by `sin(theta)` to account for the smaller sample areas in the higher hemisphere areas. 
+
+Now what's left to do is to setup the OpenGL rendering code such that we can convolute the earlier captured `envCubemap`. First we create the irradiance 
 
 
 
