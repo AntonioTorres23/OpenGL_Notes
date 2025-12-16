@@ -384,7 +384,47 @@ unisgned int irradianceMap;
 glGenTextures(1, &irradianceMap);
 glBindTexture(GL_TEXTURE_CUBE_MAP, irradianceMap);
 for (unsigned int i = 0; i < 6; ++i)
+{
+	glTexture2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL_RGB16F, 32, 32, 0,           GL_RGB, GL_FLOAT, nullptr);
+	
+}
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 ```
+
+As the irradiance map averages all surrounding radiance uniformly it doesn't have a lot of high frequency details, so we can store the map at a low resolution (32x32) and let OpenGL's linear filtering do most of the work. Next, we re-scale the capture framebuffer to the new resolution. 
+
+```
+glBindFramebuffer(GL_FRAMEBUFFER, captureFBO);
+glBindRenderbuffer(GL_RENDERBUFFER, captureRBO);
+glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, 32, 32);
+```
+
+Using the convolution shader, we render the environment map in a similar way to how we captured the environment cubemap. 
+
+```
+irradianceShader.use();
+irradianceShader.setInt("environmentMap", 0);
+irradianceShader.setMat4("projection", captureProjection);
+glActivateTexture(GL_TEXTURE0);
+glBindTexture(GL_TEXTURE_CUBE_MAP, envCubemap);
+// don't forget to configure the viewport to capture dimensions.
+glViewport(0, 0, 32, 32); 
+for (unsigned in = 0; i < 6; ++i)
+{
+	irradianceShader.setMat4("view", captureViews[i]);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0,                       GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, irradianceMap, 0);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	
+	renderCube();
+}
+glBindFramebuffer(GL_FRAMEBUFFER, 0);
+```
+
+Now after this routine we should have a pre-computed irradiance map that we directly use for our diffuse image based lighting. To see if we successfully convoluted the environment map 
 
 
 
