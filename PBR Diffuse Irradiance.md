@@ -342,7 +342,7 @@ So I think the polar azimuth measures around the ring of the hemisphere and the 
 
 Solving the integral requires us to take a fixed number of discrete samples within the hemisphere $\Large{\Omega}$ and averaging their results. This translates the integral to the following discrete version as based on the [Riemann sum](https://en.wikipedia.org/wiki/Riemann_sum) given $\Large{n1}$ and $\Large{n2}$ discrete samples on each spherical coordinate respectively. 
 
-$L_o(p, \phi, \theta_o) = k_d \frac{c \pi}{n1 n2} \sum_{\phi = 0}^{n1} \sum_{\theta = 0}^{n2}$      
+$\LARGE{L_o(p, \phi, \theta_o) = k_d \frac{c \pi}{n1 n2} \sum_{\phi = 0}^{n1} \sum_{\theta = 0}^{n2} L_i(p, \phi_i, \theta_i) \cos(0) \sin(\theta) d \phi d \theta}$        
 
  
 
