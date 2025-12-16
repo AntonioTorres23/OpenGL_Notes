@@ -474,7 +474,9 @@ vec3 FresnelSchlickRoughness(float cosTheta, vec3 F0, float roughness)
 By taking account of the surface's roughness when calculating Fresnel response, the ambient code ends up as. 
 
 ```
-vec3 kS = 
+vec3 kS = fresnelSchlickRoughness(max(dot(N, V), 0.0), F0, roughness);
+vec3 kD = 1.0 - kS;
+
 ```
 
 
