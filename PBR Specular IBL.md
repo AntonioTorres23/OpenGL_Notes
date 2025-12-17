@@ -116,7 +116,7 @@ When using a low-discrepancy sequence for generating the Monte Carlo sample vect
 
 Given our newly obtained knowledge of Monte Carlo and Quasi-Monte Carlo integration, there is an interesting property we can use for an even faster rate of convergence known as **importance sampling**. We've mentioned it before in these notes, but when it comes to specular reflections of light, the reflected light vectors are constrained in a specular lobe with its size determined by the roughness of the surface. Seeing as any (quasi-) randomly generated sample outside the specular lobe isn't relevant to the specular integral it makes sense to focus the sample generation to within the specular lobe, at the cost of making the Monte Carlo estimator biased.
 
-This is in essence what importance sampling is about: generate sample vectors in some region constrained by roughness oriented around the microfacet's halfway vector. By combining Quasi-Monte Carlo sampling with a discrepancy 
+This is in essence what importance sampling is about: generate sample vectors in some region constrained by roughness oriented around the microfacet's halfway vector. By combining Quasi-Monte Carlo sampling with a low-discrepancy sequence and biasing the sample vectors using importance sampling, we get a high rate of convergence. Because we reach the solu
 
 
 
