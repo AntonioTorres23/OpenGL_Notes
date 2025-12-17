@@ -35,7 +35,7 @@ This way, the pre-filtered environment convolution doesn't need to be aware of t
 ![[Pasted image 20251217112313.png]]
 
 
-The second part of the split sum equation equals the BRDF part of the specular integral. If we pretend the incoming radiance is completely white for every direction (thus $\Large{L(p, x) = 1.0}$) we can pre-calculate the BRDF's response given an input roughness and an input angle between the normal $\Large{n}$ and the light direction $\Large{\omega_i}$, or $\Large{n \cdot \omega_i}$. Epic Games stores the pre-computed BRDF's response to each normal and light direction combination on varying roughness values in a 2D lookup texture (LUT) known as the **BRDF integration** map. The 2D lookup texture outputs a scale (red) and a bias value green (green) to the surface's Fresnel response giving us the second part of the split specula
+The second part of the split sum equation equals the BRDF part of the specular integral. If we pretend the incoming radiance is completely white for every direction (thus $\Large{L(p, x) = 1.0}$) we can pre-calculate the BRDF's response given an input roughness and an input angle between the normal $\Large{n}$ and the light direction $\Large{\omega_i}$, or $\Large{n \cdot \omega_i}$. Epic Games stores the pre-computed BRDF's response to each normal and light direction combination on varying roughness values in a 2D lookup texture (LUT) known as the **BRDF integration** map. The 2D lookup texture outputs a scale (red) and a bias value green (green) to the surface's Fresnel response giving us the second part of the split specular integral. 
 
 
 
