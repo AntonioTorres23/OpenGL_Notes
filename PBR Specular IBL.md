@@ -87,7 +87,13 @@ When it comes to the microsurface model, we can imagine the specular lobe as the
 
 To fully get a grasp of importance sampling it's relevant we first delve into the mathematical construct known as **Monte Carlo Integration**. Monte Carlo integration revolves mostly around a combination of statistics and probability theory. Monte Carlo helps us in discretely solving the problem of figuring out some statistic or value of a population without having to take **all** of the population into consideration. 
 
-For instance, let's say you want to count the average height of all citizens of a country. To get your result, you could measure **every** citizen and average their height 
+For instance, let's say you want to count the average height of all citizens of a country. To get your result, you could measure **every** citizen and average their height which will give you the **exact** answer you are looking for. However, since most countries have a considerable population this isn't a realistic approach: it would take too much effort and time. 
+
+A different approach is to pick a much smaller **completely random** (unbiased) subset of this population, measure their height, and average the result. This population could be as small as 100 people. While not as accurate as the exact answer, you'll get an answer that is relatively close to the ground truth. This is known as the **law of large numbers**. The idea is that if you measure a smaller set of size $\Large{N}$ of truly random samples from the population, the result will be relatively close to the true answer and gets closer as the number of samples $\Large{N}$ increases. 
+
+Monte Carlo integration builds on this law of large numbers and takes the same approach in solving an integral. Rather than solving an integral for all possible (theoretically infinite) sample values $\Large{x}$, simply generate $\Large{N}$ sample values randomly picked from the total population and average. As $\Large{N}$ increases, we're guaranteed to get a result closer to the exact answer of the integral. 
+
+$O = \int\limits_{a}^{}$
 
 
 
