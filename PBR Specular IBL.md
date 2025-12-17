@@ -177,7 +177,7 @@ Note that due to GLSL loop restrictions in older hardware, the sequence loops ov
 
 **GGX Importance Sampling**
 
-Instead of uniformly or randomly (Monte Carlo) generating sample vectors over the integral's hemisphere $\Large{\Omega}$, we'll generate sample vectors biased towards the general reflection orientation of the microsurface halfway vector based on the surface's roughness. The sampling process will be similar to what we've seen before: begin a large loop, generate a random (low-discrepancy) sequence value, take the sequence value to generate a sample vector in tangent space, t
+Instead of uniformly or randomly (Monte Carlo) generating sample vectors over the integral's hemisphere $\Large{\Omega}$, we'll generate sample vectors biased towards the general reflection orientation of the microsurface halfway vector based on the surface's roughness. The sampling process will be similar to what we've seen before: begin a large loop, generate a random (low-discrepancy) sequence value, take the sequence value to generate a sample vector in tangent space, transform to world space, and sample the scene's radiance. What's different is that we now use a low-discrepancy sequence value as input to generate a sample vector. 
 
 
 
