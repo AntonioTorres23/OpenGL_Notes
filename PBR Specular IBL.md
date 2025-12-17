@@ -214,7 +214,9 @@ vec3 ImportanceSampleGGX(vec2 Xi, vec3 N, float roughness)
 }
 ```
 
-This gives us a sample vector somewhat oriented around the expected microsurface's halfway vector based on some input roughness and the low-discrepancy sequence value `Xi` 
+This gives us a sample vector somewhat oriented around the expected microsurface's halfway vector based on some input roughness and the low-discrepancy sequence value `Xi`. Note that Epic Games uses the squared roughness for better visual results based on Disney's original PBR research. 
+
+
 
 
 
