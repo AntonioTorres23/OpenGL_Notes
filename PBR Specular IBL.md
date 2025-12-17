@@ -93,8 +93,11 @@ A different approach is to pick a much smaller **completely random** (unbiased) 
 
 Monte Carlo integration builds on this law of large numbers and takes the same approach in solving an integral. Rather than solving an integral for all possible (theoretically infinite) sample values $\Large{x}$, simply generate $\Large{N}$ sample values randomly picked from the total population and average. As $\Large{N}$ increases, we're guaranteed to get a result closer to the exact answer of the integral. 
 
-$O = \int\limits_{a}^{}$
+$\LARGE{O = \int\limits_{a}^{b} f(x) d x = \frac{1}{N} \sum_{i = 0}^{N - 1} \frac{f(x)}{pdf(x)}}$  
 
+To solve the integral, we take $\Large{N}$ random samples over the population $\Large{a}$ to $\Large{b}$, add them together, and divide by the total number of samples to average them. The $\Large{pdf}$ stands for the **probability density function** that tells us the probability a specific sample occurs over the total sample set. For instance, the pdf of the height of a population would look a bit like this. 
+
+![[Pasted image 20251217141255.png]]
 
 
 
