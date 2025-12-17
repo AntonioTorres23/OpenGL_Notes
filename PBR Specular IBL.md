@@ -216,7 +216,72 @@ vec3 ImportanceSampleGGX(vec2 Xi, vec3 N, float roughness)
 
 This gives us a sample vector somewhat oriented around the expected microsurface's halfway vector based on some input roughness and the low-discrepancy sequence value `Xi`. Note that Epic Games uses the squared roughness for better visual results based on Disney's original PBR research. 
 
-With the low-discrepancy Hammersley 
+With the low-discrepancy Hammersley sequence and sample generation defined, we can finalize the pre-filter convolution shader.
+
+```
+#version 330 core
+out vec4 FragColor; 
+in vec3 localPos; 
+
+uniform samplerCube environmentMap; 
+uniform float roughness;
+
+float RadicalInverse_VdC(uint bits);
+vec2 Hammersley(uint i, uint N);
+vec3 ImportanceSampleGGX(vec2 Xi, vec3 N, float roughness);
+
+void main()
+{
+	vec3 N = normalize(localPos);
+	vec3 R = N;
+	vec3 V = R; 
+	
+	const uint SAMPLE_COUNT = 1024u;
+	float totalWeight = 0.0;
+	vec3 prefilteredColor = vec3(0.0);
+	for(uint i = 0u; i < SAMPLE_COUNT; ++i)
+	{
+		vec2 Xi = Hammersley(i, SAMPLE_COUNT);
+		vec3 H  = ImportanceSampleGGX(Xi, N, roughness);
+		vec3 L  = normalize(2.0 * dot(V, H) * H - V);
+		
+		float NdotL = max(dot(N, L), 0.0);
+		if(NdotL > 0.0)
+		{
+			prefilteredColor += texture(environmentMap, L).rgb * NdotL;
+			totalWeight      += NdotL; 
+		}
+	}	
+	prefilteredColor = prefilteredColor / totalWeight; 
+	
+	FragColor = vec4(prefilteredColor, 1.0);
+}
+```
+
+
+We pre-filter the environment, based on some input roughness that varies over each mipmap level of the pre-filter cubemap (from $0.0$ to $1.0$), and store the result in `prefilteredColor`. The resulting `prefilteredColor` is divided by the total sample weight, where samples with less influence on the final result (for small `NdotL`) contribute less to the final weight. 
+
+**Capturing Pre-Filter Mipmap Levels**
+
+What's left to do is let OpenGL pre-filter the environment map with different roughness values over multiple mipmap levels. This is actually fairly easy to do with the original setup of the [irradiance](https://learnopengl.com/PBR/IBL/Diffuse-irradiance) notes. 
+
+```
+prefilterShader.use();
+prefilterShader.setInt("environmentMap", 0);
+prefilterShader.setMat4("projection", captureProjection);
+glActivateTexture(GL_TEXTURE0);
+glBindTexture(GL_TEXTURE_CUBE_MAP, envCubemap);
+
+glBindFramebuffer(GL_FRAMEBUFFER, captureFBO);
+unsigned int maxMipLevels = 5;
+for (unsigned int mip = 0; mip < maxMipLevels; ++mip)
+{
+	// resize framebuffer according to mip-level size.
+	unsigned int mipWidth = 128 * std::pow(0.5, mip)
+}
+```
+
+
 
 
 
