@@ -112,7 +112,9 @@ Monte Carlo integration is an extensive mathematical topic and I won't delve muc
 ![[Pasted image 20251217143747.png]]
   
 
-When using a low-discrepancy sequence for generating the Monte Carlo sample vectors, the process is known as **Quasi-Monte Carlo Integration** 
+When using a low-discrepancy sequence for generating the Monte Carlo sample vectors, the process is known as **Quasi-Monte Carlo Integration**. Quasi-Monte Carlo methods have a faster **rate of convergence** which makes them interesting for performance heavy applications. 
+
+Given our newly obtained knowledge of Monte Carlo and Quasi-Monte Carlo integration, there is an interesting property we can use for an even faster rate of convergence known as **importance sampling** 
 
 
 
