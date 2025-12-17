@@ -18,4 +18,4 @@ Epic Games' split sum approximation solves the issue by splitting the pre-comput
 
 $\LARGE{L_o(p, \omega_o) = \int\limits_{\Omega}L_i(p, \omega_i)d \omega_i * \int\limits_{\Omega} f_r(p, \omega_i, \omega_o) n \cdot \omega_i d \omega_i}$   
 
-The first part (when convoluted) is known as the **pre-filtered environment map** which is (similar to t)
+The first part (when convoluted) is known as the **pre-filtered environment map** which is (similar to the irradiance map) a pre-computed environment convolution map, but this time taking roughness into account. For increasing roughness levels, 
