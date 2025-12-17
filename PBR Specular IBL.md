@@ -103,10 +103,16 @@ From this graph we can see that if we take any random sample of the population, 
 
 When it comes to Monte Carlo integration, some samples may have a higher probability of being generated than others. This is why for any general Monte Carlo estimation we divide or multiply the sampled value by the sample probability according to a pdf. So far, in each of our cases of estimating an integral the samples we've generated were uniform, having the exact same change of being generated. Our estimations so far were **unbiased**, meaning that given an ever-increasing amount of samples we will eventually **converge** to the **exact** solution of the integral. 
 
-However, some Monte Carlo estimators are **biased**, meaning that the generated samples aren't completely random, but focused towards a specific value or direction. These biased Monte Carlo estimators have a **faster rate of convergence**, meaning they can converge to the exact solution at a much faster rate, but due to their biased nature it's likely they won't ever converge to the exact solution. 
- 
+However, some Monte Carlo estimators are **biased**, meaning that the generated samples aren't completely random, but focused towards a specific value or direction. These biased Monte Carlo estimators have a **faster rate of convergence**, meaning they can converge to the exact solution at a much faster rate, but due to their biased nature it's likely they won't ever converge to the exact solution. This is generally an acceptable tradeoff, especially in computer graphics, as the exact solution isn't too important as long as the results are visually acceptable. As we'll soon see with importance sampling (which uses a biased estimator), the generated samples are biased towards specific directions in which case we account for this by multiplying or dividing each sample by its corresponding pdf. 
 
+Monte Carlo integration is quite prevalent in computer graphics as it's a fairly intuitive way to approximate continuous integrals in a discrete and efficient fashion: take any area/volume to sample over (like the hemisphere $\Large{\Omega}$), generate $\Large{N}$ amount of random samples within the area/volume, and sum and weigh every sample contribution to the final result. 
 
+Monte Carlo integration is an extensive mathematical topic and I won't delve much further into specifics, but we'll mention that there are multiple ways of generating the *random samples*. By default, each sample is completely (pseudo) random as we're used to, but by utilizing certain properties of somewhat-random sequences we can generate sample vectors that are still random, but have interesting properties. For instance, we can do Monte Carlo integration on something called **low-discrepancy sequences** which still generate random samples, but each sample is more evenly distributed (image courtesy of James Heald).
+
+![[Pasted image 20251217143747.png]]
+  
+
+When using a low-discrepancy sequence
 
 
 
