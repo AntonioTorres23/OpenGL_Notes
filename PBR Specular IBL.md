@@ -120,7 +120,7 @@ This is in essence what importance sampling is about: generate sample vectors in
 
 **A Low-Discrepancy Sequence**
 
-In these notes we'll pre-compute the specular portion of the indirect reflectance equation using importance sampling give
+In these notes we'll pre-compute the specular portion of the indirect reflectance equation using importance sampling given a random low-discrepancy sequence based on the Quasi-Monte Carlo method. The sequence we'll be using is known as the **Hammersley Sequence** as carefully described by [Holger Dammertz](http://holger.dammertz.org/stuff/notes_HammersleyOnHemisphere.html). The 
 
 
 
