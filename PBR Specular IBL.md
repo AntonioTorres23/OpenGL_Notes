@@ -30,4 +30,45 @@ vec3 R = N;
 vec3 V = R;
 ```
 
-This way, the pre-filtered environment convolution doesn't need to be aware of the view direction
+This way, the pre-filtered environment convolution doesn't need to be aware of the view direction. This does mean we don't get nice grazing specular reflections when looking at specular surface reflections from an angle as seen in the image below (courtesy of *Moving Frostbite to PBR* article); this is however generally considered an acceptable compromise. 
+
+![[Pasted image 20251217112313.png]]
+
+
+The second part of the split sum equation equals the BRDF part of the specular integral 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
