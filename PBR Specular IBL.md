@@ -209,10 +209,12 @@ vec3 ImportanceSampleGGX(vec2 Xi, vec3 N, float roughness)
 	vec3 tangent   = normalize(cross(up, N));
 	vec3 bitangent = cross(N, tangent);
 	
-	vec3 sampleVec = tangent * H.x + bitangent * H.y + 
-	
+	vec3 sampleVec = tangent * H.x + bitangent * H.y + N * H.z; 
+	return normalized(sampleVec);
 }
 ```
+
+This gives us a sample vector somewhat oriented around the expected microsurface's halfway vector based on some input roughness and the low-discrepancy sequence value `Xi` 
 
 
 
