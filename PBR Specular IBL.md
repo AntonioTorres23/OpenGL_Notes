@@ -120,7 +120,7 @@ This is in essence what importance sampling is about: generate sample vectors in
 
 **A Low-Discrepancy Sequence**
 
-In these notes we'll pre-compute 
+In these notes we'll pre-compute the specular portion of the indirect reflectance equation using importance sampling give
 
 
 
