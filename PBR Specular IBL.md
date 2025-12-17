@@ -22,4 +22,12 @@ The first part (when convoluted) is known as the **pre-filtered environment map*
 
 ![[Pasted image 20251217110922.png]]
 
-We generate the sample vectors and their scattering amount using the normal distribution function (NDF) of the Cook-Torrance BRDF that takes as input both a normal and view direction. 
+We generate the sample vectors and their scattering amount using the normal distribution function (NDF) of the Cook-Torrance BRDF that takes as input both a normal and view direction. As we don't know beforehand the view direction when convoluting the environment map, Epic Games makes a further approximation by assuming the view direction (and thus the specular reflection direction) to be equal to the output sample direction $\Large{\omega_o}$. This translates itself to the following code. 
+
+```
+vec3 N = normalize(w_o);
+vec3 R = N;
+vec3 V = R;
+```
+
+This way, the pre-filtered environment convolution doesn't need to be aware of the view direction
