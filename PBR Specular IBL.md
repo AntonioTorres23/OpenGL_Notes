@@ -52,7 +52,19 @@ This should give you a bit of an overview on how Epic Games' split sum approxima
 
 **Pre-filtering an HDR Environment Map**
 
-Pre-filtering an environment map is quite similar to how we convoluted an irradiance map. The difference being that we now account for roughness and store sequentially rougher reflections in the pre-filtered map's mip levels
+Pre-filtering an environment map is quite similar to how we convoluted an irradiance map. The difference being that we now account for roughness and store sequentially rougher reflections in the pre-filtered map's mip levels. 
+
+First, we need to generate a new cubemap to hold the pre-filtered environment data. To make sure we allocate enough memory for its mip levels we call `glGenerateMipmap` as an easy way to allocate the required amount of memory. 
+
+```
+unsigned int prefilterMap;
+glGenTextures(1, &prefilterMap);
+glBindTexture(GL_TEXTURE_CUBE_MAP, prefilterMap);
+for (unsigned int i = 0; i < 6; ++i)
+{
+	glTexImage2D(GL_TEXTURE_CUBEMAP_POSITIVE_X + i, 0, )
+}
+```
 
 
 
