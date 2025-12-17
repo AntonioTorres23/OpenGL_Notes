@@ -39,8 +39,20 @@ The second part of the split sum equation equals the BRDF part of the specular i
 
 ![[Pasted image 20251217122056.png]]
 
-We generate the lookup texture by treating the horizontal texture coordinate (ranged between $0.0$ and $1.0$) of a plane as the BRDF's input $\Large{n \cdot \omega_i}$, and its vertical texture coordinate as the input roughness value. With this BRDF integration map and the pre-filtered environment map we can combine
+We generate the lookup texture by treating the horizontal texture coordinate (ranged between $0.0$ and $1.0$) of a plane as the BRDF's input $\Large{n \cdot \omega_i}$, and its vertical texture coordinate as the input roughness value. With this BRDF integration map and the pre-filtered environment map we can combine both to get the result of the specular integral. 
 
+```
+float lod             = getMipLevelFromRoughness(roughness);
+vec3 prefilteredColor = textureCubeLod(PrefilteredEnvMap, refVec, lod);
+vec2 envBRDF          = texture2D(BRDFIntegrationMap, vec2(NdotV, roughness)).xy;
+vec3 indirectSpecular = prefilteredColor * (F * envBRDF.x + envBRDF.y);
+```
+
+This should give you a bit of an overview on how Epic Games' split sum approximation roughly approaches the indirect part of the reflectance equation. Let's now try and build the pre-convoluted parts ourselves. 
+
+**Pre-filtering an HDR Environment Map**
+
+Pre-filtering an environment map is quite similar to how we convoluted an irradiance map. The difference being that 
 
 
 
