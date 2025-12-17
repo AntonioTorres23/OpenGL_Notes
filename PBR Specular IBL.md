@@ -99,7 +99,12 @@ To solve the integral, we take $\Large{N}$ random samples over the population $\
 
 ![[Pasted image 20251217141255.png]]
 
+From this graph we can see that if we take any random sample of the population, there is a higher chance of picking a sample of someone of height 1.70, compared to the lower probability of the sample being of height 1.50. 
 
+When it comes to Monte Carlo integration, some samples may have a higher probability of being generated than others. This is why for any general Monte Carlo estimation we divide or multiply the sampled value by the sample probability according to a pdf. So far, in each of our cases of estimating an integral the samples we've generated were uniform, having the exact same change of being generated. Our estimations so far were **unbiased**, meaning that given an ever-increasing amount of samples we will eventually **converge** to the **exact** solution of the integral. 
+
+However, some Monte Carlo estimators are **biased**, meaning that the generated samples aren't completely random, but focused towards a specific value or direction. These biased Monte Carlo estimators have a **faster rate of convergence**, meaning they can converge to the exact solution at a much faster rate, but due to their biased nature it's likely they won't ever converge to the exact solution. 
+ 
 
 
 
