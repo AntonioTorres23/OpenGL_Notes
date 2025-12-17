@@ -52,7 +52,7 @@ This should give you a bit of an overview on how Epic Games' split sum approxima
 
 **Pre-filtering an HDR Environment Map**
 
-Pre-filtering an environment map is quite similar to how we convoluted an irradiance map. The difference being that 
+Pre-filtering an environment map is quite similar to how we convoluted an irradiance map. The difference being that we now account for roughness and store sequentially rougher reflections in the pre-filtered map's mip levels
 
 
 
