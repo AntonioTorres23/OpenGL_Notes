@@ -18,4 +18,8 @@ Epic Games' split sum approximation solves the issue by splitting the pre-comput
 
 $\LARGE{L_o(p, \omega_o) = \int\limits_{\Omega}L_i(p, \omega_i)d \omega_i * \int\limits_{\Omega} f_r(p, \omega_i, \omega_o) n \cdot \omega_i d \omega_i}$   
 
-The first part (when convoluted) is known as the **pre-filtered environment map** which is (similar to the irradiance map) a pre-computed environment convolution map, but this time taking roughness into account. For increasing roughness levels, the environment is convoluted with more scattered sample vectors, creating blurrier reflections. For each roughness level we convolute, we store the sequentially blurrier results in the pre-filtered map's mipmap levels. For instance, a pre-filtered environment map storing the pre-convoluted result of 
+The first part (when convoluted) is known as the **pre-filtered environment map** which is (similar to the irradiance map) a pre-computed environment convolution map, but this time taking roughness into account. For increasing roughness levels, the environment is convoluted with more scattered sample vectors, creating blurrier reflections. For each roughness level we convolute, we store the sequentially blurrier results in the pre-filtered map's mipmap levels. For instance, a pre-filtered environment map storing the pre-convoluted result of 5 different roughness values in its 5 mipmap levels looks as follows. 
+
+![[Pasted image 20251217110922.png]]
+
+We generate the sample vectors and their scattering amount using the normal distribution function (NDF) of the Cook-Torrance BRDF that takes as input both a normal and view direction. 
