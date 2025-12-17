@@ -35,7 +35,7 @@ This way, the pre-filtered environment convolution doesn't need to be aware of t
 ![[Pasted image 20251217112313.png]]
 
 
-The second part of the split sum equation equals the BRDF part of the specular integral 
+The second part of the split sum equation equals the BRDF part of the specular integral. If we pretend the incoming radiance is completely white 
 
 
 
