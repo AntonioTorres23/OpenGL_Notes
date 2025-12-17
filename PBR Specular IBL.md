@@ -39,7 +39,7 @@ The second part of the split sum equation equals the BRDF part of the specular i
 
 ![[Pasted image 20251217122056.png]]
 
-We generate the lookup texture by treating the horizontal texture coordinate (ranged between $0.0$ and $1.0$) of a plane as the BRDF's input $\Large{n \cdot \omega_i}$, and its vertical texture coordinate as the input roughness value. With this BRDF integration map and the pre-filtered 
+We generate the lookup texture by treating the horizontal texture coordinate (ranged between $0.0$ and $1.0$) of a plane as the BRDF's input $\Large{n \cdot \omega_i}$, and its vertical texture coordinate as the input roughness value. With this BRDF integration map and the pre-filtered environment map we can combine
 
 
 
