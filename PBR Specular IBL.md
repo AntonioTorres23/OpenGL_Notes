@@ -16,4 +16,4 @@ The integral also depends on $\Large{\omega_o}$, and we can't really sample a pr
 
 Epic Games' split sum approximation solves the issue by splitting the pre-computation into 2 individual parts that we can later combine to get the resulting pre-computed result we're after. The split-sum approximation splits the specular integral into two separate integrals. 
 
-$L_o(p, \omega_o) = L_i(p, \omega_)$
+$L_o(p, \omega_o) = \int\limits_{\Omega}L_i(p, \omega_i)d \omega_i * \int\limits_{\Omega}$ 
