@@ -187,7 +187,17 @@ for(uint i = 0u; i < SAMPLE_COUNT; ++i)
 }
 ```
 
-Additionally, to build a sample vector, we need some way of orienting and biasing the sample vector towards the specular lobe of some surface roughness. We can take the NDF as described in the [theory](https://learnopengl.com/PBR/Theory) notes and combine the GGX NDF in the spherical sample vector process as described by Epic Games 
+Additionally, to build a sample vector, we need some way of orienting and biasing the sample vector towards the specular lobe of some surface roughness. We can take the NDF as described in the [theory](https://learnopengl.com/PBR/Theory) notes and combine the GGX NDF in the spherical sample vector process as described by Epic Games. 
+
+```
+vec3 ImportanceSampleGGX(vec2 Xi, vec3 N, float roughness)
+{
+	float a = roughness * roughness; 
+	
+	float phi = 2.0 * PI * Xi.x;
+	float cosTheta = sqrt((1.0 - Xi.y) / ())
+}
+```
 
 
 
