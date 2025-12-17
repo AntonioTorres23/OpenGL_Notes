@@ -114,7 +114,7 @@ Monte Carlo integration is an extensive mathematical topic and I won't delve muc
 
 When using a low-discrepancy sequence for generating the Monte Carlo sample vectors, the process is known as **Quasi-Monte Carlo Integration**. Quasi-Monte Carlo methods have a faster **rate of convergence** which makes them interesting for performance heavy applications. 
 
-Given our newly obtained knowledge of Monte Carlo and Quasi-Monte Carlo integration, there is an interesting property we can use for an even faster rate of convergence known as **importance sampling**. We've mentioned it before in these notes, but when it comes to specular reflections of light, the reflected light vectors are constrained  
+Given our newly obtained knowledge of Monte Carlo and Quasi-Monte Carlo integration, there is an interesting property we can use for an even faster rate of convergence known as **importance sampling**. We've mentioned it before in these notes, but when it comes to specular reflections of light, the reflected light vectors are constrained in a specular lobe with its size determined by the roughness of the surface. Seeing as any (quasi-) randomly generated sample outside the specular lobe isn't relevant to the specular integral it makes sense to focus the sample generation w 
 
 
 
