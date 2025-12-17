@@ -112,7 +112,7 @@ Monte Carlo integration is an extensive mathematical topic and I won't delve muc
 ![[Pasted image 20251217143747.png]]
   
 
-When using a low-discrepancy sequence
+When using a low-discrepancy sequence for generating the Monte Carlo sample vectors, the process is known as **Quasi-Monte Carlo Integration** 
 
 
 
