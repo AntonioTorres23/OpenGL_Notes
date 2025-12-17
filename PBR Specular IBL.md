@@ -81,7 +81,11 @@ In the previous notes we convoluted the environment map by generating sample vec
 
 The general shape of possible outgoing light reflections is known as the **specular lobe**. As roughness increases, the specular lobe's size increases; and the shape of the specular lobe changes on varying incoming light directions. The shape of the specular lobe is thus highly dependent on that material. 
 
-When it comes to the microsurface model, we can imagine the specular lobe as the reflection orientation about the microfacet halfway vectors given some incoming light direction. Seeing as most light rays end up in a specular lobe reflected around the microfacet halfway vectors 
+When it comes to the microsurface model, we can imagine the specular lobe as the reflection orientation about the microfacet halfway vectors given some incoming light direction. Seeing as most light rays end up in a specular lobe reflected around the microfacet halfway vectors, it makes sense to generate the sample vectors in a similar fashion as most would otherwise be wasted. This process is known as **importance sampling**.
+
+**Monte Carlo Integration and Importance Sampling**
+
+To fully get a grasp of importance sampling it's re
 
 
 
