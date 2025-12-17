@@ -17,3 +17,5 @@ The integral also depends on $\Large{\omega_o}$, and we can't really sample a pr
 Epic Games' split sum approximation solves the issue by splitting the pre-computation into 2 individual parts that we can later combine to get the resulting pre-computed result we're after. The split-sum approximation splits the specular integral into two separate integrals. 
 
 $\LARGE{L_o(p, \omega_o) = \int\limits_{\Omega}L_i(p, \omega_i)d \omega_i * \int\limits_{\Omega} f_r(p, \omega_i, \omega_o) n \cdot \omega_i d \omega_i}$   
+
+The first part (when convoluted) is known as the **pre-filtered environment map** which is (similar to t)
