@@ -8,3 +8,8 @@ You'll notice that the Cook-Torrance specular portion (multiplied by $\Large{kS}
 The split sum approximation splits the specular part of the reflectance equation into two separate parts that we can individually convolute and later combine in the PBR shader for specular indirect image based lighting. Similar to how we pre-convoluted the irradiance map, the split sum approximation requires an HDR environment map as its convolution input. To understand the split sum approximation we'll again look at the reflectance equation, but this time focus on the specular part. 
 
 $\LARGE{L_o(p, \omega_o) = \int\limits_{\Omega} k_s \frac{DFG}{4(\omega_o \cdot n)(\omega_i \cdot n)})L_i(p, \omega_i)n \cdot \omega_i d \omega_i} = \int\limits_{\Omega} f_r (p, \omega_i, \omega_o) L_i (p, \omega_i) n \cdot \omega_i d \omega_i$  
+For the same (performance) reasons as the irradiance convolution, we can't solve the specular part of the integral in real time and expect a reasonable performance. So preferably we'd per-compute this integral to get something like a specular IBL map, sample this map with the fragment's normal, and be done with it. However, this is where it gets a bit tricky. We were able to pre-compute the irradiance map as the integral only depended on $\Large{\omega_i}$ and we could move the constant diffuse albedo terms out of the integral. This time, the integral depends on more than just $\Large{\omega_i}$ as evident from the BRDF. 
+
+$\LARGE{f_r (p, \omega_i, \omega_o) = \frac{DFG}{4(\omega_o \cdot n)(\omega_i \cdot n)}}$ 
+
+The integral also depends on $\Large{\omega_o}$, and we can't really sample a pre-computed cubemap with two direction vectors. The position $\Large{p}$ is irrelevant here as described in the previous notes. 
