@@ -120,8 +120,64 @@ This is in essence what importance sampling is about: generate sample vectors in
 
 **A Low-Discrepancy Sequence**
 
-In these notes we'll pre-compute the specular portion of the indirect reflectance equation using importance sampling given a random low-discrepancy sequence based on the Quasi-Monte Carlo method. The sequence we'll be using is known as the **Hammersley Sequence** as carefully described by [Holger Dammertz](http://holger.dammertz.org/stuff/notes_HammersleyOnHemisphere.html). The 
+In these notes we'll pre-compute the specular portion of the indirect reflectance equation using importance sampling given a random low-discrepancy sequence based on the Quasi-Monte Carlo method. The sequence we'll be using is known as the **Hammersley Sequence** as carefully described by [Holger Dammertz](http://holger.dammertz.org/stuff/notes_HammersleyOnHemisphere.html). The Hammersley sequence is based on the **Van Der Corput** sequence which mirrors a decimal binary representation around its decimal point. 
 
+Given some neat bit tricks, we can quite efficiently generate the Van Der Corput sequence in a shader program which we'll use to get a Hammersley sequence sample `i` over N total samples. 
+
+```
+float RadicalInverse_VdC(uint bits)
+{
+	bits = (bits << 16u) | (bits >> 16u);
+	bits = ((bits & 0x55555555u) << 1u) | ((bits & 0xAAAAAAAAu) >> 1u);
+	bits = ((bits & 0x33333333u) << 2u) | ((bits & 0xCCCCCCCCu) >> 2u);
+	bits = ((bits & 0x0F0F0F0Fu) << 4u) | ((bits & 0xF0F0F0F0u) >> 4u);
+	bits = ((bits & 0x00FF00FFu) << 8u) | ((bits & 0xFF00FF00u) >> 8u);
+	return float(bits) * 2.3283064365386963e-10; // / 0x100000000
+}
+
+vec2 Hammersley(uint i, uint N)
+{
+	return vec2(float(i)/float(N), RadicalInverse_VdC(i));
+}
+```
+
+The GLSL Hammersley function gives us the low-discrepancy sample `i` of the total sample set of size `N`. 
+
+**Hammersley Sequence Without Bit Operator Support**
+
+Not all OpenGL related drivers support bit operators (WebGL and OpenGL ES 2.0 for instance) in which case you may want to use an alternative version of the Van Der Corput Sequence that doesn't rely on bit operators. 
+
+```
+float VanDerCorput(uint n, uint base)
+{
+	float invBase = 1.0 / float(base);
+	float denom   = 1.0;
+	float result  = 0.0;
+	
+	for(uint i = 0u; i < 32u, ++i)
+	{
+		if (n > 0u)
+		{
+			denom   = mod(float(n), 2.0);
+			result += denom * invBase;
+			invBase = invBase / 2.0;
+			n       = uint(float(n) / 2.0); 
+		}
+	}
+	return result;
+}
+
+vec2 HammersleyNoBitOps(uint i, uint N)
+{
+	return vec2(float(i)/float(N), VanDerCorput(i, 2u));
+}
+```
+
+Note that due to GLSL loop restrictions in older hardware, the sequence loops over all 32 bits. This version is less performant, but does work on all hardware if you ever find yourself without bit operators.
+
+**GGX Importance Sampling**
+
+Instead of uniformly or randomly (Monte Carlo) generating sample vectors over the integral's hemisphere $\Large{\Omega}$, we'll generate sample vectors biased towards the general reflection orientation of the microsurface halfway vector based on the surface's roughness. The sampling process will be similar 
 
 
 
