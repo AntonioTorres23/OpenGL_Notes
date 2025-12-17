@@ -85,7 +85,7 @@ When it comes to the microsurface model, we can imagine the specular lobe as the
 
 **Monte Carlo Integration and Importance Sampling**
 
-To fully get a grasp of importance sampling it's re
+To fully get a grasp of importance sampling it's relevant we first delve into the mathematical construct known as **Monte Carlo Integration**. Monte Carle integration revolves mostly around a combination of statistics and probability theory. 
 
 
 
