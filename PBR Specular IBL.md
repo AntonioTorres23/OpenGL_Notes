@@ -12,4 +12,6 @@ For the same (performance) reasons as the irradiance convolution, we can't solve
 
 $\LARGE{f_r (p, \omega_i, \omega_o) = \frac{DFG}{4(\omega_o \cdot n)(\omega_i \cdot n)}}$ 
 
-The integral also depends on $\Large{\omega_o}$, and we can't really sample a pre-computed cubemap with two direction vectors. The position $\Large{p}$ is irrelevant here as described in the previous notes. 
+The integral also depends on $\Large{\omega_o}$, and we can't really sample a pre-computed cubemap with two direction vectors. The position $\Large{p}$ is irrelevant here as described in the previous notes. Pre-computing this integral for every possible combination of $\Large{\omega_i}$ and $\Large{\omega_o}$ isn't practical in a real-time setting. 
+
+Epic Games' split sum approximation solves the issue
