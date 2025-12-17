@@ -283,9 +283,27 @@ for (unsigned int mip = 0; mip < maxMipLevels; ++mip)
 	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, mipWidth,             mipHeight); 
 	glViewport(0, 0, mipWidth, mipHeight);
 	
-	float roughness = (float)mip / (float)(maxMipLevels)
+	float roughness = (float)mip / (float)(maxMipLevels - 1);
+	prefilterShader.setFloat("roughness", roughness);
+	for (unsigned int i = 0; i < 6; ++i)
+	{
+		prefilterShader.setMat4("view", captureViews[i]);
+		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT_0,                      GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, prefilterMap, mip);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		renderCube();
+	}
 }
+glBindFramebuffer(GL_FRAMEBUFFER, 0);
 ```
+
+
+This process is similar to the irradiance map convolution, but this time we scale the framebuffer's dimensions to the appropriate mipmap scale, each mip map reducing the dimensions by a scale of 2. Additionally, we specify the mip level we're rendering into in `glFramebufferTexture2D`'s last parameter and pass the roughness we're pre-filtering for to the pre-filter shader. 
+
+This should give us a properly pre-filtered environment map that returns blurrier reflections the higher mip level we access it from. If we use the pre-filtered environment cubemap in the skybox shader and forcefully sample somewhat above its first mip level like so. 
+
+`vec3 envColor = textureLod(environmentMap, WorldPos`
+
+
 
 
 
