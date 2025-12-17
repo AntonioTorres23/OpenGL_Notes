@@ -62,9 +62,24 @@ glGenTextures(1, &prefilterMap);
 glBindTexture(GL_TEXTURE_CUBE_MAP, prefilterMap);
 for (unsigned int i = 0; i < 6; ++i)
 {
-	glTexImage2D(GL_TEXTURE_CUBEMAP_POSITIVE_X + i, 0, )
+	glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL_RGB16F, 128, 128, 0,        GL_RGB, GL_FLOAT, nullptr);
 }
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+glGenerateMipmap(GL_TEXTURE_CUBE_MAP);
 ```
+
+Note that because we plan to sample `prefilterMap`'s mipmaps you'll need to make sure its minification filter is set to `GL_LINEAR_MIPMAP_LINEAR` to enable trilinear filtering. We store the pre-filtered specular reflections in a per-face resolution of 128 by 128 at its base mip level. This is likely enough for most reflections, but if you have a large number of smooth materials (think of car reflections) you may want to increase the resolution. 
+
+In the previous notes we convoluted the environment map by generating sample vectors uniformly spread over the hemisphere $\Large{\Omega}$ using spherical coordinates. While this works just fine for irradiance, for specular reflections its less efficient. When it comes to specular reflections, based on the roughness of a surface, the light reflects closely or roughly around a reflection vector $\Large{r}$ over a normal $\Large{n}$, but (unless the surface is extremely rough) around the reflection vector nonetheless.
+
+![[Pasted image 20251217133939.png]]
+
+The general shape of possible outgoing light reflections is known as the **specular lobe**. As roughness increases, the specular lobe's size increases; and the shape of the specular lobe changes on varying incoming light directions. The shape of the specular lobe is thus highly dependent on that material. 
 
 
 
