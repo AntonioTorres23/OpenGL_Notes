@@ -200,7 +200,13 @@ vec3 ImportanceSampleGGX(vec2 Xi, vec3 N, float roughness)
 	
 	// from sphereical coordinates to cartesian coordaintes
 	vec3 H;
-	H.x = cos(phi) *
+	H.x = cos(phi) * sinTheta;
+	H.y = sin(phi) * sinTheta;
+	H.z = cosTheta;
+	
+	// from tangent-space vector to world-space sample vector
+	vec3 up = abs(N.z) < 0.999 ? 
+	
 }
 ```
 
