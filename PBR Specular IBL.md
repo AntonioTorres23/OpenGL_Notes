@@ -552,9 +552,12 @@ In the pre-filter step we only convoluted the environment map up to a maximum of
 Then we sample from the BRDF lookup texture given the material's roughness and the angle between the normal and view vector. 
 
 ```
-vec3 F       = FresnelSchlickRougghness(max(dot(N, V), 0.0), F0, roughness);
-vec2 envBRDF = texture(brdfLUT, vec2(max(dot(N, B), 0.0), roughness)) 
+vec3 F        = FresnelSchlickRougghness(max(dot(N, V), 0.0), F0, roughness);
+vec2 envBRDF  = texture(brdfLUT, vec2(max(dot(N, B), 0.0), roughness)),rg;
+vec3 specular = prefilteredColor * (F * envBRDF.x + envBRDF.y); 
 ```
+
+Given 
 
 
 
