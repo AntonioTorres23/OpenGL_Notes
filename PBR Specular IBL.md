@@ -466,9 +466,23 @@ float GeometrySchlickGGX(float NdotV, float roughness)
 	float k - (a * a) / 2.0;
 	
 	float nom = NdotV;
-	float denom = NdotV * 
+	float denom = NdotV * (1.0 - k) + k;
+	
+	return nom/denom;
+}
+
+float GeometrySmith(vec3 N, vec3 V, vec3 L, float roughness)
+{
+	float NdotV = max(dot(N, V), 0.0);
+	float NdotL = max(dot(N, L), 0.0);
+	float ggx2 = geometrySchlickGGX(NdotV, roughness);
+	float ggx1 = geometrySchlickGGX(NdotL, roughness);
+	
+	return ggx1 * ggx2;
 }
 ```
+
+Note that while $\Large{k}$ takes `a` as its parameter we didn't square `roughness` as `a` as we orginally did for other interpretations of `a`:
  
 
 
