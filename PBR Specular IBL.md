@@ -301,7 +301,19 @@ This process is similar to the irradiance map convolution, but this time we scal
 
 This should give us a properly pre-filtered environment map that returns blurrier reflections the higher mip level we access it from. If we use the pre-filtered environment cubemap in the skybox shader and forcefully sample somewhat above its first mip level like so. 
 
-`vec3 envColor = textureLod(environmentMap, WorldPos`
+`vec3 envColor = textureLod(environmentMap, WorldPos, 1.2).rgb;`
+
+We get a result that indeed looks like a blurrier version of the original environment. 
+
+![[Pasted image 20251217165803.png]]
+
+If it looks somewhat similar you've successfully pre-filtered the HDR environment map. Play around with different mipmap levels to see the pre-filter map gradually change from sharp to blurry reflections on increasing mip levels. 
+
+**Pre-filter Convolution Artifacts**
+
+
+
+
 
 
 
