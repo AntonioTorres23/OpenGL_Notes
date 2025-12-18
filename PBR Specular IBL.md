@@ -532,7 +532,18 @@ uniform samplerCube prefilterMap;
 uniform sampler2D brdfLUT;
 ```
 
-First, we get the indirect specular reflections of the surface by sampling the pre-filtered environment map using the reflection vector. Note that we sample the appropriate mip level based on the surface roughness, giving 
+First, we get the indirect specular reflections of the surface by sampling the pre-filtered environment map using the reflection vector. Note that we sample the appropriate mip level based on the surface roughness, giving rougher surfaces *blurrier* specular reflections. 
+
+```
+void main()
+{
+	[...]
+	vec3 R = reflect(-V, N);
+	
+	const float MAX_REFLECTION_LOD = 4.0;
+	vec3 prefilteredColor = textureLod(prefilterMap, R, roughne)
+}
+```
 
  
 
