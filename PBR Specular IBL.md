@@ -482,7 +482,37 @@ float GeometrySmith(vec3 N, vec3 V, vec3 L, float roughness)
 }
 ```
 
-Note that while $\Large{k}$ takes `a` as its parameter we didn't square `roughness` as `a` as we orginally did for other interpretations of `a`:
+Note that while $\Large{k}$ takes `a` as its parameter we didn't square `roughness` as `a` as we originally did for other interpretations of `a`; likely as `a` is squared here already. I'm not sure whether this is an inconsistency on Epic Games' part or the original Disney paper, but directly translating `rougness` to `a` gives the BRDF integration map that is identical to Epic Game's version. 
+
+Finally, to store the BRDF convolution result we'll generate a 2D texture of a 512 by 512 resolution.
+
+```
+unsigned int brdfLUTTexture;
+glGenTextures(1, &brdfLUTTexture);
+
+// pre-allocate enough memory for the LUT texture
+glBindTexture(GL_TEXTURE_2D, brdfLUTTexture);
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RG16F, 512, 512, 0, GL_RG, GL_FLOAT, 0);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+```
+
+Note that we use a 16-bit precision floating format as recommended by Epic Games. Be sure to set the wrapping mode to `GL_CLAMP_TO_EDGE` to prevent edge sampling artifacts. 
+
+Then, we re-use the same framebuffer object and run this shader over an NDC screen-space quad.
+
+```
+glBindFramebuffer(GL_FRAMEBUFFER, captureFBO);
+glBindRenderbuffer(GL_RENDERBUFFER, captureRBO);
+glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, 512, 512);
+glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, brdfLUTTexture);
+
+glViewport(0, 0, 512, 512);
+brdfShader.use();
+glClear()
+```
  
 
 
