@@ -311,7 +311,7 @@ If it looks somewhat similar you've successfully pre-filtered the HDR environmen
 
 **Pre-filter Convolution Artifacts**
 
-
+While the current pre-filter map works fine for most purposes, sooner or later you'll come across
 
 
 
