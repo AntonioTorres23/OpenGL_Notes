@@ -519,7 +519,9 @@ glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
 The convoluted BRDF part of the split sum integral should give you the following result. 
 
+![[Pasted image 20251218163742.png]]
 
+With both the pre-filtered en
  
 
 
