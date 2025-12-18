@@ -380,8 +380,11 @@ $\LARGE{\int\limits_{\Omega} \frac{f_r(p, \omega_i, \omega_o)}{F(\omega_o, h)} F
  
 Substituting the right-most $\Large{F}$ with the Fresnel-Schlick approximation gives us.
 
-$\int\limits_{\Omega} \frac{f_r(p, \omega_i, \omega_o)}{F(\omega_o, h)} (F_0 + (1 - F_0)(1 - \omega))$
+$\LARGE{\int\limits_{\Omega} \frac{f_r(p, \omega_i, \omega_o)}{F(\omega_o, h)} (F_0 + (1 - F_0)(1 - \omega_o \cdot h)^5) n \cdot \omega_i d \omega_i}$  
 
+Let's replace $\Large{(1 - \omega_o \cdot h)^5}$ by $\Large{a}$ to make it easier to solve for $\Large{F_0}$. 
+
+$\int\limits_{\Omega} \frac{f_r(p, \omega_i)}{}$
 
 
 
