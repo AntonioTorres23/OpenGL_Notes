@@ -462,7 +462,11 @@ Since the BRDF convolution is part of the specular IBL integral we'll use $\Larg
 ```
 float GeometrySchlickGGX(float NdotV, float roughness)
 {
-	float a = roughness 
+	float a = roughness; 
+	float k - (a * a) / 2.0;
+	
+	float nom = NdotV;
+	float denom = NdotV * 
 }
 ```
  
