@@ -358,7 +358,8 @@ And let OpenGL generate the mipmaps **after** the cubemap's base texture is set.
 // convert HDR equirectangular environment map to cubemap equivalent
 [...]
 // then generate mipmaps
-
+glBindTexture(GL_TEXTURE_CUBE_MAP, envCubemap);
+glGenerateMipmap(GL_TEXTURE_CUBE_MAP)
 ```
 
 
