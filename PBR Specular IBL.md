@@ -330,9 +330,22 @@ Simply enable this property somewhere at the start of your application and the s
 
 Due to high frequency details and widely varying light intensities in specular reflections, convoluting the specular reflections requires a large numbers of samples to properly account for the widely varying nature of HDR environmental reflections. We already take a very large number of samples, but on some environments it may still not be enough at some of the rougher mip levels in which case you'll start seeing dotted patterns emerge around bright areas.
 
+![[Pasted image 20251218104452.png]]
 
+One option is to increase the sample count, but this won't be enough for all environments. As described by [Chetan Jags](https://chetanjags.wordpress.com/2015/08/26/image-based-lighting/) we can reduce this artifact by (during the pre-filter convolution) not directly sampling the environment map, but sampling a mip level of the environment map based on the integral's PDF and the roughness. 
 
+```
+float D = DistributionGGX(NdotH, roughness);
+float pdf = (D * NdotH / (4.0 * HdotV)) + 0.0001;
 
+float resolution = 512.0 // resolution of source cubemap (per face)
+float saTexel    = 4.0 * PI / (6.0 * resolution * resolution);
+float saSample   = 1.0 / (float(SAMPLE_COUNT) * pdf + 0.0001);
+
+float mipLevel   = roughness == 0.0 ? 0.0 : 0.5 * log2(saSample / saTexel);
+```
+
+Don't forget to enable trilinear filtering o
 
 
 
