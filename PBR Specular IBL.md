@@ -366,7 +366,7 @@ This works surprisingly well and should remove most, if not all, dots in your pr
 
 **Pre-computing the BRDF**
 
-With the pre-filtered environment up and running, 
+With the pre-filtered environment up and running, we can focus on the second part of the split-sum approximation: 
 
 
 
