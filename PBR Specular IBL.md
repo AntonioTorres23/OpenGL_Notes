@@ -547,7 +547,9 @@ void main()
 ```
 
  
-In the pre-filter step we only convoluted the environment map up to a maximum of 5 mip levels (0 to 4)
+In the pre-filter step we only convoluted the environment map up to a maximum of 5 mip levels (0 to 4), which we denote here as `MAX_REFLECTION_LOD` to ensure we don't sample a mip level where there's no (relevant) data. 
+
+Then we sample from the BRDF lookup texture given the material's roughness and the angle between the normal and view 
 
 
 
