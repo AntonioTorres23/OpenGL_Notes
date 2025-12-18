@@ -442,11 +442,19 @@ vec2 IntegrateBRDF(float NdotV, float roughness)
 	return vec2(A, B);
 }
 
-void main
-
+void main()
+{
+	vec2 integrateBRDF = IntegrateBRDF(TexCoords.x, TexCoords.y);
+	FragColor = integratedBRDF;
+}
 ```
-   
 
+As you can see, the BRDF convolution is a direct translation from the mathematics to code. We take both the angle $\Large{\theta}$ and the roughness as input, generate a sample vector with importance sampling, process it over the geometry and the derived Fresnel term of the BRDF, and output both a scale and bias to $\Large{F_0}$ for each sample, averaging them in the end. 
+
+You may recall from the [theory](https://learnopengl.com/PBR/Theory) notes that the geometry term of the BRDF is slightly different when used alongside IBL as its $\Large{k}$ variable has a slightly different interpolation. 
+
+$\LARGE{k_{direct} = \}$
+ 
 
 
 
