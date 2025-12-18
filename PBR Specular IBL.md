@@ -521,7 +521,10 @@ The convoluted BRDF part of the split sum integral should give you the following
 
 ![[Pasted image 20251218163742.png]]
 
-With both the pre-filtered en
+With both the pre-filtered environment map and the BRDF 2D LUT we can re-construct the indirect specular integral according to the split sum approximation. The combined result then acts as the indirect or ambient specular light. 
+
+**Completing **
+
  
 
 
