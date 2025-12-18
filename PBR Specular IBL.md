@@ -457,8 +457,15 @@ $\LARGE{k_{direct} = \frac{(a + 1)^2}{8}}$
 
  $\LARGE{k_{IBL} = \frac{a^2}{2}}$ 
 
+Since the BRDF convolution is part of the specular IBL integral we'll use $\Large{k_{IBL}}$ for the Schlick-GGX geometry function.
 
+```
+float GeometrySchlickGGX(float NdotV, float roughness)
+{
 
+}
+```
+ 
 
 
 
