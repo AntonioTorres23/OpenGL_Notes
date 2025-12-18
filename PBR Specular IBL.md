@@ -527,6 +527,13 @@ With both the pre-filtered environment map and the BRDF 2D LUT we can re-constru
 
 To get the indirect specular part of the reflectance equation up and running we need to stitch both parts of the split sum approximation together. Let's start by adding the pre-computed lighting data to the top of our PBR shader. 
 
+```
+uniform samplerCube prefilterMap;
+uniform sampler2D brdfLUT;
+```
+
+First, we get the indirect specular reflections of the surface by sampling the pre-filtered environment map using the reflection vector. Note that we sample the appropriate mip level based on the surface roughness, giving 
+
  
 
 
