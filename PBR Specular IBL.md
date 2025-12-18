@@ -366,12 +366,21 @@ This works surprisingly well and should remove most, if not all, dots in your pr
 
 **Pre-computing the BRDF**
 
-With the pre-filtered environment up and running, we can focus on the second part of the split-sum approximation: 
+With the pre-filtered environment up and running, we can focus on the second part of the split-sum approximation: the BRDF. Let's briefly review the specular split sum approximation again. 
 
+$\LARGE{L_o(p, \omega_o) = \int\limits_{\Omega}L_i(p, \omega_i)d \omega_i * \int\limits_{\Omega} f_r(p, \omega_i, \omega_o) n \cdot \omega_i d \omega_i}$
 
+We've pre-computed the left part of the split sum approximation in the pre-filter map over different roughness levels. The right side requires us to convolute the BRDF equation over the angle $\Large{n \cdot \omega_o}$, the surface roughness, and Fresnel's $\Large{F_0}$. This is similar to integrating the specular BRDF with a solid-white environment or a constant radiance $\Large{L_i}$ of 1.0. Convoluting the BRDF over 3 variables is a bit much, but we can try to move $\Large{F_0}$ out of the specular BRDF equation. 
 
+$\LARGE{\int\limits_{\Omega} f_r(p, \omega_i, \omega_o)n \cdot \omega_i d \omega_i = \int\limits_{\Omega} f_r(p, \omega_i, \omega_o) \frac{F(\omega_o, h)}{F(\omega_o, h)} n \cdot \omega_i d \omega_i}$
 
+With $\Large{F}$ being the Fresnel equation. Moving the Fresnel denominator to the BRDF gives us the following equivalent equation. 
 
+$\LARGE{\int\limits_{\Omega} \frac{f_r(p, \omega_i, \omega_o)}{F(\omega_o, h)} F(\omega_o, h) n \cdot \omega_i d \omega_i}$    
+ 
+Substituting the right-most $\Large{F}$ with the Fresnel-Schlick approximation gives us.
+
+$\int\limits_{\Omega} \frac{f_r(p, \omega_i, \omega_o)}{F(\omega_o, h)} (F_0 + (1 - F_0)(1 - \omega))$
 
 
 
