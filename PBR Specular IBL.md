@@ -511,8 +511,15 @@ glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, brdf
 
 glViewport(0, 0, 512, 512);
 brdfShader.use();
-glClear()
+glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+RenderQuad();
+
+glBindFramebuffer(GL_FRAMEBUFFER, 0);
 ```
+
+The convoluted BRDF part of the split sum integral should give you the following result. 
+
+
  
 
 
