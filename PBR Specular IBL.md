@@ -384,8 +384,9 @@ $\LARGE{\int\limits_{\Omega} \frac{f_r(p, \omega_i, \omega_o)}{F(\omega_o, h)} (
 
 Let's replace $\Large{(1 - \omega_o \cdot h)^5}$ by $\Large{a}$ to make it easier to solve for $\Large{F_0}$. 
 
-$\int\limits_{\Omega} \frac{f_r(p, \omega_i)}{}$
+$\LARGE{\int\limits_{\Omega} \frac{f_r(p, \omega_i, \omega_o)}{F(\omega_o, h)} (F_0 + (1 - F_0)a) n \cdot \omega_i d \omega_i}$
 
+$\LARGE{\int\limits_{\Omega} \frac{f_r(p, \omega_i, \omega_o)}{F(\omega_o, h)} (F_0 + 1 * a - F_0 * a) n \cdot \omega_i d \omega_i}$
 
 
 
