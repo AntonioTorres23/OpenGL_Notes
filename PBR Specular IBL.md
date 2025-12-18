@@ -359,8 +359,14 @@ And let OpenGL generate the mipmaps **after** the cubemap's base texture is set.
 [...]
 // then generate mipmaps
 glBindTexture(GL_TEXTURE_CUBE_MAP, envCubemap);
-glGenerateMipmap(GL_TEXTURE_CUBE_MAP)
+glGenerateMipmap(GL_TEXTURE_CUBE_MAP);
 ```
+
+This works surprisingly well and should remove most, if not all, dots in your pre-filter map on rougher surfaces. 
+
+**Pre-computing the BRDF**
+
+With the pre-filtered environment up and running, 
 
 
 
