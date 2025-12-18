@@ -570,7 +570,7 @@ kD *= 1.0 - metallic;
 
 vec3 irradiance = texture(irradianceMap, N).rgb;
 vec3 diffuse    = irradiance * albedo; 
-vec3 prefilteredColor = textureLod(prefilterMap, R, rou)
+vec3 prefilteredColor = textureLod(prefilterMap, R, roughness * )
 
 
 ```
