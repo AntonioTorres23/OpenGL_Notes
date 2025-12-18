@@ -352,6 +352,15 @@ glBindTexutre(GL_TEXTURE_CUBE_MAP, envCubemap);
 glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 ```
 
+And let OpenGL generate the mipmaps **after** the cubemap's base texture is set. 
+
+```
+// convert HDR equirectangular environment map to cubemap equivalent
+[...]
+// then generate mipmaps
+
+```
+
 
 
 
