@@ -394,7 +394,8 @@ Then we split the Fresnel function $\Large{F}$ over two integrals.
 
 $\LARGE{\int\limits_{\Omega} \frac{f_r(p, \omega_i, \omega_o)}{F(\omega_o, h)} (F_0 * (1 - a)) n \cdot \omega_i d \omega_i} + \LARGE{\int\limits_{\Omega} \frac{f_r(p, \omega_i, \omega_o)}{F(\omega_o, h)} (a) n \cdot \omega_i d \omega_i}$ 
 
-$\LARGE{\int\limits_{\Omega} f_r(p, \omega_i, \omega_o) (1 -(1 - \omega_o \cdot h)^5) n \cdot \omega_i d \omega_i} + \LARGE{\int\limits_{\Omega} \frac{f_r(p, \omega_i, \omega_o)}{F(\omega_o, h)} (F_0 + (1 - F_0)(1 - \omega_o \cdot h)^5) n \cdot \omega_i d \omega_i}$
+This way, $\Large{F_0}$ is constant over the inte
+$\LARGE{F_0 \int\limits_{\Omega} f_r(p, \omega_i, \omega_o) (1 -(1 - \omega_o \cdot h)^5) n \cdot \omega_i d \omega_i} + \LARGE{\int\limits_{\Omega} f_r(p, \omega_i, \omega_o) (1 - \omega_o \cdot h)^5 n \cdot \omega_i d \omega_i}$
  
 
 
