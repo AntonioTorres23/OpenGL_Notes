@@ -559,6 +559,8 @@ vec3 specular = prefilteredColor * (F * envBRDF.x + envBRDF.y);
 
 Given the scale and bias to $\Large{F_0}$ (here we're directly using the indirect Fresnel result `F`) from the BRDF lookup texture, we combine this with the left pre-filter portion of the IBL reflectance equation and re-construct the approximated integral result as `specular`. 
 
+This gives us the indirect specular part of the reflectance equation. Now, we combine this with the diffuse IBL from the 
+
 
 
 
