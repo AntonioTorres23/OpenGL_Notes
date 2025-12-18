@@ -541,12 +541,13 @@ void main()
 	vec3 R = reflect(-V, N);
 	
 	const float MAX_REFLECTION_LOD = 4.0;
-	vec3 prefilteredColor = textureLod(prefilterMap, R, roughne)
+	vec3 prefilteredColor = textureLod(prefilterMap, R, roughness *                    MAX_REFLECTION_LOD);
+	[...]
 }
 ```
 
  
-
+In the pre-filter step we only convoluted the environment map up to a maximum of 5 mip levels (0 to 4)
 
 
 
