@@ -453,8 +453,9 @@ As you can see, the BRDF convolution is a direct translation from the mathematic
 
 You may recall from the [theory](https://learnopengl.com/PBR/Theory) notes that the geometry term of the BRDF is slightly different when used alongside IBL as its $\Large{k}$ variable has a slightly different interpolation. 
 
-$\LARGE{k_{direct} = \}$
- 
+$\LARGE{k_{direct} = \frac{(a + 1)^2}{8}}$ 
+
+ $\LARGE{k_{IBL} = \frac{a^2}{2}}$ 
 
 
 
