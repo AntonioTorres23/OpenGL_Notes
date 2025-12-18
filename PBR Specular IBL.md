@@ -553,7 +553,7 @@ Then we sample from the BRDF lookup texture given the material's roughness and t
 
 ```
 vec3 F       = FresnelSchlickRougghness(max(dot(N, V), 0.0), F0, roughness);
-vec2 envBRDF = texture(brdfLUT, vec2(max(dot(N, B), 0.0), )) 
+vec2 envBRDF = texture(brdfLUT, vec2(max(dot(N, B), 0.0), roughness)) 
 ```
 
 
