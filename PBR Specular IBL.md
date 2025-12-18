@@ -394,10 +394,37 @@ Then we split the Fresnel function $\Large{F}$ over two integrals.
 
 $\LARGE{\int\limits_{\Omega} \frac{f_r(p, \omega_i, \omega_o)}{F(\omega_o, h)} (F_0 * (1 - a)) n \cdot \omega_i d \omega_i} + \LARGE{\int\limits_{\Omega} \frac{f_r(p, \omega_i, \omega_o)}{F(\omega_o, h)} (a) n \cdot \omega_i d \omega_i}$ 
 
-This way, $\Large{F_0}$ is constant over the inte
+This way, $\Large{F_0}$ is constant over the integral and we can take $\Large{F_0}$ out of the integral. Next, we substitute $\Large{a}$ back to its original form giving us the final split sum BRDF equation. 
 $\LARGE{F_0 \int\limits_{\Omega} f_r(p, \omega_i, \omega_o) (1 -(1 - \omega_o \cdot h)^5) n \cdot \omega_i d \omega_i} + \LARGE{\int\limits_{\Omega} f_r(p, \omega_i, \omega_o) (1 - \omega_o \cdot h)^5 n \cdot \omega_i d \omega_i}$
- 
+ The two resulting integrals represent a scale and a bias to $\Large{F_0}$ respectively. Note that as $\Large{f_r(p, \omega_i, \omega_o)}$ already contains a term for $\Large{F}$ they both cancel out, removing $\Large{F}$ from $\Large{f_r}$. 
 
+In a similar fashion to the earlier convoluted environment maps, we can convolute the BRDF equations on their inputs: the angle between $\Large{n}$ and $\Large{\omega_o}$, and the roughness. We store the convoluted results in a 2D lookup texture (LUT) known as a **BRDF integration** map that we later use in our PBR lighting shader to get the final convoluted indirect specular result. 
+
+The BRDF convolution shader operates on a 2D plane, using its 2D texture coordinates directly as inputs to the BRDF convolution (`NdotV` and `roughness`). The convolution code is largely similar to the pre-filter convolution, except that it now processes the sample vector according to our BRDF's geometry function and Fresnel-Schlick's approximation. 
+
+```
+vec2 IntegrateBRDF(float NdotV, float roughness)
+{
+	vec3 V;
+	V.x = sqrt(1.0 - NdotV*NdotV);
+	V.y = 0.0;
+	V.z = NdotV;
+	
+	float A = 0.0;
+	float B = 0.0;
+	
+	vec3 N = vec3(0.0, 0.0, 1.0);
+	
+	const uint SAMPLE_COUNT = 1024u;
+	
+	for(uint i = 0ul i < SAMPLE_COUNT; ++i)
+	{
+	
+	}
+}
+
+```
+   
 
 
 
