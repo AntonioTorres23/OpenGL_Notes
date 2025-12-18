@@ -328,7 +328,9 @@ Simply enable this property somewhere at the start of your application and the s
 
 **Bright Dots in the Pre-filter Convolution**
 
-Due to high frequency details 
+Due to high frequency details and widely varying light intensities in specular reflections, convoluting the specular reflections requires a large numbers of samples to properly account for the widely varying nature of HDR environmental reflections. We already take a very large number of samples, but on some environments it may still not be enough at some of the rougher mip levels in which case you'll start seeing dotted patterns emerge around bright areas.
+
+
 
 
 
