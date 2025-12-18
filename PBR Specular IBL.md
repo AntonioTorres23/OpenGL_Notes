@@ -565,7 +565,14 @@ This gives us the indirect specular part of the reflectance equation. Now, we co
 vec3 F = FresnelSchlickRoughness(max(dot(N, V), 0.0), F0, roughness);
 
 vec3 kS = F;
-vec3 kD 
+vec3 kD = 1.0 - kS; 
+kD *= 1.0 - metallic; 
+
+vec3 irradiance = texture(irradianceMap, N).rgb;
+vec3 diffuse    = irradiance * albedo; 
+vec3 prefilteredColor = textureLod(prefilterMap, R, rou)
+
+
 ```
 
 
