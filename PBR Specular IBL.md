@@ -311,8 +311,14 @@ If it looks somewhat similar you've successfully pre-filtered the HDR environmen
 
 **Pre-filter Convolution Artifacts**
 
-While the current pre-filter map works fine for most purposes, sooner or later you'll come across
+While the current pre-filter map works fine for most purposes, sooner or later you'll come across several render artifacts that are directly related to the pre-filter convolution. I'll list the most common here including how to fix them. 
 
+**Cubemap Seams at High Roughness**
+
+Sampling the pre-filter map on surfaces with a rough surface means sampling the pre-filter map on some of its lower mip levels. When sampling cubemaps, OpenGL doesn't linearly interpolate **across** cubemap faces. Because the lower mip levels are both of a lower resolution and the pre-filter map is convoluted with a much larger lobe, the lack of *between-cube-face* filtering becomes quite apparent.
+
+![[Pasted image 20251218103517.png]]
+ 
 
 
 
