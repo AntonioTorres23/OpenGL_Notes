@@ -345,7 +345,12 @@ float saSample   = 1.0 / (float(SAMPLE_COUNT) * pdf + 0.0001);
 float mipLevel   = roughness == 0.0 ? 0.0 : 0.5 * log2(saSample / saTexel);
 ```
 
-Don't forget to enable trilinear filtering o
+Don't forget to enable trilinear filtering on the environment map you want to sample its mip levels from. 
+
+```
+glBindTexutre(GL_TEXTURE_CUBE_MAP, envCubemap);
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+```
 
 
 
