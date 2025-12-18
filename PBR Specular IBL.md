@@ -320,7 +320,15 @@ Sampling the pre-filter map on surfaces with a rough surface means sampling the 
 ![[Pasted image 20251218103517.png]]
  
 
+Luckily for us, OpenGL gives us the option to properly filter across cubemap faces by enabling `GL_TEXTURE_CUBE_MAP_SEAMLESS`. 
 
+`glEnable(GL_TEXTURE_CUBE_MAP_SEAMLESS);`
+
+Simply enable this property somewhere at the start of your application and the seams will be gone. 
+
+**Bright Dots in the Pre-filter Convolution**
+
+Due to high frequency details 
 
 
 
