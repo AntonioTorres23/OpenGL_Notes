@@ -557,7 +557,7 @@ vec2 envBRDF  = texture(brdfLUT, vec2(max(dot(N, B), 0.0), roughness)),rg;
 vec3 specular = prefilteredColor * (F * envBRDF.x + envBRDF.y); 
 ```
 
-Given the scale and bias to $\Large{F_0}$ (here we're directly using the indirect Fresnel result `F`) from the BRDF lookup texture, we combine this with the left pre-filter 
+Given the scale and bias to $\Large{F_0}$ (here we're directly using the indirect Fresnel result `F`) from the BRDF lookup texture, we combine this with the left pre-filter portion of the 
 
 
 
