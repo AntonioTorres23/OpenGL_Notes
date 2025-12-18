@@ -523,7 +523,9 @@ The convoluted BRDF part of the split sum integral should give you the following
 
 With both the pre-filtered environment map and the BRDF 2D LUT we can re-construct the indirect specular integral according to the split sum approximation. The combined result then acts as the indirect or ambient specular light. 
 
-**Completing **
+**Completing the IBL Reflectance**
+
+To get the indirect specular part of the reflectance equation up and running we need to stitch both parts of the split sum approximation together. Let's start by adding the pre-computed lighting data to the top of our PBR shader. 
 
  
 
