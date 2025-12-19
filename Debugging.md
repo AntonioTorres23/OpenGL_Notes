@@ -26,6 +26,6 @@ Within OpenGL's function documentation you can always find the error codes a fun
 
 The moment an error flag is set, no other error flags will be reported. Furthermore, the moment `glGetError` is called it clears all error flags (or only one if on a distributed system, see note below). This means that if you call `glGetError` once at the end of each frame and it returns an error, you can't conclude this was the only error, and the source of the error could've been anywhere in the frame. 
 
-Note that when OpenGL runs distributed like frequently found on X11 systems, other user error codes 
+Note that when OpenGL runs distributed like frequently found on X11 systems, other user error codes can still be generated as long as they have different error codes. Calling `glGetError` then only resets one of the error code flags instead of all of them  
 
 
