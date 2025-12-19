@@ -579,7 +579,49 @@ vec3 ambient = (kD * diffuse + specular) * ao;
 
 Note that we don't multiply `specular` by `kS` as we already have a Fresnel multiplication in there. 
 
-Now, running this exact code on the series of spheres that differ by their roughness and metallic properties, we finally get to see their treu colors in the final PBR render
+Now, running this exact code on the series of spheres that differ by their roughness and metallic properties, we finally get to see their true colors in the final PBR render.
+
+![[Pasted image 20251218170342.png]]
+
+
+We could even go wild, and use some cool textured [PBR materials](http://freepbr.com/). 
+
+![[Pasted image 20251218170509.png]]
+
+Or load 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
