@@ -607,7 +607,7 @@ For this reason you'd generally pre-compute an environment map into an irradianc
 
 Furthermore, we've described the **total** process in these tutorials, including generating the pre-computed IBL images to help further our understanding of the PBR pipeline. But, you'll be just as fine by using several great tools like [cmftStudio](https://github.com/dariomanesku/cmftStudio) or [IBLBaker](https://github.com/derkreature/IBLBaker) to generate these pre-computed maps for you. 
 
-One point we've skipped over is pre-computed cubemaps as **reflection probes**: cubemap interpolation and parallax correction. This is the process of placing several reflection probes in your scene that take a cubemap snapshot of the scene in that specific location 
+One point we've skipped over is pre-computed cubemaps as **reflection probes**: cubemap interpolation and parallax correction. This is the process of placing several reflection probes in your scene that take a cubemap snapshot of the scene in that specific location, which we can then convolute as IBL data for that part of the scene. By interpolating between several of these probes based on the camera's vicinity we can achieve local high-detail image-based lightingg that is simply lmitetd by the a
 
 
 
