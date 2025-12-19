@@ -61,11 +61,11 @@ GLenum glCheckError_(const char *file, int line)
 			case GL_OUT_OF_MEMORY:     error = "OUT_OF_MEMORY"; break;
 			case GL_INVALID_FRAMEBUFFER_OPERATION: error =                                     "INVALID_FRAMEBUFFER_OPERATION"; break;
 		}
-		std::cout << "|" << file << " (" << line << ")" << std::endl;
+		std::cout << error << "|" << file << " (" << line << ")" << std::endl;
 	}
 	return errorCode;
 }
 #define glCheckError() glCheckError_(__FILE__, __LINE__)
 ```
 
-In case 
+In case you're 
