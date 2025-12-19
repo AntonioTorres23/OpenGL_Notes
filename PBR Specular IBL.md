@@ -588,7 +588,26 @@ We could even go wild, and use some cool textured [PBR materials](http://freepbr
 
 ![[Pasted image 20251218170509.png]]
 
-Or load 
+Or load [this awesome free 3D PBR model](http://artisaverb.info/PBT.html) by Andrew Maximov. 
+
+![[Pasted image 20251218170734.png]]
+
+I'm sure we can all agree that our lighting now looks a lot more convincing. What's even better, is that our lighting looks physically correct regardless of which environment map we use. Below you'll see several different pre-computed HDR maps, completely changing the lighting dynamics, but still looking physically correct without changing a single lighting variable!
+
+
+![[Pasted image 20251218171015.png]]
+
+Well, this PBR adventure turned out to be a quite long journey. There are a lot of steps and thus a lot that could go wrong so carefully work you way though the [sphere scene](https://learnopengl.com/code_viewer_gh.php?code=src/6.pbr/2.2.1.ibl_specular/ibl_specular.cpp) or [textured scene](https://learnopengl.com/code_viewer_gh.php?code=src/6.pbr/2.2.2.ibl_specular_textured/ibl_specular_textured.cpp) code samples (including all shaders) if you're stuck, or check and ask around in the comments. 
+
+**What's Next?**
+
+Hopefully, by the end of this tutorial you should have a pretty clear understanding of what PBR is all about, and even have an actual PBR renderer up and running. In these tutorials, we've pre-computed all the relevant PBR image-based lighting data at the start of our application, before the render loop. This was fine for educational purposes, but not too great for any practical use of PBR. First, the pre-computation only really has to be done once, not at every startup. And second, the moment you use multiple environment maps you'll have to pre-compute each and every one of them at every startup which tends to build up. 
+
+For this reason you'd generally pre-compute an environment map into an irradiance and pre-filter map just once, and then store it on disk (note that the BRDF integration map isn't dependent on an environment map so you only need to calculate it once). This does mean you'll need to come up with a custom image format to store HDR cubemaps, including their mip levels. Or, you'll store (and load) it as one of the available formats (like `.dds` that supports storing mip levels).
+
+Furthermore, we've described the **total** process in these tutorials, including generating the pre-computed IBL images to help further our understanding of the PBR pipeline. But, you'll be just as fine by using several great tools like [cmftStudio](https://github.com/dariomanesku/cmftStudio) or [IBLBaker](https://github.com/derkreature/IBLBaker) to generate these pre-computed maps for you. 
+
+One point we've skipped over is pre-computed cubemaps as **reflection probes**: cubemap interpolation and parallax correction. This is the process of placing several reflection probes in your scene that take a cubemap snapshot of the scene in that specific location 
 
 
 
