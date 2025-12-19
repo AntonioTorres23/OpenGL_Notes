@@ -89,4 +89,29 @@ This will give us the following output.
 
 When it comes to GLSL, we unfortunately don't have access to a function like `glGetError` nor the ability to step through the shader code. When you end up with a black screen or completely wrong visuals, it's often difficult to figure out if something's wrong with the shader code. Yes, we have the compilation error reports that report syntax errors, but catching semantic errors is another beast. 
 
-One frequently used trick to figure out what is wrong with a shader is to evaluate all the relevant variables in a shader program by sending them directly to the fragment shader's output channel. By outputting shader variables directly to the output color channels, we can convey interesting information by inspecting the visual results. 
+One frequently used trick to figure out what is wrong with a shader is to evaluate all the relevant variables in a shader program by sending them directly to the fragment shader's output channel. By outputting shader variables directly to the output color channels, we can convey interesting information by inspecting the visual results. For instance, let's say we want to check if a model has correct normal vector. We can pass them (either transformed or untransformed) from the vertex shader to the fragment shader where we'd then output the normals as follows. 
+
+```
+#version 330 core
+out vec4 FragColor;
+in vec3 Normal;
+[...]
+
+void main()
+{
+	[...]
+	FragColor.rgb = Normal;
+	FragColor.a = 1.0f;
+}
+```
+
+By outputting a (non-color) variable to the output color channel like this we can quickly inspect if the variable is, as far as you can tell, displaying the correct values. If, for instance, the visual result is completely black it is clear the normal vectors aren't correctly passed to the shaders; and when they are displayed it's relatively easy to check if they're (sort of) correct or not. 
+
+![[Pasted image 20251219153647.png]]
+
+From the visual results we can see the world-space normal vectors appear to be correct as the right sides of the backpack model is mostly colored red (which would mean the normals roughly point (correctly) towards the positive x axis). Similarly, the front side of the backpack is mostly colored toward the positive z axis (blue). 
+
+This approach can easily extend to any type of variable you'd like to test. Whenever you get stuck and suspect there's something wrong with your shaders, try displaying multiple variables and/or intermediate results to see at which part of the algorithm something's missing or seemingly incorrect. 
+
+**OpenGL GLSL Reference Compiler**
+
