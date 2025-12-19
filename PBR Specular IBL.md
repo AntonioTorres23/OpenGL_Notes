@@ -570,11 +570,16 @@ kD *= 1.0 - metallic;
 
 vec3 irradiance = texture(irradianceMap, N).rgb;
 vec3 diffuse    = irradiance * albedo; 
-vec3 prefilteredColor = textureLod(prefilterMap, R, roughness * )
+vec3 prefilteredColor = textureLod(prefilterMap, R, roughness * MAX_REFLECTION_LOD).rgb;
+vec2 envBRDF = texture(brdfLUT, vec2(max(dot(N, V), 0.0) roughness)).rg;
+vec3 specular = prefilteredColor * (F * envBRDF.x + envBRDF.y);
 
-
+vec3 ambient = (kD * diffuse + specular) * ao;
 ```
 
+Note that we don't multiply `specular` by `kS` as we already have a Fresnel multiplication in there. 
+
+Now, running this exact code on the series of spheres that differ by their roughness and metallic properties, we finally get to see their treu colors in the final PBR render
 
 
 
