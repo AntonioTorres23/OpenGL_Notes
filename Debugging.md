@@ -68,4 +68,4 @@ GLenum glCheckError_(const char *file, int line)
 #define glCheckError() glCheckError_(__FILE__, __LINE__)
 ```
 
-In case you're unaware of what the preprocessor directives `__FILE__` and `__LINE__`
+In case you're unaware of what the preprocessor directives `__FILE__` and `__LINE__` are: these variables get replace during compile time with the respective file and line they were compiled in. 
