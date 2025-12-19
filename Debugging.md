@@ -5,4 +5,4 @@ In these notes we'll look into several techniques and tricks of debugging your O
 
 **`glGetError()`**
 
-The moment you incorrectly use OpenGL (like configuring a buffer without binding any) it will take notice and generate 
+The moment you incorrectly use OpenGL (like configuring a buffer without binding any) it will take notice and generate one or more user error flags behind the scenes. We can query these error flags using a function named `glGetError` that checks the error flag(s)
