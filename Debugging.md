@@ -40,5 +40,32 @@ glGenTextures(-5, &textures); // RETURNS 1281 (invalid value)
 std::cout << glGetError() << std::endl; // RETURNS 0 (no error)
 ```
 
-The great thing about `glGetError` is that it makes it relatively easy to pinpoint where any error may be and to validate the proper use of OpenGL. Let's say you get a black screen and you have no idea what's causing it: is the framebuffer not properly set? Did I forget to bind a texture? By calling `glGetError` all over your codebase, you can quickly catch the first place an OpenGL error starts showing up
+The great thing about `glGetError` is that it makes it relatively easy to pinpoint where any error may be and to validate the proper use of OpenGL. Let's say you get a black screen and you have no idea what's causing it: is the framebuffer not properly set? Did I forget to bind a texture? By calling `glGetError` all over your codebase, you can quickly catch the first place an OpenGL error starts showing up.
 
+By default `glGetError` only prints error numbers, which isn't easy to understand unless you've memorized the error codes. It often makes sense to write a small helper function to easily print out the error strings with where the error check function was called. 
+
+```
+GLenum glCheckError_(const char *file, int line)
+{
+	GLenum errorCode;
+	while ((errorCode = glGetError()) != GL_NO_ERROR)
+	{
+		std::string error;
+		switch(errorCode)
+		{
+			case GL_INVALID_ENUM:      error = "INVALID_ENUM"; break;
+			case GL_INVALID_VALUE:     error = "INVALID_VALUE"; break;
+			case GL_INVALID_OPERATION: error = "INVALID_OPERATION"; break;
+			case GL_STACK_OVERFLOW:    error = "STACK_OVERFLOW"; break;
+			case GL_STACK_UNDERFLOW:   error = "STACK_UNDERFLOW"; break;
+			case GL_OUT_OF_MEMORY:     error = "OUT_OF_MEMORY"; break;
+			case GL_INVALID_FRAMEBUFFER_OPERATION: error =                                     "INVALID_FRAMEBUFFER_OPERATION"; break;
+		}
+		std::cout << "|" << file << " (" << line << ")" << std::endl;
+	}
+	return errorCode;
+}
+#define glCheckError() glCheckError_(__FILE__, __LINE__)
+```
+
+In case 
