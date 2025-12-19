@@ -69,3 +69,8 @@ GLenum glCheckError_(const char *file, int line)
 ```
 
 In case you're unaware of what the preprocessor directives `__FILE__` and `__LINE__` are: these variables get replace during compile time with the respective file and line they were compiled in. If we decide to stick with a large number of these `glCheckError` calls in our codebase it's helpful to more precisely know which `glCheckError` call returned the error. 
+
+```
+glBindBuffer(GL_VERTEX_ARRAY, vbo);
+glCheckError()
+```
