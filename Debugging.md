@@ -87,4 +87,6 @@ This will give us the following output.
 
 **Debug Output**
 
+When it comes to GLSL, we unfortunately don't have access to a function like `glGetError` nor the ability to step through the shader code. When you end up with a black screen or completely wrong visuals, it's often difficult to figure out if something's wrong with the shader code. Yes, we have the compilation error reports that report syntax errors, but catching semantic errors is another beast. 
 
+One frequently used trick to figure out what is wrong with a shader is to evaluate all the relevant variables in a shader program by sending them directly to the fragment shader's output channel. 
