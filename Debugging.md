@@ -81,4 +81,10 @@ glCheckError()
 
 This will give us the following output.
 
+![[Pasted image 20251219150013.png]]
+
+`glGetError` doesn't help you too much as the information it returns is rather simple, but it does often help you catch typos or quickly pinpoint where in your code things went wrong; a simple but effective tool in your debugging toolkit. 
+
+**Debug Output**
+
 
