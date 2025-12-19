@@ -21,3 +21,7 @@ The moment `glGetError` is called, it returns either an error flag or no error a
 | `GL_STACK_UNDERFLOW`               | 1284 | Set when a stack popping operation occurs while the stack is at its lowest point. |
 | `GL_OUT_OF_MEMORY`                 | 1285 | Set when a memory allocation operation cannot allocate (enough) memory.           |
 | `GL_INVALID_FRAMEBUFFER_OPERATION` | 1286 | Set when reading or writing to a framebuffer that is not complete.                |
+
+Within OpenGL's function documentation you can always find the error codes a function generates the moment it is incorrectly used. For instance, if you take a look at the documentation of [`glBindTexture`](http://docs.gl/gl3/glBindTextur%65) function, you can find all the user error codes it could generate under the *Errors* section.
+
+
