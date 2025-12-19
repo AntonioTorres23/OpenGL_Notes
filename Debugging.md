@@ -24,6 +24,8 @@ The moment `glGetError` is called, it returns either an error flag or no error a
 
 Within OpenGL's function documentation you can always find the error codes a function generates the moment it is incorrectly used. For instance, if you take a look at the documentation of [`glBindTexture`](http://docs.gl/gl3/glBindTextur%65) function, you can find all the user error codes it could generate under the *Errors* section.
 
-The moment an error flag is set, no other error flags will be reported. Furthermore, the moment `glGetError` is called it clears all error flags (or only one if on a distributed system, see note below). This means that if you call `glGetError` once 
+The moment an error flag is set, no other error flags will be reported. Furthermore, the moment `glGetError` is called it clears all error flags (or only one if on a distributed system, see note below). This means that if you call `glGetError` once at the end of each frame and it returns an error, you can't conclude this was the only error, and the source of the error could've been anywhere in the frame. 
+
+Note that when OpenGL runs distributed like frequently found on X11 systems, other user error codes 
 
 
