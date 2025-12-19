@@ -68,7 +68,7 @@ GLenum glCheckError_(const char *file, int line)
 #define glCheckError() glCheckError_(__FILE__, __LINE__)
 ```
 
-To explain this in my own words, we define the function `glCheckError_` within normal C++ source code. The function in question takes a `glEnum` variable called `errorCode`. A while loop when `errorCode` is not equal to the enumeration value `GL_NO_ERROR` takes place, it will go through a switch case statement and grab the correct error flag that matches. Another string variable called `error` will then be set when the related matching switch case statement providing a summary of what the error flag grabbed indicates. 
+To explain this in my own words, we define the function `glCheckError_` within normal C++ source code. The function in question takes a `glEnum` variable called `errorCode`. A while loop when `errorCode` is not equal to the enumeration value `GL_NO_ERROR` takes place, it will go through a switch case statement and grab the correct error flag that matches. `errorCode` in the while loop conditions is set to the OpenGL built-in function `glGetEAnother string variable called `error` will then be set with the related matching switch case statement providing a summary of what the error flag grabbed indicates.
 
 Then we take this function and then store 
 
