@@ -70,11 +70,15 @@ GLenum glCheckError_(const char *file, int line)
 
 To explain this in my own words, we define the function `glCheckError_` within normal C++ source code. The function in question takes a `glEnum` variable called `errorCode`. A while loop when `errorCode` is not equal to the enumeration value `GL_NO_ERROR` takes place, it will go through a switch case statement and grab the correct error flag that matches. `errorCode` in the while loop Boolean statement is set to the OpenGL built-in function `glGetError()`. Another string variable called `error` will then be set with the related matching switch case statement providing a summary of what the error flag grabbed indicates. After it finds a match and sets the `error` string variable with a brief summary, it then breaks out of the while loop and sends default output to the console in which the `error` string, file location, and line where the error occurred are displayed. As well as the `errorCode` `GLenum` variable is returned to end the function. 
 
-Then we take this function `glCheckError_` and create a pre-processor function called `glCheckError` 
-
+Then we take this function `glCheckError_` and create a pre-processor function called `glCheckError` which just reuses the C++ source code function, but uses the `__FILE__` and `__LINE__` as its "arguments" or directives.  What these two directives do is whenever the function `glCheckError()` gets called, `__FILE__` during compile time will be replaced with the file location and `__LINE__` will be replaced with the respective line number.   
+ 
 In case you're unaware of what the preprocessor directives `__FILE__` and `__LINE__` are: these variables get replaced during compile time with the respective file and line they were compiled in. If we decide to stick with a large number of these `glCheckError` calls in our codebase it's helpful to more precisely know which `glCheckError` call returned the error. 
 
 ```
 glBindBuffer(GL_VERTEX_ARRAY, vbo);
 glCheckError()
 ```
+
+This will give us the following output.
+
+
