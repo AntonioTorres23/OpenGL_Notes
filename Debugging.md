@@ -33,14 +33,12 @@ Note that when OpenGL runs distributed like frequently found on X11 systems, oth
 glBindTexture(GL_TEXTURE_2D, tex);
 std::cout << glGetError() << std::endl; // RETURNS 0 (no error)
 
-glTexImage2D(GL_TEXTURE_3D, 0, GL_RGB, 512, 512, 0, GL_RGB, GL_UNSIGNED_BYTE, data); // RETURRNS ERROR 1280 (invalid enum)
+glTexImage2D(GL_TEXTURE_3D, 0, GL_RGB, 512, 512, 0, GL_RGB, GL_UNSIGNED_BYTE, data); // RETURNS 1280 (invalid enum)
 
-glGenTextures(-5, &textures); // RETURNS ERROR 1281 (invalid value)
+glGenTextures(-5, &textures); // RETURNS 1281 (invalid value)
 
-std::cout << glGetError() << std::endl; // 
-
-
-
+std::cout << glGetError() << std::endl; // RETURNS 0 (no error)
 ```
 
+The great thing about `glGetError` is that it makes it relatively easy to pinpoint where any error may be and to validate the proper use of OpenGL 
 
