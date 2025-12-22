@@ -211,3 +211,7 @@ glm::mat4 projection = glm::ortho(0.0f, 800.0f, 0.0f, 600.0f);
 We set the projection matrix's bottom parameter to `0.0f` and its top parameter equal to the window's height. The result is that we specify coordinates with `y` values ranging from the bottom part of the screen (`0.0f`) to the top part of the screen (`600.0f`). This means that the point $\Large{(0.0, 0.0)}$ now corresponds to the bottom-left corner. 
 
 Last up is creating a VBO and VAO for rendering quads. For now we reserve enough memory when initiating the VBO so that we can later update the VBO's memory when rendering characters. 
+
+```
+
+```
