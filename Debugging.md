@@ -124,4 +124,12 @@ Given the binary GLSL lang validator you can easily check your shader code by pa
 - `.vert`: vertex shader
 - `.frag`: fragment shader
 - `.geom`: geometry shader
-- 
+- `.tesc`: tessellation control shader
+- `.tese`: tessellation evaluation shader
+- `.comp`: compute shader
+
+Running the GLSL reference compile shader is as simple as.
+
+`glsllangvalidator shaderFile.vert`
+
+Note that if it detects no error, it returns no output. Testing the GLSL reference compiler on a 
