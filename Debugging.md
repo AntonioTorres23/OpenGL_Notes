@@ -181,6 +181,9 @@ void DisplayFramebufferTexture(unigned int textureID)
 		// initalize shader and vao w/ NDC vertex coordinates at top-right of scrn
 	}
 	glActivateTexture(GL_TEXTURE0);
+	glUseProgram(shaderDisplayFBOOutput);
+		glBindTexture(GL_TEXTURE_2D, textureID);
+		glBind
 }
 
 ```
