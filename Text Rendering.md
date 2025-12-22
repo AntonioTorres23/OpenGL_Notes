@@ -1,2 +1,2 @@
 
-At some stage of your graphics adventures you'll want to draw text in OpenGL. Contrary to what you may expect, getting a simp
+At some stage of your graphics adventures you'll want to draw text in OpenGL. Contrary to what you may expect, getting a simple string to render on screen is all but easy with a low-level API like OpenGL
