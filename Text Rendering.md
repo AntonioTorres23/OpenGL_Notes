@@ -23,4 +23,13 @@ FreeType is a software development library that is able to load fonts, render th
 
 A TrueType font is a collection of character glyphs not defined by pixels or any other non-scalable solution, but by mathematical equations (combinations of splines). Similar to vector images, the rasterized font images can be procedurally generated based on the preferred font height you'd like to obtain them in. By using TrueType fonts you can easily render character glyphs of various sizes without any loss of quality. 
 
-FreeType can be downloaded from their [website](http://www.freetype.org/). 
+FreeType can be downloaded from their [website](http://www.freetype.org/). You can choose to compile the library yourself or use one of their precompiled libraries if your target platform is listed. Be sure to link to `freetype.lib` and make sure your compiler knows where to find the header files. 
+
+Then include the appropriate headers. 
+
+```
+#include <ft2build.h>
+#include FT_FREETYPE_H
+```
+
+Due to how FreeType is developed (at least at the time of this writing), you cannot put their header files in a new directory 
