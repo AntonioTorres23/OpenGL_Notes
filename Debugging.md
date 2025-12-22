@@ -233,4 +233,4 @@ I personally don't have much experience with CodeXL since I found RenderDoc easi
 
 **NVIDIA Nsight**
 
-NVIDIA's popular [Nsight](https://developer.nvidia.com/nvidia-nsight-visual-studio-edition) 
+NVIDIA's popular [Nsight](https://developer.nvidia.com/nvidia-nsight-visual-studio-edition) GPU debugging tool is not a standalone tool, but a plugin to either the Visual Studio IDE or the Eclipse IDE (NVIDIA now has a [standalone version](https://developer.nvidia.com/nsight-graphics) as well).
