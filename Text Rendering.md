@@ -62,4 +62,5 @@ Once we've loaded the face, we should define the pixel font size we'd like to ex
 
 The function sets the font's width and height parameters. Setting the width to 0 lets the face dynamically calculate the width based on the given height. 
 
-A FreeType 
+A FreeType face hosts a collection of glyphs. We can set one of those glyphs as the active glyph by calling `FT_Load_Char`. Here we choose to load the character glyph `X`. 
+
