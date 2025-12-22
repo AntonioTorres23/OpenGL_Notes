@@ -132,4 +132,6 @@ Running the GLSL reference compile shader is as simple as.
 
 `glsllangvalidator shaderFile.vert`
 
-Note that if it detects no error, it returns no output. Testing the GLSL reference compiler on a 
+Note that if it detects no error, it returns no output. Testing the GLSL reference compiler on a broken vertex shader gives the following output. 
+
+![[Pasted image 20251222103903.png]]
