@@ -40,6 +40,12 @@ To load a font, all we have to do is initialize the FreeType library and load th
 
 ```
 FT_Library ft;
-if (FT_INIT)
+if (FT_Init_FreeType(&ft))
+{
+	std::cout << "ERROR::FREETYPE:: Could not init FreeType Library" << std::endl;
+	return -1;
+}
+FT_Face face 
+
 ```
  
