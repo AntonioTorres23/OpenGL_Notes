@@ -136,8 +136,57 @@ for (unsigned char c = 0; c < 128; c++)
 	// now store the character for later use
 	Characters character = {
 		texture,
-		glm::ivec2(face->glyph->bitmap.width, face->glyph->bitmap.rows);
-		glm::ivec2(face->glyph->)
-	}.
+		glm::ivec2(face->glyph->bitmap.width, face->glyph->bitmap.rows),
+		glm::ivec2(face->glyph->bitmap_left, face->glyph->bitmap_top),
+		face->glyph->advance.x	
+	};
+	Characters.insert(std::pair<char, Character>(c, character));
+}
+```
+
+Within the loop we list over all the 128 characters of the ASCII set and retrieve their corresponding character glyphs. For each character: we generate a texture, set its options, and store its metrics. What is interesting to note here is that we use `GL_RED` as the texture's `internalFormat` and `format` arguments. The bitmap generated from the glyph is a grayscale 8-bit image where each color is represented by a single byte. For this reason we'd like to store each by of the bitmap buffer as the texture's single color value. We accomplish this by creating a texture where each byte corresponds to the texture color's red component (first byte of its color vector). If we use a single byte to represent the colors of a texture we do need to take care of a restriction in OpenGL.
+
+`glPixelStorei(GL_UNPACK_ALIGNMENT, 1);`
+
+OpenGL requires that textures all have a 4-byte alignment e.g. their size is always a multiple of 4 bytes. Normally this wouldn't be a problem since most textures have a width that is a multiple of 4 and/or use 4 bytes per pixel, but since we now only use a single byte per pixel, the texture can have any possible width. By setting its unpack alignment to 1 we ensure there are no alignment issues (which could cause segmentation faults). 
+
+Be sure to clear FreeType's resources once you're finished processing the glyphs. 
+
+```
+FT_Done_Face(face);
+FT_Done_FreeType(ft);
+```
+
+**Shaders**
+
+To render the glyphs we'll be using the following vertex shader. 
+
+```
+#version 330 core
+layout (location = 0) in vec4 vertex; // <vec2 pos, vec2 tex>
+out vec2 TexCoords;
+
+uniform mat4 projection;
+
+void main()
+{
+	gl_Positon = projection * vec4(vertex.xy, 0.0, 1.0);
+	TexCoords = vertex.zw;
+}
+```
+
+We combine both the position and texture coordinate data into one `vec4`. The vertex shader multiplies the coordinates with a projection matrix and forwards the texture coordinates to the fragment shader. 
+
+```
+#version 330 core
+in vec2 TexCoords; 
+out vec4 color; 
+
+uniform sampler2D text;
+uniform vec3 textColor;
+
+void main()
+{
+	
 }
 ```
