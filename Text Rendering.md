@@ -11,4 +11,6 @@ In the early days, rendering text involved selecting a font (or creating one you
 
 ![[Pasted image 20251222140117.png]]
 
-Here you can see how we would render the text `OpenGL` by taking a bitmap font and sampling the corresponding glyphs from the texture (carefully choosing the texture coordinates) 
+Here you can see how we would render the text `OpenGL` by taking a bitmap font and sampling the corresponding glyphs from the texture (carefully choosing the texture coordinates) that we render on top of several quads. By enabling [blending](https://learnopengl.com/Advanced-OpenGL/Blending) and keeping the background transparent, we will end up with just a string of characters to the screen. This particular bitmap font was generated using Codehead's Bitmap [Font Generator](http://www.codehead.co.uk/cbfg/).
+
+This approach has several advantages and disadvantages. It is relatively easy to implement and because bitmap fonts are pre-rasterized, they're quite efficient. However, 
