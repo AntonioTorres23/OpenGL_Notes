@@ -136,4 +136,7 @@ Note that if it detects no error, it returns no output. Testing the GLSL referen
 
 ![[Pasted image 20251222103903.png]]
 
-It won't show you the subtle differences between AMD, NVidia, or Intel GLSL compilers, nor will it help you completely bug proof 
+It won't show you the subtle differences between AMD, NVidia, or Intel GLSL compilers, nor will it help you completely bug proof your shaders, but it does as least help you check your shaders against the direct GLSL specification. 
+
+**Framebuffer Output**
+
