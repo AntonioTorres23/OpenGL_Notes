@@ -215,4 +215,8 @@ You can of course extend such a utility function to support rendering more than 
 
 When all else fails there is still the option to use a 3rd party tool to help us in our debugging efforts. Third party applications often inject themselves in the OpenGL drivers and are able to intercept all kinds of OpenGL calls to give you a large array of interesting data. These tools can help you in all kinds of ways like: profiling OpenGL function usage, finding bottlenecks, inspecting buffer memory, and displaying textures and framebuffer attachments. When you're working on (large) production code, these kinds of tools can become invaluable in your development process. 
 
-I've listed some of the more popular debugging tools here; try out several of them 
+I've listed some of the more popular debugging tools here; try out several of them to seer which fits your needs the best. 
+
+**RenderDoc** 
+
+RenderDoc is a great (completely [open source](https://github.com/baldurk/renderdoc)) standalone debugging tool. To start a capture, you specify the executable you'd like to capture and a working directory. The application then runs as usual, and whenever you want to inspect a particular frame, you let RenderDoc capture one or more frames at the executable's current state. Within the captured frame(s) you can view the pipeline state, all OpenGL commands, buffer storage, and textures in use 
