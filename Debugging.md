@@ -119,4 +119,4 @@ Each driver has its own quirks and tidbits; for instance, NVIDIA drivers are mor
 
 With years of experience you'll eventually get to learn the minor difference between GPU vendors, but if you want to be sure your source code runs on all kinds of machines you can directly check your shader code against the official specification using OpenGL's GLSL [reference compiler](https://www.khronos.org/opengles/sdk/tools/Reference-Compiler/). You can download the so called **GLSL** lang validator binaries from [here](https://www.khronos.org/opengles/sdk/tools/Reference-Compiler/) or its complete source code from [here](https://github.com/KhronosGroup/glslang).
 
-Given the binary GLSL lang validator you can easily check your shader code by passing it as the binary's first 
+Given the binary GLSL lang validator you can easily check your shader code by passing it as the binary's first argument. Keep in mind that the GLSL lang validator determines the type of shader by a list of fixed extensions. 
