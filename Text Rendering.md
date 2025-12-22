@@ -120,8 +120,24 @@ for (unsigned char c = 0; c < 128; c++)
 		GL_TEXTURE_2D, 
 		0,
 		GL_RED,
-		face->glyph->
+		face->glyph->bitmap.width, 
+		face->glyph->bitmap.rows,
+		0,
+		GL_RED,
+		GL_UNSIGED_BYTE,
+		face->glyph->bitmap.buffer
+	);
 	
-	)
+	// set texture options
+	glTexParameteri(GL_TEXTURE_2D, GL_WRAP_S, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_WRAP_T, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	// now store the character for later use
+	Characters character = {
+		texture,
+		glm::ivec2(face->glyph->bitmap.width, face->glyph->bitmap.rows);
+		glm::ivec2(face->glyph->)
+	}.
 }
 ```
