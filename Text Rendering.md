@@ -199,5 +199,7 @@ We do need to enable [blending](https://learnopengl.com/Advanced-OpenGL/Blending
 
 ```
 glEnable(GL_BLEND);
-glBlendFunc
+glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 ```
+
+For the projection matrix we'll be using an orthographic projection matrix. For rendering text we (usually) do not need perspective, and using an orthographic projection matrix also allows 
