@@ -34,5 +34,7 @@ Then include the appropriate headers.
 
 Due to how FreeType is developed (at least at the time of this writing), you cannot put their header files in a new directory; they should be located at the root of your include directories. Including FreeType like `#include <FreeType/ft2build.h>`will likely cause several header conflicts. 
 
-FreeType loads these TrueType fonts and, for each glyph, generates a bitmap image and calculates several metrics. 
+FreeType loads these TrueType fonts and, for each glyph, generates a bitmap image and calculates several metrics. We can extract these bitmap images for generating textures and position each character glyph appropriately with these loaded metrics. 
+
+To load a font, all we have to do is initalize the FreeType lib
  
