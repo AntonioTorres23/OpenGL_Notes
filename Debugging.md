@@ -235,4 +235,10 @@ I personally don't have much experience with CodeXL since I found RenderDoc easi
 
 NVIDIA's popular [Nsight](https://developer.nvidia.com/nvidia-nsight-visual-studio-edition) GPU debugging tool is not a standalone tool, but a plugin to either the Visual Studio IDE or the Eclipse IDE (NVIDIA now has a [standalone version](https://developer.nvidia.com/nsight-graphics) as well). The Nsight plugin is an incredibly useful tool for graphics developers as it gives a large host of run-time statistics regarding GPU usage and the frame-by-frame GPU state. 
 
-The moment you start your application from within Visual Studio (or Eclipse), using Nsight's 
+The moment you start your application from within Visual Studio (or Eclipse), using Nsight's debugging or profiling commands, Nsight will run within the application itself. The great thing about Nsight is that it renders an overlay GUI system from within your application that you can use to gather all kinds of interesting information about your application, both at run-time and during frame-by-frame analysis. 
+
+![[Pasted image 20251222133322.png]]
+
+Nsight is an incredibly useful tool, but does come with one major drawback in that it only works on NVIDIA cards. If you are working on NVIDIA cards (and use Visual Studio) it's definitely worth a shot. 
+
+I'm sure there's plenty of other debugging tools I've missed (some come to mind are Valve's [VOGL](https://github.com/ValveSoftware/vogl))
