@@ -192,4 +192,5 @@ void main()
 }
 ```
 
-The fragment shader takes two uniforms: one is the mono-colored bitmap image of the glyph, and the other is a color uniform for adjusting 
+The fragment shader takes two uniforms: one is the mono-colored bitmap image of the glyph, and the other is a color uniform for adjusting the text's final color. We first sample the color value of the bitmap texture. 
+Because the texture's data is stored in just its red component, we sample the `r` component of the texture as the sampled **alpha** value. 
