@@ -45,7 +45,8 @@ if (FT_Init_FreeType(&ft))
 	std::cout << "ERROR::FREETYPE:: Could not init FreeType Library" << std::endl;
 	return -1;
 }
-FT_Face face 
+FT_Face face;
+if (FT_New_Face(ft, "fonts/ariel.ttf", 0, ))
 
 ```
  
