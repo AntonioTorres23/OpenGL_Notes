@@ -115,3 +115,4 @@ This approach can easily extend to any type of variable you'd like to test. When
 
 **OpenGL GLSL Reference Compiler**
 
+Each driver has its own quirks and tidbits
