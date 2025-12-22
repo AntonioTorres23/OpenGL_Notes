@@ -202,5 +202,17 @@ int main()
 	
 	
 }
-
 ```
+
+
+This will give you a nice little window at the corners of your screen for debugging framebuffer output. Useful, for example, for determining if the normal vectors of the geometry pass in a deferred renderer look correct. 
+
+![[Pasted image 20251222122919.png]]
+
+You can of course extend such a utility function to support rendering more than one texture. This is a quick and dirty way to get continuous feedback from whatever is in your framebuffer(s). 
+
+**External Debugging Software**
+
+When all else fails there is still the option to use a 3rd party tool to help us in our debugging efforts. Third party applications often inject themselves in the OpenGL drivers and are able to intercept all kinds of OpenGL calls to give you a large array of interesting data. These tools can help you in all kinds of ways like: profiling OpenGL function usage, finding bottlenecks, inspecting buffer memory, and displaying textures and framebuffer attachments. When you're working on (large) production code, these kinds of tools can become invaluable in your development process. 
+
+I've listed some of the more popular debugging tools here; try out several of them 
