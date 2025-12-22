@@ -219,4 +219,10 @@ I've listed some of the more popular debugging tools here; try out several of th
 
 **RenderDoc** 
 
-RenderDoc is a great (completely [open source](https://github.com/baldurk/renderdoc)) standalone debugging tool. To start a capture, you specify the executable you'd like to capture and a working directory. The application then runs as usual, and whenever you want to inspect a particular frame, you let RenderDoc capture one or more frames at the executable's current state. Within the captured frame(s) you can view the pipeline state, all OpenGL commands, buffer storage, and textures in use 
+RenderDoc is a great (completely [open source](https://github.com/baldurk/renderdoc)) standalone debugging tool. To start a capture, you specify the executable you'd like to capture and a working directory. The application then runs as usual, and whenever you want to inspect a particular frame, you let RenderDoc capture one or more frames at the executable's current state. Within the captured frame(s) you can view the pipeline state, all OpenGL commands, buffer storage, and textures in use.
+
+![[Pasted image 20251222124059.png]]
+
+**CodeXL**
+
+[CodeXL](https://gpuopen.com/compute-product/codexl/) is a GPU debugging tool released as both a standalone tool and a Visual Studio plugin. CodeXL gives a good set of information and is great for profiling graphics applications. CodeXL 
