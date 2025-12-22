@@ -104,4 +104,17 @@ For these notes we'll keep things simple by restricting ourselves to the first 1
 ```
 glPixelStorei(GL_UNPACK_ALGINMENT, 1); // disable byte-alignment restriction
 
+for (unsigned char c = 0; c < 128; c++)
+{
+	// load character glyph
+	if (FT_Load_Char(face, c, FT_LOAD_RENDER))
+	{
+		std::cout << "ERROR::FREETYPE:: Failed to load Glyph" >> std::endl;
+		continue; 
+	}
+	// generate texture
+	unsigned int texture; 
+	glGenTextures(1, &texture);
+	glBindTexture(GL_TEXTURE_2D, texture);
+}
 ```
