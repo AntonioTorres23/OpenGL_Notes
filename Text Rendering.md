@@ -85,3 +85,23 @@ Each of the glyphs reside on a horizontal **baseline** (as depicted by the horiz
 - **bearingX**: the horizontal bearing e.g. the horizontal position (in pixels) of the bitmap relative to the origin accessed via `face->glyph->bitmap_left`.
 - **bearingY**: the vertical bearing e.g. the vertical position (in pixels) of the bitmap relative to the baseline accessed via `face->glyph->bitmap_top`. 
 - **advance**: the horizontal advance e.g. the horizontal distance (in 1/64th) from the origin to the origin of the next glyph. Accessed via `face->glyph->advance.x`. 
+
+We could load a character glyph, retrieve its metrics, and generate a texture each time we want to render a character to the screen, but it would be inefficient to do this each frame. We'd rather store the generated data somewhere in the application and query it whenever we want to render a character. We'll define a convenient structure that we'll store in a `map`. 
+
+```
+struct Character {
+	unsigned int TextureID; // ID handle of the glyph texture
+	glm::ivec2   Size;      // Size of glyph
+	glm::ivec2   Bearing;   // Offset from baseline to left/top of glyph
+	unsigned int Advance;   // Offset to advance to the next glyph
+};
+
+std::map<char, Character> Characters;
+```
+
+For these notes we'll keep things simple by restricting ourselves to the first 128 characters of the ASCII character set. For each character, we generate and store its relevant data into a `Character` structure that we add to the `Characters` map. This way, all data required to render each character is stored for later use. 
+
+```
+glPixelStorei(GL_UNPACK_ALGINMENT, 1); // disable byte-alignment restriction
+
+```
