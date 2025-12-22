@@ -242,3 +242,8 @@ The moment you start your application from within Visual Studio (or Eclipse), us
 Nsight is an incredibly useful tool, but does come with one major drawback in that it only works on NVIDIA cards. If you are working on NVIDIA cards (and use Visual Studio) it's definitely worth a shot. 
 
 I'm sure there's plenty of other debugging tools I've missed (some come to mind are Valve's [VOGL](https://github.com/ValveSoftware/vogl) and [APItrace](https://apitrace.github.io/)), but I feel this list should already get you plenty of tools to experiment with. 
+
+## Additional resources
+
+- [Why is your code producing a black window](http://retokoradi.com/2014/04/21/opengl-why-is-your-code-producing-a-black-window/): list of general causes by Reto Koradi of why your screen may not be producing any output.
+- [Debug Output in OpenGL](https://vallentin.dev/2015/02/23/debugging-opengl): an extensive debug output write-up by Vallentin with detailed information on setting up a debug context on multiple windowing systems.
