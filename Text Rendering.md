@@ -3,4 +3,8 @@ At some stage of your graphics adventures you'll want to draw text in OpenGL. Co
 
 Since there is no support for text capabilities within OpenGL, it is up to us to define a system for rendering text to the screen. There are no graphical primitives for text characters, we have to get creative. Some example techniques are: drawing letter shapes via `GL_LINES`, create 3D meshes of letter, or render character textures to 2D quads in a 3D environment. 
 
-Most developers choose to render charact textures onto quads. Rendering textured quads by itself shouldn't be too difficult, but getting the relevant character(s)
+Most developers choose to render charact textures onto quads. Rendering textured quads by itself shouldn't be too difficult, but getting the relevant character(s) onto a texture could prove challenging. In these notes we'll explore several methods and implement a more advanced, but flexible technique for rendering text using the FreeType library. 
+
+**Classical Text Rendering: Bitmap Fonts**
+
+In the early days, 
