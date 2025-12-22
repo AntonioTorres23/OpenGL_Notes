@@ -36,5 +36,10 @@ Due to how FreeType is developed (at least at the time of this writing), you can
 
 FreeType loads these TrueType fonts and, for each glyph, generates a bitmap image and calculates several metrics. We can extract these bitmap images for generating textures and position each character glyph appropriately with these loaded metrics. 
 
-To load a font, all we have to do is initalize the FreeType lib
+To load a font, all we have to do is initialize the FreeType library and load the font as a **face** as FreeType likes to call it. Here we load the `ariel.ttf` TrueType font file that was copied from the `Windows/Fonts` directory. 
+
+```
+FT_Library ft;
+if (FT_INIT)
+```
  
