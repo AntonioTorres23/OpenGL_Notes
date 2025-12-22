@@ -183,7 +183,16 @@ void DisplayFramebufferTexture(unigned int textureID)
 	glActivateTexture(GL_TEXTURE0);
 	glUseProgram(shaderDisplayFBOOutput);
 		glBindTexture(GL_TEXTURE_2D, textureID);
-		glBind
+		glBindVertexArray(vaoDebugTexturedRect);
+			glDrawArrays(GL_TRIANGLES, 0, 6);
+		glBindVertexArray(0);
+	glUseProgram(0);
+}
+
+int main()
+{
+	[...]
+	while (!)
 }
 
 ```
