@@ -192,7 +192,15 @@ void DisplayFramebufferTexture(unigned int textureID)
 int main()
 {
 	[...]
-	while (!)
+	while (!glfwWindowShouldClose(window))
+	{
+		[...]
+		DisplayFramebufferTexture(fboAttachment0);
+		
+		glfwSwapBuffers(windows);
+	}
+	
+	
 }
 
 ```
