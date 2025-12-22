@@ -241,4 +241,4 @@ The moment you start your application from within Visual Studio (or Eclipse), us
 
 Nsight is an incredibly useful tool, but does come with one major drawback in that it only works on NVIDIA cards. If you are working on NVIDIA cards (and use Visual Studio) it's definitely worth a shot. 
 
-I'm sure there's plenty of other debugging tools I've missed (some come to mind are Valve's [VOGL](https://github.com/ValveSoftware/vogl))
+I'm sure there's plenty of other debugging tools I've missed (some come to mind are Valve's [VOGL](https://github.com/ValveSoftware/vogl) and [APItrace](https://apitrace.github.io/)), but I feel this list should already get you plenty of tools to experiment with. 
