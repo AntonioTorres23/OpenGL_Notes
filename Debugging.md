@@ -116,3 +116,7 @@ This approach can easily extend to any type of variable you'd like to test. When
 **OpenGL GLSL Reference Compiler**
 
 Each driver has its own quirks and tidbits; for instance, NVIDIA drivers are more flexible and tend to overlook some restrictions on the specification, while ATI/AMD drivers tend to better enforce the OpenGL specification (which is the better approach in my opinion). The results of this is that shaders on one machine may not work on the other due to driver differences. 
+
+With years of experience you'll eventually get to learn the minor difference between GPU vendors, but if you want to be sure your source code runs on all kinds of machines you can directly check your shader code against the official specification using OpenGL's GLSL [reference compiler](https://www.khronos.org/opengles/sdk/tools/Reference-Compiler/). You can download the so called **GLSL** lang validator binaries from [here](https://www.khronos.org/opengles/sdk/tools/Reference-Compiler/) or its complete source code from [here](https://github.com/KhronosGroup/glslang).
+
+Given the binary GLSL lang validator you can easily check your shader code by passing it as the binary's first 
