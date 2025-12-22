@@ -46,7 +46,11 @@ if (FT_Init_FreeType(&ft))
 	return -1;
 }
 FT_Face face;
-if (FT_New_Face(ft, "fonts/ariel.ttf", 0, ))
+if (FT_New_Face(ft, "fonts/ariel.ttf", 0, &face))
+{
+	std::cout << "ERROR::FREETYPE: Failed to load font" << std::endl;
+	return -1;
+}
 
 ```
  
