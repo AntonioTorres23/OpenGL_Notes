@@ -83,4 +83,5 @@ Each of the glyphs reside on a horizontal **baseline** (as depicted by the horiz
 - **width**: the width (in pixels) of the bitmap accessed via `face->glyph->bitmap.width`.
 - **height**: the height (in pixels) of the bitmap accessed via `face->glyph->bitmap.height`.
 - **bearingX**: the horizontal bearing e.g. the horizontal position (in pixels) of the bitmap relative to the origin accessed via `face->glyph->bitmap_left`.
-- **bearingY**: the vertical bearing e.g. the vertical position (in pixels) of the bitmap relative to the baseline accessed via `face-`
+- **bearingY**: the vertical bearing e.g. the vertical position (in pixels) of the bitmap relative to the baseline accessed via `face->glyph->bitmap_top`. 
+- **advance**: the horizontal advance e.g. the horizontal distance (in 1/64th) from the origin to the origin of the next glyph. Accessed via `face->glyph->advance.x`. 
