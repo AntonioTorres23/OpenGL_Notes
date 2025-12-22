@@ -176,7 +176,10 @@ void main()
 ```
 void DisplayFramebufferTexture(unigned int textureID)
 {
-	if (!)
+	if (!notInitalized)
+	{
+		// initalize shader and vao w/ NDC vertex coordinates at top-right of scrn
+	}
 	glActivateTexture(GL_TEXTURE0);
 }
 
