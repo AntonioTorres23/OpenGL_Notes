@@ -3,4 +3,4 @@ At some stage of your graphics adventures you'll want to draw text in OpenGL. Co
 
 Since there is no support for text capabilities within OpenGL, it is up to us to define a system for rendering text to the screen. There are no graphical primitives for text characters, we have to get creative. Some example techniques are: drawing letter shapes via `GL_LINES`, create 3D meshes of letter, or render character textures to 2D quads in a 3D environment. 
 
-Most developers
+Most developers choose to render charact textures onto quads. 
