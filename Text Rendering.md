@@ -53,4 +53,13 @@ if (FT_New_Face(ft, "fonts/ariel.ttf", 0, &face))
 }
 
 ```
- 
+
+Each of these FreeType functions returns a non-zero integer whenever an error occurred. 
+
+Once we've loaded the face, we should define the pixel font size we'd like to extract from this face. 
+
+`FT_Set_Pixel_Sizes(face, 0, 48);`
+
+The function sets the font's width and height parameters. Setting the width to 0 lets the face dynamically calculate the width based on the given height. 
+
+A FreeType 
