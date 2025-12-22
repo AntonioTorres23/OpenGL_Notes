@@ -225,4 +225,12 @@ RenderDoc is a great (completely [open source](https://github.com/baldurk/render
 
 **CodeXL**
 
-[CodeXL](https://gpuopen.com/compute-product/codexl/) is a GPU debugging tool released as both a standalone tool and a Visual Studio plugin. CodeXL gives a good set of information and is great for profiling graphics applications. CodeXL 
+[CodeXL](https://gpuopen.com/compute-product/codexl/) is a GPU debugging tool released as both a standalone tool and a Visual Studio plugin. CodeXL gives a good set of information and is great for profiling graphics applications. CodeXL also works on NVidia or Intel cards, but without support for OpenCL debugging. 
+
+![[Pasted image 20251222130546.png]]
+
+I personally don't have much experience with CodeXL since I found RenderDoc easier to use, but I've included it anyways as it looks to be a pretty solid tool and developed by one of the larger GPU manufacturers. 
+
+**NVIDIA Nsight**
+
+NVIDIA's popular [Nsight](https://developer.nvidia.com/nvidia-nsight-visual-studio-edition) 
