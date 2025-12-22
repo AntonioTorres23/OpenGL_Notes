@@ -140,4 +140,6 @@ It won't show you the subtle differences between AMD, NVidia, or Intel GLSL comp
 
 **Framebuffer Output**
 
-Another useful trick for your debugging toolkit is displaying a framebuffer's content(s) in some pre-defined region of your screen. You're likely to use [framebuffers](https://learnopengl.com/Advanced-OpenGL/Framebuffers) quite often and, as most of their magic happens behind the scenes, it's sometimes 
+Another useful trick for your debugging toolkit is displaying a framebuffer's content(s) in some pre-defined region of your screen. You're likely to use [framebuffers](https://learnopengl.com/Advanced-OpenGL/Framebuffers) quite often and, as most of their magic happens behind the scenes, it's sometimes difficult to figure out what's going on. Displaying the content(s) of a framebuffer on your screen is a useful trick to quickly see if things look correct. 
+
+Note that displaying the contents (attachments)
