@@ -187,6 +187,9 @@ uniform vec3 textColor;
 
 void main()
 {
-	
+	vec4 sampled = vec4(1.0, 1.0, 1.0, texture(text, TexCoords).r);
+	color = vec4(textColor, 1.0) * sampled; 
 }
 ```
+
+The fragment shader takes two uniforms: one is the mono-colored bitmap image of the glyph, and the other is a color uniform for adjusting 
