@@ -208,4 +208,4 @@ For the projection matrix we'll be using an orthographic projection matrix. For 
 glm::mat4 projection = glm::ortho(0.0f, 800.0f, 0.0f, 600.0f);
 ```
 
-We set the projection matrix's bottom
+We set the projection matrix's bottom parameter to `0.0f` and its top parameter equal to the window's height. t
