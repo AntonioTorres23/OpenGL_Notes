@@ -158,6 +158,24 @@ void main()
 {
 	gl_Position = vec4(position, 0.0f, 1.0f);
 	TexCoords = texCoords; 
+}
+
+// fragment shader
+#version 330 core
+out vec4 FragColor;
+in vec2 TexCoords;
+
+uniform sampler2D fboAttachment;
+
+void main()
+{
+	FragColor = texture(fboAttachment, TexCoords);
+}
+```
+
+```
+void DisplayFramebufferTexture(unigned int textureID)
+{
 	
 }
 
