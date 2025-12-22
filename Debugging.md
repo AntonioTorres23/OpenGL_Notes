@@ -142,4 +142,14 @@ It won't show you the subtle differences between AMD, NVidia, or Intel GLSL comp
 
 Another useful trick for your debugging toolkit is displaying a framebuffer's content(s) in some pre-defined region of your screen. You're likely to use [framebuffers](https://learnopengl.com/Advanced-OpenGL/Framebuffers) quite often and, as most of their magic happens behind the scenes, it's sometimes difficult to figure out what's going on. Displaying the content(s) of a framebuffer on your screen is a useful trick to quickly see if things look correct. 
 
-Note that displaying the contents (attachments) of a framebuffer as explained here only works on texture attachments 
+Note that displaying the contents (attachments) of a framebuffer as explained here only works on texture attachments, not render buffer objects. 
+
+Using a simple shader that only displays a texture, we can easily write a small helper function to quickly display any texture at the top right of the screen.
+
+```
+// vertex shader
+#version 330 core
+layout (location = 0) in vec2 position; 
+layout (location = 1) in vec2 texCoords; 
+
+```
