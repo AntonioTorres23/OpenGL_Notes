@@ -116,5 +116,12 @@ for (unsigned char c = 0; c < 128; c++)
 	unsigned int texture; 
 	glGenTextures(1, &texture);
 	glBindTexture(GL_TEXTURE_2D, texture);
+	glTexImage2D(
+		GL_TEXTURE_2D, 
+		0,
+		GL_RED,
+		face->glyph->
+	
+	)
 }
 ```
