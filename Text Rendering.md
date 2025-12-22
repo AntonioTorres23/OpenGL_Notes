@@ -32,4 +32,5 @@ Then include the appropriate headers.
 #include FT_FREETYPE_H
 ```
 
-Due to how FreeType is developed (at least at the time of this writing), you cannot put their header files in a new directory 
+Due to how FreeType is developed (at least at the time of this writing), you cannot put their header files in a new directory; they should be located at the root of your include directories. Including FreeType like `#include <FreeType/ft2build.h>`
+ 
