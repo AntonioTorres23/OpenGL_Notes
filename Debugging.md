@@ -115,4 +115,4 @@ This approach can easily extend to any type of variable you'd like to test. When
 
 **OpenGL GLSL Reference Compiler**
 
-Each driver has its own quirks and tidbits
+Each driver has its own quirks and tidbits; for instance, NVIDIA drivers are more flexible and tend to overlook some restrictions on the specification, while ATI/AMD drivers tend to better enforce the OpenGL specification (which is the better approach in my opinion). The results of this is that shaders on one machine may not work on the other due to driver differences. 
