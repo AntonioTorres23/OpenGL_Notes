@@ -7,4 +7,8 @@ Most developers choose to render charact textures onto quads. Rendering textured
 
 **Classical Text Rendering: Bitmap Fonts**
 
-In the early days, 
+In the early days, rendering text involved selecting a font (or creating one yourself) you'd like for your application and extracting all relevant characters out of this font to place them within a single large texture. Such a texture, that we call a **bitmap font**, contains all character symbols we want to use in predefined regions of the texture. These character symbols of the font are known as **glyphs**. Each glyph has a specific region of texture coordinates associated with them. Whenever you want to render a character, you  select the corresponding glyph by rending this section of the bitmap font to a 2D quad. 
+
+![[Pasted image 20251222140117.png]]
+
+Here you can see how we would render the text `OpenGL` by taking a bitmap font and sampling the corresponding glyphs from the texture (carefully choosing the texture coordinates) 
