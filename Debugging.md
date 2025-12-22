@@ -176,7 +176,7 @@ void main()
 ```
 void DisplayFramebufferTexture(unigned int textureID)
 {
-	
+	glActivateTexture(GL_TEXTURE0);
 }
 
 ```
