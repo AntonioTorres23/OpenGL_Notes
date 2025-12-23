@@ -293,4 +293,8 @@ Some characters (like `p` or `g`) are rendered slightly below the baseline, so t
 
 To calculate this distance e.g. offset we need to figure out the distance a glyph extends below the baseline; we can calculate the length of this vector by subtracting `bearingY` from the glyph's (bitmap) height. This value is then 0.0 for characters that rest on the baseline (like `'X'`) and positive for characters that reside slightly below the baseline (like `g` or `j`). 
 
-If you did everything correct you should now be able to successfu
+If you did everything correct you should now be able to successfully render string of text with the following statements. 
+
+```
+RenderText(shader, "This is sample text", 25.0f, 25.0f, 1.0f, )
+```
