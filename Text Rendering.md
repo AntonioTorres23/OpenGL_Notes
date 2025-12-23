@@ -297,5 +297,13 @@ If you did everything correct you should now be able to successfully render stri
 
 ```
 RenderText(shader, "This is sample text", 25.0f, 25.0f, 1.0f, glm::vec3(0.5, 0.8, 0.2f));
-RenderText(shader, "(C) LearnOpenGL.com", 540.0f, 570.0f, 0.5f, glm::vec3(0.3f, 0.7f, ))
+RenderText(shader, "(C) LearnOpenGL.com", 540.0f, 570.0f, 0.5f, glm::vec3(0.3f, 0.7f, 0.9f));
 ```
+
+This should then look similar to the following image. 
+
+![[Pasted image 20251222171701.png]]
+
+You can find the code of this example [here](https://learnopengl.com/code_viewer_gh.php?code=src/7.in_practice/2.text_rendering/text_rendering.cpp).
+
+To give you a feel for how we calculated the quad's vertices, we can disable blending to see what the actual rendered quads look like
