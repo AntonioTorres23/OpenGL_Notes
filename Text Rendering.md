@@ -271,9 +271,17 @@ void RenderText(Shader &s, std::string text, float x, float y, float scale, glm:
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 		// render quad
 		glDrawArrays(GL_TRIANGLES, 0, 6);
-		
-		
+		// now advance cursors for next glyph (note that advance is number of 1/64)
+		// pixels
+		x += (ch.Anvance >> 6) * scale; // bit shift by 6 to get value in pixels
+									   // (2^6 = 64)
 	}
-	
+	glBindVertexArray(0);
+	glBindTexture(GL_TEXTURE_2D, 0);
 }
 ```
+
+Most of the content of the function should be pretty self-explanatory: we first calculate the origin position of the quad (as `xpos` and `ypos`) and the quad's size (as `w` and `h`) and generate a set of 6 vertices to form the 2D quad; note that we scale each metric by `scale`. We then update the content of the VBO and render the quad. 
+
+The following line of code requires some attention though.
+
