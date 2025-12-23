@@ -312,4 +312,6 @@ To give you a feel for how we calculated the quad's vertices, we can disable ble
 
 Here you can clearly see most quads resting on the (imaginary) baseline while the quads that corresponds to glyphs like `'p'` or `'('` are shifted downwards. 
 
-**Going Furthe**
+**Going Further**
+
+ These notes demonstrated a text rendering technique with TrueType fonts using the FreeType library. The approach is flexible, scalable, and works with many character encodings. However, this approach is likely going to be overkill for your application as we generate and render textures for each glyph. 
