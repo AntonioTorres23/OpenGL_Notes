@@ -285,3 +285,7 @@ Most of the content of the function should be pretty self-explanatory: we first 
 
 The following line of code requires some attention though.
 
+`float ypos = y - (ch.Size.y - ch.Bearing.y);`
+
+Some characters (like `p` or `g`) are rendered slightly below the baseline, so the quad should also be positioned slightly below `RenderText`'s `y` value. The exact am
+
