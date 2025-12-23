@@ -287,5 +287,5 @@ The following line of code requires some attention though.
 
 `float ypos = y - (ch.Size.y - ch.Bearing.y);`
 
-Some characters (like `p` or `g`) are rendered slightly below the baseline, so the quad should also be positioned slightly below `RenderText`'s `y` value. The exact am
+Some characters (like `p` or `g`) are rendered slightly below the baseline, so the quad should also be positioned slightly below `RenderText`'s `y` value. The exact amount we need to offset `ypos` below the baseline can be figured out from the glyph metrics. 
 
