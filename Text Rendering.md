@@ -289,3 +289,6 @@ The following line of code requires some attention though.
 
 Some characters (like `p` or `g`) are rendered slightly below the baseline, so the quad should also be positioned slightly below `RenderText`'s `y` value. The exact amount we need to offset `ypos` below the baseline can be figured out from the glyph metrics. 
 
+![[Pasted image 20251222171202.png]]
+
+To calculate this distance e.g. offset we need to figure out the distance a glyph extends below the baseline; we can calculate the lenggth of this bector by subtracting `bearingY` from the glyph's (bitmap) heigght. This value is then 0.0 for cha
