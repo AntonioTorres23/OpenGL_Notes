@@ -306,4 +306,10 @@ This should then look similar to the following image.
 
 You can find the code of this example [here](https://learnopengl.com/code_viewer_gh.php?code=src/7.in_practice/2.text_rendering/text_rendering.cpp).
 
-To give you a feel for how we calculated the quad's vertices, we can disable blending to see what the actual rendered quads look like
+To give you a feel for how we calculated the quad's vertices, we can disable blending to see what the actual rendered quads look like. 
+
+![[Pasted image 20251222171821.png]]
+
+Here you can clearly see most quads resting on the (imaginary) baseline while the quads that corresponds to glyphs like `'p'` or `'('` are shifted downwards. 
+
+**Going Furthe**
