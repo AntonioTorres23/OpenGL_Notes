@@ -291,4 +291,6 @@ Some characters (like `p` or `g`) are rendered slightly below the baseline, so t
 
 ![[Pasted image 20251222171202.png]]
 
-To calculate this distance e.g. offset we need to figure out the distance a glyph extends below the baseline; we can calculate the lenggth of this bector by subtracting `bearingY` from the glyph's (bitmap) heigght. This value is then 0.0 for cha
+To calculate this distance e.g. offset we need to figure out the distance a glyph extends below the baseline; we can calculate the length of this vector by subtracting `bearingY` from the glyph's (bitmap) height. This value is then 0.0 for characters that rest on the baseline (like `'X'`) and positive for characters that reside slightly below the baseline (like `g` or `j`). 
+
+If you did everything correct you should now be able to successfu
