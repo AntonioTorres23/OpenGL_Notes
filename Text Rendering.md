@@ -314,4 +314,4 @@ Here you can clearly see most quads resting on the (imaginary) baseline while th
 
 **Going Further**
 
- These notes demonstrated a text rendering technique with TrueType fonts using the FreeType library. The approach is flexible, scalable, and works with many character encodings. However, this approach is likely going to be overkill for your application as we generate and render textures for each glyph. 
+ These notes demonstrated a text rendering technique with TrueType fonts using the FreeType library. The approach is flexible, scalable, and works with many character encodings. However, this approach is likely going to be overkill for your application as we generate and render textures for each glyph. Performance-wise, bitmap fonts are preferable as we only need one texture for all our glyphs. The best approach would be to combine the two approaches by dynamically generatingg a bitmap font texture fetauring all character glyphs as loaded with FreeType. This saves the renderer from a significant amount of texture switches and, base
