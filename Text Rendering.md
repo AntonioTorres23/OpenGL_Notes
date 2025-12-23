@@ -296,5 +296,6 @@ To calculate this distance e.g. offset we need to figure out the distance a glyp
 If you did everything correct you should now be able to successfully render string of text with the following statements. 
 
 ```
-RenderText(shader, "This is sample text", 25.0f, 25.0f, 1.0f, )
+RenderText(shader, "This is sample text", 25.0f, 25.0f, 1.0f, glm::vec3(0.5, 0.8, 0.2f));
+RenderText(shader, "(C) LearnOpenGL.com", 540.0f, 570.0f, 0.5f, glm::vec3(0.3f, 0.7f, ))
 ```
